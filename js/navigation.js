@@ -49,6 +49,13 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/productcategory",
     subnav: []
   },
+  },
+  {
+    name: "Product Detail",
+    classis: "active",
+    link: "#/productdetail",
+    subnav: []
+  },
   {
     name: "FAQ",
     classis: "active",
