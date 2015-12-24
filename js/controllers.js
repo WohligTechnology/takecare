@@ -6,6 +6,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Home");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+    $scope.homeslider = [
+      "img/home-slider/banner.jpg",
+      "img/home-slider/banner.jpg",
+      "img/home-slider/banner.jpg",
+      "img/home-slider/banner.jpg"
+    ];
 })
 .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

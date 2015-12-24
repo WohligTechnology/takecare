@@ -1,9 +1,14 @@
-<div class="container">
-    
-    <flex-slider flex-slide="s in mySlides">
+<div class="home-slider">
+    <flex-slider flex-slide="slide in homeslider track by $index" animation="slide" class="carousel">
         <li>
-            <img ng-src="{{s}}">
+          <div class="slide-holder">
+                  <img ng-src="{{slide}}">
+                <div class="slider-info fifty">
+                    <h2 class="text-uppercase">The calorie meter</h2>
+                    <p>Count Your Calories with our index customised to Indian food</p>
+                    <button class="text-uppercase btn btn-primary" type="button">Know more</button>
+                </div>
+            </div>
         </li>
     </flex-slider>
-    
 </div>
