@@ -103,6 +103,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("My Cart");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.cart = [{
+    img: "",
+    name: "Baked Potato Chips",
+    quantity: "1",
+    amount: "225.00",
+    totalamount:"225.00"
+  },
+  {
+    img: "",
+    name: "Chana Jor",
+    quantity: "1",
+    amount: "150.00",
+    totalamount:"150.00"
+  }];
 })
 .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
