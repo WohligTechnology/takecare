@@ -42,6 +42,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'HealthManagementCtrl'
     })
+    .state('healthmanagementdetail', {
+        url: "/healthmanagementdetail",
+        templateUrl: "views/template.html",
+        controller: 'HealthManagementDetailCtrl'
+    })
 
     .state('weightloss', {
         url: "/weightloss",
