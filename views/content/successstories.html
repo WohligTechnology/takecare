@@ -1,0 +1,238 @@
+<section>
+  <div class="selfcare-image">
+    <img src="" alt="">
+    <h2 class="text-uppercase">Success Stories</h2>
+  </div>
+
+  <div class="brand-primary-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="info">
+                <div class="">
+                  <p>Total number of
+                    <span>Clients</span>
+                  </p>
+                  <p>10348</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="">
+                  <p>Total
+                    <span>Weight Loss</span>
+                  </p>
+                  <p>7500
+                    <span>in kgs</span>
+                  </p>
+                </div>
+                <div class="icon"><i class="fa fa-"></i></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="">
+                  <p>Presence in
+                    <span>Countries</span>
+                  </p>
+                  <p>38</p>
+                </div>
+                <div class="icon"><i class="fa fa-"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stories-section">
+    <div class="container">
+      <div class="text-center">
+        <tabset>
+          <tab>
+            <tab-heading>
+              <button type="button" class="btn btn-primary text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
+            </tab-heading>
+
+            <div class="row">
+              <div class=" col-md-offset-1 col-md-10">
+                <div class="single-read text-center" ng-repeat="read in reads">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="read-detail">
+                        <span class="text-left">{{read.title}}</span>
+                        <span class="text-right">{{read.name}}</span>
+                        <span class="text-right">{{read.location}}</span>
+                        <hr>
+                        <p class="text-left">{{read.desc}}</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="read-image">
+                        <img ng-src="{{read.image}}" alt="" class="doneloading">
+                      </div>
+                      <div class="get-round">
+                        <span class="text-uppercase">Lost</span><br>
+                        <span>{{read.weight}}kgs</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class=" col-md-offset-1 col-md-10">
+                <div class="read-story text-center" ng-repeat="read in reads">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="read-image">
+                        <img ng-src="{{read.image}}" alt="" class="doneloading">
+                      </div>
+                      <div class="get-round">
+                        <span class="text-uppercase">Lost</span><br>
+                        <span>{{read.weight}}kgs</span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-8">
+                      <div class="read-detail">
+                        <span class="text-left">{{read.title}}</span>
+                        <span class="text-right">{{read.name}}</span>
+                        <span class="text-right">{{read.location}}</span>
+                        <hr>
+                        <p class="text-left">{{read.desc}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tab>
+
+          <tab>
+            <tab-heading>
+              <button type="button" class="btn btn-primary text-uppercase"><i class="fa fa-comment"></i> Read Here</button>
+            </tab-heading>
+
+            <div class="row">
+              <div class=" col-md-offset-1 col-md-10">
+                <div class="single-view text-center" ng-repeat="view in views">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <!-- youtube video -->
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="get-round">
+                        <span class="text-uppercase">Lost</span><br>
+                        <span>{{view.weight}}kgs</span>
+                      </div>
+                      <div class="view-detail">
+                        <span class="text-left">{{view.name}}</span>
+                        <span class="text-left">{{view.location}}</span>
+                        <span class="text-left">{{view.title}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class=" col-md-offset-1 col-md-10">
+                <div class="single-view text-center" ng-repeat="view in views">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="get-round">
+                        <span class="text-uppercase">Lost</span><br>
+                        <span>{{view.weight}}kgs</span>
+                      </div>
+                      <div class="view-detail">
+                        <span class="text-left">{{view.name}}</span>
+                        <span class="text-left">{{view.location}}</span>
+                        <span class="text-left">{{view.title}}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <!-- youtube video -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+
+  <div class="growth-section">
+    <div class="container">
+      <h3 class="text-center text-uppercase">Growth in the number of clients across the past decade:</h3>
+
+      <div class="growth-years">
+        <div class="growth-line"></div>
+        <ul>
+          <li>
+            <span class="growth-year">2004</span>
+            <span class="growth-number">316</span>
+          </li>
+          <li>
+            <span class="growth-year">2005</span>
+            <span class="growth-number">470</span>
+          </li>
+          <li>
+            <span class="growth-year">2006</span>
+            <span class="growth-number">795</span>
+          </li>
+          <li>
+            <span class="growth-year">2007</span>
+            <span class="growth-number">913</span>
+          </li>
+          <li>
+            <span class="growth-year">2008</span>
+            <span class="growth-number">1593</span>
+          </li>
+          <li>
+            <span class="growth-year">2009</span>
+            <span class="growth-number">316</span>
+          </li>
+          <li>
+            <span class="growth-year">2010</span>
+            <span class="growth-number">1239</span>
+          </li>
+          <li>
+            <span class="growth-year">2011</span>
+            <span class="growth-number">1223</span>
+          </li>
+          <li>
+            <span class="growth-year">2012</span>
+            <span class="growth-number">1124</span>
+          </li>
+          <li>
+            <span class="growth-year">2013</span>
+            <span class="growth-number">749</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="care-programs">
+    <h3 class="text-center text-uppercase">Get to know more about our care programs:</h3>
+    <div class="care-buttons">
+      <a href="" class="btn btn-primary-inverse text-uppercase"><img src="" alt="" class="doneloading">Weight Loss</a>
+      <a href="" class="btn btn-primary-inverse text-uppercase"><img src="" alt="" class="doneloading">Health Management</a>
+    </div>
+  </div>
+</section>
