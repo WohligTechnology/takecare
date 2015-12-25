@@ -96,6 +96,12 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     link: "#/team",
     subnav: []
+  },
+  {
+    name: "Contact Us",
+    classis: "active",
+    link: "#/contactus",
+    subnav: []
   }
 ];
 

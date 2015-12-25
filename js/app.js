@@ -114,6 +114,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         controller: 'TeamCtrl'
     })
 
+    .state('contactus', {
+        url: "/contactus",
+        templateUrl: "views/template.html",
+        controller: 'ContactUsCtrl'
+    })
+
     $urlRouterProvider.otherwise("/home");
 
 });
