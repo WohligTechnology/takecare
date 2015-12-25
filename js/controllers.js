@@ -82,6 +82,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("FAQ");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+
+  $scope.oneAtATime = true;
 })
 .controller('MeetCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
