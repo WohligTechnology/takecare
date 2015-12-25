@@ -119,6 +119,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'ContactUsCtrl'
     })
+    .state('login', {
+        url: "/login",
+        templateUrl: "views/template.html",
+        controller: 'LoginCtrl'
+    })
 
     $urlRouterProvider.otherwise("/home");
 
