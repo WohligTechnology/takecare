@@ -21,6 +21,7 @@ $brand-brown-dark2: #2d1205 !default; //BrownDark2
 $brand-brown-gray: #998675 !default; //BrownGray
 $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
+$brand-graylight: #d5cdc6 !default;//light gray
 
 $font-color: #242424 !default;
 $body-bg: #fff !default;
@@ -63,6 +64,7 @@ $instagram: #396d9a !default;
 .brand-brown-gray-bg { background-color: $brand-brown-gray; }
 .brand-yellow-bg { background-color: $brand-yellow; }
 .brand-blue-bg { background-color: $brand-blue; }
+.brand-graylight-bg { background-color: $brand-graylight; }
 
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 * {
@@ -70,7 +72,7 @@ $instagram: #396d9a !default;
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  padding-top: 70px;
+    background-color: #fff;
 }
 img.loading {
   text-align: center;
@@ -100,6 +102,9 @@ ul {
 }
 
 // Class
+.relate {
+    position: relative;
+}
 .m-center { margin: 0 auto; }
 .get-center {
   position: absolute;

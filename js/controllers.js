@@ -7,7 +7,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
     $scope.homeslider = [
-      "img/home-slider/banner.jpg",
+        {
+            img:"img/home-slider/banner.jpg",
+        },
+
       "img/home-slider/banner.jpg",
       "img/home-slider/banner.jpg",
       "img/home-slider/banner.jpg"
