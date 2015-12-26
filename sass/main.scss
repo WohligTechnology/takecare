@@ -197,7 +197,7 @@ ul {
 .btn {
   font-size: 12px;
   padding: 12px 24px;
-  letter-spacing: 1px;
+  @extend.letter-space;
   border-radius: 4px;
 }
 button {
@@ -209,7 +209,7 @@ button {
   border-radius: 100%;
 }
 .letter-space {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 /* Start writing sass here */
@@ -272,7 +272,7 @@ button {
     margin: 0;
     font-size: 35px;
     font-weight: 300;
-    letter-spacing: 1px;
+    @extend.letter-space;
     word-spacing: 3px;
   }
   .img-holder {
@@ -341,6 +341,27 @@ button {
     vertical-align: top;
   }
 }
+.health-diet {
+  padding: 80px 0;
+}
+.diet-info {
+  padding: 0 40px;
+  .diet-holder {
+    width: 380px;
+    height: 210px;
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  .descp {
+    min-height: 100px;
+    width: 380px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+}
 ///end home///
 ///////////////
 //Footer///////
@@ -362,12 +383,12 @@ footer {
   }
   .menu2 {
     h5 {
-      letter-spacing: 1px;
+      @extend.letter-space;
     }
     ul {
       a {
         @extend.brand-brown-dark;
-        letter-spacing: 1px;
+        @extend.letter-space;
         word-spacing: 2px;
         &:before {
           content: "-";
@@ -385,7 +406,7 @@ footer {
   }
   .note {
     margin-bottom: 20px;
-    letter-spacing: 1px;
+    @extend.letter-space;
     word-spacing: 2px;
   }
   .mail {
@@ -405,7 +426,7 @@ footer {
   }
   .copyright {
     margin-top: 25px;
-    letter-spacing: 1px;
+    @extend.letter-space;
   }
 }
 //////end footer/////
