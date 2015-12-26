@@ -11,9 +11,9 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
-
 $brand-primary: #e96542 !default; //Orange
 $brand-primary-light: #f4b2a1 !default; //LightOrange
+$brand-primary-lighter: #ffd8ce !default; //ligherOrange
 $brand-brown: #c2a388 !default; //Brown
 $brand-brown-light: #e6d9ce !default; //BrownLight
 $brand-brown-dark: #3b1808 !default; //BrownDark
@@ -21,8 +21,7 @@ $brand-brown-dark2: #2d1205 !default; //BrownDark2
 $brand-brown-gray: #998675 !default; //BrownGray
 $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
-$brand-graylight: #d5cdc6 !default;//light gray
-
+$brand-graylight: #d5cdc6 !default; //lightgray
 $font-color: #242424 !default;
 $body-bg: #fff !default;
 $text-color: $font-color !default;
@@ -30,49 +29,112 @@ $section-bg: #d3d3d3 !default;
 $link-color: $font-color !default;
 $link-hover-color: $font-color !default;
 $link-hover-decoration: none !default;
-
-$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif: "Lato", Georgia, "Times New Roman", Times, serif !default;
-$font-funky: "Lemonade", "Helvetiva Neue", Helvetica !default;
-$font-loading: "Exo 2", "Helvetiva Neue", Helvetica !default;
-
+$font-family-sans-serif: "Lato",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif !default;
+$font-family-serif: "Lato",
+Georgia,
+"Times New Roman",
+Times,
+serif !default;
+$font-funky: "Lemonade",
+"Helvetiva Neue",
+Helvetica !default;
+$font-loading: "Exo 2",
+"Helvetiva Neue",
+Helvetica !default;
 $border-radius-base: 0 !default;
 $border-radius-large: 0 !default;
 $border-radius-small: 0 !default;
-
 $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
 $instagram: #396d9a !default;
-
-.brand-primary { color: $brand-primary; }
-.brand-primary-light { color: $brand-primary-light; }
-.brand-brown { color: $brand-brown; }
-.brand-brown-light { color: $brand-brown-light; }
-.brand-brown-dark { color: $brand-brown-dark; }
-.brand-brown-dark2 { color: $brand-brown-dark2; }
-.brand-brown-gray { color: $brand-brown-gray; }
-.brand-yellow { color: $brand-yellow; }
-.brand-blue { color: $brand-blue; }
-
-.brand-primary-bg { background-color: $brand-primary; }
-.brand-primary-light-bg { background-color: $brand-primary-light; }
-.brand-brown-bg { background-color: $brand-brown; }
-.brand-brown-light-bg { background-color: $brand-brown-light; }
-.brand-brown-dark-bg { background-color: $brand-brown-dark; }
-.brand-brown-dark2-bg { background-color: $brand-brown-dark2; }
-.brand-brown-gray-bg { background-color: $brand-brown-gray; }
-.brand-yellow-bg { background-color: $brand-yellow; }
-.brand-blue-bg { background-color: $brand-blue; }
-.brand-graylight-bg { background-color: $brand-graylight; }
-
+.white {
+  color: $body-bg;
+}
+.brand-primary {
+  color: $brand-primary;
+}
+.brand-primary-light {
+  color: $brand-primary-light;
+}
+.brand-primary-lighter {
+  color: $brand-primary-lighter;
+}
+.brand-brown {
+  color: $brand-brown;
+}
+.brand-brown-light {
+  color: $brand-brown-light;
+}
+.brand-brown-dark {
+  color: $brand-brown-dark;
+}
+.brand-brown-dark2 {
+  color: $brand-brown-dark2;
+}
+.brand-brown-gray {
+  color: $brand-brown-gray;
+}
+.brand-yellow {
+  color: $brand-yellow;
+}
+.brand-blue {
+  color: $brand-blue;
+}
+.brand-primary-bg {
+  background-color: $brand-primary;
+}
+.brand-primary-light-bg {
+  background-color: $brand-primary-light;
+}
+.brand-brown-bg {
+  background-color: $brand-brown;
+}
+.brand-brown-light-bg {
+  background-color: $brand-brown-light;
+}
+.brand-brown-dark-bg {
+  background-color: $brand-brown-dark;
+}
+.brand-brown-dark2-bg {
+  background-color: $brand-brown-dark2;
+}
+.brand-brown-gray-bg {
+  background-color: $brand-brown-gray;
+}
+.brand-yellow-bg {
+  background-color: $brand-yellow;
+}
+.brand-blue-bg {
+  background-color: $brand-blue;
+}
+.brand-graylight-bg {
+  background-color: $brand-graylight;
+}
+//button
+.btn-yellow {
+  @include button-variant(white, $brand-yellow, $brand-yellow);
+  &:hover {
+    color: #fff !important;
+  }
+}
+.btn-blue {
+  @include button-variant(white, $brand-blue, $brand-blue);
+  &:hover {
+    color: #fff !important;
+  }
+}
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-    background-color: #fff;
+  background-color: #fff;
 }
 img.loading {
   text-align: center;
@@ -98,28 +160,253 @@ a {
 }
 ul {
   padding: 0;
-  li { list-style: none; }
+  li {
+    list-style: none;
+  }
 }
-
 // Class
 .relate {
-    position: relative;
+  position: relative;
 }
-.m-center { margin: 0 auto; }
+.m-center {
+  margin: 0 auto;
+}
 .get-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  @include position(absolute, 50% auto auto 50%);
   @include transform(translate(-50%, -50%));
 }
 .get-up {
   margin-top: -100px;
   padding: 20px 50px;
 }
-.inline-block { display: inline-block; }
-.block { display: block; }
+.inline-block {
+  display: inline-block;
+}
+.block {
+  display: block;
+}
+.text-bold {
+  font-weight: 700;
+}
+.row-flex {
+  @include display(flex);
+}
+.col-flex {
+  @include flex(1);
+}
+.btn {
+  font-size: 12px;
+  padding: 12px 24px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+}
+button {
+  &:focus {
+    outline: none !important;
+  }
+}
+.get-round {
+  border-radius: 100%;
+}
+.letter-space {
+  letter-spacing: 2px;
+}
 
 /* Start writing sass here */
 
-
+///////////////
+//Home/////////
+//////////////
+.home-slider {
+  .slider-info {
+    h2 {
+      font-size: 39px;
+    }
+    button {
+      margin-top: 20px;
+    }
+  }
+  .flexslider {
+    border: none;
+    .flex-control-nav {
+      display: none;
+    }
+    .flex-direction-nav a {
+      width: 35px;
+      height: 60px;
+      border-radius: 4px;
+      background-color: #fff;
+      &:before {
+        color: $brand-primary;
+      }
+    }
+    .flex-prev {
+      left: 0;
+      opacity: 1;
+      &:before {
+        content: "\f105";
+      }
+    }
+    .flex-next {
+      right: 0;
+      opacity: 1;
+      &:before {
+        content: "\f104";
+      }
+    }
+    &:hover {
+      .flex-prev {
+        left: 0;
+        opacity: 1;
+      }
+      .flex-next {
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+.health-design {
+  padding: 25px 60px;
+  h4 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+  }
+  .img-holder {
+    position: absolute;
+    top: -30px;
+    left: 65%;
+    @include transform(translateX(-65%));
+    border: 6px solid #fff;
+    @include square(150px);
+    overflow: hidden;
+    background: url('../img/suman.jpg') no-repeat -125px -12px;
+  }
+  .more-abt-suman {
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+  }
+}
+.health-cat {
+  margin: 100px 60px;
+  .health-info {
+    padding: 0 25px;
+    .title {
+      @extend.letter-space;
+    }
+    .health-descp {
+      width: 270px;
+      margin: 20px 0;
+    }
+    button {
+      position: relative;
+      top: 20px;
+    }
+    .health-imgholder {
+      width: 270px;
+      height: 150px;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        @extend.m-center;
+      }
+    }
+  }
+}
+.people-info {
+  padding: 30px 0;
+  h3,
+  h5 {
+    margin: 0;
+  }
+  .health-title {
+    text-align: left;
+    span {
+      font-size: 25px;
+    }
+  }
+  .health-count {
+    font-size: 45px;
+    span {
+      font-size: 14px;
+      color: $brand-brown-dark;
+      text-transform: uppercase;
+    }
+  }
+  .v-top {
+    vertical-align: top;
+  }
+}
+///end home///
+///////////////
+//Footer///////
+///////////////
+footer {
+  padding: 40px 0;
+  @extend.text-bold;
+  h5,
+  p {
+    margin: 0;
+  }
+  .menu {
+    li {
+      margin-bottom: 3px;
+      a {
+        @extend.brand-primary-lighter;
+      }
+    }
+  }
+  .menu2 {
+    h5 {
+      letter-spacing: 1px;
+    }
+    ul {
+      a {
+        @extend.brand-brown-dark;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        &:before {
+          content: "-";
+          margin-right: 5px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .foot-about {
+    margin-top: 62px;
+  }
+  .foot-healthkit {
+    margin-top: 20px;
+  }
+  .note {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+  }
+  .mail {
+    .email {
+      width: 320px;
+      border-color: #c24f31;
+      background-color: #c24f31;
+    }
+    .btn-submit {
+      border-color: $brand-brown-dark2;
+      margin-left: -4px;
+      background-color: $brand-brown-dark2;
+    }
+  }
+  .foot-sociallinks {
+    padding: 25px 5px 0;
+  }
+  .copyright {
+    margin-top: 25px;
+    letter-spacing: 1px;
+  }
+}
+//////end footer/////
 @import "harsh";

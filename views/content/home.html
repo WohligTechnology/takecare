@@ -1,10 +1,10 @@
 <div class="home-slider">
-  <flex-slider flex-slide="slide in homeslider track by $index" animation="slide" class="carousel" direction-nav="false">
+  <flex-slider flex-slide="slide in homeslider track by $index" animation="slide" class="carousel">
     <li>
       <div class="slide-holder relate">
         <img ng-src="{{slide.img}}">
         <div class="slider-info get-center text-center">
-          <h2 class="text-uppercase">{{slide.title}}</h2>
+          <h2 class="text-uppercase brand-primary text-bold">{{slide.title}}</h2>
           <p>{{slide.descp}}</p>
           <button class="text-uppercase btn btn-primary" type="button">Know more</button>
         </div>
@@ -13,75 +13,76 @@
   </flex-slider>
 </div>
 <div class="container">
-  <div class="health-design brand-brown-bg">
-    <h5>Health design by suman agarwal</h5>
+  <div class="health-design brand-brown-bg relate">
+    <h4 class="text-capitalize inline-block">Health design by suman agarwal</h4>
     <div class="img-holder get-round">
-      <img src="" alt="" class="img-responsive">
     </div>
-    <a href="#meet" class="text-uppercase">More about suman <i class="fa fa-angle-right"></i></a>
+    <div class="pull-right more-abt-suman">
+      <a href="#meet" class="text-uppercase inline-block">More about suman <i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
   <div class="health-cat">
     <div class="row">
       <div class="col-md-4">
         <div class="health-info">
-          <h3 class="brand-primary title text-uppercase">Health Packages</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-          <button class="btn text-uppercase" type="button">know more</button>
-          <div class="health-holder">
-            <img src="" alt="" class="img-responsive">
+          <h3 class="brand-primary title text-uppercase text-bold">Health <span class="block">Packages</span></h3>
+          <p class="text-justify health-descp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+          <button class="btn btn-primary text-uppercase" type="button">know more</button>
+          <div class="health-imgholder">
+            <img src="img/health-package.png" alt="" class="img-responsive">
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="health-info">
-          <h3 class="brand-yellow title text-uppercase">Health Products</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-          <button class="btn text-uppercase" type="button">know more</button>
-          <div class="health-holder">
-            <img src="" alt="" class="img-responsive">
+          <h3 class="brand-yellow title text-uppercase  text-bold">Health <span class="block">Products</span></h3>
+          <p class="text-justify health-descp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+          <button class="btn btn-yellow text-uppercase" type="button">know more</button>
+          <div class="health-imgholder">
+            <img src="img/health-products.png" alt="" class="img-responsive">
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="health-info">
-          <h3 class="brand-blue title text-uppercase">cool sculpting</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-          <button class="btn text-uppercase" type="button">know more</button>
-          <div class="health-holder">
-            <img src="" alt="" class="img-responsive">
+          <h3 class="brand-blue title text-uppercase  text-bold">cool <span class="block">sculpting</span></h3>
+          <p class="text-justify health-descp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+          <button class="btn btn-blue text-uppercase" type="button">know more</button>
+          <div class="health-imgholder">
+            <img src="img/cool-sculpting.png" alt="" class="img-responsive">
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="brand-primary-bg">
+<div class="brand-primary-bg people-info">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <div class="row">
           <div class="col-md-4">
-            <div class="info">
-              <div class=" inline-block">
-                <p>Total number of
-                  <span>Clients</span>
-                </p>
-                <p>10348</p>
+            <div class="info text-center">
+              <div class=" inline-block v-top">
+                <h5 class="text-uppercase text-bold brand-brown-dark health-title">Total number of
+                  <span class="block">Clients</span>
+                </h5>
+                <h3 class="health-count white text-bold">10348</h3>
               </div>
-              <div class="icon inline-block">
+              <div class="icon inline-block v-top">
                 <img src="img/user.png" alt="" class="img-responsive">
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="info ">
-              <div class="inline-block">
-                <p>Total
-                  <span>Weight Loss</span>
-                </p>
-                <p>7500
+            <div class="info  text-center">
+              <div class="inline-block v-top">
+                <h5 class="text-uppercase text-bold brand-brown-dark health-title">Total
+                  <span class="block count">Weight Loss</span>
+                </h5>
+                <h3 class="health-count white text-bold">7500
                   <span>in kgs</span>
-                </p>
+                </h3>
               </div>
               <div class="icon inline-block">
                   <img src="img/weight-meter.png" alt="" class="img-responsive">
@@ -89,12 +90,12 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="info ">
-              <div class="inline-block">
-                <p>Presence in
-                  <span>Countries</span>
-                </p>
-                <p>38</p>
+            <div class="info  text-center">
+              <div class="inline-block v-top">
+                <h5 class="text-uppercase text-bold  brand-brown-dark health-title">Presence in
+                  <span class="block">Countries</span>
+                </h5>
+                <h3 class="health-count white text-bold">38</h3>
               </div>
               <div class="icon inline-block">
                   <img src="img/world.png" alt="" class="img-responsive">
