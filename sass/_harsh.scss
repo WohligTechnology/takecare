@@ -60,6 +60,10 @@
 }
 .health-design {
   position: relative;
+  .health-style {
+    font-size: 20px;
+    font-style: italic;
+  }
 }
 .about-health {
   @include margin(50px 0);
