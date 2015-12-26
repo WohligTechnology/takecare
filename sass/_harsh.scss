@@ -1,0 +1,41 @@
+// //////////////////////////////////
+// HEADER
+// //////////////////////////////////
+// Hamburger
+.hamburger {
+  margin-top: 35px;
+  span {
+    @include size(25px, 3px);
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+.logo { margin: 20px 0 0 10px; }
+// Social Links
+.links { margin: 20px 0 15px; }
+.social-links {
+  padding: 10px 10px 0;
+  li {
+    display: inline-block;
+    a {
+      margin-right: 15px;
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+// Tel
+.contact-tel {
+  border-left: 1px solid $brand-primary;
+  border-right: 1px solid $brand-primary;
+  margin-left: -40px;
+  padding: 12px 42px 12px;
+}
+// Signin
+.signin {
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: bold;
+}
