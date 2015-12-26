@@ -9,11 +9,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.homeslider = [
         {
             img:"img/home-slider/banner.jpg",
+          title: "The calorie meter",
+          descp: "Count Your Calories with our index customised to Indian food"
         },
 
-      "img/home-slider/banner.jpg",
-      "img/home-slider/banner.jpg",
-      "img/home-slider/banner.jpg"
+        {
+            img:"img/home-slider/banner.jpg",
+          title: "The calorie meter",
+          descp: "Count Your Calories with our index customised to Indian food"
+        },
+
+        {
+            img:"img/home-slider/banner.jpg",
+          title: "The calorie meter",
+          descp: "Count Your Calories with our index customised to Indian food"
+        },
+
+        {
+            img:"img/home-slider/banner.jpg",
+          title: "The calorie meter",
+          descp: "Count Your Calories with our index customised to Indian food"
+        }
     ];
 })
 .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
