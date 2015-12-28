@@ -450,11 +450,27 @@ button {
   padding: 60px 0;
   .slider {
     padding: 40px 120px;
-    .carousel-control {
+    .carousel-control.left {
+      top: -50px;
       left: -50px;
+      opacity: 1;
     }
-    .right carousel-control {
+    .carousel-control.right {
+      top: -50px;
       right: -50px;
+      opacity: 1;
+    }
+    .glyphicon-chevron-right:before {
+      content: "\f105";
+      display: block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 70px;
+    }
+    .glyphicon-chevron-left:before {
+      content: "\f104";
+      display: block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 70px;
     }
   }
   .view-detail {
