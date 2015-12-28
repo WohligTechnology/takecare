@@ -18,7 +18,7 @@
   } }
 }
 // Social Links
-.links { margin: 20px 0 15px; }
+.links { margin: 20px 0 15px 30px; }
 .social-links {
   padding: 10px 10px 0;
   li {
@@ -35,13 +35,17 @@
 .contact-tel {
   border-left: 1px solid $brand-primary;
   border-right: 1px solid $brand-primary;
-  margin-left: -35px;
-  @include padding(12px 42px 12px);
+  @include margin(0 0 0 -40px);
+  @include padding(12px);
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 // Signin
 .signin {
-  font-size: 18px;
+  @include margin(0 0 0 -10px);
   @include padding(10px 0);
+  font-size: 16px;
   font-weight: bold;
 }
 
