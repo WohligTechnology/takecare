@@ -38,7 +38,6 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
-
 $brand-primary: #e96542 !default; //Orange
 $brand-primary-light: #f4b2a1 !default; //LightOrange
 $brand-primary-lighter: #ffd8ce !default; //ligherOrange
@@ -50,7 +49,6 @@ $brand-brown-gray: #998675 !default; //BrownGray
 $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
 $brand-graylight: #d5cdc6 !default; //lightgray
-
 $font-color: #242424 !default;
 $body-bg: #fff !default;
 $text-color: $font-color !default;
@@ -58,21 +56,20 @@ $section-bg: #d3d3d3 !default;
 $link-color: $font-color !default;
 $link-hover-color: $font-color !default;
 $link-hover-decoration: none !default;
-
 $font-family-sans-serif: "Whitney Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: "Whitney Medium", Georgia, "Times New Roman", Times, serif !default;
 $font-vista: "Vista Slab", "Helvetiva Neue", Helvetica !default;
 $font-baubodi: "Baubodi", "Helvetiva Neue", Helvetica !default;
-
+$font-family-light: "Whitney Light", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-semibold: "Whitney Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-book: "Whitney Book", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $border-radius-base: 0 !default;
 $border-radius-large: 0 !default;
 $border-radius-small: 0 !default;
-
 $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
 $instagram: #396d9a !default;
-
 .white {
   color: $body-bg;
 }
@@ -153,6 +150,17 @@ $instagram: #396d9a !default;
 .foot-btn {
   @include button-variant($brand-primary, white, $brand-primary);
 }
+.btn-more {
+  padding: 12px 34px !important;
+}
+@mixin placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 * {
   -webkit-font-smoothing: antialiased;
@@ -160,6 +168,7 @@ $instagram: #396d9a !default;
 }
 body {
   background-color: #fff;
+  font-family: $font-family-sans-serif;
 }
 img.loading {
   text-align: center;
@@ -196,6 +205,11 @@ textarea {
     border-color: $brand-primary !important;
     box-shadow: none !important;
     outline: none !important;
+  }
+}
+input {
+  @include placeholder {
+    color: white;
   }
 }
 form .form-control {
@@ -337,6 +351,7 @@ button {
   padding: 25px 60px;
   h4 {
     margin: 0;
+    font-family: $font-family-light;
     font-size: 35px;
     font-weight: 300;
     @extend.letter-space;
@@ -395,11 +410,13 @@ button {
   }
   .health-title {
     text-align: left;
+    font-family: $font-family-semibold;
     span {
       font-size: 25px;
     }
   }
   .health-count {
+    font-family: $font-vista;
     font-size: 45px;
     span {
       font-size: 14px;
@@ -416,6 +433,11 @@ button {
 }
 .diet-info {
   padding: 0 40px;
+  h4 {
+    @include margin(0 0 20px 0);
+    font-family: $font-family-semibold;
+    font-size: 24px;
+  }
   .diet-holder {
     width: 380px;
     height: 210px;
@@ -490,8 +512,12 @@ button {
   padding: 70px 0;
   .heading {
     h4 {
+      font-family: $font-family-semibold;
       font-size: 40px;
       @extend.letter-space;
+      span {
+        font-family: $font-family-book;
+      }
     }
   }
   .blog-info {
@@ -514,9 +540,10 @@ button {
     padding: 30px;
     border-bottom: 2px solid $brand-brown;
     p {
-      width: 70%;
+      width: 80%;
+      font-family: $font-family-semibold;
       font-size: 20px;
-      @extend.text-bold;
+      @extend.text-lighter;
     }
   }
 }
@@ -541,9 +568,11 @@ button {
     h3 {
       margin: 0 0 25px;
       font-size: 30px;
+      font-family: $font-family-semibold;
     }
     h5 {
       font-size: 20px;
+      font-family: $font-family-semibold;
     }
     p {
       font-size: 17px;
@@ -569,17 +598,20 @@ footer {
       margin-bottom: 3px;
       a {
         @extend.brand-primary-lighter;
+        font-family: $font-family-semibold;
       }
     }
   }
   .menu2 {
     h5 {
       @extend.letter-space;
+      font-family: $font-family-semibold;
     }
     ul {
       a {
         @extend.brand-brown-dark;
         @extend.letter-space;
+        font-family: $font-family-semibold;
         word-spacing: 2px;
         &:before {
           content: "-";
@@ -598,19 +630,29 @@ footer {
   .note {
     margin-bottom: 20px;
     @extend.letter-space;
+    font-family: $font-family-semibold;
     word-spacing: 2px;
   }
   .mail {
     .email {
-      width: 320px;
+      width: 300px;
       border-color: #c24f31;
       background-color: #c24f31;
+      color: #fff;
+      &:focus {
+        border-width: 1px;
+      }
     }
     .btn-submit {
+      width: 50px;
       border-color: $brand-brown-dark2;
       border-radius: 0;
       margin-left: -4px;
       background-color: $brand-brown-dark2;
+      &:focus {
+        box-shadow: none;
+        border-width: 1px;
+      }
     }
   }
   .foot-sociallinks {
@@ -619,6 +661,7 @@ footer {
   .copyright {
     margin-top: 25px;
     @extend.letter-space;
+    font-family: $font-family-semibold;
   }
 }
 .health-foot {
