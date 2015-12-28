@@ -110,8 +110,8 @@
 <div class="brand-brown-bg section-story">
   <div class="container">
     <div class="slider brand-brown-light-bg">
-      <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
-        <uib-slide ng-repeat="slide in homestory" active="slide.active">
+   <carousel interval="myInterval" no-wrap="noWrapSlides">
+        <slide ng-repeat="slide in homestory" active="slide.active">
           <div class="row">
             <div class="col-md-6">
               <div class="story-video">
@@ -125,7 +125,7 @@
                 <div class="descp brand-primary">
                   <p class="text-left">{{slide.descp}}</p>
                 </div>
-                <div class="get-round weight-info">
+                <div class="get-round weight-info text-center">
                   <span class="text-uppercase brand-brown-dark-bg">Lost</span>
                   <br>
                   <span class="weight-count">{{slide.weight}}kgs</span>
@@ -140,8 +140,8 @@
             <p>{{slide.text}}</p>
           </div>
 -->
-        </uib-slide>
-      </uib-carousel>
+        </slide>
+      </carousel>
     </div>
   </div>
 </div>
