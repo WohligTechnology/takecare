@@ -31,6 +31,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           descp: "Count Your Calories with our index customised to Indian food"
         }
     ];
+  $scope.homestory = [
+    {
+      name: "Rishabh Maniktala",
+      location: "Mumbai, India",
+      weight: "25",
+      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
+    }
+  ];
 })
 .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

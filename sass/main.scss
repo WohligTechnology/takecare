@@ -3,6 +3,34 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "../bower_components/flexslider/flexslider.css";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
+@font-face {
+  font-family: 'Baubodi';
+  src: url('../fonts/baubodi.ttf');
+}
+@font-face {
+  font-family: 'Vista Slab';
+  src: url('../fonts/vista_slab.otf');
+}
+@font-face {
+  font-family: 'Whitney Book';
+  src: url('../fonts/whitney_book.otf');
+}
+@font-face {
+  font-family: 'Whitney Light';
+  src: url('../fonts/whitney_light.otf');
+}
+@font-face {
+  font-family: 'Whitney Medium';
+  src: url('../fonts/whitney_medium.otf');
+}
+@font-face {
+  font-family: 'Whitney Semibold';
+  src: url('../fonts/whitney_semibold.otf');
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot'), url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg') format('svg');
+}
 
 /* Bootstrap Variables Goes Here */
 
@@ -117,19 +145,25 @@ $instagram: #396d9a !default;
 }
 //button
 .btn-yellow {
-  @include button-variant(white, $brand-yellow, $brand-yellow);
+  @include button-variant(white,
+  $brand-yellow,
+  $brand-yellow);
   &:hover {
     color: #fff !important;
   }
 }
 .btn-blue {
-  @include button-variant(white, $brand-blue, $brand-blue);
+  @include button-variant(white,
+  $brand-blue,
+  $brand-blue);
   &:hover {
     color: #fff !important;
   }
 }
 .foot-btn {
-  @include button-variant($brand-primary, white, $brand-primary);
+  @include button-variant($brand-primary,
+  white,
+  $brand-primary);
 }
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 * {
@@ -191,8 +225,10 @@ textarea {
   margin: 0 auto;
 }
 .get-center {
-  @include position(absolute, 50% auto auto 50%);
-  @include transform(translate(-50%, -50%));
+  @include position(absolute,
+  50% auto auto 50%);
+  @include transform(translate(-50%,
+  -50%));
 }
 .get-up {
   margin-top: -100px;
@@ -228,7 +264,19 @@ button {
   }
 }
 .get-round {
+  @include square(90px);
   border-radius: 100%;
+  color: #fff;
+  background-color: $brand-primary;
+  overflow: hidden;
+  span {
+    display: block;
+    padding: 5px 0;
+  }
+  .weight-count {
+    margin-top: -15px;
+    font-size: 24px;
+  }
 }
 .letter-space {
   letter-spacing: 1px;
@@ -255,25 +303,36 @@ button {
     }
     .flex-direction-nav a {
       width: 35px;
-      height: 60px;
+      height: 70px;
+      padding: 6px 10px;
       border-radius: 4px;
       background-color: #fff;
+      color: #fff;
+      text-align: center;
       &:before {
-        color: $brand-primary;
+        color: #f4b2a0;
       }
     }
     .flex-prev {
       left: 0;
       opacity: 1;
       &:before {
-        content: "\f105";
+        content: "\f104";
+        display: block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 55px;
+        margin-left: -5px;
       }
     }
     .flex-next {
       right: 0;
       opacity: 1;
       &:before {
-        content: "\f104";
+        content: "\f105";
+        display: block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 55px;
+        margin-right: -5px;
       }
     }
     &:hover {
@@ -311,6 +370,9 @@ button {
     font-size: 20px;
     letter-spacing: 2px;
     word-spacing: 3px;
+    a {
+      margin-top: 6px;
+    }
   }
 }
 .health-cat {
@@ -384,6 +446,32 @@ button {
     text-align: justify;
   }
 }
+.section-story {
+  padding: 60px 0;
+  .slider {
+    padding: 40px;
+  }
+  .view-detail {
+    padding-top: 15px;
+    .name {
+      width: 55%;
+      margin: 0;
+      border-bottom: 1px solid $brand-brown-dark;
+      font-size: 22px;
+    }
+    .descp {
+      width: 50%;
+      margin: 80px 0;
+      font-size: 17px;
+    }
+    .weight-info {
+      position: absolute;
+      top: 11px;
+      left: 50%;
+      z-index: 10;
+    }
+  }
+}
 .blog-section {
   padding: 70px 0;
   .heading {
@@ -397,7 +485,7 @@ button {
   }
   .blog-imgholder {
     @include square(100px);
-    border-radius: 8px;
+    border-radius: 4px;
     img {
       max-width: 100%;
       max-height: 100%;
@@ -498,9 +586,13 @@ footer {
       width: 320px;
       border-color: #c24f31;
       background-color: #c24f31;
+      @include placeholder {
+        color: $brand-primary-lighter;
+      }
     }
     .btn-submit {
       border-color: $brand-brown-dark2;
+      border-radius: 0;
       margin-left: -4px;
       background-color: $brand-brown-dark2;
     }
