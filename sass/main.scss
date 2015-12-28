@@ -449,25 +449,37 @@ button {
 .section-story {
   padding: 60px 0;
   .slider {
-    padding: 40px;
+    padding: 40px 120px;
+    .carousel-indicators {
+      display: none;
+    }
+    .carousel-control {
+      width: auto;
+    }
+    .left carousel-control {
+      left: -50px;
+    }
+    .right carousel-control {
+      right: -50px;
+    } 
   }
   .view-detail {
     padding-top: 15px;
     .name {
-      width: 55%;
+      width: 70%;
       margin: 0;
       border-bottom: 1px solid $brand-brown-dark;
       font-size: 22px;
     }
     .descp {
       width: 50%;
-      margin: 80px 0;
+      margin: 75px 0;
       font-size: 17px;
     }
     .weight-info {
       position: absolute;
       top: 11px;
-      left: 50%;
+      left: 65%;
       z-index: 10;
     }
   }
@@ -586,9 +598,6 @@ footer {
       width: 320px;
       border-color: #c24f31;
       background-color: #c24f31;
-      @include placeholder {
-        color: $brand-primary-lighter;
-      }
     }
     .btn-submit {
       border-color: $brand-brown-dark2;
