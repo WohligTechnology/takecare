@@ -450,18 +450,12 @@ button {
   padding: 60px 0;
   .slider {
     padding: 40px 120px;
-    .carousel-indicators {
-      display: none;
-    }
     .carousel-control {
-      width: auto;
-    }
-    .left carousel-control {
       left: -50px;
     }
     .right carousel-control {
       right: -50px;
-    } 
+    }
   }
   .view-detail {
     padding-top: 15px;

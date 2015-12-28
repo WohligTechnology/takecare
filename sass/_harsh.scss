@@ -1,6 +1,9 @@
 // //////////////////////////////////
 // HEADER
 // //////////////////////////////////
+.carousel-control {
+  width: auto;
+}
 .carousel-control.left, .carousel-control.right { background-image: none; }
 .section-story {
   .carousel-control.left { left: -50px; }
