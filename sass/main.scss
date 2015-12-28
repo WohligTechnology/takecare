@@ -516,6 +516,7 @@ button {
 }
 .blog-main {
   padding: 25px;
+  min-height: 535px;
 }
 .askqts {
   form {
@@ -524,7 +525,7 @@ button {
       color: #fff;
     }
     textarea {
-      min-height: 230px;
+      min-height: 225px;
     }
   }
 }
