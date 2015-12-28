@@ -1,6 +1,9 @@
 // //////////////////////////////////
 // HEADER
 // //////////////////////////////////
+.carousel-control {
+  background-image: none;
+}
 // Hamburger
 .hamburger {
   margin-top: 30px;
@@ -86,9 +89,6 @@
         font-size: 20px;
       }
       hr { border-top: 2px solid $brand-brown; }
-    }
-    .carousel-control {
-      background-image: none;
     }
   }
 }
