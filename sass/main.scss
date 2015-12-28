@@ -207,11 +207,6 @@ textarea {
     outline: none !important;
   }
 }
-input {
-  @include placeholder {
-    color: white;
-  }
-}
 form .form-control {
   min-height: 40px;
   border-radius: 4px;
