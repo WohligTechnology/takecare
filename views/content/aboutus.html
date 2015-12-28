@@ -23,7 +23,17 @@
             </div>
           </div>
           <div class="col-md-7">
-            <!-- Flex Slider -->
+            <!-- Boostrap slider -->
+            <carousel interval="sliderInterval" no-wrap="noWrapSlides">
+              <slide ng-repeat="slide in aboutSlides" active="slide.active">
+                <div class="inner-about-carousel">
+                  <h3 class="text-uppercase text-center text-bold">{{slide.title}}</h3>
+                  <span class="text-center text-bold">{{slide.text}}</span>
+                  <hr>
+                  <p class="text-left">{{slide.desc}}</p>
+                </div>
+              </slide>
+            </carousel>
           </div>
         </div>
       </div>

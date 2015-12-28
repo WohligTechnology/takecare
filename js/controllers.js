@@ -38,6 +38,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("About Us");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+
+  // Corousel
+  $scope.sliderInterval = 5000;
+  $scope.noWrapSlides = false;
+  $scope.aboutSlides = [{
+    title: "Individualize",
+    text: "intelligent food plans",
+    desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
+  },
+  {
+    title: "Individualize",
+    text: "intelligent food plans",
+    desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
+  }];
 })
 .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

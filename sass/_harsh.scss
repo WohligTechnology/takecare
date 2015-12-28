@@ -3,7 +3,7 @@
 // //////////////////////////////////
 // Hamburger
 .hamburger {
-  margin-top: 35px;
+  margin-top: 30px;
   span {
     @include size(25px, 3px);
     display: block;
@@ -75,6 +75,17 @@
   .about-health-content {
     @include size(100%, 500px);
     @include margin(50px 0 0);
+    .inner-about-carousel {
+      @include margin(100px 150px);
+      span {
+        display: block;
+        font-size: 20px;
+      }
+      hr { border-top: 2px solid $brand-brown; }
+    }
+    .carousel-control {
+      background-image: none;
+    }
   }
 }
 .what-we-do {
