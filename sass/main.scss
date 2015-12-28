@@ -38,6 +38,7 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+
 $brand-primary: #e96542 !default; //Orange
 $brand-primary-light: #f4b2a1 !default; //LightOrange
 $brand-primary-lighter: #ffd8ce !default; //ligherOrange
@@ -49,6 +50,7 @@ $brand-brown-gray: #998675 !default; //BrownGray
 $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
 $brand-graylight: #d5cdc6 !default; //lightgray
+
 $font-color: #242424 !default;
 $body-bg: #fff !default;
 $text-color: $font-color !default;
@@ -56,17 +58,21 @@ $section-bg: #d3d3d3 !default;
 $link-color: $font-color !default;
 $link-hover-color: $font-color !default;
 $link-hover-decoration: none !default;
-$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif: "Lato", Georgia, "Times New Roman", Times, serif !default;
-$font-funky: "Lemonade", "Helvetiva Neue", Helvetica !default;
-$font-loading: "Exo 2", "Helvetiva Neue", Helvetica !default;
+
+$font-family-sans-serif: "Whitney Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "Whitney Medium", Georgia, "Times New Roman", Times, serif !default;
+$font-vista: "Vista Slab", "Helvetiva Neue", Helvetica !default;
+$font-baubodi: "Baubodi", "Helvetiva Neue", Helvetica !default;
+
 $border-radius-base: 0 !default;
 $border-radius-large: 0 !default;
 $border-radius-small: 0 !default;
+
 $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
 $instagram: #396d9a !default;
+
 .white {
   color: $body-bg;
 }
