@@ -1,15 +1,6 @@
 // //////////////////////////////////
 // HEADER
 // //////////////////////////////////
-.carousel-control {
-  width: auto;
-}
-.carousel-control.left, .carousel-control.right { background-image: none; }
-.section-story {
-  .carousel-control.left { left: -50px; }
-  .carousel-control.right { right: -50px; }
-}
-.carousel-indicators { display: none; }
 // Hamburger
 .hamburger {
   margin-top: 30px;
@@ -116,3 +107,22 @@
     p { font-size: 16px; }
   }
 }
+
+// ///////////////////////
+// CAROUSEL
+// //////////////////////
+.carousel-control {
+  width: auto;
+  color: $brand-brown;
+  opacity: 1;
+}
+.carousel-control.left, .carousel-control.right { background-image: none; }
+.about-health .about-health-content {
+  .carousel-control.left { span { left: 50px; }
+    &:hover { color: $brand-brown; }
+  }
+  .carousel-control.right { span { right: 50px; }
+    &:hover { color: $brand-brown;}
+  }
+}
+.carousel-indicators { display: none; }

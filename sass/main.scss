@@ -5,35 +5,34 @@
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
 @font-face {
   font-family: 'Baubodi';
-  src: url('../fonts/baubodi.ttf');
+  src: url(../fonts/baubodi.ttf);
 }
 @font-face {
   font-family: 'Vista Slab';
-  src: url('../fonts/vista_slab.otf');
+  src: url(../fonts/vista_slab.otf);
 }
 @font-face {
   font-family: 'Whitney Book';
-  src: url('../fonts/whitney_book.otf');
+  src: url(../fonts/whitney_book.otf);
 }
 @font-face {
   font-family: 'Whitney Light';
-  src: url('../fonts/whitney_light.otf');
+  src: url(../fonts/whitney_light.otf);
 }
 @font-face {
   font-family: 'Whitney Medium';
-  src: url('../fonts/whitney_medium.otf');
+  src: url(../fonts/whitney_medium.otf);
 }
 @font-face {
   font-family: 'Whitney Semibold';
-  src: url('../fonts/whitney_semibold.otf');
+  src: url(../fonts/whitney_semibold.otf);
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot'), url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg') format('svg');
+  src: url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff) format('woff'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf) format('truetype'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg) format('svg');
 }
 
 /* Bootstrap Variables Goes Here */
-
 //$brand-primary: #0d9dff !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
@@ -57,22 +56,10 @@ $section-bg: #d3d3d3 !default;
 $link-color: $font-color !default;
 $link-hover-color: $font-color !default;
 $link-hover-decoration: none !default;
-$font-family-sans-serif: "Lato",
-"Helvetica Neue",
-Helvetica,
-Arial,
-sans-serif !default;
-$font-family-serif: "Lato",
-Georgia,
-"Times New Roman",
-Times,
-serif !default;
-$font-funky: "Lemonade",
-"Helvetiva Neue",
-Helvetica !default;
-$font-loading: "Exo 2",
-"Helvetiva Neue",
-Helvetica !default;
+$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "Lato", Georgia, "Times New Roman", Times, serif !default;
+$font-funky: "Lemonade", "Helvetiva Neue", Helvetica !default;
+$font-loading: "Exo 2", "Helvetiva Neue", Helvetica !default;
 $border-radius-base: 0 !default;
 $border-radius-large: 0 !default;
 $border-radius-small: 0 !default;
@@ -143,27 +130,22 @@ $instagram: #396d9a !default;
 .brand-graylight-bg {
   background-color: $brand-graylight;
 }
+
 //button
 .btn-yellow {
-  @include button-variant(white,
-  $brand-yellow,
-  $brand-yellow);
+  @include button-variant(white, $brand-yellow, $brand-yellow);
   &:hover {
     color: #fff !important;
   }
 }
 .btn-blue {
-  @include button-variant(white,
-  $brand-blue,
-  $brand-blue);
+  @include button-variant(white, $brand-blue, $brand-blue);
   &:hover {
     color: #fff !important;
   }
 }
 .foot-btn {
-  @include button-variant($brand-primary,
-  white,
-  $brand-primary);
+  @include button-variant($brand-primary, white, $brand-primary);
 }
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 * {
@@ -217,6 +199,7 @@ form .form-control {
 textarea {
   resize: none;
 }
+
 // Class
 .relate {
   position: relative;
@@ -225,10 +208,8 @@ textarea {
   margin: 0 auto;
 }
 .get-center {
-  @include position(absolute,
-  50% auto auto 50%);
-  @include transform(translate(-50%,
-  -50%));
+  @include position(absolute, 50% auto auto 50%);
+  @include transform(translate(-50%, -50%));
 }
 .get-up {
   margin-top: -100px;
@@ -283,7 +264,6 @@ button {
 }
 
 /* Start writing sass here */
-
 ///////////////
 //Home/////////
 //////////////
@@ -364,7 +344,7 @@ button {
     border: 6px solid #fff;
     @include square(150px);
     overflow: hidden;
-    background: url('../img/suman.jpg') no-repeat -125px -12px;
+    background: url(../img/suman.jpg) no-repeat -125px -12px;
   }
   .more-abt-suman {
     font-size: 20px;
@@ -454,11 +434,17 @@ button {
       top: -50px;
       left: -50px;
       opacity: 1;
+      &:hover {
+        color: $brand-brown;
+      }
     }
     .carousel-control.right {
       top: -50px;
       right: -50px;
       opacity: 1;
+      &:hover {
+        color: $brand-brown;
+      }
     }
     .glyphicon-chevron-right:before {
       content: "\f105";
@@ -504,6 +490,9 @@ button {
   }
   .blog-info {
     margin: 15px 0;
+    .last-blog-info {
+      border: none;
+    }
   }
   .blog-imgholder {
     @include square(100px);
@@ -535,7 +524,7 @@ button {
       color: #fff;
     }
     textarea {
-      min-height: 224px;
+      min-height: 230px;
     }
   }
 }
@@ -556,6 +545,7 @@ button {
     }
   }
 }
+
 ///end home///
 ///////////////
 //Footer///////
@@ -629,11 +619,11 @@ footer {
     min-height: 200px;
   }
   .package {
-    background: url('../img/foot-healthpack.jpg') no-repeat;
+    background: url(../img/foot-healthpack.jpg) no-repeat;
     background-size: 100% 100%;
   }
   .shop {
-    background: url('../img/health-shop.jpg') no-repeat;
+    background: url(../img/health-shop.jpg) no-repeat;
     background-size: 100% 100%;
   }
   .foot-btn {
@@ -643,5 +633,6 @@ footer {
     letter-spacing: 2px;
   }
 }
+
 //////end footer/////
 @import "harsh";
