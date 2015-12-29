@@ -228,7 +228,7 @@ textarea {
 }
 .get-up {
   margin-top: -100px;
-  padding: 20px 50px;
+  padding: 25px 60px;
 }
 .inline-block {
   display: inline-block;
@@ -551,6 +551,12 @@ button {
     select {
       background-color: $brand-primary;
       color: #fff;
+      @include appearance(none);
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      right: 4%;
     }
     textarea {
       min-height: 225px;
@@ -576,8 +582,16 @@ button {
     }
   }
 }
-
 ///end home///
+
+/////////////////////
+////Health-Management
+////////////////////
+.health-descp {
+  font-size: 16px;
+}
+
+//end Health-management////
 ///////////////
 //Footer///////
 ///////////////
