@@ -217,5 +217,37 @@
       }
     }
   }
-  .session-two { @include margin(100px 0 0 0);}
+  .session-two { @include margin(100px 0 0 0); }
+}
+
+// Team
+.team-desc {
+  @include padding(50px 60px);
+  font-size: 18px;
+  text-align: justify;
+}
+.team-members {
+  @include margin(50px 0);
+  .single-member {
+    .member-image {
+      @include square(170px);
+      border: 2px solid $brand-primary;
+      border-radius: 50%;
+    }
+    .member-detail {
+      h3, h4 { font-weight: bold; }
+      h3 { font-size: 28px; }
+      h4 { font-size: 22px; }
+      p { letter-spacing: 2px; }
+    }
+  }
+}
+.join-team {
+  a {
+    @include margin(0 0 100px 0);
+    @include padding(15px 40px);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
 }
