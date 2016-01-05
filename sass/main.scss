@@ -264,6 +264,7 @@ button {
   border-radius: 100%;
   color: #fff;
   background-color: $brand-primary;
+  text-align: center;
   overflow: hidden;
   span {
     display: block;
@@ -594,6 +595,15 @@ button {
 .healthchart-list {
   margin: 60px 0;
 }
+.align {
+  position: relative;
+  top: -12px;
+}
+.tick {
+  @include square(34px);
+  margin: 0 10px 0 0;
+  @extend.v-top;
+}
 .health-manageselect {
   .managecat {
     margin: 30px 0;
@@ -615,7 +625,7 @@ button {
 }
 .consult-chart {
   width: 100px;
-  height: 70px;
+  height: 69px;
   border-radius: 6px;
   background-color: $brand-primary;
   font-size: 16px;
@@ -651,7 +661,12 @@ button {
       font-size: 17px;
     }
     .price {
-      font-size: 22px;
+      font-size: 21px;
+      span {
+        font-size: 11px;
+        vertical-align: middle;
+        text-transform: uppercase;
+      }
     }
   }
   .chart-info {
@@ -672,7 +687,7 @@ button {
       background-color: #fff !important;
       .chart-head {
         p {
-          color: $brand-primary; 
+          color: $brand-primary;
         }
         .price {
           color: $brand-brown-dark;
@@ -680,7 +695,7 @@ button {
       }
     }
     &:after {
-      content:"";
+      content: "";
       display: none;
     }
   }
@@ -775,14 +790,18 @@ button {
   }
 }
 .tab-foot {
+  margin: 20px 0 0;
   .tab-footinfo {
     display: inline-block;
-    width: 55%;
+    width: 70%;
+    p {
+      width: 320px;
+    }
   }
   .plan {
-    width: 44%;
     display: inline-block;
-    text-align: right;
+    text-align: center;
+    vertical-align: top;
     .note {
       font-style: italic;
       display: block;
@@ -790,6 +809,42 @@ button {
   }
 }
 //end Health-management////
+
+/////meet////
+.suman-video {
+  width: 70%;
+  @extend.m-center;
+  position: relative;
+  top: 50px;
+}
+.speech {
+  margin: 60px 0;
+}
+
+.about-suman {
+  .heading {
+    width: 44%;
+    margin: 40px auto 60px;
+    h4 {
+      font-size: 30px;
+    }
+  }
+}
+.suman-info {
+  padding: 0 30px;
+  .title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .descp {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.pro-info {
+  margin-bottom: 60px;
+}
+////end meet///
 ///////////////
 //Footer///////
 ///////////////
