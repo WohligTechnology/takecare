@@ -1,3 +1,10 @@
+.font-primary { font-family: $font-family-sans-serif; }
+.font-light { font-family: $font-family-light; }
+.font-semibold { font-family: $font-family-semibold; }
+.font-book { font-family: $font-family-book; }
+.font-vista { font-family: $font-vista; }
+.font-baubodi { font-family: $font-baubodi; }
+
 // //////////////////////////////////
 // HEADER
 // //////////////////////////////////
@@ -61,6 +68,15 @@
     font-weight: bold;
   }
 }
+.about-desc {
+  h3 { font-size: 28px; }
+  .health-style {
+    @include margin(15px 0 10px);
+    font-size: 24px;
+    font-style: italic;
+    & + p { font-size: 16px; }
+  }
+}
 .health-design {
   position: relative;
   .health-style {
@@ -72,38 +88,54 @@
   @include margin(50px 0);
   @include padding(50px 0);
   h2 {
-    font-size: 34px;
+    font-size: 36px;
     font-style: italic;
   }
   .about-health-content {
-    @include size(100%, 500px);
+    @include size(100%, 400px);
     @include margin(50px 0 0);
+    .embed-youtube {
+      @include padding(50px 0 50px 30px);
+    }
     .inner-about-carousel {
-      @include margin(100px 150px);
+      @include margin(100px 140px);
+      h3 { font-size: 36px; }
       span {
         display: block;
-        font-size: 20px;
+        font-size: 28px;
       }
       hr { border-top: 2px solid $brand-brown; }
+      p { font-size: 16px; }
     }
   }
 }
 .what-we-do {
   @include margin(0 0 50px);
-  h2 { font-weight: bold; }
   p { font-size: 18px; }
   .we-do-topics {
+    @include padding(0 40px);
     .we-do-title {
+      @include margin(50px 0 0);
+      img {
+        @include margin(0 0 40px 0);
+        display: inline-block;
+      }
       h3 {
-        font-size: 34px;
-        font-weight: bold;
+        @include margin(20px 0 0 20px);
+        display: inline-block;
+        font-size: 30px;
         span {
           position: relative;
           display: block;
         }
       }
     }
-    p { font-size: 16px; }
+    .nutri { @include margin(57px 0 0); }
+    p {
+      @include margin(-30px 0 0);
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
   }
 }
 .rel { position: relative; }
@@ -153,12 +185,18 @@
 // Image Consulting
 .consult-detail { font-size: 16px; }
 .consults {
-  @include margin(100px 0 0);
+  .inner-consults { @include padding(0 50px); }
   .single-consult {
+    @include margin(50px 0 0);
+    .consult-image {
+      display: inline-block;
+    }
     .consult-title {
+      @include size(50%, 100%);
+      @include margin(0 20px);
+      display: inline-block;
       h3 {
-        font-size: 34px;
-        font-weight: bold;
+        font-size: 30px;
         span {
           position: relative;
           display: block;
@@ -272,5 +310,28 @@
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
+  }
+}
+
+// Success Stories
+.growth-section {
+  @include margin(50px 0);
+  h3 {
+    @include padding(0 200px);
+    color: $brand-brown-dark;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+}
+
+// Contact Us
+.contact-location {
+  @include margin(50px 0);
+  .mumbai {
+    h4 {
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
   }
 }
