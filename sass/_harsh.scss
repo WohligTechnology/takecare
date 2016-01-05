@@ -227,12 +227,20 @@
   text-align: justify;
 }
 .team-members {
-  @include margin(50px 0);
   .single-member {
+    @include margin(50px 0 0);
     .member-image {
       @include square(170px);
+      @include margin(20px 0 0);
       border: 2px solid $brand-primary;
-      border-radius: 50%;
+      border-radius: 100%;
+      overflow: hidden;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
     .member-detail {
       h3, h4 { font-weight: bold; }
@@ -241,8 +249,23 @@
       p { letter-spacing: 2px; }
     }
   }
+  .team-nav {
+    @include margin(20px 0 0);
+    .pagination {
+      li { a {
+          @include padding(5px 30px);
+          color: $body-bg;
+          background-color: $brand-primary;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        .active { background-color: $brand-brown; }
+      }
+    }
+  }
 }
 .join-team {
+  @include margin(50px 0 0);
   a {
     @include margin(0 0 100px 0);
     @include padding(15px 40px);
