@@ -307,6 +307,11 @@
 }
 
 // Success Stories
+.stories-section {
+  .single-read {
+    @include padding(20px);
+  }
+}
 .growth-section {
   @include margin(50px 0);
   h3 {
