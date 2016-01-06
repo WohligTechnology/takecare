@@ -195,7 +195,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     totalamount:"225.00"
   },
   {
-    img: "img/cart/2.jpg",
+    img: "img/cart/1.jpg",
     name: "Chana Jor",
     quantity: "1",
     amount: "150.00",

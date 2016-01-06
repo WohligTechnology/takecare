@@ -41,7 +41,6 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
-
 $brand-primary: #e96542 !default; //Orange
 $brand-primary-light: #f4b2a1 !default; //LightOrange
 $brand-primary-lighter: #ffd8ce !default; //ligherOrange
@@ -54,7 +53,6 @@ $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
 $brand-teal: #16a085 !default; //Teal
 $brand-graylight: #d5cdc6 !default; //lightgray
-
 $font-color: #242424 !default;
 $body-bg: #fff !default;
 $text-color: $font-color !default;
@@ -62,7 +60,6 @@ $section-bg: #d3d3d3 !default;
 $link-color: $font-color !default;
 $link-hover-color: $font-color !default;
 $link-hover-decoration: none !default;
-
 $font-family-sans-serif: "Whitney Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: "Whitney Medium", Georgia, "Times New Roman", Times, serif !default;
 $font-vista: "Vista Slab", "Helvetiva Neue", Helvetica !default;
@@ -71,11 +68,9 @@ $font-gotham: "Gotham Rounded Book", "Helvetica Neue", Helvetica !default;
 $font-family-light: "Whitney Light", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-semibold: "Whitney Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-book: "Whitney Book", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-
 $border-radius-base: 0 !default;
 $border-radius-large: 0 !default;
 $border-radius-small: 0 !default;
-
 $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
@@ -147,14 +142,27 @@ $instagram: #396d9a !default;
   background-color: $brand-graylight;
 }
 // fonts
-.font-primary { font-family: $font-family-sans-serif; }
-.font-light { font-family: $font-family-light; }
-.font-semibold { font-family: $font-family-semibold; }
-.font-book { font-family: $font-family-book; }
-.font-vista { font-family: $font-vista; }
-.font-baubodi { font-family: $font-baubodi; }
-.font-gotham { font-family: $font-gotham; }
-
+.font-primary {
+  font-family: $font-family-sans-serif;
+}
+.font-light {
+  font-family: $font-family-light;
+}
+.font-semibold {
+  font-family: $font-family-semibold;
+}
+.font-book {
+  font-family: $font-family-book;
+}
+.font-vista {
+  font-family: $font-vista;
+}
+.font-baubodi {
+  font-family: $font-baubodi;
+}
+.font-gotham {
+  font-family: $font-gotham;
+}
 //button
 .btn-yellow {
   @include button-variant(white, $brand-yellow, $brand-yellow);
@@ -906,16 +914,24 @@ button {
   }
 }
 ///end faq////
-
 ///cart//////
-
+.cart-main {
+  @include padding(60px 0);
+  h3 {
+    @include margin(0 0 20px 0);
+  }
+}
 .cart-table {
-  .more,.less {
+  .more,
+  .less {
     padding: 3px 6px;
   }
   .cart-imgholder {
     @include square(200px);
     overflow: hidden;
+  }
+  figcaption {
+    @include margin(10px 0);
   }
   .quantity {
     width: 50px;
@@ -923,10 +939,38 @@ button {
     border: 2px solid $brand-primary;
     background-color: transparent;
   }
+  .table > thead > tr > th {
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .table > tbody > tr > td {
+    @include padding(15px 8px);
+    font-size: 16px;
+    vertical-align: middle;
+    &:last-child {
+      vertical-align: bottom;
+    }
+  }
+  .remove {
+    margin-top: 80px;
+    button {
+      @include padding(8px 16px);
+    }
+  }
+  .cart-grand-total {
+    @include padding(18px);
+    font-size: 20px;
+  }
+  .shipping {
+    @include margin(20px 0);
+    p {
+      @include margin(0);
+    }
+  }
 }
-
 //end cart///
-
 ///////////////
 //Footer///////
 ///////////////
