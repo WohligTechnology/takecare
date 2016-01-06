@@ -443,3 +443,50 @@
     }
   }
 }
+
+// Health products
+.product-desc {
+  @include padding(50px);
+  p { font-size: 16px; }
+}
+.products {
+  .product-cat {
+    a {
+      @include square(100%);
+      @include margin(0 0 5px);
+      @include padding(5px 0);
+      font-size: 16px;
+      border-radius: 0;
+      &:hover { color: $body-bg; }
+    }
+  }
+  .filters {
+    @include margin(30px 0);
+    @include padding(10px 20px);
+    h3 { @include margin(0 0 10px 10px); }
+    div {
+      @include margin(0 0 0 20px);
+      input {
+        @include square(10px);
+        @include margin(0 5px 0 0);
+        background-color: transparent;
+        border: 1px solid $brand-brown-dark;
+        border-radius: 1px;
+        -webkit-appearance: none;
+      }
+      span {
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  @include margin(50px 0);
+  .single-product {
+    @include margin(0 0 50px);
+    .product-image {
+      @include square(150px);
+      @include margin(0 auto 20px);
+      overflow: hidden;
+    }
+  }
+}
