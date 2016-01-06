@@ -188,14 +188,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.cart = [{
-    img: "",
+    img: "img/cart/1.jpg",
     name: "Baked Potato Chips",
     quantity: "1",
     amount: "225.00",
     totalamount:"225.00"
   },
   {
-    img: "",
+    img: "img/cart/2.jpg",
     name: "Chana Jor",
     quantity: "1",
     amount: "150.00",

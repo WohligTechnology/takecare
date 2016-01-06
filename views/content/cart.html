@@ -1,15 +1,17 @@
-<section>
-  <div class="selfcare-image">
-    <img src="" alt="">
-    <h2 class="text-uppercase">My Cart</h2>
+<section class="cart">
+  <div class="banner selfcare-image">
+    <img src="img/apple.jpg" alt="">
+    <div class="get-center">
+      <h2 class="text-uppercase letter-space white">my cart</h2>
+    </div>
   </div>
 
   <div class="container">
-    <h3 class="text-uppercase">Items you would like to purchase</h3>
+    <h4 class="text-uppercase brand-brown-dark">Items you would like to purchase</h4>
 
-    <div class="single-cart-product">
+    <div class="cart-table">
       <table class="table">
-        <thead>
+        <thead class="brand-brown-dark brand-brown-bg text-uppercase">
           <tr>
             <th class="text-center">Items</th>
             <th class="text-center">Quantity</th>
@@ -21,14 +23,16 @@
           <tr class="text-center" ng-repeat="product in cart">
             <td>
               <figure>
-                <img ng-src="{{product.img}}" class="doneLoading">
+                <div class="cart-imgholder m-center round">
+                <img ng-src="{{product.img}}" class="img-responsive">
+                </div>
                 <figcaption class="text-center text-uppercase">{{product.name}}</figcaption>
               </figure>
             </td>
             <td>
-              <input type="number" name="" id="" value="{{product.quantity}}" disabled>
-              <span class="more"><i class="fa fa-plus"></i></span>
-              <span class="less"><i class="fa fa-minus"></i></span>
+              <input type="number" class="text-center quantity" name="" id="" value="{{product.quantity}}" disabled>
+              <span class="more inline-block brand-primary-bg white"><i class="fa fa-plus"></i></span>
+              <span class="less inline-block brand-primary-bg white"><i class="fa fa-minus"></i></span>
             </td>
             <td>
               <div class="cart-amount">

@@ -882,12 +882,14 @@ button {
   }
 }
 .faq-accordion {
+  padding: 60px;
   .panel-default {
     border-color: $brand-brown;
     border-radius: 8px;
     margin: 20px 0;
     .panel-body {
       border: none !important;
+      padding: 20px;
     }
     .panel-heading {
       border-color: $brand-brown;
@@ -895,14 +897,36 @@ button {
       padding: 0;
       background-color: $brand-brown;
       .panel-title a {
-        padding: 15px;
+        padding: 20px;
         display: block;
         color: $brand-brown-dark;
+        font-size: 18px;
       }
     }
   }
 }
 ///end faq////
+
+///cart//////
+
+.cart-table {
+  .more,.less {
+    padding: 3px 6px;
+  }
+  .cart-imgholder {
+    @include square(200px);
+    overflow: hidden;
+  }
+  .quantity {
+    width: 50px;
+    padding-left: 15px;
+    border: 2px solid $brand-primary;
+    background-color: transparent;
+  }
+}
+
+//end cart///
+
 ///////////////
 //Footer///////
 ///////////////
