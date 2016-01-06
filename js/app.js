@@ -48,10 +48,10 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         controller: 'HealthManagementDetailCtrl'
     })
 
-    .state('weightloss', {
-        url: "/weightloss",
+    .state('weightmanagement', {
+        url: "/weightmanagement",
         templateUrl: "views/template.html",
-        controller: 'WeightLossCtrl'
+        controller: 'WeightManagementCtrl'
     })
 
     .state('imageconsulting', {

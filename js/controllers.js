@@ -45,7 +45,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
     }
   ];
-  
+
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;
   var slides = $scope.slides = [];
@@ -60,7 +60,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   for (var i=0; i<4; i++) {
     $scope.addSlide();
   }
-  
+
 })
 .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
@@ -111,10 +111,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
-.controller('WeightLossCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
-  $scope.template = TemplateService.changecontent("weightloss");
-  $scope.menutitle = NavigationService.makeactive("Weight Loss");
+  $scope.template = TemplateService.changecontent("weightmanagement");
+  $scope.menutitle = NavigationService.makeactive("Weight Management");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
@@ -147,6 +147,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 
   $scope.oneAtATime = true;
+  $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
 })
 .controller('MeetCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

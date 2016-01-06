@@ -1,89 +1,91 @@
 <div class="faq">
-    <div class="banner">
-        <div class="get-center">
-            <h2 class="text-uppercase">frequently asked questions</h2>
-        </div>
+  <div class="banner selfcare-image">
+    <img src="img/apple.jpg" alt="">
+    <div class="get-center">
+      <h2 class="text-uppercase letter-space white">frequently asked questions</h2>
     </div>
-</div>
-<div class="container">
-    <div class="faq-uib-accordion">
-        <uib-accordion close-others="oneAtATime">
-            <uib-accordion-group is-open="status.open">
-               <uib-accordion-heading>
-                   How does the online program work?
-               </uib-accordion-heading>
-                <div class="faq-descp">
-                    <p>Learn the essentials of a healthy way of life and find out what works the best for you. Shed that extra five kilos by opting for our basic Gold Plan where the first consultation is with Suman and follow ups will be conducted by expert nutritionists, who are supervised by Suman. Spread over approximately two months (eight weeks) this is a designer diet programme tailor-made for you.</p>
-                </div>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Do I need to pay upfront or I can pay in installments?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Does Suman Agarwal meet the clients personally?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Is there any special offer or discount for a family or a couple?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    How does this program work?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    What is the pattern of diet, whether it is strict and how is the exercise pattern?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    How soon we can get an appointment?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Do we get a grace period in case we are unable to achieve our target weight in the given time span?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    What are the differences between packages with Suman Agarwal and her Senior Nutritionist?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    How would I know which package suits me the best?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Do you give tablets to lose weight?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Can we gift these programs to our family members or friends?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>
-                    Do you have plans for kids as well?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>Do you have packages other than weight loss, like detox or bridal package?
-                </uib-accordion-heading>
-            </uib-accordion-group>
-            <uib-accordion-group is-open="status.open">
-                <uib-accordion-heading>Do you suggest any elaborate blood tests? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-plus': status.open, 'glyphicon-chevron-minus': !status.open}">
-         </uib-accordion-heading>
-      </uib-accordion-group>
-    </uib-accordion>
   </div>
+  <div class="container">
+    <div class="faq-accordion">
+      <accordion close-others="oneAtATime" is-open="status.open">
+        <accordion-group is-open="status.isFirstOpen" is-disabled= "status.isFirstDisabled">
+          <accordion-heading >
+            How does the online program work? <i class="pull-right fa" ng-class="{'fa-minus': status.isFirstOpen, 'fa-plus': !status.isFirstOpen}"></i>
+          </accordion-heading>
+          <div class="faq-descp">
+            <p>Learn the essentials of a healthy way of life and find out what works the best for you. Shed that extra five kilos by opting for our basic Gold Plan where the first consultation is with Suman and follow ups will be conducted by expert nutritionists,
+              who are supervised by Suman. Spread over approximately two months (eight weeks) this is a designer diet programme tailor-made for you.</p>
+          </div>
+        </accordion-group>
+        <accordion-group is-open="status.open2">
+          <accordion-heading>
+            Do I need to pay upfront or I can pay in installments?<i class="pull-right fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open3">
+          <accordion-heading>
+            Does Suman Agarwal meet the clients personally?<i class="pull-right fa" ng-class="{'fa-minus': status.open3, 'fa-plus': !status.open3}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open4">
+          <accordion-heading>
+            Is there any special offer or discount for a family or a couple?<i class="pull-right fa" ng-class="{'fa-minus': status.open4, 'fa-plus': !status.open4}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open5">
+          <accordion-heading>
+            How does this program work?<i class="pull-right fa" ng-class="{'fa-minus': status.open5, 'fa-plus': !status.open5}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open6">
+          <accordion-heading>
+            What is the pattern of diet, whether it is strict and how is the exercise pattern?<i class="pull-right fa" ng-class="{'fa-minus': status.open6, 'fa-plus': !status.open6}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open7">
+          <accordion-heading>
+            How soon we can get an appointment?<i class="pull-right fa" ng-class="{'fa-minus': status.open7, 'fa-plus': !status.open7}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open8">
+          <accordion-heading>
+            Do we get a grace period in case we are unable to achieve our target weight in the given time span?<i class="pull-right fa" ng-class="{'fa-minus': status.open8, 'fa-plus': !status.open8}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open9">
+          <accordion-heading>
+            What are the differences between packages with Suman Agarwal and her Senior Nutritionist?<i class="pull-right fa" ng-class="{'fa-minus': status.open9, 'fa-plus': !status.open9}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open10">
+          <accordion-heading>
+            How would I know which package suits me the best?<i class="pull-right fa" ng-class="{'fa-minus': status.open10, 'fa-plus': !status.open10}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open11">
+          <accordion-heading>
+            Do you give tablets to lose weight?<i class="pull-right fa" ng-class="{'fa-minus': status.open11, 'fa-plus': !status.open11}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open12">
+          <accordion-heading>
+            Can we gift these programs to our family members or friends?<i class="pull-right fa" ng-class="{'fa-minus': status.open12, 'fa-plus': !status.open12}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open13">
+          <accordion-heading>
+            Do you have plans for kids as well?<i class="pull-right fa" ng-class="{'fa-minus': status.open13, 'fa-plus': !status.open13}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open14">
+          <accordion-heading>Do you have packages other than weight loss, like detox or bridal package?<i class="pull-right fa" ng-class="{'fa-minus': status.open14, 'fa-plus': !status.open14}"></i>
+          </accordion-heading>
+        </accordion-group>
+        <accordion-group is-open="status.open15">
+          <accordion-heading>Do you suggest any elaborate blood tests? <i class="pull-right fa" ng-class="{'fa-minus': status.open15, 'fa-plus': !status.open15}"></i>
+         </accordion-heading>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>
 </div>
