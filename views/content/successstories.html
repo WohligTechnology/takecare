@@ -67,7 +67,7 @@
 
             <div class="row">
               <div class=" col-md-offset-1 col-md-10">
-                <div class="single-read text-center" ng-repeat="read in reads">
+                <div class="single-read text-center" ng-repeat="read in read1">
                   <div class="row">
                     <div class="col-md-8">
                       <div class="read-detail">
@@ -75,7 +75,7 @@
                         <span class="text-right">{{read.name}}</span>
                         <span class="text-right">{{read.location}}</span>
                         <hr>
-                        <p class="text-left">{{read.desc}}</p>
+                        <p class="text-left" ng-bind-html="read.desc"></p>
                       </div>
                     </div>
 
@@ -95,7 +95,7 @@
 
             <div class="row">
               <div class=" col-md-offset-1 col-md-10">
-                <div class="read-story text-center" ng-repeat="read in reads">
+                <div class="read-story text-center" ng-repeat="read in read2">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="read-image">
@@ -113,7 +113,7 @@
                         <span class="text-right">{{read.name}}</span>
                         <span class="text-right">{{read.location}}</span>
                         <hr>
-                        <p class="text-left">{{read.desc}}</p>
+                        <p class="text-left" ng-bind-html="read.desc"></p>
                       </div>
                     </div>
                   </div>
