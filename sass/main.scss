@@ -317,7 +317,7 @@ button {
   border-radius: 100%;
 }
 .letter-space {
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 /* Start writing sass here */
 ///////////////
@@ -387,9 +387,7 @@ button {
   padding: 25px 60px;
   h4 {
     margin: 0;
-    font-family: $font-family-light;
     font-size: 35px;
-    font-weight: 300;
     @extend.letter-space;
     word-spacing: 3px;
   }
@@ -446,7 +444,6 @@ button {
   }
   .health-title {
     text-align: left;
-    font-family: $font-family-semibold;
     span {
       font-size: 25px;
     }
@@ -480,7 +477,6 @@ button {
   padding: 0 40px;
   h4 {
     @include margin(0 0 20px 0);
-    font-family: $font-family-semibold;
     font-size: 24px;
   }
   .diet-holder {
@@ -544,6 +540,9 @@ button {
       width: 50%;
       margin: 75px 0;
       font-size: 17px;
+      p {
+        line-height: 20px;
+      }
     }
     .weight-info {
       position: absolute;
@@ -557,7 +556,6 @@ button {
   padding: 70px 0;
   .heading {
     h4 {
-      font-family: $font-family-semibold;
       font-size: 40px;
       @extend.letter-space;
       span {
@@ -585,8 +583,7 @@ button {
     padding: 30px;
     border-bottom: 2px solid $brand-brown;
     p {
-      width: 80%;
-      font-family: $font-family-semibold;
+      width: 82%;
       font-size: 20px;
       @extend.text-lighter;
     }
@@ -619,11 +616,9 @@ button {
     h3 {
       margin: 0 0 25px;
       font-size: 30px;
-      font-family: $font-family-semibold;
     }
     h5 {
       font-size: 20px;
-      font-family: $font-family-semibold;
     }
     p {
       font-size: 17px;
@@ -1008,6 +1003,8 @@ footer {
       a {
         @extend.brand-brown-dark;
         @extend.letter-space;
+        font-size: 13px;
+        font-weight: normal;
         font-family: $font-family-semibold;
         word-spacing: 2px;
         &:before {
@@ -1074,6 +1071,7 @@ footer {
     background-size: 100% 100%;
   }
   .foot-btn {
+    width: 250px;
     border-radius: 5px;
     padding: 12px 28px;
     font-weight: 900;
