@@ -46,7 +46,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
   ];
 
-  $scope.openAppoinment = function() {
+  $scope.openLogin = function() {
         $uibModal.open({
           animation: true,
           templateUrl: 'views/modal/login.html',
