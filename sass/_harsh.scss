@@ -446,7 +446,7 @@
   .single-category {
     @include margin(50px 0 0);
     .category-image {
-      @include square(350px);
+      @include square(300px);
       @include margin(0 auto);
       overflow: hidden;
       img { height: 100%; }
