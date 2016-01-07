@@ -980,7 +980,6 @@ button {
 ///////////////
 footer {
   padding: 40px 0;
-  @extend.text-bold;
   h5,
   p {
     margin: 0;
@@ -990,22 +989,15 @@ footer {
       margin-bottom: 3px;
       a {
         @extend.brand-primary-lighter;
-        font-family: $font-family-semibold;
       }
     }
   }
   .menu2 {
-    h5 {
-      @extend.letter-space;
-      font-family: $font-family-semibold;
-    }
     ul {
       a {
         @extend.brand-brown-dark;
         @extend.letter-space;
         font-size: 13px;
-        font-weight: normal;
-        font-family: $font-family-semibold;
         word-spacing: 2px;
         &:before {
           content: "-";
@@ -1023,8 +1015,6 @@ footer {
   }
   .note {
     margin-bottom: 20px;
-    @extend.letter-space;
-    font-family: $font-family-semibold;
     word-spacing: 2px;
   }
   .mail {
@@ -1054,8 +1044,6 @@ footer {
   }
   .copyright {
     margin-top: 25px;
-    @extend.letter-space;
-    font-family: $font-family-semibold;
   }
 }
 .health-foot {
