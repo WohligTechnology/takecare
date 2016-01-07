@@ -80,11 +80,24 @@
   .about-health-content {
     @include size(100%, 400px);
     @include margin(50px 0 0);
+    .glyphicon-chevron-right:before {
+      content: "\f105";
+      display: block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 70px;
+    }
+    .glyphicon-chevron-left:before {
+      content: "\f104";
+      display: block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 70px;
+    }
     .embed-youtube {
       @include padding(50px 0 50px 30px);
     }
     .inner-about-carousel {
-      @include margin(100px 140px);
+      @include size(100%, 400px);
+      @include padding(100px 140px);
       h3 { font-size: 36px; }
       span {
         display: block;
@@ -148,17 +161,13 @@
 // Health Packages
 .what-health-goal {
   @include margin(50px 0);
-  h2 {
-    @include margin(0 0 40px);
-    font-weight: 700;
-  }
+  h2 { @include margin(0 0 40px); }
   .health-goals {
     @include padding(50px 0);
     .weight-goal, .health-manage-goal {
       @include margin(0 20px);
       @include padding(20px);
       border: 2px solid $brand-primary;
-      h3, p { font-weight: bold; }
       .btn-packages {
         @include margin(20px 0 0 0);
         @include padding(12px 35px);
@@ -169,12 +178,16 @@
 }
 
 // Image Consulting
-.consult-detail { font-size: 16px; }
+.consult-detail {
+  @include padding(50px 60px);
+  font-size: 16px;
+}
 .consults {
   .inner-consults { @include padding(0 50px); }
   .single-consult {
     @include margin(50px 0 0);
     .consult-image {
+      @include margin(20px 0 0);
       display: inline-block;
     }
     .consult-title {
@@ -202,8 +215,8 @@
     .session-number {
       border-radius: 10px;
       span {
+        @include square(80px);
         @include margin(-25px 0 0 0);
-        @include padding(0 25px);
         display: inline-block;
         background-color: white;
         font-size: 54px;
@@ -234,9 +247,8 @@
         font-size: 28px;
       }
       .services {
-        @include margin(-10px 0 0 -18px);
-        @include padding(0 21px);
-        font-size: 20px;
+        @include margin(0 0 0 -40px);
+        font-size: 18px;
         span { font-weight: bold; }
       }
     }
