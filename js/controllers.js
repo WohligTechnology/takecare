@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', ' $uibModal', 'ngSanitize', 'angular-flexslider'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
@@ -45,6 +45,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
     }
   ];
+
+  $scope.openAppoinment = function() {
+        $uibModal.open({
+          animation: true,
+          templateUrl: 'views/modal/login.html',
+          controller: 'headerctrl'
+        })
+      };
 
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;

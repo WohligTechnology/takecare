@@ -640,7 +640,7 @@ button {
 ////////////////////
 .health-descp {  font-size: 16px; }
 .healthchart-list { margin: 60px 0; }
-.align { @include margin(-12px 0 0); }
+.align { @include margin(-12px 4px 0 0); }
 .tick {
   @include square(34px);
   margin: 0 10px 0 0;
