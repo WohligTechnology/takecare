@@ -52,7 +52,10 @@
   @include square(100%);
   position: relative;
   img { @include size(100%, 80%); }
-  h2 { font-size: 50px; }
+  h2 {
+    @include margin(0);
+    font-size: 50px;
+  }
 }
 .about-desc {
   h3 { font-size: 28px; }
