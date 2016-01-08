@@ -1080,6 +1080,22 @@ button {
   }
 }
 ////end login//
+
+///checkout/////
+.checkout-tab {
+  .nav-tabs {
+    border: none;
+    @include display(flex);
+    li {
+      @include flex(1);
+      font-size: 23px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+///end checkout//
+
 ///////////////
 //Footer///////
 ///////////////
