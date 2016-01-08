@@ -283,7 +283,7 @@ textarea {
 }
 .get-up {
   margin-top: -100px;
-  padding: 25px 60px;
+  padding: 35px 60px;
 }
 .inline-block {
   display: inline-block;
@@ -441,7 +441,7 @@ button {
       width: 270px;
       margin: 20px 0;
     }
-    button {
+    .know-more {
       position: relative;
       top: 20px;
     }
@@ -660,6 +660,7 @@ button {
   @extend.v-top;
 }
 .health-manageselect {
+  margin: 80px 0;
   .managecat {
     margin: 30px 0;
     .category-imghold {
@@ -671,7 +672,7 @@ button {
       }
     }
     figcaption {
-      margin: 10px 0;
+      margin: 20px 0;
     }
   }
 }
@@ -1005,7 +1006,7 @@ button {
 //end cart///
 ////Login//////
 .login-tab {
-height: 400px;  
+height: 400px;
   form {
     margin: 30px 0 0;
     input {
@@ -1023,7 +1024,7 @@ height: 400px;
       text-transform: uppercase;
       a {
         border: none;
-        margin: -5px 0 0 0;
+        margin: -8px 0 0 0;
         color: $brand-primary;
         font-size: 20px;
         &:hover {
