@@ -33,6 +33,7 @@ var password = "";
 //Do not change anything below
 //Do not change anything below
 
+var CryptoJS = require("crypto-js");
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
@@ -54,10 +55,10 @@ var open = require('gulp-open');
 var wait = require('gulp-wait');
 var zip = require('gulp-zip');
 var gutil = require('gulp-util');
-var ftp = require('gulp-ftp');
 var replace = require('gulp-replace');
 var imagemin = require('gulp-imagemin');
 var prompt = require("gulp-prompt");
+var ftp = require('vinyl-ftp');
 
 var templateCacheBootstrap = "firstapp.run(['$templateCache', function($templateCache) {";
 
