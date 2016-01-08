@@ -125,6 +125,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Weight Management");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+
+  $scope.weightinfo = [
+    {
+      name: "Pramila Seth",
+      location: "Mumbai, India",
+      weight: "5",
+      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
+    },
+    {
+      name: "Rishabh",
+      location: "Mumbai, India",
+      weight: "25",
+      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
+    }
+  ];
 })
 .controller('ImageConsultingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

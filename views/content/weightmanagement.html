@@ -307,6 +307,38 @@
         </div>
       </div>
     </div>
-    <div class="slider"></div>
+  </div>
+  <div class="slider">
+    <div class="brand-brown-bg section-story">
+      <div class="container">
+        <div class="slider brand-brown-light-bg">
+          <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+            <uib-slide ng-repeat="slide in weightinfo" active="slide.active">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="story-video">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="view-detail relate">
+                    <h4 class="text-left brand-brown-dark name font-semibold">{{slide.name}}</h4>
+                    <span class="text-left block brand-primary letter-space">{{slide.location}}</span>
+                    <div class="descp brand-primary">
+                      <p class="text-justify">{{slide.descp}}</p>
+                    </div>
+                    <div class="get-round weight-info text-center">
+                      <span class="text-uppercase brand-brown-dark-bg">Lost</span>
+                      <br>
+                      <span class="weight-count">{{slide.weight}}kgs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </uib-slide>
+          </uib-carousel>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
