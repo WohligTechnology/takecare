@@ -8,11 +8,16 @@
     <div class="container">
       <div class="slider">
         <!-- SLIDER -->
-        <uib-carousel>
+        <!-- <uib-carousel>
           <uib-slide ng-repeat="slide in slides" active="slide.active">
             <button type="button" class="btn brand-brown-bg white">{{slide.year}}</button>
           </uib-slide>
-        </uib-carousel>
+        </uib-carousel> -->
+        <flex-slider class="carousel" flex-slide="year in yearslide track by $index" animation="slide" item-width="130" item-margin="5">
+          <li>
+            <button type="button" class="btn brand-brown-bg white">{{year.year}}</button>
+          </li>
+        </flex-slider>
       </div>
 
       <div class="news-article" ng-repeat="article in news">

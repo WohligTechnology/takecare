@@ -161,6 +161,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Product Detail");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.like = [{
+    image: "img/cart/1.jpg",
+    name: "Oat Meal Cookies",
+    price: "225"
+  }, {
+    image: "img/cart/2.jpg",
+    name: "Limbu Chana",
+    price: "125"
+  }];
 })
 .controller('FaqCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
@@ -188,7 +197,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("News");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-  $scope.slides = [
+  $scope.yearslide = [
     { year: "2013" },
     { year: "2012" },
     { year: "2011" },
