@@ -296,6 +296,30 @@
           </div>
         </div>
       </div>
-      <div class="slider-round"></div>
+      <div class="slider-round">
+        <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+          <uib-slide ng-repeat="slide in heathdetail" active="slide.active">
+            <div class="healthmanagement-slider">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="slide-imghold">
+                    <img src="{{slide.img}}" alt="" class="img-responsive">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="slide-imghold">
+                    <img src="{{slide.img}}" alt="" class="img-responsive">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="slide-imghold">
+                    <img src="{{slide.img}}" alt="" class="img-responsive">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </uib-slide>
+        </uib-carousel>
+      </div>
     </div>
   </div>

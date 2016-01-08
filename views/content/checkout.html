@@ -1,0 +1,183 @@
+<section class="checkout">
+  <div class="banner selfcare-image">
+    <img src="img/apple.jpg" alt="">
+    <div class="get-center">
+      <h2 class="text-uppercase letter-space white font-semibold">health management</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="checkout-tab">
+      <uib-tabset>
+        <uib-tab>
+          <uib-tab-heading>
+            Email login <i class="fa fa-right"></i>
+          </uib-tab-heading>
+          <div class="order-summary">
+            <table class="table">
+              <thead class="text-uppercase">
+                <th>order summary</th>
+                <th>items:2</th>
+                <th>subtotal: rs. 375.00</th>
+                <th>grandtotal: rs. 375.00</th>
+              </thead>
+            </table>
+          </div>
+          <div class="checkout-main">
+            <div class="row">
+              <div class="col-md-4">
+                <form action="">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="">
+                    <input type="radio" name="continue"> Continue without passsword.
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="">
+                    <input type="radio" name="continue"> I have a selfcare account and password.
+                    </label>
+                  </div>
+                  <a href="" class="btn btn-primary text-uppercase">continue</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab>
+          <uib-tab-heading>
+            shipping address <i class="fa fa-right"></i>
+          </uib-tab-heading>
+          <div class="order-summary">
+            <table class="table">
+              <thead class="text-uppercase">
+                <th>order summary</th>
+                <th>items:2</th>
+                <th>subtotal: rs. 375.00</th>
+                <th>grandtotal: rs. 375.00</th>
+              </thead>
+            </table>
+          </div>
+          <div class="checkout-main">
+            <div class="row">
+              <div class="col-md-4">
+            <h5 class="brand-primary">Enter a new shopping address</h5>
+            <form action="">
+              <div class="form-group"><input type="text" class="form-control" placeholder="Name *"></div>
+              <div class="form-group"><input type="text" class="form-control" placeholder="Address *"></div>
+              <div class="form-group"><input type="text" class="form-control" placeholder="Pin *"></div>
+              <div class="form-group"><input type="text" class="form-control" placeholder="City *"></div>
+              <div class="form-group"><input type="text" class="form-control" placeholder="State *"></div>
+              <div class="form-group"><input type="number" class="form-control" placeholder="Phone *"></div>
+              <a href="" class="text-uppercase btn btn-primary">Save &amp; Continue</a>
+            </form>
+          </div>
+          </div>
+          </div>
+        </uib-tab>
+        <uib-tab>
+          <uib-tab-heading>
+            order-summary <i class="fa fa-right"></i>
+          </uib-tab-heading>
+          <div class="order-summary">
+            <table class="table">
+              <thead class="text-uppercase">
+                <th>order summary</th>
+                <th>items:2</th>
+                <th>subtotal: rs. 375.00</th>
+                <th>grandtotal: rs. 375.00</th>
+              </thead>
+            </table>
+          </div>
+          <div class="checkout-main">
+            <div class="checkout-table">
+              <div class="cart-table">
+                <table class="table">
+                  <thead class="brand-brown-dark brand-brown-bg text-uppercase letter-space">
+                    <tr>
+                      <th class="text-center">Items</th>
+                      <th class="text-center">Quantity</th>
+                      <th class="text-center">Amount</th>
+                      <th class="text-center">Total Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center letter-space font-semibold" ng-repeat="product in Checkoutcart">
+                      <td>
+                        <figure>
+                          <div class="cart-imgholder m-center round">
+                          <img ng-src="{{product.img}}" class="img-responsive">
+                          </div>
+                          <figcaption class="text-center text-uppercase">{{product.name}}</figcaption>
+                        </figure>
+                      </td>
+                      <td>
+                        <input type="number" class="text-center quantity" name="" id="" value="{{product.quantity}}" disabled>
+                        <span class="more inline-block brand-primary-bg white"><i class="fa fa-plus"></i></span>
+                        <span class="less inline-block brand-primary-bg white"><i class="fa fa-minus"></i></span>
+                      </td>
+                      <td>
+                        <div class="cart-amount">
+                        <p>RS. {{product.amount}}</p>
+                      </div>
+                      </td>
+                      <td>
+                        <div class="cart-total-amount">
+                        <p>RS. {{product.totalamount}}</p>
+                      </div>
+                        <!-- <div class="remove text-right">
+                          <button class="btn btn-primary text-uppercase no-radius">Remove</button>
+                        </div> -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+    <div class="coupon">
+      <div class="">
+        <span>Shipping Charges</span>
+      </div>
+      <div class="text-right">
+      <span>Rs 200.00</span>
+      </div>
+      <form action="" class="form-inline">
+        <label for=""> coupon code
+          <input type="text">
+        </label>
+        <button class="btn btn-primary">APPLY</button>
+      </form>
+    </div>
+                <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
+                  <span class="text-uppercase pull-left">Grand Total</span>
+                  <span class="pull-right text-uppercase">Rs. 375.00</span>
+                </div>
+
+                <div class="shipping">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="brand-primary letter-space">Free shipping in Mumbai and Kolkata and India,</p>
+                      <p class="brand-primary letter-space">Shipping Charges applicable<sup>*</sup> for all other cities and countries.</p>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="text-right">
+                        <a href="" class="btn btn-primary text-uppercase">Continue</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab>
+          <uib-tab-heading>
+            payment options <i class="fa fa-right"></i>
+          </uib-tab-heading>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+  </div>
+</section>

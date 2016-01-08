@@ -272,7 +272,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Checkout");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-  $scope.checkoutCart = [{
+  $scope.Checkoutcart = [{
     img: "img/cart/1.jpg",
     name: "Baked Potato Chips",
     quantity: "1",
