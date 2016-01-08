@@ -187,13 +187,13 @@ $instagram: #396d9a !default;
 }
 .fb-btn {  @include button-variant(white, $facebook, $facebook);
 &:hover {
-  color: $body-bg;
+  color: $body-bg !important;
 }
 }
 
 .google-btn { @include button-variant(white,$google,$google);
   &:hover {
-    color: $body-bg;
+    color: $body-bg !important;
   }
 }
 
@@ -1005,14 +1005,15 @@ button {
 //end cart///
 ////Login//////
 .login-tab {
+height: 400px;  
   form {
-    padding: 0 15px;
     margin: 30px 0 0;
     input {
       border-color: $brand-primary;
       font-style: italic;
     }
   }
+  .login-form { padding: 20px; }
   .nav-tabs {
     @include display(flex);
     border: none;
@@ -1040,8 +1041,12 @@ button {
     background-color: $brand-primary;
     color: #fff;
   }
+  .submit {
+    margin: 10px 0;
+  }
 }
 .btn-round {
+  @include margin(0 10px 0 0);
   button {
     @include padding(0);
     @include square(40px);
