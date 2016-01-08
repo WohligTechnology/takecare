@@ -8,6 +8,11 @@
     <div class="container">
       <div class="slider">
         <!-- SLIDER -->
+        <uib-carousel>
+          <uib-slide ng-repeat="slide in slides" active="slide.active">
+            <button type="button" class="btn brand-brown-bg white">{{slide.year}}</button>
+          </uib-slide>
+        </uib-carousel>
       </div>
 
       <div class="news-article" ng-repeat="article in news">

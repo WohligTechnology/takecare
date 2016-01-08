@@ -188,27 +188,46 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("News");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.slides = [
+    { year: "2013" },
+    { year: "2012" },
+    { year: "2011" },
+    { year: "2010" },
+    { year: "2009" },
+    { year: "2008" },
+    { year: "2007" },
+    { year: "2006" },
+    { year: "2005" },
+    { year: "2004" }
+  ];
   $scope.news = [{
-    title1: "TITLE 11",
-    title2: "TITLE 22",
-    title3: "TITLE 3",
-    image1: "img/apple.jpg",
-    image2: "img/apple.jpg",
-    image3: "img/apple.jpg"
+    title1: "Feb - Hindustan Times Mint, Mumbai",
+    title2: "Mar - The Hindu, Banglore",
+    title3: "Mar - The New Indian Express, Banglore",
+    image1: "img/news/news1.jpg",
+    image2: "img/news/news2.jpg",
+    image3: "img/news/news3.jpg"
   }, {
-    title1: "TITLE 1",
-    title2: "TITLE 2",
-    title3: "TITLE 3",
-    image1: "img/apple.jpg",
-    image2: "img/apple.jpg",
-    image3: "img/apple.jpg"
+    title1: "Feb - Hindustan Times Mint, Mumbai",
+    title2: "Mar - The Hindu, Banglore",
+    title3: "Mar - The New Indian Express, Banglore",
+    image1: "img/news/news1.jpg",
+    image2: "img/news/news2.jpg",
+    image3: "img/news/news3.jpg"
   }, {
-    title1: "TITLE 1",
-    title2: "TITLE 2",
-    title3: "TITLE 3",
-    image1: "img/apple.jpg",
-    image2: "img/apple.jpg",
-    image3: "img/apple.jpg"
+    title1: "Feb - Hindustan Times Mint, Mumbai",
+    title2: "Mar - The Hindu, Banglore",
+    title3: "Mar - The New Indian Express, Banglore",
+    image1: "img/news/news1.jpg",
+    image2: "img/news/news2.jpg",
+    image3: "img/news/news3.jpg"
+  }, {
+    title1: "Feb - Hindustan Times Mint, Mumbai",
+    title2: "Mar - The Hindu, Banglore",
+    title3: "Mar - The New Indian Express, Banglore",
+    image1: "img/news/news1.jpg",
+    image2: "img/news/news2.jpg",
+    image3: "img/news/news3.jpg"
   }];
 })
 .controller('SuccessStoriesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -253,6 +272,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Checkout");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.checkoutCart = [{
+    img: "img/cart/1.jpg",
+    name: "Baked Potato Chips",
+    quantity: "1",
+    amount: "225.00",
+    totalamount:"225.00"
+  },
+  {
+    img: "img/cart/1.jpg",
+    name: "Chana Jor",
+    quantity: "1",
+    amount: "150.00",
+    totalamount:"150.00"
+  }];
 })
 .controller('TeamCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

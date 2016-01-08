@@ -1164,11 +1164,12 @@ footer {
     background-size: 100% 100%;
   }
   .foot-btn {
-    width: 250px;
+    min-width: 250px;
     border-radius: 5px;
-    padding: 12px 28px;
-    font-weight: 900;
-    letter-spacing: 2px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 4px;
   }
 }
 //////end footer/////
