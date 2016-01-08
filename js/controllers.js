@@ -188,6 +188,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("News");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.news = [{
+    title1: "TITLE 11",
+    title2: "TITLE 22",
+    title3: "TITLE 3",
+    image1: "img/apple.jpg",
+    image2: "img/apple.jpg",
+    image3: "img/apple.jpg"
+  }, {
+    title1: "TITLE 1",
+    title2: "TITLE 2",
+    title3: "TITLE 3",
+    image1: "img/apple.jpg",
+    image2: "img/apple.jpg",
+    image3: "img/apple.jpg"
+  }, {
+    title1: "TITLE 1",
+    title2: "TITLE 2",
+    title3: "TITLE 3",
+    image1: "img/apple.jpg",
+    image2: "img/apple.jpg",
+    image3: "img/apple.jpg"
+  }];
 })
 .controller('SuccessStoriesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
