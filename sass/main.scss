@@ -185,9 +185,17 @@ $instagram: #396d9a !default;
     color: white !important;
   }
 }
-.fb-btn {  @include button-variant(white, $facebook, $facebook);}
+.fb-btn {  @include button-variant(white, $facebook, $facebook);
+&:hover {
+  color: $body-bg;
+}
+}
 
-.google-btn { @include button-variant(white,$google,$google); }
+.google-btn { @include button-variant(white,$google,$google);
+  &:hover {
+    color: $body-bg;
+  }
+}
 
 .foot-btn {  @include button-variant($brand-primary, white, $brand-primary); }
 
@@ -258,6 +266,9 @@ textarea {
 }
 .v-top {
   vertical-align: top;
+}
+.no-border {
+  border: none;
 }
 // Class
 .relate {
@@ -466,17 +477,11 @@ button {
       text-transform: uppercase;
     }
   }
-  .v-top {
-    vertical-align: top;
-  }
   .people-weight-count {
     padding-right: 30px;
   }
   .info {
     border-right: 2px solid $brand-brown-dark;
-  }
-  .no-border {
-    border: none;
   }
 }
 .health-diet {
@@ -1002,7 +1007,7 @@ button {
 .login-tab {
   form {
     padding: 0 15px;
-    margin: 30px 0;
+    margin: 30px 0 0;
     input {
       border-color: $brand-primary;
       font-style: italic;
@@ -1034,6 +1039,15 @@ button {
     border-radius: 4px;
     background-color: $brand-primary;
     color: #fff;
+  }
+}
+.btn-round {
+  button {
+    @include padding(0);
+    @include square(40px);
+    i {
+      font-size: 18px;
+    }
   }
 }
 ////end login//
