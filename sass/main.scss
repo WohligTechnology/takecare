@@ -75,8 +75,6 @@ $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
 $instagram: #396d9a !default;
-
-
 .white {
   color: $body-bg;
 }
@@ -185,20 +183,21 @@ $instagram: #396d9a !default;
     color: white !important;
   }
 }
-.fb-btn {  @include button-variant(white, $facebook, $facebook);
-&:hover {
-  color: $body-bg !important;
-}
-}
-
-.google-btn { @include button-variant(white,$google,$google);
+.fb-btn {
+  @include button-variant(white, $facebook, $facebook);
   &:hover {
     color: $body-bg !important;
   }
 }
-
-.foot-btn {  @include button-variant($brand-primary, white, $brand-primary); }
-
+.google-btn {
+  @include button-variant(white,$google,$google);
+  &:hover {
+    color: $body-bg !important;
+  }
+}
+.foot-btn {
+  @include button-variant($brand-primary, white, $brand-primary);
+}
 .btn-more {
   padding: 12px 34px !important;
 }
@@ -483,6 +482,9 @@ button {
   .info {
     border-right: 2px solid $brand-brown-dark;
   }
+  .no-border {
+    border: none;
+  }
 }
 .health-diet {
   padding: 80px 0;
@@ -554,6 +556,19 @@ button {
       width: 50%;
       margin: 75px 0;
       font-size: 17px;
+      position: relative;
+      &:after {
+        content: url(../img/right.png);
+        position: absolute;
+        top: 80px;
+        right: 0;
+      }
+      &:before {
+        content: url(../img/left.png);
+        position: absolute;
+        top: -50px;
+        left: 0;
+      }
       p {
         line-height: 20px;
       }
@@ -673,6 +688,8 @@ button {
     }
     figcaption {
       margin: 20px 0;
+      font-size: 16px;
+      letter-spacing: 0.5px;
     }
   }
 }
@@ -702,7 +719,7 @@ button {
   .consult {
     margin-top: 40px;
     display: block;
-    @extend.letter-space;
+    @extend.text-bold;
   }
 }
 .tab-chart {
@@ -843,6 +860,7 @@ button {
 }
 .tab-body {
   h5 {
+    margin-bottom: 20px;
     font-size: 20px;
     color: $brand-brown-dark;
   }
@@ -869,6 +887,9 @@ button {
     .note {
       font-style: italic;
       display: block;
+    }
+    button {
+      font-size: 14px;
     }
   }
 }
@@ -1006,7 +1027,7 @@ button {
 //end cart///
 ////Login//////
 .login-tab {
-height: 400px;
+  height: 400px;
   form {
     margin: 30px 0 0;
     input {
@@ -1014,7 +1035,9 @@ height: 400px;
       font-style: italic;
     }
   }
-  .login-form { padding: 20px; }
+  .login-form {
+    padding: 20px;
+  }
   .nav-tabs {
     @include display(flex);
     border: none;
@@ -1024,7 +1047,7 @@ height: 400px;
       text-transform: uppercase;
       a {
         border: none;
-        margin: -8px 0 0 0;
+        margin: -8px 0 0;
         color: $brand-primary;
         font-size: 20px;
         &:hover {
