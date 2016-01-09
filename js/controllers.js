@@ -277,21 +277,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "Hetal Kothari",
       location: "Bangalore, India",
       desc: "I have completely enjoyed the diet. I could not believe how fast I lost weight with eating all meals and in between too. I feel so good that my old jeans have begun to fit me and when people are noticing that I have lost weight.<br>A big thank you to Dipti for always being there for me! I have literally eaten her head up with all sorts of questions and she has always very patiently answered it all.<br>Dipti has always been prompt in her replies and has encouraged me loads.<br>My cousins are still shocked that without coming to Mumbai, I have managed to lose weight. So the entire credit goes to SelfCare.<br>There is so much to eat that you never feel hungry.<br>The thing I really want to share is that my sons have become such a big part of my losing weight, it’s amazing. They keep telling me that I look thin now and that makes me feel like I’m on top of the world",
-      image: "img/cart/1.jpg",
+      image: "img/stories/1.jpg",
       weight: "11"
     }, {
       title: "I have actually enjoyed losing weight.",
       name: "Bela Zaveri",
       location: "Mumbai, India",
       desc: "Feeling more energetic, light and increase in capacity.<br>I have actually enjoyed losing weight. Have never felt deprived about my food intake of course credit goes to my mentor Meloni Shah & above all Sumanji. Especially for extending my program when I was physically not doing well I would love to continue once i am back from my holiday. Thanks to all and of course heartiest thanks to my Gurdev to showing his grace and making me believe in myself and making me lead the target.",
-      image: "img/cart/1.jpg",
+      image: "img/stories/2.jpg",
       weight: "14"
     }, {
       title: "I never starved myself and I was always full at all times.",
       name: "Kiran Mandawewala",
       location: "Jamnagar, India",
       desc: "The weight loss program was very systematic. After losing 17 kgs i feel energetic, confident and I have received so many compliments that it has added to my energy level. Everybody in Jamnagar has found a tremendous change in me, people here can’t believe that there can be so many significant changes in my body measurements with systematic diet control. Nobody would believe that I have lost so much weight and that too with proper eating. I never starved myself and I was always full at all times.",
-      image: "img/cart/1.jpg",
+      image: "img/stories/3.jpg",
       weight: "17"
     }];
     $scope.views = [{
