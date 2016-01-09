@@ -24,21 +24,23 @@
         <div class="row">
           <div class="col-md-4">
             <div class="article-image">
-              <img ng-src="{{article.image1}}" alt="" class="img-responsive">
+              <a fancybox-box href="{{article.image1}}">
+                <img ng-src="{{article.image1}}" alt="" class="img-responsive">
+              </a>
             </div>
             <p class="brand-brown-dark">{{article.title1}}</p>
           </div>
 
           <div class="col-md-4">
             <div class="article-image">
-              <img ng-src="{{article.image2}}" alt="" class="img-responsive">
+            <a fancybox-box href="{{article.image2}}">  <img ng-src="{{article.image2}}" alt="" class="img-responsive"></a>
             </div>
             <p class="brand-brown-dark">{{article.title2}}</p>
           </div>
 
           <div class="col-md-4">
             <div class="article-image">
-              <img ng-src="{{article.image3}}" alt="" class="img-responsive">
+              <a fancybox-box href="{{article.image3}}" ><img ng-src="{{article.image3}}" alt="" class="img-responsive"></a>
             </div>
             <p class="brand-brown-dark">{{article.title3}}</p>
           </div>

@@ -152,3 +152,29 @@ firstapp.directive('img', function($compile, $parse) {
         }
     };
 });
+
+
+firstapp.directive('fancyboxBox', function($document) {
+   return {
+       restrict: 'EA',
+       replace: false,
+       link: function(scope, element, attr) {
+           var $element = $(element);
+           if (attr.rel) {
+               var target = $("[rel='" + attr.rel + "']");
+           } else {
+               var target = element;
+           }
+
+           target.fancybox({
+               openEffect: 'fade',
+               closeEffect: 'fade',
+               closeBtn: true,
+               helpers: {
+                   media: {}
+               }
+           });
+
+       }
+   }
+});
