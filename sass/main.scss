@@ -179,10 +179,6 @@ $instagram: #396d9a !default;
 }
 .btn-primary-inverse {
   @include button-variant($brand-primary, white, $brand-primary);
-  &:hover {
-    background-color: $brand-primary;
-    color: white !important;
-  }
 }
 .fb-btn {
   @include button-variant(white, $facebook, $facebook);
@@ -860,7 +856,7 @@ button {
   }
 }
 .tab-head {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 .tab-body {
   h5 {
@@ -1257,7 +1253,7 @@ footer {
   }
   .note {
     margin-bottom: 20px;
-    word-spacing: 2px;
+    word-spacing: 1px;
   }
   .mail {
     .email {

@@ -330,7 +330,7 @@
 
 // Success Stories
 .stories-section {
-  @include margin(100px 0);
+  @include margin(100px 0 0);
   .single-read, .single-view {
     @include margin(15px 0);
     @include padding(20px);
@@ -350,10 +350,12 @@
         &:focus { border: none; }
         button {
           @include margin(0 20px);
-          font-size: 18px;
+          @include padding(10px 15px);
+          font-size: 20px;
           &:hover { color: $body-bg; }
           &:focus { color: $body-bg; }
           &:active { box-shadow: none; }
+          i { @include margin(0 5px 0 0); }
         }
       }
     }
