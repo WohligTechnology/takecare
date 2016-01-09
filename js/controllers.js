@@ -116,7 +116,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       img: "../img/health/kids.png",
       caption: "superkids"
-    }];
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }
+  ];
+
+        $scope.healthdetail = _.chunk($scope.healthdetail, 3);
   })
   .controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -183,10 +195,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       price: "025"
     }];
 
-    console.log($scope.like);
-
     $scope.like = _.chunk($scope.like, 3);
-    console.log($scope.like);
 
   })
   .controller('FaqCtrl', function($scope, TemplateService, NavigationService, $timeout) {
