@@ -123,6 +123,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "../img/health/pregnancy.png",
       caption: "pregnancy"
     }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
   })
   .controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
