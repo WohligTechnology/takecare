@@ -380,9 +380,27 @@
     &.view-left { @include position(absolute, 11px auto auto 10px); }
     &.view-right { @include position(absolute, 11px 10px auto auto); }
   }
-  .inner-view {
-    .name { font-size: 28px; }
-    .name, .location { @include padding(0 0 0 100px); }
+  .inner-view-left {
+    .name {
+      @include margin(0 0 0 -100px);
+      font-size: 28px;
+    }
+    .location { @include margin(0 0 0 -160px); }
+    .name, .location {
+      @include padding(0 0 0 20px);
+      display: inline-block;
+    }
+  }
+  .inner-view-right {
+    .name {
+      @include margin(0 -20px 0 0);
+      font-size: 28px;
+    }
+    .location { @include margin(0 -160px 0 0); }
+    .name, .location {
+      @include padding(0 20px 0 0);
+      display: inline-block;
+    }
   }
   .view-detail {
     .title {
@@ -395,7 +413,7 @@
     @include square(250px);
     img { width: 100%; }
   }
-  .read-image-right { @include margin(0 0 0 20px); }
+  .read-image-right { @include margin(0 0 0 25px); }
 }
 .growth-section {
   @include margin(50px 0);
