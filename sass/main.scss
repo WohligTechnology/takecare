@@ -932,7 +932,7 @@ button {
 .faq {
   .banner {
     h2 {
-      font-size: 40px;
+      font-size: 38px;
     }
   }
 }
@@ -1082,18 +1082,24 @@ button {
 ////end login//
 ///checkout/////
 .checkout-tab {
+  margin: 70px 0;
+  .greater {
+    position: absolute;
+    right: 0;
+  }
   .nav-tabs {
     border: none;
     @include display(flex);
     li {
       margin: 0;
       @include flex(1);
-      font-size: 23px;
+      font-size: 20px;
       text-align: center;
       text-transform: uppercase;
       a {
         border: none;
         color: $brand-primary;
+        @extend.letter-space;
         &:hover,
         &:focus {
           border: none;
@@ -1115,7 +1121,7 @@ button {
   .order-summary {
     border-top: 1px solid $brand-brown-dark;
     border-bottom: 1px solid $brand-brown-dark;
-    margin: 30px 0;
+    margin: 10px 0 30px;
     .table {
       margin: 0;
       thead > tr > th {
@@ -1146,9 +1152,25 @@ button {
         @extend.letter-space;
       }
       tbody > tr > td:last-child {
-        vertical-align: middle; 
+        vertical-align: middle;
       }
     }
+  }
+  .coupon {
+    padding: 10px;
+    border-top: 1px solid $brand-primary;
+    font-size: 16px;
+  }
+  .price-ship {
+    margin-right: 70px;
+  }
+  .coupon-ship {
+    margin: 0 0 20px;
+  }
+  .apply {
+    padding: 6px 12px;
+    border-radius: 0;
+    margin: 0 0 0 5px;
   }
 }
 ///end checkout//
@@ -1244,5 +1266,74 @@ footer {
     letter-spacing: 4px;
   }
 }
+.radio {
+  label {
+    padding-left: 0;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"] + label {
+    font-size: 13px;
+  }
+  input[type="radio"] + label span {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 2px solid $brand-primary;
+    margin: 0 4px 0 0;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  input[type="radio"] + label span {
+    background-color: transparent;
+  }
+  input[type="radio"]:checked + label span {
+    background-color: $brand-primary;
+  }
+  input[type="radio"] + label span,
+  input[type="radio"]:checked + label span {
+    @include transition(background-color 0.4s linear);
+  }
+}
+.checkbox {
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + label {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+  input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: -2px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid $brand-primary;
+  }
+  input[type="checkbox"] + label span {
+    background-color: transparent;
+  }
+  input[type="checkbox"]:checked + label span {
+    background-color: $brand-primary;
+  }
+  input[type="checkbox"] + label span,
+  input[type="checkbox"]:checked + label span {
+    @include transition(background-color 0.4s linear);
+  }
+}
+
+// product-page filters
+.filters {
+  input[type="checkbox"] +label { font-size: 14px; }
+
+  input[type="checkbox"] +label span {   border: 1px solid $brand-brown-dark; }
+
+  input[type="checkbox"]:checked + label span {   background-color: $brand-brown-dark;  }
+}
+/// end of filters///
 //////end footer/////
 @import "harsh";
