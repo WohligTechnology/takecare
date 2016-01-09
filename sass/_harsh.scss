@@ -352,6 +352,7 @@
     }
   }
   .read-detail, .single-view {
+    position: relative;
     span { display: block; }
     .title { font-size: 24px; }
     .name {
@@ -368,6 +369,25 @@
     }
     &.left {
       hr { @include margin(20px 20px 20px 0); }
+    }
+    .title {
+      &:before {
+        content: open-quote;
+        color: $body-bg;
+        font-family: $font-vista;
+        font-size: 100px;
+        @include position(absolute, -35px auto auto 0);
+        opacity: 0.2;
+      }
+      &:after {
+        content: close-quote;
+        @include margin(0 0 0 -30px);
+        color: $body-bg;
+        font-family: $font-vista;
+        font-size: 100px;
+        @include position(absolute, auto auto -95px auto);
+        opacity: 0.2;
+      }
     }
   }
   .get-round {
@@ -403,10 +423,28 @@
     }
   }
   .view-detail {
+    position: relative;
     .title {
       @include margin(70px 10px 0);
       font-size: 20px;
       line-height: 25px;
+      &:before {
+        content: open-quote;
+        color: $brand-brown-dark;
+        font-family: $font-vista;
+        font-size: 100px;
+        @include position(absolute, 16px auto auto 0);
+        opacity: 0.2;
+      }
+      &:after {
+        content: close-quote;
+        @include margin(0 0 0 -20px);
+        color: $brand-brown-dark;
+        font-family: $font-vista;
+        font-size: 100px;
+        @include position(absolute, auto auto -40px auto);
+        opacity: 0.2;
+      }
     }
   }
   .read-image {
