@@ -796,6 +796,7 @@ button {
         border-radius: 6px;
         border: none;
         padding: 6px 26px;
+        @include transition(all 0ms ease);
         &:hover {
           background-color: $brand-primary;
           color: #fff;

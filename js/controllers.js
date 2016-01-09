@@ -116,15 +116,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       img: "../img/health/kids.png",
       caption: "superkids"
-    },
-  {
-    img: "../img/health/loss.png",
-    caption: "inch loss"
-  },
-{
-img:"../img/health/pregnancy.png",
-caption: "pregnancy"
-}];
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
   })
   .controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
