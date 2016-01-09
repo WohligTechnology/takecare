@@ -42,14 +42,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
     }];
 
-    $scope.openLogin = function() {
-      $uibModal.open({
-        animation: true,
-        templateUrl: 'views/modal/login.html',
-        controller: 'headerctrl'
-      })
-    };
-
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     var slides = $scope.slides = [];
@@ -281,7 +273,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "Feeling more energetic, light and increase in capacity.<br>I have actually enjoyed losing weight. Have never felt deprived about my food intake of course credit goes to my mentor Meloni Shah & above all Sumanji. Especially for extending my program when I was physically not doing well I would love to continue once i am back from my holiday. Thanks to all and of course heartiest thanks to my Gurdev to showing his grace and making me believe in myself and making me lead the target.",
       image: "",
       weight: "14"
-    },{
+    }, {
       title: "I never starved myself and I was always full at all times.",
       name: "Kiran Mandawewala",
       location: "Jamnagar, India",
@@ -301,7 +293,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       location: "Mumbai, India",
       image: "",
       weight: "14"
-    },{
+    }, {
       title: "Everyone was teasing me.",
       name: "Nikesh Shah",
       location: "Mumbai, India",
@@ -371,11 +363,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
   })
 
-.controller('headerctrl', function($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService, $uibModal) {
   $scope.template = TemplateService;
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
   });
+
+  $scope.openLogin = function() {
+    $uibModal.open({
+      animation: true,
+      templateUrl: 'views/modal/login.html',
+      controller: 'headerctrl'
+    })
+  };
+
 })
 
 ;
