@@ -295,22 +295,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       weight: "17"
     }];
     $scope.views = [{
-      title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
-      name: "Hetal Kothari",
-      location: "Bangalore, India",
-      image: "img/cart/1.jpg",
-      weight: "11"
+      title: "I am very satisfied with the diet given. Sumanji herself is a great motivation. I am very happy with the program and the weight loss achieved. Thank you.",
+      name: "Pramila Seth",
+      location: "Punjab, India",
+      weight: "5"
     }, {
-      title: "I have actually enjoyed losing weight.",
+      title: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat.",
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
-      image: "img/cart/1.jpg",
       weight: "14"
     }, {
       title: "Everyone was teasing me.",
       name: "Nikesh Shah",
       location: "Mumbai, India",
-      image: "img/cart/1.jpg",
       weight: "17"
     }];
   })
