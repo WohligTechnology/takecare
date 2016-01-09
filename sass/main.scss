@@ -179,6 +179,9 @@ $instagram: #396d9a !default;
 }
 .btn-primary-inverse {
   @include button-variant($brand-primary, white, $brand-primary);
+  &:hover {
+    background-color: $body-bg !important;
+  }
 }
 .fb-btn {
   @include button-variant(white, $facebook, $facebook);

@@ -366,23 +366,9 @@
   .read-detail, .single-view {
     position: relative;
     span { display: block; }
-    .title { font-size: 24px; }
-    .name {
-      font-size: 24px;
-      letter-spacing: 1px;
-      border-bottom: 1px solid $brand-brown-dark;
-    }
-    .location { letter-spacing: 1px; }
-    hr { border-top: 2px solid $body-bg; }
-    p { font-size: 16px; }
-    &.right {
-      hr { @include margin(20px 0 20px 20px); }
-      .name, .location { padding-left: 15px; }
-    }
-    &.left {
-      hr { @include margin(20px 20px 20px 0); }
-    }
     .title {
+      @include margin(0 0 20px 0);
+      font-size: 24px;
       &:before {
         content: open-quote;
         color: $body-bg;
@@ -397,9 +383,32 @@
         color: $body-bg;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, auto auto -95px auto);
+        @include position(absolute, auto auto -73px auto);
         opacity: 0.2;
       }
+    }
+    .title-right {
+      &:before { @include position(absolute, -35px auto auto 30px); }
+    }
+    .name {
+      font-size: 24px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid $brand-brown-dark;
+    }
+    .location { letter-spacing: 1px; }
+    hr { border-top: 2px solid $body-bg; }
+    p { font-size: 16px; }
+    &.right {
+      hr { @include margin(20px 0 20px 20px); }
+      .name, .location {
+        @include margin(0 0 0 -90px);
+        @include padding(0 0 0 20px);
+        display: inline-block;
+      }
+      .location { @include margin(0 0 0 -112px); }
+    }
+    &.left {
+      hr { @include margin(20px 20px 20px 0); }
     }
   }
   .get-round {
