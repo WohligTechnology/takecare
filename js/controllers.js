@@ -297,14 +297,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       weight: "11"
     }, {
       title: "I have actually enjoyed losing weight.",
-      name: "Bela Zaveri",
+      name: "Rishabh Maniktala",
       location: "Mumbai, India",
       image: "",
       weight: "14"
     },{
-      title: "I never starved myself and I was always full at all times.",
-      name: "Kiran Mandawewala",
-      location: "Jamnagar, India",
+      title: "Everyone was teasing me.",
+      name: "Nikesh Shah",
+      location: "Mumbai, India",
       image: "",
       weight: "17"
     }];

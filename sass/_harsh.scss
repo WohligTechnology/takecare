@@ -326,14 +326,22 @@
     @include padding(20px);
     border-radius: 5px;
   }
-  .nav-tabs > li {
-    display: inline-block;
-    float: none;
-    a {
-      &:hover { background-color: transparent; }
-      button {
-        @include margin(0 20px);
-        font-size: 18px;
+  .nav-tabs {
+    border: none;
+    li {
+      display: inline-block;
+      float: none;
+      a {
+        border: none;
+        &:hover {
+          background-color: transparent;
+          border: none;
+        }
+        &:focus { border: none; }
+        button {
+          @include margin(0 20px);
+          font-size: 18px;
+        }
       }
     }
   }
@@ -349,7 +357,11 @@
     hr { border-top: 2px solid $body-bg; }
     p { font-size: 16px; }
     &.right {
+      hr { @include margin(20px 0 20px 20px); }
       .name, .location { padding-left: 15px; }
+    }
+    &.left {
+      hr { @include margin(20px 20px 20px 0); }
     }
   }
   .get-round {
@@ -360,11 +372,18 @@
     &.img-left { @include position(absolute, 6px auto auto -20px); }
     &.img-right { @include position(absolute, 6px -20px auto auto); }
     &.view-left { @include position(absolute, 11px auto auto 10px); }
-    &.img-right { @include position(absolute, 6px -20px auto auto); }
+    &.view-right { @include position(absolute, 11px 10px auto auto); }
   }
   .inner-view {
     .name { font-size: 28px; }
     .name, .location { @include padding(0 0 0 100px); }
+  }
+  .view-detail {
+    .title {
+      @include margin(70px 10px 0);
+      font-size: 20px;
+      line-height: 25px;
+    }
   }
   .read-image, .view-image {
   }
