@@ -341,8 +341,14 @@
         button {
           @include margin(0 20px);
           font-size: 18px;
+          &:hover { color: $body-bg; }
+          &:focus { color: $body-bg; }
+          &:active { box-shadow: none; }
         }
       }
+    }
+    li.active {
+      button { background-color: $brand-primary; }
     }
   }
   .read-detail, .single-view {
@@ -385,8 +391,11 @@
       line-height: 25px;
     }
   }
-  .read-image, .view-image {
+  .read-image {
+    @include square(250px);
+    img { width: 100%; }
   }
+  .read-image-right { @include margin(0 0 0 20px); }
 }
 .growth-section {
   @include margin(50px 0);

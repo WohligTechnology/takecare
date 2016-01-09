@@ -62,7 +62,7 @@
         <tabset>
           <tab>
             <tab-heading>
-              <button class="btn btn-primary brand-primary-bg white text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
+              <button class="btn brand-brown-bg white text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
             </tab-heading>
 
             <div class="inner-stories-view" ng-repeat="view in views">
@@ -124,7 +124,7 @@
 
           <tab>
             <tab-heading>
-              <button class="btn btn-primary brand-primary-bg white text-uppercase"><i class="fa fa-comment"></i> Read Here</button>
+              <button class="btn brand-brown-bg white text-uppercase"><i class="fa fa-comment"></i> Read Here</button>
             </tab-heading>
 
             <div class="inner-stories-read" ng-repeat="read in reads">
@@ -135,10 +135,10 @@
                       <div class="col-md-8">
                         <div class="read-detail left">
                           <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                               <span class="title text-left white font-semibold">{{read.title}}</span>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                               <span class="name text-left font-semibold brand-brown-dark">{{read.name}}</span>
                               <span class="location text-left white">{{read.location}}</span>
                             </div>
@@ -149,7 +149,7 @@
                       </div>
 
                       <div class="col-md-4">
-                        <div class="read-image">
+                        <div class="read-image round">
                           <img ng-src="{{read.image}}" alt="" class="img-responsive">
                         </div>
                         <div class="get-round img-left">
@@ -167,7 +167,7 @@
                   <div class="single-read text-center brand-brown-bg">
                     <div class="row">
                       <div class="col-md-4">
-                        <div class="read-image">
+                        <div class="read-image round read-image-right">
                           <img ng-src="{{read.image}}" alt="" class="img-responsive">
                         </div>
                         <div class="get-round img-right">
@@ -179,11 +179,11 @@
                       <div class="col-md-8">
                         <div class="read-detail right">
                           <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                               <span class="name text-left font-semibold brand-brown-dark">{{read.name}}</span>
                               <span class="location text-left white">{{read.location}}</span>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                               <span class="title text-right white font-semibold">{{read.title}}</span>
                             </div>
                           </div>
