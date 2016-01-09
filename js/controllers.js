@@ -291,22 +291,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.views = [{
       title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
-      name: "Pramila Seth",
-      location: "Punjab, India",
+      name: "Hetal Kothari",
+      location: "Bangalore, India",
       image: "",
-      weight: "5"
+      weight: "11"
     }, {
       title: "I have actually enjoyed losing weight.",
       name: "Bela Zaveri",
       location: "Mumbai, India",
       image: "",
-      weight: "25"
+      weight: "14"
     },{
       title: "I never starved myself and I was always full at all times.",
       name: "Kiran Mandawewala",
       location: "Jamnagar, India",
       image: "",
-      weight: "46"
+      weight: "17"
     }];
   })
   .controller('CartCtrl', function($scope, TemplateService, NavigationService, $timeout) {

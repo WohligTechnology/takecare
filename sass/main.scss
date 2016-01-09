@@ -1328,7 +1328,10 @@ footer {
 
 // product-page filters
 .filters {
-  input[type="checkbox"] +label { font-size: 14px; }
+  input[type="checkbox"] +label {
+    padding: 0;
+    font-size: 14px;
+  }
 
   input[type="checkbox"] +label span {   border: 1px solid $brand-brown-dark; }
 

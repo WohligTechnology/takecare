@@ -527,7 +527,7 @@
     @include padding(10px 20px);
     h3 { @include margin(0 0 10px 10px); }
     div {
-      @include margin(0 0 0 10px);
+      @include margin(0 0 0 8px);
       input {
         @include square(10px);
         @include margin(0 5px 0 0);
