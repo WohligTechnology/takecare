@@ -58,7 +58,10 @@
   }
 }
 .about-desc {
-  h3 { font-size: 28px; }
+  h3 {
+    @include margin(0);
+    font-size: 28px;
+  }
   .health-style {
     @include margin(15px 0 10px);
     font-size: 24px;
@@ -132,7 +135,10 @@
         }
       }
     }
-    .nutri { @include margin(57px 0 0); }
+    .nutri {
+      @include margin(57px 0 0);
+      h3 { vertical-align: 15px; }
+    }
     p {
       @include margin(-30px 0 0);
       font-size: 16px;
@@ -150,7 +156,10 @@
   color: $brand-brown;
   opacity: 1;
 }
-.carousel-control.left, .carousel-control.right { background-image: none; }
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+  &:focus { color: $brand-brown; }
+}
 .about-health .about-health-content {
   .carousel-control.left { span { left: 50px; }
     &:hover { color: $brand-brown; }
@@ -213,6 +222,7 @@
   h2 {
     @include margin(100px 0);
     font-weight: bold;
+    letter-spacing: 1px;
   }
   .session-one, .session-two {
     .session-number {
@@ -538,12 +548,14 @@
 }
 
 // Contact Us
+.contact-title { font-weight: bold; }
 .contact-location {
   @include margin(50px 0);
   .mumbai, .kolkata {
     @include margin(0 0 20px);
     letter-spacing: 2px;
     .tardeo { @include margin(0 0 20px); }
+    .san-num { margin-left: 15px; }
     h4 { font-size: 28px; }
     p {
       @include margin(0);
@@ -630,7 +642,7 @@
   .single-product {
     @include margin(0 0 50px);
     .product-image {
-      @include square(150px);
+      @include square(180px);
       @include margin(0 auto 20px);
       overflow: hidden;
     }
@@ -639,7 +651,7 @@
 
 // product detail
 .product-detail {
-  @include size(100%, 500px);
+  @include square(100%);
   .product-image {
     @include square(400px);
     @include margin(20px 0 0);

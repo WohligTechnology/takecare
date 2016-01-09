@@ -73,7 +73,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
     }, {
       title: "Individualize",
-      text: "intelligent food plans",
+      text: "intelligent food plan",
       desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
     }];
   })
