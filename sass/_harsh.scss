@@ -359,11 +359,12 @@
     }
     &.img-left { @include position(absolute, 6px auto auto -20px); }
     &.img-right { @include position(absolute, 6px -20px auto auto); }
-    &.view-left { @include position(absolute, 0 auto auto 10px); }
+    &.view-left { @include position(absolute, 11px auto auto 10px); }
     &.img-right { @include position(absolute, 6px -20px auto auto); }
-    .inner-view {
-      .name { font-size: 28px; }
-    }
+  }
+  .inner-view {
+    .name { font-size: 28px; }
+    .name, .location { @include padding(0 0 0 100px); }
   }
   .read-image, .view-image {
   }
