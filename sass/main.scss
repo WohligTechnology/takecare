@@ -202,6 +202,7 @@ $instagram: #396d9a !default;
 .btn-more {
   padding: 12px 34px !important;
 }
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @mixin placeholder {
   $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
   @each $placeholder in $placeholders {
@@ -210,7 +211,6 @@ $instagram: #396d9a !default;
     }
   }
 }
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -895,6 +895,45 @@ button {
     }
   }
 }
+.slider-round {
+  margin-bottom: 50px;
+  .carousel-control.left {
+    top: -50px;
+    left: 40px;
+    opacity: 1;
+    &:hover {
+      color: $brand-brown;
+    }
+  }
+  .carousel-control.right {
+    top: -50px;
+    right: 40px;
+    opacity: 1;
+    &:hover {
+      color: $brand-brown;
+    }
+  }
+  .glyphicon-chevron-right:before {
+    content: "\f105";
+    display: block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 70px;
+  }
+  .glyphicon-chevron-left:before {
+    content: "\f104";
+    display: block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 70px;
+  }
+  .healthmanagement-slider {
+    .slide-imghold {
+      @include square(180px);
+    }
+    figcaption {
+      margin: 20px 0 0;
+    }
+  }
+}
 //end Health-management////
 /////meet////
 .suman-video {
@@ -1223,10 +1262,14 @@ footer {
       width: 300px;
       border-color: #c24f31;
       background-color: #c24f31;
-      color: #fff;
+      color: $body-bg;
+      @extend .letter-space;
       &:focus {
         border-width: 1px;
       }
+      @include placeholder {
+        color: $body-bg;
+      };
     }
     .btn-submit {
       width: 50px;
@@ -1327,22 +1370,20 @@ footer {
     @include transition(background-color 0.4s linear);
   }
 }
-
 // product-page filters
 .filters {
   input[type="checkbox"] +label {
     padding: 0;
     font-size: 14px;
   }
-
-  input[type="checkbox"] +label span {   border: 1px solid $brand-brown-dark; }
-
-  input[type="checkbox"]:checked + label span {   background-color: $brand-brown-dark;  }
+  input[type="checkbox"] +label span {
+    border: 1px solid $brand-brown-dark;
+  }
+  input[type="checkbox"]:checked + label span {
+    background-color: $brand-brown-dark;
+  }
 }
 
-.slide-imghold {
-  @include square(180px);
-}
 /// end of filters///
 //////end footer/////
 @import "harsh";
