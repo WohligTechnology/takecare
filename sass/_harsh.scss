@@ -320,8 +320,52 @@
 
 // Success Stories
 .stories-section {
-  .single-read {
+  @include margin(100px 0);
+  .single-read, .single-view {
+    @include margin(15px 0);
     @include padding(20px);
+    border-radius: 5px;
+  }
+  .nav-tabs > li {
+    display: inline-block;
+    float: none;
+    a {
+      &:hover { background-color: transparent; }
+      button {
+        @include margin(0 20px);
+        font-size: 18px;
+      }
+    }
+  }
+  .read-detail, .single-view {
+    span { display: block; }
+    .title { font-size: 24px; }
+    .name {
+      font-size: 24px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid $brand-brown-dark;
+    }
+    .location { letter-spacing: 1px; }
+    hr { border-top: 2px solid $body-bg; }
+    p { font-size: 16px; }
+    &.right {
+      .name, .location { padding-left: 15px; }
+    }
+  }
+  .get-round {
+    span + span {
+      @include margin(-5px 0 0);
+      font-size: 32px;
+    }
+    &.img-left { @include position(absolute, 6px auto auto -20px); }
+    &.img-right { @include position(absolute, 6px -20px auto auto); }
+    &.view-left { @include position(absolute, 0 auto auto 10px); }
+    &.img-right { @include position(absolute, 6px -20px auto auto); }
+    .inner-view {
+      .name { font-size: 28px; }
+    }
+  }
+  .read-image, .view-image {
   }
 }
 .growth-section {
@@ -482,7 +526,7 @@
     @include padding(10px 20px);
     h3 { @include margin(0 0 10px 10px); }
     div {
-      @include margin(0 0 0 20px);
+      @include margin(0 0 0 10px);
       input {
         @include square(10px);
         @include margin(0 5px 0 0);

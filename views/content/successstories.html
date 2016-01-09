@@ -62,58 +62,58 @@
         <tabset>
           <tab>
             <tab-heading>
-              <button type="button" class="btn btn-primary text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
+              <button class="btn btn-primary brand-primary-bg white text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
             </tab-heading>
 
-            <div class="row">
-              <div class=" col-md-offset-1 col-md-10">
-                <div class="single-read text-center brand-brown-bg" ng-repeat="read in read1">
-                  <div class="row">
-                    <div class="col-md-8">
-                      <div class="read-detail">
-                        <span class="text-left white">{{read.title}}</span>
-                        <span class="text-right brand-brown-dark">{{read.name}}</span>
-                        <span class="text-right white">{{read.location}}</span>
-                        <hr>
-                        <p class="text-left brand-brown-dark" ng-bind-html="read.desc"></p>
+            <div class="inner-stories-view" ng-repeat="view in views">
+              <div class="row" ng-if="$index%2==0">
+                <div class=" col-md-offset-1 col-md-10">
+                  <div class="single-view text-center brand-brown-bg">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <!-- youtube video -->
+                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe>
                       </div>
-                    </div>
 
-                    <div class="col-md-4">
-                      <div class="read-image">
-                        <img ng-src="{{read.image}}" alt="" class="doneloading">
-                      </div>
-                      <div class="get-round">
-                        <span class="text-uppercase">Lost</span><br>
-                        <span>{{read.weight}}kgs</span>
+                      <div class="col-md-6">
+                        <div class="inner-view">
+                          <div class="get-round view-left">
+                            <span class="text-uppercase brand-brown-dark-bg">Lost</span>
+                            <span>{{view.weight}}kgs</span>
+                          </div>
+                          <span class="text-left brand-brown-dark">{{view.name}}</span>
+                          <span class="text-left">{{view.location}}</span>
+                        </div>
+                        <div class="view-detail">
+                          <span class="text-left">{{view.title}}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class=" col-md-offset-1 col-md-10">
-                <div class="read-story text-center brand-brown-bg" ng-repeat="read in read2">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="read-image">
-                        <img ng-src="{{read.image}}" alt="" class="doneloading">
+              <div class="row" ng-if="$index%2!=0">
+                <div class=" col-md-offset-1 col-md-10">
+                  <div class="single-view text-center brand-brown-bg">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="inner-view">
+                          <div class="get-round pull-right">
+                            <span class="text-uppercase brand-brown-dark-bg">Lost</span>
+                            <span>{{view.weight}}kgs</span>
+                          </div>
+                          <span class="name text-left brand-brown-dark">{{view.name}}</span>
+                          <span class="location text-left">{{view.location}}</span>
+                        </div>
+                        <div class="view-detail">
+                          <span class="text-left">{{view.title}}</span>
+                        </div>
                       </div>
-                      <div class="get-round">
-                        <span class="text-uppercase">Lost</span><br>
-                        <span>{{read.weight}}kgs</span>
-                      </div>
-                    </div>
 
-                    <div class="col-md-8">
-                      <div class="read-detail">
-                        <span class="text-left white">{{read.title}}</span>
-                        <span class="text-right brand-brown-dark">{{read.name}}</span>
-                        <span class="text-right white">{{read.location}}</span>
-                        <hr>
-                        <p class="text-left brand-brown-dark" ng-bind-html="read.desc"></p>
+                      <div class="col-md-6">
+                        <!-- youtube video -->
+                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe>
                       </div>
                     </div>
                   </div>
@@ -124,26 +124,72 @@
 
           <tab>
             <tab-heading>
-              <button type="button" class="btn btn-primary text-uppercase"><i class="fa fa-comment"></i> Read Here</button>
+              <button class="btn btn-primary brand-primary-bg white text-uppercase"><i class="fa fa-comment"></i> Read Here</button>
             </tab-heading>
 
-            <div class="row">
-              <div class=" col-md-offset-1 col-md-10">
-                <div class="single-view text-center" ng-repeat="view in views">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <!-- youtube video -->
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="get-round">
-                        <span class="text-uppercase">Lost</span><br>
-                        <span>{{view.weight}}kgs</span>
+            <div class="inner-stories-read" ng-repeat="read in reads">
+              <div class="row" ng-if="$index%2==0">
+                <div class=" col-md-offset-1 col-md-10">
+                  <div class="single-read text-center brand-brown-bg">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="read-detail left">
+                          <div class="row">
+                            <div class="col-md-8">
+                              <span class="title text-left white font-semibold">{{read.title}}</span>
+                            </div>
+                            <div class="col-md-4">
+                              <span class="name text-left font-semibold brand-brown-dark">{{read.name}}</span>
+                              <span class="location text-left white">{{read.location}}</span>
+                            </div>
+                          </div>
+                          <hr>
+                          <p class="text-left brand-brown-dark" ng-bind-html="read.desc"></p>
+                        </div>
                       </div>
-                      <div class="view-detail">
-                        <span class="text-left">{{view.name}}</span>
-                        <span class="text-left">{{view.location}}</span>
-                        <span class="text-left">{{view.title}}</span>
+
+                      <div class="col-md-4">
+                        <div class="read-image">
+                          <img ng-src="{{read.image}}" alt="" class="img-responsive">
+                        </div>
+                        <div class="get-round img-left">
+                          <span class="text-uppercase brand-brown-dark-bg">Lost</span>
+                          <span>{{read.weight}}kgs</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" ng-if="$index%2!=0">
+                <div class=" col-md-offset-1 col-md-10">
+                  <div class="single-read text-center brand-brown-bg">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="read-image">
+                          <img ng-src="{{read.image}}" alt="" class="img-responsive">
+                        </div>
+                        <div class="get-round img-right">
+                          <span class="text-uppercase brand-brown-dark-bg">Lost</span>
+                          <span>{{read.weight}}kgs</span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-8">
+                        <div class="read-detail right">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <span class="name text-left font-semibold brand-brown-dark">{{read.name}}</span>
+                              <span class="location text-left white">{{read.location}}</span>
+                            </div>
+                            <div class="col-md-8">
+                              <span class="title text-right white font-semibold">{{read.title}}</span>
+                            </div>
+                          </div>
+                          <hr>
+                          <p class="text-left brand-brown-dark" ng-bind-html="read.desc"></p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -151,29 +197,6 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class=" col-md-offset-1 col-md-10">
-                <div class="single-view text-center" ng-repeat="view in views">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="get-round">
-                        <span class="text-uppercase">Lost</span><br>
-                        <span>{{view.weight}}kgs</span>
-                      </div>
-                      <div class="view-detail">
-                        <span class="text-left">{{view.name}}</span>
-                        <span class="text-left">{{view.location}}</span>
-                        <span class="text-left">{{view.title}}</span>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <!-- youtube video -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </tab>
         </tabset>
       </div>
