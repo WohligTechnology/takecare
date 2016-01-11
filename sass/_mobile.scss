@@ -20,9 +20,31 @@
     }
   }
   .news {
-    .slider {  width: 817px;  }
+    .slider {
+      width: 817px;
+    }
   }
-  .news-article p { font-size: 16px; }
+  .news-article p {
+    font-size: 16px;
+  }
+  .cart-main h3 {
+    font-size: 20px;
+  }
+  .cart-table {
+    .table > thead > tr > th {
+      padding: 12px;
+      font-size: 14px;
+    }
+    .cart-imgholder {
+      @include square(150px);
+    }
+    figcaption {
+      font-size: 14px;
+    }
+    .remove {
+      margin-top: 55px;
+    }
+  }
 }
 @media (max-width: $screen-sm-max) {
   // faq
@@ -78,9 +100,38 @@
     }
   }
   .news {
-    .slider { width: 548px; }
-    .flex-direction-nav .flex-prev { left: -50px;  }
-    .flex-direction-nav .flex-next { right: -50px; }
+    .slider {
+      width: 548px;
+    }
+    .flex-direction-nav .flex-prev {
+      left: -50px;
+    }
+    .flex-direction-nav .flex-next {
+      right: -50px;
+    }
+  }
+  .cart-table {
+    .cart-imgholder {
+      @include square(100px);
+    }
+    figcaption {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .quantity {
+      width: 40px;
+      padding-left: 10px;
+    }
+    .more,
+    .less {
+      padding: 0 2px;
+      i {
+        font-size: 12px;
+      }
+    }
+    .remove {
+      margin-top: 30px;
+    }
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -129,7 +180,9 @@
       font-size: 15px;
     }
   }
-  .pro-info { margin-bottom: 60px; }
+  .pro-info {
+    margin-bottom: 60px;
+  }
   .health-manageselect {
     .row-flex {
       @include flex-wrap(wrap);
@@ -149,7 +202,52 @@
   }
   .news {
     margin: 20px 0 40px;
-    .slider { width: 405px; }
+    .slider {
+      width: 405px;
+    }
+  }
+  .cart-main h3 {
+    font-size: 17px;
+  }
+  .cart-table {
+    .cart-imgholder {
+      @include square(90px);
+    }
+    figcaption {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .quantity {
+      width: 30px;
+      padding-left: 7px;
+    }
+    .more,
+    .less {
+      padding: 0 2px;
+      i {
+        font-size: 12px;
+      }
+    }
+    .remove {
+      margin-top: 26px;
+      button {
+        padding: 6px 14px;
+        font-size: 10px;
+      }
+    }
+    .table {
+      thead > tr > th {
+        padding: 12px 0;
+        font-size: 13px;
+      }
+      tbody > tr > td {
+        padding: 10px 0;
+        font-size: 13px;
+        p {
+          margin: 0;
+        }
+      }
+    }
   }
 }
 @media (max-width: 480px) {
@@ -207,7 +305,9 @@
       line-height: 18px;
     }
   }
-  .pro-info { margin-bottom: 50px; }
+  .pro-info {
+    margin-bottom: 50px;
+  }
   .health-manageselect {
     margin: 25px 0;
     .managecat {
@@ -222,8 +322,44 @@
   }
   .news {
     margin: 20px 0;
-    .slider { width: 275px; }
-    .flex-direction-nav .flex-prev { left: -30px }
-    .flex-direction-nav .flex-next { right:-30px }
+    .slider {
+      width: 275px;
+    }
+    .flex-direction-nav .flex-prev {
+      left: -30px;
+    }
+    .flex-direction-nav .flex-next {
+      right: -30px;
+    }
+  }
+  .cart-main h3 {
+    font-size: 14px;
+  }
+  .cart-table {
+    .cart-imgholder {
+      @include square(70px);
+    }
+    figcaption {
+      margin: 5px 0;
+      font-size: 8px;
+    }
+    .table {
+      thead > tr > th {
+        padding: 12px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        vertical-align: middle;
+      }
+      tbody > tr > td {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+    }
+    .remove {
+      margin-top: 15px;
+      button {
+        padding: 4px 10px;
+      }
+    }
   }
 }
