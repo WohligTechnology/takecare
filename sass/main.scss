@@ -622,7 +622,7 @@ button {
 }
 .blog-main {
   padding: 25px;
-  min-height: 535px;
+  min-height: 576px;
 }
 .askqts {
   form {
@@ -1389,3 +1389,5 @@ footer {
 /// end of filters///
 //////end footer/////
 @import "harsh";
+@import "mobile";
+@import "mobile_harsh";
