@@ -16,10 +16,15 @@
   // faq end
   .get-up {
     padding: 35px;
-    margin: -80px;
+    margin-top: -80px;
   }
   .health-descp {
+    margin: 0;
     font-size: 15px;
+  }
+  .suman-video {
+    width: 65%;
+    height: 250px;
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -40,7 +45,16 @@
     }
   }
   // faq end
+  .get-up {
+    padding: 25px;
+    margin-top: -40px;
+  }
+  .suman-video {
+    width: 75%;
+    height: 180px;
+  }
 }
+
 @media (max-width: 480px) {
   // faq
   .faq-accordion {
@@ -65,4 +79,17 @@
     }
   }
   // faq end
+  .get-up {
+    padding: 15px;
+    margin-top: -20px;
+  }
+  .health-descp {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .suman-video {
+    width: 85%;
+    height: 120px;
+    top: 30px;
+  }
 }
