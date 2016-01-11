@@ -16,6 +16,11 @@
   footer .mail .email { @include size(240px, auto); }
   // Team
   .team-members .single-member .member-image { @include square(150px); }
+  // Image Consulting
+  .we-enroll .session-one .session-number h4, .we-enroll .session-two .session-number h4 { font-size: 24px; }
+  .we-enroll .session-one .session-charges .charge, .we-enroll .session-two .session-charges .charge { font-size: 18px; }
+  .we-enroll .session-one .session-charges p + p, .we-enroll .session-two .session-charges p + p { font-size: 26px; }
+  .we-enroll .session-one .session-charges .services, .we-enroll .session-two .session-charges .services { font-size: 16px; }
 }
 @media (max-width: $screen-sm-max) {
   // Header
@@ -33,6 +38,12 @@
   // Health Packages
   .selfcare-image h2 { font-size: 40px; }
   .what-health-goal .health-goals .weight-goal { @include margin(0 20px 50px); }
+  // Image Consulting
+  .we-enroll .session-one .session-charges, .we-enroll .session-two .session-charges { @include margin(0 0 50px 0); }
+  .we-enroll .session-one .session-charges .inner-session, .we-enroll .session-two .session-charges .inner-session { border: none; }
+  .we-enroll .session-one .session-charges .services, .we-enroll .session-two .session-charges .services { @include margin(0); }
+  .we-enroll .session-two { @include margin(0); }
+  .consults .single-consult .consult-title { @include square(100%); }
 }
 @media (max-width: $screen-xs-max) {
   // Header
@@ -71,6 +82,8 @@
     text-align: center;
   }
   .team-members .single-member .member-image { @include margin(20px auto 0); }
+  // Image Consulting
+  .consults .single-consult { text-align: center; }
 }
 @media (max-width: 480px) {
   // Header
