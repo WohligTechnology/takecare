@@ -21,6 +21,10 @@
   .we-enroll .session-one .session-charges .charge, .we-enroll .session-two .session-charges .charge { font-size: 18px; }
   .we-enroll .session-one .session-charges p + p, .we-enroll .session-two .session-charges p + p { font-size: 26px; }
   .we-enroll .session-one .session-charges .services, .we-enroll .session-two .session-charges .services { font-size: 16px; }
+  // About us
+  .about-health h2 { font-size: 29px; }
+  .what-we-do .we-do-topics .we-do-title img { @include size(25%, auto); }
+  .what-we-do .we-do-topics .we-do-title h3 { font-size: 26px; }
 }
 @media (max-width: $screen-sm-max) {
   // Header
@@ -44,6 +48,10 @@
   .we-enroll .session-one .session-charges .services, .we-enroll .session-two .session-charges .services { @include margin(0); }
   .we-enroll .session-two { @include margin(0); }
   .consults .single-consult .consult-title { @include square(100%); }
+  // About us
+  .about-health .about-health-content { @include square(100%); }
+  .about-health .about-health-content .embed-youtube { @include padding(50px 50px 0px 50px); }
+  .what-we-do .we-do-topics .we-do-title img { width: 15%; }
 }
 @media (max-width: $screen-xs-max) {
   // Header
@@ -84,6 +92,19 @@
   .team-members .single-member .member-image { @include margin(20px auto 0); }
   // Image Consulting
   .consults .single-consult { text-align: center; }
+  // Contact us
+  .contact-location { text-align: center; }
+  .contact-map {
+    @include size(100%, 300px);
+    overflow: hidden;
+  }
+  // About Us
+  .about-health .about-health-content .inner-about-carousel {
+    @include padding(100px);
+    h3 { font-size: 32px; }
+    span { font-size: 24px; }
+    p { font-size: 14px; }
+  }
 }
 @media (max-width: 480px) {
   // Header
@@ -98,5 +119,11 @@
     min-width: auto;
     @include padding(10px);
     letter-spacing: 2px;
+  }
+  // About Us
+  .about-health .about-health-content .inner-about-carousel {
+    h3 { font-size: 24px; }
+    span { font-size: 18px; }
+    p { font-size: 12px; }
   }
 }
