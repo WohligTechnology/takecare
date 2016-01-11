@@ -1,5 +1,81 @@
 @media (max-width: 1200px) {}
-@media (max-width: $screen-md-max) {}
-@media (max-width: $screen-sm-max) {}
-@media (max-width: $screen-xs-max) {}
-@media (max-width: 480px) {}
+@media (max-width: $screen-md-max) {
+  // Header
+  .logo h1 span {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+  .links { @include margin(20px 0 15px); }
+  .social-links li a { @include margin(0 10px 0 0); }
+  .contact-tel {
+    @include margin(2px -7px 0 -37px);
+    @include padding(12px 0 12px 12px);
+  }
+  .signin { @include padding(12px 0); }
+  // Footer
+  footer .mail .email { @include size(240px, auto); }
+}
+@media (max-width: $screen-sm-max) {
+  // Header
+  .hamburger { @include margin(35px 0 0 125px); }
+  .links {
+    @include margin(10px auto 20px);
+    text-align: center;
+  }
+  .contact-tel { @include padding(10px 0); }
+  // Footer
+  footer {
+    text-align: center;
+    .foot-about { @include margin(20px 0 100px); }
+  }
+  // Health Packages
+  .selfcare-image h2 { font-size: 40px; }
+  .what-health-goal .health-goals .weight-goal { @include margin(0 20px 50px); }
+}
+@media (max-width: $screen-xs-max) {
+  // Header
+  .hamburger { @include margin(35px 0 0 50px); }
+  .logo h1 span { font-size: 16px; }
+  .social-links { text-align: center; }
+  .contact-tel {
+    @include margin(3px 0 0);
+    @include padding(10px 0);
+    text-align: right;
+    border: none;
+  }
+  .signin {
+    @include padding(10px 50px);
+    text-align: left;
+  }
+  // Footer
+  .health-foot .foot-btn {
+    min-width: 150px;
+    font-size: 12px;
+  }
+  footer .mail .email { @include size(100%, auto); }
+  footer .mail .btn-submit {
+    @include size(100%, auto);
+    @include margin(10px 0 0);
+  }
+  .social-links li a { @include margin(0 8px 0 0); }
+  // Health Packages
+  .selfcare-image h2 { font-size: 18px; }
+  .what-health-goal h2 { font-size: 20px; }
+  .what-health-goal .health-goals .weight-goal .btn-packages { font-size: 14px; }
+  .what-health-goal .health-goals .health-manage-goal .btn-packages { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  // Header
+  .hamburger { @include margin(35px 0 0 20px); }
+  .logo img { @include size(30%, auto); }
+  .logo h1 span { font-size: 12px; letter-spacing: 1px; }
+  .signin { @include padding(10px 40px); }
+  // Footer
+  .social-links li a i { font-size: 16px; }
+  footer .foot-about { @include margin(20px 0 50px); }
+  .health-foot .foot-btn {
+    min-width: auto;
+    @include padding(10px);
+    letter-spacing: 2px;
+  }
+}
