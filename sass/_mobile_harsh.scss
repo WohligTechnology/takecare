@@ -25,6 +25,10 @@
   .about-health h2 { font-size: 29px; }
   .what-we-do .we-do-topics .we-do-title img { @include size(25%, auto); }
   .what-we-do .we-do-topics .we-do-title h3 { font-size: 26px; }
+  // Success Stories
+  .growth-section h3 { @include padding(0 100px); }
+  .stories-section .inner-view-left .name, .stories-section .inner-view-left .location { @include padding(0 0 0 90px); }
+  .stories-section .inner-view-right .name, .stories-section .inner-view-right .location { @include padding(0 90px 0 0); }
 }
 @media (max-width: $screen-sm-max) {
   // Header
@@ -52,6 +56,20 @@
   .about-health .about-health-content { @include square(100%); }
   .about-health .about-health-content .embed-youtube { @include padding(50px 50px 0px 50px); }
   .what-we-do .we-do-topics .we-do-title img { width: 15%; }
+  // Success Stories
+  .growth-section h3 {
+    @include padding(0);
+    font-size: 28px;
+  }
+  .inner-view-left, .inner-view-right { @include margin(20px 0 0); }
+  .stories-section .view-detail { @include margin(0 0 20px); }
+  .stories-section .inner-view-right ~ .view-detail { @include margin(0 0 50px); }
+  .stories-section .inner-view-left .name, .stories-section .inner-view-left .location { @include padding(0 0 0 20px); }
+  .stories-section .inner-view-left .name { @include margin(0 0 0 -350px); }
+  .stories-section .inner-view-left .location { @include margin(0 0 0 -410px); }
+  .stories-section .inner-view-right .name, .stories-section .inner-view-right .location { @include padding(0 20px 0 0); }
+  .stories-section .inner-view-right .name { @include margin(0 -280px 0 0); }
+  .stories-section .inner-view-right .location { @include margin(0 -420px 0 0); }
 }
 @media (max-width: $screen-xs-max) {
   // Header
@@ -105,6 +123,26 @@
     span { font-size: 24px; }
     p { font-size: 14px; }
   }
+  // Success Stories
+  .care-programs h3 { font-size: 28px; }
+  .care-programs .care-buttons a {
+    @include margin(0 auto);
+    display: block;
+  }
+  .care-programs .care-buttons a + a { @include margin(20px auto 0); }
+  .stories-section .get-round.view-left, .stories-section .get-round.view-right {
+    @include margin(0 auto);
+    position: relative;
+    float: none !important;
+  }
+  .stories-section .inner-view-left, .stories-section .inner-view-right { @include margin(20px 0 -20px); }
+  .stories-section .inner-view-left .name, .stories-section .inner-view-left .location,
+  .stories-section .inner-view-right .name, .stories-section .inner-view-right .location {
+    @include margin(0);
+    @include padding(0);
+    border: none;
+  }
+  .stories-section .inner-view-left .name, .stories-section .inner-view-right .name { @include margin(20px 0 0); }
 }
 @media (max-width: 480px) {
   // Header
