@@ -1,4 +1,29 @@
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+  .about-suman {
+    .heading {
+      width: 60%;
+      margin: 30px auto 50px;
+      h4 {
+        font-size: 34px;
+      }
+    }
+  }
+  .health-manageselect {
+    .managecat {
+      margin: 20px 0;
+      .category-imghold {
+        @include square(150px);
+      }
+      figcaption {
+        margin: 10px 0;
+      }
+    }
+  }
+  .news {
+    .slider {  width: 87%;  }
+  }
+  .news-article p { font-size: 16px; }
+}
 @media (max-width: $screen-sm-max) {
   // faq
   .faq-accordion {
@@ -25,6 +50,37 @@
   .suman-video {
     width: 65%;
     height: 250px;
+  }
+  .about-suman {
+    .heading {
+      width: 70%;
+      margin: 20px auto 40px;
+      h4 {
+        font-size: 30px;
+      }
+    }
+  }
+  .suman-info {
+    .title {
+      text-align: center;
+    }
+  }
+  .health-manageselect {
+    margin: 40px 0;
+    .managecat {
+      margin: 10px 0;
+      .category-imghold {
+        @include square(120px);
+      }
+      figcaption {
+        font-size: 14px;
+      }
+    }
+  }
+  .news {
+    .slider { width: 76%; }
+    .flex-direction-nav .flex-prev { left: -50px;  }
+    .flex-direction-nav .flex-next { right: -50px; }
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -53,8 +109,49 @@
     width: 75%;
     height: 180px;
   }
+  .about-suman {
+    .heading {
+      width: 80%;
+      margin: 20px auto;
+      h4 {
+        font-size: 22px;
+      }
+    }
+  }
+  .suman-info {
+    padding: 0 20px;
+    .title {
+      margin-bottom: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .descp {
+      font-size: 15px;
+    }
+  }
+  .pro-info { margin-bottom: 60px; }
+  .health-manageselect {
+    .row-flex {
+      @include flex-wrap(wrap);
+      .col-flex {
+        @include flex(auto);
+      }
+    }
+    .managecat {
+      margin: 10px 0;
+      .category-imghold {
+        @include square(100px);
+      }
+      figcaption {
+        font-size: 13px;
+      }
+    }
+  }
+  .news {
+    margin: 20px 0 40px;
+    .slider { width: 62%; }
+  }
 }
-
 @media (max-width: 480px) {
   // faq
   .faq-accordion {
@@ -91,5 +188,40 @@
     width: 85%;
     height: 120px;
     top: 30px;
+  }
+  .about-suman {
+    width: 95%;
+    .heading {
+      h4 {
+        font-size: 18px;
+      }
+    }
+  }
+  .suman-info {
+    padding: 0 10px;
+    .title {
+      font-size: 16px;
+    }
+    .descp {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  .pro-info { margin-bottom: 50px; }
+  .health-manageselect {
+    margin: 25px 0;
+    .managecat {
+      margin: 15px;
+      .category-imghold {
+        @include square(100px);
+      }
+      figcaption {
+        font-size: 13px;
+      }
+    }
+  }
+  .news {
+    margin: 20px 0;
+    .slider { width: 47%; }
   }
 }
