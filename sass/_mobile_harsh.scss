@@ -14,6 +14,8 @@
   .signin { @include padding(12px 0); }
   // Footer
   footer .mail .email { @include size(240px, auto); }
+  // Team
+  .team-members .single-member .member-image { @include square(150px); }
 }
 @media (max-width: $screen-sm-max) {
   // Header
@@ -63,6 +65,12 @@
   .what-health-goal h2 { font-size: 20px; }
   .what-health-goal .health-goals .weight-goal .btn-packages { font-size: 14px; }
   .what-health-goal .health-goals .health-manage-goal .btn-packages { font-size: 14px; }
+  // Team
+  .team-members .single-member {
+    @include margin(20px 20px 0);
+    text-align: center;
+  }
+  .team-members .single-member .member-image { @include margin(20px auto 0); }
 }
 @media (max-width: 480px) {
   // Header
