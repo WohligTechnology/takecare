@@ -62,7 +62,7 @@
         <tabset>
           <tab>
             <tab-heading>
-              <button class="btn brand-brown-bg brand-primary-lighter text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
+              <button class="btn brand-brown-bg white text-uppercase"><i class="fa fa-play-circle-o"></i> View Here</button>
             </tab-heading>
 
             <div class="inner-stories-view" ng-repeat="view in views">
@@ -79,7 +79,7 @@
                         <div class="inner-view-left">
                           <div class="get-round view-left">
                             <span class="lost text-uppercase brand-brown-dark-bg">Lost</span>
-                            <span class="font-vista">{{view.weight}}kgs</span>
+                            <p class="font-vista"><span class="weight-number">{{view.weight}}</span>kgs</p>
                           </div>
                           <span class="name text-left brand-brown-dark font-semibold">{{view.name}}</span><br>
                           <span class="location text-left white">{{view.location}}</span>
@@ -101,7 +101,7 @@
                         <div class="inner-view-right">
                           <div class="get-round pull-right view-right">
                             <span class="lost text-uppercase brand-brown-dark-bg">Lost</span>
-                            <span class="font-vista">{{view.weight}}kgs</span>
+                            <p class="font-vista"><span class="weight-number">{{view.weight}}</span>kgs</p>
                           </div>
                           <span class="name text-right brand-brown-dark font-semibold">{{view.name}}</span><br>
                           <span class="location text-right white">{{view.location}}</span>
@@ -154,7 +154,7 @@
                         </div>
                         <div class="get-round img-left">
                           <span class="lost text-uppercase brand-brown-dark-bg">Lost</span>
-                          <span class="font-vista">{{read.weight}}kgs</span>
+                          <p class="font-vista"><span class="weight-number">{{read.weight}}</span>kgs</p>
                         </div>
                       </div>
                     </div>
@@ -172,7 +172,7 @@
                         </div>
                         <div class="get-round img-right">
                           <span class="lost text-uppercase brand-brown-dark-bg">Lost</span>
-                          <span class="font-vista">{{read.weight}}kgs</span>
+                          <p class="font-vista"><span class="weight-number">{{read.weight}}</span>kgs</p>
                         </div>
                       </div>
 
@@ -205,7 +205,7 @@
 
   <div class="growth-section">
     <div class="container">
-      <h3 class="text-center text-uppercase">Growth in the number of clients across the past decade:</h3>
+      <h3 class="text-center text-uppercase font-semibold">Growth in the number of clients across the past decade:</h3>
 
       <div class="growth-inner">
         <div class="growth-years">
@@ -270,8 +270,8 @@
   <div class="care-programs">
     <h3 class="text-center text-uppercase brand-brown-dark font-semibold">Get to know more about our care programs:</h3>
     <div class="care-buttons text-center">
-      <a href="" class="btn btn-primary-inverse text-uppercase font-semibold"><img src="img/packages/1.png" alt="" class="img-responsive">Weight Loss</a>
-      <a href="" class="btn btn-primary-inverse text-uppercase font-semibold"><img src="img/packages/2.png" alt="" class="img-responsive">Health Management</a>
+      <a href="" class="btn btn-primary-inverse text-uppercase"><img src="img/packages/1.png" alt="" class="img-responsive">Weight Loss</a>
+      <a href="" class="btn btn-primary-inverse text-uppercase"><img src="img/packages/2.png" alt="" class="img-responsive">Health Management</a>
     </div>
   </div>
 </section>
