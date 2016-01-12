@@ -3,7 +3,7 @@
 // //////////////////////////////////
 // Hamburger
 .hamburger {
-  margin-top: 30px;
+  margin-top: 35px;
   span {
     @include size(25px, 3px);
     display: block;
@@ -12,20 +12,22 @@
 }
 .logo {
   @include margin(20px 0 0 10px);
-  h1 { span {
+  h1 { a {
     font-size: 24px;
     letter-spacing: 3px;
   } }
 }
 // Social Links
-.links { margin: 20px 0 15px 30px; }
+.links { margin: 20px 0 20px 30px; }
 .social-links {
-  padding: 10px 10px 0;
+  padding: 10px 0 0;
+  margin: 2px -10px 0 0;
   li {
     display: inline-block;
     a {
       margin-right: 15px;
       i {
+        color: #f0937a;
         font-size: 24px;
       }
     }
@@ -35,16 +37,16 @@
 .contact-tel {
   border-left: 1px solid $brand-primary;
   border-right: 1px solid $brand-primary;
-  @include margin(2px 0 0 -40px);
+  @include margin(2px -50px 0 -14px);
   @include padding(12px 18px);
-  font-size: 13px;
-  letter-spacing: 1px;
+  a { color: #d2664e; }
 }
 // Signin
 .signin {
-  @include margin(0 0 0 -10px);
+  @include margin(2px 0 0 -10px);
   @include padding(10px 0);
   font-size: 16px;
+  a { color: #cf5636; }
 }
 
 // About
@@ -318,7 +320,7 @@
   }
 }
 .join-team {
-  @include margin(50px 0 0);
+  @include margin(30px 0 0);
   a {
     @include margin(0 0 100px 0);
     @include padding(15px 40px);
@@ -330,13 +332,18 @@
 
 // Success Stories
 .stories-section {
-  @include margin(100px 0 0);
+  @include margin(50px 0 0);
   .single-read, .single-view {
     @include margin(15px 0);
     @include padding(20px);
     border-radius: 5px;
+    .lost {
+      @include padding(5px 0 2px);
+      font-size: 16px;
+    }
   }
   .nav-tabs {
+    @include margin(0 0 20px);
     border: none;
     li {
       display: inline-block;
@@ -713,6 +720,7 @@
     display: inline-block;
     font-size: 16px;
     border: 2px solid $brand-primary;
+    label { font-weight: normal; }
     .form-control {
       @include size(50px, 100%);
       display: inline-block;
@@ -740,6 +748,7 @@
   .glyphicon-chevron-right:before {
     @include square(40px);
     @include margin(-20px 0 0);
+    @include padding(0 0 0 4px);
     content: "\f105";
     display: block;
     color: $brand-brown-dark;
@@ -752,6 +761,7 @@
   .glyphicon-chevron-left:before {
     @include square(40px);
     @include margin(-20px 0 0);
+    @include padding(0 2px 0 0);
     content: "\f104";
     display: block;
     color: $brand-brown-dark;
@@ -811,6 +821,7 @@
     }
   }
   .flex-direction-nav a.flex-next:before { content: "\f105"; }
+  .flexslider ul li:first-child button { background-color: $brand-primary; }
     button {
       @include margin(50px 0 0);
       @include padding(5px 40px);
