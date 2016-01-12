@@ -359,6 +359,14 @@ button {
 .no-radius {
   border-radius: 0;
 }
+.banner {
+  .get-center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  @include transform(-50%,-40%);
+  }
+}
 /* Start writing sass here */
 ///////////////
 //Home/////////
@@ -366,7 +374,7 @@ button {
 .home-slider {
   .slider-info {
     h2 {
-      font-size: 39px;
+      font-size: 45px;
     }
     button {
       margin-top: 20px;
