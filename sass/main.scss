@@ -70,7 +70,7 @@ $font-family-serif: "Whitney Medium", Georgia, "Times New Roman", Times, serif !
 $font-vista: "Vista Slab", "Helvetiva Neue", Helvetica !default;
 $font-baubodi: "Baubodi", "Helvetiva Neue", Helvetica !default;
 $font-gotham: "Gotham Rounded Book", "Helvetica Neue", Helvetica !default;
-$font-gotham: "Gotham Rounded Bold", "Helvetica Neue", Helvetica !default;
+$font-gotham-bold: "Gotham Rounded Bold", "Helvetica Neue", Helvetica !default;
 $font-family-light: "Whitney Light", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-semibold: "Whitney Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-book: "Whitney Book", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
@@ -632,14 +632,13 @@ button {
     padding: 30px 30px 30px 10px;
     border-bottom: 2px solid $brand-brown;
     p {
-      width: 82%;
       font-size: 22px;
       @extend.text-lighter;
     }
   }
 }
 .blog-main {
-  padding: 25px;
+  padding: 25px 40px;
   min-height: 576px;
   margin: 0 25px 0 0;
 }
