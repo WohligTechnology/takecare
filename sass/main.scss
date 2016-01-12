@@ -44,7 +44,7 @@ $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
 $brand-primary: #e96542 !default; //Orange
 $brand-primary-light: #f4b2a1 !default; //LightOrange
-$brand-primary-lighter: #f0937a !default; //ligherOrange
+$brand-primary-lighter: #ffd8ce !default; //ligherOrange
 $brand-brown: #c2a388 !default; //Brown
 $brand-brown-light: #e6d9ce !default; //BrownLight
 $brand-brown-dark: #3b1808 !default; //BrownDark
@@ -1253,6 +1253,8 @@ button {
 ///////////////
 footer {
   padding: 40px 0;
+  font-size: 12px;
+  line-height: 15px;
   h5,
   p {
     margin: 0;
@@ -1280,6 +1282,9 @@ footer {
       }
     }
   }
+  .social-links2 li a i {
+    color: #f8d1c7;
+  }
   .foot-about {
     margin-top: 62px;
   }
@@ -1301,7 +1306,7 @@ footer {
         border-width: 1px;
       }
       @include placeholder {
-        color: $body-bg;
+        color: $brand-primary-lighter;
       };
     }
     .btn-submit {
