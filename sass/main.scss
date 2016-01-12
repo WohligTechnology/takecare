@@ -44,7 +44,7 @@ $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
 $brand-primary: #e96542 !default; //Orange
 $brand-primary-light: #f4b2a1 !default; //LightOrange
-$brand-primary-lighter: #ffd8ce !default; //ligherOrange
+$brand-primary-lighter: #f0937a !default; //ligherOrange
 $brand-brown: #c2a388 !default; //Brown
 $brand-brown-light: #e6d9ce !default; //BrownLight
 $brand-brown-dark: #3b1808 !default; //BrownDark
@@ -525,16 +525,18 @@ button {
     padding: 40px 120px;
     .carousel-control.left {
       top: -50px;
-      left: -50px;
+      left: -90px;
       opacity: 1;
+      text-shadow: none;
       &:hover {
         color: $brand-brown;
       }
     }
     .carousel-control.right {
       top: -50px;
-      right: -50px;
+      right: -90px;
       opacity: 1;
+      text-shadow: none;
       &:hover {
         color: $brand-brown;
       }
@@ -668,6 +670,7 @@ button {
 /////////////////////
 ////Health-Management
 ////////////////////
+.story-video { height: 270px; }
 .health-descp {
   font-size: 16px;
 }
@@ -706,13 +709,13 @@ button {
 }
 .consult-chart {
   width: 110px;
-  height: 67px;
+  height: 80px;
   border-radius: 6px;
   background-color: $brand-primary;
   font-size: 16px;
   .noconsult {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border: 4px solid $brand-primary;
     border-radius: 100%;
     position: absolute;
@@ -720,16 +723,22 @@ button {
     left: 50%;
     background-color: #fff;
     font-size: 30px;
-    line-height: 35px;
+    line-height: 40px;
     text-align: center;
     @include transform(translateX(-50%));
   }
   .consult {
-    margin-top: 40px;
+    margin-top: 50px;
     display: block;
     @extend.text-bold;
   }
 }
+.weight-round { @include square(100px); }
+
+// .health-tab {
+//   .tab-chart { width: 83%; }
+// }
+
 .tab-chart {
   width: 84%;
   border: 2px solid $brand-brown;
@@ -739,10 +748,10 @@ button {
     text-align: center;
     p {
       margin: 0;
-      font-size: 17px;
+      font-size: 18px;
     }
     .price {
-      font-size: 21px;
+      font-size: 24px;
       span {
         font-size: 11px;
         vertical-align: middle;
@@ -761,7 +770,7 @@ button {
   }
   .nav-tabs li:first-child a {
     background-color: #fff;
-    padding: 4px 26px;
+    padding: 8px 38px;
     .chart-head {
       p {
         color: $brand-primary;
@@ -801,7 +810,7 @@ button {
       a {
         border-radius: 6px;
         border: none;
-        padding: 6px 26px;
+        padding: 10px 38px;
         @include transition(all 0ms ease);
         &:hover {
           background-color: $brand-primary;
@@ -864,18 +873,17 @@ button {
     }
   }
 }
-.tab-head {
-  margin-bottom: 35px;
-}
+.tab-head { margin-bottom: 50px }
 .tab-body {
   h5 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 20px;
     color: $brand-brown-dark;
+    letter-spacing: 1px;
   }
   .chart-list {
     li {
-      margin-bottom: 7px;
+      margin-bottom: 8px;
       color: $brand-primary;
     }
   }
@@ -884,7 +892,7 @@ button {
   margin: 20px 0 0;
   .tab-footinfo {
     display: inline-block;
-    width: 67%;
+    width: 74%;
     p {
       width: 320px;
     }
