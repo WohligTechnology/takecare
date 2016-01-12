@@ -234,7 +234,8 @@ img {
   opacity: 0;
   @include transition(all 300ms ease);
 }
-img.doneLoading, img.fancybox-image {
+img.doneLoading,
+img.fancybox-image {
   opacity: 1;
 }
 nav li:hover .dropdown-menu {
@@ -522,7 +523,7 @@ button {
 .section-story {
   padding: 60px 0;
   .slider {
-    padding: 40px 120px;
+    padding: 40px 120px 2px;
     .carousel-control.left {
       top: -50px;
       left: -90px;
@@ -670,7 +671,9 @@ button {
 /////////////////////
 ////Health-Management
 ////////////////////
-.story-video { height: 270px; }
+.story-video {
+  height: 270px;
+}
 .health-descp {
   font-size: 16px;
 }
@@ -733,12 +736,12 @@ button {
     @extend.text-bold;
   }
 }
-.weight-round { @include square(100px); }
-
+.weight-round {
+  @include square(100px);
+}
 // .health-tab {
 //   .tab-chart { width: 83%; }
 // }
-
 .tab-chart {
   width: 84%;
   border: 2px solid $brand-brown;
@@ -873,7 +876,9 @@ button {
     }
   }
 }
-.tab-head { margin-bottom: 50px }
+.tab-head {
+  margin-bottom: 50px;
+}
 .tab-body {
   h5 {
     margin-bottom: 15px;
@@ -1055,18 +1060,21 @@ button {
     border: 2px solid $brand-primary;
     background-color: transparent;
   }
-  .table > thead > tr > th {
-    padding: 20px;
-    border: none;
-    font-size: 18px;
-    letter-spacing: 2px;
-  }
-  .table > tbody > tr > td {
-    @include padding(15px 8px);
-    font-size: 16px;
-    vertical-align: middle;
-    &:last-child {
-      vertical-align: bottom;
+  .table {
+    margin-bottom: 0;
+    thead > tr > th {
+      padding: 24px 20px;
+      border: none;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    tbody > tr > td {
+      @include padding(15px 8px);
+      font-size: 16px;
+      vertical-align: middle;
+      &:last-child {
+        vertical-align: bottom;
+      }
     }
   }
   .remove {
@@ -1408,7 +1416,6 @@ footer {
     background-color: $brand-brown-dark;
   }
 }
-
 /// end of filters///
 //////end footer/////
 @import "harsh";
