@@ -222,7 +222,7 @@
 .we-enroll {
   @include margin(0 0 100px);
   h2 {
-    @include margin(100px 0);
+    @include margin(100px 0 80px);
     letter-spacing: 1px;
   }
   .session-one, .session-two {
@@ -261,7 +261,7 @@
     }
   }
   .session-two {
-    @include margin(100px 0 0 0);
+    @include margin(80px 0 0 0);
     .last {
       .session-charges { @include padding(23px 0 15px); }
     }
