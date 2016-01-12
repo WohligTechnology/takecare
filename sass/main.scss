@@ -335,13 +335,18 @@ button {
   background-color: $brand-primary;
   text-align: center;
   overflow: hidden;
-  span {
+  .lost {
+    padding: 5px 0 2px;
     display: block;
-    padding: 5px 0;
+    font-size: 16px;
   }
-  .weight-count {
-    margin-top: -15px;
-    font-size: 24px;
+  p {
+    margin: -5px 0 0;
+    font-size: 28px;
+  }
+  .weight-number {
+    display: inline-block;
+    font-size: 36px;
   }
 }
 .round {
@@ -580,8 +585,8 @@ button {
       &:after {
         content: url(../img/right.png);
         position: absolute;
-        top: 80px;
-        right: 0;
+        top: 85px;
+        right: -25px;
       }
       &:before {
         content: url(../img/left.png);
@@ -595,7 +600,7 @@ button {
     }
     .weight-info {
       position: absolute;
-      top: 11px;
+      top: 6px;
       left: 65%;
       z-index: 10;
     }
@@ -639,11 +644,14 @@ button {
 }
 .blog-main {
   padding: 25px 40px;
-  min-height: 576px;
+  min-height: 555px;
   margin: 0 25px 0 0;
 }
 .askqts {
   margin: 0 0 0 25px;
+  .tips {
+    letter-spacing: 1px;
+  }
   form {
     select {
       background-color: $brand-primary;
@@ -654,14 +662,26 @@ button {
       position: absolute;
       top: 50%;
       right: 4%;
+      border-top: 7px solid;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 7px solid transparent;
+      @include transform(translateY(-50%));
     }
     textarea {
       min-height: 225px;
     }
+    input,textarea {
+      @include placeholder {
+        font-family: $font-baubodi;
+        font-weight: bold;
+        letter-spacing: 2px;
+      };
+    }
   }
 }
 .section-about {
-  padding: 60px 0;
+  padding: 60px 0 25px;
   .about-info {
     h3 {
       margin: 0 0 25px;
@@ -672,7 +692,7 @@ button {
     }
     p {
       font-size: 17px;
-      margin: 20px 0;
+      margin: 10px 0 20px;
       line-height: 28px;
     }
   }
@@ -748,6 +768,7 @@ button {
 }
 .weight-round {
   @include square(100px);
+  p { margin: 0; }
 }
 // .health-tab {
 //   .tab-chart { width: 83%; }
@@ -1292,7 +1313,7 @@ footer {
       }
     }
   }
-  .social-links2 li a i {
+  .social-links2 li a  {
     color: #f8d1c7;
   }
   .foot-about {
