@@ -33,6 +33,10 @@
   src: url(../fonts/gotham-rounded.otf);
 }
 @font-face {
+  font-family: 'Gotham Rounded Bold';
+  src: url(../fonts/gotham_bold.ttf);
+}
+@font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff) format('woff'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf) format('truetype'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg) format('svg');
 }
@@ -66,6 +70,7 @@ $font-family-serif: "Whitney Medium", Georgia, "Times New Roman", Times, serif !
 $font-vista: "Vista Slab", "Helvetiva Neue", Helvetica !default;
 $font-baubodi: "Baubodi", "Helvetiva Neue", Helvetica !default;
 $font-gotham: "Gotham Rounded Book", "Helvetica Neue", Helvetica !default;
+$font-gotham: "Gotham Rounded Bold", "Helvetica Neue", Helvetica !default;
 $font-family-light: "Whitney Light", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-semibold: "Whitney Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-book: "Whitney Book", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
@@ -163,6 +168,9 @@ $instagram: #396d9a !default;
 }
 .font-gotham {
   font-family: $font-gotham;
+}
+.font-gotham-bold {
+  font-family: $font-gotham-bold;
 }
 //button
 .btn {
@@ -452,7 +460,6 @@ button {
       padding: 14px 40px;
       position: relative;
       top: 20px;
-      font-weight: bold;
     }
     .health-imgholder {
       width: 270px;
@@ -1349,7 +1356,6 @@ footer {
     border-radius: 5px;
     padding: 12px 25px;
     font-size: 18px;
-    font-weight: bold;
     letter-spacing: 4px;
   }
 }
