@@ -291,7 +291,6 @@
       }
     }
     .member-detail {
-      h3, h4 { font-weight: bold; }
       h3 { font-size: 28px; }
       h4 { font-size: 22px; }
       p { letter-spacing: 2px; }
@@ -318,8 +317,6 @@
     @include margin(0 0 100px 0);
     @include padding(15px 40px);
     font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
   }
 }
 
@@ -330,10 +327,6 @@
     @include margin(15px 0);
     @include padding(20px);
     border-radius: 5px;
-    .lost {
-      @include padding(5px 0 2px);
-      font-size: 16px;
-    }
   }
   .nav-tabs {
     @include margin(0 0 20px);
@@ -367,14 +360,14 @@
     position: relative;
     span { display: block; }
     .title {
-      @include margin(0 0 20px 0);
       font-size: 24px;
+      line-height: 100%;
       &:before {
         content: open-quote;
         color: $body-bg;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, -35px auto auto 0);
+        @include position(absolute, 17px auto auto 0);
         opacity: 0.2;
       }
       &:after {
@@ -383,12 +376,12 @@
         color: $body-bg;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, auto auto -73px auto);
+        @include position(absolute, auto auto -40px auto);
         opacity: 0.2;
       }
     }
     .title-right {
-      &:before { @include position(absolute, -35px auto auto 30px); }
+      &:before { @include position(absolute, 17px auto auto 30px); }
     }
     .name {
       font-size: 24px;
@@ -408,14 +401,10 @@
       .location { @include margin(0 0 0 -112px); }
     }
     &.left {
-      hr { @include margin(20px 20px 20px 0); }
+      hr { @include margin(20px 10px 20px 0); }
     }
   }
   .get-round {
-    span + span {
-      @include margin(-5px 0 0);
-      font-size: 32px;
-    }
     &.img-left { @include position(absolute, 6px auto auto -20px); }
     &.img-right { @include position(absolute, 6px -20px auto auto); }
     &.view-left { @include position(absolute, 11px auto auto 10px); }
@@ -469,18 +458,17 @@
     }
   }
   .read-image {
-    @include square(250px);
+    @include square(225px);
     img { width: 100%; }
   }
-  .read-image-right { @include margin(0 0 0 25px); }
+  .read-image-right { @include margin(0 0 0 50px); }
 }
 .growth-section {
-  @include margin(50px 0);
+  @include margin(40px 0 50px);
   h3 {
     @include padding(0 200px);
     color: $brand-brown-dark;
     font-size: 32px;
-    font-weight: bold;
     letter-spacing: 5px;
   }
   .growth-inner { overflow: scroll; }
@@ -561,7 +549,6 @@
 }
 
 // Contact Us
-.contact-title { font-weight: bold; }
 .contact-location {
   @include margin(50px 0);
   .mumbai, .kolkata {
