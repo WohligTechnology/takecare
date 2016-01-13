@@ -77,6 +77,10 @@
       }
     }
   }
+  .consult-chart {
+    height: 75px;
+    .consult { margin-bottom: 47px; }
+  }
 }
 @media (max-width: $screen-sm-max) {
   // faq
