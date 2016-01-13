@@ -371,6 +371,14 @@ button {
 ///////////////
 //Home/////////
 //////////////
+.slide-holder {
+  .get-center {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    @include transform(translate(-50%,-35%));
+  }
+}
 .home-slider {
   .slider-info {
     h2 {
