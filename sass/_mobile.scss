@@ -49,6 +49,34 @@
       font-size: 18px;
     }
   }
+  // weight-manangement
+  .tab-chart {
+    .nav-tabs {
+      li:first-child {
+        a {
+          padding: 8px 28px;
+        }
+      }
+      li.active:first-child {
+        a {
+          padding: 8px 28px;
+        }
+      }
+      li {
+        a {
+          padding: 10px 28px;
+        }
+      }
+    }
+    .chart-head {
+      p {
+        font-size: 16px;
+      }
+      .price {
+        font-size: 22px;
+      }
+    }
+  }
 }
 @media (max-width: $screen-sm-max) {
   // faq
@@ -140,6 +168,88 @@
       margin: 10px 0;
       text-align: center;
     }
+  }
+  .tab-chart {
+    .nav-tabs {
+      li:first-child {
+        a {
+          padding: 6px 26px;
+        }
+      }
+      li.active:first-child {
+        a {
+          padding: 6px 26px;
+        }
+      }
+      li {
+        a {
+          padding: 8px 26px;
+        }
+      }
+    }
+    .chart-head {
+      p {
+        font-size: 15px;
+      }
+      .price {
+        font-size: 20px;
+      }
+    }
+  }
+  .weight-round {
+    @include square(90px);
+  }
+  .tab-foot {
+    .plan {
+      display: block;
+      text-align: center;
+    }
+  }
+  .section-story {
+    .slider {
+      padding: 20px;
+      .glyphicon-chevron-left:before {
+        color: $brand-brown-light;
+        font-size: 45px;
+      }
+      .glyphicon-chevron-right:before {
+        color: $brand-brown-light;
+        font-size: 45px;
+      }
+      .carousel-control.left {
+        width: auto;
+        margin: 0;
+        left: -34px;
+      }
+      .carousel-control.right {
+        width: auto;
+        margin: 0;
+        right: -34px;
+      }
+    }
+    .view-detail {
+      padding: 10px 0 0;
+      .descp {
+        width: 100%;
+        margin: 58px 0;
+        &:before {
+          width: 39px;
+          height: 29px;
+          background-size: contain;
+          top: -30px;
+        }
+        &:after {
+          width: 39px;
+          height: 29px;
+          background-size: contain;
+          top: 65px;
+          right: 0;
+        }
+      }
+    }
+  }
+  .story-video {
+    height: 230px;
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -267,6 +377,105 @@
       font-size: 12px;
     }
   }
+  .healthchart-list {
+    width: 466px;
+    margin: 40px auto;
+  }
+  .tab-chart {
+    width: 390px;
+    .nav-tabs {
+      li:first-child {
+        a {
+          padding: 6px 13px;
+        }
+      }
+      li.active:first-child {
+        a {
+          padding: 6px 13px;
+        }
+      }
+      li.active {
+        a {
+          &:after {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid $brand-primary;
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+            bottom: -6px;
+          }
+        }
+      }
+      li {
+        margin: 0 2px -2px 0;
+        a {
+          padding: 8px 13px;
+          &:before {
+            height: 34px;
+          }
+        }
+      }
+    }
+    .chart-head {
+      p {
+        font-size: 13px;
+        font-weight: normal;
+      }
+      .price {
+        font-size: 14px;
+        span {
+          font-size: 10px;
+        }
+      }
+    }
+    .chart-info {
+      padding: 15px;
+    }
+    .tab-head {
+      margin-bottom: 30px;
+      font-size: 13px;
+    }
+    .tab-body {
+      h5 {
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+      .chart-list {
+        li {
+          margin-bottom: 6px;
+          font-size: 13px;
+        }
+      }
+    }
+    .tab-foot {
+      text-align: center;
+      .tab-footinfo {
+        width: 100%;
+        p {
+          width: 300px;
+          text-align: left;
+        }
+      }
+      .plan {
+        margin: 15px 0;
+      }
+    }
+  }
+  .align {
+    margin: -12px 2px 0 0;
+  }
+  .weight-round {
+    @include square(70px);
+    .lost {
+      padding: 4px 0 2px;
+      font-size: 12px;
+    }
+    p {
+      font-size: 20px;
+      .weight-number {
+        font-size: 27px;
+      }
+    }
+  }
 }
 @media (max-width: 480px) {
   // faq
@@ -388,6 +597,106 @@
     }
     .shipping p {
       font-size: 12px;
+    }
+  }
+  .healthchart-list {
+    width: auto;
+    margin: 30px auto 20px;
+    text-align: center;
+  }
+  .tab-chart {
+    width: 290px;
+    .nav-tabs {
+      li:first-child {
+        a {
+          padding: 4px 8px;
+        }
+      }
+      li.active:first-child {
+        a {
+          padding: 4px 8px;
+        }
+      }
+      li.active {
+        a {
+          &:after {
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid $brand-primary;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            bottom: -3px;
+          }
+        }
+      }
+      li {
+        a {
+          padding: 6px 8px;
+          &:before {
+            width: 1px;
+            height: 28px;
+          }
+        }
+      }
+    }
+    .chart-head {
+      p {
+        font-size: 10px;
+        font-weight: normal;
+      }
+      .price {
+        font-size: 10px;
+        span {
+          font-size: 9px;
+        }
+      }
+    }
+    .chart-info {
+      padding: 10px;
+    }
+    .tab-head {
+      margin-bottom: 20px;
+      font-size: 12px;
+      text-align: justify;
+    }
+    .tab-body {
+      h5 {
+        margin-bottom: 10px;
+        font-size: 15px;
+        text-align: left;
+      }
+      .chart-list {
+        li {
+          margin-bottom: 5px;
+          font-size: 12px;
+          text-align: left;
+        }
+      }
+    }
+    .tab-foot {
+      text-align: center;
+      .tab-footinfo {
+        p {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .plan {
+        margin: 10px 0;
+      }
+    }
+  }
+  .weight-round {
+    @include square(55px);
+    margin-bottom: 10px;
+    .lost {
+      padding: 5px 0 2px;
+      font-size: 11px;
+    }
+    p {
+      font-size: 15px;
+      .weight-number {
+        font-size: 19px;
+      }
     }
   }
 }

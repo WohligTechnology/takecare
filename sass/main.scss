@@ -371,18 +371,13 @@ button {
 ///////////////
 //Home/////////
 //////////////
-.slide-holder {
-  .get-center {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    @include transform(translate(-50%,-35%));
-  }
-}
 .home-slider {
   .slider-info {
     h2 {
       font-size: 45px;
+    }
+    p {
+      font-size: 16px;
     }
     button {
       margin-top: 20px;
@@ -599,13 +594,19 @@ button {
       font-size: 17px;
       position: relative;
       &:after {
-        content: url(../img/right.png);
+        content: "";
+        background: url(../img/right.png) no-repeat;
+        width: 59px;
+        height: 49px;
         position: absolute;
         top: 85px;
         right: -25px;
       }
       &:before {
-        content: url(../img/left.png);
+        content: "";
+        background:  url(../img/left.png) no-repeat;
+        width: 59px;
+        height: 49px;
         position: absolute;
         top: -50px;
         left: 0;
@@ -697,7 +698,7 @@ button {
   }
 }
 .section-about {
-  padding: 60px 0 25px;
+  padding: 60px 0;
   .about-info {
     h3 {
       margin: 0 0 25px;
@@ -1329,7 +1330,7 @@ footer {
       }
     }
   }
-  .social-links2 li a  {
+  .social-links2 li a i {
     color: #f8d1c7;
   }
   .foot-about {
@@ -1348,12 +1349,12 @@ footer {
       border-color: #c24f31;
       background-color: #c24f31;
       color: $body-bg;
-      @extend .letter-space;
       &:focus {
         border-width: 1px;
       }
       @include placeholder {
         color: $brand-primary-lighter;
+        letter-spacing: 2px;
       }
     }
     .btn-submit {
