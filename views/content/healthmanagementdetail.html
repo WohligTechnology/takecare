@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10 col-sm-12">
           <div class="health-tab healthchart-list">
-            <div class="inline-block v-top">
+            <div class="inline-block v-top space">
               <div class="consult-chart relate inline-block text-center">
                 <span class="noconsult brand-brown-dark font-semibold">4</span>
                 <span class="text-uppercase white consult font-gotham">consults</span>
@@ -301,7 +301,7 @@
           <uib-slide ng-repeat="slide in healthdetail" active="slide.active">
             <div class="healthmanagement-slider">
               <div class="row">
-                <div class="col-md-4" ng-repeat="detail in slide">
+                <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="detail in slide">
                   <figure>
                   <div class="slide-imghold round m-center">
                     <img ng-src="{{detail.img}}" alt="" class="img-responsive">

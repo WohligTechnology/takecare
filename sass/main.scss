@@ -902,6 +902,7 @@ button {
         border: none;
         background-color: $brand-primary;
         color: #fff;
+        cursor: pointer;
         &:after {
           content: "";
           border-top: 40px solid transparent;
@@ -964,6 +965,7 @@ button {
   }
 }
 .slider-round {
+  padding:  0 70px 0 30px;
   margin-bottom: 50px;
   .carousel-control.left {
     top: -50px;
@@ -1175,7 +1177,7 @@ button {
           background-color: $brand-primary;
           color: #fff;
         }
-      }
+      }  
     }
   }
   .nav-tabs > li.active > a,
@@ -1325,7 +1327,7 @@ footer {
         &:before {
           content: "-";
           margin-right: 5px;
-          font-size: 15px;  
+          font-size: 15px;
         }
       }
     }

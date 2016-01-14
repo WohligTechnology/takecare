@@ -79,10 +79,73 @@
   }
   .consult-chart {
     height: 75px;
-    .consult { margin-bottom: 47px; }
+    .consult {
+      margin-top: 47px;
+    }
   }
   .tab-foot {
-    .plan { display: block; }
+    .plan {
+      display: block;
+    }
+  }
+  .slider-round {
+    .healthmanagement-slider {
+      .slide-imghold {
+        @include square(150px);
+      }
+      figcaption {
+        margin: 15px 0 0;
+      }
+    }
+    .carousel-control {
+      .glyphicon-chevron-left {
+        left: -50px;
+      }
+      .glyphicon-chevron-right {
+        right: -50px;
+      }
+    }
+  }
+  // home
+  .health-design {
+    padding: 25px 30px;
+    h4 {
+      font-size: 28px;
+      word-spacing: 2px;
+    }
+    .img-holder {
+      @include square(120px);
+      top: -22px;
+      left: 62%;
+      background: url(../img/suman.jpg) no-repeat -135px -12px;
+    }
+    .more-abt-suman {
+      font-size: 17px;
+      word-spacing: 1px;
+    }
+  }
+  .health-cat {
+    margin: 40px 20px;
+    .health-info {
+      padding: 0;
+    }
+  }
+  .info {
+    .health-title {
+      span {
+        font-size: 18px;
+      }
+    }
+    .health-count {
+      font-size: 35px;
+    }
+    .icon {
+      @include square(80px);
+    }
+  }
+  .blog-main {
+    padding: 25px;
+    margin: 0 15px 0 0;
   }
 }
 @media (max-width: $screen-sm-max) {
@@ -258,8 +321,98 @@
   .story-video {
     height: 230px;
   }
+  .consult-chart {
+    height: 67px;
+    .consult {
+      margin-top: 42px;
+    }
+  }
+  .slider-round {
+    padding: 0 25px;
+    .healthmanagement-slider {
+      .slide-imghold {
+        @include square(120px);
+      }
+      figcaption {
+        margin: 10px 0 0;
+        font-size: 13px;
+      }
+    }
+  }
+  .health-heading {
+    margin: 0 0 15px;
+    font-size: 23px;
+  }
+  .health-design {
+    padding: 20px 10px;
+    h4 {
+      font-size: 20px;
+      word-spacing: 0;
+    }
+    .img-holder {
+      @include square(100px);
+      left: 64%;
+      border: 2px solid #fff;
+    }
+    .more-abt-suman {
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+  }
+  .health-cat {
+    margin: 40px 0;
+    .health-info {
+      margin: 20px 0;
+      text-align: center;
+      .title {
+        span {
+          display: inline-block;
+        }
+      }
+      .health-descp {
+        margin: 10px auto 20px;
+      }
+      .health-imgholder {
+        margin: 0 auto;
+      }
+    }
+  }
+  .info {
+    .health-title {
+      span {
+        font-size: 16px;
+      }
+    }
+    .health-count {
+      font-size: 29px;
+    }
+    .icon {
+      @include square(70px);
+    }
+  }
+  .health-diet {
+    padding: 20px 0;
+    .diet-info {
+      padding: 0;
+      h4 {
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .diet-holder {
+        width: 280px;
+        height: 150px;
+      }
+      .descp {
+        width: 280px;
+        margin: 10px auto;
+      }
+    }
+  }
 }
 @media (max-width: $screen-xs-max) {
+  .btn {
+    padding: 10px 16px;
+  }
   // faq
   .faq-accordion {
     padding: 20px;
@@ -470,7 +623,8 @@
   .align {
     margin: -12px 2px 0 0;
   }
-  .weight-round {
+  .weight-round,
+  .get-round {
     @include square(70px);
     .lost {
       padding: 4px 0 2px;
@@ -480,6 +634,118 @@
       font-size: 20px;
       .weight-number {
         font-size: 27px;
+      }
+    }
+  }
+  .consult-chart {
+    width: 70px;
+    height: 55px;
+    .noconsult {
+      @include square(35px);
+      border: 2px solid $brand-primary;
+      font-size: 20px;
+      line-height: 30px;
+      top: -15px;
+    }
+    .consult {
+      margin-top: 35px;
+      font-size: 11px;
+    }
+  }
+  .slider-round {
+    padding: 0 50px 0 40px;
+    .healthmanagement-slider {
+      .slide-imghold {
+        @include square(100px);
+      }
+      figcaption {
+        margin: 9px 0 0;
+        font-size: 12px;
+      }
+    }
+    .glyphicon-chevron-left:before,
+    .glyphicon-chevron-right:before {
+      font-size: 45px;
+    }
+  }
+  .health-heading {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+  .health-design {
+    min-height: 200px;
+    text-align: center;
+    h4 {
+      display: block;
+    }
+    .img-holder {
+      position: static;
+      @include transform(translate(0));
+      margin: 15px auto;
+    }
+    .more-abt-suman {
+      float: none !important;
+      display: block;
+    }
+  }
+  .health-cat {
+    .health-info {
+      margin: 20px auto;
+      text-align: center;
+      .title {
+        font-size: 19px;
+      }
+      .health-descp {
+        margin: 10px auto;
+        font-size: 14px;
+      }
+      .know-more {
+        padding: 10px 16px;
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .people-info {
+    .info {
+      padding: 0;
+      border: none;
+      margin: 0 0 20px;
+      text-align: center;
+    }
+  }
+  .census {
+    width: 125px;
+  }
+  .section-story {
+    .slider {
+      .glyphicon-chevron-left:before {
+        color: $brand-brown-dark;
+        font-size: 50px;
+      }
+      .glyphicon-chevron-right:before {
+        color: $brand-brown-dark;
+        font-size: 50px;
+      }
+      .carousel-control.left {
+        top: 60%;
+        left: 50px;
+      }
+      .carousel-control.right {
+        top: 60%;
+        right: 50px;
+      }
+    }
+  }
+  .health-diet {
+    .diet-info {
+      margin: 20px 0;
+      h4 {
+        font-size: 20px;
+      }
+      .descp {
+        min-height: auto;
+        margin: 15px auto;
       }
     }
   }
@@ -551,6 +817,7 @@
       }
       figcaption {
         font-size: 13px;
+        letter-spacing: 1px;
       }
     }
   }
@@ -703,6 +970,76 @@
       font-size: 15px;
       .weight-number {
         font-size: 19px;
+      }
+    }
+  }
+  .consult-chart {
+    width: 60px;
+    height: 42px;
+    margin: 0 0 10px;
+    .noconsult {
+      @include square(25px);
+      border: 1px solid $brand-primary;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .consult {
+      margin-top: 25px;
+      font-size: 9px;
+    }
+  }
+  .slider-round {
+    padding: 0 10px;
+    .healthmanagement-slider {
+      .slide-imghold {
+        @include square(70px);
+      }
+      figcaption {
+        margin: 7px 0 0;
+        font-size: 9px;
+        letter-spacing: 0;
+      }
+    }
+    .glyphicon-chevron-left:before,
+    .glyphicon-chevron-right:before {
+      font-size: 35px;
+    }
+    .carousel-control {
+      .glyphicon-chevron-left {
+        left: -35px;
+      }
+      .glyphicon-chevron-right {
+        right: -35px;
+      }
+    }
+  }
+  .health-heading {
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+  .health-cat {
+    margin: 0;
+  }
+  .info {
+    .health-title {
+      font-size: 13px;
+    }
+    .health-count {
+      font-size: 25px;
+      span {
+        font-size: 12px;
+      }
+    }
+    .icon {
+      @include square(60px);
+    }
+  }
+  .health-diet {
+    .diet-info {
+      h4 { font-size: 18px; }
+      .descp {
+        font-size: 15px;
+        word-spacing: 0;
       }
     }
   }
