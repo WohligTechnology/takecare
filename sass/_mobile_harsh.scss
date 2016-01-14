@@ -1,5 +1,6 @@
 @media (max-width: 1200px) {}
 @media (max-width: $screen-md-max) {
+
   // Header
   .logo h1 span {
     font-size: 22px;
@@ -32,6 +33,34 @@
 }
 @media (max-width: $screen-sm-max) {
   // Header
+
+.products .product-cat a{
+  font-size: 14px ;
+
+}
+  .product-cat{
+    h3{
+      font-size: 18px;
+    }
+
+  }
+  .filters {
+    h3 {
+
+      font-size: 18px;
+  }
+  }
+  .checkbox{
+    .white{
+      font-size: 14px;
+    }
+  }
+  .p.brand-primary.font-semibold{
+    font-size: 13px;
+  }
+  .btn-primary{
+    font-size: 10px;
+  }
   .hamburger { @include margin(35px 0 0 125px); }
   .links {
     @include margin(10px auto 20px);
@@ -73,6 +102,17 @@
 }
 @media (max-width: $screen-xs-max) {
   // Header
+  .products {
+    margin: 20px 0;
+}
+  .product-desc p {
+    font-size: 14px;
+}
+  .selfcare-image{
+    h2 {
+     font-size: 15px !important;
+ }
+  }
   .hamburger { @include margin(35px 0 0 50px); }
   .logo h1 span { font-size: 16px; }
   .social-links { text-align: center; }
