@@ -79,9 +79,10 @@
   }
   .consult-chart {
     height: 75px;
-    .consult {
-      margin-top: 47px;
-    }
+    .consult { margin-bottom: 47px; }
+  }
+  .tab-foot {
+    .plan { display: block; }
   }
 }
 @media (max-width: $screen-sm-max) {
@@ -256,12 +257,6 @@
   }
   .story-video {
     height: 230px;
-  }
-  .consult-chart {
-    height: 67px;
-    .consult {
-      margin-top: 35px;
-    }
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -488,21 +483,6 @@
       }
     }
   }
-  .consult-chart {
-    width: 70px;
-    height: 55px;
-    .noconsult {
-      width: 30px;
-      height: 30px;
-      border: 2px solid $brand-primary;
-      font-size: 18px;
-      line-height: 25px;
-    }
-    .consult {
-      font-size: 11px;
-      margin-top: 28px;
-    }
-  }
 }
 @media (max-width: 480px) {
   // faq
@@ -724,24 +704,6 @@
       .weight-number {
         font-size: 19px;
       }
-    }
-  }
-  .consult-chart {
-    width: 60px;
-    height: 42px;
-    border-radius: 4px;
-    margin: 10px 0;
-    .noconsult {
-      width: 20px;
-      height: 20px;
-      border: 1px solid $brand-primary;
-      font-size: 12px;
-      line-height: 15px;
-      top: -8px;
-    }
-    .consult {
-      font-size: 10px;
-      margin-top: 25px;
     }
   }
 }
