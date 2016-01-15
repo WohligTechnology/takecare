@@ -9,9 +9,9 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
               <div class="info text-center">
-                <div class=" inline-block v-top">
+                <div class=" inline-block v-top census">
                   <h5 class="text-uppercase text-bold brand-brown-dark font-semibold health-title">Total number of
                     <span class="block">Clients</span>
                   </h5>
@@ -22,9 +22,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
               <div class="info  text-center people-weight-count">
-                <div class="inline-block v-top">
+                <div class="inline-block v-top census">
                   <h5 class="text-uppercase text-bold brand-brown-dark font-semibold health-title">Total
                     <span class="block count">Weight Loss</span>
                   </h5>
@@ -37,9 +37,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="info  text-center no-border">
-                <div class="inline-block v-top">
+            <div class="col-md-4 col-sm-4">
+              <div class="info no-border">
+                <div class="inline-block v-top census">
                   <h5 class="text-uppercase text-bold  brand-brown-dark font-semibold health-title">Presence in
                     <span class="block">Countries</span>
                   </h5>
@@ -67,7 +67,7 @@
 
             <div class="inner-stories-view" ng-repeat="view in views">
               <div class="row" ng-if="$index%2==0">
-                <div class=" col-md-offset-1 col-md-10">
+                <div class=" col-md-offset-1 col-md-10 ">
                   <div class="single-view text-center brand-brown-bg">
                     <div class="row">
                       <div class="col-md-6">
@@ -77,10 +77,12 @@
 
                       <div class="col-md-6">
                         <div class="inner-view-left">
-                          <div class="get-round view-left">
-                            <span class="lost text-uppercase brand-brown-dark-bg">Lost</span>
-                            <p class="font-vista"><span class="weight-number">{{view.weight}}</span>kgs</p>
-                          </div>
+                          <div class="get-round pull-right view-right">
+                          <span class="text-uppercase brand-brown-dark-bg lost">Lost</span>
+                          <p>
+                            <span class="weight-number inline-block font-vista">5</span>kgs
+                          </p>
+                        </div>
                           <span class="name text-left brand-brown-dark font-semibold">{{view.name}}</span><br>
                           <span class="location text-left white">{{view.location}}</span>
                         </div>
