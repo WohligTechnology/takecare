@@ -528,11 +528,33 @@
   }
   }
 }
+// checkout
+.checkout-tab {
+  margin: 40px 0;
+  .order-summary {
+    margin: 10px 0 20px;
+    .table {
+      thead > tr > th {
+        padding: 8px 30px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .nav-tabs {
+    li:first-child {
+a {
+  padding: 12px 25px 0;
+  min-height: 70px;
+}
+    }
+  }
+}
 }
 @media (max-width: $screen-xs-max) {
   .btn {
     padding: 10px 16px;
   }
+  .btn-center { text-align: center; }
   // faq
   .faq-accordion {
     padding: 20px;
@@ -955,6 +977,50 @@
   }
   }
 }
+// checkout
+.checkout-tab {
+  margin: 30px 0 ;
+  .order-summary {
+    margin: 10px 0 15px;
+    .table {
+      thead > tr > th {
+        padding: 8px;
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+    }
+  }
+  .nav-tabs {
+    li:first-child {
+      a {
+        min-height: auto;
+        padding: 0 41px 0;
+      }
+    }
+    li {
+      font-size: 16px;
+      a {
+        padding: 0 25px;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+.checkout-main {
+  .cart-table {
+    .table {
+      thead > tr > th {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .coupon {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .price-ship { margin-right: 0; }
+}
 }
 @media (max-width: 480px) {
   // faq
@@ -1313,6 +1379,46 @@
   .single-category {
     .category-image {  @include square(130px); }
     h3 {  font-size: 15px; }
+  }
+}
+// checkout
+.checkout-tab {
+  .greater { display: none; }
+  .order-summary {
+    .table {
+      thead > tr > th {  font-size: 11px;  }
+    }
+  }
+  .nav-tabs {
+    li {
+      font-size: 12px;
+      a { padding: 0 15px; }
+    }
+    li:first-child {
+      a {
+min-height: auto;
+padding: 0 15px;
+      }
+    }
+  }
+}
+.checkout-main {
+  .cart-table {
+    .table {
+      thead > tr > th {
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 0;
+      }
+      tbody > tr > td:last-child {
+        padding: 0 9px;
+      }
+    }
+  }
+  .coupon-ship { margin: 0 0 10px; }
+  .coupon {
+    font-size: 12px;
+    letter-spacing: 0;
   }
 }
 }

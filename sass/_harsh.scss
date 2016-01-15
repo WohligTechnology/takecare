@@ -65,6 +65,7 @@
   h2 {
     @include margin(0);
     font-size: 50px;
+    text-align: center;
   }
 }
 .about-desc {

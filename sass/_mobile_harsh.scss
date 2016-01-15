@@ -1,4 +1,6 @@
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+    .selfcare-image h2 { font-size: 37px; }
+}
 @media (max-width: $screen-md-max) {
 
   // Header
@@ -73,7 +75,7 @@
     .foot-about { @include margin(20px 0 100px); }
   }
   // Health Packages
-  .selfcare-image h2 { font-size: 40px; }
+  .selfcare-image h2 { font-size: 30px; }
   .what-health-goal .health-goals .weight-goal { @include margin(0 20px 50px); }
   // Image Consulting
   .we-enroll .session-one .session-charges, .we-enroll .session-two .session-charges { @include margin(0 0 50px 0); }
@@ -110,7 +112,7 @@
 }
   .selfcare-image{
     h2 {
-     font-size: 15px !important;
+     font-size: 17px;
  }
   }
   .hamburger { @include margin(35px 0 0 50px); }
@@ -138,7 +140,6 @@
   }
   .social-links li a { @include margin(0 8px 0 0); }
   // Health Packages
-  .selfcare-image h2 { font-size: 18px; }
   .what-health-goal h2 { font-size: 20px; }
   .what-health-goal .health-goals .weight-goal .btn-packages { font-size: 14px; }
   .what-health-goal .health-goals .health-manage-goal .btn-packages { font-size: 14px; }
@@ -185,6 +186,7 @@
   .stories-section .inner-view-left .name, .stories-section .inner-view-right .name { @include margin(20px 0 0); }
 }
 @media (max-width: 480px) {
+  .selfcare-image h2 { font-size: 14px; }
   // Header
   .hamburger { @include margin(35px 0 0 20px); }
   .logo img { @include size(30%, auto); }
