@@ -397,6 +397,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
   };
 
-})
+  $scope.showMenu = true;
+  $scope.toggleMenu = function() {
+    $scope.showMenu = !$scope.showMenu;
+  }
 
+})
 ;

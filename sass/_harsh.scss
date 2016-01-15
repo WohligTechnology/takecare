@@ -4,6 +4,7 @@
 // Hamburger
 .hamburger {
   margin-top: 35px;
+  cursor: pointer;
   span {
     @include size(25px, 3px);
     display: block;
@@ -841,3 +842,46 @@
       letter-spacing: 0.5px;
     }
   }
+
+
+$side-menu-width: 390px;
+.slide-menu {
+  background-color: $brand-primary;
+  text-align: center;
+  width: $side-menu-width;
+  padding: 30px 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-x: scroll;
+  @include transform(translateX(-100%));
+  @include transition(all 300ms ease);
+  &.slide-in {
+    @include transform(translateX(0));
+  }
+
+  ul {
+    display: inline-block;
+    text-align: left;
+
+    li {
+      color: white;
+      text-transform: uppercase;
+      font-size: 22px;
+
+      a {
+        color: inherit;
+        padding: 5px 0;
+        display: block;
+      }
+    }
+  }
+}
+.that-slides {
+  @include transition(all 300ms ease);
+  &.slide-body {
+    @include transform(translateX($side-menu-width));
+  }
+}
