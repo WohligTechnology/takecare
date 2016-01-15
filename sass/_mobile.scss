@@ -77,6 +77,7 @@
       }
     }
   }
+  .section-story .view-detail .descp { width: 70%; }
   .consult-chart {
     height: 75px;
     .consult {
@@ -185,6 +186,23 @@
     padding: 0 90px;
     font-size: 25px;
   }
+  }
+}
+// checkout
+.checkout-tab {
+  .greater {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+  .order-summary {
+    .table {
+      thead > tr > th { font-size: 17px; }
+    }
+  }
+  .nav-tabs {
+    li {
+      font-size: 18px;
+    }
   }
 }
 }
@@ -1251,6 +1269,7 @@
       }
       .weight-info {
         top: 7px;
+        left: 70%;
       }
       .descp {
         font-size: 13px;
