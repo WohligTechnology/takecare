@@ -1,4 +1,4 @@
-var templateservicemod = angular.module('templateservicemod', []);
+var templateservicemod = angular.module('templateservicemod', ['phonecatControllers']);
 templateservicemod.service('TemplateService', function() {
     this.title = "Home";
     this.meta = "Google";
@@ -23,7 +23,7 @@ templateservicemod.service('TemplateService', function() {
         data.content = "views/content/" + page + ".html";
         return data;
     };
-    
+
     this.init();
 
 });

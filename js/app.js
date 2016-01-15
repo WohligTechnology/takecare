@@ -178,3 +178,19 @@ firstapp.directive('fancyboxBox', function($document) {
        }
    }
 });
+
+firstapp.directive('slideMenu', function($document) {
+   return {
+       restrict: 'EA',
+       replace: false,
+       link: function(scope, element, attr) {
+           var $element = $(element);
+           $(element).click(function() {
+             $(".hamburger").toggleClass("green-bar");
+             $(".slide-menu").toggleClass("slide-in");
+             $(".that-slides").toggleClass("slide-body");
+           });
+
+       }
+   }
+});
