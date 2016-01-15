@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 1200px){
   .about-suman {
     .heading {
       width: 60%;
@@ -208,6 +208,9 @@
 }
 @media (max-width: $screen-sm-max) {
   // faq
+  .faq {
+    .banner h2 { font-size: 32px; }
+  }
   .faq-accordion {
     padding: 25px;
     .panel-default {
@@ -233,6 +236,7 @@
     width: 65%;
     height: 250px;
   }
+  .pro-info { margin-top: 40px; }
   .about-suman {
     .heading {
       width: 70%;
@@ -259,7 +263,9 @@
       }
     }
   }
+  // news
   .news {
+    margin: 20px 0 50px;
     .slider {
       width: 548px;
     }
@@ -555,6 +561,8 @@ a {
     padding: 10px 16px;
   }
   .btn-center { text-align: center; }
+  // login
+  .login-tab .nav-tabs li a { font-size: 17px; }
   // faq
   .faq-accordion {
     padding: 20px;
@@ -601,7 +609,7 @@ a {
     }
   }
   .pro-info {
-    margin-bottom: 60px;
+    margin: 30px 0 60px;
   }
   .health-manageselect {
     .row-flex {
@@ -620,14 +628,15 @@ a {
       }
     }
   }
+  // news
   .news {
-    margin: 20px 0 40px;
+    margin: 20px 0 30px;
     .slider {
       width: 405px;
     }
   }
   .cart-main {
-    padding: 40px 0;
+    padding: 40px 0 20px;
     h3 {
       font-size: 17px;
     }
@@ -801,6 +810,7 @@ a {
         @include square(100px);
       }
       figcaption {
+        min-height: 35px;
         margin: 9px 0 0;
         font-size: 12px;
       }
@@ -825,6 +835,7 @@ a {
     .flexslider .flex-direction-nav a {
       zoom: 0.7;
     }
+    .flexslider { margin: 0; }
   }
   .health-heading {
     margin: 0 0 12px;
@@ -832,6 +843,7 @@ a {
   }
   .health-design {
     min-height: 200px;
+    margin: 20px 0 ;
     text-align: center;
     h4 {
       display: block;
@@ -1023,6 +1035,8 @@ a {
 }
 }
 @media (max-width: 480px) {
+  // login
+    .login-tab .nav-tabs li a { font-size: 15px; }
   // faq
   .faq-accordion {
     padding: 15px;
@@ -1078,7 +1092,7 @@ a {
     }
   }
   .pro-info {
-    margin-bottom: 50px;
+    margin: 20px 0 40px;
   }
   .health-manageselect {
     margin: 25px 0;
@@ -1106,7 +1120,7 @@ a {
     }
   }
   .cart-main {
-    padding: 30px 0;
+    padding: 30px 0 20px;
     h3 {
       font-size: 14px;
     }
@@ -1121,7 +1135,7 @@ a {
     }
     .table {
       thead > tr > th {
-        padding: 12px;
+        padding: 9px;
         font-size: 10px;
         letter-spacing: 1px;
         vertical-align: middle;
@@ -1141,8 +1155,12 @@ a {
       padding: 10px;
       font-size: 13px;
     }
-    .shipping p {
-      font-size: 12px;
+    .shipping {
+      p { font-size: 12px; }
+      .continue { margin: 0; }
+  }
+    .cart-btn {
+      a { margin: 5px 0; }
     }
   }
   .healthchart-list {
@@ -1263,11 +1281,13 @@ a {
   }
   .slider-round {
     padding: 0 10px;
+    margin-bottom: 40px;
     .healthmanagement-slider {
       .slide-imghold {
         @include square(70px);
       }
       figcaption {
+        min-height: 25px;
         margin: 7px 0 0;
         font-size: 9px;
         letter-spacing: 0;

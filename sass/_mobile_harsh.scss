@@ -1,123 +1,244 @@
 @media (max-width: 1200px) {
-    .selfcare-image h2 { font-size: 37px; }
+  .selfcare-image h2 {
+    font-size: 37px;
+  }
+  .health-foot .foot-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
 }
 @media (max-width: $screen-md-max) {
-
   // Header
   .logo h1 span {
     font-size: 22px;
     letter-spacing: 2px;
   }
-  .links { @include margin(20px 0 15px); }
-  .social-links li a { @include margin(0 10px 0 0); }
+  .links {
+    @include margin(20px 0 15px);
+  }
+  .social-links li a {
+    @include margin(0 10px 0 0);
+  }
   .contact-tel {
     @include margin(2px -7px 0 -37px);
     @include padding(12px 0 12px 12px);
   }
-  .signin { @include padding(12px 0); }
+  .signin {
+    @include padding(12px 0);
+  }
   // Footer
-  footer .mail .email { @include size(240px, auto); }
+  footer .mail .email {
+    @include size(240px, auto);
+  }
+  // about
+  .about-desc {
+    h3 {
+      font-size: 24px;
+    }
+    .health-style {
+      margin: 10px 0;
+      font-size: 22px;
+    }
+  }
   // Team
-  .team-members .single-member .member-image { @include square(150px); }
+  .team-members .single-member .member-image {
+    @include square(150px);
+  }
   // Image Consulting
-  .we-enroll .session-one .session-number h4, .we-enroll .session-two .session-number h4 { font-size: 24px; }
-  .we-enroll .session-one .session-charges .charge, .we-enroll .session-two .session-charges .charge { font-size: 18px; }
-  .we-enroll .session-one .session-charges p + p, .we-enroll .session-two .session-charges p + p { font-size: 26px; }
-  .we-enroll .session-one .session-charges .services, .we-enroll .session-two .session-charges .services { font-size: 16px; }
+  .we-enroll .session-one .session-number h4,
+  .we-enroll .session-two .session-number h4 {
+    font-size: 24px;
+  }
+  .we-enroll .session-one .session-charges .charge,
+  .we-enroll .session-two .session-charges .charge {
+    font-size: 18px;
+  }
+  .we-enroll .session-one .session-charges p + p,
+  .we-enroll .session-two .session-charges p + p {
+    font-size: 26px;
+  }
+  .we-enroll .session-one .session-charges .services,
+  .we-enroll .session-two .session-charges .services {
+    font-size: 16px;
+  }
   // About us
-  .about-health h2 { font-size: 29px; }
-  .what-we-do .we-do-topics .we-do-title img { @include size(25%, auto); }
-  .what-we-do .we-do-topics .we-do-title h3 { font-size: 26px; }
+  .about-health h2 {
+    font-size: 29px;
+  }
+  .what-we-do .we-do-topics .we-do-title img {
+    @include size(25%, auto);
+  }
+  .what-we-do .we-do-topics .we-do-title h3 {
+    font-size: 26px;
+  }
   // Success Stories
-  .growth-section h3 { @include padding(0 100px); }
-  .stories-section .inner-view-left .name, .stories-section .inner-view-left .location { @include padding(0 0 0 90px); }
-  .stories-section .inner-view-right .name, .stories-section .inner-view-right .location { @include padding(0 90px 0 0); }
+  .growth-section h3 {
+    @include padding(0 100px);
+  }
+  .stories-section .inner-view-left .name,
+  .stories-section .inner-view-left .location {
+    @include padding(0 0 0 90px);
+  }
+  .stories-section .inner-view-right .name,
+  .stories-section .inner-view-right .location {
+    @include padding(0 90px 0 0);
+  }
 }
 @media (max-width: $screen-sm-max) {
   // Header
-
-.products .product-cat a{
-  font-size: 14px ;
-
-}
-  .product-cat{
-    h3{
+  .products .product-cat a {
+    font-size: 14px;
+  }
+  .product-cat {
+    h3 {
       font-size: 18px;
     }
-
   }
   .filters {
     h3 {
-
       font-size: 18px;
+    }
   }
-  }
-  .checkbox{
-    .white{
+  .checkbox {
+    .white {
       font-size: 14px;
     }
   }
-  .p.brand-primary.font-semibold{
+  .p.brand-primary.font-semibold {
     font-size: 13px;
   }
-  .btn-primary{
+  .btn-primary {
     font-size: 10px;
   }
-  .hamburger { @include margin(35px 0 0 125px); }
+  .hamburger {
+    @include margin(35px 0 0 125px);
+  }
   .links {
     @include margin(10px auto 20px);
     text-align: center;
   }
-  .contact-tel { @include padding(10px 0); }
+  .contact-tel {
+    @include padding(10px 0);
+  }
   // Footer
   footer {
     text-align: center;
-    .foot-about { @include margin(20px 0 100px); }
+    .foot-about {
+      @include margin(20px 0 100px);
+    }
   }
   // Health Packages
-  .selfcare-image h2 { font-size: 30px; }
-  .what-health-goal .health-goals .weight-goal { @include margin(0 20px 50px); }
+  .selfcare-image h2 {
+    font-size: 30px;
+  }
+  .what-health-goal .health-goals .weight-goal {
+    @include margin(0 20px 50px);
+  }
+  // about us
+  .about-health {
+    padding: 20px 0;
+    .about-health-content .embed-youtube {
+      padding: 20px 20px 0;
+    }
+    .about-health-content .inner-about-carousel {
+      height: 300px;
+      padding: 0 100px;
+    }
+    .about-health-content .carousel-control.right span {
+      top: 30%;
+    }
+    .about-health-content .carousel-control.left span {
+      top: 30%;
+    }
+  }
   // Image Consulting
-  .we-enroll .session-one .session-charges, .we-enroll .session-two .session-charges { @include margin(0 0 50px 0); }
-  .we-enroll .session-one .session-charges .inner-session, .we-enroll .session-two .session-charges .inner-session { border: none; }
-  .we-enroll .session-one .session-charges .services, .we-enroll .session-two .session-charges .services { @include margin(0); }
-  .we-enroll .session-two { @include margin(0); }
-  .consults .single-consult .consult-title { @include square(100%); }
+  .we-enroll .session-one .session-charges,
+  .we-enroll .session-two .session-charges {
+    @include margin(0 0 50px 0);
+  }
+  .we-enroll .session-one .session-charges .inner-session,
+  .we-enroll .session-two .session-charges .inner-session {
+    border: none;
+  }
+  .we-enroll .session-one .session-charges .services,
+  .we-enroll .session-two .session-charges .services {
+    @include margin(0);
+  }
+  .we-enroll .session-two {
+    @include margin(0);
+  }
+  .consults .single-consult .consult-title {
+    @include square(100%);
+  }
   // About us
-  .about-health .about-health-content { @include square(100%); }
-  .about-health .about-health-content .embed-youtube { @include padding(50px 50px 0px 50px); }
-  .what-we-do .we-do-topics .we-do-title img { width: 15%; }
+  .about-health .about-health-content {
+    @include square(100%);
+  }
+  .about-health .about-health-content .embed-youtube {
+    @include padding(50px 50px 0px 50px);
+  }
+  .what-we-do .we-do-topics .we-do-title img {
+    width: 15%;
+  }
   // Success Stories
   .growth-section h3 {
     @include padding(0);
     font-size: 28px;
   }
-  .inner-view-left, .inner-view-right { @include margin(20px 0 0); }
-  .stories-section .view-detail { @include margin(0 0 20px); }
-  .stories-section .inner-view-right ~ .view-detail { @include margin(0 0 50px); }
-  .stories-section .inner-view-left .name, .stories-section .inner-view-left .location { @include padding(0 0 0 20px); }
-  .stories-section .inner-view-left .name { @include margin(0 0 0 -350px); }
-  .stories-section .inner-view-left .location { @include margin(0 0 0 -410px); }
-  .stories-section .inner-view-right .name, .stories-section .inner-view-right .location { @include padding(0 20px 0 0); }
-  .stories-section .inner-view-right .name { @include margin(0 -280px 0 0); }
-  .stories-section .inner-view-right .location { @include margin(0 -420px 0 0); }
+  .inner-view-left,
+  .inner-view-right {
+    @include margin(20px 0 0);
+  }
+  .stories-section .view-detail {
+    @include margin(0 0 20px);
+  }
+  .stories-section .inner-view-right ~ .view-detail {
+    @include margin(0 0 50px);
+  }
+  .stories-section .inner-view-left .name,
+  .stories-section .inner-view-left .location {
+    @include padding(0 0 0 20px);
+  }
+  .stories-section .inner-view-left .name {
+    @include margin(0 0 0 -350px);
+  }
+  .stories-section .inner-view-left .location {
+    @include margin(0 0 0 -410px);
+  }
+  .stories-section .inner-view-right .name,
+  .stories-section .inner-view-right .location {
+    @include padding(0 20px 0 0);
+  }
+  .stories-section .inner-view-right .name {
+    @include margin(0 -280px 0 0);
+  }
+  .stories-section .inner-view-right .location {
+    @include margin(0 -420px 0 0);
+  }
 }
 @media (max-width: $screen-xs-max) {
   // Header
   .products {
     margin: 20px 0;
-}
+  }
   .product-desc p {
     font-size: 14px;
-}
-  .selfcare-image{
-    h2 {
-     font-size: 17px;
- }
   }
-  .hamburger { @include margin(35px 0 0 50px); }
-  .logo h1 span { font-size: 16px; }
-  .social-links { text-align: center; }
+  .selfcare-image {
+    h2 {
+      font-size: 17px;
+    }
+  }
+  .hamburger {
+    @include margin(35px 0 0 50px);
+  }
+  .logo h1 span {
+    font-size: 16px;
+  }
+  .social-links {
+    text-align: center;
+  }
   .contact-tel {
     @include margin(3px 0 0);
     @include padding(10px 0);
@@ -132,78 +253,238 @@
   .health-foot .foot-btn {
     min-width: 150px;
     font-size: 12px;
+    padding: 10px 22px;
+    letter-spacing: 1px;
   }
-  footer .mail .email { @include size(100%, auto); }
+  .health-foot .health-back {
+    min-height: 100px;
+  }
+  footer .mail .email {
+    @include size(100%, auto);
+  }
   footer .mail .btn-submit {
     @include size(100%, auto);
     @include margin(10px 0 0);
   }
-  .social-links li a { @include margin(0 8px 0 0); }
+  .social-links li a {
+    @include margin(0 8px 0 0);
+  }
   // Health Packages
-  .what-health-goal h2 { font-size: 20px; }
-  .what-health-goal .health-goals .weight-goal .btn-packages { font-size: 14px; }
-  .what-health-goal .health-goals .health-manage-goal .btn-packages { font-size: 14px; }
+  .what-health-goal h2 {
+    font-size: 20px;
+  }
+  .what-health-goal .health-goals .weight-goal .btn-packages {
+    font-size: 14px;
+  }
+  .what-health-goal .health-goals .health-manage-goal .btn-packages {
+    font-size: 14px;
+  }
   // Team
   .team-members .single-member {
     @include margin(20px 20px 0);
     text-align: center;
   }
-  .team-members .single-member .member-image { @include margin(20px auto 0); }
+  .team-members .single-member .member-image {
+    @include margin(20px auto 0);
+  }
   // Image Consulting
-  .consults .single-consult { text-align: center; }
+  .consults {
+    .inner-consults { padding: 0; }
+    .single-consult {
+      text-align: center;
+      .consult-title { margin: 0; }
+      .consult-image { margin: 0 ;}
+    }
+  }
+  .we-enroll { margin: 0 0 40px; }
   // Contact us
-  .contact-location { text-align: center; }
+  .contact-location {
+    text-align: center;
+  }
   .contact-map {
     @include size(100%, 300px);
     overflow: hidden;
   }
   // About Us
-  .about-health .about-health-content .inner-about-carousel {
-    @include padding(100px);
-    h3 { font-size: 32px; }
-    span { font-size: 24px; }
-    p { font-size: 14px; }
+  .about-desc {
+    h3 {
+      font-size: 22px;
+    }
+    .health-style {
+      font-size: 20px;
+    }
+    p {
+      text-align: justify;
+    }
   }
+  .about-health .about-health-content .glyphicon-chevron-right:before {
+    font-size: 50px;
+  }
+  .about-health .about-health-content .glyphicon-chevron-left:before {
+    font-size: 50px;
+  }
+  .about-health .about-health-content .embed-youtube {
+    padding: 20px 20px 0;
+  }
+  .about-health .about-health-content .inner-about-carousel {
+    @include padding(0 80px);
+    h3 {
+      font-size: 32px;
+    }
+    span {
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .what-we-do {
+    text-align: center;
+   .we-do-topics {
+     padding: 0;
+     .we-do-title {
+       img {
+         width: auto;
+         margin: 0;
+        }
+     h3 {
+       margin: 10px 0 0;
+       font-size: 24px;
+       display: block;
+     }
+   }
+   p { margin: 10px 0 0; }
+  }
+}
   // Success Stories
-  .care-programs h3 { font-size: 28px; }
+  .care-programs h3 {
+    font-size: 28px;
+  }
   .care-programs .care-buttons a {
     @include margin(0 auto);
     display: block;
   }
-  .care-programs .care-buttons a + a { @include margin(20px auto 0); }
-  .stories-section .get-round.view-left, .stories-section .get-round.view-right {
+  .care-programs .care-buttons a + a {
+    @include margin(20px auto 0);
+  }
+  .stories-section .get-round.view-left,
+  .stories-section .get-round.view-right {
     @include margin(0 auto);
     position: relative;
     float: none !important;
   }
-  .stories-section .inner-view-left, .stories-section .inner-view-right { @include margin(20px 0 -20px); }
-  .stories-section .inner-view-left .name, .stories-section .inner-view-left .location,
-  .stories-section .inner-view-right .name, .stories-section .inner-view-right .location {
+  .stories-section .inner-view-left,
+  .stories-section .inner-view-right {
+    @include margin(20px 0 -20px);
+  }
+  .stories-section .inner-view-left .name,
+  .stories-section .inner-view-left .location,
+  .stories-section .inner-view-right .name,
+  .stories-section .inner-view-right .location {
     @include margin(0);
     @include padding(0);
     border: none;
   }
-  .stories-section .inner-view-left .name, .stories-section .inner-view-right .name { @include margin(20px 0 0); }
+  .stories-section .inner-view-left .name,
+  .stories-section .inner-view-right .name {
+    @include margin(20px 0 0);
+  }
+  // team
+  .team-members {
+    .single-member {
+      .member-detail {
+        p {
+          text-align: justify;
+        }
+      }
+    }
+  }
+  .join-team {
+    margin: 0;
+    a {
+      margin: 0 0 50px;
+      padding: 12px 20px;
+      font-size: 20px;
+    }
+  }
 }
 @media (max-width: 480px) {
-  .selfcare-image h2 { font-size: 14px; }
+  .selfcare-image h2 {
+    font-size: 14px;
+  }
   // Header
-  .hamburger { @include margin(35px 0 0 20px); }
-  .logo img { @include size(30%, auto); }
-  .logo h1 span { font-size: 12px; letter-spacing: 1px; }
-  .signin { @include padding(10px 40px); }
+  .hamburger {
+    @include margin(35px 0 0 20px);
+  }
+  .logo img {
+    @include size(30%, auto);
+  }
+  .logo h1 span {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .signin {
+    @include padding(10px 40px);
+  }
   // Footer
-  .social-links li a i { font-size: 16px; }
-  footer .foot-about { @include margin(20px 0 50px); }
+  .social-links li a i {
+    font-size: 16px;
+  }
+  footer .foot-about {
+    @include margin(20px 0 50px);
+  }
   .health-foot .foot-btn {
     min-width: auto;
     @include padding(10px);
     letter-spacing: 2px;
   }
+  // image-consulting
+  .consults {
+    .single-consult {
+      .consult-image {  @include square(90px); }
+      .consult-title h3 { font-size: 24px;  }
+    }
+  }
+  .we-enroll { margin: 0 0 20px; }
   // About Us
+  .about-desc .health-style {
+    margin: 5px 0;
+  }
   .about-health .about-health-content .inner-about-carousel {
-    h3 { font-size: 24px; }
-    span { font-size: 18px; }
-    p { font-size: 12px; }
+    h3 {
+      font-size: 24px;
+    }
+    span {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .what-we-do {
+   .we-do-topics {
+     .we-do-title {
+       img { width: 90px; }
+     h3 { font-size: 19px; }
+   }
+  }
+}
+  // team
+  .team-members {
+    .team-nav {
+      .pagination {
+        li a {
+          padding: 4px 20px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .join-team {
+    a {
+      margin: 0 0 40px;
+      padding: 10px 16px;
+      font-size: 14px;
+    }
   }
 }
