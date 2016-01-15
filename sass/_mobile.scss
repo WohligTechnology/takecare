@@ -1,4 +1,11 @@
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
+  .logo h1 a {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .social-links {
+    margin: 2px 10px 0 0;
+  }
   .about-suman {
     .heading {
       width: 60%;
@@ -49,6 +56,7 @@
       font-size: 18px;
     }
   }
+
   // weight-manangement
   .tab-chart {
     .nav-tabs {
@@ -77,7 +85,9 @@
       }
     }
   }
-  .section-story .view-detail .descp { width: 70%; }
+  .section-story .view-detail .descp {
+    width: 70%;
+  }
   .consult-chart {
     height: 75px;
     .consult {
@@ -107,6 +117,7 @@
       }
     }
   }
+
   // home
   .health-design {
     padding: 25px 30px;
@@ -176,40 +187,47 @@
       }
     }
   }
+
   // product-cat
   .product-categories {
-  .single-category {
-    .category-image {
-      @include square(250px);
-    }
-    h3 {
-    padding: 0 90px;
-    font-size: 25px;
-  }
-  }
-}
-// checkout
-.checkout-tab {
-  .greater {
-    top: 50%;
-    @include transform(translateY(-50%));
-  }
-  .order-summary {
-    .table {
-      thead > tr > th { font-size: 17px; }
+    .single-category {
+      .category-image {
+        @include square(250px);
+      }
+      h3 {
+        padding: 0 90px;
+        font-size: 25px;
+      }
     }
   }
-  .nav-tabs {
-    li {
-      font-size: 18px;
+
+  // checkout
+  .checkout-tab {
+    .greater {
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+    .order-summary {
+      .table {
+        thead > tr > th {
+          font-size: 17px;
+        }
+      }
+    }
+    .nav-tabs {
+      li {
+        font-size: 18px;
+      }
     }
   }
-}
 }
 @media (max-width: $screen-sm-max) {
+
   // faq
   .faq {
-    .banner h2 { font-size: 32px; }
+    .banner h2 {
+      font-size: 32px;
+    }
   }
   .faq-accordion {
     padding: 25px;
@@ -223,6 +241,7 @@
       }
     }
   }
+
   // faq end
   .get-up {
     padding: 35px;
@@ -236,7 +255,9 @@
     width: 65%;
     height: 250px;
   }
-  .pro-info { margin-top: 40px; }
+  .pro-info {
+    margin-top: 40px;
+  }
   .about-suman {
     .heading {
       width: 70%;
@@ -263,6 +284,7 @@
       }
     }
   }
+
   // news
   .news {
     margin: 20px 0 50px;
@@ -521,48 +543,56 @@
       }
     }
   }
+
   // product-cat
   .product-categories {
-  .single-category {
-    margin: 30px 0 0;
-    .category-image {
-      @include square(200px);
-    }
-    h3 {
-    padding: 0 50px;
-    font-size: 22px;
-  }
-  }
-}
-// checkout
-.checkout-tab {
-  margin: 40px 0;
-  .order-summary {
-    margin: 10px 0 20px;
-    .table {
-      thead > tr > th {
-        padding: 8px 30px;
-        vertical-align: middle;
+    .single-category {
+      margin: 30px 0 0;
+      .category-image {
+        @include square(200px);
+      }
+      h3 {
+        padding: 0 50px;
+        font-size: 22px;
       }
     }
   }
-  .nav-tabs {
-    li:first-child {
-a {
-  padding: 12px 25px 0;
-  min-height: 70px;
-}
+
+  // checkout
+  .checkout-tab {
+    margin: 40px 0;
+    .order-summary {
+      margin: 10px 0 20px;
+      .table {
+        thead > tr > th {
+          padding: 8px 30px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .nav-tabs {
+      li:first-child {
+        a {
+          padding: 12px 25px 0;
+          min-height: 70px;
+        }
+      }
     }
   }
-}
 }
 @media (max-width: $screen-xs-max) {
   .btn {
     padding: 10px 16px;
   }
-  .btn-center { text-align: center; }
+  .btn-center {
+    text-align: center;
+  }
+
   // login
-  .login-tab .nav-tabs li a { font-size: 17px; }
+  .login-tab .nav-tabs li a {
+    font-size: 17px;
+  }
+
   // faq
   .faq-accordion {
     padding: 20px;
@@ -579,6 +609,7 @@ a {
       font-size: 13px;
     }
   }
+
   // faq end
   .get-up {
     padding: 25px;
@@ -628,6 +659,7 @@ a {
       }
     }
   }
+
   // news
   .news {
     margin: 20px 0 30px;
@@ -835,7 +867,9 @@ a {
     .flexslider .flex-direction-nav a {
       zoom: 0.7;
     }
-    .flexslider { margin: 0; }
+    .flexslider {
+      margin: 0;
+    }
   }
   .health-heading {
     margin: 0 0 12px;
@@ -843,7 +877,7 @@ a {
   }
   .health-design {
     min-height: 200px;
-    margin: 20px 0 ;
+    margin: 20px 0;
     text-align: center;
     h4 {
       display: block;
@@ -976,67 +1010,75 @@ a {
       height: 200px;
     }
   }
+
   // .product-cat
   .product-categories {
     margin: 0 0 30px;
-  .single-category {
-    .category-image {
-      @include square(180px);
-    }
-    h3 {
-    padding: 0;
-    font-size: 19px;
-  }
-  }
-}
-// checkout
-.checkout-tab {
-  margin: 30px 0 ;
-  .order-summary {
-    margin: 10px 0 15px;
-    .table {
-      thead > tr > th {
-        padding: 8px;
-        font-size: 14px;
-        letter-spacing: 0;
+    .single-category {
+      .category-image {
+        @include square(180px);
+      }
+      h3 {
+        padding: 0;
+        font-size: 19px;
       }
     }
   }
-  .nav-tabs {
-    li:first-child {
-      a {
-        min-height: auto;
-        padding: 0 41px 0;
+
+  // checkout
+  .checkout-tab {
+    margin: 30px 0;
+    .order-summary {
+      margin: 10px 0 15px;
+      .table {
+        thead > tr > th {
+          padding: 8px;
+          font-size: 14px;
+          letter-spacing: 0;
+        }
       }
     }
-    li {
-      font-size: 16px;
-      a {
-        padding: 0 25px;
-        letter-spacing: 0;
+    .nav-tabs {
+      li:first-child {
+        a {
+          min-height: auto;
+          padding: 0 41px;
+        }
+      }
+      li {
+        font-size: 16px;
+        a {
+          padding: 0 25px;
+          letter-spacing: 0;
+        }
       }
     }
   }
-}
-.checkout-main {
-  .cart-table {
-    .table {
-      thead > tr > th {
-        font-size: 14px;
-        letter-spacing: 1px;
+  .checkout-main {
+    .cart-table {
+      .table {
+        thead > tr > th {
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
       }
     }
+    .coupon {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .price-ship {
+      margin-right: 0;
+    }
   }
-  .coupon {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-  .price-ship { margin-right: 0; }
-}
 }
 @media (max-width: 480px) {
+
   // login
-    .login-tab .nav-tabs li a { font-size: 15px; }
+  .login-tab .nav-tabs li a {
+    font-size: 15px;
+  }
+
   // faq
   .faq-accordion {
     padding: 15px;
@@ -1059,6 +1101,7 @@ a {
       right: 9px;
     }
   }
+
   // faq end
   .get-up {
     padding: 15px;
@@ -1156,11 +1199,17 @@ a {
       font-size: 13px;
     }
     .shipping {
-      p { font-size: 12px; }
-      .continue { margin: 0; }
-  }
+      p {
+        font-size: 12px;
+      }
+      .continue {
+        margin: 0;
+      }
+    }
     .cart-btn {
-      a { margin: 5px 0; }
+      a {
+        margin: 5px 0;
+      }
     }
   }
   .healthchart-list {
@@ -1394,51 +1443,65 @@ a {
       height: 150px;
     }
   }
+
   // product-cat
   .product-categories {
-  .single-category {
-    .category-image {  @include square(130px); }
-    h3 {  font-size: 15px; }
-  }
-}
-// checkout
-.checkout-tab {
-  .greater { display: none; }
-  .order-summary {
-    .table {
-      thead > tr > th {  font-size: 11px;  }
-    }
-  }
-  .nav-tabs {
-    li {
-      font-size: 12px;
-      a { padding: 0 15px; }
-    }
-    li:first-child {
-      a {
-min-height: auto;
-padding: 0 15px;
+    .single-category {
+      .category-image {
+        @include square(130px);
+      }
+      h3 {
+        font-size: 15px;
       }
     }
   }
-}
-.checkout-main {
-  .cart-table {
-    .table {
-      thead > tr > th {
+
+  // checkout
+  .checkout-tab {
+    .greater {
+      display: none;
+    }
+    .order-summary {
+      .table {
+        thead > tr > th {
+          font-size: 11px;
+        }
+      }
+    }
+    .nav-tabs {
+      li {
         font-size: 12px;
-        font-weight: normal;
-        letter-spacing: 0;
+        a {
+          padding: 0 15px;
+        }
       }
-      tbody > tr > td:last-child {
-        padding: 0 9px;
+      li:first-child {
+        a {
+          min-height: auto;
+          padding: 0 15px;
+        }
       }
     }
   }
-  .coupon-ship { margin: 0 0 10px; }
-  .coupon {
-    font-size: 12px;
-    letter-spacing: 0;
+  .checkout-main {
+    .cart-table {
+      .table {
+        thead > tr > th {
+          font-size: 12px;
+          font-weight: normal;
+          letter-spacing: 0;
+        }
+        tbody > tr > td:last-child {
+          padding: 0 9px;
+        }
+      }
+    }
+    .coupon-ship {
+      margin: 0 0 10px;
+    }
+    .coupon {
+      font-size: 12px;
+      letter-spacing: 0;
+    }
   }
-}
 }
