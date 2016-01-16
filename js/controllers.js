@@ -6,34 +6,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    NavigationService.getSlide(function(data){
-      console.log(data);
-      $scope.homeslider=data;
+    NavigationService.getSlide(function(data) {
+      $scope.homeslider = data;
     });
-    // $scope.homeslider = [{
-    //     img: "img/home-slider/banner.jpg",
-    //     title: "The calorie meter",
-    //     description: "Count Your Calories with our index customised to Indian food"
-    //   },
-    //
-    //   {
-    //     img: "img/home-slider/banner.jpg",
-    //     title: "The calorie meter",
-    //     description: "Count Your Calories with our index customised to Indian food"
-    //   },
-    //
-    //   {
-    //     img: "img/home-slider/banner.jpg",
-    //     title: "The calorie meter",
-    //     description: "Count Your Calories with our index customised to Indian food"
-    //   },
-    //
-    //   {
-    //     img: "img/home-slider/banner.jpg",
-    //     title: "The calorie meter",
-    //     description: "Count Your Calories with our index customised to Indian food"
-    //   }
-    // ];
+    NavigationService.getTestimonial(function(data) {
+      $scope.homestory = data;
+    });
     $scope.homestory = [{
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
