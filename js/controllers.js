@@ -6,30 +6,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.homeslider = [{
-        img: "img/home-slider/banner.jpg",
-        title: "The calorie meter",
-        descp: "Count Your Calories with our index customised to Indian food"
-      },
-
-      {
-        img: "img/home-slider/banner.jpg",
-        title: "The calorie meter",
-        descp: "Count Your Calories with our index customised to Indian food"
-      },
-
-      {
-        img: "img/home-slider/banner.jpg",
-        title: "The calorie meter",
-        descp: "Count Your Calories with our index customised to Indian food"
-      },
-
-      {
-        img: "img/home-slider/banner.jpg",
-        title: "The calorie meter",
-        descp: "Count Your Calories with our index customised to Indian food"
-      }
-    ];
+    NavigationService.getSlide(function(data){
+      console.log(data);
+      $scope.homeslider=data;
+    });
+    // $scope.homeslider = [{
+    //     img: "img/home-slider/banner.jpg",
+    //     title: "The calorie meter",
+    //     description: "Count Your Calories with our index customised to Indian food"
+    //   },
+    //
+    //   {
+    //     img: "img/home-slider/banner.jpg",
+    //     title: "The calorie meter",
+    //     description: "Count Your Calories with our index customised to Indian food"
+    //   },
+    //
+    //   {
+    //     img: "img/home-slider/banner.jpg",
+    //     title: "The calorie meter",
+    //     description: "Count Your Calories with our index customised to Indian food"
+    //   },
+    //
+    //   {
+    //     img: "img/home-slider/banner.jpg",
+    //     title: "The calorie meter",
+    //     description: "Count Your Calories with our index customised to Indian food"
+    //   }
+    // ];
     $scope.homestory = [{
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
