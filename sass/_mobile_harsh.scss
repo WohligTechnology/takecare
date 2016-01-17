@@ -298,15 +298,20 @@
   }
 
   // Footer
-  .health-foot .foot-btn {
-    min-width: 150px;
-    font-size: 12px;
-    padding: 10px 22px;
-    letter-spacing: 1px;
+  .health-foot {
+    .row-flex {
+      @include display(block);
+    }
+    .foot-btn {
+      min-width: 150px;
+      font-size: 12px;
+      padding: 10px 22px;
+      letter-spacing: 1px;
+    }
   }
-  .health-foot .health-back {
-    min-height: 100px;
-  }
+  // .health-foot .health-back {
+  //   min-height: 100px;
+  // }
   footer .mail .email {
     @include size(100%, auto);
   }

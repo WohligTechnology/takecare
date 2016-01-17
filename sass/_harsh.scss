@@ -442,6 +442,7 @@
   }
   .view-detail {
     position: relative;
+    margin-top: 50px;
     .title {
       @include margin(70px 10px 0);
       font-size: 20px;
@@ -451,7 +452,7 @@
         color: $brand-brown-dark;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, 16px auto auto 0);
+        @include position(absolute, 0 auto auto 0);
         opacity: 0.2;
       }
       &:after {
@@ -460,7 +461,7 @@
         color: $brand-brown-dark;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, auto auto -40px auto);
+        @include position(absolute, auto auto -60px auto);
         opacity: 0.2;
       }
     }
