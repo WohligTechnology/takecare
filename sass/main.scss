@@ -1488,6 +1488,125 @@ footer {
   }
 }
 
+// product detail
+.product-detail {
+  @include square(100%);
+  .product-image {
+    @include square(400px);
+    @include margin(20px 0 0);
+    border-radius: 100%;
+    overflow: hidden;
+    img { @include square(100%); }
+  }
+  h3 {
+    @include margin(40px 0 20px);
+    font-size: 28px;
+  }
+  ul.nav-tabs {
+    @include margin(0 100px 0 0);
+    border-bottom-color: $brand-primary;
+    li {
+      a {
+        @include padding(10px 30px);
+        color: $brand-primary;
+        background-color: transparent;
+        font-size: 16px;
+        border: none;
+        &:hover { border: none; }
+      }
+    }
+    li.active {
+      a {
+        border: none;
+        color: $body-bg;
+        background-color: $brand-primary;
+      }
+    }
+  }
+  .inner-product-detail {
+    @include margin(0 100px 0 0);
+    @include padding(20px 0);
+    text-align: justify;
+  }
+  .product-price {
+    @include padding(5px 0 1px);
+    border-right: 1px solid black;
+    p { font-size: 16px; }
+    p + p { font-size: 28px; }
+  }
+  .form-group {
+    @include padding(0 10px);
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid $brand-primary;
+    label { font-weight: normal; }
+    .form-control {
+      @include size(50px, 100%);
+      display: inline-block;
+      -webkit-appearance: none;
+      color: black;
+      background-color: transparent;
+      border: none;
+    }
+    span { @include position(absolute, 5px 15px auto auto); }
+  }
+  .product-buttons {
+    @include margin(-10px 0 0);
+    a {
+      @include margin(0 10px 0 0);
+      @include padding(10px 20px);
+    }
+  }
+}
+.product-also-like {
+  @include margin(40px 0 100px);
+  h3 {
+    @include margin(0 0 20px);
+    font-size: 28px;
+  }
+  .glyphicon-chevron-right:before {
+    @include square(40px);
+    @include margin(-20px 0 0);
+    @include padding(0 0 0 4px);
+    content: "\f105";
+    display: block;
+    color: $brand-brown-dark;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 40px;
+    line-height: 35px;
+    border: 2px solid $brand-brown-dark;
+    border-radius: 100%;
+  }
+  .glyphicon-chevron-left:before {
+    @include square(40px);
+    @include margin(-20px 0 0);
+    @include padding(0 2px 0 0);
+    content: "\f104";
+    display: block;
+    color: $brand-brown-dark;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 40px;
+    line-height: 35px;
+    border: 2px solid $brand-brown-dark;
+    border-radius: 100%;
+  }
+  .inner-like {
+    .like-image {
+      @include square(200px);
+      @include margin(0 auto);
+      overflow: hidden;
+      img { @include square(100%); }
+    }
+    span {
+      @include margin(20px 0 0);
+      display: block;
+      font-size: 16px;
+    }
+  }
+}
+
+
+
 /// end of filters///
 //////end footer/////
 @import "harsh";
