@@ -695,6 +695,17 @@
     .slider {
       width: 405px;
     }
+    .news-article {
+      text-align: center;
+      .article-image {
+        @include size(350px, 200px);
+        @include margin(0 auto);
+      }
+    }
+    .flexslider:hover .flex-prev { left: -30px; }
+    .flexslider:hover .flex-next { right: -30px; }
+    .flex-direction-nav .flex-prev { left: -30px }
+    .flex-direction-nav .flex-next { right: -30px }
   }
   .cart-main {
     padding: 40px 0 20px;
@@ -1179,11 +1190,17 @@
     .slider {
       width: 275px;
     }
+    .flexslider:hover .flex-prev { left: -30px; }
+    .flexslider:hover .flex-next { right: -30px; }
     .flex-direction-nav .flex-prev {
       left: -30px;
     }
     .flex-direction-nav .flex-next {
       right: -30px;
+    }
+    .news-article {
+      .article-image { @include size(200px, 125px); }
+      p { font-size: 14px; }
     }
   }
   .cart-main {
