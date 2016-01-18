@@ -147,7 +147,6 @@ $instagram: #396d9a !default;
 .brand-graylight-bg {
   background-color: $brand-graylight;
 }
-
 // fonts
 .font-primary {
   font-family: $font-family-sans-serif;
@@ -173,7 +172,6 @@ $instagram: #396d9a !default;
 .font-gotham-bold {
   font-family: $font-gotham-bold;
 }
-
 //button
 .btn {
   @include transition(all 300ms ease);
@@ -286,7 +284,6 @@ textarea {
 .no-border {
   border: none;
 }
-
 // Class
 .relate {
   position: relative;
@@ -718,7 +715,6 @@ button {
     }
   }
 }
-
 ///end home///
 /////////////////////
 ////Health-Management
@@ -794,7 +790,6 @@ button {
     margin: 0;
   }
 }
-
 // .health-tab {
 //   .tab-chart { width: 83%; }
 // }
@@ -1012,7 +1007,6 @@ button {
     }
   }
 }
-
 //end Health-management////
 /////meet////
 .suman-video {
@@ -1049,7 +1043,6 @@ button {
   margin-top: 60px;
   margin-bottom: 100px;
 }
-
 ////end meet///
 //////faq/////
 .faq {
@@ -1091,7 +1084,6 @@ button {
     @include transform(translateY(-50%));
   }
 }
-
 ///end faq////
 ///cart//////
 .cart-main {
@@ -1158,7 +1150,6 @@ button {
     }
   }
 }
-
 //end cart///
 ////Login//////
 .login-tab {
@@ -1214,7 +1205,6 @@ button {
     }
   }
 }
-
 ////end login//
 ///checkout/////
 .checkout-tab {
@@ -1310,7 +1300,6 @@ button {
     margin: 0 0 0 5px;
   }
 }
-
 ///end checkout//
 ///////////////
 //Footer///////
@@ -1471,7 +1460,6 @@ footer {
     @include transition(background-color 0.4s linear);
   }
 }
-
 // product-page filters
 .filters {
   input[type="checkbox"] +label {
@@ -1487,74 +1475,98 @@ footer {
     background-color: $brand-brown-dark;
   }
 }
-
 // product detail
 .product-detail {
   @include square(100%);
+  margin: 30px 0;
   .product-image {
     @include square(400px);
-    @include margin(20px 0 0);
+    @include margin(20px auto 0);
     border-radius: 100%;
     overflow: hidden;
-    img { @include square(100%); }
+    img {
+      @include square(100%);
+    }
   }
   h3 {
     @include margin(40px 0 20px);
-    font-size: 28px;
+    font-size: 27px;
+    span {
+      margin-left: 22px;
+    }
   }
+  .product-tab-detail { margin: 30px 0 0; }
   ul.nav-tabs {
     @include margin(0 100px 0 0);
-    border-bottom-color: $brand-primary;
+    border-bottom-color: $brand-brown;
     li {
       a {
+        min-width: 175px;
         @include padding(10px 30px);
-        color: $brand-primary;
+        color: $brand-brown;
         background-color: transparent;
         font-size: 16px;
         border: none;
-        &:hover { border: none; }
+        text-align: center;
+        &:hover {
+          border: none;
+        }
       }
     }
     li.active {
       a {
+        min-width: 175px;
         border: none;
         color: $body-bg;
-        background-color: $brand-primary;
+        background-color: $brand-brown;
       }
     }
   }
   .inner-product-detail {
+    min-height: 200px;
     @include margin(0 100px 0 0);
     @include padding(20px 0);
     text-align: justify;
   }
   .product-price {
     @include padding(5px 0 1px);
-    border-right: 1px solid black;
-    p { font-size: 16px; }
-    p + p { font-size: 28px; }
+    p {
+      font-size: 16px;
+    }
+    p + p {
+      font-size: 28px;
+    }
   }
+  form { margin-left: 53px; }
   .form-group {
     @include padding(0 10px);
     display: inline-block;
     font-size: 16px;
-    border: 2px solid $brand-primary;
-    label { font-weight: normal; }
-    .form-control {
-      @include size(50px, 100%);
-      display: inline-block;
-      -webkit-appearance: none;
-      color: black;
-      background-color: transparent;
-      border: none;
+    label {
+      margin-right: 10px;
+      font-weight: normal;
     }
-    span { @include position(absolute, 5px 15px auto auto); }
+    .form-control {
+      @include size(70px, 100%);
+      @include appearance(none);
+      border: 2px solid $brand-primary;
+      border-radius: 0;
+      display: inline-block;
+      background-color: transparent;
+      color: black;
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      @include transform(translateY(-50%));
+    }
   }
   .product-buttons {
-    @include margin(-10px 0 0);
     a {
+      width: 175px;
       @include margin(0 10px 0 0);
-      @include padding(10px 20px);
+      @include padding(12px);
     }
   }
 }
@@ -1595,7 +1607,9 @@ footer {
       @include square(200px);
       @include margin(0 auto);
       overflow: hidden;
-      img { @include square(100%); }
+      img {
+        @include square(100%);
+      }
     }
     span {
       @include margin(20px 0 0);
@@ -1604,9 +1618,6 @@ footer {
     }
   }
 }
-
-
-
 /// end of filters///
 //////end footer/////
 @import "harsh";

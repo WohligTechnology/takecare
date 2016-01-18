@@ -56,7 +56,6 @@
       font-size: 18px;
     }
   }
-
   // weight-manangement
   .tab-chart {
     .nav-tabs {
@@ -117,7 +116,6 @@
       }
     }
   }
-
   // home
   .health-design {
     padding: 25px 30px;
@@ -187,7 +185,6 @@
       }
     }
   }
-
   // product-cat
   .product-categories {
     .single-category {
@@ -200,7 +197,6 @@
       }
     }
   }
-
   // checkout
   .checkout-tab {
     .greater {
@@ -220,9 +216,14 @@
       }
     }
   }
+  // product-detail
+  .product-detail {
+    ul.nav-tabs {
+      margin: 0;
+    }
+  }
 }
 @media (max-width: $screen-sm-max) {
-
   // faq
   .faq {
     .banner h2 {
@@ -241,7 +242,6 @@
       }
     }
   }
-
   // faq end
   .get-up {
     padding: 35px;
@@ -284,7 +284,6 @@
       }
     }
   }
-
   // news
   .news {
     margin: 20px 0 50px;
@@ -543,7 +542,6 @@
       }
     }
   }
-
   // product-cat
   .product-categories {
     .single-category {
@@ -557,7 +555,6 @@
       }
     }
   }
-
   // checkout
   .checkout-tab {
     margin: 40px 0;
@@ -579,6 +576,42 @@
       }
     }
   }
+  // product-detail
+  .product-detail {
+    text-align: center;
+    h3 {
+      margin: 25px 0;
+      font-size: 24px;
+    }
+    .inner-product-detail {
+      padding: 20px;
+      margin: 0 auto;
+    }
+    .product-image {
+      @include square(280px);
+    }
+    ul.nav-tabs {
+      @include display(flex);
+      li {
+        @include flex(1);
+        a {
+          min-width: auto;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  // product-detail
+  .product-detail {
+    h3 {
+      margin: 18px 0;
+      font-size: 20px;
+    }
+    .product-image {
+      @include square(200px);
+      margin: 0 auto;
+    }
+  }
 }
 @media (max-width: $screen-xs-max) {
   .btn {
@@ -587,12 +620,10 @@
   .btn-center {
     text-align: center;
   }
-
   // login
   .login-tab .nav-tabs li a {
     font-size: 17px;
   }
-
   // faq
   .faq-accordion {
     padding: 20px;
@@ -609,7 +640,6 @@
       font-size: 13px;
     }
   }
-
   // faq end
   .get-up {
     padding: 25px;
@@ -659,7 +689,6 @@
       }
     }
   }
-
   // news
   .news {
     margin: 20px 0 30px;
@@ -1010,7 +1039,6 @@
       height: 200px;
     }
   }
-
   // .product-cat
   .product-categories {
     margin: 0 0 30px;
@@ -1024,7 +1052,6 @@
       }
     }
   }
-
   // checkout
   .checkout-tab {
     margin: 30px 0;
@@ -1073,12 +1100,10 @@
   }
 }
 @media (max-width: 480px) {
-
   // login
   .login-tab .nav-tabs li a {
     font-size: 15px;
   }
-
   // faq
   .faq-accordion {
     padding: 15px;
@@ -1101,7 +1126,6 @@
       right: 9px;
     }
   }
-
   // faq end
   .get-up {
     padding: 15px;
@@ -1443,7 +1467,6 @@
       height: 150px;
     }
   }
-
   // product-cat
   .product-categories {
     .single-category {
@@ -1455,7 +1478,6 @@
       }
     }
   }
-
   // checkout
   .checkout-tab {
     .greater {
@@ -1503,5 +1525,31 @@
       font-size: 12px;
       letter-spacing: 0;
     }
+  }
+  .product-detail {
+    ul.nav-tabs {
+      @include flex-wrap(wrap);
+      li {
+        width: 100%;
+        @include flex(auto);
+      }
+  }
+    h3 {
+      margin: 10px 0;
+      font-size: 16px;
+      span { margin-right: 10px; }
+    }
+    .product-image {
+      @include square(150px);
+    }
+    .product-price {
+      p { font-size: 14px; }
+    }
+    .product-buttons a { margin: 0 10px 10px 0; }
+    .form-group {
+      display: block;
+      font-size: 14px;
+    }
+    form { margin: 0; }
   }
 }
