@@ -116,6 +116,8 @@
       }
     }
   }
+  // faq
+  .faq .banner h2 { font-size: 30px; }
   // home
   .health-design {
     padding: 25px 30px;
@@ -227,7 +229,7 @@
   // faq
   .faq {
     .banner h2 {
-      font-size: 32px;
+      font-size: 26px;
     }
   }
   .faq-accordion {
@@ -383,7 +385,7 @@
       }
     }
     .view-detail {
-      padding: 10px 0 0;
+      padding: 10px;
       .descp {
         width: 100%;
         margin: 58px 0;
@@ -511,6 +513,7 @@
     }
   }
   .blog-main {
+    min-height: 504px;
     padding: 15px;
   }
   .blog-section {
@@ -625,6 +628,7 @@
     font-size: 17px;
   }
   // faq
+  .faq .banner h2 { font-size: 17px; }
   .faq-accordion {
     padding: 20px;
     .panel-default {
@@ -658,6 +662,7 @@
       }
     }
   }
+  .exper { margin-top: 30px; }
   .suman-info {
     padding: 0 20px;
     .title {
@@ -934,7 +939,7 @@
   }
   .health-cat {
     .health-info {
-      margin: 20px auto;
+      margin: 20px auto 35px;
       text-align: center;
       .title {
         font-size: 19px;
@@ -1008,6 +1013,7 @@
   }
   .blog-section {
     padding: 20px 0;
+    .blog-imgholder { margin: 0 auto; }
     .blog-info .last-blog-info {
       border-bottom: 2px solid $brand-brown;
     }
@@ -1026,6 +1032,7 @@
   .blog-main {
     min-height: auto;
     margin: 20px 0;
+    text-align: center;
   }
   .askqts {
     margin: 0;
@@ -1033,6 +1040,7 @@
   .section-about {
     .about-info {
       margin-bottom: 30px;
+      text-align: center;
       h3 {
         margin: 0 0 18px;
         font-size: 27px;
@@ -1116,6 +1124,7 @@
     font-size: 15px;
   }
   // faq
+  .faq .banner h2 { font-size: 13px; }
   .faq-accordion {
     padding: 15px;
     .panel-default {
@@ -1442,6 +1451,7 @@
       .name {
         width: 100%;
         font-size: 17px;
+        letter-spacing: 0;
       }
       .weight-info {
         top: 7px;
