@@ -6,11 +6,7 @@
   margin-top: 35px;
   cursor: pointer;
 
-  &.green-bar {
-    .brand-primary-bg {
-        background-color: #55b492;
-    }
-  }
+  &.green-bar .brand-primary-bg { background-color: #55b492; }
   span {
     @include size(25px, 3px);
     @include transition(all 300ms ease);

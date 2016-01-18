@@ -99,6 +99,11 @@
                 <div class=" col-md-offset-1 col-md-10">
                   <div class="single-view text-center brand-brown-bg">
                     <div class="row">
+                      <div class="col-md-6 hidden-md hidden-lg">
+                        <!-- youtube video -->
+                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe>
+                      </div>
+
                       <div class="col-md-6">
                         <div class="inner-view-right">
                           <div class="get-round pull-right view-right">
@@ -113,7 +118,7 @@
                         </div>
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-6 hidden-sm hidden-xs">
                         <!-- youtube video -->
                         <iframe width="100%" height="300" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe>
                       </div>
@@ -134,6 +139,16 @@
                 <div class=" col-md-offset-1 col-md-10">
                   <div class="single-read text-center brand-brown-bg">
                     <div class="row">
+                      <div class="col-md-4 hidden-md hidden-lg">
+                        <div class="read-image round left">
+                          <img ng-src="{{read.image}}" alt="" class="img-responsive">
+                        </div>
+                        <div class="get-round img-left">
+                          <span class="lost text-uppercase brand-brown-dark-bg">Lost</span>
+                          <p class="font-vista"><span class="weight-number">{{read.weight}}</span>kgs</p>
+                        </div>
+                      </div>
+
                       <div class="col-md-8">
                         <div class="read-detail left">
                           <div class="row">
@@ -150,7 +165,7 @@
                         </div>
                       </div>
 
-                      <div class="col-md-4">
+                      <div class="col-md-4 hidden-sm hidden-xs">
                         <div class="read-image round">
                           <img ng-src="{{read.image}}" alt="" class="img-responsive">
                         </div>

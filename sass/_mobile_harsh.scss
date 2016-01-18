@@ -31,8 +31,8 @@
     @include margin(0 10px 0 0);
   }
   .contact-tel {
-    @include margin(2px -7px 0 -37px);
-    @include padding(12px 0 12px 5px);
+    @include margin(2px -40px 0 -30px);
+    @include padding(12px 0 12px 20px);
   }
   .signin {
     @include padding(12px 0);
@@ -55,43 +55,25 @@
   }
 
   // Team
-  .team-members .single-member .member-image {
-    @include square(150px);
-  }
+  .team-members .single-member .member-image { @include square(150px); }
 
   // Image Consulting
   .we-enroll .session-one .session-number h4,
-  .we-enroll .session-two .session-number h4 {
-    font-size: 24px;
-  }
+  .we-enroll .session-two .session-number h4 { font-size: 24px; }
   .we-enroll .session-one .session-charges .charge,
-  .we-enroll .session-two .session-charges .charge {
-    font-size: 18px;
-  }
+  .we-enroll .session-two .session-charges .charge { font-size: 18px; }
   .we-enroll .session-one .session-charges p + p,
-  .we-enroll .session-two .session-charges p + p {
-    font-size: 26px;
-  }
+  .we-enroll .session-two .session-charges p + p { font-size: 26px; }
   .we-enroll .session-one .session-charges .services,
-  .we-enroll .session-two .session-charges .services {
-    font-size: 16px;
-  }
+  .we-enroll .session-two .session-charges .services { font-size: 16px; }
 
   // About us
-  .about-health h2 {
-    font-size: 29px;
-  }
-  .what-we-do .we-do-topics .we-do-title img {
-    @include size(25%, auto);
-  }
-  .what-we-do .we-do-topics .we-do-title h3 {
-    font-size: 26px;
-  }
+  .about-health h2 { font-size: 29px; }
+  .what-we-do .we-do-topics .we-do-title img { @include size(25%, auto); }
+  .what-we-do .we-do-topics .we-do-title h3 { font-size: 26px; }
 
   // Success Stories
-  .growth-section h3 {
-    @include padding(0 100px);
-  }
+  .growth-section h3 { @include padding(0 100px); }
   .stories-section .inner-view-left .name,
   .stories-section .inner-view-left .location {
     @include padding(0 0 0 90px);
@@ -99,109 +81,67 @@
   }
   .stories-section .inner-view-left .location { @include margin(0 0 0 -10px); }
   .stories-section .inner-view-right .name,
-  .stories-section .inner-view-right .location {
-    @include padding(0 90px 0 0);
+  .stories-section .inner-view-right .location { @include padding(0 90px 0 0); }
+  .stories-section .read-image-right { @include margin(0); }
+  .stories-section .read-detail .name {
+    font-size: 20px;
+    @include margin(6px 0 0 -10px);
   }
+  .stories-section .read-detail.right .name { @include margin(6px 0 0 -80px); }
+  .stories-section .read-detail.right .location { @include margin(0 0 0 -80px); }
 }
 @media (max-width: $screen-sm-max) {
 
   // Header
-  .products .product-cat a {
-    font-size: 14px;
-  }
-  .product-cat {
-    h3 {
-      font-size: 18px;
-    }
-  }
-  .filters {
-    h3 {
-      font-size: 18px;
-    }
-  }
-  .checkbox {
-    .white {
-      font-size: 14px;
-    }
-  }
-  .p.brand-primary.font-semibold {
-    font-size: 13px;
-  }
-  .btn-primary {
-    font-size: 10px;
-  }
+  .products .product-cat a { font-size: 14px; }
+  .product-cat h3 { font-size: 18px; }
+  .filters h3 { font-size: 18px; }
+  .checkbox .white { font-size: 14px; }
+  .p.brand-primary.font-semibold { font-size: 13px; }
+  .btn-primary { font-size: 10px; }
   .links {
     @include margin(10px auto 20px);
     text-align: center;
+    .social-links, .signin { text-align: center; }
   }
-  .contact-tel {
-    @include padding(10px 0);
-  }
+  .contact-tel { @include padding(10px 0); }
 
   // Footer
   footer {
     text-align: center;
-    .foot-about {
-      @include margin(20px 0 100px);
-    }
+    .foot-about { @include margin(20px 0 100px); }
   }
 
   // Health Packages
-  .selfcare-image h2 {
-    font-size: 30px;
-  }
-  .what-health-goal .health-goals .weight-goal {
-    @include margin(0 20px 50px);
-  }
+  .selfcare-image h2 { font-size: 30px; }
+  .what-health-goal .health-goals .weight-goal { @include margin(0 20px 50px); }
 
   // about us
   .about-health {
     padding: 20px 0;
-    .about-health-content .embed-youtube {
-      padding: 20px 20px 0;
-    }
+    .about-health-content .embed-youtube { padding: 20px 20px 0; }
     .about-health-content .inner-about-carousel {
       height: 300px;
       padding: 0 100px;
     }
-    .about-health-content .carousel-control.right span {
-      top: 30%;
-    }
-    .about-health-content .carousel-control.left span {
-      top: 30%;
-    }
+    .about-health-content .carousel-control.right span { top: 30%; }
+    .about-health-content .carousel-control.left span { top: 30%; }
   }
 
   // Image Consulting
   .we-enroll .session-one .session-charges,
-  .we-enroll .session-two .session-charges {
-    @include margin(0 0 50px 0);
-  }
+  .we-enroll .session-two .session-charges { @include margin(0 0 50px 0); }
   .we-enroll .session-one .session-charges .inner-session,
-  .we-enroll .session-two .session-charges .inner-session {
-    border: none;
-  }
+  .we-enroll .session-two .session-charges .inner-session { border: none; }
   .we-enroll .session-one .session-charges .services,
-  .we-enroll .session-two .session-charges .services {
-    @include margin(0);
-  }
-  .we-enroll .session-two {
-    @include margin(0);
-  }
-  .consults .single-consult .consult-title {
-    @include square(100%);
-  }
+  .we-enroll .session-two .session-charges .services { @include margin(0); }
+  .we-enroll .session-two { @include margin(0); }
+  .consults .single-consult .consult-title { @include square(100%); }
 
   // About us
-  .about-health .about-health-content {
-    @include square(100%);
-  }
-  .about-health .about-health-content .embed-youtube {
-    @include padding(50px 50px 0px 50px);
-  }
-  .what-we-do .we-do-topics .we-do-title img {
-    width: 15%;
-  }
+  .about-health .about-health-content { @include square(100%); }
+  .about-health .about-health-content .embed-youtube { @include padding(50px 50px 0px 50px); }
+  .what-we-do .we-do-topics .we-do-title img { width: 15%; }
 
   // Success Stories
   .growth-section h3 {
@@ -209,58 +149,48 @@
     font-size: 28px;
   }
   .inner-view-left,
-  .inner-view-right {
-    @include margin(20px 0 0);
-  }
-  .stories-section .view-detail {
-    @include margin(0 0 20px);
-  }
-  .stories-section .inner-view-right ~ .view-detail {
-    @include margin(0 0 50px);
-  }
+  .inner-view-right { @include margin(20px 0 0); }
+  .stories-section .view-detail { @include margin(0 0 30px); }
+  .stories-section .inner-view-right ~ .view-detail { @include margin(0 0 30px); }
   .stories-section .inner-view-left .name,
-  .stories-section .inner-view-left .location {
-    @include padding(0 0 0 20px);
-  }
-  .stories-section .inner-view-left .name {
-    @include margin(0 0 0 340px);
-  }
-  .stories-section .inner-view-left .location {
-    @include margin(0 0 0 390px);
-  }
+  .stories-section .inner-view-left .location { @include padding(0 0 0 20px); }
+  .stories-section .inner-view-left .name { @include margin(0 0 0 340px); }
+  .stories-section .inner-view-left .location { @include margin(0 0 0 390px); }
   .stories-section .inner-view-right .name,
-  .stories-section .inner-view-right .location {
-    @include padding(0 20px 0 0);
+  .stories-section .inner-view-right .location { @include padding(0 20px 0 0); }
+  .stories-section .inner-view-right .name { @include margin(0 -280px 0 0); }
+  .stories-section .inner-view-right .location { @include margin(0 -420px 0 0); }
+  .stories-section .read-detail .name { @include margin(20px 0 0); }
+  .stories-section .read-detail.right .name {
+    @include square(100%);
+    @include margin(20px 0 0 0);
+    text-align: right;
   }
-  .stories-section .inner-view-right .name {
-    @include margin(0 -280px 0 0);
+  .stories-section .read-detail.right .location {
+    @include square(100%);
+    @include margin(0 0 10px 0);
+    text-align: right;
   }
-  .stories-section .inner-view-right .location {
-    @include margin(0 -420px 0 0);
-  }
+  .stories-section .read-image { @include margin(0 auto); }
+  .stories-section .read-image.left { @include margin(0 auto 20px); }
+  .stories-section .get-round.img-left { @include position(absolute, 6px auto auto 30%); }
+  .stories-section .get-round.img-right { @include position(absolute, 6px 30% auto auto); }
+  .stories-section .read-detail.left hr, .stories-section .read-detail.right hr { @include margin(20px 0); }
   .care-programs h3 { margin: 0 50px; }
 }
 @media (max-width: $screen-xs-max) {
 
   // Header
-  .products {
-    margin: 20px 0;
-  }
-  .product-desc p {
-    font-size: 14px;
-  }
+  .products { margin: 20px 0; }
+  .product-desc p { font-size: 14px; }
   .selfcare-image {
-    h2 {
-      font-size: 17px;
-    }
+    h2 { font-size: 17px; }
   }
-  .social-links {
-    margin: 2px 0 0;
-    padding: 0;
+  .links {
+    .social-links, .contact-tel, .signin { @include margin(0); @include padding(0); }
+    .signin { @include margin(10px 0 0); }
   }
-  .hamburger {
-    @include margin(20px 0 0 10px);
-  }
+  .hamburger { @include margin(20px 0 0 10px); }
   .logo {
     margin: 5px 0 0;
     h1 {
@@ -269,14 +199,10 @@
         font-size: 20px;
         letter-spacing: 1px;
       }
-      span {
-        font-size: 16px;
-      }
+      span { font-size: 16px; }
     }
   }
-  .social-links {
-    text-align: center;
-  }
+  .social-links { text-align: center; }
   .contact-tel {
     @include margin(3px 0 0);
     @include padding(10px 0);
@@ -296,9 +222,7 @@
       font-size: 16px;
     }
   }
-  .that-slides.slide-body {
-    @include transform(translateX(280px));
-  }
+  .that-slides.slide-body { @include transform(translateX(280px)); }
 
   // Footer
   .health-foot {
@@ -315,60 +239,38 @@
   // .health-foot .health-back {
   //   min-height: 100px;
   // }
-  footer .mail .email {
-    @include size(100%, auto);
-  }
+  footer .mail .email { @include size(100%, auto); }
   footer .mail .btn-submit {
     @include size(100%, auto);
     @include margin(10px 0 0);
   }
-  .social-links li a {
-    @include margin(0 8px 0 0);
-  }
+  .social-links li a { @include margin(0 8px 0 0); }
 
   // Health Packages
-  .what-health-goal h2 {
-    font-size: 20px;
-  }
-  .what-health-goal .health-goals .weight-goal .btn-packages {
-    font-size: 14px;
-  }
-  .what-health-goal .health-goals .health-manage-goal .btn-packages {
-    font-size: 14px;
-  }
+  .what-health-goal h2 { font-size: 20px; }
+  .what-health-goal .health-goals .weight-goal .btn-packages { font-size: 14px; }
+  .what-health-goal .health-goals .health-manage-goal .btn-packages { font-size: 14px; }
 
   // Team
   .team-members .single-member {
     @include margin(20px 20px 0);
     text-align: center;
   }
-  .team-members .single-member .member-image {
-    @include margin(20px auto 0);
-  }
+  .team-members .single-member .member-image { @include margin(20px auto 0); }
 
   // Image Consulting
   .consults {
-    .inner-consults {
-      padding: 0;
-    }
+    .inner-consults { padding: 0; }
     .single-consult {
       text-align: center;
-      .consult-title {
-        margin: 0;
-      }
-      .consult-image {
-        margin: 0;
-      }
+      .consult-title { margin: 0; }
+      .consult-image { margin: 0; }
     }
   }
-  .we-enroll {
-    margin: 0 0 40px;
-  }
+  .we-enroll { margin: 0 0 40px; }
 
   // Contact us
-  .contact-location {
-    text-align: center;
-  }
+  .contact-location { text-align: center; }
   .contact-map {
     @include size(100%, 300px);
     overflow: hidden;
@@ -389,23 +291,13 @@
   .about-health .about-health-content .glyphicon-chevron-right:before {
     font-size: 50px;
   }
-  .about-health .about-health-content .glyphicon-chevron-left:before {
-    font-size: 50px;
-  }
-  .about-health .about-health-content .embed-youtube {
-    padding: 20px 20px 0;
-  }
+  .about-health .about-health-content .glyphicon-chevron-left:before { font-size: 50px; }
+  .about-health .about-health-content .embed-youtube { padding: 20px 20px 0; }
   .about-health .about-health-content .inner-about-carousel {
     @include padding(0 80px);
-    h3 {
-      font-size: 32px;
-    }
-    span {
-      font-size: 24px;
-    }
-    p {
-      font-size: 14px;
-    }
+    h3 { font-size: 32px; }
+    span { font-size: 24px; }
+    p { font-size: 14px; }
   }
   .what-we-do {
     text-align: center;
@@ -422,23 +314,17 @@
           display: block;
         }
       }
-      p {
-        margin: 10px 0 0;
-      }
+      p { margin: 10px 0 0; }
     }
   }
 
   // Success Stories
-  .care-programs h3 {
-    font-size: 28px;
-  }
+  .growth-section h3, .care-programs h3 { font-size: 24px; }
   .care-programs .care-buttons a {
     @include margin(0 auto);
     display: block;
   }
-  .care-programs .care-buttons a + a {
-    @include margin(20px auto 0);
-  }
+  .care-programs .care-buttons a + a { @include margin(20px auto 0); }
   .stories-section .get-round.view-left,
   .stories-section .get-round.view-right {
     @include margin(0 auto);
@@ -446,9 +332,7 @@
     float: none !important;
   }
   .stories-section .inner-view-left,
-  .stories-section .inner-view-right {
-    @include margin(20px 0 -20px);
-  }
+  .stories-section .inner-view-right { @include margin(20px 0 -20px); }
   .stories-section .inner-view-left .name,
   .stories-section .inner-view-left .location,
   .stories-section .inner-view-right .name,
@@ -458,20 +342,11 @@
     border: none;
   }
   .stories-section .inner-view-left .name,
-  .stories-section .inner-view-right .name {
-    @include margin(20px 0 0);
-  }
+  .stories-section .inner-view-right .name { @include margin(20px 0 0); }
+  .stories-section .read-image { @include square(200px); }
 
   // team
-  .team-members {
-    .single-member {
-      .member-detail {
-        p {
-          text-align: justify;
-        }
-      }
-    }
-  }
+  .team-members .single-member .member-detail p { text-align: justify; }
   .join-team {
     margin: 0;
     a {
@@ -482,9 +357,7 @@
   }
 }
 @media (max-width: 480px) {
-  .selfcare-image h2 {
-    font-size: 14px;
-  }
+  .selfcare-image h2 { font-size: 14px; }
   .logo {
     margin: 15px 0 0;
     h1 {
@@ -494,9 +367,7 @@
         font-size: 14px;
       }
     }
-    img {
-      @include size(30%, auto);
-    }
+    img { @include size(30%, auto); }
     h1 span {
       font-size: 12px;
       letter-spacing: 1px;
@@ -527,56 +398,32 @@
   // image-consulting
   .consults {
     .single-consult {
-      .consult-image {
-        @include square(90px);
-      }
-      .consult-title h3 {
-        font-size: 24px;
-      }
+      .consult-image { @include square(90px); }
+      .consult-title h3 { font-size: 24px; }
     }
   }
-  .we-enroll {
-    margin: 0 0 20px;
-  }
+  .we-enroll { margin: 0 0 20px; }
 
   // About Us
-  .about-desc .health-style {
-    margin: 5px 0;
-  }
+  .about-desc .health-style { margin: 5px 0; }
   .about-health .about-health-content .inner-about-carousel {
-    h3 {
-      font-size: 24px;
-    }
-    span {
-      font-size: 18px;
-    }
-    p {
-      font-size: 12px;
-    }
+    h3 { font-size: 24px; }
+    span { font-size: 18px; }
+    p { font-size: 12px; }
   }
   .what-we-do {
     .we-do-topics {
       .we-do-title {
-        img {
-          width: 90px;
-        }
-        h3 {
-          font-size: 19px;
-        }
+        img { width: 90px; }
+        h3 { font-size: 19px; }
       }
     }
   }
 
   // team
-  .team-members {
-    .team-nav {
-      .pagination {
-        li a {
-          padding: 4px 20px;
-          font-size: 16px;
-        }
-      }
-    }
+  .team-members .team-nav .pagination li a {
+    padding: 4px 20px;
+    font-size: 16px;
   }
   .join-team {
     a {
@@ -585,4 +432,17 @@
       font-size: 14px;
     }
   }
+
+  // Success Stories
+  .growth-section h3, .care-programs h3 { font-size: 20px; }
+  .stories-section .read-image { @include square(175px); }
+  .stories-section .get-round.img-left { @include position(absolute, 6px auto auto 22%); }
+  .stories-section .get-round.img-right { @include position(absolute, 6px 22% auto auto); }
+  .care-programs .care-buttons a {
+    @include size(230px, auto);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .care-programs .care-buttons a img { @include margin(0 35px 0 0); }
+  .care-programs .care-buttons a + a img { @include margin(0 13px 0 0); }
 }
