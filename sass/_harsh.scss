@@ -93,6 +93,7 @@
   .about-health-content {
     @include size(100%, 400px);
     @include margin(50px 0 0);
+    .embed-youtube { height: 300px; }
     .glyphicon-chevron-right:before {
       content: "\f105";
       display: block;

@@ -244,7 +244,7 @@
     @include size(100%, auto);
     @include margin(10px 0 0);
   }
-  .social-links li a { @include margin(0 8px 0 0); }
+  .social-links li a { @include margin(0 6px 0 0); }
 
   // Health Packages
   .what-health-goal h2 { font-size: 20px; }
@@ -394,6 +394,7 @@
     @include padding(10px);
     letter-spacing: 2px;
   }
+  footer .foot-sociallinks { padding: 10px 0 0 0; }
 
   // image-consulting
   .consults {
@@ -406,6 +407,7 @@
 
   // About Us
   .about-desc .health-style { margin: 5px 0; }
+  .about-health .about-health-content .embed-youtube { height: 150px; }
   .about-health .about-health-content .inner-about-carousel {
     h3 { font-size: 24px; }
     span { font-size: 18px; }
