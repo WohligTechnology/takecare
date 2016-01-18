@@ -95,7 +95,9 @@
   .stories-section .inner-view-left .name,
   .stories-section .inner-view-left .location {
     @include padding(0 0 0 90px);
+    @include margin(0 0 0 -60px);
   }
+  .stories-section .inner-view-left .location { @include margin(0 0 0 -10px); }
   .stories-section .inner-view-right .name,
   .stories-section .inner-view-right .location {
     @include padding(0 90px 0 0);
@@ -221,10 +223,10 @@
     @include padding(0 0 0 20px);
   }
   .stories-section .inner-view-left .name {
-    @include margin(0 0 0 -350px);
+    @include margin(0 0 0 340px);
   }
   .stories-section .inner-view-left .location {
-    @include margin(0 0 0 -410px);
+    @include margin(0 0 0 390px);
   }
   .stories-section .inner-view-right .name,
   .stories-section .inner-view-right .location {
@@ -236,6 +238,7 @@
   .stories-section .inner-view-right .location {
     @include margin(0 -420px 0 0);
   }
+  .care-programs h3 { margin: 0 50px; }
 }
 @media (max-width: $screen-xs-max) {
 

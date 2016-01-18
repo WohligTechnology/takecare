@@ -331,6 +331,7 @@
 
 // Success Stories
 .stories-section {
+  span { display: block; }
   @include margin(50px 0 0);
   .single-read, .single-view {
     @include margin(15px 0);
@@ -420,10 +421,10 @@
   }
   .inner-view-left {
     .name {
-      @include margin(0 0 0 -100px);
+      @include margin(0 0 0 100px);
       font-size: 28px;
     }
-    .location { @include margin(0 0 0 -160px); }
+    .location { @include margin(0 0 0 150px); }
     .name, .location {
       @include padding(0 0 0 20px);
       display: inline-block;
@@ -452,7 +453,7 @@
         color: $brand-brown-dark;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, 0 auto auto 0);
+        @include position(absolute, 17px auto auto -5px);
         opacity: 0.2;
       }
       &:after {
@@ -461,7 +462,7 @@
         color: $brand-brown-dark;
         font-family: $font-vista;
         font-size: 100px;
-        @include position(absolute, auto auto -60px auto);
+        @include position(absolute);
         opacity: 0.2;
       }
     }
