@@ -673,17 +673,6 @@ button {
     select {
       background-color: $brand-primary;
       color: #fff;
-      @include appearance(none);
-    }
-    span {
-      position: absolute;
-      top: 50%;
-      right: 4%;
-      border-top: 7px solid;
-      border-right: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      border-left: 7px solid transparent;
-      @include transform(translateY(-50%));
     }
     textarea {
       min-height: 225px;
@@ -1317,6 +1306,9 @@ footer {
       margin-bottom: 3px;
       a {
         @extend.brand-primary-lighter;
+        &:hover {
+          color: $brand-brown-dark;
+        }
       }
     }
   }
@@ -1327,6 +1319,9 @@ footer {
         @extend.letter-space;
         font-size: 13px;
         word-spacing: 2px;
+        &:hover {
+          color: $brand-primary-lighter;
+        }
         &:before {
           content: "-";
           margin-right: 5px;
@@ -1460,6 +1455,30 @@ footer {
     @include transition(background-color 0.4s linear);
   }
 }
+// select
+.custom-select {
+  position: relative;
+  width: 100%;
+  select {
+    width: 100%;
+    @include appearance(none);
+    outline: 0;
+    cursor: pointer;
+  }
+  &:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f0d7";
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    @include transform(translateY(-50%));
+    text-align: center;
+    line-height: 30px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
 // product-page filters
 .filters {
   input[type="checkbox"] +label {
@@ -1495,7 +1514,9 @@ footer {
       margin-left: 22px;
     }
   }
-  .product-tab-detail { margin: 30px 0 0; }
+  .product-tab-detail {
+    margin: 30px 0 0;
+  }
   ul.nav-tabs {
     @include margin(0 100px 0 0);
     border-bottom-color: $brand-brown;
@@ -1537,7 +1558,9 @@ footer {
       font-size: 28px;
     }
   }
-  form { margin-left: 53px; }
+  form {
+    margin-left: 53px;
+  }
   .form-group {
     @include padding(0 10px);
     display: inline-block;
