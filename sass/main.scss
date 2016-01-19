@@ -671,8 +671,8 @@ button {
   }
   form {
     select {
-      background-color: $brand-primary;
       color: #fff;
+      option { background-color: $brand-primary; }
     }
     textarea {
       min-height: 225px;
@@ -1457,27 +1457,42 @@ footer {
 }
 // select
 .custom-select {
-  position: relative;
-  width: 100%;
-  select {
-    width: 100%;
-    @include appearance(none);
-    outline: 0;
-    cursor: pointer;
-  }
-  &:after {
-    font: normal normal normal 14px/1 FontAwesome;
-    content: "\f0d7";
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    @include transform(translateY(-50%));
-    text-align: center;
-    line-height: 30px;
-    font-size: 24px;
-    cursor: pointer;
-  }
+    position: relative;
+    z-index: 999;
+    select {
+        @include appearance(none);
+        border: none;
+        width: 100%;
+        background-color: transparent;
+        outline: 0;
+        color: white;
+        cursor: pointer;
+        height: 40px;
+        position: relative;
+        z-index: 9999;
+    }
+    &:after {
+        font: normal normal normal 14px/1 FontAwesome;
+        content: "\f0d7";
+        height: 40px;
+        width: 28px;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .select-caret {
+        width: 100%;
+        background-color: $brand-primary;
+        position: absolute;
+        z-index: -1;
+        height: 40px;
+        top: 0;
+        left: 0;
+    }
 }
 // product-page filters
 .filters {
@@ -1511,7 +1526,7 @@ footer {
     @include margin(40px 0 20px);
     font-size: 27px;
     span {
-      margin-left: 22px;
+      margin-left: 20px;
     }
   }
   .product-tab-detail {
@@ -1578,7 +1593,10 @@ footer {
       background-color: transparent;
       color: black;
     }
+    .custom-select:after { color: #000; }
     span {
+      background-color: transparent;
+      color:#000;
       position: absolute;
       top: 50%;
       right: 20px;
