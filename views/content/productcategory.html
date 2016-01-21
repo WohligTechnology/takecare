@@ -12,41 +12,13 @@
 
   <div class="product-categories">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="row" ng-repeat="row in categories">
+        <div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="category in row">
           <div class="single-category text-center">
             <div class="category-image round">
-              <img src="img/product_category/1.jpg" alt="" class="img-responsive">
+              <img ng-src="{{category.categoryimg}}" alt="" class="img-responsive">
             </div>
-            <h3 class="text-uppercase brand-primary font-semibold">Food Munchie &amp; Beverages</h3>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <div class="single-category text-center">
-            <div class="category-image round">
-              <img src="img/product_category/2.jpg" alt="" class="img-responsive">
-            </div>
-            <h3 class="text-uppercase brand-primary font-semibold">Vitamins &amp; Minerals</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <div class="single-category text-center">
-            <div class="category-image round">
-              <img src="img/product_category/3.jpg" alt="" class="img-responsive">
-            </div>
-            <h3 class="text-uppercase brand-primary font-semibold">Protein Supplement</h3>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <div class="single-category text-center">
-            <div class="category-image round">
-              <img src="img/product_category/4.jpg" alt="" class="img-responsive">
-            </div>
-            <h3 class="text-uppercase brand-primary font-semibold">Books &amp; Gadgets</h3>
+            <h3 class="text-uppercase brand-primary font-semibold">{{category.name}}</h3>
           </div>
         </div>
       </div>

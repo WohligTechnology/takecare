@@ -133,12 +133,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
-  .controller('ProductCategoryCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('ProductCategoryCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("productcategory");
     $scope.menutitle = NavigationService.makeactive("Product Category");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.categories = [];
+    NavigationService.getCategory(function(data) {
+      $scope.categories = data;
+      $scope.categories = $filter('orderBy')($scope.categories, "order"); //order by order field done
+      $scope.categories = _.chunk($scope.categories, 2);
+    })
   })
   .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

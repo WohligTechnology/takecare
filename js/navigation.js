@@ -101,6 +101,9 @@ var navigationservice = angular.module('navigationservice', [])
     getTestimonial: function(callback) {
       $http.get(adminurl + 'getTestimonial').success(callback);
     },
+    getCategory: function(callback) {
+      $http.get(adminurl + 'getCategory').success(callback);
+    },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
         if (navigation[i].name == menuname) {
