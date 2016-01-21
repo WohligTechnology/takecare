@@ -18,229 +18,40 @@
         <div class="col-md-3 col-sm-4">
           <div class="product-cat">
             <h3 class="text-uppercase brand-brown-dark font-semibold">Categories</h3>
-            <a  class="btn text-uppercase brand-primary-bg white font-semibold" ui-sref="healthproducts({id:category.id})" ng-repeat ="category in categories">{{category.name}}</a>
+            <a class="btn text-uppercase brand-primary-bg white font-semibold" ui-sref="healthproducts({id:category.id})" ng-repeat="category in categories">{{category.name}}</a>
           </div>
 
           <div class="filters brand-brown-bg">
             <h3 class="text-uppercase brand-brown-dark font-semibold">Filters by</h3>
 
-            <div class="protein">
-            <div class="checkbox">
-                <input type="checkbox" id="protein">
-              <label class="white" for="protein">
-                <span></span>Protein Snacks</label>
-            </div>
-            </div>
-
-            <div class="evening">
+            <div class="protein" ng-repeat = "subcategory in subCategories">
               <div class="checkbox">
-                <input type="checkbox" id="eve">
-                <label class="white" for="eve"> <span></span>Evening Snacks</label>
+                <input type="checkbox" id="{{subcategory.name | nospace}}">
+
+                <label class="white" for="{{subcategory.name | nospace}}">
+                  <span></span>{{subcategory.name}}</label>
               </div>
             </div>
 
-            <div class="cookies">
-              <div class="checkbox">
-                <input type="checkbox" id="cookies">
-                <label class="white" for="cookies"><span></span> Cookies</label>
-              </div>
-            </div>
-
-            <div class="nuts">
-              <div class="checkbox">
-                <input type="checkbox" id="nuts">
-                <label class="white" for="nuts"><span></span> Nuts</label>
-              </div>
-            </div>
-
-            <div class="fiber">
-              <div class="checkbox">
-                <input type="checkbox" id="fiber">
-                <label class="white" for="fiber"><span></span> Fiber Rich</label>
-              </div>
-            </div>
-
-            <div class="teas">
-            <div class="checkbox">
-                <input type="checkbox" id="teas">
-              <label class="white" for="teas"><span></span>  Flavoured Teas</label>
-            </div>
-            </div>
-
-            <div class="burner">
-            <div class="checkbox">
-                <input type="checkbox" id="burner">
-              <label class="white" for="burner"><span></span> Fat Burner</label>
-            </div>
-            </div>
-
-            <div class="chocolate">
-              <div class="checkbox">
-                <input type="checkbox" id="choc">
-                <label class="white"for="choc"><span></span> Chocolates</label>
-              </div>
-            </div>
 
           </div>
         </div>
 
         <div class="col-md-9 col-sm-8">
           <div class="row">
-
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-4 col-sm-6" ng-repeat="product in products" ng-if="products.length > 0">
               <div class="single-product text-center">
                 <div class="product-image round">
-                  <img src="img/health-products/1.jpg" alt="" class="img-responsive">
+                  <img ng-src="{{product.image}}" alt="" class="img-responsive">
                 </div>
                 <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Baked Potato Chips</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
+                  <span class="text-uppercase">{{product.name}}</span> |
+                  <span><i class="fa fa-inr"></i> {{product.price}}</span>
                 </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
+                <a class="btn btn-primary text-uppercase" ng-click="cardAdd(product.id)">Add to cart</a>
               </div>
             </div>
 
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/2.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Chana Jor</span> |
-                  <span><i class="fa fa-inr"></i>125</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/3.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Bajra Rings</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/1.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Baked Potato Chips</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/2.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Chana Jor</span> |
-                  <span><i class="fa fa-inr"></i>125</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/3.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Bajra Rings</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/1.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Baked Potato Chips</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/2.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Chana Jor</span> |
-                  <span><i class="fa fa-inr"></i>125</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/3.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Bajra Rings</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/1.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Baked Potato Chips</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/2.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Chana Jor</span> |
-                  <span><i class="fa fa-inr"></i>125</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="single-product text-center">
-                <div class="product-image round">
-                  <img src="img/health-products/3.jpg" alt="" class="img-responsive">
-                </div>
-                <p class="brand-primary font-semibold">
-                  <span class="text-uppercase">Bajra Rings</span> |
-                  <span><i class="fa fa-inr"></i>225</span>
-                </p>
-                <a href="#/cart" class="btn btn-primary text-uppercase">Add to cart</a>
-              </div>
-            </div>
 
           </div>
         </div>

@@ -178,7 +178,11 @@ firstapp.directive('fancyboxBox', function($document) {
        }
    }
 });
-
+firstapp.filter('nospace', function () {
+    return function (value) {
+        return (!value) ? '' : value.replace(/ /g, '');
+    };
+});
 firstapp.directive('slideMenu', function($document) {
    return {
        restrict: 'EA',
