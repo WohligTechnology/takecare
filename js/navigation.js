@@ -96,10 +96,10 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getSlide: function(callback) {
       console.log(adminurl);
-      $http.get(adminurl + 'getSlide1').success(callback);
+      $http.get(adminurl + 'getSlide').success(callback);
     },
     getTestimonial: function(callback) {
-      $http.get(adminurl + 'getTestimonial1').success(callback);
+      $http.get(adminurl + 'getTestimonial').success(callback);
     },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
