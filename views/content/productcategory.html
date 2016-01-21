@@ -14,7 +14,7 @@
     <div class="container">
       <div class="row" ng-repeat="row in categories">
         <div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="category in row">
-          <div class="single-category text-center">
+          <div class="single-category text-center" ui-sref="healthproducts({id:category.id})">
             <div class="category-image round">
               <img ng-src="{{category.categoryimg}}" alt="" class="img-responsive">
             </div>

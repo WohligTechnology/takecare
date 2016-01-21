@@ -59,12 +59,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
     }];
   })
-  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams,$filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthproducts");
     $scope.menutitle = NavigationService.makeactive("Health Products");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.categoryid = $stateParams.id;
+    $scope.categories=[];
+    NavigationService.getCategoryById($scope.categoryid,function(data){
+      $scope.productCategory = data;
+      console.log($scope.productCategory);
+    });
+    NavigationService.getCategory(function(data){
+      $scope.categories = data;
+      $scope.categories = $filter('orderBy')($scope.categories, "order");
+      console.log(_.findIndex($scope.categories,{'id':parseInt($scope.categoryid)}));
+      $scope.categories.splice(_.findIndex($scope.categories,{'id':parseInt($scope.categoryid)}),1);
+    })
+
   })
   .controller('HealthPackagesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

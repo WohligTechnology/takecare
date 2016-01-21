@@ -26,7 +26,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     })
 
     .state('healthproducts', {
-        url: "/healthproducts",
+        url: "/healthproducts/:id",
         templateUrl: "views/template.html",
         controller: 'HealthProductsCtrl'
     })

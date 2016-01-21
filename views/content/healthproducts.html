@@ -1,7 +1,7 @@
 <section>
   <div class="selfcare-image">
-    <img src="img/apple.jpg" alt="">
-    <h2 class="text-uppercase get-center white font-semibold">Snacks &amp; Munchies</h2>
+    <img ng-src="{{productCategory.bannerimg}}" alt="">
+    <h2 class="text-uppercase get-center white font-semibold">{{productCategory.name}}</h2>
   </div>
 
   <div class="container">
@@ -18,9 +18,7 @@
         <div class="col-md-3 col-sm-4">
           <div class="product-cat">
             <h3 class="text-uppercase brand-brown-dark font-semibold">Categories</h3>
-            <a href="" class="btn text-uppercase brand-primary-bg white font-semibold">Vitamins &amp; Minerals</a>
-            <a href="" class="btn text-uppercase brand-primary-bg white font-semibold">Protein &amp; Supplement</a>
-            <a href="" class="btn text-uppercase brand-primary-bg white font-semibold">Books &amp; Gadgets</a>
+            <a  class="btn text-uppercase brand-primary-bg white font-semibold" ui-sref="healthproducts({id:category.id})" ng-repeat ="category in categories">{{category.name}}</a>
           </div>
 
           <div class="filters brand-brown-bg">
