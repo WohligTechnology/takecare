@@ -2,7 +2,7 @@
   <flex-slider flex-slide="slide in homeslider track by $index" animation="slide" class="carousel">
     <li>
       <div class="slide-holder relate">
-        <img ng-src="{{slide.img}}">
+        <img ng-src="{{slide.img | serverimage}}">
         <div class="slider-info get-center text-center">
           <h2 class="text-uppercase brand-primary font-semibold">{{slide.title}}</h2>
           <p>{{slide.description}}</p>
@@ -46,7 +46,7 @@
       <div class="col-md-4 col-sm-12">
         <div class="health-info">
           <h3 class="brand-blue title text-uppercase font-gotham-bold">cool <span class="block">sculpting</span></h3>
-          <p class="text-justify health-descp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+          <p class="text-justify health-descp">The CoolSculpting procedure eliminates stubborn fat safely and effectively, without surgery or downtime. This fat reduction treatment is the only FDA-cleared procedure.</p>
           <button class="btn btn-blue text-uppercase font-gotham-bold letter-space know-more">know more</button>
           <div class="health-imgholder">
             <img src="img/cool-sculpting.png" alt="" class="img-responsive">
@@ -159,7 +159,7 @@
               </div>
               <p class="descp m-center">Recipes that help you eat right without compromising on taste.</p>
               <div class="more text-center">
-                <button class="btn btn-primary text-uppercase" type="button">Try them</button>
+                <button class="btn btn-primary text-uppercase" type="button">Coming Soon</button>
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@
               </div>
               <p class="descp m-center">Browse through nutritional information of your favourite foods with this easy to use calculator and learn which foods and beverages work for your waistline and which don't.</p>
               <div class="more text-center">
-                <button class="btn btn-primary text-uppercase" type="button">track them</button>
+                <button class="btn btn-primary text-uppercase" type="button">Coming Soon</button>
               </div>
             </div>
           </div>
@@ -231,7 +231,7 @@
             </div>
           </div>
           <div class="text-right btn-center">
-            <button class="text-uppercase btn btn-primary" type="button">Read more</button>
+            <button class="text-uppercase btn btn-primary" type="button">Coming Soon</button>
           </div>
         </div>
       </div>
@@ -248,9 +248,12 @@
               <div class="custom-select">
                 <select name="" id="" class="form-control text-bold">
                   <option value="">Choose a Category</option>
-                  <option value="">Category 1</option>
-                  <option value="">Category 2</option>
-                  <option value="">Category 3</option>
+                  <option value="">Weight Loss</option>
+                  <option value="">Weight Gain</option>
+                  <option value="">Diet</option>
+                  <option value="">Health and Immunity</option>
+                  <option value="">Ailment Control</option>
+                  <option value="">General</option>
                 </select>
                 <span class="select-caret"></span>
               </div>
