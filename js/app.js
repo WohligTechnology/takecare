@@ -67,7 +67,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     })
 
     .state('productdetail', {
-        url: "/productdetail",
+        url: "/productdetail/:id",
         templateUrl: "views/template.html",
         controller: 'ProductDetailCtrl'
     })

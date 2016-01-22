@@ -84,7 +84,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }), 1);
     })
     $scope.refreshProducts = function(subcategoryarr) {
-      NavigationService.getProductByCategory({
+      NavigationService.getProductsByCategory({
         categoryid: $scope.categoryid,
         subcategories: subcategoryarr
       }, function(data) {
@@ -199,12 +199,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.categories = _.chunk($scope.categories, 2);
     })
   })
-  .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("productdetail");
     $scope.menutitle = NavigationService.makeactive("Product Detail");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.productid = $stateParams.id;
+    $scope.product = {};
+    $scope.outofstock=false;
+    NavigationService.getProductDetail($scope.productid,function(data) {
+      console.log(data);
+        $scope.product = data;
+        if($scope.product.maxQuantity<1){
+          $scope.outofstock=true;
+        }
+    });
+    $scope.cartAdd = function(id){
+      console.log(id);
+    }
     $scope.like = [{
       image: "img/cart/1.jpg",
       name: "Oat Meal Cookies",

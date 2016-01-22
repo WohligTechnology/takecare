@@ -40,10 +40,14 @@
           <div class="row">
             <div class="col-md-4 col-sm-6" ng-repeat="product in products" ng-if="products.length > 0">
               <div class="single-product text-center">
-                <div class="product-image round">
+                <div class="product-image round pointer" ui-sref="productdetail({
+                  id:product.id
+                })">
                   <img ng-src="{{product.image}}" alt="" class="img-responsive">
                 </div>
-                <p class="brand-primary font-semibold">
+                <p class="brand-primary font-semibold pointer" ui-sref="productdetail({
+                  id:product.id
+                })">
                   <span class="text-uppercase">{{product.name}}</span> |
                   <span><i class="fa fa-inr"></i> {{product.price}}</span>
                 </p>
