@@ -231,7 +231,12 @@ $instagram: #396d9a !default;
 body {
   background-color: #fff;
   font-family: $font-family-sans-serif;
+  .no-scroll{
+    overflow: hidden;
+    .slide-menu { height: 115%; }
+  }
 }
+
 img.loading {
   text-align: center;
   opacity: 1;
@@ -767,11 +772,12 @@ button {
     text-align: center;
     @include transform(translateX(-50%));
   }
-  .consult {
-    margin-top: 50px;
+  .month {
+    @include margin(35px 0 0);
     display: block;
-    @extend.text-bold;
+    font-size: 14px;
   }
+  .duration { display: block; }
 }
 .weight-round {
   @include square(100px);
@@ -813,24 +819,17 @@ button {
   }
   .nav-tabs li:first-child a {
     background-color: #fff;
-    padding: 8px 38px;
+    margin: 0 0 3px 0;
+    padding: 12px 0 0;
     .chart-head {
-      p {
-        color: $brand-primary;
-      }
-      .price {
-        color: $brand-brown-dark;
-      }
+      p { color: black; }
+      .price { color: $brand-primary; }
     }
     &:hover {
       background-color: #fff !important;
       .chart-head {
-        p {
-          color: $brand-primary;
-        }
-        .price {
-          color: $brand-brown-dark;
-        }
+        p { color: black; }
+        .price { color: $brand-primary; }
       }
     }
     &:after {
@@ -851,9 +850,10 @@ button {
     li {
       margin: 0 4px -2px 0;
       a {
+        @include size(150px, 76px);
         border-radius: 6px;
         border: none;
-        padding: 10px 38px;
+        padding: 27px 0 0;
         @include transition(all 0ms ease);
         &:hover {
           background-color: $brand-primary;
@@ -921,6 +921,7 @@ button {
   margin-bottom: 50px;
 }
 .tab-body {
+  position: relative;
   h5 {
     margin-bottom: 15px;
     font-size: 20px;
@@ -931,6 +932,16 @@ button {
     li {
       margin-bottom: 8px;
       color: $brand-primary;
+    }
+  }
+  .pricing {
+    position: absolute;
+    right: 35px;
+    bottom: -15px;
+    span {
+      margin-bottom: -5px;
+      display: block;
+      font-size: 28px;
     }
   }
 }
