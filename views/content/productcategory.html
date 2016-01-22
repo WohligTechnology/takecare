@@ -16,7 +16,7 @@
         <div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="category in row">
           <div class="single-category text-center pointer" ui-sref="healthproducts({id:category.id})">
             <div class="category-image round">
-              <img ng-src="{{category.categoryimg}}" alt="" class="img-responsive">
+              <img ng-src="{{category.categoryimg | serverimage}}" alt="" class="img-responsive">
             </div>
             <h3 class="text-uppercase brand-primary font-semibold">{{category.name}}</h3>
           </div>

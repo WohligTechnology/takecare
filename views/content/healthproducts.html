@@ -43,7 +43,7 @@
                 <div class="product-image round pointer" ui-sref="productdetail({
                   id:product.id
                 })">
-                  <img ng-src="{{product.image}}" alt="" class="img-responsive">
+                  <img ng-src="{{product.image | serverimage}}" alt="" class="img-responsive">
                 </div>
                 <p class="brand-primary font-semibold pointer" ui-sref="productdetail({
                   id:product.id
@@ -54,11 +54,8 @@
                 <a class="btn btn-primary text-uppercase" ng-click="cardAdd(product.id)">Add to cart</a>
               </div>
             </div>
-
-
           </div>
         </div>
-
       </div>
     </div>
   </div>

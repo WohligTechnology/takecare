@@ -219,6 +219,15 @@ firstapp.filter('nospace', function () {
         return (!value) ? '' : value.replace(/ /g, '');
     };
 });
+firstapp.filter('serverimage', function() {
+  return function(input) {
+    if (input) {
+      return   imgurl+input;
+    } else {
+      return "img/loading.gif";
+    }
+  };
+});
 firstapp.directive('slideMenu', function($document) {
    return {
        restrict: 'EA',

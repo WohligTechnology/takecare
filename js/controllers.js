@@ -210,10 +210,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.outofstock=false;
     NavigationService.getProductDetail($scope.productid,function(data) {
       console.log(data);
-        $scope.product = data;
-        if($scope.product.maxQuantity<1){
-          $scope.outofstock=true;
-        }
+      // $scope.product = data;
+        $scope.product = data[0];
     });
     $scope.cartAdd = function(id){
       console.log(id);
