@@ -83,25 +83,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'id': parseInt($scope.categoryid)
       }), 1);
     })
-    $scope.refreshProducts = function() {
-      NavigationService.getProductByCategory($scope.categoryid, function(data) {
+    $scope.refreshProducts = function(subcategoryarr) {
+      NavigationService.getProductByCategory({
+        categoryid: $scope.categoryid,
+        subcategories: subcategoryarr
+      }, function(data) {
         if (data.value = false) {
           $scope.products = [];
         } else {
           $scope.products = data;
-
         }
       })
     }
-    $scope.refreshProducts();
+    $scope.refreshProducts([]);
     $scope.cardAdd = function(productid) {
       console.log(productid);
     };
     NavigationService.getSubCategory($scope.categoryid, function(data) {
+
       $scope.subCategories = data;
       $scope.subCategories = $filter('orderBy')($scope.subCategories, "order");
     });
-
+    $scope.filterBy = [];
+    $scope.filterIt = function(index) {
+      console.log(index);
+      if (_.findIndex($scope.filterBy, function(key) {
+          return key == index;
+        }) == -1) {
+        $scope.filterBy.push(index);
+      } else {
+        $scope.filterBy.splice(_.findIndex($scope.filterBy, function(key) {
+          return key == index;
+        }), 1);
+      }
+      $scope.refreshProducts($scope.filterBy);
+    }
   })
   .controller('HealthPackagesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
