@@ -54,9 +54,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       text: "intelligent food plans",
       desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
     }, {
-      title: "Individualize",
-      text: "intelligent food plan",
-      desc: "We believe that each of our clients is unique. Which is why we design personalized diet and exercise routines to suit your needs."
+      title: "Preventive Health",
+      text: "clinical food plans",
+      desc: "Our health plan studies you, understands your genetic predisposition to various ailments—which could be anything from diabetes, heart ailment to kidney disorders and cancer—and helps you to prevent or reverse the onset."
+    }, {
+      title: "Technology",
+      text: "contemporary plans",
+      desc: "We use technology and research to an advantage, providing our clients with innovative, safe and effective ways to be healthy and stay fit."
+    }, {
+      title: "Online",
+      text: "cultural diet plans",
+      desc: "We are an online programme too, so no matter where you are, we will can still tailor your diet to suit your locale and circumstances."
+    }, {
+      title: "Unjunk",
+      text: "eat, drink, UNJUNK",
+      desc: "Our dedicated teams of experts constantly work on developing wholesome food recipes, which take the junk out of junk food."
+    }, {
+      title: "Travel Tips",
+      text: "diet on the go",
+      desc: "We provide guidance and hints to identify what to eat while traveling . These travel and holiday survival tips will ensure you have an enjoyable yet healthy holiday."
+    }, {
+      title: "Children",
+      text: "super kids",
+      desc: "We are experts at solving child obesity and even at helping young children gain height or weight."
     }];
   })
   .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
