@@ -114,6 +114,42 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         controller: 'TeamCtrl'
     })
 
+    .state('coolsculpting', {
+        url: "/coolsculpting",
+        templateUrl: "views/template.html",
+        controller: 'CoolSculptingCtrl'
+    })
+
+    .state('bloglising', {
+        url: "/bloglising",
+        templateUrl: "views/template.html",
+        controller: 'BlogCtrl'
+    })
+
+    .state('blogdetail', {
+        url: "/blogdetail",
+        templateUrl: "views/template.html",
+        controller: 'BlogDetailCtrl'
+    })
+
+    .state('recipes', {
+        url: "/recipes",
+        templateUrl: "views/template.html",
+        controller: 'RecipesCtrl'
+    })
+
+    .state('nutrigenomics', {
+        url: "/nutrigenomics",
+        templateUrl: "views/template.html",
+        controller: 'NutrigenomicsCtrl'
+    })
+
+    .state('knowyourstats', {
+        url: "/knowyourstats",
+        templateUrl: "views/template.html",
+        controller: 'StatsCtrl'
+    })
+
     .state('contactus', {
         url: "/contactus",
         templateUrl: "views/template.html",
