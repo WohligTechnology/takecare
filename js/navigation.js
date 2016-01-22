@@ -14,49 +14,39 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/aboutus",
     subnav: []
   }, {
-    name: "Health Products",
-    classis: "active",
-    link: "#/healthproducts",
-    subnav: []
-  }, {
     name: "Health Packages",
     classis: "active",
     link: "#/healthpackages",
     subnav: []
   }, {
-    name: "Health Management",
+    name: "Health Products",
     classis: "active",
-    link: "#/healthmanagement",
+    link: "#/healthproducts",
     subnav: []
   }, {
-    name: "Weight Loss",
+    name: "Health Kit",
     classis: "active",
-    link: "#/weightloss",
+    link: "#/",
     subnav: []
   }, {
-    name: "Image Consulting",
+    name: "Cool Sculpting",
     classis: "active",
-    link: "#/imageconsulting",
+    link: "#/coolsculpting",
     subnav: []
   }, {
-    name: "Product Category",
+    name: "Nutrigenomics",
     classis: "active",
-    link: "#/productcategory",
+    link: "#/nutrigenomics",
     subnav: []
   }, {
-    name: "Product Detail",
+    name: "Success Stories",
     classis: "active",
-    link: "#/productdetail",
+    link: "#/successstories",
     subnav: []
   }, {
-    name: "FAQ",
+    name: "Blog",
     classis: "active",
-    link: "#/faq",
-    subnav: []
-  }, {
-    name: "Meet Suman Agarwal",
-    classis: "active",
-    link: "#/meet",
+    link: "#/bloglisting",
     subnav: []
   }, {
     name: "News",
@@ -64,27 +54,17 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/news",
     subnav: []
   }, {
-    name: "Success Stories",
+    name: "FAQ",
     classis: "active",
-    link: "#/about",
+    link: "#/faq",
     subnav: []
   }, {
-    name: "My Cart",
+    name: "Careers",
     classis: "active",
-    link: "#/cart",
+    link: "#/",
     subnav: []
   }, {
-    name: "Checkout",
-    classis: "active",
-    link: "#/checkbox",
-    subnav: []
-  }, {
-    name: "Team",
-    classis: "active",
-    link: "#/team",
-    subnav: []
-  }, {
-    name: "Contact Us",
+    name: "Contact",
     classis: "active",
     link: "#/contactus",
     subnav: []
