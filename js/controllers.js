@@ -9,9 +9,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getSlide(function(data) {
       $scope.homeslider = data;
     });
-    NavigationService.getTestimonial(function(data) {
-      $scope.homestory = data;
-    });
     $scope.homestory = [{
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
@@ -111,7 +108,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value = false) {
           $scope.products = [];
         } else {
-          $scope.products = data;
+          $scope.products = data.queryresult;
         }
       })
     }
