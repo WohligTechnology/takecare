@@ -109,9 +109,9 @@
       word-spacing: 2px;
     }
     .img-holder {
-      @include square(120px);
-      top: -22px;
-      left: 62%;
+      @include square(140px);
+      top: -30px;
+      left: 65%;
       background: url(../img/suman.jpg) no-repeat -135px -12px;
     }
     .more-abt-suman {
@@ -429,8 +429,8 @@
       word-spacing: 0;
     }
     .img-holder {
-      @include square(100px);
-      left: 64%;
+      @include square(120px);
+      left: 63%;
       border: 2px solid #fff;
     }
     .more-abt-suman {

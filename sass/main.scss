@@ -182,13 +182,13 @@ $instagram: #396d9a !default;
 .btn-yellow {
   @include button-variant(white, $brand-yellow, $brand-yellow);
   &:hover {
-    color: #fff !important;
+    color: $brand-yellow !important;
   }
 }
 .btn-blue {
   @include button-variant(white, $brand-blue, $brand-blue);
   &:hover {
-    color: #fff !important;
+    color: $brand-blue !important;
   }
 }
 .btn-primary-inverse {
@@ -323,7 +323,6 @@ textarea {
   @include flex(1);
 }
 .btn {
-  font-size: 12px;
   padding: 12px 24px;
   border-radius: 4px;
   &:hover {
@@ -452,13 +451,13 @@ button {
   }
   .img-holder {
     position: absolute;
-    top: -30px;
+    top: -40px;
     left: 65%;
     @include transform(translateX(-65%));
     border: 6px solid #fff;
-    @include square(150px);
+    @include square(175px);
     overflow: hidden;
-    background: url(../img/suman.jpg) no-repeat -125px -12px;
+    background: url(../img/suman.jpg) no-repeat -110px -10px;
   }
   .more-abt-suman {
     font-size: 20px;
@@ -478,7 +477,9 @@ button {
     }
     .health-descp {
       width: 270px;
+      height: 130px;
       margin: 20px 0 30px;
+      overflow: hidden;
     }
     .know-more {
       padding: 14px 40px;
@@ -545,12 +546,13 @@ button {
     }
   }
   .descp {
-    min-height: 100px;
+    height: 100px;
     width: 380px;
     margin: 15px 0;
     font-size: 16px;
     text-align: justify;
     word-spacing: 1px;
+    overflow: hidden;
   }
 }
 .section-story {
@@ -716,9 +718,7 @@ button {
 /////////////////////
 ////Health-Management
 ////////////////////
-.story-video {
-  height: 270px;
-}
+.story-video img { @include size(100%, auto); }
 .health-descp {
   font-size: 16px;
 }
@@ -1388,6 +1388,7 @@ footer {
   }
   .copyright {
     margin-top: 25px;
+    a:hover { color: $brand-primary-lighter; }
   }
 }
 .health-foot {
