@@ -920,6 +920,15 @@ button {
     }
   }
 }
+.health-tab .tab-chart .nav-tabs li:first-child a { padding: 12px 0 0; }
+.health-tab .tab-chart .nav-tabs li a {
+  @include size(150px, 76px);
+  padding: 27px 0 0;
+}
+.weight .tab-chart .nav-tabs li a {
+  @include size(190px, 76px);
+  padding: 12px 0 0;
+}
 .tab-head {
   margin-bottom: 50px;
 }
@@ -1474,6 +1483,8 @@ footer {
 // select
 .custom-select {
     position: relative;
+    border-radius: 4px;
+    overflow: hidden;
     z-index: 999;
     select {
         @include appearance(none);

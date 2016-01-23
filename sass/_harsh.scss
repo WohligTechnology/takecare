@@ -303,18 +303,18 @@
       p { letter-spacing: 2px; }
     }
   }
-  .team-nav {
-    @include margin(20px 0 0);
-    .pagination {
-      li { a {
-          @include padding(5px 30px);
-          color: $body-bg;
-          background-color: $brand-primary;
-          font-size: 24px;
-          font-weight: bold;
-        }
-        .active { background-color: $brand-brown; }
+}
+.team-nav {
+  @include margin(20px 0 0);
+  .pagination {
+    li { a {
+        @include padding(5px 30px);
+        color: $body-bg;
+        background-color: $brand-primary;
+        font-size: 24px;
+        font-weight: bold;
       }
+      .active { background-color: $brand-brown; }
     }
   }
 }
