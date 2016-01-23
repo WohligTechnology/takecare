@@ -369,9 +369,9 @@
   </div>
 
   <div class="team-nav text-center">
-    <ul class="pagination">
-      <li><a ng-class="active" ng-click="teamone=true;teamtwo=false">1</a></li>
-      <li><a ng-class="active" ng-click="teamone=false;teamtwo=true">2</a></li>
+    <ul class="pagination" ng-init="aclass='active';bclass=''">
+      <li><a class="{{aclass}}" ng-click="teamone=true;teamtwo=false;aclass='active';bclass=''">1</a></li>
+      <li><a class="{{bclass}}" ng-click="teamone=false;teamtwo=true;aclass='';bclass='active'">2</a></li>
     </ul>
   </div>
 

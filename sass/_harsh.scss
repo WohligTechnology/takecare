@@ -559,6 +559,14 @@
 // Contact Us
 .contact-location {
   @include margin(50px 0);
+  .clinic {
+    @include margin(0 0 50px 0);
+    span {
+      @include padding(10px 20px);
+      font-size: 32px;
+      border: 1px solid $brand-brown-dark;
+    }
+  }
   .mumbai, .kolkata {
     @include margin(0 0 20px);
     letter-spacing: 2px;
@@ -585,9 +593,8 @@
       border: 1px solid $brand-primary;
       border-radius: 0;
       @include placeholder {
-        font-family: $font-baubodi;
-        font-weight: bold;
-        letter-spacing: 2px;
+        font-family: $font-vista;
+        font-style: italic;
       };
     }
     textarea { @include size(100%, 100px); }
@@ -698,7 +705,9 @@
     }
   }
   .flex-direction-nav a.flex-next:before { content: "\f105"; }
-  .flexslider ul li:first-child button { background-color: $brand-primary; }
+
+  .flexslider ul li button.actif { background-color: $brand-primary; }
+
     button {
       @include margin(50px 0 0);
       @include padding(5px 40px);
@@ -723,9 +732,18 @@
       @include size(100%, 170px);
       border: 2px solid $brand-primary;
       border-radius: 5px;
-      transition: all 300ms ease;
-      &:hover { border: 2px solid black; }
-      img { @include square(100%); }
+      overflow: hidden;
+      @include transition(all 300ms ease);
+      &:hover {
+        border: 2px solid black;
+        img {
+          @include filter(grayscale(0));
+        }
+      }
+      img {
+        @include size(100%, auto);
+        @include filter(grayscale(1));
+      }
     }
     p {
       @include margin(10px 0);

@@ -13,25 +13,26 @@
             <button type="button" class="btn brand-brown-bg white">{{slide.year}}</button>
           </uib-slide>
         </uib-carousel> -->
-        <flex-slider class="carousel" flex-slide="year in yearslide track by $index" animation="slide" item-width="130" item-margin="5">
+        <flex-slider class="carousel" flex-slide="year in yearslide track by $index" animation="" item-width="130" item-margin="5">
           <li>
-            <button type="button" class="btn brand-brown-bg white">{{year.year}}</button>
+            <button type="button" class="btn brand-brown-bg white" ng-click="activeTab(year);" ng-class="{'actif':year.year==activeYear.year}">{{year.year}}</button>
           </li>
         </flex-slider>
       </div>
 
-      <div class="news-article" ng-repeat="article in news">
+      <div class="news-article">
         <div class="row">
-          <div class="col-md-4 col-sm-4">
+          <div class="col-md-4 col-sm-4" ng-repeat="article in activeYear.news">
+
             <div class="article-image">
-              <a fancybox-box href="{{article.image1}}">
-                <img ng-src="{{article.image1}}" alt="" class="img-responsive">
+              <a fancybox-box href="{{article.image}}">
+                <img ng-src="{{article.image}}" alt="" class="img-responsive">
               </a>
             </div>
-            <p class="brand-brown-dark">{{article.title1}}</p>
+            <p class="brand-brown-dark">{{article.title}}</p>
           </div>
 
-          <div class="col-md-4 col-sm-4">
+          <!-- <div class="col-md-4 col-sm-4">
             <div class="article-image">
             <a fancybox-box href="{{article.image2}}">  <img ng-src="{{article.image2}}" alt="" class="img-responsive"></a>
             </div>
@@ -43,7 +44,7 @@
               <a fancybox-box href="{{article.image3}}" ><img ng-src="{{article.image3}}" alt="" class="img-responsive"></a>
             </div>
             <p class="brand-brown-dark">{{article.title3}}</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
