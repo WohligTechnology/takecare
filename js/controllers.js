@@ -295,56 +295,71 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("News");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
     $scope.yearslide = [{
-      year: "2013"
+      year: "2015",
+      news: [{
+        title: "Feb - Hindustan Times Mint, Mumbai",
+        image: "img/news/2015/India Today.jpg"
+      }]
     }, {
-      year: "2012"
-    }, {
-      year: "2011"
-    }, {
-      year: "2010"
-    }, {
-      year: "2009"
-    }, {
-      year: "2008"
-    }, {
-      year: "2007"
-    }, {
-      year: "2006"
-    }, {
-      year: "2005"
-    }, {
-      year: "2004"
+      year: "2014",
+      news : [{
+        title: "Jan - Absolute India, Mumbai",
+        image: "img/news/2014/Suman Agarwal-Absolute Inia-Mum-Pg08-Organic food is the new-11.01.14.jpg"
+      }, {
+        title: "Feb - articleapi.com",
+        image: "img/news/2014/Suman Agarwal-articleapi.com-Benefits of almonds for skin, hair and health-11.02.14.jpg"
+      }, {
+        title: "Feb - bubblews.com",
+        image: "img/news/2014/Suman Agarwal-bubblews.com-Benefits of almonds for skin, hair and health-13.02.14.jpg"
+      }, {
+        title: "Feb - caravanalive.com",
+        image: "img/news/2014/Suman Agarwal-caravanalive.com-Designer Diets from Selfcare-25.02.14.jpg"
+      }, {
+        title: "Feb - Dna After Hrs, Mumbai",
+        image: "img/news/2014/Suman agarwal-Dna After Hrs-Mum-Pg04-Age Gracefully!-20.02.2014.jpg"
+      }, {
+        title: "Feb - dnaindia.com",
+        image: "img/news/2014/Suman Agarwal-dnaindia.com-Anti-ageing foods to stay young-14.02.14.jpg"
+      }, {
+        title: "Feb - healthmeup.com",
+        image: "img/news/2014/Suman Agarwal-healthmeup.com-Foods that Burn Fat Fast  Weight Loss-25.02.14.jpg"
+      }, {
+        title: "Feb - idiva.com",
+        image: "img/news/2014/Suman Agarwal-idiva.com-All About Fats- The Good and the Bad-20.02.14.jpg"
+      }, {
+        title: "Feb - idiva.com",
+        image: "img/news/2014/Suman Agarwal-idiva.com-Weight Loss Plan for Diabetics-13.02.14.jpg"
+      }, {
+        title: "Feb - in.lifestyle.yahoo.com",
+        image: "img/news/2014/Suman Agarwal-in.lifestyle.yahoo.com-Weight Loss Plan for Diabetics-21.02.14.jpg"
+      }, {
+        title: "Jan - Midday, Mumbai",
+        image: "img/news/2014/Suman Agarwal-Midday-Mum-Pg07-The Pregnant working woman's guide-07.01.14.jpg"
+      }, {
+        title: "Feb - mumbai.burrp.com",
+        image: "img/news/2014/Suman Agarwal-mumbai.burrp.com-Timeless Radiance-14.02.14.jpg"
+      }, {
+        title: "Feb - mumbaimag.com",
+        image: "img/news/2014/Suman Agarwal-mumbaimag.com-Timeless Radiance, A Skincare And Fitness Panel Discussion At Serafina-18.02.14.jpg"
+      }, {
+        title: "Feb - Sharir O Sasthya, Kolkata",
+        image: "img/news/2014/Suman Agarwal-Sharir O Sasthya-Kol-Pg 64- 65-Let you grow old  but have a balanced diet and be young says Neutritionist   Suman Agarwal-15.02.14.jpg"
+      }, {
+        title: "Feb - Women's Health National",
+        image: "img/news/2014/Suman Agarwal-Women's Health-National-Pg94-95-Control Your Cravings-Jan-Feb'14 .jpg"
+      }, {
+        title: "Feb - Women's Health National",
+        image: "img/news/2014/Suman Agarwal-Women's Health-National-Pg96-Control Your Cravings-Jan-Feb'14.jpg"
+      }]
     }];
-    $scope.news = [{
-      title1: "Feb - Hindustan Times Mint, Mumbai",
-      title2: "Mar - The Hindu, Banglore",
-      title3: "Mar - The New Indian Express, Banglore",
-      image1: "img/news/news1.jpg",
-      image2: "img/news/news2.jpg",
-      image3: "img/news/news3.jpg"
-    }, {
-      title1: "Feb - Hindustan Times Mint, Mumbai",
-      title2: "Mar - The Hindu, Banglore",
-      title3: "Mar - The New Indian Express, Banglore",
-      image1: "img/news/news1.jpg",
-      image2: "img/news/news2.jpg",
-      image3: "img/news/news3.jpg"
-    }, {
-      title1: "Feb - Hindustan Times Mint, Mumbai",
-      title2: "Mar - The Hindu, Banglore",
-      title3: "Mar - The New Indian Express, Banglore",
-      image1: "img/news/news1.jpg",
-      image2: "img/news/news2.jpg",
-      image3: "img/news/news3.jpg"
-    }, {
-      title1: "Feb - Hindustan Times Mint, Mumbai",
-      title2: "Mar - The Hindu, Banglore",
-      title3: "Mar - The New Indian Express, Banglore",
-      image1: "img/news/news1.jpg",
-      image2: "img/news/news2.jpg",
-      image3: "img/news/news3.jpg"
-    }];
+
+    $scope.activeTab = function(data) {
+      $scope.activeYear = data;
+    };
+
+    $scope.activeTab($scope.yearslide[0]);
   })
   .controller('SuccessStoriesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
