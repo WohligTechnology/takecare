@@ -8,22 +8,22 @@
       <div class="row">
         <div class="col-md-6">
           <div class="product-image">
-            <img src="{{product.image | serverimage}}" alt="" class="img-responsive">
+            <img src="{{product.product.image | serverimage}}" alt="" class="img-responsive">
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-10">
-              <h3 class="text-uppercase font-semibold">{{product.name || 'Loading..'}}
+              <h3 class="text-uppercase font-semibold">{{product.product.name || 'Loading..'}}
                 <span class="text-center font-semibold brand-primary prd-price">
                   <i class="fa fa-inr"></i>
-                  {{product.price}}</span>
+                  {{product.product.price}}</span>
               </h3>
               <div class="prd-descp">
                 <div class="product-price inline-block">
                   <p class="font-semibold">Net Weight:
-                    {{product.netweight}}
+                    {{product.product.netweight}}
                     gms</p>
                 </div>
                 <form action="" class="inline-block">
@@ -42,7 +42,7 @@
                 </form>
               </div>
               <div class="product-buttons">
-                <a class="btn btn-primary text-uppercase" ng-click="cartAdd(product.id)">Add to cart</a>
+                <a class="btn btn-primary text-uppercase" ng-click="cartAdd(product.product.id)">Add to cart</a>
                 <a ui-sref="home" class="btn btn-primary text-uppercase">Continue Shopping</a>
               </div>
             </div>
@@ -53,13 +53,13 @@
                 <tab-heading>
                   <span class="text-uppercase font-semibold">About</span>
                 </tab-heading>
-                <div class="inner-product-detail" ng-bind-html="product.about || 'Loading..'"></div>
+                <div class="inner-product-detail" ng-bind-html="product.product.about || 'Loading..'"></div>
               </tab>
               <tab>
                 <tab-heading>
                   <span class="text-uppercase font-semibold">Nutritional Value</span>
                 </tab-heading>
-                <div class="inner-product-detail" ng-bind-html="product.nutritional || 'Loading..'"></div>
+                <div class="inner-product-detail" ng-bind-html="product.product.nutritional || 'Loading..'"></div>
               </tab>
             </tabset>
           </div>
@@ -69,16 +69,18 @@
   </div>
 
   <div class="product-also-like">
-    <div class="container">
-      <h3 class="text-center text-uppercase brand-brown-dark font-semibold">You may also like</h3>
+    <div class="container" ng-if="product.relatedproduct.length > 0">
+      <h3 class="text-center text-uppercase brand-brown-dark font-semibold" >You may also like</h3>
       <!-- Slider -->
-      <uib-carousel>
+      <uib-carousel ng-if="like.length > 0">
         <uib-slide ng-repeat="likes in like">
           <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="likepro in likes">
-              <div class="inner-like text-center">
+            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="likepro in product.relatedproduct">
+              <div class="inner-like text-center" ui-sref="productdetail({
+                id:likepro.id
+              })">
                 <div class="like-image round">
-                  <img ng-src="{{likepro.image}}" alt="" class="img-responsive"/>
+                  <img ng-src="{{likepro.image | serverimage}}" alt="" class="img-responsive"/>
                 </div>
                 <span class="text-uppercase brand-primary font-semibold">{{likepro.name}}
                   |

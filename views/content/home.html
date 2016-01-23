@@ -3,11 +3,11 @@
     <li>
       <div class="slide-holder relate">
         <img ng-src="{{slide.img | serverimage}}">
-        <div class="slider-info get-center text-center">
+        <!-- <div class="slider-info get-center text-center">
           <h2 class="text-uppercase brand-primary font-semibold">{{slide.title}}</h2>
           <p>{{slide.description}}</p>
           <button class="text-uppercase btn btn-primary" type="button">Know more</button>
-        </div>
+        </div> -->
       </div>
     </li>
   </flex-slider>
@@ -246,10 +246,10 @@
             </h4>
           </div>
           <h4 class="tips">Ask and get an answer on the healthiest food tips</h4>
-          <form action="">
+          <form name="asksumanForm">
             <div class="form-group">
               <div class="custom-select">
-                <select name="" id="" class="form-control text-bold">
+                <select name="category" id="" ng-model="asksuman.category" required class="form-control text-bold">
                   <option value="">Choose a Category</option>
                   <option value="">Weight Loss</option>
                   <option value="">Weight Gain</option>
@@ -265,19 +265,22 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name">
+                  <input type="text" name="name" ng-model="asksuman.name" class="form-control" required placeholder="Name">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input type="email" name="email" ng-model="asksuman.email" class="form-control" required placeholder="Email">
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="" id="" placeholder="Type your question here..."></textarea>
+              <textarea class="form-control" name="question" ng-model="asksuman.question" name="" required id="" placeholder="Type your question here..."></textarea>
             </div>
           </form>
+          <div class="text-center" ng-show="asksumanForm.$invalid && asksumanForm.category.$touched && asksumanForm.name.$touched && asksumanForm.email.$touched && asksumanForm.question.$touched" alert="role">
+            Please enter all details
+          </div>
           <div class="text-right btn-center">
             <button class="text-uppercase btn btn-primary btn-more" type="submit">Submit</button>
           </div>

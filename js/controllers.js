@@ -92,12 +92,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     NavigationService.getCategory(function(data) {
       $scope.categories = data;
-      $scope.categories = $filter('orderBy')($scope.categories, "order");
+        $scope.categories = $filter('orderBy')($scope.categories, "order");
       console.log(_.findIndex($scope.categories, {
-        'id': parseInt($scope.categoryid)
+        'id': $scope.categoryid
       }));
+      console.log($scope.categories);
       $scope.categories.splice(_.findIndex($scope.categories, {
-        'id': parseInt($scope.categoryid)
+        'id': $scope.categoryid
       }), 1);
     })
     $scope.refreshProducts = function(subcategoryarr) {
@@ -109,7 +110,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.products = [];
         } else {
           console.log(data);
-          $scope.products = data.queryresult;
+          $scope.products = data.data.queryresult;
           console.log($scope.products);
           // $scope.products = data;
         }
@@ -527,7 +528,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           if(data.value == false){
             console.log("already exists");
           }else{
-            console.log(data);
+            $.jStorage.get("user",data);
+            window.location.reload();
           }
         })
       }
@@ -535,7 +537,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   }
   $scope.doLogin = function(input,formValidate){
     if(formValidate.$valid){
-      console.log("cansignup");
+      NavigationService.userlogin(input,function(data){
+        if(data.value== false){
+
+        }else{
+          $.jStorage.set("user",data);
+          window.location.reload();
+        }
+      });
     }
   };
 });
