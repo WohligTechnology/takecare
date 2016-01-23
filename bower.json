@@ -29,7 +29,8 @@
     "lodash": "~3.10.0",
     "ui-router": "~0.2.15",
     "angular-animate": "~1.4.6",
-    "fancyBox": "fancybox#~2.1.5"
+    "fancyBox": "fancybox#~2.1.5",
+    "jStorage": "~0.4.12"
   },
   "resolutions": {
     "angular": "1.4.8"

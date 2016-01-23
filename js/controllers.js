@@ -108,7 +108,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value = false) {
           $scope.products = [];
         } else {
+          console.log(data);
           $scope.products = data.queryresult;
+          console.log($scope.products);
+          // $scope.products = data;
         }
       })
     }
@@ -227,8 +230,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.outofstock=false;
     NavigationService.getProductDetail($scope.productid,function(data) {
       console.log(data);
-      // $scope.product = data;
-        $scope.product = data[0];
+      $scope.product = data;
+        // $scope.product = data[0];
     });
     $scope.cartAdd = function(id){
       console.log(id);
@@ -483,6 +486,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.footermenu = "";
+    $scope.contactUs = function(input,formValidate){
+        console.log(input);
+        console.log(formValidate);
+        NavigationService.contactSubmit(input,function(data){
+            if(data.value == true){
+              console.log(data);
+            }
+        });
+    }
   })
   .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -492,7 +504,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
   })
 
-.controller('headerctrl', function($scope, TemplateService, $uibModal) {
+.controller('headerctrl', function($scope,NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
@@ -505,5 +517,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       controller: 'headerctrl'
     })
   };
-
+  $scope.doSignup = function(accept,input,formValidate){
+    $scope.acceptValidate=false;
+    if(!accept){
+      $scope.acceptValidate=true;
+    }else{
+      if(formValidate.$valid){
+        NavigationService.signup(input,function(data){
+          if(data.value == false){
+            console.log("already exists");
+          }else{
+            console.log(data);
+          }
+        })
+      }
+    }
+  }
+  $scope.doLogin = function(input,formValidate){
+    if(formValidate.$valid){
+      console.log("cansignup");
+    }
+  };
 });

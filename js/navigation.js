@@ -1,6 +1,9 @@
-var mainurl = "http://wohlig.io:81/callApi/takecare/";
-var mainurl = "http://wohlig.co.in/selfbackend/index.php/";
-var imgurl = "http://wohlig.co.in/selfbackend/uploads/";
+// var mainurl = "http://wohlig.io:81/callApi/takecare/";
+// var mainurl = "http://wohlig.co.in/selfbackend/index.php/";
+var mainurl = "http://localhost/selfback/index.php/";
+// var imgurl = "http://wohlig.co.in/selfbackend/uploads/";
+var imgurl = "http://localhost/selfback/uploads/";
+// var imgurl=""
 
 var adminurl = mainurl + "json/";
 var navigationservice = angular.module('navigationservice', [])
@@ -98,6 +101,41 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getProductsByCategory: function(request, callback) {
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + request.categoryid + '&subcategories=' + request.subcategories).success(callback);
+    },
+    signup:function(request,callback){
+      $http({
+				url: adminurl + 'signup',
+				method: 'POST',
+				data: {
+					"firstname": request.firstname,
+					"lastname": request.lastname,
+          "email":request.email,
+          "password":request.password
+				}
+			}).success(callback);
+    },
+    userlogin:function(request,callback){
+      $http({
+				url: adminurl + 'userlogin',
+				method: 'POST',
+				data: {
+          "email":request.email,
+          "password":request.password
+				}
+			}).success(callback);
+    },
+    contactSubmit:function(request,callback){
+      $http({
+				url: adminurl + 'contactSubmit',
+				method: 'POST',
+				data: {
+					"firstname": request.firstname,
+					"lastname": request.lastname,
+          "email":request.email,
+          "mobile":request.mobile,
+          "message":request.message
+				}
+			}).success(callback);
     },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {

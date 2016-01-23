@@ -53,13 +53,13 @@
                 <tab-heading>
                   <span class="text-uppercase font-semibold">About</span>
                 </tab-heading>
-                <div class="inner-product-detail" ng-bind-html="product.about"></div>
+                <div class="inner-product-detail" ng-bind-html="product.about || 'Loading..'"></div>
               </tab>
               <tab>
                 <tab-heading>
                   <span class="text-uppercase font-semibold">Nutritional Value</span>
                 </tab-heading>
-                <div class="inner-product-detail" ng-bind-html="product.nutritional"></div>
+                <div class="inner-product-detail" ng-bind-html="product.nutritional || 'Loading..'"></div>
               </tab>
             </tabset>
           </div>

@@ -74,17 +74,17 @@
       <div class="row">
         <h4 class="text-uppercase text-center brand-brown-dark font-semibold">Send your query</h4>
         <div class="col-md-offset-2 col-md-8">
-          <form action="">
+          <form name="contactForm">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="First Name">
+                  <input type="text" name="firstname" ng-model="contact.firstname" class="form-control" required placeholder="First Name">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Last Name">
+                  <input type="text" name="lastname" ng-model="contact.lastname" class="form-control" required placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -92,23 +92,25 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="tel" class="form-control" placeholder="Mobile">
+                  <input type="tel" name="mobile" ng-model="contact.mobile" class="form-control" required placeholder="Mobile">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input type="email" name="email" ng-model="contact.email" class="form-control" required placeholder="Email">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <textarea name="" class="form-control" placeholder="Message"></textarea>
+              <textarea name="message" ng-model="contact.message" class="form-control" required placeholder="Message"></textarea>
             </div>
-
+              <div class="text-center" ng-show="contactForm.$invalid && contactForm.firstname.$touched && contactForm.lastname.$touched && contactForm.email.$touched && contactForm.mobile.$touched && contactForm.message.$touched" role="alert">
+                  Please enter all details
+              </div>
             <div class="submit-button text-center">
-              <a href="" class="btn btn-primary submit text-uppercase">Submit</a>
+              <a href="" class="btn btn-primary submit text-uppercase" ng-click="contactUs(contact,contactForm)">Submit</a>
             </div>
           </form>
         </div>
