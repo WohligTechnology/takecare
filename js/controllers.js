@@ -552,7 +552,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   }
   $scope.doLogin = function(input,formValidate){
     if(formValidate.$valid){
-      NavigationService.userlogin(input,function(data){
+      NavigationService.loginuser(input,function(data){
         if(data.value== false){
 
         }else{

@@ -117,9 +117,9 @@ var navigationservice = angular.module('navigationservice', [])
 				}
 			}).success(callback);
     },
-    userlogin:function(request,callback){
+    loginuser:function(request,callback){
       $http({
-				url: adminurl + 'userlogin',
+				url: adminurl + 'loginuser',
 				method: 'POST',
 				data: {
           "email":request.email,
