@@ -94,6 +94,9 @@
                             <div class="text-center" ng-show="loginForm.$invalid && loginForm.password.$touched" role="alert">
                                 Please enter password
                             </div>
+                            <div class="text-center" ng-show="loginForm.$invalid && loginForm.password.$touched" ng-show="invalidinput" role="alert">
+                                Invalid email or password.
+                            </div>
                             <div class="text-center submit">
                                 <button class="text-uppercase btn btn-primary" type="submit" ng-click="doLogin(login,loginForm)">Sign in</button>
                             </div>

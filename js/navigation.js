@@ -27,7 +27,7 @@ var navigationservice = angular.module('navigationservice', [])
   }, {
     name: "Health Products",
     classis: "active",
-    link: "#/healthproducts",
+    link: "#/healthproducts/1",
     subnav: []
   }, {
     name: "Health Kit",
