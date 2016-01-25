@@ -407,17 +407,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       title: "I am very satisfied with the diet given. Sumanji herself is a great motivation. I am very happy with the program and the weight loss achieved. Thank you.",
       name: "Pramila Seth",
       location: "Punjab, India",
-      weight: "5"
+      weight: "5",
+      image: "img/videos/pramila.jpg",
+      link: "https://www.youtube.com/embed/aMyOpVqyjYQ?autoplay=1"
     }, {
       title: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat.",
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
-      weight: "14"
+      weight: "14",
+      image: "img/videos/home-rishabh.jpg",
+      link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
     }, {
       title: "Everyone was teasing me.",
       name: "Nikesh Shah",
       location: "Mumbai, India",
-      weight: "17"
+      weight: "17",
+      image: "img/videos/nikesh.jpg",
+      link: "https://www.youtube.com/embed/RCfJBUulDBg?autoplay=1"
+    }, {
+      title: "Its easy to loose weight by eating the foods that you like to eat also.",
+      name: "Pranita Mittal",
+      location: "Mumbai, India",
+      weight: "10",
+      image: "img/videos/pranita.jpg",
+      link: "https://www.youtube.com/embed/0tLl00XTRQA?autoplay=1"
+    }, {
+      title: "I had completely lost hope.",
+      name: "Dr Ashish Sawkar",
+      location: "Mumbai, India",
+      weight: "20",
+      image: "img/videos/ashish.jpg",
+      link: "https://www.youtube.com/embed/nxs9qT6m8N4?autoplay=1"
+    }, {
+      title: "I looked forward to my weekly visits, because the team is very motivational.",
+      name: "Khushcheher Dallas",
+      location: "Mumbai, India",
+      weight: "9",
+      image: "img/videos/khushcheher.jpg",
+      link: "https://www.youtube.com/embed/Cn2z-n0t51o?autoplay=1"
     }];
   })
   .controller('CartCtrl', function($scope, TemplateService, NavigationService, $timeout) {

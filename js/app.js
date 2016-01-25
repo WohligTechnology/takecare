@@ -203,11 +203,20 @@ firstapp.directive('fancyboxBox', function($document) {
            }
 
            target.fancybox({
-               openEffect: 'elastic',
+               openEffect: 'fade',
                closeEffect: 'fade',
+               prevEffect	: 'none',
+          		nextEffect	: 'none',
                closeBtn: true,
                helpers: {
-                   media: {}
+                   media: {},
+                   title	: {
+                     type: 'outside'
+                   },
+               			thumbs	: {
+               				width	: 50,
+               				height	: 50
+               			}
                }
            });
 

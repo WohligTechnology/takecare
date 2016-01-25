@@ -91,7 +91,7 @@
                     <input type="text" class="form-control" placeholder="State *">
                   </div>
                   <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Phone *">
+                    <input type="tel" class="form-control" placeholder="Phone *">
                   </div>
                   <a href="" class="text-uppercase btn btn-primary">Save &amp; Continue</a>
                 </form>
@@ -130,8 +130,8 @@
                     <tr class="text-center letter-space font-semibold" ng-repeat="product in Checkoutcart">
                       <td>
                         <figure>
-                          <div class="cart-imgholder m-center round">
-                            <img ng-src="{{product.img}}" class="img-responsive">
+                          <div class="cart-imgholder m-center">
+                            <img ng-src="{{product.img}}" class="img-responsive round">
                           </div>
                           <figcaption class="text-center text-uppercase">{{product.name}}</figcaption>
                         </figure>
