@@ -48,8 +48,11 @@
                 </div>
               </div>
               <div class="col-md-3 col-sm-3">
-                <div class="signin letter-space text-right">
+                <div class="signin letter-space text-right" ng-show="!enablelogout">
                   <a class="text-uppercase font-semibold" href="" ng-click="openLogin();">Sign In</a>
+                </div>
+                <div class="signin letter-space text-right" ng-show="enablelogout">
+                  <a class="text-uppercase font-semibold" href="" ng-click="logout()">Logout</a>
                 </div>
               </div>
             </div>

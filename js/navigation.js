@@ -105,6 +105,9 @@ var navigationservice = angular.module('navigationservice', [])
     getProductsByCategory: function(request, callback) {
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + request.categoryid + '&subcategories=' + request.subcategories).success(callback);
     },
+    logout:function(callback){
+      $http.get(adminurl+ 'logout').success(callback);
+    },
     signup:function(request,callback){
       $http({
 				url: adminurl + 'signup',

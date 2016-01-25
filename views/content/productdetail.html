@@ -72,11 +72,11 @@
     <div class="container" ng-if="product.relatedproduct.length > 0">
       <h3 class="text-center text-uppercase brand-brown-dark font-semibold" >You may also like</h3>
       <!-- Slider -->
-      <uib-carousel ng-if="like.length > 0">
-        <uib-slide ng-repeat="likes in like">
+      <uib-carousel>
+        <uib-slide ng-repeat="likes in product.relatedproduct">
           <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="likepro in product.relatedproduct">
-              <div class="inner-like text-center" ui-sref="productdetail({
+            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="likepro in likes">
+              <div class="inner-like text-center pointer" ui-sref="productdetail({
                 id:likepro.id
               })">
                 <div class="like-image round">
