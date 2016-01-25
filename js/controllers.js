@@ -15,12 +15,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
       weight: "25",
-      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
+      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat",
+      image: "img/videos/home-rishabh.jpg",
+      link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
     }, {
-      name: "Rishabh",
+      name: "Pramila Seth",
+      location: "Punjab, India",
+      weight: "5",
+      descp: "I am very satisfied with the diet given. Sumanji herself is a great motivation. I am very happy with the program and the weight loss achieved. Thank you.",
+      image: "img/videos/pramila.jpg",
+      link: "https://www.youtube.com/embed/aMyOpVqyjYQ?autoplay=1"
+    }, {
+      descp: "Everyone was teasing me.",
+      name: "Nikesh Shah",
       location: "Mumbai, India",
-      weight: "25",
-      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
+      weight: "17",
+      image: "img/videos/nikesh.jpg",
+      link: "https://www.youtube.com/embed/RCfJBUulDBg?autoplay=1"
+    }, {
+      descp: "Its easy to loose weight by eating the foods that you like to eat also.",
+      name: "Pranita Mittal",
+      location: "Mumbai, India",
+      weight: "10",
+      image: "img/videos/pranita.jpg",
+      link: "https://www.youtube.com/embed/0tLl00XTRQA?autoplay=1"
+    }, {
+      descp: "I had completely lost hope.",
+      name: "Dr Ashish Sawkar",
+      location: "Mumbai, India",
+      weight: "20",
+      image: "img/videos/ashish.jpg",
+      link: "https://www.youtube.com/embed/nxs9qT6m8N4?autoplay=1"
+    }, {
+      descp: "I looked forward to my weekly visits, because the team is very motivational.",
+      name: "Khushcheher Dallas",
+      location: "Mumbai, India",
+      weight: "9",
+      image: "img/videos/khushcheher.jpg",
+      link: "https://www.youtube.com/embed/Cn2z-n0t51o?autoplay=1"
     }];
 
     $scope.myInterval = 5000;
@@ -599,6 +631,276 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Blog");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+  })
+  .controller('PregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("pregnancy");
+    $scope.menutitle = NavigationService.makeactive("Pregnancy");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('WeightLossForKidsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("weightlossforkids");
+    $scope.menutitle = NavigationService.makeactive("Weight Loss For Kids");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('WeightLossWithHealthGainCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("weightlosswithhealthgain");
+    $scope.menutitle = NavigationService.makeactive("Weight Loss With Health Gain");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('PostPregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("postpregnancy");
+    $scope.menutitle = NavigationService.makeactive("Post Pregnancy Weight Loss With Lactation");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('WeightLossWithPcosCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("weightlosswithpcos");
+    $scope.menutitle = NavigationService.makeactive("Weight Loss With PCOS and Insulin Resistence");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('HealthyAgingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("healthyaging");
+    $scope.menutitle = NavigationService.makeactive("Healthy Aging");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('WeightGainCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("weightgain");
+    $scope.menutitle = NavigationService.makeactive("Weight Gain");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('AilmentControlCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("ailmentcontrol");
+    $scope.menutitle = NavigationService.makeactive("Ailment Control");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('CancerSupportCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("cancersupport");
+    $scope.menutitle = NavigationService.makeactive("Cancer Support");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+  })
+  .controller('MarathonCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("marathon");
+    $scope.menutitle = NavigationService.makeactive("Marathon");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.healthdetail = [{
+      img: "../img/health/ailment.png",
+      caption: "ailment control"
+    }, {
+      img: "../img/health/ageing.png",
+      caption: "healthy ageing"
+    }, {
+      img: "../img/health/cancer.png",
+      caption: "lactation"
+    }, {
+      img: "../img/health/kids.png",
+      caption: "superkids"
+    }, {
+      img: "../img/health/loss.png",
+      caption: "inch loss"
+    }, {
+      img: "../img/health/pregnancy.png",
+      caption: "pregnancy"
+    }];
+    $scope.healthdetail = _.chunk($scope.healthdetail, 3);
   })
   .controller('BlogDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
