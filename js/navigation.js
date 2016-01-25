@@ -118,7 +118,7 @@ var navigationservice = angular.module('navigationservice', [])
 			}).success(callback);
     },
     subscribe:function(request,callback){
-      $http.get(adminurl + 'subscribe?categoryid=' + request.email ).success(callback);
+      $http.get(adminurl + 'subscribe?email=' + request.email ).success(callback);
     },
     loginuser:function(request,callback){
       $http({
@@ -140,6 +140,18 @@ var navigationservice = angular.module('navigationservice', [])
           "email":request.email,
           "mobile":request.mobile,
           "message":request.message
+				}
+			}).success(callback);
+    },
+    askSumanSubmit:function(request,callback){
+      $http({
+				url: adminurl + 'askSumanSubmit',
+				method: 'POST',
+				data: {
+					"category": request.category,
+					"name": request.name,
+          "email":request.email,
+          "question":request.question
 				}
 			}).success(callback);
     },

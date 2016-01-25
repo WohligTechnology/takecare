@@ -5,10 +5,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
+    $scope.asksuman={};
+    $scope.submitted=false;
     $scope.navigation = NavigationService.getnav();
     NavigationService.getSlide(function(data) {
       $scope.homeslider = data;
     });
+    $scope.alert={};
     $scope.homestory = [{
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
@@ -34,7 +37,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     for (var i = 0; i < 4; i++) {
       $scope.addSlide();
     }
-
+    $scope.askSumanSubmit= function(input,formValidate){
+      console.log(input);
+      $scope.submitted=false;
+      if(formValidate.$valid){
+        NavigationService.askSumanSubmit(input,function(data){
+          console.log(data);
+          if(data.value == true){
+            $scope.alert={
+              type:'success',
+              msg:'Your queries have been sent'
+            }
+          }
+        });
+      }
+    }
   })
   .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -530,10 +547,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.subscribe(input,function(data){
           if(data.value == true){
             $scope.subsresponse=true;
-            $scope.msg="Thank you for subscribing";
+            $scope.msg="Thank you for subscribing.";
           }else{
             $scope.subsresponse=true;
-            $scope.msg="Already subscribed";
+            $scope.msg="Already subscribed.";
           }
         });
       }
