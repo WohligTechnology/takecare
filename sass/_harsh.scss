@@ -91,7 +91,7 @@
     font-style: italic;
   }
   .about-health-content {
-    @include size(100%, 400px);
+    @include size(100%, auto);
     @include margin(50px 0 0);
     .embed-youtube { height: 300px; }
     .glyphicon-chevron-right:before {
@@ -110,7 +110,7 @@
       @include padding(50px 0 50px 30px);
     }
     .inner-about-carousel {
-      @include size(100%, 400px);
+      @include size(100%, 420px);
       @include padding(100px 140px);
       h3 { font-size: 36px; }
       span {
@@ -185,6 +185,21 @@
   }
 }
 .carousel-indicators { display: none; }
+
+// //////////////////////
+// FANCYBOX
+// //////////////////////
+
+.fancybox-overlay .fancybox-wrap {
+  width: 80% !important;
+  margin: 20px 0 !important;
+  left: 50% !important;
+  @include transform(translate(-50%, 0));
+}
+.fancybox-inner {
+  width: 100% !important;
+  height: auto !important;
+}
 
 // Health Packages
 .what-health-goal {
@@ -394,6 +409,8 @@
         opacity: 0.2;
       }
     }
+    .view-title { @include padding(0 0 0 80px); }
+    .view-title-right { @include padding(0 80px 0 0); }
     .title-right {
       &:before { @include position(absolute, 17px auto auto 30px); }
     }
@@ -426,23 +443,17 @@
   }
   .inner-view-left {
     .name {
-      @include margin(0 0 0 100px);
       font-size: 28px;
     }
-    .location { @include margin(0 0 0 150px); }
     .name, .location {
-      @include padding(0 0 0 20px);
+      @include padding(0 0 0 10px);
       display: inline-block;
     }
   }
   .inner-view-right {
-    .name {
-      @include margin(0 -20px 0 0);
-      font-size: 28px;
-    }
-    .location { @include margin(0 -160px 0 0); }
+    .name { font-size: 28px; }
     .name, .location {
-      @include padding(0 20px 0 0);
+      @include padding(0 10px 0 0);
       display: inline-block;
     }
   }

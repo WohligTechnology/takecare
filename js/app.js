@@ -203,7 +203,7 @@ firstapp.directive('fancyboxBox', function($document) {
            }
 
            target.fancybox({
-               openEffect: 'fade',
+               openEffect: 'elastic',
                closeEffect: 'fade',
                closeBtn: true,
                helpers: {
