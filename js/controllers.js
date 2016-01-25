@@ -556,6 +556,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if(data.value== false){
 
         }else{
+
+          console.log(data);
           $.jStorage.set("user",data);
           window.location.reload();
         }

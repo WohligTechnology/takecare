@@ -3,7 +3,7 @@ var mainurl = "http://wohlig.co.in/selfbackend/index.php/";
 // var mainurl = "http://localhost/selfback/index.php/";
 var imgurl = "http://wohlig.co.in/selfbackend/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
-// var imgurl=""
+// var imgurl="";
 
 var adminurl = mainurl + "json/";
 var navigationservice = angular.module('navigationservice', [])
