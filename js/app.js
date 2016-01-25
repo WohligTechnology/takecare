@@ -72,21 +72,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     controller: 'ProductDetailCtrl'
   })
 
-  .state('termsandcondition', {
-      url: "/termsandcondition",
-      templateUrl: "views/template.html",
-      controller: 'TermsAndConditionCtrl'
-    })
-    .state('privacypolicy', {
-      url: "/privacypolicy",
-      templateUrl: "views/template.html",
-      controller: 'PrivacyPolicyCtrl'
-    })
-    .state('faq', {
-      url: "/faq",
-      templateUrl: "views/template.html",
-      controller: 'FaqCtrl'
-    })
+  .state('faq', {
+    url: "/faq",
+    templateUrl: "views/template.html",
+    controller: 'FaqCtrl'
+  })
 
   .state('meet', {
     url: "/meet",
@@ -165,6 +155,56 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       templateUrl: "views/template.html",
       controller: 'ContactUsCtrl'
     })
+  .state('pregnancy', {
+      url: "/pregnancy",
+      templateUrl: "views/template.html",
+      controller: 'PregnancyCtrl'
+    })
+  .state('weightlossforkids', {
+      url: "/weightlossforkids",
+      templateUrl: "views/template.html",
+      controller: 'WeightLossForKidsCtrl'
+    })
+  .state('weightlosswithhealthgain', {
+      url: "/weightlosswithhealthgain",
+      templateUrl: "views/template.html",
+      controller: 'WeightLossWithHealthGainCtrl'
+    })
+  .state('postpregnancy', {
+      url: "/postpregnancy",
+      templateUrl: "views/template.html",
+      controller: 'PostPregnancyCtrl'
+    })
+  .state('weightlosswithpcos', {
+      url: "/weightlosswithpcos",
+      templateUrl: "views/template.html",
+      controller: 'WeightLossWithPcosCtrl'
+    })
+  .state('healthyaging', {
+      url: "/healthyaging",
+      templateUrl: "views/template.html",
+      controller: 'HealthyAgingCtrl'
+    })
+  .state('weightgain', {
+      url: "/weightgain",
+      templateUrl: "views/template.html",
+      controller: 'WeightGainCtrl'
+    })
+  .state('ailmentcontrol', {
+      url: "/ailmentcontrol",
+      templateUrl: "views/template.html",
+      controller: 'AilmentControlCtrl'
+    })
+  .state('cancersupport', {
+      url: "/cancersupport",
+      templateUrl: "views/template.html",
+      controller: 'CancerSupportCtrl'
+    })
+  .state('marathon', {
+      url: "/marathon",
+      templateUrl: "views/template.html",
+      controller: 'MarathonCtrl'
+    })
     .state('login', {
       url: "/login",
       templateUrl: "views/template.html",
@@ -203,13 +243,14 @@ firstapp.directive('fancyboxBox', function($document) {
     replace: false,
     link: function(scope, element, attr) {
       var $element = $(element);
+      var $target;
       if (attr.rel) {
-        var target = $("[rel='" + attr.rel + "']");
+        $target = $("[rel='" + attr.rel + "']");
       } else {
-        var target = element;
+        $target = element;
       }
 
-      target.fancybox({
+      $target.fancybox({
         openEffect: 'fade',
         closeEffect: 'fade',
         prevEffect: 'none',
@@ -228,7 +269,7 @@ firstapp.directive('fancyboxBox', function($document) {
       });
 
     }
-  }
+  };
 });
 firstapp.filter('nospace', function() {
   return function(value) {
