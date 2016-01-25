@@ -1,6 +1,6 @@
 <section class="checkout">
   <div class="banner selfcare-image">
-    <img src="img/apple.jpg" alt="">
+    <img src="img/banners/checkout.jpg" alt="">
     <div class="get-center">
       <h2 class="text-uppercase letter-space white font-semibold">Checkout</h2>
     </div>
@@ -8,7 +8,7 @@
   <div class="container">
     <div class="checkout-tab">
       <uib-tabset>
-        <uib-tab>
+        <uib-tab active="tabs[0].active" disabled="tabs[0].disabled">
           <uib-tab-heading>
             Email login
             <span class="greater"> &gt; </span>
@@ -30,12 +30,12 @@
                   <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" ng-show="guestshow">
                     <input type="password" class="form-control" placeholder="Password">
                   </div>
                   <div class="form-group">
                       <div class="radio">
-                        <input type="radio" name="continue" id="pswd">
+                        <input type="radio" name="continue" ng-change="selectGuest(guest)" value="guest" ng-model="guest" id="pswd">
                                             <label for="pswd" class="text-light">
                         <span></span> Continue without passsword.
                                             </label>
@@ -43,7 +43,7 @@
                   </div>
                   <div class="form-group">
                   <div class="radio">
-                      <input type="radio" name="continue" id="sc">
+                      <input type="radio" name="continue" ng-change="selectGuest(guest)" value="notguest" ng-model="guest" id="sc">
                     <label for="sc" class="text-light">
                       <span></span> I have a selfcare account and password.
                     </label>
@@ -55,7 +55,7 @@
             </div>
           </div>
         </uib-tab>
-        <uib-tab>
+        <uib-tab >
           <uib-tab-heading>
             shipping address
             <span class="greater"> &gt; </span>

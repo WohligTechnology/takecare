@@ -1,6 +1,6 @@
 <section class="cart">
   <div class="banner selfcare-image">
-    <img src="img/apple.jpg" alt="">
+    <img src="img/banners/cart.jpg" alt="">
     <div class="get-center">
       <h2 class="text-uppercase letter-space white font-semibold">my cart</h2>
     </div>
@@ -9,8 +9,11 @@
   <div class="cart-main">
     <div class="container">
       <h3 class="text-uppercase brand-brown-dark letter-space font-semibold">Items you would like to purchase</h3>
+      <div class="text-center" ng-if="allcart.length<=0">
+        No items in cart
+      </div>
       <div class="cart-table">
-        <table class="table">
+        <table class="table" ng-if="allcart.length > 0">
           <thead class="brand-brown-dark brand-brown-bg text-uppercase letter-space">
             <tr>
               <th class="text-center">Items</th>
@@ -20,40 +23,40 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="text-center letter-space font-semibold" ng-repeat="product in cart">
+            <tr class="text-center letter-space font-semibold" ng-repeat="product in allcart">
               <td>
                 <figure>
                   <div class="cart-imgholder m-center">
-                  <img ng-src="{{product.img}}" class="img-responsive round">
+                  <img ng-src="{{product.image | serverimage}}" class="img-responsive round">
                   </div>
-                  <figcaption class="text-center text-uppercase">{{product.name}}</figcaption>
+                  <figcaption class="text-center text-uppercase">{{product.options.realname}}</figcaption>
                 </figure>
               </td>
               <td>
-                <input type="number" class="text-center quantity" name="" id="" value="{{product.quantity}}" disabled>
-                <a href="" class="more inline-block brand-primary-bg white"><i class="fa fa-plus"></i></a>
-                <a href="" class="less inline-block brand-primary-bg white"><i class="fa fa-minus"></i></a>
+                <input type="number" class="text-center quantity" name="" id="" value="{{product.qty}}" disabled>
+                <a href="" class="more inline-block brand-primary-bg white" ng-click="addQuantity(product)"><i class="fa fa-plus"></i></a>
+                <a href="" class="less inline-block brand-primary-bg white" ng-click="subtractQuantity(product)"><i class="fa fa-minus"></i></a>
               </td>
               <td>
                 <div class="cart-amount">
-                <p>RS. {{product.amount}}</p>
+                <p>RS. {{product.price}}</p>
               </div>
               </td>
               <td>
                 <div class="cart-total-amount">
-                <p>RS. {{product.totalamount}}</p>
+                <p>RS. {{product.subtotal}}</p>
               </div>
                 <div class="remove text-right">
-                  <button class="btn btn-primary text-uppercase no-radius">Remove</button>
+                  <button class="btn btn-primary text-uppercase no-radius" ng-click="removeCart(product)">Remove</button>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
 
-        <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
+        <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold" ng-if="allcart.length>0">
           <span class="text-uppercase pull-left">Grand Total</span>
-          <span class="pull-right text-uppercase">Rs. 375.00</span>
+          <span class="pull-right text-uppercase">Rs. {{totalcart}}</span>
         </div>
 
         <div class="shipping">
@@ -65,7 +68,7 @@
             <div class="col-md-6">
               <div class="text-right cart-btn">
                 <a href="#/healthproducts" class="btn btn-primary text-uppercase continue">Continue Shopping</a>
-                <a href="#/checkout" class="btn btn-primary text-uppercase">Proceed to checkout</a>
+                <a href="#/checkout" class="btn btn-primary text-uppercase" ng-if="allcart.length > 0">Proceed to checkout</a>
               </div>
             </div>
           </div>

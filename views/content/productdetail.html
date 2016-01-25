@@ -30,11 +30,17 @@
                   <div class="form-group relate">
                     <label for="quan" class="font-semibold">Quantity :</label>
                     <div class="custom-select inline-block">
-                      <select class="form-control" id="quan">
-                        <option>01</option>
+                      <select ng-model="filter.quantity" required class="form-control" id="">
+                        <option selected>01</option>
                         <option>02</option>
                         <option>03</option>
                         <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
                       </select>
                       <span class="select-caret"></span>
                     </div>
@@ -42,7 +48,8 @@
                 </form>
               </div>
               <div class="product-buttons">
-                <a class="btn btn-primary text-uppercase" ng-click="cartAdd(product.product.id)">Add to cart</a>
+                <a class="btn btn-primary text-uppercase" ng-click="cartAdd(product.product.id)">
+                  Add to cart</a>
                 <a ui-sref="home" class="btn btn-primary text-uppercase">Continue Shopping</a>
               </div>
             </div>

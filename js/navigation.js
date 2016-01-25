@@ -80,6 +80,9 @@ var navigationservice = angular.module('navigationservice', [])
     getnav: function() {
       return navigation;
     },
+    showCart: function (callback) {
+        $http.get(adminurl + 'showCart').success(callback);
+    },
     getSlide: function(callback) {
       console.log(adminurl);
       $http.get(adminurl + 'getSlide').success(callback);
@@ -109,6 +112,7 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(adminurl+ 'logout').success(callback);
     },
     signup:function(request,callback){
+      console.log(request);
       $http({
 				url: adminurl + 'signup',
 				method: 'POST',
@@ -132,6 +136,28 @@ var navigationservice = angular.module('navigationservice', [])
           "password":request.password
 				}
 			}).success(callback);
+    },
+    addToCart: function (cart, callback) {
+        return $http({
+            url: adminurl + "addToCart",
+            method: "POST",
+            data: {
+                "product": cart.product,
+                "quantity": cart.quantity,
+                "json": "",
+                "status":cart.status
+            }
+        }).success(callback);
+    },
+    removeFromCart: function (cart, callback) {
+      console.log(cart);
+        return $http({
+            url: adminurl + "removeFromCart",
+            method: "POST",
+            data: {
+                "cart": cart.id
+            }
+        }).success(callback);
     },
     contactSubmit:function(request,callback){
       $http({

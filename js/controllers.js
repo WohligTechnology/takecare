@@ -43,6 +43,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.askSumanSubmit(input,function(data){
           console.log(data);
           if(data.value == true){
+            $scope.asksuman={};
             $scope.submitted = true;
           }
         });
@@ -113,7 +114,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.categories.splice(_.findIndex($scope.categories, {
         'id': $scope.categoryid
       }), 1);
-    })
+    });
+    $scope.cartAdd = function(item){
+      var input ={
+        product:item,
+        quantity:1,
+        status:"1"
+      };
+      console.log(input);
+    NavigationService.addToCart(input,function(data){
+      if(data.value == true){
+        //Added to cart
+        console.log("added to cart");
+      }else{
+        //already in cart
+        console.log("already in cart");
+
+      }
+    });
+    }
     $scope.refreshProducts = function(subcategoryarr) {
       NavigationService.getProductsByCategory({
         categoryid: $scope.categoryid,
@@ -242,6 +261,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.productid = $stateParams.id;
     $scope.product = {};
     $scope.outofstock=false;
+    $scope.filter={};
+    $scope.filter.quantity="01";
     NavigationService.getProductDetail($scope.productid,function(data) {
       console.log(data);
       $scope.product = data;
@@ -249,7 +270,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.product.relatedproduct=_.chunk($scope.product.relatedproduct,3);
     });
     $scope.cartAdd = function(id){
-      console.log(id);
+      var input ={
+        product:id,
+        quantity:parseInt($scope.filter.quantity),
+        status:"1"
+      };
+      console.log(input);
+    NavigationService.addToCart(input,function(data){
+      if(data.value == true){
+        //Added to cart
+        console.log("added to cart");
+      }else{
+        //already in cart
+        console.log("already in cart");
+
+      }
+    });
     }
     $scope.like = [{
       image: "img/cart/1.jpg",
@@ -453,19 +489,49 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("My Cart");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.cart = [{
-      img: "img/cart/1.jpg",
-      name: "Baked Potato Chips",
-      quantity: "1",
-      amount: "225.00",
-      totalamount: "225.00"
-    }, {
-      img: "img/cart/1.jpg",
-      name: "Chana Jor",
-      quantity: "1",
-      amount: "150.00",
-      totalamount: "150.00"
-    }];
+    $scope.allcart=[];
+    $scope.getCart = function() {
+      NavigationService.showCart(function(data) {
+          $scope.allcart = data;
+          $scope.totalcart=0;
+          _.each($scope.allcart, function(key) {
+            $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
+            key.qty = parseInt(key.qty);
+          })
+      })
+    };
+    $scope.getCart();
+    $scope.updateQuantity=function(item){
+      NavigationService.addToCart({
+        quantity:item.qty,
+        product:item.id,
+        status:"2"
+      },function(data){
+        $scope.getCart();
+      });
+    };
+    $scope.addQuantity= function(item){
+      item.qty=parseInt(item.qty);
+      item.qty++;
+      $scope.updateQuantity(item);
+    };
+    $scope.subtractQuantity= function(item){
+      item.qty=parseInt(item.qty);
+      item.qty--;
+      $scope.updateQuantity(item);
+    };
+    $scope.removeCart=function(item){
+      NavigationService.removeFromCart({
+      id:item.id
+    },function(data){
+      if(data.value == true){
+      console.log("removed");
+      $scope.getCart();
+      }else{
+        console.log("false cannot be removed");
+      }
+    })
+    }
   })
   .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -473,6 +539,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Checkout");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.guest ="notguest";
+    $scope.guestshow=true;
+    $scope.selectGuest= function(input){
+      console.log(input);
+      $scope.guestshow=true;
+      if(input == "notguest"){
+        $scope.guestshow=true;
+      }else {
+        $scope.guestshow=false;
+      }
+    };
+    $scope.tabs = [
+      {
+        active:true,
+        disabled:true
+      },{
+        active:false,
+        disabled:true
+      },{
+        active:false,
+        disabled:true
+      },{
+        active:false,
+        disabled:true
+      },
+  ];
     $scope.Checkoutcart = [{
       img: "img/cart/1.jpg",
       name: "Baked Potato Chips",
@@ -560,6 +652,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
+  .controller('TermsAndConditionCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("termsandcondition");
+    $scope.menutitle = NavigationService.makeactive("termsandcondition");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+  })
+  .controller('PrivacyPolicyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("privacypolicy");
+    $scope.menutitle = NavigationService.makeactive("privacypolicy");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+  })
 
   .controller('footerctrl', function($scope,NavigationService, TemplateService, $uibModal) {
     $scope.template=TemplateService;
@@ -615,7 +721,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           if(data.value == false){
             console.log("already exists");
           }else{
-            $.jStorage.get("user",data);
+            $.jStorage.set("user",data);
             window.location.reload();
           }
         })
