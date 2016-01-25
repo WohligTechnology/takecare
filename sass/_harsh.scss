@@ -156,6 +156,13 @@
 }
 .rel { position: relative; }
 .pointer { cursor: pointer; }
+.alert-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  z-index: 99;
+}
 
 // ///////////////////////
 // CAROUSEL
