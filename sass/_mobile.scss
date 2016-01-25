@@ -76,6 +76,12 @@
       margin-top: 47px;
     }
   }
+  .tab-body .pricing {
+  bottom: -60px;
+  span {
+    font-size: 20px;
+  }
+}
   .tab-foot {
     .plan {
       display: block;
@@ -214,9 +220,6 @@
     }
   }
 }
-@media (max-width: $screen-md-max) {
-  .tab-body .pricing { bottom: -80px; }
-}
 @media (max-width: $screen-sm-max) {
   // faq
   .faq {
@@ -319,7 +322,9 @@
     }
   }
   .tab-chart {
-    .nav-tabs li a { width: 114px; }
+    .nav-tabs li a {
+      width: 114px;
+    }
     .chart-head {
       p {
         font-size: 15px;
@@ -385,6 +390,7 @@
     height: 230px;
   }
   .consult-chart {
+    height: auto;
     .consult {
       margin-top: 42px;
     }
@@ -763,11 +769,11 @@
           }
         }
       }
-      li:first-child a { padding: 23px 0 0; }
       li {
         margin: 0 2px -2px 0;
         a {
           width: 70px;
+          padding: 17px 0 15px;
           &:before {
             height: 34px;
           }
@@ -805,19 +811,15 @@
         }
       }
       .pricing {
-        position: relative;
-        right: 0; bottom: 0;
-        span { font-size: 24px; }
+        position: static;
+        span { font-size: 16px; }
       }
     }
     .tab-foot {
       text-align: center;
       .tab-footinfo {
         width: 100%;
-        p {
-          width: 300px;
-          text-align: left;
-        }
+        p {  width: auto; }
       }
       .plan {
         margin: 15px 0;
@@ -851,8 +853,10 @@
       top: -15px;
     }
     .month, .duration {
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: normal;
     }
+    .month { margin: 23px 0 0; }
   }
   .slider-round {
     padding: 0 50px 0 40px;
@@ -1258,11 +1262,6 @@
   .tab-chart {
     width: 290px;
     .nav-tabs {
-      li:first-child, li.active:first-child {
-        a {
-          padding: 15px 0 0;
-        }
-      }
       li.active {
         a {
           &:after {
@@ -1277,11 +1276,11 @@
       li {
         a {
           width: 52px;
-          height: 56px;
-          padding: 20px 0 0;
+          padding: 15px 0 13px;
           &:before {
             width: 1px;
             height: 28px;
+            right: -3px;
           }
         }
       }
@@ -1349,7 +1348,6 @@
     }
   }
   .consult-chart {
-    @include square(60px);
     margin: 0 0 10px;
     .noconsult {
       @include square(25px);
@@ -1357,8 +1355,9 @@
       font-size: 14px;
       line-height: 20px;
     }
-    .month { margin-top: 25px; }
-    .month, .duration { font-size: 10px; }
+    .month { margin: 17px 0 0; }
+
+    .month , .duration { font-size: 10px; }
   }
   .slider-round {
     padding: 0 10px;

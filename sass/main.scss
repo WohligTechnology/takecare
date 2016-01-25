@@ -596,26 +596,25 @@ button {
       margin: 75px 0;
       font-size: 17px;
       position: relative;
-      &:after {
-        content: "";
-        background: url(../img/right.png) no-repeat;
-        width: 59px;
-        height: 49px;
-        position: absolute;
-        top: 85px;
-        right: -25px;
-      }
-      &:before {
-        content: "";
-        background: url(../img/left.png) no-repeat;
-        width: 59px;
-        height: 49px;
-        position: absolute;
-        top: -50px;
-        left: 0;
-      }
       p {
         line-height: 20px;
+        &:after {
+          content: "";
+          background: url(../img/right.png) no-repeat;
+          width: 59px;
+          height: 49px;
+          position: absolute;
+          right: -10px;
+        }
+        &:before {
+          content: "";
+          background: url(../img/left.png) no-repeat;
+          width: 59px;
+          height: 49px;
+          position: absolute;
+          top: -50px;
+          left: 0;
+        }
       }
     }
     .weight-info {
@@ -750,7 +749,7 @@ button {
 }
 .consult-chart {
   width: 110px;
-  height: 80px;
+  height: auto;
   border-radius: 6px;
   background-color: $brand-primary;
   font-size: 16px;
@@ -760,7 +759,7 @@ button {
     border: 4px solid $brand-primary;
     border-radius: 100%;
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: 50%;
     background-color: #fff;
     font-size: 30px;
@@ -769,7 +768,7 @@ button {
     @include transform(translateX(-50%));
   }
   .month {
-    @include margin(35px 0 0);
+    @include margin(30px 0 0);
     display: block;
     font-size: 14px;
   }
@@ -816,7 +815,7 @@ button {
   .nav-tabs li:first-child a {
     background-color: #fff;
     margin: 0 0 3px 0;
-    padding: 12px 0 0;
+    padding: 8px 0 4px;
     .chart-head {
       p { color: black; }
       .price { color: $brand-primary; }
@@ -852,6 +851,7 @@ button {
         padding: 27px 0 20px;
         z-index: 1;
         @include transition(all 0ms ease);
+        &:focus { background-color: transparent; }
         &:hover {
           background-color: $brand-primary;
           color: #fff;
@@ -913,11 +913,6 @@ button {
       }
     }
   }
-}
-.health-tab .tab-chart .nav-tabs li:first-child a { padding: 12px 0 0; }
-.health-tab .tab-chart .nav-tabs li a {
-  @include size(150px, 76px);
-  padding: 27px 0 0;
 }
 .weight .tab-chart .nav-tabs li a {
   @include size(190px, 76px);
