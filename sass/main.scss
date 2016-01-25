@@ -856,6 +856,7 @@ button {
         border-radius: 6px;
         border: none;
         padding: 27px 0 0;
+        z-index: 1;
         @include transition(all 0ms ease);
         &:hover {
           background-color: $brand-primary;
@@ -927,6 +928,7 @@ button {
 .weight .tab-chart .nav-tabs li a {
   @include size(190px, 76px);
   padding: 12px 0 0;
+  z-index: 1;
 }
 .tab-head {
   margin-bottom: 50px;
