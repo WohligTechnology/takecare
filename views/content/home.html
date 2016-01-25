@@ -20,7 +20,7 @@
     <div class="img-holder get-round">
     </div>
     <div class="pull-right more-abt-suman">
-      <a href="#meet" class="text-uppercase inline-block ">More about suman <i class="fa fa-angle-right"></i></a>
+      <a href="#/meet" class="text-uppercase inline-block ">More about suman <i class="fa fa-angle-right"></i></a>
     </div>
   </div>
   <div class="health-cat">
@@ -28,7 +28,7 @@
       <div class="col-md-4 col-sm-6">
         <div class="health-info">
           <h3 class="brand-primary title text-uppercase font-gotham-bold">Health <span class="block">Packages</span></h3>
-          <p class="text-justify health-descp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+          <p class="text-justify health-descp"> Our health packages are a right blend of food with science. whether its managing any kind of health disorder, improving vitamin deficiency, shedding extra kilos  or looking for specialized diet .. we have it all for all age groups.We believe in losing weight in the right manner and not losing hair, immunity, muscle and bone.</p>
           <a href="#/healthpackages" class="btn btn-primary text-uppercase font-gotham-bold letter-space know-more">know more</a>
           <div class="health-imgholder">
             <img src="img/health-package.png" alt="" class="img-responsive">
@@ -38,8 +38,8 @@
       <div class="col-md-4 col-sm-6">
         <div class="health-info">
           <h3 class="brand-yellow title text-uppercase font-gotham-bold">Health <span class="block">Products</span></h3>
-          <p class="text-justify health-descp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-          <a href="#/healthproducts" class="btn btn-yellow text-uppercase font-gotham-bold letter-space know-more">know more</a>
+          <p class="text-justify health-descp">We believe your diet needs to be full of variety to motivate you through this journey. For this we have cook books written by our founder Mrs. Suman Agarwal with a team of culinary expert and nutritionist and variety of snacks and munchies. We have a extensive range of vital vitamins  which are introduced to you to maintain immunity, hair, skin and correct deficiencies. These vitamins are also prescribed to manage or alleviate chronic ailments. We also have a range of protein supplements to support strength training. We have electronics like pedometer, weighing scale to help you monitor your health goals.</p>
+          <a href="#/healthproducts/1" class="btn btn-yellow text-uppercase font-gotham-bold letter-space know-more">know more</a>
           <div class="health-imgholder">
             <img src="img/health-products.png" alt="" class="img-responsive">
           </div>
@@ -112,14 +112,17 @@
 <div class="brand-brown-bg section-story">
   <div class="container">
     <div class="slider brand-brown-light-bg">
-   <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+   <uib-carousel interval="myInterval" no-wrap="noWrapSlides" ng-animate="{'slide':true}">
         <uib-slide ng-repeat="slide in homestory" active="slide.active">
           <div class="row">
             <div class="col-md-6">
               <div class="story-video">
                 <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe> -->
-                <a class="various fancybox.iframe" fancybox href="https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1">
-                  <img src="img/videos/home-rishabh.jpg" alt="" />
+                <a class="various fancybox.iframe" fancybox href="{{slide.link}}">
+                  <img ng-src="{{slide.image}}" alt="" />
+                  <div class="circle">
+                    <img src="img/play.png" alt="" class="img-responsive" />
+                  </div>
                 </a>
               </div>
             </div>
@@ -284,7 +287,7 @@
             Please enter all details
           </div>
           <div class="text-center" ng-show="submitted" alert="role">
-            Your queries have been sent.
+            Your query has been sent.
           </div>
           <div class="text-right btn-center">
             <button class="text-uppercase btn btn-primary btn-more" type="submit" ng-click="askSumanSubmit(asksuman,asksumanForm)">Submit</button>
@@ -302,7 +305,7 @@
           <div class="about-info">
             <h3 class="text-uppercase brand-brown-dark2 font-semibold">About us</h3>
             <h5 class="font-semibold">Only the fit know how fabulous it feels.</h5>
-            <p class="text-justify">At Selfcare a team of experts create designer diets to balance out a body-system that rights itself to suit your needs—be it weight loss, the need to circumvent aging, evade arthritis, diabetes or hypertension. Under the expert and experienced guidance of nutritionist Suman Agarwal , a qualified clinical nutritionist as well as a fitness...</p>
+            <p class="text-justify">At Selfcare a team of experts create designer diets to balance out a body-system that rights itself to suit your needs—be it weight loss, the need to circumvent aging, evade arthritis, diabetes or hypertension. Under the expert and experienced guidance of nutritionist Suman Agarwal , a qualified clinical nutritionist as well as a fitness expert, each nutrition plan is orchestrated to fit individualized needs without compromising on lifestyle. At Selfcare health overrides weight loss.</p>
             <div class="more btn-center">
               <a href="#/aboutus" class="text-uppercase btn btn-primary">know more</a>
             </div>

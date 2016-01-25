@@ -1,6 +1,6 @@
 <section>
   <div class="selfcare-image">
-    <img src="img/apple.jpg" alt="">
+    <img src="img/banners/news.jpg" alt="">
     <h2 class="text-uppercase get-center white font-semibold">News</h2>
   </div>
 
@@ -25,7 +25,7 @@
           <div class="col-md-4 col-sm-4" ng-repeat="article in activeYear.news">
 
             <div class="article-image">
-              <a fancybox-box href="{{article.image}}">
+              <a fancybox-box class="fancyboxGroup" rel="fancybox-thumb" href="{{article.image}}">
                 <img ng-src="{{article.image}}" alt="" class="img-responsive">
               </a>
             </div>

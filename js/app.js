@@ -1,277 +1,284 @@
 // JavaScript Document
 var firstapp = angular.module('firstapp', [
-    'ui.router',
-    'phonecatControllers',
-    'templateservicemod',
-    'navigationservice'
+  'ui.router',
+  'phonecatControllers',
+  'templateservicemod',
+  'navigationservice'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
-    // for http request with session
-    $httpProvider.defaults.withCredentials = true;
+  // for http request with session
+  $httpProvider.defaults.withCredentials = true;
 
-    $stateProvider
+  $stateProvider
 
     .state('home', {
-        url: "/home",
-        templateUrl: "views/template.html",
-        controller: 'HomeCtrl'
-    })
+    url: "/home",
+    templateUrl: "views/template.html",
+    controller: 'HomeCtrl'
+  })
 
-    .state('aboutus', {
-        url: "/aboutus",
-        templateUrl: "views/template.html",
-        controller: 'AboutUsCtrl'
-    })
+  .state('aboutus', {
+    url: "/aboutus",
+    templateUrl: "views/template.html",
+    controller: 'AboutUsCtrl'
+  })
 
-    .state('healthproducts', {
-        url: "/healthproducts/:id",
-        templateUrl: "views/template.html",
-        controller: 'HealthProductsCtrl'
-    })
+  .state('healthproducts', {
+    url: "/healthproducts/:id",
+    templateUrl: "views/template.html",
+    controller: 'HealthProductsCtrl'
+  })
 
-    .state('healthpackages', {
-        url: "/healthpackages",
-        templateUrl: "views/template.html",
-        controller: 'HealthPackagesCtrl'
-    })
+  .state('healthpackages', {
+    url: "/healthpackages",
+    templateUrl: "views/template.html",
+    controller: 'HealthPackagesCtrl'
+  })
 
-    .state('healthmanagement', {
-        url: "/healthmanagement",
-        templateUrl: "views/template.html",
-        controller: 'HealthManagementCtrl'
+  .state('healthmanagement', {
+      url: "/healthmanagement",
+      templateUrl: "views/template.html",
+      controller: 'HealthManagementCtrl'
     })
     .state('healthmanagementdetail', {
-        url: "/healthmanagementdetail",
-        templateUrl: "views/template.html",
-        controller: 'HealthManagementDetailCtrl'
+      url: "/healthmanagementdetail",
+      templateUrl: "views/template.html",
+      controller: 'HealthManagementDetailCtrl'
     })
 
-    .state('weightmanagement', {
-        url: "/weightmanagement",
-        templateUrl: "views/template.html",
-        controller: 'WeightManagementCtrl'
-    })
+  .state('weightmanagement', {
+    url: "/weightmanagement",
+    templateUrl: "views/template.html",
+    controller: 'WeightManagementCtrl'
+  })
 
-    .state('imageconsulting', {
-        url: "/imageconsulting",
-        templateUrl: "views/template.html",
-        controller: 'ImageConsultingCtrl'
-    })
+  .state('imageconsulting', {
+    url: "/imageconsulting",
+    templateUrl: "views/template.html",
+    controller: 'ImageConsultingCtrl'
+  })
 
-    .state('productcategory', {
-        url: "/productcategory",
-        templateUrl: "views/template.html",
-        controller: 'ProductCategoryCtrl'
-    })
+  .state('productcategory', {
+    url: "/productcategory",
+    templateUrl: "views/template.html",
+    controller: 'ProductCategoryCtrl'
+  })
 
-    .state('productdetail', {
-        url: "/productdetail/:id",
-        templateUrl: "views/template.html",
-        controller: 'ProductDetailCtrl'
-    })
+  .state('productdetail', {
+    url: "/productdetail/:id",
+    templateUrl: "views/template.html",
+    controller: 'ProductDetailCtrl'
+  })
 
+  .state('termsandcondition', {
+      url: "/termsandcondition",
+      templateUrl: "views/template.html",
+      controller: 'TermsAndConditionCtrl'
+    })
+    .state('privacypolicy', {
+      url: "/privacypolicy",
+      templateUrl: "views/template.html",
+      controller: 'PrivacyPolicyCtrl'
+    })
     .state('faq', {
-        url: "/faq",
-        templateUrl: "views/template.html",
-        controller: 'FaqCtrl'
+      url: "/faq",
+      templateUrl: "views/template.html",
+      controller: 'FaqCtrl'
     })
 
-    .state('meet', {
-        url: "/meet",
-        templateUrl: "views/template.html",
-        controller: 'MeetCtrl'
-    })
+  .state('meet', {
+    url: "/meet",
+    templateUrl: "views/template.html",
+    controller: 'MeetCtrl'
+  })
 
-    .state('news', {
-        url: "/news",
-        templateUrl: "views/template.html",
-        controller: 'NewsCtrl'
-    })
+  .state('news', {
+    url: "/news",
+    templateUrl: "views/template.html",
+    controller: 'NewsCtrl'
+  })
 
-    .state('successstories', {
-        url: "/successstories",
-        templateUrl: "views/template.html",
-        controller: 'SuccessStoriesCtrl'
-    })
+  .state('successstories', {
+    url: "/successstories",
+    templateUrl: "views/template.html",
+    controller: 'SuccessStoriesCtrl'
+  })
 
-    .state('cart', {
-        url: "/cart",
-        templateUrl: "views/template.html",
-        controller: 'CartCtrl'
-    })
+  .state('cart', {
+    url: "/cart",
+    templateUrl: "views/template.html",
+    controller: 'CartCtrl'
+  })
 
-    .state('checkout', {
-        url: "/checkout",
-        templateUrl: "views/template.html",
-        controller: 'CheckoutCtrl'
-    })
+  .state('checkout', {
+    url: "/checkout",
+    templateUrl: "views/template.html",
+    controller: 'CheckoutCtrl'
+  })
 
-    .state('team', {
-        url: "/team",
-        templateUrl: "views/template.html",
-        controller: 'TeamCtrl'
-    })
+  .state('team', {
+    url: "/team",
+    templateUrl: "views/template.html",
+    controller: 'TeamCtrl'
+  })
 
-    .state('coolsculpting', {
-        url: "/coolsculpting",
-        templateUrl: "views/template.html",
-        controller: 'CoolSculptingCtrl'
-    })
+  .state('coolsculpting', {
+    url: "/coolsculpting",
+    templateUrl: "views/template.html",
+    controller: 'CoolSculptingCtrl'
+  })
 
-    .state('bloglising', {
-        url: "/bloglising",
-        templateUrl: "views/template.html",
-        controller: 'BlogCtrl'
-    })
+  .state('bloglising', {
+    url: "/bloglising",
+    templateUrl: "views/template.html",
+    controller: 'BlogCtrl'
+  })
 
-    .state('blogdetail', {
-        url: "/blogdetail",
-        templateUrl: "views/template.html",
-        controller: 'BlogDetailCtrl'
-    })
+  .state('blogdetail', {
+    url: "/blogdetail",
+    templateUrl: "views/template.html",
+    controller: 'BlogDetailCtrl'
+  })
 
-    .state('recipes', {
-        url: "/recipes",
-        templateUrl: "views/template.html",
-        controller: 'RecipesCtrl'
-    })
+  .state('recipes', {
+    url: "/recipes",
+    templateUrl: "views/template.html",
+    controller: 'RecipesCtrl'
+  })
 
-    .state('nutrigenomics', {
-        url: "/nutrigenomics",
-        templateUrl: "views/template.html",
-        controller: 'NutrigenomicsCtrl'
-    })
+  .state('nutrigenomics', {
+    url: "/nutrigenomics",
+    templateUrl: "views/template.html",
+    controller: 'NutrigenomicsCtrl'
+  })
 
-    .state('knowyourstats', {
-        url: "/knowyourstats",
-        templateUrl: "views/template.html",
-        controller: 'StatsCtrl'
-    })
+  .state('knowyourstats', {
+    url: "/knowyourstats",
+    templateUrl: "views/template.html",
+    controller: 'StatsCtrl'
+  })
 
-    .state('contactus', {
-        url: "/contactus",
-        templateUrl: "views/template.html",
-        controller: 'ContactUsCtrl'
+  .state('contactus', {
+      url: "/contactus",
+      templateUrl: "views/template.html",
+      controller: 'ContactUsCtrl'
     })
     .state('login', {
-        url: "/login",
-        templateUrl: "views/template.html",
-        controller: 'LoginCtrl'
+      url: "/login",
+      templateUrl: "views/template.html",
+      controller: 'LoginCtrl'
     })
 
-    $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise("/home");
 
 });
 
 
 firstapp.directive('img', function($compile, $parse) {
-    return {
-        restrict: 'E',
-        replace: false,
-        link: function($scope, element, attrs) {
-            var $element = $(element);
-            if(!attrs.noloading)
-            {
-                $element.after("<img src='img/loading.gif' class='loading' />");
-                var $loading = $element.next(".loading");
-                $element.load(function() {
-                    $loading.remove();
-                    $(this).addClass("doneLoading");
-                });
-            }
-            else
-            {
-                $($element).addClass("doneLoading");
-            }
-        }
-    };
+  return {
+    restrict: 'E',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      if (!attrs.noloading) {
+        $element.after("<img src='img/loading.gif' class='loading' />");
+        var $loading = $element.next(".loading");
+        $element.load(function() {
+          $loading.remove();
+          $(this).addClass("doneLoading");
+        });
+      } else {
+        $($element).addClass("doneLoading");
+      }
+    }
+  };
 });
 
 
 firstapp.directive('fancyboxBox', function($document) {
-   return {
-       restrict: 'EA',
-       replace: false,
-       link: function(scope, element, attr) {
-           var $element = $(element);
-           if (attr.rel) {
-               var target = $("[rel='" + attr.rel + "']");
-           } else {
-               var target = element;
-           }
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function(scope, element, attr) {
+      var $element = $(element);
+      if (attr.rel) {
+        var target = $("[rel='" + attr.rel + "']");
+      } else {
+        var target = element;
+      }
 
-           target.fancybox({
-               openEffect: 'fade',
-               closeEffect: 'fade',
-               prevEffect	: 'none',
-          		nextEffect	: 'none',
-               closeBtn: true,
-               helpers: {
-                   media: {},
-                   title	: {
-                     type: 'outside'
-                   },
-               			thumbs	: {
-               				width	: 50,
-               				height	: 50
-               			}
-               }
-           });
+      target.fancybox({
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+          media: {},
+          title: {
+            type: 'outside'
+          },
+          thumbs: {
+            width: 50,
+            height: 50
+          }
+        }
+      });
 
-       }
-   }
+    }
+  }
 });
-firstapp.filter('nospace', function () {
-    return function (value) {
-        return (!value) ? '' : value.replace(/ /g, '');
-    };
+firstapp.filter('nospace', function() {
+  return function(value) {
+    return (!value) ? '' : value.replace(/ /g, '');
+  };
 });
 firstapp.filter('serverimage', function() {
   return function(input) {
     if (input) {
-      return   imgurl+input;
+      return imgurl + input;
     } else {
       return "img/loading.gif";
     }
   };
 });
 firstapp.directive('slideMenu', function($document) {
-   return {
-       restrict: 'EA',
-       replace: false,
-       link: function(scope, element, attr) {
-           var $element = $(element);
-           $(element).click(function() {
-             $(".hamburger").toggleClass("green-bar");
-             $(".slide-menu").toggleClass("slide-in");
-             $(".that-slides").toggleClass("slide-body");
-           });
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function(scope, element, attr) {
+      var $element = $(element);
+      $(element).click(function() {
+        $(".hamburger").toggleClass("green-bar");
+        $(".slide-menu").toggleClass("slide-in");
+        $(".that-slides").toggleClass("slide-body");
+      });
 
-       }
-   }
+    }
+  }
 });
-firstapp.directive('fancybox', function ($compile, $parse) {
-    return {
-        restrict: 'EA',
-        replace: false,
-        link: function ($scope, element, attrs) {
-            $element = $(element);
-            console.log("Checking Fancybox");
-            setTimeout(function () {
-                $(".various").fancybox({
-                    maxWidth: 800,
-                    maxHeight: 600,
-                    fitToView: false,
-                    width: '70%',
-                    height: '70%',
-                    autoSize: false,
-                    closeClick: false,
-                    openEffect: 'none',
-                    closeEffect: 'none'
-                });
-            }, 100);
-        }
-    };
+firstapp.directive('fancybox', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      $element = $(element);
+      console.log("Checking Fancybox");
+      setTimeout(function() {
+        $(".various").fancybox({
+          maxWidth: 800,
+          maxHeight: 600,
+          fitToView: false,
+          width: '70%',
+          height: '70%',
+          autoSize: false,
+          closeClick: false,
+          openEffect: 'none',
+          closeEffect: 'none'
+        });
+      }, 100);
+    }
+  };
 });

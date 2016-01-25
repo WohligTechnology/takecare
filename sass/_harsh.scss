@@ -53,6 +53,23 @@
   a { color: #cf5636; }
 }
 
+// weight
+.weight {
+  .get-round .lost {
+    padding: 10px 0 2px;
+    font-size: 16px;
+  }
+  .tab-body .pricing {
+    right: 45px;
+  }
+  .nav > li > a { padding: 7px 15px; }
+  .nav-tabs li a { padding: 7px 15px; }
+}
+
+.pregnancy {
+  .consult-chart .noconsult { font-size: 24px; }
+}
+
 // About
 .selfcare-image {
   @include square(100%);
@@ -93,7 +110,7 @@
   .about-health-content {
     @include size(100%, auto);
     @include margin(50px 0 0);
-    .embed-youtube { height: 300px; }
+    .embed-youtube { height: 420px; }
     .glyphicon-chevron-right:before {
       content: "\f105";
       display: block;
@@ -190,15 +207,22 @@
 // FANCYBOX
 // //////////////////////
 
-.fancybox-overlay .fancybox-wrap {
-  width: 80% !important;
-  margin: 20px 0 !important;
-  left: 50% !important;
-  @include transform(translate(-50%, 0));
-}
-.fancybox-inner {
-  width: 100% !important;
-  height: auto !important;
+// .fancybox-overlay .fancybox-wrap {
+//   width: 80% !important;
+//   margin: 20px 0 !important;
+//   left: 50% !important;
+//   @include transform(translate(-50%, 0));
+// }
+// .fancybox-inner {
+//   width: 100% !important;
+//   height: auto !important;
+// }
+
+.various .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
 }
 
 // Health Packages

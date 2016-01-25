@@ -551,6 +551,7 @@ button {
 .section-story {
   padding: 60px 0;
   .slider {
+    height: 410px;
     padding: 40px 120px;
     .carousel-control.left {
       top: -50px;
@@ -745,7 +746,7 @@ button {
   }
 }
 .health-heading {
-  margin: 0 0 25px;
+  margin: 15px 0 10px;
 }
 .consult-chart {
   width: 110px;
@@ -848,7 +849,8 @@ button {
         @include size(150px, auto);
         border-radius: 6px;
         border: none;
-        padding: 27px 0 20px;
+        //padding: 24px 0 20px;
+        padding: 7px 0;
         z-index: 1;
         @include transition(all 0ms ease);
         &:focus { background-color: transparent; }
@@ -917,7 +919,13 @@ button {
 .weight .tab-chart .nav-tabs li a {
   @include size(190px, auto);
   padding: 12px 0 0;
-}
+} 
+
+// .weight .tab-chart .nav-tabs li a {
+//   @include size(190px, 76px);
+//   padding: 10px 0 0;
+//   z-index: 1;
+// }
 .tab-head {
   margin-bottom: 50px;
 }
@@ -947,7 +955,7 @@ button {
   }
 }
 .tab-foot {
-  margin: 20px 0 0;
+  margin: 20px 25px 0 0;
   .tab-footinfo {
     display: inline-block;
     width: 74%;
