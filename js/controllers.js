@@ -520,6 +520,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
   })
 
+  .controller('footerctrl', function($scope,NavigationService, TemplateService, $uibModal) {
+    $scope.template=TemplateService;
+    $scope.subsresponse=false;
+    $scope.msg="";
+    $scope.subscribe= function(input,formValidate){
+      $scope.subsresponse=false;
+      if (formValidate.$valid) {
+        NavigationService.subscribe(input,function(data){
+          if(data.value == true){
+            $scope.subsresponse=true;
+            $scope.msg="Thank you for subscribing";
+          }else{
+            $scope.subsresponse=true;
+            $scope.msg="Already subscribed";
+          }
+        });
+      }
+    }
+  })
 .controller('headerctrl', function($scope,NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
@@ -556,7 +575,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if(data.value== false){
 
         }else{
-
           console.log(data);
           $.jStorage.set("user",data);
           window.location.reload();

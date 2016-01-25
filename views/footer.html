@@ -1,5 +1,5 @@
-<footer class="brand-primary-bg font-semibold">
-    <div class="container">
+<footer class="brand-primary-bg font-semibold" ng-controller="footerctrl">
+    <div class="container" >
         <div class="row">
             <div class="col-md-2 col-xs-6">
                 <div class="menu text-uppercase letter-space">
@@ -67,11 +67,14 @@
                     <div class="mail">
                         <form class="form-inline" name="subscribeForm">
                             <div class="form-group">
-                                <input type="email" name="email" required ng-model="email" class="form-control email" placeholder="EMAIL">
-                                <button type="submit" class="form-control btn-submit"><span><i class="fa fa-chevron-right brand-primary"></i></span></button>
+                                <input type="email" name="email" required ng-model="subscribe.email" class="form-control email" placeholder="EMAIL">
+                                <button type="submit" class="form-control btn-submit"><span><i class="fa fa-chevron-right brand-primary" ng-click="subscribe(subscribe,subscribeForm)"></i></span></button>
                             </div>
                             <div class="" ng-show="subscribeForm.$invalid && subscribeForm.email.$dirty" role="alert">
                               Please enter an email
+                            </div>
+                            <div class="" ng-show="subsresponse">
+                              {{msg}}
                             </div>
                         </form>
                     </div>

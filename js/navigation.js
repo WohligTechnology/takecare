@@ -117,6 +117,9 @@ var navigationservice = angular.module('navigationservice', [])
 				}
 			}).success(callback);
     },
+    subscribe:function(request,callback){
+      $http.get(adminurl + 'subscribe?categoryid=' + request.email ).success(callback);
+    },
     loginuser:function(request,callback){
       $http({
 				url: adminurl + 'loginuser',
