@@ -76,12 +76,10 @@
   .growth-section h3 { @include padding(0 100px); }
   .stories-section .inner-view-left .name,
   .stories-section .inner-view-left .location {
-    @include padding(0 0 0 90px);
-    @include margin(0 0 0 -60px);
+    @include padding(0 0 0 10px);
   }
-  .stories-section .inner-view-left .location { @include margin(0 0 0 -10px); }
   .stories-section .inner-view-right .name,
-  .stories-section .inner-view-right .location { @include padding(0 90px 0 0); }
+  .stories-section .inner-view-right .location { @include padding(0 10px 0 0); }
   .stories-section .read-image-right { @include margin(0); }
   .stories-section .read-detail .name {
     font-size: 20px;
@@ -148,18 +146,15 @@
     @include padding(0);
     font-size: 28px;
   }
+  .single-view img { width: 100%; }
   .inner-view-left,
   .inner-view-right { @include margin(20px 0 0); }
   .stories-section .view-detail { @include margin(0 0 30px); }
   .stories-section .inner-view-right ~ .view-detail { @include margin(0 0 30px); }
   .stories-section .inner-view-left .name,
-  .stories-section .inner-view-left .location { @include padding(0 0 0 20px); }
-  .stories-section .inner-view-left .name { @include margin(0 0 0 340px); }
-  .stories-section .inner-view-left .location { @include margin(0 0 0 390px); }
+  .stories-section .inner-view-left .location { @include padding(0 0 0 10px); }
   .stories-section .inner-view-right .name,
-  .stories-section .inner-view-right .location { @include padding(0 20px 0 0); }
-  .stories-section .inner-view-right .name { @include margin(0 -280px 0 0); }
-  .stories-section .inner-view-right .location { @include margin(0 -420px 0 0); }
+  .stories-section .inner-view-right .location { @include padding(0 10px 0 0); }
   .stories-section .read-detail .name { @include margin(20px 0 0); }
   .stories-section .read-detail.right .name {
     @include square(100%);
@@ -333,6 +328,10 @@
   }
   .stories-section .inner-view-left,
   .stories-section .inner-view-right { @include margin(20px 0 -20px); }
+  .stories-section .inner-view-left .view-title, .stories-section .inner-view-right .view-title-right {
+    @include padding(0);
+    text-align: center;
+  }
   .stories-section .inner-view-left .name,
   .stories-section .inner-view-left .location,
   .stories-section .inner-view-right .name,
