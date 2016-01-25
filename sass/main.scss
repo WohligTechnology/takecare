@@ -297,7 +297,7 @@ textarea {
   @include transform(translate(-50%, -50%));
 }
 .get-up {
-  margin-top: -100px;
+  margin-top: -50px;
   padding: 35px 60px;
 }
 .inline-block {
@@ -915,9 +915,8 @@ button {
   }
 }
 .weight .tab-chart .nav-tabs li a {
-  @include size(190px, 76px);
+  @include size(190px, auto);
   padding: 12px 0 0;
-  z-index: 1;
 }
 .tab-head {
   margin-bottom: 50px;
@@ -1679,6 +1678,29 @@ footer {
 }
 /// end of filters///
 //////end footer/////
+
+// terms n privacy
+.terms, .privacypolicy {
+  margin: 50px 60px;
+  color: #808080;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+.privacypolicy {
+  .list-privacy li {
+    margin: 20px 0;
+    .privacy-info { margin: 7px 0 0; }
+    .sub-info li { margin: 0; }
+   }
+}
+.terms {
+  ol li { margin: 20px 0; }
+  .sub-term li { margin: 5px 0 0; }
+  .terms-sec2 { margin: 40px 0 0; }
+}
+// end terms n privacy
+
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";

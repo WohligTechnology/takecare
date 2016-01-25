@@ -56,7 +56,7 @@
       font-size: 18px;
     }
   }
-  // weight-manangement
+  // health-management weight-manangement
   .tab-chart {
     .nav-tabs li a { width: 124px; }
     .chart-head {
@@ -102,6 +102,19 @@
       }
       .glyphicon-chevron-right {
         right: -50px;
+      }
+    }
+  }
+  // weight management
+  .weight {
+    .tab-chart{
+      .nav-tabs {
+        li {
+          a {
+            width: 155px;
+            padding: 6px 0;
+          }
+        }
       }
     }
   }
@@ -334,6 +347,7 @@
       }
     }
   }
+  .weight .tab-chart .nav-tabs li a { width: 140px; }
   .weight-round {
     @include square(90px);
   }
@@ -752,7 +766,7 @@
     }
   }
   .healthchart-list {
-    width: 450px;
+    width: 451px;
     margin: 40px auto;
   }
   .tab-chart {
@@ -826,6 +840,7 @@
       }
     }
   }
+  .weight .tab-chart .nav-tabs li a { width: 86px; }
   .align {
     margin: -12px 2px 0 0;
   }
@@ -1330,6 +1345,14 @@
       .plan {
         margin: 10px 0;
       }
+    }
+  }
+  .weight {
+    .tab-chart {
+       .nav-tabs {
+         li:first-child a { padding: 5px 0; }
+         li a { width: 66px; }
+       }
     }
   }
   .weight-round,
