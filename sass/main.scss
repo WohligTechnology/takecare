@@ -181,15 +181,11 @@ $instagram: #396d9a !default;
 }
 .btn-yellow {
   @include button-variant(white, $brand-yellow, $brand-yellow);
-  &:hover {
-    color: $brand-yellow !important;
-  }
+  &:hover { color: $body-bg !important; }
 }
 .btn-blue {
   @include button-variant(white, $brand-blue, $brand-blue);
-  &:hover {
-    color: $brand-blue !important;
-  }
+  &:hover { color: $body-bg !important; }
 }
 .btn-primary-inverse {
   @include button-variant($brand-primary, white, $brand-primary);
@@ -325,9 +321,6 @@ textarea {
 .btn {
   padding: 12px 24px;
   border-radius: 4px;
-  &:hover {
-    color: $brand-primary;
-  }
 }
 button {
   &:focus {
@@ -484,6 +477,7 @@ button {
       padding: 14px 40px;
       position: relative;
       top: 20px;
+      font-size: 14px;
     }
     .health-imgholder {
       width: 270px;
@@ -545,7 +539,7 @@ button {
     }
   }
   .descp {
-    height: 100px;
+    height: 110px;
     width: 380px;
     margin: 15px 0;
     font-size: 16px;
@@ -852,10 +846,10 @@ button {
     li {
       margin: 0 4px -2px 0;
       a {
-        @include size(150px, 76px);
+        @include size(150px, auto);
         border-radius: 6px;
         border: none;
-        padding: 27px 0 0;
+        padding: 27px 0 20px;
         z-index: 1;
         @include transition(all 0ms ease);
         &:hover {
@@ -1420,6 +1414,7 @@ footer {
     padding: 12px 25px;
     font-size: 18px;
     letter-spacing: 4px;
+    &:hover{ color: $brand-primary; }
   }
 }
 .radio {

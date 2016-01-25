@@ -269,12 +269,12 @@
   .health-manageselect {
     margin: 40px 0;
     .managecat {
-      margin: 10px 0;
+      margin: 20px 0;
       .category-imghold {
         @include square(120px);
       }
       figcaption {
-        font-size: 14px;
+        font-size: 13px;
       }
     }
   }
@@ -660,13 +660,12 @@
   }
   .health-manageselect {
     .row-flex {
-      @include flex-wrap(wrap);
+      display: block;
       .col-flex {
         @include flex(auto);
       }
     }
     .managecat {
-      margin: 10px 0;
       .category-imghold {
         @include square(100px);
       }
@@ -1173,7 +1172,7 @@
   .health-manageselect {
     margin: 25px 0;
     .managecat {
-      margin: 15px;
+      margin: 20px 60px;
       .category-imghold {
         @include square(100px);
       }
