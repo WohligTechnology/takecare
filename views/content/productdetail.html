@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="product-image">
-            <img src="{{product.product.image | serverimage}}" alt="" class="img-responsive">
+            <img src="{{product.product.image | serverimage}}" alt="" class="img-responsive round">
           </div>
         </div>
 
@@ -79,8 +79,8 @@
               <div class="inner-like text-center pointer" ui-sref="productdetail({
                 id:likepro.id
               })">
-                <div class="like-image round">
-                  <img ng-src="{{likepro.image | serverimage}}" alt="" class="img-responsive"/>
+                <div class="like-image">
+                  <img ng-src="{{likepro.image | serverimage}}" alt="" class="img-responsive round"/>
                 </div>
                 <span class="text-uppercase brand-primary font-semibold">{{likepro.name}}
                   |

@@ -43,10 +43,10 @@
             </div>
             <div class="col-md-4 col-sm-6" ng-repeat="product in products" ng-if="products.length > 0">
               <div class="single-product text-center">
-                <div class="product-image round pointer" ui-sref="productdetail({
+                <div class="product-image pointer" ui-sref="productdetail({
                   id:product.id
                 })">
-                  <img ng-src="{{product.image | serverimage}}" alt="" class="img-responsive">
+                  <img ng-src="{{product.image | serverimage}}" alt="" class="img-responsive round">
                 </div>
                 <p class="brand-primary font-semibold pointer" ui-sref="productdetail({
                   id:product.id
