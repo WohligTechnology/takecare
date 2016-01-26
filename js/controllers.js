@@ -1116,6 +1116,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         TemplateService.footermenu = "";
         $scope.alerts=[];
+        $scope.contact={};
 
         $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
@@ -1130,6 +1131,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                       type:'success',
                       msg:'Your enquiry has been sent'
                     });
+                    $scope.contact={};
+                    formValidate.firstname.$touched=false;
                   }else{
                     $scope.alerts.push({
                       type:'danger',
