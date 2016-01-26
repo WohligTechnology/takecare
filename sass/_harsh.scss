@@ -207,17 +207,23 @@
 // FANCYBOX
 // //////////////////////
 
-// .fancybox-overlay .fancybox-wrap {
-//   width: 80% !important;
-//   margin: 20px 0 !important;
-//   left: 50% !important;
-//   @include transform(translate(-50%, 0));
-// }
-// .fancybox-inner {
-//   width: 100% !important;
-//   height: auto !important;
-// }
+ .fancybox-wrap.fancybox-type-image {
+  width: 80% !important;
+  margin: 20px 0 !important;
+  left: 50% !important;
+  @include transform(translate(-50%, 0));
 
+  .fancybox-inner {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+}
+
+.various img {
+  width: 100%;
+  height: 100%;
+}
 .various .circle {
   position: absolute;
   top: 50%;
