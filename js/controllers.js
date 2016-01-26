@@ -218,6 +218,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Health Management");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.categorylist=[{
+          name:'weight loss for kids',
+          id:1,
+          image:'img/health/kids.png'
+        },{
+          name:'weightloss with health gain',
+          id:2,
+          image:'img/health/weightloss.png'
+        },{
+          name:'post pregnancy weight loss with lactation',
+          id:3,
+          image:'img/health/kids.png'
+        },{
+          name:'weightloss with pcos and insulin resistence',
+          id:4,
+          image:'img/health/kids.png'
+        },{
+          name:'healthy aging',
+          id:5,
+          image:'img/health/weightloss.png'
+        },{
+          name:'pregnancy',
+          id:6,
+          image:'img/health/kids.png'
+        },{
+          name:'weight gain',
+          id:7,
+          image:'img/health/kids.png'
+        },{
+          name:'ailment control',
+          id:8,
+          image:'img/health/weightloss.png'
+        },{
+          name:'cancer support',
+          id:9,
+          image:'img/health/kids.png'
+        },{
+          name:'marathon / sports nutrition',
+          id:10,
+          image:'img/health/kids.png'
+        }];
     })
     .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -254,15 +295,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
         $scope.weightinfo = [{
-            name: "Pramila Seth",
-            location: "Mumbai, India",
-            weight: "5",
-            descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
-        }, {
-            name: "Rishabh",
+            name: "Rishabh Maniktala",
             location: "Mumbai, India",
             weight: "25",
-            descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat"
+            descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat",
+            image: "http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg",
+            link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
+        }, {
+            name: "Pramila Seth",
+            location: "Punjab, India",
+            weight: "5",
+            descp: "I am very satisfied with the diet given. Sumanji herself is a great motivation. I am very happy with the program and the weight loss achieved. Thank you.",
+            image: "http://img.youtube.com/vi/aMyOpVqyjYQ/sddefault.jpg",
+            link: "https://www.youtube.com/embed/aMyOpVqyjYQ?autoplay=1"
+        }, {
+            descp: "Everyone was teasing me.",
+            name: "Nikesh Shah",
+            location: "Mumbai, India",
+            weight: "17",
+            image: "http://img.youtube.com/vi/RCfJBUulDBg/sddefault.jpg",
+            link: "https://www.youtube.com/embed/RCfJBUulDBg?autoplay=1"
+        }, {
+            descp: "Its easy to loose weight by eating the foods that you like to eat also.",
+            name: "Pranita Mittal",
+            location: "Mumbai, India",
+            weight: "10",
+            image: "http://img.youtube.com/vi/0tLl00XTRQA/sddefault.jpg",
+            link: "https://www.youtube.com/embed/0tLl00XTRQA?autoplay=1"
         }];
     })
     .controller('ImageConsultingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -283,7 +342,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.categories = data;
             $scope.categories = $filter('orderBy')($scope.categories, "order"); //order by order field done
             $scope.categories = _.chunk($scope.categories, 2);
-        })
+        });
     })
     .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file
