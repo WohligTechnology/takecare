@@ -95,6 +95,7 @@ gulp.task('ftp', function() {
   var decryptedJSON = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 
   decryptedJSON.log = gutil.log;
+  decryptedJSON.parallel = 3;
   var conn = ftp.create(decryptedJSON);
 
 
