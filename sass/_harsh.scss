@@ -344,7 +344,6 @@
       @include square(170px);
       @include margin(20px 0 0);
       border: 2px solid $brand-primary;
-      border-radius: 100%;
       overflow: hidden;
       img {
         min-width: 100%;
