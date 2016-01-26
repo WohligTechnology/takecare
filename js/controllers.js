@@ -155,6 +155,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             console.log(input);
             NavigationService.addToCart(input, function(data) {
+              console.log(data);
                 if (data.value == true) {
                     //Added to cart
                     console.log("added to cart");
@@ -573,7 +574,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.guest = "notguest";
         $scope.guestshow = true;
+        $scope.allcart=[];
         $scope.checkout={};
+        $scope.user={};
+        $scope.login={};
         $scope.tabs = [{
             active: true,
             disabled: true
@@ -588,9 +592,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             disabled: true
         }, ];
         if($.jStorage.get("user")){
+            $scope.user=$.jStorage.get("user");
           $scope.tabs[1].active=true;
           console.log($scope.tabs);
-        }
+        };
+        $scope.getCart = function() {
+            NavigationService.showCart(function(data) {
+                $scope.allcart = data;
+                $scope.totalcart = 0;
+                _.each($scope.allcart, function(key) {
+                    $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
+                    key.qty = parseInt(key.qty);
+                })
+                $scope.totalcart=$scope.totalcart+200;
+            })
+        };
+        $scope.getCart();
         $scope.selectGuest = function(input) {
             console.log(input);
             $scope.guestshow = true;
@@ -600,7 +617,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.guestshow = false;
             }
         };
+        $scope.proceedToPayment= function(){
+          if($scope.allcart.length >0 ){
+            $scope.checkout.cart=$scope.allcart;
+            NavigationService.placeOrder($scope.checkout,function(data){
+              console.log(data);
+            })
+          }
 
+        };
         $scope.proceedToShipping = function(input,status,formValidate) {
           if(!status){
             if(formValidate.email.$valid){
@@ -614,11 +639,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                   if (data.value == false) {
                   } else {
                       $.jStorage.set("user", data);
+                      $scope.user=$.jStorage.get("user");
                       window.location.reload();
                   }
               });
             }
           }
+        }
+        $scope.proceedToSummary= function(input,formValidate){
+          console.log(input);
+          if(formValidate.$valid){
+            if(!$scope.guestshow){
+              $scope.checkout=$scope.user;
+              $scope.checkout.email=$scope.login.email;
+              console.log($scope.guestshow);
+            }else{
+              $scope.checkout=$scope.user;
+              console.log($scope.guestshow);
+            }
+            console.log($scope.checkout);
+            $scope.tabs[2].active=true;
+            $scope.getCart();
+          }
+
         }
         $scope.Checkoutcart = [{
             img: "img/cart/1.jpg",
@@ -945,6 +988,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Nutrigenomics");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.nutrigenomics = [
+       {
+         qts: "What Will This Analysis Do For Me?",
+         ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
+       },
+       {
+         qts: "What Will This Analysis Do For Me?",
+         ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
+       }
+     ];
     })
     .controller('StatsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file

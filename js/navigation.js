@@ -132,6 +132,13 @@ var navigationservice = angular.module('navigationservice', [])
 				}
 			}).success(callback);
     },
+    placeOrder:function(request,callback){
+      $http({
+				url: adminurl + 'placeOrder',
+				method: 'POST',
+				data: request
+			}).success(callback);
+    },
     addToCart: function (cart, callback) {
         return $http({
             url: adminurl + "addToCart",
