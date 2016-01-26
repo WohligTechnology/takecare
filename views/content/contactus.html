@@ -6,7 +6,9 @@
 
   <div class="contact-location">
     <div class="container">
-
+      <div class="alert-postion">
+              <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="3000">{{alert.msg}}</uib-alert>
+          </div>
       <div class="row">
         <div class="clinic text-center">
           <span class="brand-primary font-semibold">Clinic Timings (9:30am to 6pm)</span>

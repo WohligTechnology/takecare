@@ -8,6 +8,9 @@
 
   <div class="cart-main">
     <div class="container">
+      <div class="alert-postion">
+              <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+          </div>
       <h3 class="text-uppercase brand-brown-dark letter-space font-semibold">Items you would like to purchase</h3>
       <div class="text-center" ng-if="allcart.length<=0">
         Your cart is empty

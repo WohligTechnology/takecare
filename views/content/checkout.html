@@ -6,6 +6,9 @@
     </div>
   </div>
   <div class="container">
+    <div class="alert-postion">
+            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+        </div>
     <div class="checkout-tab">
       <uib-tabset>
         <uib-tab active="tabs[0].active" disable="tabs[0].disabled">
@@ -17,9 +20,9 @@
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
-                <th>items:2</th>
-                <th>subtotal: rs. 375.00</th>
-                <th>grandtotal: rs. 375.00</th>
+                <th>items : {{allcart.length}}</th>
+                <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
+                <th>grandtotal: rs. {{totalcart}}</th>
               </thead>
             </table>
           </div>
@@ -64,9 +67,9 @@
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
-                <th>items:2</th>
-                <th>subtotal: rs. 375.00</th>
-                <th>grandtotal: rs. 375.00</th>
+                <th>items : {{allcart.length}}</th>
+                <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
+                <th>grandtotal: rs. {{totalcart}}</th>
               </thead>
             </table>
           </div>
@@ -126,9 +129,9 @@
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
-                <th>items:2</th>
-                <th>subtotal: rs. 375.00</th>
-                <th>grandtotal: rs. 375.00</th>
+                <th>items : {{allcart.length}}</th>
+                <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
+                <th>grandtotal: rs. {{totalcart}}</th>
               </thead>
             </table>
           </div>
@@ -181,7 +184,7 @@
                       <span>Shipping Charges</span>
                     </div>
                     <div class="text-right text-uppercase pull-right price-ship">
-                      <span>Rs 200.00</span>
+                      <span>Rs {{shippingcharges}}</span>
                     </div>
                   </div>
                   <form action="" class="form-inline">

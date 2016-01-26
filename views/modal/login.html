@@ -54,6 +54,9 @@
                         <div class="" ng-show="acceptValidate">
                           Please accept the terms and conditions to proceed.
                         </div>
+                        <div class="text-center" ng-show="alreadyReg">
+                           Email ID is already registered
+                        </div>
                     </div>
                     <div class="text-center submit">
                         <button class="btn btn-primary text-uppercase"  ng-click="doSignup(accept,signup,signupForm)">Signup</button>
@@ -100,6 +103,7 @@
                             <div class="text-center submit">
                                 <button class="text-uppercase btn btn-primary" type="submit" ng-click="doLogin(login,loginForm)">Sign in</button>
                             </div>
+
                         </div>
                     </div>
                 </form>

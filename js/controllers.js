@@ -6,11 +6,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.asksuman = {};
-        $scope.submitted = false;
+        $scope.alerts=[];
         $scope.navigation = NavigationService.getnav();
         NavigationService.getSlide(function(data) {
             $scope.homeslider = data;
         });
+        $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
         $scope.homestory = [{
             name: "Rishabh Maniktala",
             location: "Mumbai, India",
@@ -70,15 +73,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.askSumanSubmit = function(input, formValidate) {
             console.log(input);
-            $scope.submitted = false;
             if (formValidate.$valid) {
                 NavigationService.askSumanSubmit(input, function(data) {
                     console.log(data);
                     if (data.value == true) {
+                      $scope.alerts.push({
+                        type:'success',
+                        msg:'Your query has been sent'
+                      });
                         $scope.asksuman = {};
-                        $scope.submitted = true;
                     }
                 });
+            }else{
+              $scope.alerts.push({
+                type:'danger',
+                msg:'Please input all details'
+              });
             }
         }
     })
@@ -132,6 +142,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.categories = [];
         $scope.subCategories = [];
         $scope.products = [];
+        $scope.alerts=[];
         NavigationService.getCategoryById($scope.categoryid, function(data) {
             $scope.productCategory = data;
             console.log($scope.productCategory);
@@ -147,6 +158,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 'id': $scope.categoryid
             }), 1);
         });
+        $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
         $scope.cartAdd = function(item) {
             var input = {
                 product: item,
@@ -157,11 +171,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.addToCart(input, function(data) {
               console.log(data);
                 if (data.value == true) {
-                    //Added to cart
-                    console.log("added to cart");
+                    $scope.alerts.push({
+                      type:'success',
+                      msg:'Added to cart'
+                    });
                 } else {
-                    //already in cart
-                    console.log("already in cart");
+                  $scope.alerts.push({
+                    type:'danger',
+                    msg:'Already in cart'
+                  });
 
                 }
             });
@@ -186,7 +204,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(productid);
         };
         NavigationService.getSubCategory($scope.categoryid, function(data) {
-
             $scope.subCategories = data;
             $scope.subCategories = $filter('orderBy')($scope.subCategories, "order");
         });
@@ -342,7 +359,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.categories = data;
             $scope.categories = $filter('orderBy')($scope.categories, "order"); //order by order field done
             $scope.categories = _.chunk($scope.categories, 2);
-        });
+        })
     })
     .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file
@@ -352,9 +369,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.productid = $stateParams.id;
         $scope.product = {};
+        $scope.alerts=[];
         $scope.outofstock = false;
         $scope.filter = {};
         $scope.filter.quantity = "01";
+        $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
         NavigationService.getProductDetail($scope.productid, function(data) {
             console.log(data);
             $scope.product = data;
@@ -369,14 +390,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             console.log(input);
             NavigationService.addToCart(input, function(data) {
-                if (data.value == true) {
-                    //Added to cart
-                    console.log("added to cart");
-                } else {
-                    //already in cart
-                    console.log("already in cart");
+              if (data.value == true) {
+                  $scope.alerts.push({
+                    type:'success',
+                    msg:'Added to cart'
+                  });
+              } else {
+                $scope.alerts.push({
+                  type:'danger',
+                  msg:'Already in cart'
+                });
 
-                }
+              }
             });
         }
         $scope.like = [{
@@ -582,6 +607,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.allcart = [];
+        $scope.alerts=[];
         $scope.getCart = function() {
             NavigationService.showCart(function(data) {
                 $scope.allcart = data;
@@ -612,15 +638,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             item.qty--;
             $scope.updateQuantity(item);
         };
+        $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
         $scope.removeCart = function(item) {
             NavigationService.removeFromCart({
                 id: item.id
             }, function(data) {
                 if (data.value == true) {
-                    console.log("removed");
+                  $scope.alerts.push({
+                    type:'success',
+                    msg:'Removed from cart'
+                  });
                     $scope.getCart();
                 } else {
-                    console.log("false cannot be removed");
+                  $scope.alerts.push({
+                    type:'danger',
+                    msg:'Not removed from cart'
+                  });
                 }
             })
         }
@@ -635,7 +670,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.guestshow = true;
         $scope.allcart=[];
         $scope.checkout={};
+        $scope.alerts=[];
         $scope.user={};
+        $scope.shippingcharges = 200;
         $scope.login={};
         $scope.tabs = [{
             active: true,
@@ -663,7 +700,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
                     key.qty = parseInt(key.qty);
                 })
-                $scope.totalcart=$scope.totalcart+200;
+                $scope.totalcart=$scope.totalcart+$scope.shippingcharges;
             })
         };
         $scope.getCart();
@@ -680,7 +717,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           if($scope.allcart.length >0 ){
             $scope.checkout.cart=$scope.allcart;
             NavigationService.placeOrder($scope.checkout,function(data){
-              console.log(data);
+              $scope.alerts.push({
+                type:'success',
+                msg:'Order Placed. Order ID : '+data
+              })
             })
           }
 
@@ -719,6 +759,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.checkout);
             $scope.tabs[2].active=true;
             $scope.getCart();
+          }else{
+
           }
 
         }
@@ -1072,14 +1114,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.footermenu = "";
+        $scope.alerts=[];
+
+        $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
         $scope.contactUs = function(input, formValidate) {
             console.log(input);
             console.log(formValidate);
-            NavigationService.contactSubmit(input, function(data) {
-                if (data.value == true) {
-                    console.log(data);
-                }
-            });
+            if(formValidate.$valid){
+              NavigationService.contactSubmit(input, function(data) {
+                  if (data.value == true) {
+                    $scope.alerts.push({
+                      type:'success',
+                      msg:'Your enquiry has been sent'
+                    });
+                  }else{
+                    $scope.alerts.push({
+                      type:'danger',
+                      msg:'Unable to send enquiry'
+                    });
+                  }
+              });
+            }else{
+              $scope.alerts.push({
+                type:'danger',
+                msg:'Please input all details'
+              });
+            }
+
         }
     })
     .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -1128,6 +1191,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
+        $scope.alreadyReg=false;
         $scope.enablelogout = false;
         if ($.jStorage.get("user")) {
             $scope.enablelogout = true;
@@ -1150,13 +1214,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         $scope.doSignup = function(accept, input, formValidate) {
             $scope.acceptValidate = false;
+            $scope.alreadyReg=false;
             if (!accept) {
                 $scope.acceptValidate = true;
             } else {
                 if (formValidate.$valid) {
                     NavigationService.signup(input, function(data) {
                         if (data.value == false) {
-                            console.log("already exists");
+                          console.log("herer");
+                          $scope.alreadyReg=true;
                         } else {
                             $.jStorage.set("user", data);
                             window.location.reload();
@@ -1178,4 +1244,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 });
             }
         };
+
+       $scope.health = [
+         "Cholesterol",
+         "High Blood Pressure",
+         "Diabetes",
+         "Ailment Control",
+         "Weight Management"
+       ];
     });
