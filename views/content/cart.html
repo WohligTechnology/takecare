@@ -36,7 +36,7 @@
                 </figure>
               </td>
               <td>
-                <input type="number" class="text-center quantity" name="" id="" value="{{product.qty}}" disabled>
+                <input type="number" class="text-center quantity" name="" min="0" id="" value="{{product.qty}}" disabled>
                 <a href="" class="more inline-block brand-primary-bg white" ng-click="addQuantity(product)"><i class="fa fa-plus"></i></a>
                 <a href="" class="less inline-block brand-primary-bg white" ng-click="subtractQuantity(product)"><i class="fa fa-minus"></i></a>
               </td>
@@ -70,7 +70,7 @@
             </div>
             <div class="col-md-6">
               <div class="text-right cart-btn">
-                <a href="#/healthproducts" class="btn btn-primary text-uppercase continue">Continue Shopping</a>
+                <a href="#/healthproducts/1" class="btn btn-primary text-uppercase continue">Continue Shopping</a>
                 <a href="#/checkout" class="btn btn-primary text-uppercase" ng-if="allcart.length > 0">Proceed to checkout</a>
               </div>
             </div>
