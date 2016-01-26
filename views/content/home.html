@@ -15,6 +15,9 @@
   </flex-slider>
 </div>
 <div class="container">
+  <div class="alert-postion">
+          <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+      </div>
   <div class="health-design brand-brown-bg relate">
     <h4 class="text-capitalize inline-block font-light">Health design by suman agarwal</h4>
     <div class="img-holder get-round">

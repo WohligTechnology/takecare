@@ -41,10 +41,10 @@
                     <h5 class="brand-primary-lighter">HEALTH SHOP</h5>
                     <div class="submenu text-uppercase">
                         <ul>
-                            <li><a href="#/healthproducts" title="Food Munchies &amp; Beverages">FOOD MUNCHIES &amp; BEVERAGES</a></li>
-                            <li> <a href="#/healthproducts" title="Vitamins &amp; Minerals">VITAMINS &amp; MINERALS</a></li>
-                            <li><a href="#/healthproducts" title="Protein Supplement">PROTEIN SUPPLEMENT</a></li>
-                            <li><a href="#/healthproducts" title="Books &amp; Gadgets">BOOKS &amp; GADGETS</a></li>
+                            <li ng-repeat="category in categories"><a ui-sref="healthproducts({
+                              id:category.id
+                            })" title="{{category.name}}">{{category.name}}</a></li>
+
                         </ul>
                     </div>
                 </div>
