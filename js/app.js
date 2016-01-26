@@ -210,6 +210,16 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       templateUrl: "views/template.html",
       controller: 'LoginCtrl'
     })
+    .state('termsandcondition', {
+        url: "/termsandcondition",
+        templateUrl: "views/template.html",
+        controller: 'TermsAndConditionCtrl'
+    })
+    .state('privacypolicy', {
+        url: "/privacypolicy",
+        templateUrl: "views/template.html",
+        controller: 'PrivacyPolicyCtrl'
+    })
 
   $urlRouterProvider.otherwise("/home");
 
