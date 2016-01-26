@@ -11,10 +11,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getSlide(function(data) {
             $scope.homeslider = data;
         });
-        $scope.closeAlert = function(index) {
-    $scope.alerts.splice(index, 1);
-  };
-        $scope.alerts=[];
         $scope.homestory = [{
             name: "Rishabh Maniktala",
             location: "Mumbai, India",
@@ -58,6 +54,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             image: "http://img.youtube.com/vi/Cn2z-n0t51o/sddefault.jpg",
             link: "https://www.youtube.com/embed/Cn2z-n0t51o?autoplay=1"
         }];
+
         $scope.myInterval = 5000;
         $scope.noWrapSlides = false;
         var slides = $scope.slides = [];
@@ -79,10 +76,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     console.log(data);
                     if (data.value == true) {
                         $scope.asksuman = {};
-                        $scope.alerts.push({
-                          type:'success',
-                          msg:'Your query has been sent'
-                        });
                         $scope.submitted = true;
                     }
                 });
@@ -1056,10 +1049,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService;
         $scope.subsresponse = false;
         $scope.msg = "";
-        $scope.categories=[];
-        NavigationService.getCategory(function(data) {
-            $scope.categories = data;
-        })
         $scope.subscribe = function(input, formValidate) {
             $scope.subsresponse = false;
             if (formValidate.$valid) {

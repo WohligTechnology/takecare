@@ -605,7 +605,7 @@ button {
           width: 59px;
           height: 49px;
           position: absolute;
-          right: -10px;
+          right: -20px;
         }
         &:before {
           content: "";
@@ -1710,9 +1710,76 @@ footer {
 // end terms n privacy
 
 //////nutri/////
-.nutri-one {
-background: url();
+.nutri-one, .nutri-two ,.nutri-three, .nutri-four, .nutri-five, .nutri-six {
+  min-height: 370px;
+  padding: 80px;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 100% 100%;
+p { font-size: 16px; }
 }
+.nutri-one { background-image: url('../img/nutri/genetic.png'); }
+.nutri-two { background-image: url('../img/nutri/blue-dna.jpg'); }
+.nutri-three { background-image: url('../img/nutri/nutri-blue.png'); }
+.nutri-four { background-image: url('../img/nutri/benefits.png'); }
+.nutri-five { background-image: url('../img/nutri/doctor.jpg'); }
+.nutri-six { background-image: url('../img/nutri/mobile.jpg'); }
+
+.unlock,
+.what-nutri {
+  p {
+    width: 80%;
+    margin: 30px 0 0;
+  }
+}
+.doctor,
+.contact {
+  p {
+    width: 80%;
+    font-size: 20px;
+  }
+}
+.genes p { font-size: 27px; }
+
+.benefits {
+  .nutri-benefit {
+    width: 50%;
+    margin: 30px auto;
+    p { margin: 20px 0; }
+  }
+  .flexslider {
+    border: none;
+    margin: 0;
+    background-color: transparent;
+    .flex-control-nav { display: none; }
+    &:hover {
+      .flex-direction-nav .flex-prev {
+        left: 50px;
+        opacity: 1;
+      }
+      .flex-direction-nav .flex-next {
+        right: 50px;
+        opacity: 1;
+       }
+    }
+    .flex-direction-nav a {
+      color: transparent;
+      opacity: 1;
+      text-shadow: none;
+    }
+    .flex-direction-nav .flex-prev {
+         left: 50px;
+         background: url('../img/nutri/arrow-left.png') no-repeat;
+         &:before { display: none; }
+      }
+    .flex-direction-nav .flex-next {
+      right: 50px;
+      background: url('../img/nutri/arrow-right.png') no-repeat;
+      &:before { display: none; }
+     }
+  }
+}
+
 ////end nutri///
 
 @import "harsh";
