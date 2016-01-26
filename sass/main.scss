@@ -919,7 +919,7 @@ button {
 .weight .tab-chart .nav-tabs li a {
   @include size(190px, auto);
   padding: 12px 0 0;
-} 
+}
 
 // .weight .tab-chart .nav-tabs li a {
 //   @include size(190px, 76px);
@@ -1708,6 +1708,12 @@ footer {
   .terms-sec2 { margin: 40px 0 0; }
 }
 // end terms n privacy
+
+//////nutri/////
+.nutri-one {
+background: url();
+}
+////end nutri///
 
 @import "harsh";
 @import "mobile";
