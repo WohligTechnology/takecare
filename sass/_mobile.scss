@@ -111,7 +111,7 @@
       .nav-tabs {
         li {
           a {
-            width: 155px;
+            // width: 155px;
             padding: 6px 0;
           }
         }
@@ -347,7 +347,7 @@
       }
     }
   }
-  .weight .tab-chart .nav-tabs li a { width: 140px; }
+  // .weight .tab-chart .nav-tabs li a { width: 140px; }
   .weight-round {
     @include square(90px);
   }
@@ -855,7 +855,7 @@
       }
     }
   }
-  .weight .tab-chart .nav-tabs li a { width: 86px; }
+  // .weight .tab-chart .nav-tabs li a { width: 86px; }
   .align {
     margin: -12px 2px 0 0;
   }
@@ -1372,7 +1372,7 @@
     .tab-chart {
        .nav-tabs {
          li:first-child a { padding: 5px 0; }
-         li a { width: 66px; }
+        //  li a { width: 66px; }
        }
     }
   }
