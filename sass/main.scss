@@ -1738,7 +1738,30 @@ p { font-size: 16px; }
     font-size: 20px;
   }
 }
-.genes p { font-size: 27px; }
+
+.genes p {
+  font-size: 27px;
+ &:before {
+   content: open-quote;
+   color: #fff;
+   font-family: "Vista Slab", "Helvetiva Neue", Helvetica;
+   font-size: 170px;
+   position: absolute;
+   top: -75px;
+   left: -20px;
+   opacity: 0.5;
+ }
+ &:after {
+   content: close-quote;
+   color: #fff;
+   font-family: "Vista Slab", "Helvetiva Neue", Helvetica;
+   font-size: 170px;
+   position: absolute;
+   top: 85px;
+   right: -30px;
+   opacity: 0.5;
+ }
+}
 
 .benefits {
   .nutri-benefit {

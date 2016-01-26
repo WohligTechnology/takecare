@@ -390,7 +390,7 @@
           width: 39px;
           height: 29px;
           background-size: contain;
-          top: -30px;
+          top: -25px;
         }
         &:after {
           width: 39px;
@@ -400,6 +400,17 @@
         }
       }
       }
+      .weight-info {
+        margin: 0 auto;
+        position: static;
+      }
+      .name {
+        width: 100%;
+        border: none;
+        margin: 10px 0 5px;
+          text-align: center;
+      }
+      span { text-align: center; }
     }
   }
   .story-video {
