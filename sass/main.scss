@@ -551,7 +551,6 @@ button {
 .section-story {
   padding: 60px 0;
   .slider {
-    height: 410px;
     padding: 40px 120px;
     .carousel-control.left {
       top: -50px;
@@ -587,7 +586,7 @@ button {
   .view-detail {
     padding: 10px 0 0 15px;
     .name {
-      width: 70%;
+      width: 80%;
       margin: 0;
       border-bottom: 1px solid $brand-brown-dark;
       font-size: 22px;
@@ -621,7 +620,7 @@ button {
     .weight-info {
       position: absolute;
       top: 6px;
-      left: 65%;
+      left: 70%;
       z-index: 10;
     }
   }
