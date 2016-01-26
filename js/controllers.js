@@ -82,6 +82,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         msg:'Your query has been sent'
                       });
                         $scope.asksuman = {};
+                        formValidate.email.$touched= false;
                     }
                 });
             }else{
@@ -284,22 +285,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -806,22 +807,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -833,22 +834,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -860,22 +861,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -887,22 +888,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -914,22 +915,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -941,22 +942,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -968,22 +969,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -995,22 +996,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -1022,22 +1023,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
@@ -1049,22 +1050,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "../img/health/ailment.png",
+            img: "img/health/ailment.png",
             caption: "ailment control"
         }, {
-            img: "../img/health/ageing.png",
+            img: "img/health/ageing.png",
             caption: "healthy ageing"
         }, {
-            img: "../img/health/cancer.png",
+            img: "img/health/cancer.png",
             caption: "lactation"
         }, {
-            img: "../img/health/kids.png",
+            img: "img/health/kids.png",
             caption: "superkids"
         }, {
-            img: "../img/health/loss.png",
+            img: "img/health/loss.png",
             caption: "inch loss"
         }, {
-            img: "../img/health/pregnancy.png",
+            img: "img/health/pregnancy.png",
             caption: "pregnancy"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
