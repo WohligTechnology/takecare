@@ -50,9 +50,9 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/successstories",
     subnav: []
   }, {
-    name: "Blog",
+    name: "Blog (Coming Soon)",
     classis: "active",
-    link: "#/bloglisting",
+    link: "",
     subnav: []
   }, {
     name: "News",
@@ -63,11 +63,6 @@ var navigationservice = angular.module('navigationservice', [])
     name: "FAQ",
     classis: "active",
     link: "#/faq",
-    subnav: []
-  }, {
-    name: "Careers",
-    classis: "active",
-    link: "#/",
     subnav: []
   }, {
     name: "Contact",
