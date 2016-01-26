@@ -87,6 +87,8 @@
   }
   .stories-section .read-detail.right .name { @include margin(6px 0 0 -80px); }
   .stories-section .read-detail.right .location { @include margin(0 0 0 -80px); }
+
+  .section-story .slider { height: auto; }
 }
 @media (max-width: $screen-sm-max) {
 
@@ -172,6 +174,8 @@
   .stories-section .get-round.img-right { @include position(absolute, 6px 30% auto auto); }
   .stories-section .read-detail.left hr, .stories-section .read-detail.right hr { @include margin(20px 0); }
   .care-programs h3 { margin: 0 50px; }
+
+  .section-story .slider { height: auto; }
 }
 @media (max-width: $screen-xs-max) {
 
@@ -356,6 +360,7 @@
   }
 }
 @media (max-width: 480px) {
+  .various .circle { width: 10%; }
   .selfcare-image h2 { font-size: 14px; }
   .logo {
     margin: 15px 0 0;
