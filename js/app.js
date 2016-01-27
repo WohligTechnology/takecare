@@ -120,8 +120,8 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     controller: 'CoolSculptingCtrl'
   })
 
-  .state('bloglising', {
-    url: "/bloglising",
+  .state('blog', {
+    url: "/blog",
     templateUrl: "views/template.html",
     controller: 'BlogCtrl'
   })
