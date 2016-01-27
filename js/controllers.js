@@ -692,7 +692,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.user=$.jStorage.get("user");
           $scope.tabs[1].active=true;
           console.log($scope.tabs);
-        };
+        }
+        $scope.closeAlert=function(index){
+          $scope.alerts.splice(index, 1);
+          };
         $scope.getCart = function() {
             NavigationService.showCart(function(data) {
                 $scope.allcart = data;
@@ -778,6 +781,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             amount: "150.00",
             totalamount: "150.00"
         }];
+
     })
     .controller('TeamCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
