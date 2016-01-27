@@ -1179,6 +1179,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService;
         $scope.subsresponse = false;
         $scope.msg = "";
+        $scope.categories = [];
+        NavigationService.getCategory(function(data) {
+            $scope.categories = data;
+        })
         $scope.subscribe = function(input, formValidate) {
             $scope.subsresponse = false;
             if (formValidate.$valid) {
