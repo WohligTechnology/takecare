@@ -285,6 +285,7 @@ textarea {
 .no-border {
   border: none;
 }
+.m-clear { margin: 0; }
 // Class
 .relate {
   position: relative;
@@ -1114,7 +1115,8 @@ button {
     overflow: hidden;
   }
   figcaption {
-    @include margin(10px 0);
+    width: 300px;
+    @include margin(10px auto);
   }
   .quantity {
     width: 50px;
@@ -1712,14 +1714,19 @@ footer {
 }
 // end terms n privacy
 
-//////nutri/////
-.nutri-one, .nutri-two ,.nutri-three, .nutri-four, .nutri-five, .nutri-six {
+//////nutri and cool-sculpting/////
+
+.back-img {
   min-height: 370px;
   padding: 80px;
 background-repeat: no-repeat;
 background-position: center center;
 background-size: 100% 100%;
 p { font-size: 16px; }
+.descp {
+  width: 80%;
+  margin: 30px 0 0;
+}
 }
 .nutri-one { background-image: url('../img/nutri/genetic.png'); }
 .nutri-two { background-image: url('../img/nutri/blue-dna.jpg'); }
@@ -1728,13 +1735,6 @@ p { font-size: 16px; }
 .nutri-five { background-image: url('../img/nutri/doctor.jpg'); }
 .nutri-six { background-image: url('../img/nutri/mobile.jpg'); }
 
-.unlock,
-.what-nutri {
-  p {
-    width: 80%;
-    margin: 30px 0 0;
-  }
-}
 .doctor,
 .contact {
   p {
@@ -1766,16 +1766,17 @@ p { font-size: 16px; }
    opacity: 0.5;
  }
 }
-
 .benefits {
   .nutri-benefit {
     width: 50%;
     margin: 30px auto;
     p { margin: 20px 0; }
   }
+}
+.same-slider{
   .flexslider {
     border: none;
-    margin: 0;
+    margin: 30px 0 0;
     background-color: transparent;
     .flex-control-nav { display: none; }
     &:hover {
@@ -1806,7 +1807,15 @@ p { font-size: 16px; }
   }
 }
 
-////end nutri///
+.sculp-one   { background-image: url('../img/sculpting/belly.png'); }
+.sculp-two   { background-image: url('../img/sculpting/fat.png'); }
+.sculp-three { background-image: url('../img/sculpting/video.jpg'); }
+.sculp-four  { background-image: url('../img/sculpting/works.png');}
+.sculp-five  { background-image: url('../img/sculpting/improvement.png');}
+.sculp-six   { background-image: url('../img/sculpting/applicators.png');}
+.sculp-seven { background-image: url('../img/sculpting/ready.png');}
+.sculp-eight { background-image: url('../img/sculpting/applicators.png');}
+////end nutri and cool sculpting///
 
 @import "harsh";
 @import "mobile";

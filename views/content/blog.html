@@ -15,7 +15,7 @@
                     <img ng-src="{{blog.img}}" alt="" class="img-responsive">
                   </div>
                   <div class="blog-detail">
-                    <h3>{{blog.title}}</h3>
+                    <h3 class="brand-brown-dark text-uppercase">{{blog.title}}</h3>
                     <p class="blog-descp">{{blog.descp}}</p>
                     <div class="read-more">
                       <a href="" class="btn btn-primary text-uppercase">read more</a>
@@ -36,6 +36,27 @@
                 </div>
               </div>
             </form>
+            <div class="post">
+              <h3 class="text-uppercase brand-brown-dark">popular post</h3>
+              <div class="blog-post" ng-repeat="post in popularpost">
+                <div class="media">
+                  <div class="media-left">
+                    <div class="media-imghold">
+                      <img ng-src="{{post.img}}" alt="" class="img-responsive media-object">
+                    </div>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">{{post.title}}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tags">
+              <h3 class="text-uppercase brand-brown-dark">tags</h3>
+              <div class="click-tag">
+                <a href="" class="btn btn-primary text-uppercase" ng-repeat="tag in tagger">{{tag.name}}</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
