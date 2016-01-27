@@ -159,6 +159,7 @@
                       </td>
                       <td>
                         <input type="number" class="text-center quantity" name="" id="" value="{{product.qty}}" disabled>
+                        <div class="text-center" ng-show="product.exceeds">Quantity unavailable.</div>
                         <!-- <span class="more inline-block brand-primary-bg white"><i class="fa fa-plus"></i></span>
                         <span class="less inline-block brand-primary-bg white"><i class="fa fa-minus"></i></span> -->
                       </td>

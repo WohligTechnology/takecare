@@ -1,8 +1,8 @@
 // var mainurl = "http://wohlig.io:81/callApi/takecare/";
-var mainurl = "http://moviewsapp.com/selfcare/index.php/";
-// var mainurl = "http://localhost/selfback/index.php/";
-var imgurl = "http://moviewsapp.com/selfcare/uploads/";
-// var imgurl = "http://localhost/selfback/uploads/";
+// var mainurl = "http://moviewsapp.com/selfcare/index.php/";
+var mainurl = "http://localhost/selfback/index.php/";
+// var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+var imgurl = "http://localhost/selfback/uploads/";
 // var imgurl="";
 
 var adminurl = mainurl + "json/";
@@ -102,6 +102,9 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getProductsByCategory: function(request, callback) {
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + request.categoryid + '&subcategories=' + request.subcategories).success(callback);
+    },
+    checkoutCheck:function(callback){
+      $http.get(adminurl+'checkoutCheck').success(callback);
     },
     logout:function(callback){
       $http.get(adminurl+ 'logout').success(callback);

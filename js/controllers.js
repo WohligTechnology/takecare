@@ -6,14 +6,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.asksuman = {};
-        $scope.alerts=[];
+        $scope.alerts = [];
         $scope.navigation = NavigationService.getnav();
         NavigationService.getSlide(function(data) {
             $scope.homeslider = data;
         });
         $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-      };
+            $scope.alerts.splice(index, 1);
+        };
         $scope.homestory = [{
             name: "Rishabh Maniktala",
             location: "Mumbai, India",
@@ -77,19 +77,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 NavigationService.askSumanSubmit(input, function(data) {
                     console.log(data);
                     if (data.value == true) {
-                      $scope.alerts.push({
-                        type:'success',
-                        msg:'Your query has been sent'
-                      });
+                        $scope.alerts.push({
+                            type: 'success',
+                            msg: 'Your query has been sent'
+                        });
                         $scope.asksuman = {};
-                        formValidate.email.$touched= false;
+                        formValidate.email.$touched = false;
                     }
                 });
-            }else{
-              $scope.alerts.push({
-                type:'danger',
-                msg:'Please input all details'
-              });
+            } else {
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: 'Please input all details'
+                });
             }
         }
     })
@@ -143,7 +143,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.categories = [];
         $scope.subCategories = [];
         $scope.products = [];
-        $scope.alerts=[];
+        $scope.alerts = [];
         NavigationService.getCategoryById($scope.categoryid, function(data) {
             $scope.productCategory = data;
             console.log($scope.productCategory);
@@ -160,8 +160,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }), 1);
         });
         $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-      };
+            $scope.alerts.splice(index, 1);
+        };
         $scope.cartAdd = function(item) {
             var input = {
                 product: item,
@@ -170,17 +170,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             console.log(input);
             NavigationService.addToCart(input, function(data) {
-              console.log(data);
+                console.log(data);
                 if (data.value == true) {
                     $scope.alerts.push({
-                      type:'success',
-                      msg:'Added to cart'
+                        type: 'success',
+                        msg: 'Added to cart'
                     });
                 } else {
-                  $scope.alerts.push({
-                    type:'danger',
-                    msg:'Already in cart'
-                  });
+                    $scope.alerts.push({
+                        type: 'danger',
+                        msg: 'Already in cart'
+                    });
 
                 }
             });
@@ -236,46 +236,46 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Health Management");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.categorylist=[{
-          name:'weight loss for kids',
-          id:1,
-          image:'img/health/kids.png'
-        },{
-          name:'weightloss with health gain',
-          id:2,
-          image:'img/health/weightloss.png'
-        },{
-          name:'post pregnancy weight loss with lactation',
-          id:3,
-          image:'img/health/kids.png'
-        },{
-          name:'weightloss with pcos and insulin resistence',
-          id:4,
-          image:'img/health/kids.png'
-        },{
-          name:'healthy aging',
-          id:5,
-          image:'img/health/weightloss.png'
-        },{
-          name:'pregnancy',
-          id:6,
-          image:'img/health/kids.png'
-        },{
-          name:'weight gain',
-          id:7,
-          image:'img/health/kids.png'
-        },{
-          name:'ailment control',
-          id:8,
-          image:'img/health/weightloss.png'
-        },{
-          name:'cancer support',
-          id:9,
-          image:'img/health/kids.png'
-        },{
-          name:'marathon / sports nutrition',
-          id:10,
-          image:'img/health/kids.png'
+        $scope.categorylist = [{
+            name: 'weight loss for kids',
+            id: 1,
+            image: 'img/health/kids.png'
+        }, {
+            name: 'weightloss with health gain',
+            id: 2,
+            image: 'img/health/weightloss.png'
+        }, {
+            name: 'post pregnancy weight loss with lactation',
+            id: 3,
+            image: 'img/health/kids.png'
+        }, {
+            name: 'weightloss with pcos and insulin resistence',
+            id: 4,
+            image: 'img/health/kids.png'
+        }, {
+            name: 'healthy aging',
+            id: 5,
+            image: 'img/health/weightloss.png'
+        }, {
+            name: 'pregnancy',
+            id: 6,
+            image: 'img/health/kids.png'
+        }, {
+            name: 'weight gain',
+            id: 7,
+            image: 'img/health/kids.png'
+        }, {
+            name: 'ailment control',
+            id: 8,
+            image: 'img/health/weightloss.png'
+        }, {
+            name: 'cancer support',
+            id: 9,
+            image: 'img/health/kids.png'
+        }, {
+            name: 'marathon / sports nutrition',
+            id: 10,
+            image: 'img/health/kids.png'
         }];
     })
     .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -370,13 +370,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.productid = $stateParams.id;
         $scope.product = {};
-        $scope.alerts=[];
+        $scope.alerts = [];
         $scope.outofstock = false;
         $scope.filter = {};
         $scope.filter.quantity = "01";
         $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-      };
+            $scope.alerts.splice(index, 1);
+        };
         NavigationService.getProductDetail($scope.productid, function(data) {
             console.log(data);
             $scope.product = data;
@@ -391,18 +391,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             console.log(input);
             NavigationService.addToCart(input, function(data) {
-              if (data.value == true) {
-                  $scope.alerts.push({
-                    type:'success',
-                    msg:'Added to cart'
-                  });
-              } else {
-                $scope.alerts.push({
-                  type:'danger',
-                  msg:'Already in cart'
-                });
+                if (data.value == true) {
+                    $scope.alerts.push({
+                        type: 'success',
+                        msg: 'Added to cart'
+                    });
+                } else {
+                    $scope.alerts.push({
+                        type: 'danger',
+                        msg: 'Already in cart'
+                    });
 
-              }
+                }
             });
         }
         $scope.like = [{
@@ -601,14 +601,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             link: "https://www.youtube.com/embed/Cn2z-n0t51o?autoplay=1"
         }];
     })
-    .controller('CartCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('CartCtrl', function($scope, TemplateService, NavigationService, $timeout,$state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("cart");
         $scope.menutitle = NavigationService.makeactive("My Cart");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.allcart = [];
-        $scope.alerts=[];
+        $scope.alerts = [];
         $scope.getCart = function() {
             NavigationService.showCart(function(data) {
                 $scope.allcart = data;
@@ -616,9 +616,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 _.each($scope.allcart, function(key) {
                     $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
                     key.qty = parseInt(key.qty);
+                    if(!$scope.validateQuantity(key)){
+                      key.exceeds = true;
+                    }else{
+                      key.exceeds=false;
+                    }
                 })
             })
         };
+        $scope.proceedToCheckout = function(){
+          NavigationService.checkoutCheck(function(data){
+            if(data.value){
+                $state.go("checkout");
+            }else{
+              $scope.getCart();
+              $scope.alerts.push({
+                type:'danger',
+                msg:'Remove out of stock items'
+              });
+            }
+          })
+        }
+        $scope.validateQuantity = function(item) {
+            if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
         $scope.getCart();
         $scope.updateQuantity = function(item) {
             NavigationService.addToCart({
@@ -640,41 +665,40 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.updateQuantity(item);
         };
         $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-      };
+            $scope.alerts.splice(index, 1);
+        };
         $scope.removeCart = function(item) {
             NavigationService.removeFromCart({
                 id: item.id
             }, function(data) {
                 if (data.value == true) {
-                  $scope.alerts.push({
-                    type:'success',
-                    msg:'Removed from cart'
-                  });
+                    $scope.alerts.push({
+                        type: 'success',
+                        msg: 'Removed from cart'
+                    });
                     $scope.getCart();
                 } else {
-                  $scope.alerts.push({
-                    type:'danger',
-                    msg:'Not removed from cart'
-                  });
+                    $scope.alerts.push({
+                        type: 'danger',
+                        msg: 'Not removed from cart'
+                    });
                 }
             })
         }
     })
     .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
         $scope.template = TemplateService.changecontent("checkout");
         $scope.menutitle = NavigationService.makeactive("Checkout");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.guest = "notguest";
         $scope.guestshow = true;
-        $scope.allcart=[];
-        $scope.checkout={};
-        $scope.alerts=[];
-        $scope.user={};
+        $scope.allcart = [];
+        $scope.checkout = {};
+        $scope.alerts = [];
+        $scope.user = {};
         $scope.shippingcharges = 0;
-        $scope.login={};
+        $scope.login = {};
         $scope.tabs = [{
             active: true,
             disabled: true
@@ -688,14 +712,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             active: false,
             disabled: true
         }, ];
-        if($.jStorage.get("user")){
-            $scope.user=$.jStorage.get("user");
-          $scope.tabs[1].active=true;
-          console.log($scope.tabs);
+        if ($.jStorage.get("user")) {
+            $scope.user = $.jStorage.get("user");
+            $scope.tabs[1].active = true;
+            console.log($scope.tabs);
         }
-        $scope.closeAlert=function(index){
-          $scope.alerts.splice(index, 1);
-          };
+        $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
+        };
         $scope.getCart = function() {
             NavigationService.showCart(function(data) {
                 $scope.allcart = data;
@@ -703,10 +727,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 _.each($scope.allcart, function(key) {
                     $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
                     key.qty = parseInt(key.qty);
+                    if(!$scope.validateQuantity(key)){
+                      key.exceeds = true;
+                    }else{
+                      key.exceeds=false;
+                    }
                 })
-                $scope.totalcart=$scope.totalcart+$scope.shippingcharges;
+                $scope.totalcart = $scope.totalcart + $scope.shippingcharges;
             })
         };
+        $scope.validateQuantity = function(item) {
+            if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
         $scope.getCart();
         $scope.selectGuest = function(input) {
             console.log(input);
@@ -717,55 +753,62 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.guestshow = false;
             }
         };
-        $scope.proceedToPayment= function(){
-          if($scope.allcart.length >0 ){
-            $scope.checkout.cart=$scope.allcart;
-            NavigationService.placeOrder($scope.checkout,function(data){
-              $scope.alerts.push({
-                type:'success',
-                msg:'Order Placed. Order ID : '+data
-              })
-            })
-          }
-
-        };
-        $scope.proceedToShipping = function(input,status,formValidate) {
-          if(!status){
-            if(formValidate.email.$valid){
-              $scope.checkout.email=input.email;
-              console.log($scope.checkout);
-              $scope.tabs[1].active=true;
-            }
-          }else{
-            if(formValidate.email.$valid && formValidate.password.$valid){
-              NavigationService.loginuser(input, function(data) {
-                  if (data.value == false) {
-                  } else {
-                      $.jStorage.set("user", data);
-                      $scope.user=$.jStorage.get("user");
-                      window.location.reload();
+        $scope.proceedToPayment = function() {
+            if ($scope.allcart.length > 0) {
+                $scope.checkout.cart = $scope.allcart;
+                NavigationService.checkoutCheck(function(data){
+                  if(data.value){
+                    NavigationService.placeOrder($scope.checkout, function(data) {
+                        $scope.alerts.push({
+                            type: 'success',
+                            msg: 'Order Placed. Order ID : ' + data
+                        })
+                    })
+                  }else{
+                    $scope.alerts.push({
+                      type:'danger',
+                      msg:'Remove out of stock items from cart'
+                    });
                   }
-              });
+                })
             }
-          }
+        };
+        $scope.proceedToShipping = function(input, status, formValidate) {
+            if (!status) {
+                if (formValidate.email.$valid) {
+                    $scope.checkout.email = input.email;
+                    console.log($scope.checkout);
+                    $scope.tabs[1].active = true;
+                }
+            } else {
+                if (formValidate.email.$valid && formValidate.password.$valid) {
+                    NavigationService.loginuser(input, function(data) {
+                        if (data.value == false) {} else {
+                            $.jStorage.set("user", data);
+                            $scope.user = $.jStorage.get("user");
+                            window.location.reload();
+                        }
+                    });
+                }
+            }
         }
-        $scope.proceedToSummary= function(input,formValidate){
-          console.log(input);
-          if(formValidate.$valid){
-            if(!$scope.guestshow){
-              $scope.checkout=$scope.user;
-              $scope.checkout.email=$scope.login.email;
-              console.log($scope.guestshow);
-            }else{
-              $scope.checkout=$scope.user;
-              console.log($scope.guestshow);
-            }
-            console.log($scope.checkout);
-            $scope.tabs[2].active=true;
-            $scope.getCart();
-          }else{
+        $scope.proceedToSummary = function(input, formValidate) {
+            console.log(input);
+            if (formValidate.$valid) {
+                if (!$scope.guestshow) {
+                    $scope.checkout = $scope.user;
+                    $scope.checkout.email = $scope.login.email;
+                    console.log($scope.guestshow);
+                } else {
+                    $scope.checkout = $scope.user;
+                    console.log($scope.guestshow);
+                }
+                console.log($scope.checkout);
+                $scope.tabs[2].active = true;
+                $scope.getCart();
+            } else {
 
-          }
+            }
 
         }
         $scope.Checkoutcart = [{
@@ -796,6 +839,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Cool Sculpting");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.applicators = [
+          {
+            img: "img/sculpting/coolmax.jpg",
+            heading: "Large Applicator - Cool Max",
+            descp: "We call this applicator the 'Debulker'. We use this applicator to treat belly hangover and large areas on abs to maximize fat reduction."
+          },
+          {
+            img: "img/sculpting/coolmax.jpg",
+            heading: "Large Applicator - Cool Max",
+            descp: "We call this applicator the 'Debulker'. We use this applicator to treat belly hangover and large areas on abs to maximize fat reduction."
+          }
+        ];
+        $scope.faqsculp = [
+          {
+            qts: "Am I a good candidate?",
+            descp: "Good candidates have noticeable bulges in certain areas they’d like to get rid of. The CoolSculpting fat reduction procedure is specifically designed for those who have unwanted fat that resists diet and exercise. Unlike gastric bypass surgery, the CoolSculpting procedure is not a weight loss solution for people who are obese. It is, however a non-surgical alternative to liposuction. Request a one-on-one consultation with us to determine if the CoolSculpting procedure is right for you."
+          },
+          {
+            qts: "Am I a good candidate?",
+            descp: "Good candidates have noticeable bulges in certain areas they’d like to get rid of. The CoolSculpting fat reduction procedure is specifically designed for those who have unwanted fat that resists diet and exercise. Unlike gastric bypass surgery, the CoolSculpting procedure is not a weight loss solution for people who are obese. It is, however a non-surgical alternative to liposuction. Request a one-on-one consultation with us to determine if the CoolSculpting procedure is right for you."
+          }
+        ];
     })
     .controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -803,6 +868,102 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.blogpage = [
+          {
+            img: "img/blog/post1.jpg",
+            title: "Your Questions, Answered",
+            descp: "Q1. How much does the CoolSculpting procedure cost? Ans. The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals..."
+          },
+          {
+            img: "img/blog/post2.jpg",
+            title: "Sparkle This Season",
+            descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
+          },
+          {
+            img: "img/blog/post3.jpg",
+            title: "Cranberry Juice",
+            descp: "Cranberry Juice Fights Heart Disease  Berries’ Antioxidants Raise “Good” Cholesterol, Lower “Bad”   – Drink up — cranberry juice, that is. Cranberry juice loads the blood with lots of disease-fighting antioxidants..."
+          },
+          {
+            img: "img/blog/post4.jpg",
+            title: "Lemons",
+            descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
+          },
+          {
+            img: "img/blog/post5.jpg",
+            title: "Energy Expenditure In Exercise",
+            descp: "Our body needs a constant supply of energy to be able to carry out everyday tasks. When we exercise the rate at which our body uses energy is higher, and the efficiency of the energy supply is one ..."
+          },
+          {
+            img: "img/blog/post6.jpg",
+            title: "Pump Up Your Workout",
+            descp: "We believe that choice of music will differ for everyone. Here are some of our personal favorites that will pump up your workout Greyhound- Swedish house mafia (original mix) The workout..."
+          }
+        ];
+        $scope.popularpost = [
+          {
+            img: "img/blog/popular/post1.jpg",
+            title: "Dhruv Kaji"
+          },
+          {
+            img: "img/blog/popular/post2.jpg",
+            title: "Juice it up or not"
+          },
+          {
+            img: "img/blog/popular/post3.jpg",
+            title: "White Bread vs Brown Bread"
+          },
+          {
+            img: "img/blog/popular/post4.jpg",
+            title: "The Complete PLate Theory"
+          },
+          {
+            img: "img/blog/popular/post5.jpg",
+            title: "Bearing the Brunt of Heartburn"
+          }
+        ];
+        $scope.tagger = [
+          {
+            name: "acidity",
+            link: ""
+          },
+          {
+            name: "benefits",
+            link: ""
+          },
+          {
+            name: "bhelpuri",
+            link: ""
+          },
+          {
+            name: "body",
+            link: ""
+          },
+          {
+            name: "Bread",
+            link: ""
+          },
+          {
+            name: "burger",
+            link: ""
+          },
+          {
+            name: "buttermilk",
+            link: ""
+          },
+          {
+            name: "calories",
+            link: ""
+          },
+          {
+            name: "carbs",
+            link: ""
+          },
+          {
+            name: "carrot",
+            link: ""
+          }
+        ];
     })
     .controller('PregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1080,6 +1241,96 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog Detail");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.blogtags = [
+          {
+            tag: "food",
+            link: ""
+          },
+          {
+            tag: "fruits",
+            link: ""
+          },
+          {
+            tag: "lemon honey water",
+            link: ""
+          },
+          {
+            tag: "monsoon",
+            link: ""
+          },
+          {
+            tag: "skin",
+            link: ""
+          },
+          {
+            tag: "skin friendly",
+            link: ""
+          }
+        ];
+        $scope.popularpost = [
+          {
+            img: "img/blog/popular/post1.jpg",
+            title: "Dhruv Kaji"
+          },
+          {
+            img: "img/blog/popular/post2.jpg",
+            title: "Juice it up or not"
+          },
+          {
+            img: "img/blog/popular/post3.jpg",
+            title: "White Bread vs Brown Bread"
+          },
+          {
+            img: "img/blog/popular/post4.jpg",
+            title: "The Complete PLate Theory"
+          },
+          {
+            img: "img/blog/popular/post5.jpg",
+            title: "Bearing the Brunt of Heartburn"
+          }
+        ];
+        $scope.tagger = [
+          {
+            name: "acidity",
+            link: ""
+          },
+          {
+            name: "benefits",
+            link: ""
+          },
+          {
+            name: "bhelpuri",
+            link: ""
+          },
+          {
+            name: "body",
+            link: ""
+          },
+          {
+            name: "Bread",
+            link: ""
+          },
+          {
+            name: "burger",
+            link: ""
+          },
+          {
+            name: "buttermilk",
+            link: ""
+          },
+          {
+            name: "calories",
+            link: ""
+          },
+          {
+            name: "carbs",
+            link: ""
+          },
+          {
+            name: "carrot",
+            link: ""
+          }
+        ];
     })
     .controller('RecipesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1094,16 +1345,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Nutrigenomics");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.nutrigenomics = [
-       {
-         qts: "What Will This Analysis Do For Me?",
-         ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
-       },
-       {
-         qts: "What Will This Analysis Do For Me?",
-         ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
-       }
-     ];
+        $scope.nutrigenomics = [{
+            qts: "What Will This Analysis Do For Me?",
+            ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
+        }, {
+            qts: "What Will This Analysis Do For Me?",
+            ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
+        }];
     })
     .controller('StatsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1119,36 +1367,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.footermenu = "";
-        $scope.alerts=[];
-        $scope.contact={};
+        $scope.alerts = [];
+        $scope.contact = {};
 
         $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-      };
+            $scope.alerts.splice(index, 1);
+        };
         $scope.contactUs = function(input, formValidate) {
             console.log(input);
             console.log(formValidate);
-            if(formValidate.$valid){
-              NavigationService.contactSubmit(input, function(data) {
-                  if (data.value == true) {
-                    $scope.alerts.push({
-                      type:'success',
-                      msg:'Your enquiry has been sent'
-                    });
-                    $scope.contact={};
-                    formValidate.firstname.$touched=false;
-                  }else{
-                    $scope.alerts.push({
-                      type:'danger',
-                      msg:'Unable to send enquiry'
-                    });
-                  }
-              });
-            }else{
-              $scope.alerts.push({
-                type:'danger',
-                msg:'Please input all details'
-              });
+            if (formValidate.$valid) {
+                NavigationService.contactSubmit(input, function(data) {
+                    if (data.value == true) {
+                        $scope.alerts.push({
+                            type: 'success',
+                            msg: 'Your enquiry has been sent'
+                        });
+                        $scope.contact = {};
+                        formValidate.firstname.$touched = false;
+                    } else {
+                        $scope.alerts.push({
+                            type: 'danger',
+                            msg: 'Unable to send enquiry'
+                        });
+                    }
+                });
+            } else {
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: 'Please input all details'
+                });
             }
 
         }
@@ -1203,7 +1451,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
-        $scope.alreadyReg=false;
+        $scope.alreadyReg = false;
         $scope.enablelogout = false;
         if ($.jStorage.get("user")) {
             $scope.enablelogout = true;
@@ -1226,15 +1474,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         $scope.doSignup = function(accept, input, formValidate) {
             $scope.acceptValidate = false;
-            $scope.alreadyReg=false;
+            $scope.alreadyReg = false;
             if (!accept) {
                 $scope.acceptValidate = true;
             } else {
                 if (formValidate.$valid) {
                     NavigationService.signup(input, function(data) {
                         if (data.value == false) {
-                          console.log("herer");
-                          $scope.alreadyReg=true;
+                            console.log("herer");
+                            $scope.alreadyReg = true;
                         } else {
                             $.jStorage.set("user", data);
                             window.location.reload();
@@ -1257,11 +1505,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
 
-       $scope.health = [
-         "Cholesterol",
-         "High Blood Pressure",
-         "Diabetes",
-         "Ailment Control",
-         "Weight Management"
-       ];
+        $scope.health = [
+            "Cholesterol",
+            "High Blood Pressure",
+            "Diabetes",
+            "Ailment Control",
+            "Weight Management"
+        ];
     });
