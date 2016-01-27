@@ -718,6 +718,7 @@
       @include margin(0 auto 20px);
       overflow: hidden;
     }
+    .name { min-height: 40px; }
   }
 }
 

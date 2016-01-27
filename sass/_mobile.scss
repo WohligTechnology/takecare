@@ -596,6 +596,7 @@
       margin: 18px 0;
       font-size: 20px;
     }
+    .prd-price { font-size: 20px; }
     .inner-product-detail {
       padding: 20px;
       margin: 0 auto;
@@ -1133,6 +1134,7 @@
   .product-also-like {
     margin: 40px 0 60px;
     h3 { font-size: 18px; }
+    .prd-price { font-size: 18px; }
     .inner-like {
       .like-image { @include square(90px); }
       span {
@@ -1590,7 +1592,10 @@
     h3 {
       margin: 10px 0;
       font-size: 16px;
-      span { margin-right: 10px; }
+    }
+    .prd-price {
+      font-size: 16px;
+      margin-right: 10px;
     }
     .product-image {
       @include square(150px);

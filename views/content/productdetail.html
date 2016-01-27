@@ -18,11 +18,13 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-10">
-              <h3 class="text-uppercase font-semibold">{{product.product.name || 'Loading..'}}
+              <div class="prd-title">
+                <h3 class="text-uppercase font-semibold">{{product.product.name || 'Loading..'}}
+                </h3>
                 <span class="text-center font-semibold brand-primary prd-price">
                   <i class="fa fa-inr"></i>
                   {{product.product.price}}</span>
-              </h3>
+              </div>
               <div class="prd-descp">
                 <div class="product-price inline-block">
                   <p class="font-semibold">Net Weight:
