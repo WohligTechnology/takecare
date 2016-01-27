@@ -1,7 +1,7 @@
 // var mainurl = "http://wohlig.io:81/callApi/takecare/";
-var mainurl = "http://wohlig.co.in/selfbackend/index.php/";
+var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 // var mainurl = "http://localhost/selfback/index.php/";
-var imgurl = "http://wohlig.co.in/selfbackend/uploads/";
+var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
 // var imgurl="";
 
