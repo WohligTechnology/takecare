@@ -673,7 +673,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.checkout={};
         $scope.alerts=[];
         $scope.user={};
-        $scope.shippingcharges = 200;
+        $scope.shippingcharges = 0;
         $scope.login={};
         $scope.tabs = [{
             active: true,
