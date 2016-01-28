@@ -1,43 +1,167 @@
 <section>
-  <div class="selfcare-image">
-    <img src="img/apple.jpg" alt="">
-    <h2 class="text-uppercase get-center white font-semibold">Recipes</h2>
-  </div>
-
-  <div class="container">
-    <div class="about-desc get-up brand-brown-bg white health-descp relate">
-      <p>Recipes that help you eat right without compromising on taste.</p>
+    <div class="selfcare-image">
+        <img src="img/apple.jpg" alt="">
+        <h2 class="text-uppercase get-center white font-semibold">Recipes</h2>
     </div>
-  </div>
 
-  <div class="recipes-main">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-5">
-          <!-- flexslider -->
+        <div class="about-desc get-up brand-brown-bg white relate">
+            <p class="health-descp">Recipes that help you eat right without compromising on taste.</p>
         </div>
-        <div class="col-sm-7">
-          <div class="recipes-detail">
-            <h2 class="text-uppercase font-semibold">Baingan Bharta</h2>
-            <span>Roasted brinjal lightly cooked with spring onion flavour</span>
-            <div class="recipes-menu font-semibold">
-              <span class="block">Makes 1<sup>1/2</sup> cups</span>
-              <span class="block">Serving size: 1/2 cup</span>
-              <span class="block">Serves: 3</span>
-            </div>
-            <div class="recipes-time">
-              <span class="block">Preparation time: 5 mins</span>
-              <span class="block">Cooking time: 15 mins</span>
-            </div>
-          </div>
-          <!-- 3 Accordians -->
-        </div>
-      </div>
     </div>
-  </div>
 
-  <div class="other-recipes text-center">
-    <h3 class="text-uppercase font-semibold">Other recipes</h3>
-    <!-- flexslider -->
-  </div>
+    <div class="recipes-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div><img src="" alt=""></div>
+                    <div>
+                        <flex-slider></flex-slider>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="recipes-detail">
+                        <h2 class="text-uppercase font-semibold">Baingan Bharta</h2>
+                        <span>Roasted brinjal lightly cooked with spring onion flavour</span>
+                        <div class="recipes-menu font-semibold">
+                            <span class="block">Makes 1<sup>1/2</sup> cups</span>
+                            <span class="block">Serving size: 1/2 cup</span>
+                            <span class="block">Serves: 3</span>
+                        </div>
+                        <div class="recipes-time">
+                            <span class="block">Preparation time: 5 mins</span>
+                            <span class="block">Cooking time: 15 mins</span>
+                        </div>
+                    </div>
+                  <div>
+                    <uib-accordion close-others="oneAtATime" is-open="status.open">
+                      <uib-accordion-group is-open="status.isFirstOpen" is-disabled= "status.isFirstDisabled">
+                        <uib-accordion-heading>
+                          How does the online program work? <i class="open-me fa" ng-class="{'fa-minus': status.isFirstOpen, 'fa-plus': !status.isFirstOpen}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">We have more then 1000 national and international clients who consult us through net or phone. We have a trained team of nutritionists who consult with our clients either through emails, phones or skype, weekly. Suman consults the client during the first interaction, and maybe later on in the program as well, depending on the package taken.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open2">
+                        <uib-accordion-heading>
+                          Do I need to pay upfront or I can pay in installments?<i class="open-me fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes, money can be paid in installments depending on the package taken by client.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open3">
+                        <uib-accordion-heading>
+                          Does Suman Agarwal meet the clients personally?<i class="open-me fa" ng-class="{'fa-minus': status.open3, 'fa-plus': !status.open3}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes. Suman will meet the client personally for the first consultation. For further follow-ups she will be expected to meet the client depending upon the package taken by the client, or when there is a need to evaluate the reports and in case if the desired result is not achieved by client.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open4">
+                        <uib-accordion-heading>
+                          Is there any special offer or discount for a family or a couple?<i class="open-me fa" ng-class="{'fa-minus': status.open4, 'fa-plus': !status.open4}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes. We have special discounts for Senior citizens and Medical professionals.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open5">
+                        <uib-accordion-heading>
+                          How does this program work?<i class="open-me fa" ng-class="{'fa-minus': status.open5, 'fa-plus': !status.open5}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Suman &amp; her team provides a vast range of services including various weight-loss plans, weight-maintenance plans and other health management plans such as weight-gain, pregnancy diet, lactation, diet for senior citizens, and post cancer treatment. The diet is planned according to the person’s lifestyle. She &amp; her team include the regular food cooked at homes as well as restaurant menus in the diet. We not only provide you with diet and exercise plans, but will help you try and cure ailments and problems with food and vitamins. It will be a weekly consultation so that the client stays in touch with our nutritionists throughout their program. Suman &amp; her team will ensure that you lose weight in a healthy fashion through a series of lifestyle changes.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open6">
+                        <uib-accordion-heading>
+                          What is the pattern of diet, whether it is strict and how is the exercise pattern?<i class="open-me fa" ng-class="{'fa-minus': status.open6, 'fa-plus': !status.open6}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">She &amp; her team understand that people who are put on very strict limited diets cannot sustain it over a longer period. So we provide a well-balanced distressing diet for four main meals (breakfast, lunch, snacks and dinner). The food prescribed goes along well with the food that is normally cooked at homes. We quantify the food depending on the person’s age, height, body-frame size and medical history. We plan out the exercise regimen most suited to the client.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open7">
+                        <uib-accordion-heading>
+                          How soon we can get an appointment?<i class="open-me fa" ng-class="{'fa-minus': status.open7, 'fa-plus': !status.open7}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">We have a minimum of 5 - 6 days of waiting period. However, we do consider giving out an earlier appointment if there are out-station clients or if a client wants to take a premium package. Even clients with medical emergency can request an early appointment.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open8">
+                        <uib-accordion-heading>
+                          Do we get a grace period in case we are unable to achieve our target weight in the given time span?<i class="open-me fa" ng-class="{'fa-minus': status.open8, 'fa-plus': !status.open8}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes. Definitely Depending upon the package taken by the client i.e. in Gold package clients will get 2 weeks grace period where as Platinum & Diamond package clients will get 4 weeks grace period.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open9">
+                        <uib-accordion-heading>
+                          What are the differences between packages with Suman Agarwal and her Senior Nutritionist?<i class="open-me fa" ng-class="{'fa-minus': status.open9, 'fa-plus': !status.open9}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Considering different requirements of people we have divided the packages in 4 categories namely Silver, Gold, Platinum and Diamond.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open10">
+                        <uib-accordion-heading>
+                          How would I know which package suits me the best?<i class="open-me fa" ng-class="{'fa-minus': status.open10, 'fa-plus': !status.open10}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">At Selfcare, Suman &amp; her team guide you to opt for a particular package depending on your gender, age, height, medical history, blood reports, your personal requirements and lifestyle. We also have the facility of one-time oral consultation with Suman or our Senior Nutritionist.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open11">
+                        <uib-accordion-heading>
+                          Do you give tablets to lose weight?<i class="open-me fa" ng-class="{'fa-minus': status.open11, 'fa-plus': !status.open11}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">No, we do not give tablets to lose weight , but we recommend vitamins. We believe in a holistic approach while preparing a diet plan. We suggest few vitamins along with a healthy diet plan and personalized exercise schedule which can aid in improving your immunity, stamina, fat metabolism and basal metabolism etc. while giving a weight loss plan we make sure that you are only losing fat. Not losing muscle, hair, skin and mind.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open12">
+                        <uib-accordion-heading>
+                          Can we gift these programs to our family members or friends?<i class="open-me pull-right fa" ng-class="{'fa-minus': status.open12, 'fa-plus': !status.open12}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes of course. Health is the best gift which one can give. You can avail for our gift vouchers at our clinic or call on this number <a href="tel:61312222">61312222</a> for the same.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open13">
+                        <uib-accordion-heading>
+                          Do you have plans for kids as well?<i class="open-me fa" ng-class="{'fa-minus': status.open13, 'fa-plus': !status.open13}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes we do have monthly health management plans for duration of 2-4months for kids in which supports fat loss, weight loss, height gain, sports nutrition and problems such has weight gain, low immunity, low vitamin levels and hormonal problems.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open14">
+                        <uib-accordion-heading>Do you have packages other than weight loss, like detox or bridal package?<i class="open-me fa" ng-class="{'fa-minus': status.open14, 'fa-plus': !status.open14}"></i>
+                        </uib-accordion-heading>
+                        <div class="faq-descp">
+                          <p class="text-justify">Yes we do have monthly packages for to-be brides where we focus on healthy hair, skin, nails, weight loss and body toning. If your Big day is 2-3 months away from the day of your joining a plan, you can consider our new age cool sculpting plan to remove your stubborn areas of fat. Apart from weight loss we have other packages that include Ailment control, Diet During Pregnancy,Healthy ageing with skin and hair care, Diet for post cancer, Diet for Weight gain, Specialized diet for senior citizens, Diet for kids and teenagers, 4 week detox diet, Cool sculpting for spot reduction and contouring.</p>
+                        </div>
+                      </uib-accordion-group>
+                      <uib-accordion-group is-open="status.open15">
+                        <uib-accordion-heading>Do you suggest any elaborate blood tests? <i class="open-me fa" ng-class="{'fa-minus': status.open15, 'fa-plus': !status.open15}"></i>
+                       </uib-accordion-heading>
+                       <div class="faq-descp">
+                         <p class="text-justify">We do suggest basic blood tests and the number of tests may vary depending on their current health issues, their inability to lose weight or medical history, which can help us identify the reason behind your current medical issues and also tackle the vitamin deficiency too. We also have introduced personal gemonic tests which can help you identify your risk towards developing top 25 diseases like cancer, diabetes, Alzheimer’s etc.</p>
+                       </div>
+                    </uib-accordion-group>
+                  </uib-accordion>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="other-recipes text-center">
+        <h3 class="text-uppercase font-semibold">Other recipes</h3>
+        <!-- flexslider -->
+    </div>
 </section>
