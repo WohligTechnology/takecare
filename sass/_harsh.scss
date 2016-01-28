@@ -847,18 +847,6 @@ $side-menu-width: 390px;
   }
 }
 
-// Cool Sculpting
-
-.sculpting-one, .sculpting-two, .sculpting-three, .sculpting-four,
-.sculpting-five, .sculpting-six, .sculpting-seven, .sculpting-eight {
-  @include size(100%, 400px);
-}
-.sculpting-main, .nutri {
-  @include size(100%, 100%);
-  img { width: 100%; }
-}
-
-
 .alert-postion {
   position: fixed;
   max-width: 500px;

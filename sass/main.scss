@@ -181,11 +181,15 @@ $instagram: #396d9a !default;
 }
 .btn-yellow {
   @include button-variant(white, $brand-yellow, $brand-yellow);
-  &:hover { color: $body-bg !important; }
+  &:hover {
+    color: $body-bg !important;
+  }
 }
 .btn-blue {
   @include button-variant(white, $brand-blue, $brand-blue);
-  &:hover { color: $body-bg !important; }
+  &:hover {
+    color: $body-bg !important;
+  }
 }
 .btn-primary-inverse {
   @include button-variant($brand-primary, white, $brand-primary);
@@ -227,12 +231,13 @@ $instagram: #396d9a !default;
 body {
   background-color: #fff;
   font-family: $font-family-sans-serif;
-  .no-scroll{
+  .no-scroll {
     overflow: hidden;
-    .slide-menu { height: 115%; }
+    .slide-menu {
+      height: 115%;
+    }
   }
 }
-
 img.loading {
   text-align: center;
   opacity: 1;
@@ -285,7 +290,9 @@ textarea {
 .no-border {
   border: none;
 }
-.m-clear { margin: 0; }
+.m-clear {
+  margin: 0;
+}
 // Class
 .relate {
   position: relative;
@@ -675,7 +682,9 @@ button {
   form {
     select {
       color: #fff;
-      option { background-color: $brand-primary; }
+      option {
+        background-color: $brand-primary;
+      }
     }
     textarea {
       min-height: 225px;
@@ -711,7 +720,9 @@ button {
 /////////////////////
 ////Health-Management
 ////////////////////
-.story-video img { @include size(100%, auto); }
+.story-video img {
+  @include size(100%, auto);
+}
 .health-descp {
   font-size: 16px;
 }
@@ -773,14 +784,18 @@ button {
     display: block;
     font-size: 14px;
   }
-  .duration { display: block; }
+  .duration {
+    display: block;
+  }
 }
 .weight-round {
   @include square(100px);
   p {
     margin: 0;
   }
-  .lost { padding: 14px 0 2px; }
+  .lost {
+    padding: 14px 0 2px;
+  }
 }
 // .health-tab {
 //   .tab-chart { width: 83%; }
@@ -816,17 +831,25 @@ button {
   }
   .nav-tabs li:first-child a {
     background-color: #fff;
-    margin: 0 0 3px 0;
+    margin: 0 0 3px;
     padding: 8px 0 4px;
     .chart-head {
-      p { color: black; }
-      .price { color: $brand-primary; }
+      p {
+        color: black;
+      }
+      .price {
+        color: $brand-primary;
+      }
     }
     &:hover {
       background-color: #fff !important;
       .chart-head {
-        p { color: black; }
-        .price { color: $brand-primary; }
+        p {
+          color: black;
+        }
+        .price {
+          color: $brand-primary;
+        }
       }
     }
     &:after {
@@ -854,7 +877,9 @@ button {
         padding: 7px 0;
         z-index: 1;
         @include transition(all 0ms ease);
-        &:focus { background-color: transparent; }
+        &:focus {
+          background-color: transparent;
+        }
         &:hover {
           background-color: $brand-primary;
           color: #fff;
@@ -921,7 +946,6 @@ button {
   // @include size(190px, auto);
   padding: 12px 0 0;
 }
-
 // .weight .tab-chart .nav-tabs li a {
 //   @include size(190px, 76px);
 //   padding: 10px 0 0;
@@ -1396,7 +1420,9 @@ footer {
   }
   .copyright {
     margin-top: 25px;
-    a:hover { color: $brand-primary-lighter; }
+    a:hover {
+      color: $brand-primary-lighter;
+    }
   }
 }
 .health-foot {
@@ -1418,7 +1444,9 @@ footer {
     padding: 12px 25px;
     font-size: 18px;
     letter-spacing: 4px;
-    &:hover{ color: $brand-primary; }
+    &:hover {
+      color: $brand-primary;
+    }
   }
 }
 .radio {
@@ -1482,44 +1510,44 @@ footer {
 }
 // select
 .custom-select {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 999;
+  select {
+    @include appearance(none);
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    outline: 0;
+    color: white;
+    cursor: pointer;
+    height: 40px;
     position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    z-index: 999;
-    select {
-        @include appearance(none);
-        border: none;
-        width: 100%;
-        background-color: transparent;
-        outline: 0;
-        color: white;
-        cursor: pointer;
-        height: 40px;
-        position: relative;
-        z-index: 9999;
-    }
-    &:after {
-        font: normal normal normal 14px/1 FontAwesome;
-        content: "\f0d7";
-        height: 40px;
-        width: 28px;
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: center;
-        line-height: 40px;
-        font-size: 20px;
-    }
-    .select-caret {
-        width: 100%;
-        background-color: $brand-primary;
-        position: absolute;
-        z-index: -1;
-        height: 40px;
-        top: 0;
-        left: 0;
-    }
+    z-index: 9999;
+  }
+  &:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f0d7";
+    height: 40px;
+    width: 28px;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+  }
+  .select-caret {
+    width: 100%;
+    background-color: $brand-primary;
+    position: absolute;
+    z-index: -1;
+    height: 40px;
+    top: 0;
+    left: 0;
+  }
 }
 // product-page filters
 .filters {
@@ -1557,7 +1585,7 @@ footer {
   .prd-price {
     margin-left: 20px;
     display: inline-block;
-      font-size: 27px;
+    font-size: 27px;
   }
   .product-tab-detail {
     margin: 30px 0 0;
@@ -1623,10 +1651,12 @@ footer {
       background-color: transparent;
       color: black;
     }
-    .custom-select:after { color: #000; }
+    .custom-select:after {
+      color: #000;
+    }
     span {
       background-color: transparent;
-      color:#000;
+      color: #000;
       position: absolute;
       top: 50%;
       right: 20px;
@@ -1691,9 +1721,9 @@ footer {
 }
 /// end of filters///
 //////end footer/////
-
 // terms n privacy
-.terms, .privacypolicy {
+.terms,
+.privacypolicy {
   margin: 50px 60px;
   color: #808080;
   font-size: 16px;
@@ -1703,38 +1733,59 @@ footer {
 .privacypolicy {
   .list-privacy li {
     margin: 20px 0;
-    .privacy-info { margin: 7px 0 0; }
-    .sub-info li { margin: 0; }
-   }
+    .privacy-info {
+      margin: 7px 0 0;
+    }
+    .sub-info li {
+      margin: 0;
+    }
+  }
 }
 .terms {
-  ol li { margin: 20px 0; }
-  .sub-term li { margin: 5px 0 0; }
-  .terms-sec2 { margin: 40px 0 0; }
+  ol li {
+    margin: 20px 0;
+  }
+  .sub-term li {
+    margin: 5px 0 0;
+  }
+  .terms-sec2 {
+    margin: 40px 0 0;
+  }
 }
 // end terms n privacy
-
 //////nutri and cool-sculpting/////
-
 .back-img {
   min-height: 370px;
   padding: 80px;
-background-repeat: no-repeat;
-background-position: center center;
-background-size: 100% 100%;
-p { font-size: 16px; }
-.descp {
-  width: 80%;
-  margin: 30px 0 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  p {
+    font-size: 16px;
+  }
+  .descp {
+    width: 80%;
+    margin: 30px 0 0;
+  }
 }
+.nutri-one {
+  background-image: url(../img/nutri/genetic.png);
 }
-.nutri-one { background-image: url('../img/nutri/genetic.png'); }
-.nutri-two { background-image: url('../img/nutri/blue-dna.jpg'); }
-.nutri-three { background-image: url('../img/nutri/nutri-blue.png'); }
-.nutri-four { background-image: url('../img/nutri/benefits.png'); }
-.nutri-five { background-image: url('../img/nutri/doctor.jpg'); }
-.nutri-six { background-image: url('../img/nutri/mobile.jpg'); }
-
+.nutri-two {
+  background-image: url(../img/nutri/blue-dna.jpg);
+}
+.nutri-three {
+  background-image: url(../img/nutri/nutri-blue.png);
+}
+.nutri-four {
+  background-image: url(../img/nutri/benefits.png);
+}
+.nutri-five {
+  background-image: url(../img/nutri/doctor.jpg);
+}
+.nutri-six {
+  background-image: url(../img/nutri/mobile.jpg);
+}
 .doctor,
 .contact {
   p {
@@ -1742,43 +1793,46 @@ p { font-size: 16px; }
     font-size: 20px;
   }
 }
-
 .genes p {
   font-size: 27px;
- &:before {
-   content: open-quote;
-   color: #fff;
-   font-family: "Vista Slab", "Helvetiva Neue", Helvetica;
-   font-size: 170px;
-   position: absolute;
-   top: -75px;
-   left: -20px;
-   opacity: 0.5;
- }
- &:after {
-   content: close-quote;
-   color: #fff;
-   font-family: "Vista Slab", "Helvetiva Neue", Helvetica;
-   font-size: 170px;
-   position: absolute;
-   top: 85px;
-   right: -30px;
-   opacity: 0.5;
- }
+  &:before {
+    content: open-quote;
+    color: #fff;
+    font-family: "Vista Slab", "Helvetiva Neue", Helvetica;
+    font-size: 170px;
+    position: absolute;
+    top: -75px;
+    left: -20px;
+    opacity: 0.5;
+  }
+  &:after {
+    content: close-quote;
+    color: #fff;
+    font-family: "Vista Slab", "Helvetiva Neue", Helvetica;
+    font-size: 170px;
+    position: absolute;
+    top: 85px;
+    right: -30px;
+    opacity: 0.5;
+  }
 }
 .benefits {
   .nutri-benefit {
     width: 50%;
     margin: 30px auto;
-    p { margin: 20px 0; }
+    p {
+      margin: 20px 0;
+    }
   }
 }
-.same-slider{
+.same-slider {
   .flexslider {
     border: none;
     margin: 30px 0 0;
     background-color: transparent;
-    .flex-control-nav { display: none; }
+    .flex-control-nav {
+      display: none;
+    }
     &:hover {
       .flex-direction-nav .flex-prev {
         left: 50px;
@@ -1787,7 +1841,7 @@ p { font-size: 16px; }
       .flex-direction-nav .flex-next {
         right: 50px;
         opacity: 1;
-       }
+      }
     }
     .flex-direction-nav a {
       color: transparent;
@@ -1795,27 +1849,264 @@ p { font-size: 16px; }
       text-shadow: none;
     }
     .flex-direction-nav .flex-prev {
-         left: 50px;
-         background: url('../img/nutri/arrow-left.png') no-repeat;
-         &:before { display: none; }
+      left: 50px;
+      background: url(../img/nutri/arrow-left.png) no-repeat;
+      &:before {
+        display: none;
       }
+    }
     .flex-direction-nav .flex-next {
       right: 50px;
-      background: url('../img/nutri/arrow-right.png') no-repeat;
-      &:before { display: none; }
-     }
+      background: url(../img/nutri/arrow-right.png) no-repeat;
+      &:before {
+        display: none;
+      }
+    }
   }
 }
-
-.sculp-one   { background-image: url('../img/sculpting/belly.png'); }
-.sculp-two   { background-image: url('../img/sculpting/fat.png'); }
-.sculp-three { background-image: url('../img/sculpting/video.jpg'); }
-.sculp-four  { background-image: url('../img/sculpting/works.png');}
-.sculp-five  { background-image: url('../img/sculpting/improvement.png');}
-.sculp-six   { background-image: url('../img/sculpting/applicators.png');}
-.sculp-seven { background-image: url('../img/sculpting/ready.png');}
-.sculp-eight { background-image: url('../img/sculpting/applicators.png');}
+.sculp-one {
+  padding: 50px 80px;
+  background-image: url(../img/sculpting/belly.png);
+}
+.sculp-two {
+  padding: 65px 80px;
+  background-image: url(../img/sculpting/fat.png);
+}
+.sculp-three {
+  background-image: url(../img/sculpting/video.jpg);
+}
+.sculp-four {
+  padding: 65px 80px;
+  background-image: url(../img/sculpting/works.png);
+}
+.sculp-five {
+  padding: 35px 80px;
+  background-image: url(../img/sculpting/improvement.png);
+}
+.sculp-six {
+  padding: 60px 80px 10px;
+  background-image: url(../img/sculpting/applicators.png);
+  .not-avail {
+    margin: 40px 0 0;
+  }
+}
+.sculp-seven {
+  padding: 60px 80px;
+  background-image: url(../img/sculpting/ready.png);
+}
+.sculp-eight {
+  padding: 40px 80px;
+  background-image: url(../img/sculpting/applicators.png);
+}
+.faq-sculp {
+  .faqslide {
+    width: 65%;
+  }
+}
+.play-me {
+  @include square(100px);
+  margin: 15px auto 0;
+}
+.app-slide,
+.improve {
+  width: 65%;
+}
 ////end nutri and cool sculpting///
+///// blog /////
+.blog-page {
+  margin: 70px 0;
+}
+.blog-part {
+  margin: 0 0 35px;
+  padding: 0 10px;
+  .blog-imghold {
+    @include square(340px);
+    img {
+      min-height: 100%;
+      min-width: 100%;
+    }
+  }
+  .blog-detail {
+    margin: 20px 0 0;
+    .blog-descp {
+      min-height: 110px;
+      margin: 25px 0;
+      font-size: 16px;
+    }
+    .read-more {
+      border-bottom: 1px solid $brand-primary;
+      a {
+        margin-bottom: -1px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.get-inblog {
+  form {
+    input {
+      border: 2px solid $brand-brown;
+      font-size: 16px;
+      @include placeholder {
+        font-family: $font-baubodi;
+        font-weight: bold;
+        font-style: italic;
+        letter-spacing: 1px;
+      };
+    }
+    .input-group-addon {
+      border: 2px solid $brand-brown;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: $brand-brown;
+    }
+  }
+  .blog-post {
+    margin: 10px 0;
+  }
+  .post {
+    padding: 25px;
+    border: 2px solid $brand-brown;
+    border-radius: 4px;
+    .post-heading { margin: 0 0 15px; }
+    .post-imghold {
+      @include square(55px);
+      overflow: hidden;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .post-content {
+      h5 {
+        border-bottom: 1px solid $brand-primary;
+        margin: 10px;
+      }
+    }
+  }
+  .tags {
+    margin: 20px 0;
+    @extend.post;
+    .click-tag {
+      a {
+        padding: 4px 10px;
+        margin: 0 5px 8px 0;
+        font-size: 12px;
+      }
+    }
+  }
+}
+// blog end ///
+///blog detail//
+.check-blog { margin-right: 25px; }
+.blog-postinfo {
+  border: 2px solid $brand-brown;
+  border-radius: 4px;
+}
+.bloginfo-imgholder {
+  width: 721px;
+  height: 400px;
+  overflow: hidden;
+  img { width: 100%; }
+}
+.bloginfo-descp {
+  padding: 25px;
+}
+.selfcare-bloginfo {
+  width: 78%;
+  margin: 15px 0;
+  h5 { font-size: 15px; }
+}
+.selfcare-descp {
+  margin-bottom: 80px;
+  font-size: 15px;
+  .blog-infocat {
+    li { margin: 25px 0; }
+  }
+}
+.blog-tags a {
+  padding: 6px 14px;
+  margin: 05px;
+}
+.story-pagination {
+  margin: 20px 0;
+  font-size: 17px;
+}
+.related-post {
+  margin: 50px 0;
+  .relatepost-holder {
+    width: 222px;
+    height: 150px;
+    overflow: hidden;
+  }
+}
+.leave-reply {
+  input,textarea{
+    min-height: 50px;
+    border: 2px solid $brand-primary;
+    border-radius: 8px;
+    @include placeholder {
+      font-family: $font-baubodi;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 1px;
+    };
+  }
+  input { width: 70%; };
+  textarea {
+    min-height: 150px;
+    resize: none;
+  }
+  button { padding: 10px 42px; }
+}
+.social-info {
+  .stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices { height: 25px !important; }
+}
+///end blog detail///
+////recipe//
+.recipe-imgholder {
+  @include square(400px);
+  overflow: hidden;
+  @extend .m-center;
+  img { @include square(100%); }
+}
+.recipe-slider {
+  width: 200px;
+  margin: 20px auto;
+  .flexslider {
+    border: none;
+    margin: 0;
+    background-color: transparent;
+    &:hover {
+      .flex-direction-nav .flex-next { right: -50px; }
+      .flex-direction-nav .flex-prev { left: -50px; }
+    }
+  .flex-direction-nav .flex-next {opacity: 1;}
+  .flex-direction-nav .flex-prev {opacity: 1;}
+  .flex-direction-nav a {
+      color: transparent;
+      text-shadow: none;
+    &:before {
+    color: $brand-brown;
+    font-size: 25px;
+  }
+}
+}
+}
+.recipes-menu {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.recipe-accordion {
+  padding: 0;
+  @extend.faq-accordion;
+  .panel-default .panel-heading .panel-title a {
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .open-me { color: $brand-brown-dark; }
+}
+///end recipe///
 
 @import "harsh";
 @import "mobile";

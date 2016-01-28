@@ -839,6 +839,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Cool Sculpting");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.imporvementsculp = [
+          'img/sculpting/sculpslider1.jpg',
+          'img/sculpting/sculpslider2.jpg',
+          'img/sculpting/sculpslider3.jpg',
+          'img/sculpting/sculpslider4.jpg',
+          'img/sculpting/sculpslider5.jpg',
+          'img/sculpting/sculpslider6.jpg',
+          'img/sculpting/sculpslider7.jpg',
+          'img/sculpting/sculpslider8.jpg',
+        ];
         $scope.applicators = [
           {
             img: "img/sculpting/coolmax.jpg",
@@ -1240,6 +1250,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("blogdetail");
         $scope.menutitle = NavigationService.makeactive("Blog Detail");
         TemplateService.title = $scope.menutitle;
+        TemplateService.footermenu = "";
         $scope.navigation = NavigationService.getnav();
         $scope.blogtags = [
           {
@@ -1338,6 +1349,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Recipes");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.oneAtATime = true;
+        $scope.status = {
+          isFirstOpen : true,
+          isFirstDisabled : false
+        }
+        $scope.recipe = [
+          "img/recipes/baingan.jpg",
+          "img/recipes/baingan.jpg",
+          "img/recipes/baingan.jpg",
+          "img/recipes/baingan.jpg"
+        ];
     })
     .controller('NutrigenomicsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file

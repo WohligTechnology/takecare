@@ -3,86 +3,98 @@
     <img src="img/banners/blog.jpg" alt="">
     <h2 class="text-uppercase get-center white font-semibold">Blog</h2>
   </div>
-  <div class="blog-detail blog-main">
+  <div class="blog-detail blog-page">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <div class="blog-postinfo">
-            <div class="bloginfo-imgholder">
-              <img ng-src="{{blogpost.img}}" alt="" class="img-responsive">
-            </div>
-            <div class="bloginfo-descp">
-              <h3 class="text-uppercase">{{blogpost.title}}</h3>
-              <div class="selfcare-bloginfo">
-                <h4 class="text-uppercase">Posted by : <span class="brand-primary">selfcare by suman</span> | august 19th 2015 | <span class="brand-primary">leave a comment</span> in <span class="brand-primary">selfcare aware</span> | 70 views</h4>
+          <div class="check-blog">
+            <div class="blog-postinfo">
+              <div class="bloginfo-imgholder">
+                <img src="img/blog/post2.jpg" alt="" class="img-responsive">
               </div>
-              <div class="selfcare-descp">
-                <p>The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem to be much skin friendly. During monsoon
-                  the dust particles and dirt settles on our skin and creates multiple skin issues like acne, blackheads, pimples etc. Then why not choose the right foods this wet season to protect our skin?</p>
-                <p>Let’s take a look at these yummy skin friendly items:</p>
-                <div class="blog-infocat">
-                  <ul>
-                    <li>1) Yoghurt – Yoghurt is a good source of protein. It helps in maintaining the moisture in skin. Proteins are known for its anti – ageing properties, hence yoghurt in form of fruit yoghurt or yoghurt with muesli can be a perfect snack
-                      for monsoon.</li>
-                    <li>2) Lemon honey Water – Lemon (rich source of Vitamin –C) is an age old remedy for skin problems! Hence, it is rightly said that it helps in formation of collagen (in skin) making it look brighter and healthy. Having lemon honey water
-                      in monsoon can help in maintaining glow on the skin and also helps as body cleanser</li>
-                    <li>3) Tomatoes- Tomatoes are rich in Lycopene. There has been a few evidence that lycopene may help in lowering acne promoting hormone. Being an antioxidant, lycopene helps in protecting skin from free radicals.</li>
-                    <li>4) Green tea – sipping a nice of green tea in monsoon is very comforting to the body. It releases stress from the body and also helps in preventing skin irritation and Psoriasis.</li>
-                    <li>5) Dates- It is difficult to choose palak (good source of iron) in monsoon as green leafy vegetables spoil faster; hence dates are handy options to make sure the skin doesn’t turn pale.</li>
-                    <li>6) Assorted fruits – litchi, cherries, pomegranate, plums etc are readily available in monsoon. They are good source of carotenoids and help in hydration of our skin.</li>
-                  </ul>
+              <div class="bloginfo-descp">
+                <h3 class="text-uppercase text-bold heading m-clear">sparkle this season</h3>
+                <div class="selfcare-bloginfo">
+                  <h5 class="text-uppercase">Posted by : <span class="brand-primary">selfcare by suman</span> | august 19th 2015 | <span class="brand-primary">leave a comment</span> in <span class="brand-primary">selfcare aware</span> | 70 views</h5>
+                </div>
+                <div class="selfcare-descp text-justify">
+                  <p>The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem to be much skin friendly. During monsoon
+                    the dust particles and dirt settles on our skin and creates multiple skin issues like acne, blackheads, pimples etc. Then why not choose the right foods this wet season to protect our skin?</p>
+                  <p>Let’s take a look at these yummy skin friendly items:</p>
+                  <div class="blog-infocat">
+                    <ul>
+                      <li>1) Yoghurt – Yoghurt is a good source of protein. It helps in maintaining the moisture in skin. Proteins are known for its anti – ageing properties, hence yoghurt in form of fruit yoghurt or yoghurt with muesli can be a perfect snack
+                        for monsoon.</li>
+                      <li>2) Lemon honey Water – Lemon (rich source of Vitamin –C) is an age old remedy for skin problems! Hence, it is rightly said that it helps in formation of collagen (in skin) making it look brighter and healthy. Having lemon honey water
+                        in monsoon can help in maintaining glow on the skin and also helps as body cleanser</li>
+                      <li>3) Tomatoes- Tomatoes are rich in Lycopene. There has been a few evidence that lycopene may help in lowering acne promoting hormone. Being an antioxidant, lycopene helps in protecting skin from free radicals.</li>
+                      <li>4) Green tea – sipping a nice of green tea in monsoon is very comforting to the body. It releases stress from the body and also helps in preventing skin irritation and Psoriasis.</li>
+                      <li>5) Dates- It is difficult to choose palak (good source of iron) in monsoon as green leafy vegetables spoil faster; hence dates are handy options to make sure the skin doesn’t turn pale.</li>
+                      <li>6) Assorted fruits – litchi, cherries, pomegranate, plums etc are readily available in monsoon. They are good source of carotenoids and help in hydration of our skin.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="blog-tags">
+                  <a href="" class="btn btn-primary text-uppercase" ng-repeat="tags in blogtags">{{tags.tag}}</a>
                 </div>
               </div>
-              <div class="blog-tags">
-                <a href="" class="btn btn-primary uppercase" ng-repeat="tags in blogtags">{{tags.tag}}</a>
+            </div>
+            <div class="share-story clearfix">
+              <div class="pull-left">
+                <h3 class="text-uppercase brand-primary text-bold">share this story</h3>
+              </div>
+              <div class="pull-right">
+                <div class="social-info">
+                  <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
+                  <span class='st_plusone_vcount' displayText='Google +1'></span>
+                  <span class='st_twitter_vcount' displayText='Tweet'></span>
+                  <span class='st_fblike_vcount' displayText='Facebook Like'></span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="share-story">
-            <h2 class="text-uppercase brand-primary">share this story</h2>
-          </div>
-          <div class="story-pagination clearfix">
-            <div class="pull-left">
-              <a href="" class="brand-primary">Previous Story</a>
-              <h4 class="brand-brown-dark text-uppercase">cranberry juice</h4>
-            </div>
-            <div class="pull-right">
-              <a href="" class="brand-primary">Next Story</a>
-              <h4 class="brand-brown-dark text-uppercase">Your questions ,answered</h4>
-            </div>
-          </div>
-          <div class="related-post">
-            <h3 class="brand-brown-dark text-uppercase">related post</h3>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="relatepost-holder"><img src="img/blog/post1.jpg" alt="" class="img-responsive"></div>
+            <div class="story-pagination clearfix">
+              <div class="pull-left">
+                <a href="" class="brand-primary">Previous Post</a>
+                <h4 class="brand-brown-dark text-uppercase m-clear">cranberry juice</h4>
               </div>
-              <div class="col-md-4">
-                <div class="relatepost-holder"><img src="img/blog/post3.jpg" alt="" class="img-responsive"></div>
-              </div>
-              <div class="col-md-4">
-                <div class="relatepost-holder"><img src="img/blog/post4.jpg" alt="" class="img-responsive"></div>
+              <div class="pull-right text-right">
+                <a href="" class="brand-primary">Next Post</a>
+                <h4 class="brand-brown-dark text-uppercase m-clear">Your questions ,answered</h4>
               </div>
             </div>
-          </div>
-          <div class="leave-reply">
-            <h3 class="text-uppercase brand-brown-dark">leave a reply</h3>
-            <p class="brand-primary">Your email address will not be published. Required fields are marked *</p>
-            <form action="">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name *">
+            <div class="related-post">
+              <h3 class="brand-brown-dark text-uppercase text-bold">related post</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="relatepost-holder"><img src="img/blog/post1.jpg" alt="" class="img-responsive"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="relatepost-holder"><img src="img/blog/post3.jpg" alt="" class="img-responsive"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="relatepost-holder"><img src="img/blog/post4.jpg" alt="" class="img-responsive"></div>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email *">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Website">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="name" rows="" cols="" placeholder="Comment"></textarea>
-              </div>
-              <button class="btn btn-primary text-uppercase" type="submit">submit</button>
-            </form>
+            </div>
+            <div class="leave-reply">
+              <h3 class="text-uppercase brand-brown-dark text-bold">leave a reply</h3>
+              <p class="brand-primary">Your email address will not be published. Required fields are marked *</p>
+              <form action="">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Name *">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email *">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Website">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="name" rows="" cols="" placeholder="Comment"></textarea>
+                </div>
+                <button class="btn btn-primary text-uppercase" type="submit">submit</button>
+              </form>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -90,28 +102,24 @@
             <form action="">
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control">
-                  <span type="submit" class="input-group-addon">icon</span>
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-addon"><i class="fa fa-search brand-brown-dark"></i></span>
                 </div>
               </div>
             </form>
             <div class="post">
-              <h3 class="text-uppercase brand-brown-dark">popular post</h3>
+              <h4 class="text-uppercase brand-brown-dark text-bold post-heading">popular post</h4>
               <div class="blog-post" ng-repeat="post in popularpost">
-                <div class="media">
-                  <div class="media-left">
-                    <div class="media-imghold">
-                      <img ng-src="{{post.img}}" alt="" class="img-responsive media-object">
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="media-heading">{{post.title}}</h4>
-                  </div>
+                <div class="post-imghold inline-block">
+                  <img ng-src="{{post.img}}" alt="" class="img-responsive media-object">
+                </div>
+                <div class="post-content inline-block v-top">
+                  <h5 class="brand-brown-dark">{{post.title}}</h5>
                 </div>
               </div>
             </div>
             <div class="tags">
-              <h3 class="text-uppercase brand-brown-dark">tags</h3>
+              <h4 class="text-uppercase brand-brown-dark text-bold post-heading">tags</h4>
               <div class="click-tag">
                 <a href="" class="btn btn-primary text-uppercase" ng-repeat="tag in tagger">{{tag.name}}</a>
               </div>
