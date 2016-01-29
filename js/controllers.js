@@ -1360,6 +1360,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           "img/recipes/baingan.jpg",
           "img/recipes/baingan.jpg"
         ];
+        $scope.recipees = [
+          {
+            img: "img/recipes/nachos.jpg",
+            name: "nachos"
+          },
+          {
+            img: "img/recipes/bread.jpg",
+            name: "bread"
+          },
+          {
+            img: "img/recipes/makai.jpg",
+            name: "makai"
+          },
+          {
+            img: "img/recipes/bread.jpg",
+            name: "bread"          
+          },
+          {
+              img: "img/recipes/makai.jpg",
+              name: "makai"
+          },
+          {
+            img: "img/recipes/nachos.jpg",
+            name: "nachos"
+          }
+        ];
+        $scope.recipees =  _.chunk($scope.recipees, 3);
+        console.log($scope.recipees);
     })
     .controller('NutrigenomicsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1381,6 +1409,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Stats");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        $scope.oneAtATime = true;
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
     })
     .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1528,10 +1562,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         $scope.health = [
-            "Cholesterol",
-            "High Blood Pressure",
-            "Diabetes",
-            "Ailment Control",
-            "Weight Management"
+          {
+            name: "Cholesterol",
+            link: "#/"
+          },
+          {
+            name: "High Blood Pressure",
+            link: "#/"
+          },
+          {
+            name: "Diabetes",
+            link: "#/"
+          },
+          {
+            name: "Ailment Control",
+            link: "#/ailmentcontrol"
+          },
+          {
+            name: "Weight Management",
+            link: "#/weightmanagement"
+          }
         ];
     });

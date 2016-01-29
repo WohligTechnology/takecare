@@ -52,7 +52,7 @@ $brand-primary-lighter: #ffd8ce !default; //ligherOrange
 $brand-brown: #c2a388 !default; //Brown
 $brand-brown-light: #e6d9ce !default; //BrownLight
 $brand-brown-dark: #3b1808 !default; //BrownDark
-$brand-brown-dark2: #2d1205 !default; //BrownDark2
+$brand-brown-dark2: !default; //BrownDark2
 $brand-brown-gray: #998675 !default; //BrownGray
 $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
@@ -780,7 +780,7 @@ button {
     @include transform(translateX(-50%));
   }
   .month {
-    @include margin(30px 0 0);
+    @include margin(35px 0 0);
     display: block;
     font-size: 14px;
   }
@@ -1968,7 +1968,9 @@ footer {
     padding: 25px;
     border: 2px solid $brand-brown;
     border-radius: 4px;
-    .post-heading { margin: 0 0 15px; }
+    .post-heading {
+      margin: 0 0 15px;
+    }
     .post-imghold {
       @include square(55px);
       overflow: hidden;
@@ -1998,7 +2000,9 @@ footer {
 }
 // blog end ///
 ///blog detail//
-.check-blog { margin-right: 25px; }
+.check-blog {
+  margin-right: 25px;
+}
 .blog-postinfo {
   border: 2px solid $brand-brown;
   border-radius: 4px;
@@ -2007,7 +2011,9 @@ footer {
   width: 721px;
   height: 400px;
   overflow: hidden;
-  img { width: 100%; }
+  img {
+    width: 100%;
+  }
 }
 .bloginfo-descp {
   padding: 25px;
@@ -2015,18 +2021,22 @@ footer {
 .selfcare-bloginfo {
   width: 78%;
   margin: 15px 0;
-  h5 { font-size: 15px; }
+  h5 {
+    font-size: 15px;
+  }
 }
 .selfcare-descp {
   margin-bottom: 80px;
   font-size: 15px;
   .blog-infocat {
-    li { margin: 25px 0; }
+    li {
+      margin: 25px 0;
+    }
   }
 }
 .blog-tags a {
   padding: 6px 14px;
-  margin: 05px;
+  margin: 5px;
 }
 .story-pagination {
   margin: 20px 0;
@@ -2041,7 +2051,8 @@ footer {
   }
 }
 .leave-reply {
-  input,textarea{
+  input,
+  textarea {
     min-height: 50px;
     border: 2px solid $brand-primary;
     border-radius: 8px;
@@ -2052,23 +2063,36 @@ footer {
       letter-spacing: 1px;
     };
   }
-  input { width: 70%; };
+  input {
+    width: 70%;
+  };
   textarea {
     min-height: 150px;
     resize: none;
   }
-  button { padding: 10px 42px; }
+  button {
+    padding: 10px 42px;
+  }
 }
 .social-info {
-  .stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices { height: 25px !important; }
+  .stButton .stFb,
+  .stButton .stTwbutton,
+  .stButton .stMainServices {
+    height: 25px !important;
+  }
 }
 ///end blog detail///
 ////recipe//
+.recipes-main {
+  margin: 60px 0;
+}
 .recipe-imgholder {
   @include square(400px);
   overflow: hidden;
   @extend .m-center;
-  img { @include square(100%); }
+  img {
+    @include square(100%);
+  }
 }
 .recipe-slider {
   width: 200px;
@@ -2078,20 +2102,28 @@ footer {
     margin: 0;
     background-color: transparent;
     &:hover {
-      .flex-direction-nav .flex-next { right: -50px; }
-      .flex-direction-nav .flex-prev { left: -50px; }
+      .flex-direction-nav .flex-next {
+        right: -50px;
+      }
+      .flex-direction-nav .flex-prev {
+        left: -50px;
+      }
     }
-  .flex-direction-nav .flex-next {opacity: 1;}
-  .flex-direction-nav .flex-prev {opacity: 1;}
-  .flex-direction-nav a {
+    .flex-direction-nav .flex-next {
+      opacity: 1;
+    }
+    .flex-direction-nav .flex-prev {
+      opacity: 1;
+    }
+    .flex-direction-nav a {
       color: transparent;
       text-shadow: none;
-    &:before {
-    color: $brand-brown;
-    font-size: 25px;
+      &:before {
+        color: $brand-brown;
+        font-size: 25px;
+      }
+    }
   }
-}
-}
 }
 .recipes-menu {
   margin: 10px 0;
@@ -2104,10 +2136,96 @@ footer {
     color: #fff;
     text-transform: uppercase;
   }
-  .open-me { color: $brand-brown-dark; }
+  .open-me {
+    color: $brand-brown-dark;
+  }
+}
+.other-recipes {
+  @extend .product-also-like;
 }
 ///end recipe///
+//stats/////
+.choose-prd {
+  select { width: 150px; }
+}
+.calorie-meter {
+  margin: 60px 0;
+  @extend .recipe-accordion;
+  font-size: 16px;
+  color: $brand-brown-dark;
+  select {
+    padding: 2px 10px;
+      border:2px solid $brand-primary;
+      margin-right: 20px;
+    background: transparent;
+    text-align: center;
+  }
+}
+.burn { font-size: 18px; }
 
+.calorie-number {
+  @include square(65px);
+  font-size: 25px;
+  line-height: 65px;
+  text-align: center;
+  @extend .round;
+}
+.kcal { margin: 12px 0 0 15px; }
+.calorie-btn {
+  padding: 6px 14px;
+  display: inline-block;
+}
+.result {
+   margin: 30px 0;
+   a.calorie-btn { margin-left: 25px; }
+ }
+.result-number {
+  width: 40px;
+  padding: 3px 5px;
+  border: 2px solid $brand-primary;
+  color: $brand-brown-dark;
+  text-align: center;
+  @include placeholder { color: $brand-brown-dark; };
+ }
+ .multiply { margin: 0 15px; }
+.count-cat {
+  margin: 15px 0;
+  .calorie-btn {
+    padding: 6px 18px;
+  }
+  img {
+    margin: 0 6px;
+  }
+  span {
+    margin: 0 5px;
+  }
+}
+.walking img {
+  margin-left: 15px;
+}
+.bmi-cal {
+  margin: 30px 0;
+  @extend .brand-brown-dark2;
+  .bmi-heading {  width: 70px; }
+  .gender {
+    padding: 6px 12px;
+    background-color: #e1e1e1;
+    img {
+      margin-left: 5px;
+    }
+  }
+  .male { margin-right: 20px; }
+  .age {
+    width: 55px;
+    border: 2px solid $brand-primary;
+  }
+  .weight {
+    width: 85px;
+    border: 2px solid $brand-primary;
+    margin: 0 15px 0 0;
+  }
+}
+///end stats//
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";

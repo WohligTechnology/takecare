@@ -24,10 +24,26 @@
 }
 .logo {
   @include margin(20px 0 0 10px);
-  h1 { a {
+  h1 {
+    position: relative;
+     a,span {
     font-size: 24px;
     letter-spacing: 3px;
-  } }
+  }
+  .head-slide {
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    left: 38%;
+    // @include transform(translate(-100%,-50%));
+    .flexslider {
+      border: none;
+      margin: 0;
+      display: inline-block;
+      background-color: transparent;
+    }
+  }
+}
 }
 // Social Links
 .links { margin: 20px 0 20px 30px; }
