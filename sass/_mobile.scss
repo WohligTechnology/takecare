@@ -1253,6 +1253,7 @@
       @include square(70px);
     }
     figcaption {
+      width: 100%;
       margin: 5px 0;
       font-size: 8px;
     }
@@ -1286,6 +1287,7 @@
         margin: 0;
       }
     }
+    .quantity { padding-left: 1px; }
     .cart-btn {
       a {
         margin: 5px 0;

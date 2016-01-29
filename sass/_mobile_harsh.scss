@@ -16,6 +16,11 @@
   .signin {
     font-size: 12px;
   }
+  // about
+  .about-health .about-health-content .inner-about-carousel{
+   h3 { font-size: 30px; }
+   span { font-size: 25px; }
+}
 }
 @media (max-width: $screen-md-max) {
 
@@ -127,6 +132,11 @@
     .about-health-content .carousel-control.right span { top: 30%; }
     .about-health-content .carousel-control.left span { top: 30%; }
   }
+  // about
+  .about-health .about-health-content .inner-about-carousel{
+   h3 { font-size: 25px; }
+   span { font-size: 22px; }
+}
 
   // Image Consulting
   .we-enroll .session-one .session-charges,
@@ -287,6 +297,7 @@
       text-align: justify;
     }
   }
+  .doing { font-size: 26px; }
   .about-health .about-health-content .glyphicon-chevron-right:before {
     font-size: 50px;
   }
@@ -294,8 +305,6 @@
   .about-health .about-health-content .embed-youtube { padding: 20px 20px 0; }
   .about-health .about-health-content .inner-about-carousel {
     @include padding(0 80px);
-    h3 { font-size: 32px; }
-    span { font-size: 24px; }
     p { font-size: 14px; }
   }
   .what-we-do {
@@ -359,6 +368,11 @@
     }
   }
   .various .circle { width: 7%; }
+  //contactUs
+  .contact-location .clinic span { font-size: 25px; }
+  // contactusend
+  // ailment control
+  .pregnancy .consult-chart .noconsult { font-size: 18px; }
 }
 @media (max-width: 480px) {
   .various .circle { width: 10%; }
@@ -411,13 +425,24 @@
   .we-enroll { margin: 0 0 20px; }
 
   // About Us
-  .about-desc .health-style { margin: 5px 0; }
-  .about-health .about-health-content .embed-youtube { height: 150px; }
+  .doing { font-size: 22px; }
+  .about-desc .health-style {
+    font-size: 18px;
+    margin: 5px 0;
+   }
   .about-health .about-health-content .inner-about-carousel {
-    h3 { font-size: 24px; }
-    span { font-size: 18px; }
+    min-height: 200px;
+    height: auto;
+    padding: 0 30px;
+    h3 { font-size: 22px; }
+    span { font-size: 16px; }
     p { font-size: 12px; }
   }
+  .about-desc h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .about-health h2 { font-size: 22px; }
   .what-we-do {
     .we-do-topics {
       .we-do-title {
@@ -452,4 +477,9 @@
   }
   .care-programs .care-buttons a img { @include margin(0 35px 0 0); }
   .care-programs .care-buttons a + a img { @include margin(0 13px 0 0); }
+
+  // contactus
+  .contact-location .clinic span { font-size: 20px; }
+  // ailment control
+  .pregnancy .consult-chart .noconsult { font-size: 12px; }
 }
