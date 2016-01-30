@@ -654,7 +654,21 @@
     padding: 60px;
     h2 { font-size: 26px; }
   }
-  .genes p { font-size: 26px; }
+  .genes p {
+    font-size: 26px;
+    &:before {
+      left: -10px;
+      zoom: 0.7;
+    }
+    &:after {
+      top: auto;
+      right: -55px;
+      zoom: 0.7;
+    }
+  }
+  .app-descp {
+    h4,p { text-align: center; }
+  }
 }
 @media (max-width: $screen-xs-max) {
   .btn {
@@ -1183,6 +1197,7 @@
 .recipe-slider .flexslider:hover .flex-direction-nav .flex-next { right: -30px; }
 //nutri-cool
 .back-img {
+  padding: 40px;
   text-align: center;
   h2 { font-size: 23px; }
   .descp {
@@ -1194,6 +1209,16 @@
 .genes p {
   font-size: 20px;
   text-align: center;
+  &:before {
+    top: auto;
+    left: auto;
+    zoom: 0.5;
+  }
+  &:after {
+    top: auto;
+    right: auto;
+    zoom: 0.5;
+  }
  }
 .doctor,
 .contact {
@@ -1203,11 +1228,41 @@
     text-align: center;
   }
 }
+.benefits .nutri-benefit {
+  width: 85%;
+  margin: 10px auto;
+ }
+.same-slider {
+  .flexslider{
+    margin: 15px 0 0;
+    .flex-direction-nav .flex-next { right: -20px; }
+    .flex-direction-nav .flex-prev { left: -20px;  }
+    &:hover {
+      .flex-direction-nav .flex-next { right: -20px;  }
+      .flex-direction-nav .flex-prev { left: -20px;  }
+    }
+  }
+}
+.sculp-one {
+  background-position: 0 0;
+  background-size: cover;
+}
+.app-slide { width: 85%; }
+.faq-sculp .faqslide { width: 85%; }
+.play-me {
+  @include square(70px);
+  margin: 10px auto 0;
+ }
+
 }
 @media (max-width: 480px) {
   // login
   .login-tab .nav-tabs li a {
     font-size: 15px;
+  }
+  .logo h1 .head-slide {
+    top: 5%;
+    left: 40%;
   }
   // faq
   .faq .banner h2 { font-size: 13px; }
@@ -1703,15 +1758,30 @@
   }
   // nutri-cool
   .back-img {
+    padding: 30px;
+    background-size: cover;
     h2 { font-size: 20px; }
     .descp {
       margin: 15px 0 0;
       font-size: 15px;
     }
   }
-  .genes p { font-size: 15px; }
+  .genes p {
+    font-size: 15px;
+    &:before {
+      zoom: 0.3;
+    }
+    &:after {
+      zoom: 0.3;
+    }
+  }
   .doctor,
   .contact {
     p { font-size: 15px; }
   }
+  .benefits .nutri-benefit {  width: 100%;  }
+  .same-slider .flexslider .flex-direction-nav a { zoom: 0.6; }
+  .app-slide { width: 100%; }
+  .faq-sculp .faqslide { width: 100%; }
+  .play-me { @include square(35px); }
 }

@@ -1911,6 +1911,10 @@ footer {
 .improve {
   width: 65%;
 }
+.app-img-holder {
+  @include square(110px);
+  margin: 0 auto;
+}
 ////end nutri and cool sculpting///
 ///// blog /////
 .blog-page {

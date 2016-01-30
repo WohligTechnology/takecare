@@ -31,11 +31,10 @@
     letter-spacing: 3px;
   }
   .head-slide {
-    width: 75%;
+    width: auto;
     position: absolute;
-    top: 5%;
-    left: 38%;
-    // @include transform(translate(-100%,-50%));
+    top: 0;
+    left: 185px;
     .flexslider {
       border: none;
       margin: 0;
