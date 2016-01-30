@@ -18,13 +18,15 @@
                 <h1>
                   <a href="#/home">
                     <img src="img/logo.png" alt="">
-                    <span class="font-baubodi">for</span> Health Management
-                    <!-- <flex-slider class="carousel" flex-slide="list in health" animation="fade">
-                      <li>
-                        <span>{{list}}</span>
-                      </li>
-                    </flex-slider> -->
                   </a>
+                    <span class="font-baubodi">for</span>
+                    <div class="head-slide">
+                      <flex-slider class="carousel" flex-slide="list in health track by $index" animation="fade" control-nav="false" direction-nav="false" animationspeed="200">
+                        <li>
+                          <a href="{{list.link}}">{{list.name}}</a>
+                        </li>
+                      </flex-slider>
+                    </div>
                 </h1>
               </div>
             </div>

@@ -13,7 +13,7 @@
   <div class="recipes-main">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="recipe-imgholder round">
             <img src="img/recipes/baingan.jpg" alt="">
           </div>
@@ -27,9 +27,9 @@
             </flex-slider>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="recipes-detail">
-            <h2 class="text-uppercase font-semibold">Baingan Bharta</h2>
+            <h2 class="text-uppercase font-semibold brand-brown-dark">Baingan Bharta</h2>
             <span>Roasted brinjal lightly cooked with spring onion flavour</span>
             <div class="recipes-menu font-semibold">
               <span class="block">Makes 1<sup>1/2</sup> cups</span>
@@ -49,32 +49,27 @@
                 </uib-accordion-heading>
                 <div class="recipe-descp">
                   <span class="block">1 large Brinjal (350 gms)</span>
-<span class="block">1 large bulb of spring onion, chopped finely</span>
-<span class="block">1/3  cup spring onion greens, chopped finely</span>
-<span class="block">1 small tomato, chopped finely</span>
-<span class="block">3 cloves garlic (optional), chopped finely</span>
-<span class="block">1/4  tsp red chilli powder</span>
-<span class="block">1/4  tsp turmeric powder</span>
-<span class="block">Salt as per taste</span>
-<span class="block">2 tsp oil</span>
+                  <span class="block">1 large bulb of spring onion, chopped finely</span>
+                  <span class="block">1/3  cup spring onion greens, chopped finely</span>
+                  <span class="block">1 small tomato, chopped finely</span>
+                  <span class="block">3 cloves garlic (optional), chopped finely</span>
+                  <span class="block">1/4  tsp red chilli powder</span>
+                  <span class="block">1/4  tsp turmeric powder</span>
+                  <span class="block">Salt as per taste</span>
+                  <span class="block">2 tsp oil</span>
                 </div>
               </uib-accordion-group>
               <uib-accordion-group is-open="status.open2">
                 <uib-accordion-heading>
                   Method<i class="open-me fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
                 </uib-accordion-heading>
-                <div class="faq-descp">
-                  <p class="text-justify">Yes, money can be paid in installments depending on the package taken by client.</p>
-                </div>
+                <div class="recipe-descp"></div>
               </uib-accordion-group>
               <uib-accordion-group is-open="status.open3">
                 <uib-accordion-heading>
                   Value Per Serving <i class="open-me fa" ng-class="{'fa-minus': status.open3, 'fa-plus': !status.open3}"></i>
                 </uib-accordion-heading>
-                <div class="faq-descp">
-                  <p class="text-justify">Yes. Suman will meet the client personally for the first consultation. For further follow-ups she will be expected to meet the client depending upon the package taken by the client, or when there is a need to evaluate the reports and
-                    in case if the desired result is not achieved by client.</p>
-                </div>
+                <div class="recipe-descp"></div>
               </uib-accordion-group>
             </uib-accordion>
           </div>
@@ -84,7 +79,22 @@
   </div>
 
   <div class="other-recipes text-center">
-    <h3 class="text-uppercase font-semibold">Other recipes</h3>
-    <!-- flexslider -->
+    <div class="container">
+      <h3 class="text-uppercase font-semibold brand-brown-dark">Other recipes</h3>
+      <uib-carousel interval="my-Interval">
+        <uib-slide ng-repeat="slide in recipees" active="slide.active">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="recipe in slide">
+              <div class="inner-like">
+                <div class="like-image round">
+                  <img ng-src="{{recipe.img}}" alt="" class="img-responsive">
+                </div>
+                <span class="brand-primary text-uppercase font-semibold">{{recipe.name}}</span>
+              </div>
+            </div>
+          </div>
+        </uib-slide>
+      </uib-carousel>
+    </div>
   </div>
 </section>
