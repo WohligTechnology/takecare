@@ -95,10 +95,13 @@
 
   .section-story .slider { height: auto; }
 
+  // Blog
+  .blog-part .blog-imghold { @include size(100%, 280px); }
+
   // Blog Detail
   .check-blog { @include margin(0);}
   .bloginfo-imgholder { @include size(100%, 600px); }
-  .get-inblog { margin-top: 50px; }
+  .related-post .relatepost-holder { width: 100%; }
 
 }
 @media (max-width: $screen-sm-max) {
@@ -142,7 +145,7 @@
   .about-health .about-health-content .inner-about-carousel{
    h3 { font-size: 25px; }
    span { font-size: 22px; }
-}
+  }
 
   // Image Consulting
   .we-enroll .session-one .session-charges,
@@ -192,6 +195,12 @@
   .care-programs h3 { margin: 0 50px; }
 
   .section-story .slider { height: auto; }
+
+  // blog
+  .blog-part .blog-imghold { @include square(300px); }
+
+  // blogdetail
+  .get-inblog { margin-top: 50px; }
 }
 @media (max-width: $screen-xs-max) {
 
