@@ -646,13 +646,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.getCart();
         $scope.updateQuantity = function(item) {
-            NavigationService.addToCart({
-                quantity: item.qty,
-                product: item.id,
-                status: "2"
-            }, function(data) {
-                $scope.getCart();
-            });
+          console.log("updating");
+            if(parseInt(item.qty)<=0){
+              console.log("here");
+              item.qty=1;
+            }else{
+              NavigationService.addToCart({
+                  quantity: item.qty,
+                  product: item.id,
+                  status: "2"
+              }, function(data) {
+                  $scope.getCart();
+              });
+            }
         };
         $scope.addQuantity = function(item) {
             item.qty = parseInt(item.qty);
@@ -660,9 +666,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.updateQuantity(item);
         };
         $scope.subtractQuantity = function(item) {
+          if(parseInt(item.qty) <=0){
+            console.log("in sub");
+            item.qty=1
+          }else{
             item.qty = parseInt(item.qty);
             item.qty--;
             $scope.updateQuantity(item);
+          }
+
         };
         $scope.closeAlert = function(index) {
             $scope.alerts.splice(index, 1);
