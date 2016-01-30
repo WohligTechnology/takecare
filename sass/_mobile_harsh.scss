@@ -94,6 +94,12 @@
   .stories-section .read-detail.right .location { @include margin(0 0 0 -80px); }
 
   .section-story .slider { height: auto; }
+
+  // Blog Detail
+  .check-blog { @include margin(0);}
+  .bloginfo-imgholder { @include size(100%, 600px); }
+  .get-inblog { margin-top: 50px; }
+
 }
 @media (max-width: $screen-sm-max) {
 
@@ -373,6 +379,27 @@
   // contactusend
   // ailment control
   .pregnancy .consult-chart .noconsult { font-size: 18px; }
+
+  // blogdetail
+  .bloginfo-imgholder { @include size(100%, 400px); }
+  .related-post {
+    text-align: center;
+    .relatepost-holder { @include margin(10px auto); }
+  }
+  .selfcare-descp {
+    font-size: 14px;
+    margin-bottom: 50px;
+  }
+  .leave-reply {
+    text-align: center;
+    input { width: 100%; }
+  }
+  .share-text, .share-social, .story-prev, .story-next {
+    text-align: center;
+    float: none;
+  }
+  .story-prev { margin-bottom: 20px; }
+
 }
 @media (max-width: 480px) {
   .various .circle { width: 10%; }
@@ -482,4 +509,16 @@
   .contact-location .clinic span { font-size: 20px; }
   // ailment control
   .pregnancy .consult-chart .noconsult { font-size: 12px; }
+
+  // blogdetail
+  .selfcare-bloginfo { width: 100%; }
+  .bloginfo-imgholder { @include size(100%, 200px); }
+  .get-inblog .post {
+    text-align: center;
+    .post-content {
+      display: block;
+      h5 { display: inline-block; }
+    }
+  }
+
 }
