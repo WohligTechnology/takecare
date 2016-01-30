@@ -232,6 +232,13 @@
       .like-image { @include square(180px); }
     }
   }
+  // stats
+  .calorie-number {
+    @include square(55px);
+    font-size: 21px;
+    line-height: 55px;
+  }
+  .kcal { margin: 6px 0 0 8px; }
 }
 @media (max-width: $screen-sm-max) {
   // faq
@@ -632,6 +639,22 @@
      .glyphicon-chevron-right:before { zoom: 0.9; }
      .glyphicon-chevron-left:before { zoom: 0.9; }
   }
+  // stats
+  .result { text-align: center; }
+  .calorie { margin: 20px 0 15px; }
+  //recipes
+  .recipe-imgholder { @include square(250px); }
+  .recipes-detail {
+    text-align: center;
+    h2 { font-size: 22px; }
+  }
+  // nutri & coolsculpting
+  .back-img {
+    min-height: auto;
+    padding: 60px;
+    h2 { font-size: 26px; }
+  }
+  .genes p { font-size: 26px; }
 }
 @media (max-width: $screen-xs-max) {
   .btn {
@@ -1147,6 +1170,39 @@
   }
   // terms privacy
     .terms, .privacypolicy { margin: 50px 30px; }
+
+  // stats
+  .choose-prd {
+    select { margin: 15px 0; }
+    span { width: 200px; }
+}
+// recipe
+.recipe-slider .flexslider .flex-direction-nav .flex-prev { left: -30px; }
+.recipe-slider .flexslider .flex-direction-nav .flex-next { right: -30px; }
+.recipe-slider .flexslider:hover .flex-direction-nav .flex-prev { left: -30px; }
+.recipe-slider .flexslider:hover .flex-direction-nav .flex-next { right: -30px; }
+//nutri-cool
+.back-img {
+  text-align: center;
+  h2 { font-size: 23px; }
+  .descp {
+    width: 100%;
+    margin: 20px 0 0;
+    text-align: center;
+  }
+}
+.genes p {
+  font-size: 20px;
+  text-align: center;
+ }
+.doctor,
+.contact {
+  p {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+}
 }
 @media (max-width: 480px) {
   // login
@@ -1626,4 +1682,36 @@
   }
   // terms privacy
   .terms, .privacypolicy { margin: 40px 10px; }
+  // stats
+  .calorie-meter { font-size: 14px; }
+  .burn { font-size: 16px; }
+  .bmi-cal {
+    margin: 15px 0;
+    text-align: center;
+    .bmi-heading {
+      width: 100%;
+      margin: 0 0 15px;
+     }
+     select { margin: 10px; }
+  }
+  // recipe
+  .recipe-imgholder { @include square(150px); }
+  .recipes-detail h2 { font-size: 20px; }
+  .recipe-category {
+    width: 60px;
+    margin: 0 auto;
+  }
+  // nutri-cool
+  .back-img {
+    h2 { font-size: 20px; }
+    .descp {
+      margin: 15px 0 0;
+      font-size: 15px;
+    }
+  }
+  .genes p { font-size: 15px; }
+  .doctor,
+  .contact {
+    p { font-size: 15px; }
+  }
 }
