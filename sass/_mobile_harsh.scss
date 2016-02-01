@@ -198,9 +198,10 @@
 
   // blog
   .blog-part .blog-imghold { @include square(300px); }
+  .get-inblog { @include margin(0 0 50px 0); }
 
   // blogdetail
-  .get-inblog { margin-top: 50px; }
+  
 }
 @media (max-width: $screen-xs-max) {
 
@@ -521,7 +522,8 @@
   .care-programs .care-buttons a + a img { @include margin(0 13px 0 0); }
 
   // contactus
-  .contact-location .clinic span { font-size: 20px; }
+  .contact-location .clinic span { font-size: 18px; }
+  .contact-query h4 { font-size: 22px }
   // ailment control
   .pregnancy .consult-chart .noconsult { font-size: 12px; }
 
