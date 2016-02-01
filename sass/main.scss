@@ -1044,8 +1044,8 @@ button {
 //end Health-management////
 /////meet////
 .suman-video {
-  width: 60%;
-  height: 450px;
+  width: 600px;
+  height: 425px;
   @extend.m-center;
   position: relative;
   top: 50px;
@@ -2231,6 +2231,97 @@ footer {
   }
 }
 ///end stats//
+// image consulting //
+.consulting {
+  color: #373737;
+  font-size: 16px;
+  .consult-head { margin: 0 0 35px; }
+  .service-detail {
+    .title { margin: 0; }
+    .descp { text-align: justify; }
+  }
+  .consult-back {
+    padding: 30px 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+  .tina {
+    background-image: url('../img/consulting/tina.jpg');
+    background-size: 100% 100%;
+   }
+  .left-pattern { background-image: url('../img/consulting/left-pattern.jpg'); }
+  .right-pattern { background-image: url('../img/consulting/right-pattern.jpg'); }
+  .tagline { padding: 120px 0; }
+  .tag-text {
+    h3{
+      font-size: 28px;
+      line-height: 45px;
+      &:before{
+        content: "";
+        width: 50px;
+        height: 40px;
+        background: url('../img/consulting/tag-left.png') no-repeat;
+        position: absolute;
+        top: 0;
+        left: -40px;
+      }
+      &:after{
+        content: "";
+        width: 50px;
+        height: 40px;
+        background: url('../img/consulting/tag-right.png') no-repeat;
+        position: absolute;
+        top: 0;
+        right: -10px;
+      }
+    }
+  }
+  .service-info { margin: 30px 0; }
+  .testimonial-list { margin: 50px 0; }
+  .package-detail {
+    ul {
+      padding-left: 20px;
+      li {
+      margin: 20px 0;
+      list-style-type: disc;
+    }
+  }
+  }
+  .package-list {
+    .consult-chart {
+      .session {
+        margin: 42px 0 5px;
+      display: block;
+     }
+    }
+  }
+  .package-chart { margin: 30px 0; }
+  .session-charges {
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 16px;
+    .price {
+      padding: 6px 0;
+      border-radius: 6px;
+      background-color: #fff;
+      text-align: center;
+      .money { font-size: 20px; }
+    }
+  }
+  .session-descp { margin: 10px 0 0; }
+  .pack-men {
+    .session-descp { margin: 20px 0 0; }
+  }
+  .testimonial-imgholder {
+    @include square(137px);
+    @extend .round;
+   img{
+     max-width: 100%;
+     max-height: 100%;
+   }
+  }
+}
+// end image consulting //
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";
