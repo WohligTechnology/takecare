@@ -536,26 +536,96 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.reads = [{
-            title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
-            name: "Hetal Kothari",
-            location: "Bangalore, India",
-            desc: "I have completely enjoyed the diet. I could not believe how fast I lost weight with eating all meals and in between too. I feel so good that my old jeans have begun to fit me and when people are noticing that I have lost weight.<br>A big thank you to Dipti for always being there for me! I have literally eaten her head up with all sorts of questions and she has always very patiently answered it all.<br>Dipti has always been prompt in her replies and has encouraged me loads.<br>My cousins are still shocked that without coming to Mumbai, I have managed to lose weight. So the entire credit goes to SelfCare.<br>There is so much to eat that you never feel hungry.<br>The thing I really want to share is that my sons have become such a big part of my losing weight, it’s amazing. They keep telling me that I look thin now and that makes me feel like I’m on top of the world",
-            image: "img/stories/1.jpg",
-            weight: "11"
+          title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
+          name: "Hetal Kothari",
+          location: "Bangalore, India",
+          desc: "I have completely enjoyed the diet. I could not believe how fast I lost weight with eating all meals and in between too. I feel so good that my old jeans have begun to fit me and when people are noticing that I have lost weight.<br>A big thank you to Dipti for always being there for me! I have literally eaten her head up with all sorts of questions and she has always very patiently answered it all.<br>Dipti has always been prompt in her replies and has encouraged me loads.<br>My cousins are still shocked that without coming to Mumbai, I have managed to lose weight. So the entire credit goes to SelfCare.<br>There is so much to eat that you never feel hungry.<br>The thing I really want to share is that my sons have become such a big part of my losing weight, it’s amazing. They keep telling me that I look thin now and that makes me feel like I’m on top of the world",
+          image: "img/stories/1.jpg",
+          weight: "11"
         }, {
-            title: "I have actually enjoyed losing weight.",
-            name: "Bela Zaveri",
-            location: "Mumbai, India",
-            desc: "Feeling more energetic, light and increase in capacity.<br>I have actually enjoyed losing weight. Have never felt deprived about my food intake of course credit goes to my mentor Meloni Shah & above all Sumanji. Especially for extending my program when I was physically not doing well I would love to continue once i am back from my holiday. Thanks to all and of course heartiest thanks to my Gurdev to showing his grace and making me believe in myself and making me lead the target.",
-            image: "img/stories/2.jpg",
-            weight: "14"
+          title: "The diet cookbook is also very helpful and the recipes are delicious.",
+          name: "Ameesha Tibrewaal",
+          location: "Mumbai, India",
+          desc: "The first week was the most difficult but as I progressed into the program the hunger pangs became non-existent and I actually could see my body shrinking. The diet cookbook is also very helpful and the recipes are delicious. Amazing program and I am very pleased with the results.",
+          image: "img/stories/2.png",
+          weight: "5"
         }, {
-            title: "I never starved myself and I was always full at all times.",
-            name: "Kiran Mandawewala",
-            location: "Jamnagar, India",
-            desc: "The weight loss program was very systematic. After losing 17 kgs i feel energetic, confident and I have received so many compliments that it has added to my energy level. Everybody in Jamnagar has found a tremendous change in me, people here can’t believe that there can be so many significant changes in my body measurements with systematic diet control. Nobody would believe that I have lost so much weight and that too with proper eating. I never starved myself and I was always full at all times.",
-            image: "img/stories/3.jpg",
-            weight: "17"
+          title: "I never starved myself and I was always full at all times.",
+          name: "Kiran Mandawewala",
+          location: "Jamnagar, India",
+          desc: "The weight loss program was very systematic. After losing 17 kgs i feel energetic, confident and I have received so many compliments that it has added to my energy level. Everybody in Jamnagar has found a tremendous change in me, people here can’t believe that there can be so many significant changes in my body measurements with systematic diet control. Nobody would believe that I have lost so much weight and that too with proper eating. I never starved myself and I was always full at all times.",
+          image: "img/stories/3.jpg",
+          weight: "17"
+        }, {
+          title: "I have actually enjoyed losing weight.",
+          name: "Bela Zaveri",
+          location: "Mumbai, India",
+          desc: "Feeling more energetic, light and increase in capacity.<br>I have actually enjoyed losing weight. Have never felt deprived about my food intake of course credit goes to my mentor Meloni Shah & above all Sumanji. Especially for extending my program when I was physically not doing well I would love to continue once i am back from my holiday. Thanks to all and of course heartiest thanks to my Gurdev to showing his grace and making me believe in myself and making me lead the target.",
+          image: "img/stories/4.jpg",
+          weight: "14"
+        }, {
+          title: "Balance of vital food pyramid",
+          name: "Dr Jayprakash Suru",
+          location: "Mumbai, India",
+          desc: "Excellent program. No weight losing medications given. Balance of vital food pyramid.",
+          image: "img/stories/5.png",
+          weight: "9"
+        }, {
+          title: "I know I will be able to maintain this weight because I understand my body so much better.",
+          name: "Dr. Savari Desai",
+          location: "Mumbai, India",
+          desc: "I came to meet Suman (after reading the website) reluctantly – pretty convinced that I was NOT going to join.  Suman was frank and reassuring to my post partum woes!<br>So I decided to go for it – Selfcare made me realize that I was not eating correctly and that changed me! Added to the whole weight-loss process was Dipti Patole – she was my “Rock” throughout the diet process of a year. She was always there ready to answer questions – push me when I needed it and tell me to chill out when I overdid it! I am so very glad I came here! I know I will be able to maintain this weight because I understand my body so much better. Suman, the entire Selfcare team…and of course the gorgeous Dipti – Thanks! Love you guys. Will keep coming.",
+          image: "img/stories/6.png",
+          weight: "9"
+        }, {
+          title: "Best thing about her was that at every step I felt that she wants me to lose weight as much I want to",
+          name: "Jina Kapadia",
+          location: "Surat, India",
+          desc: "Neha has been very supportive and loving throughut the course. Many times I made goofups but with her guidance she would get me back on track. Best thing about her was that at every step I felt that she wants me to lose weight as much I want to.",
+          image: "img/stories/7.png",
+          weight: "5"
+        }, {
+          title: "Felt good getting appreciated for small efforts taken when reducing even a few grams",
+          name: "Liza Shah",
+          location: "Antwerp, Belgium",
+          desc: "Changed my concept of dieting. You can enjoy eating and at the same time reduce, condition being eating right food and balanced. Enjoyed filling up weekly chart and looked forward to giving it and waiting for an answer from Selfcare. Felt good getting appreciated for small efforts taken when reducing even a few grams. Feels nice getting into clothes that I had lost all hopes of getting into",
+          image: "img/stories/8.png",
+          weight: "5"
+        }, {
+          title: "Vaishali has been wonderful and always replied on all my queries on whats app as well",
+          name: "Madu Laccwani",
+          location: "Mumbai, India",
+          desc: "Thank you so much. You have helped me become more fit. Vaishali has been wonderful and always replied on all my queries on whats app as well. She is involved with us and very sweet.",
+          image: "img/stories/9.png",
+          weight: "5"
+        }, {
+          title: "I did not have to cook food separately specially for myself and I could eat whatever was prepared for everyone else",
+          name: "Nayna Doshi",
+          location: "Hong Kong, China",
+          desc: "Asmitaji was really sweet as she was always there wherever I needed her. I thoroughly enjoyed the program. I always thought that weight loss = sacrifice tasty food, but I did not have to cook food separately specially for myself and I could eat whatever was prepared for everyone else. Wherever I went I could have whatever was available, weather at a party, restaurant or at my house. My concept for weight loss has completely changed. Thank you very much",
+          image: "img/stories/10.png",
+          weight: "6"
+        }, {
+          title: "Your guidance has given me new confidence",
+          name: "Shaily Bagaria",
+          location: "Bangkok, Thailand",
+          desc: "Thank you for all your support. Your guidance has given me new confidence. In fact I am thoroughly pleased with your program",
+          image: "img/stories/11.png",
+          weight: "10"
+        }, {
+          title: "In the journey of diet she has ensured to keep my boost at its peak and never let me feel low or disappointed.",
+          name: "Sonali Parekh",
+          location: "Mumbai, India",
+          desc: "My consulting nutritionist Vaishali is full co-operative, patient and an ever-boosting person. In the journey of diet she has ensured to keep my boost at its peak and never let me feel low or disappointed. When you diet you need to be pepped up always and Suman and Vaishali are excellent. It was a Happy journey with Suman",
+          image: "img/stories/12.png",
+          weight: "5"
+        }, {
+          title: "Changed my way/ perception towards eating. I find myself balancing my food content/ sweets.",
+          name: "Anand Mehta",
+          location: "Mumbai, India",
+          desc: "Overall the program is good. Liked the weekly appointments. Changed my way/ perception towards eating. I find myself balancing my food content/ sweets. With proteins & vitamin levels. Very friendly staff, now getting ready to commit 5 more kgs.",
+          image: "img/stories/13.png",
+          weight: "10"
         }];
         $scope.views = [{
             title: "I am very satisfied with the diet given. Sumanji herself is a great motivation. I am very happy with the program and the weight loss achieved. Thank you.",
@@ -668,8 +738,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.subtractQuantity = function(item) {
           if(parseInt(item.qty) <=0){
             console.log("in sub");
-            item.qty=1
-          }else{
+            item.qty=1;
+          } else{
             item.qty = parseInt(item.qty);
             item.qty--;
             $scope.updateQuantity(item);
@@ -994,23 +1064,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
+            caption: "Healthy aging",
+            link: "healthyaging"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
         }, {
             img: "img/health/cancer.png",
-            caption: "lactation"
+            caption: "Cancer support",
+            link: "cancersupport"
         }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
-        }, {
-            img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1021,23 +1109,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1048,23 +1154,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1075,23 +1199,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1102,23 +1244,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1129,23 +1289,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
-        }, {
-            img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
             img: "img/health/kids.png",
-            caption: "superkids"
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
         }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1156,23 +1334,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1183,23 +1379,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1210,23 +1424,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/marathon.png",
+            caption: "Marathon / Sports Nutrition",
+            link: "marathon"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1237,23 +1469,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.healthdetail = [{
-            img: "img/health/ailment.png",
-            caption: "ailment control"
+            img: "img/health/kids.png",
+            caption: "Weight loss for kids",
+            link: "weightlossforkids"
+        }, {
+            img: "img/health/weightloss.png",
+            caption: "Weightloss with health gain",
+            link: "weightlosswithhealthgain"
+        }, {
+            img: "img/health/lactation.png",
+            caption: "Post pregnancy weight loss with lactation",
+            link: "postpregnancy"
+        }, {
+            img: "img/health/weight-loss-pcos.png",
+            caption: "weightloss with PCOS and Insulin Resistence",
+            link: "weightlosswithpcos"
         }, {
             img: "img/health/ageing.png",
-            caption: "healthy ageing"
-        }, {
-            img: "img/health/cancer.png",
-            caption: "lactation"
-        }, {
-            img: "img/health/kids.png",
-            caption: "superkids"
-        }, {
-            img: "img/health/loss.png",
-            caption: "inch loss"
+            caption: "Healthy aging",
+            link: "healthyaging"
         }, {
             img: "img/health/pregnancy.png",
-            caption: "pregnancy"
+            caption: "pregnancy",
+            link: "pregnancy"
+        }, {
+            img: "img/health/weight-gain.png",
+            caption: "weight gain",
+            link: "weightgain"
+        }, {
+            img: "img/health/ailment-control.png",
+            caption: "ailment control",
+            link: "ailmentcontrol"
+        }, {
+            img: "img/health/cancer.png",
+            caption: "Cancer support",
+            link: "cancersupport"
         }];
         $scope.healthdetail = _.chunk($scope.healthdetail, 3);
     })
@@ -1387,7 +1637,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           },
           {
             img: "img/recipes/bread.jpg",
-            name: "bread"          
+            name: "bread"
           },
           {
               img: "img/recipes/makai.jpg",

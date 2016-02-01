@@ -471,12 +471,14 @@
     p { font-size: 16px; }
     &.right {
       hr { @include margin(20px 0 20px 20px); }
-      .name, .location {
-        @include margin(0 0 0 -90px);
-        @include padding(0 0 0 20px);
-        display: inline-block;
+      .read-inner-detail {
+        text-align: left;
+        .name, .location {
+          @include padding(0 0 0 8px);
+          display: inline-block;
+        }
+        .location { @include margin(0 0 0 2px); }
       }
-      .location { @include margin(0 0 0 -112px); }
     }
     &.left {
       hr { @include margin(20px 10px 20px 0); }
