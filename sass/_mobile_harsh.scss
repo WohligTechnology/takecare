@@ -389,6 +389,12 @@
   // ailment control
   .pregnancy .consult-chart .noconsult { font-size: 18px; }
 
+  // blog
+  .blog-imghold { margin: 0 auto; }
+  .blog-detail {
+    h4, p { text-align: center; }
+  }
+
   // blogdetail
   .bloginfo-imgholder { @include size(100%, 400px); }
   .related-post {
