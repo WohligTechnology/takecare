@@ -4,7 +4,7 @@
     letter-spacing: 2px;
   }
   .social-links {
-    margin: 2px 10px 0 0; 
+    margin: 2px 10px 0 0;
   }
   .about-suman {
     .heading {
@@ -239,6 +239,12 @@
     line-height: 55px;
   }
   .kcal { margin: 6px 0 0 8px; }
+  // image consulting
+  .consulting {
+  .session-descp { font-size: 15px; }
+  .pack-men .session-descp { margin: 10px 0 0; }
+  .tina { background-size: cover; }
+  }
 }
 @media (max-width: $screen-sm-max) {
   // faq
@@ -668,6 +674,33 @@
   }
   .app-descp {
     h4,p { text-align: center; }
+  }
+  // imageconsulting
+  .consulting {
+    .consult-head { text-align: center; }
+    .service-imgholder { margin: 0 0 10px; }
+    .service-detail {
+      margin: 0 0 50px;
+      text-align: center;
+      .descp {
+        margin: 10px 0;
+        text-align: center;
+      }
+    }
+    .package-detail {
+      margin: 0 0 30px;
+      text-align: center;
+      ul{
+        padding: 0;
+      li { list-style-type: none; }
+    }
+  }
+    .testimonial-imgholder {
+    margin: 0 auto 30px;
+  }
+  .testi-detail {
+    .profession { margin: 15px 0; }
+  }
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -1253,7 +1286,36 @@
   @include square(70px);
   margin: 10px auto 0;
  }
-
+// image consulting
+.consulting {
+  .tag-text h3 {
+    font-size: 22px;
+    line-height: 40px;
+    &:before{
+      top: -25px;
+      left: 20px;
+      zoom: 0.9;
+    }
+    &:after {
+      top: -25px;
+      right: 20px;
+      zoom: 0.9;
+    }
+  }
+  .pack-men .session-descp { margin: 20px 0 0; }
+  .testi-detail { text-align: center; }
+  .package-chart {
+    text-align: center;
+    .consult-chart {
+      width: 80px;
+      margin-bottom: 10px;
+      .session {
+        margin: 30px 0px 5px;
+        font-size: 14px;
+      }
+    }
+  }
+}
 }
 @media (max-width: 480px) {
   // login
@@ -1784,4 +1846,37 @@
   .app-slide { width: 100%; }
   .faq-sculp .faqslide { width: 100%; }
   .play-me { @include square(35px); }
+
+  // imageconsulting
+  .consulting {
+     font-size: 14px;
+     .consult-head {
+       margin: 0 0 20px;
+       font-size: 20px;
+     }
+     .session-charges .price .money { font-size: 18px; }
+     .tagline { padding: 40px 0; }
+     .tag-text {
+       h3 {
+         font-size: 16px;
+         line-height: 22px;
+         &:before,
+         &:after { zoom: 0.5; }
+       }
+     }
+     .service-detail {
+       .title { font-size: 18px; }
+     }
+     .testimonial-imgholder {
+       @include square(100px);
+       margin: 0 auto 20px;
+     }
+     .testi-detail {
+       .name { font-size: 18px; }
+       .profession {
+         margin: 5px 0;
+         font-size: 18px;
+       }
+     }
+  }
 }
