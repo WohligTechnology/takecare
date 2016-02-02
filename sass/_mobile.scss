@@ -243,7 +243,6 @@
   .consulting {
   .session-descp { font-size: 15px; }
   .pack-men .session-descp { margin: 10px 0 0; }
-  .tina { background-size: cover; }
   }
 }
 @media (max-width: $screen-sm-max) {
@@ -677,6 +676,7 @@
   }
   // imageconsulting
   .consulting {
+  .tina { background-size: cover; }
     .consult-head { text-align: center; }
     .service-imgholder { margin: 0 0 10px; }
     .service-detail {
