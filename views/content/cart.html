@@ -26,7 +26,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="text-center letter-space font-semibold" ng-repeat="product in allcart">
+            <tr class="text-center letter-space font-semibold" ng-repeat="product in allcart | orderBy:'id'">
               <td>
                 <figure  class="pointer" ui-sref="productdetail({id:product.id})">
                   <div class="cart-imgholder m-center">
