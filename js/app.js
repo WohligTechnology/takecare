@@ -220,6 +220,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         templateUrl: "views/template.html",
         controller: 'PrivacyPolicyCtrl'
     })
+    .state('selfcaretv', {
+        url: "/selfcaretv",
+        templateUrl: "views/template.html",
+        controller: 'SelfcaretvCtrl'
+    })
+    .state('careers', {
+        url: "/careers",
+        templateUrl: "views/template.html",
+        controller: 'CareersCtrl'
+    })
+    .state('account', {
+        url: "/account",
+        templateUrl: "views/template.html",
+        controller: 'AccountCtrl'
+    })
 
   $urlRouterProvider.otherwise("/home");
 

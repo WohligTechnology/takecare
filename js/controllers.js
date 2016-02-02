@@ -223,6 +223,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.refreshProducts($scope.filterBy);
         }
     })
+    .controller('SelfcaretvCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("selfcaretv");
+        $scope.menutitle = NavigationService.makeactive("Selfcare Tv");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
+    .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("careers");
+        $scope.menutitle = NavigationService.makeactive("Careers");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
+    .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("account");
+        $scope.menutitle = NavigationService.makeactive("Account");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
     .controller('HealthPackagesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("healthpackages");
