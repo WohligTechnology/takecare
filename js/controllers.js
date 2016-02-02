@@ -535,14 +535,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Success Stories");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.reads = [{
-          title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
-          name: "Hetal Kothari",
-          location: "Bangalore, India",
-          desc: "I have completely enjoyed the diet. I could not believe how fast I lost weight with eating all meals and in between too. I feel so good that my old jeans have begun to fit me and when people are noticing that I have lost weight.<br>A big thank you to Dipti for always being there for me! I have literally eaten her head up with all sorts of questions and she has always very patiently answered it all.<br>Dipti has always been prompt in her replies and has encouraged me loads.<br>My cousins are still shocked that without coming to Mumbai, I have managed to lose weight. So the entire credit goes to SelfCare.<br>There is so much to eat that you never feel hungry.<br>The thing I really want to share is that my sons have become such a big part of my losing weight, it’s amazing. They keep telling me that I look thin now and that makes me feel like I’m on top of the world",
-          image: "img/stories/1.jpg",
-          weight: "11"
-        }, {
+        $scope.reads = [
+        //   {
+        //   title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
+        //   name: "Hetal Kothari",
+        //   location: "Bangalore, India",
+        //   desc: "I have completely enjoyed the diet. I could not believe how fast I lost weight with eating all meals and in between too. I feel so good that my old jeans have begun to fit me and when people are noticing that I have lost weight.<br>A big thank you to Dipti for always being there for me! I have literally eaten her head up with all sorts of questions and she has always very patiently answered it all.<br>Dipti has always been prompt in her replies and has encouraged me loads.<br>My cousins are still shocked that without coming to Mumbai, I have managed to lose weight. So the entire credit goes to SelfCare.<br>There is so much to eat that you never feel hungry.<br>The thing I really want to share is that my sons have become such a big part of my losing weight, it’s amazing. They keep telling me that I look thin now and that makes me feel like I’m on top of the world",
+        //   image: "img/stories/1.jpg",
+        //   weight: "11"
+        // },
+         {
           title: "The diet cookbook is also very helpful and the recipes are delicious.",
           name: "Ameesha Tibrewaal",
           location: "Mumbai, India",
@@ -781,6 +783,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.user = {};
         $scope.shippingcharges = 0;
         $scope.login = {};
+        $scope.cod = false;
+        $scope.placeorder = true;
         $scope.tabs = [{
             active: true,
             disabled: true
@@ -835,22 +839,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.guestshow = false;
             }
         };
+        $scope.codChange = function(cod){
+          if (cod) {
+            $scope.placeorder = true;
+          }else {
+            $scope.placeorder = false;
+          }
+        }
         $scope.proceedToPayment = function() {
+          console.log($scope.checkout);
             if ($scope.allcart.length > 0) {
                 $scope.checkout.cart = $scope.allcart;
                 NavigationService.checkoutCheck(function(data){
                   if(data.value){
                     NavigationService.placeOrder($scope.checkout, function(data) {
-                        $scope.alerts.push({
-                            type: 'success',
-                            msg: 'Order Placed. Order ID : ' + data
-                        })
+                        $scope.order = data;
+                        $scope.tabs[3].active = true;
                     })
-                  }else{
-                    $scope.alerts.push({
-                      type:'danger',
-                      msg:'Remove out of stock items from cart'
-                    });
                   }
                 })
             }
