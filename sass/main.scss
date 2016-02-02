@@ -520,8 +520,9 @@ button {
     }
   }
   .people-weight-count {
-    padding-right: 30px;
+    padding-right: 10px;
   }
+  .icon { margin: 0 5px; }
   .info {
     border-right: 1px solid $brand-brown-dark;
   }
@@ -763,6 +764,7 @@ button {
   width: 110px;
   height: auto;
   border-radius: 6px;
+  margin-right: 5px;
   background-color: $brand-primary;
   font-size: 16px;
   .noconsult {
@@ -797,6 +799,7 @@ button {
     padding: 14px 0 2px;
   }
 }
+.weight .consult-chart { min-height: 76px; }
 // .health-tab {
 //   .tab-chart { width: 83%; }
 // }

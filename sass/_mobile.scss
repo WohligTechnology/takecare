@@ -117,6 +117,7 @@
         }
       }
     }
+ .consult-chart { min-height: 70px; }
   }
   // faq
   .faq .banner h2 { font-size: 30px; }
@@ -360,6 +361,7 @@
     }
   }
   // .weight .tab-chart .nav-tabs li a { width: 140px; }
+  .weight .consult-chart { min-height: 66px; }
   .weight-round {
     @include square(90px);
   }
@@ -431,10 +433,11 @@
     height: auto;
   }
   .consult-chart {
-    height: auto;
+    width: 105px;
     .consult {
       margin-top: 42px;
     }
+    .month { margin: 30px 0 0; }
   }
   .slider-round {
     padding: 0 25px;
@@ -503,6 +506,7 @@
       }
     }
   }
+  .weight-count { padding: 0; }
   .info {
     .health-title {
       span {
@@ -930,6 +934,7 @@
   .align {
     margin: -12px 2px 0 0;
   }
+  .weight .consult-chart { min-height: 53px; }
   .weight-round,
   .get-round {
     @include square(70px);
@@ -946,6 +951,7 @@
   }
   .consult-chart {
     width: 70px;
+    margin: 0;
     .noconsult {
       @include square(35px);
       border: 2px solid $brand-primary;
@@ -1566,6 +1572,12 @@
       .weight-number {
         font-size: 19px;
       }
+    }
+  }
+  .weight .consult-chart {
+    min-height: auto;
+    .month {
+      margin: 17px 0 12px;
     }
   }
   .consult-chart {
