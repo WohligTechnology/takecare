@@ -57,6 +57,7 @@ $brand-brown-gray: #998675 !default; //BrownGray
 $brand-yellow: #f2921d !default; //Yellow
 $brand-blue: #5184c5 !default; //Blue
 $brand-teal: #16a085 !default; //Teal
+$brand-gray: #373737 !default; ///gray
 $brand-graylight: #d5cdc6 !default; //lightgray
 $font-color: #242424 !default;
 $body-bg: #fff !default;
@@ -2236,7 +2237,7 @@ footer {
 ///end stats//
 // image consulting //
 .consulting {
-  color: #373737;
+  color:$brand-gray;
   font-size: 16px;
   .consult-head { margin: 0 0 35px; }
   .service-detail {
@@ -2325,6 +2326,30 @@ footer {
   }
 }
 // end image consulting //
+////careers////
+.careers-main {
+  margin: 80px 0;
+  h2 {
+    color: $brand-gray;
+    font-size: 40px;
+    a { color: #373737; }
+  }
+}
+// end careers///
+////selfcare tv///
+.tv-headline { margin: 0 0 40px; }
+ .tv-main {
+  color: $brand-gray;
+ }
+ .episode {
+   padding: 0 15px;
+   margin: 30px 0;
+  }
+  .youtube-play {
+    color: #c01d20;
+    font-size: 60px;
+  }
+// end selfcare tv//
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";

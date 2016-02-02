@@ -235,6 +235,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         templateUrl: "views/template.html",
         controller: 'AccountCtrl'
     })
+    .state('error', {
+       url: "/error",
+       templateUrl: "views/template.html",
+       controller: 'ErrorCtrl'
+   })
+   .state('wentwrong', {
+        url: "/wentwrong",
+        templateUrl: "views/template.html",
+        controller: 'WentwrongCtrl'
+    })
+    .state('thankyou', {
+        url: "/thankyou",
+        templateUrl: "views/template.html",
+        controller: 'ThankyouCtrl'
+    })
 
   $urlRouterProvider.otherwise("/home");
 

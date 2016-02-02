@@ -229,6 +229,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Selfcare Tv");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.selfcaretv = [
+          {
+            title: "Lorem ipsum dummy text",
+            img: "http://img.youtube.com/vi/aMyOpVqyjYQ/sddefault.jpg",
+            link: "https://www.youtube.com/embed/aMyOpVqyjYQ"
+          },
+          {
+            title: "Lorem ipsum dummy text",
+            img: "http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg",
+            link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
+          },
+          {
+            title: "Lorem ipsum dummy text",
+            img: "http://img.youtube.com/vi/RCfJBUulDBg/sddefault.jpg",
+            link: "https://youtu.be/RCfJBUulDBg"
+          },
+          {
+            title: "Lorem ipsum dummy text",
+            img: "http://img.youtube.com/vi/aMyOpVqyjYQ/sddefault.jpg",
+            link: "https://www.youtube.com/embed/aMyOpVqyjYQ"
+          }
+        ];
     })
     .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -478,6 +500,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
+    .controller('ErrorCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("error");
+  $scope.menutitle = NavigationService.makeactive("Error");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('WentwrongCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("wentwrong");
+  $scope.menutitle = NavigationService.makeactive("Went Wrong");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("thankyou");
+  $scope.menutitle = NavigationService.makeactive("Thankyou");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
     .controller('NewsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("news");

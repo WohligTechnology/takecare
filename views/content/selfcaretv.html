@@ -1,1 +1,30 @@
-<h2>fchdjhk</h2>
+<section class="careers">
+  <div class="selfcare-image">
+        <img src="img/banners/selfcaretv.jpg" alt="">
+    <h2 class="text-uppercase get-center white font-semibold">selfcare 'tv'</h2>
+  </div>
+  <div class="careers-main">
+    <div class="container">
+      <div class="tv-main">
+        <h3 class="text-center tv-headline">Browse through the videos to know more about selfcare</h3>
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <div class="row">
+              <div class="col-md-6"  ng-repeat="episode in selfcaretv">
+                <div class="episode">
+                  <h4>{{episode.title}}</h4>
+                  <div class="episode-videoholder relate">
+                    <a href="{{episode.link}}" fancybox class="various fancybox.iframe">
+                      <img ng-src="{{episode.img}}" alt="" class="img-responsive">
+                      <span class="get-center youtube-play"><i class="fa fa-youtube-play"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
