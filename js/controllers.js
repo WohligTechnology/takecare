@@ -233,24 +233,67 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.selfcaretv = [
           {
             title: "Lorem ipsum dummy text",
-            img: "http://img.youtube.com/vi/aMyOpVqyjYQ/sddefault.jpg",
-            link: "https://www.youtube.com/embed/aMyOpVqyjYQ"
+            url:"_eU-UdgINos"
           },
           {
             title: "Lorem ipsum dummy text",
-            img: "http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg",
-            link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
+            url:"UT4sN3pqRWo"
           },
           {
             title: "Lorem ipsum dummy text",
-            img: "http://img.youtube.com/vi/RCfJBUulDBg/sddefault.jpg",
-            link: "https://youtu.be/RCfJBUulDBg"
-          },
+          url:"XyTnOgwZNDY"
+        },{
+          title:"Lorem ipsum dummy text",
+          url:"P2pHiMCKx0w"
+        },
           {
             title: "Lorem ipsum dummy text",
-            img: "http://img.youtube.com/vi/aMyOpVqyjYQ/sddefault.jpg",
-            link: "https://www.youtube.com/embed/aMyOpVqyjYQ"
-          }
+          url:"UC0lLmOWGILtcSuerLEXJ0Kw"
+          },
+            {
+              title: "Lorem ipsum dummy text",
+            url:"VGXF33IIzIY"
+            },
+              {
+                title: "Lorem ipsum dummy text",
+              url:"6HlX-mCG4HA"
+              },
+                {
+                  title: "Lorem ipsum dummy text",
+                url:"J0_7CcYiiUE"
+                },
+                  {
+                    title: "Lorem ipsum dummy text",
+                  url:"2o21aE6uczQ"
+                  },
+                    {
+                      title: "Lorem ipsum dummy text",
+                    url:"QQnRebdLRWs"
+                    },
+                      {
+                        title: "Lorem ipsum dummy text",
+                      url:"IS7fddQf7O0"
+                      },
+                        {
+                          title: "Lorem ipsum dummy text",
+                        url:"iYEptaCDFBk"
+                        },
+                          {
+                            title: "Lorem ipsum dummy text",
+                          url:"2Zrks0ab1ac"
+                          },
+                            {
+                              title: "Lorem ipsum dummy text",
+                            url:"xDfNiK78ltY"
+                            },
+                              {
+                                title: "Lorem ipsum dummy text",
+                              url:"OirKxxWLAHQ"
+                              },
+                                {
+                                  title: "Lorem ipsum dummy text",
+                                url:"HATRbH_UfbY"
+                                }
         ];
     })
     .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -578,7 +621,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               $scope.news=data;
             })
         };
-
     })
     .controller('SuccessStoriesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -595,6 +637,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   image: "img/stories/1.jpg",
         //   weight: "11"
         // },
+        {
+         title: "Transition",
+         name: "Siddhart Banka",
+         location: "Mumbai, India",
+         desc: "I started working out (Walking), eating healthy food,started living a healhty life. Great center with all lovely people around. Dieticians are very good. allow full meal and no strict diet like others do it so a better program then others.",
+         image: "img/stories/siddhart.png",
+         weight: "15"
+       },
          {
           title: "The diet cookbook is also very helpful and the recipes are delicious.",
           name: "Ameesha Tibrewaal",
