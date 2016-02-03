@@ -606,6 +606,12 @@ var navigationservice = angular.module('navigationservice', [])
     checkoutCheck:function(callback){
       $http.get(adminurl+'checkoutCheck').success(callback);
     },
+    getNewsYear:function(callback){
+      $http.get(adminurl+'getNewsYear').success(callback);
+    },
+    getNews:function(request,callback){
+      $http.get(adminurl+'getNews?year='+request).success(callback);
+    },
     logout:function(callback){
       $http.get(adminurl+ 'logout').success(callback);
     },

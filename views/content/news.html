@@ -13,23 +13,26 @@
             <button type="button" class="btn brand-brown-bg white">{{slide.year}}</button>
           </uib-slide>
         </uib-carousel> -->
-        <flex-slider class="carousel" flex-slide="year in yearslide track by $index" animation="" item-width="130" item-margin="5">
+        <flex-slider class="carousel" flex-slide="year in newsyears track by $index" animation="" item-width="130" item-margin="5">
           <li>
-            <button type="button" class="btn brand-brown-bg white" ng-click="activeTab(year);" ng-class="{'actif':year.year==activeYear.year}">{{year.year}}</button>
+            <button type="button" class="btn brand-brown-bg white" ng-click="activeTab(year.year);" ng-class="{'actif':year.year==news[0].year}">{{year.year}}</button>
           </li>
         </flex-slider>
       </div>
 
       <div class="news-article">
-        <div class="row">
-          <div class="col-md-4 col-sm-4" ng-repeat="article in activeYear.news">
+        <div class="text-center" ng-if="news.length <=0">
+          No news found.
+        </div>
+        <div class="row" ng-if="news.length >0">
+          <div class="col-md-4 col-sm-4" ng-repeat="new in news">
 
             <div class="article-image">
-              <a fancybox-box class="fancyboxGroup" rel="fancybox-thumb" href="{{article.image}}">
-                <img ng-src="{{article.image}}" alt="" class="img-responsive">
+              <a fancybox-box class="fancyboxGroup" rel="fancybox-thumb" href="{{new.image | serverimage}}">
+                <img ng-src="{{new.image | serverimage}}" alt="" class="img-responsive">
               </a>
             </div>
-            <p class="brand-brown-dark">{{article.title}}</p>
+            <p class="brand-brown-dark">{{new.title}}</p>
           </div>
 
           <!-- <div class="col-md-4 col-sm-4">
