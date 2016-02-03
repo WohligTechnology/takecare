@@ -257,14 +257,14 @@
           <form name="asksumanForm">
             <div class="form-group">
               <div class="custom-select">
-                <select name="category" id="" ng-model="asksuman.category" required class="form-control text-bold">
-                  <option value="">Choose a Category</option>
+                <select name="category" id="" ng-options="askcategory.value as askcategory.name for askcategory in askcategories" ng-model="asksuman.category" required class="form-control text-bold">
+                  <!-- <option value="">Choose a Category</option>
                   <option value="Weight Loss">Weight Loss</option>
                   <option value="Weight Gain">Weight Gain</option>
                   <option value="Diet">Diet</option>
                   <option value="Health and Immunity">Health and Immunity</option>
                   <option value="Ailment Control">Ailment Control</option>
-                  <option value="General">General</option>
+                  <option value="General">General</option> -->
                 </select>
                 <span class="select-caret"></span>
               </div>

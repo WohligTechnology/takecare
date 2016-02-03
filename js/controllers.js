@@ -8,6 +8,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.asksuman = {};
         $scope.asksuman.category = "";
         $scope.alerts = [];
+        $scope.askcategories=[{
+          value:"",
+          name:"Choose a Category"
+        },{
+          value:"Weight Loss",
+          name:"Weight Loss"
+        },{
+          value:"Weight Gain",
+          name:"Weight Gain"
+        },{
+          value:"Diet",
+          name:"Diet"
+        },{
+          value:"Health and Immunity",
+          name:"Health and Immunity"
+        },{
+          value:"Ailment Control",
+          name:"Ailment Control"
+        },{
+          value:"General",
+          name:"General"
+        }];
         $scope.navigation = NavigationService.getnav();
         NavigationService.getSlide(function(data) {
             $scope.homeslider = data;
