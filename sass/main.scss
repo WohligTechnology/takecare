@@ -1302,8 +1302,14 @@ button {
 }
 .checkout-main {
   input {
+    border-width: 2px;
     border-color: $brand-primary;
-    font-style: italic;
+    @include placeholder {
+      font-family: $font-baubodi;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 1px;
+    };
   }
   .cart-table {
     .quantity {
@@ -2362,6 +2368,40 @@ footer {
 .process { margin: 60px 0 15px; }
 .bag { margin: 50px 0px 90px; }
 .put-center { margin-top: 70px; }
+
+// end error thankyou wentwrong
+
+// account
+.profile-tab {
+  @extend .checkout-main;
+  .details {
+    input { margin: 0 30px 15px 0; }
+  }
+  .checkbox input[type="checkbox"] + label span {
+    @include square(20px);
+    border-width: 2px;
+    border-radius: 4px;
+  }
+  .address {
+    .same-bill { font-size: 15px; }
+    .checkbox { margin: 0 0 15px; }
+    .edit {
+      border: 1px solid $brand-primary;
+      border-radius: 0;
+      margin: -20px 0px 0px;
+    }
+    select {
+      border: 2px solid $brand-primary;
+    }
+    .custom-select{
+      &:after {
+        content: "\f107";
+        width: 45px;
+        background-color: $brand-primary;
+      }
+    }
+}
+}
 
 @import "harsh";
 @import "mobile";

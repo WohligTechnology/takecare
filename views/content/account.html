@@ -1,7 +1,7 @@
 <section class="account">
   <div class="selfcare-image">
     <img src="img/banners/account.jpg" alt="">
-    <h2 class="text-uppercase get-center white font-semibold">selfcare 'tv'</h2>
+    <h2 class="text-uppercase get-center white font-semibold">my account</h2>
   </div>
   <div class="account-main">
     <div class="container">
@@ -10,18 +10,138 @@
           <uib-tab>
             <uib-tab-heading><span class="text-uppercase">my profile</span></uib-tab-heading>
             <div class="profile-tab">
-              <h3 class="text-uppercase brand-brown-dark">your details</h3>
-              <form action="" class="form-inline">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
+              <h3 class="text-uppercase brand-brown-dark letter-space">your details</h3>
+              <form action="" class="form-inline details">
+                <div class="form-group">
+                  <input type="text" placeholder="First Name *" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Last Name *" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="tel" placeholder="Mobile Number *" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email *" class="form-control">
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary-inverse text-uppercase" type="button">Edit</button>
+                </div>
               </form>
+              <div class="address">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h3 class="text-uppercase brand-brown-dark letter-space inline-block">billing address</h3>
+                    <button class="btn btn-primary-inverse text-uppercase">Edit</button>
+                    <form action="">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Line 1 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Line 2 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Line 3 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City *">
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-select">
+                          <select name="" id="">
+                            <option value="">State *</option>
+                          </select>
+                          <span></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Country *">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-offset-2 col-md-4">
+                    <h3 class="text-uppercase brand-brown-dark letter-space inline-block">shipping address</h3>
+                    <button class="btn btn-primary-inverse text-uppercase" type="button">edit</button>
+                    <div class="checkbox">
+                      <input type="checkbox" class="text-uppercase" id="same">
+                      <label for="same" class="same-bill"> <span></span> Same as billing address</label>
+                    </div>
+                    <form action="">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Line 1 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Line 2 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Line 3 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City *">
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-select">
+                          <select name="" id="">
+                            <option value="">State *</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Country *">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </uib-tab>
           <uib-tab>
             <uib-tab-heading><span class="text-uppercase">order list</span></uib-tab-heading>
-            <div class="order-tab"></div>
+            <div class="order-tab">
+              <div class="cart-table">
+                <table class="table">
+                  <thead class="brand-brown-dark brand-brown-bg text-uppercase letter-space">
+                    <tr>
+                      <th class="text-center">Order Id</th>
+                      <th class="text-center">Items</th>
+                      <th class="text-center">Quantity</th>
+                      <th class="text-center">Total Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center letter-space font-semibold">
+                      <td>
+                        <span>AH1459664</span>
+                      </td>
+                      <td>
+                        <figure  class="pointer">
+                          <div class="cart-imgholder m-center round">
+                          <img src="img/cart/1.jpg" alt="" class="img-responsive">
+                          </div>
+                          <figcaption class="text-center text-uppercase">Chana jhor</figcaption>
+                        </figure>
+                      </td>
+                      <td>
+                        <span>1</span>
+                      </td>
+                      <td>
+                        <div class="cart-total-amount">
+                        <p>RS. 225.00</p>
+                      </div>
+                        <div class="remove text-right">
+                          <button class="btn btn-primary text-uppercase no-radius">print invoice</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
+                  <span class="text-uppercase pull-left">Grand Total</span>
+                  <span class="pull-right text-uppercase">Rs. 375.00</span>
+                </div>
+              </div>
+            </div>
           </uib-tab>
         </uib-tabset>
       </div>
