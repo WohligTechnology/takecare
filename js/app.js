@@ -43,7 +43,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       controller: 'HealthManagementCtrl'
     })
     .state('healthmanagementdetail', {
-      url: "/healthmanagementdetail",
+      url: "/healthmanagementdetail/:id",
       templateUrl: "views/template.html",
       controller: 'HealthManagementDetailCtrl'
     })

@@ -279,54 +279,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Health Management");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.categorylist = [{
-            name: 'weight loss for kids',
-            id: 1,
-            image: 'img/health/kids.png'
-        }, {
-            name: 'weightloss with health gain',
-            id: 2,
-            image: 'img/health/weightloss.png'
-        }, {
-            name: 'post pregnancy weight loss with lactation',
-            id: 3,
-            image: 'img/health/kids.png'
-        }, {
-            name: 'weightloss with pcos and insulin resistence',
-            id: 4,
-            image: 'img/health/kids.png'
-        }, {
-            name: 'healthy aging',
-            id: 5,
-            image: 'img/health/weightloss.png'
-        }, {
-            name: 'pregnancy',
-            id: 6,
-            image: 'img/health/kids.png'
-        }, {
-            name: 'weight gain',
-            id: 7,
-            image: 'img/health/kids.png'
-        }, {
-            name: 'ailment control',
-            id: 8,
-            image: 'img/health/weightloss.png'
-        }, {
-            name: 'cancer support',
-            id: 9,
-            image: 'img/health/kids.png'
-        }, {
-            name: 'marathon / sports nutrition',
-            id: 10,
-            image: 'img/health/kids.png'
-        }];
+        NavigationService.getSubPackages(function(data){
+          $scope.subpackages =data;
+          $scope.subpackages = _.chunk($scope.subpackages,5);
+          console.log($scope.subpackages);
+        });
     })
-    .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("healthmanagementdetail");
         $scope.menutitle = NavigationService.makeactive("Health Management Detail");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.healthid=$stateParams.id;
+        console.log($scope.healthid);
         $scope.healthdetail = [{
             img: "img/health/ailment.png",
             caption: "ailment control"

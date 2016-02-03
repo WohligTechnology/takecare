@@ -12,125 +12,15 @@
         keep future disorder at bay. These are specialized plans aimed at individual with particular needs such as pregnancy, weight gain, inch loss etc. A personalized and detailed diet chart will be created to meet your specific requirements.</p>
     </div>
     <div class="health-manageselect">
-      <div class="row-flex">
-        <div class="col-flex">
+      <div class="row-flex" ng-repeat="row in subpackages">
+        <div class="col-flex" ng-repeat="package in row">
           <div class="managecat text-center">
             <figure>
-              <a href="#/weightlossforkids">
+              <a ui-sref="healthmanagementdetail({id:package.id})">
                 <div class="category-imghold ">
-                  <img src="img/health/kids.png" alt="" class="img-responsive round">
+                  <img ng-src="{{package.image | serverimage}}" alt="" class="img-responsive round">
                 </div>
-                <figcaption class="text-uppercase brand-brown-dark font-semibold">Weight loss for kids</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/weightlosswithhealthgain">
-                <div class="category-imghold">
-                  <img src="img/health/weightloss.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">Weightloss with health gain</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/postpregnancy">
-                <div class="category-imghold">
-                  <img src="img/health/lactation.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">Post pregnancy weight loss with lactation</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/weightlosswithpcos">
-                <div class="category-imghold">
-                  <img src="img/health/weight-loss-pcos.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">weightloss with PCOS and Insulin Resistence</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/healthyaging">
-                <div class="category-imghold">
-                  <img src="img/health/ageing.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">Healthy aging</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="row-flex">
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/pregnancy">
-                <div class="category-imghold">
-                  <img src="img/health/pregnancy.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">pregnancy</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/weightgain">
-                <div class="category-imghold">
-                  <img src="img/health/weight-gain.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">weight gain</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/ailmentcontrol">
-                <div class="category-imghold">
-                  <img src="img/health/ailment-control.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">ailment control</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/cancersupport">
-                <div class="category-imghold">
-                  <img src="img/health/cancer.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">Cancer support</figcaption>
-              </a>
-            </figure>
-          </div>
-        </div>
-        <div class="col-flex">
-          <div class="managecat text-center">
-            <figure>
-              <a href="#/marathon">
-                <div class="category-imghold">
-                  <img src="img/health/marathon.png" alt="" class="img-responsive round">
-                </div>
-                <figcaption class="text-uppercase brand-brown-dark text-bold">Marathon / Sports Nutrition</figcaption>
+                <figcaption class="text-uppercase brand-brown-dark font-semibold">{{package.name}}</figcaption>
               </a>
             </figure>
           </div>
@@ -138,3 +28,4 @@
       </div>
     </div>
   </div>
+</div>
