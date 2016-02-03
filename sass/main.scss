@@ -513,7 +513,7 @@ button {
   }
   .health-count {
     font-family: $font-vista;
-    font-size: 45px;
+    font-size: 30px;
     span {
       font-size: 14px;
       color: $brand-brown-dark;
@@ -523,7 +523,7 @@ button {
   .people-weight-count {
     padding-right: 10px;
   }
-  .icon { margin: 0 5px; }
+  .icon { margin: 0 10px; }
   .info {
     border-right: 1px solid $brand-brown-dark;
   }
@@ -2399,6 +2399,7 @@ footer {
     .checkbox { margin: 0 0 15px; }
     select {
       border: 2px solid $brand-primary;
+      color: #555;
     }
     .custom-select{
       &:after {
