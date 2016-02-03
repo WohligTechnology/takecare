@@ -6,6 +6,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.asksuman = {};
+        $scope.asksuman.category = "";
         $scope.alerts = [];
         $scope.navigation = NavigationService.getnav();
         NavigationService.getSlide(function(data) {
@@ -807,6 +808,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.guest = "notguest";
         $scope.guestshow = true;
+        $scope.countries = countries;
         $scope.allcart = [];
         $scope.checkout = {};
         $scope.alerts = [];
@@ -815,6 +817,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.login = {};
         $scope.cod = false;
         $scope.placeorder = true;
+        $scope.shipAtSame = false;
         $scope.tabs = [{
             active: true,
             disabled: true
@@ -890,28 +893,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 })
             }
         };
+        $scope.sameShipping = function(data) {
+          if ($scope.shipAtSame) {
+            $scope.checkout.shippingline1 = data.billingline1;
+            $scope.checkout.shippingline2 = data.billingline2;
+            $scope.checkout.shippingline3 = data.billingline3;
+            $scope.checkout.shippingcity = data.billingcity;
+            $scope.checkout.shippingpincode = data.billingpincode;
+            $scope.checkout.shippingstate = data.billingstate;
+            $scope.checkout.shippingcountry = data.billingcountry;
+          }
+        };
+        $scope.shippingCheck = function(check) {
+          if (check) {
+            $scope.shipAtSame = true;
+            $scope.sameShipping($scope.checkout);
+          } else {
+            $scope.shipAtSame = false;
+            $scope.checkout.shippingline1 = "";
+            $scope.checkout.shippingline2 = "";
+            $scope.checkout.shippingline3 = "";
+            $scope.checkout.shippingcity = "";
+            $scope.checkout.shippingpincode = "";
+            $scope.checkout.shippingstate = "";
+            $scope.checkout.shippingcountry = "";
+          }
+        };
         $scope.proceedToShipping = function(input, status, formValidate) {
             if (!status) {
                 if (formValidate.email.$valid) {
                     $scope.checkout.email = input.email;
                     console.log($scope.checkout);
                     $scope.tabs[1].active = true;
+                }else{
+$scope.alerts.push({
+type:'danger',
+msg:'Please enter all details'
+});
                 }
             } else {
                 if (formValidate.email.$valid && formValidate.password.$valid) {
                     NavigationService.loginuser(input, function(data) {
                         if (data.value == false) {} else {
                             $.jStorage.set("user", data);
-                            $scope.user = $.jStorage.get("user");
+                            $scope.checkout = $.jStorage.get("user");
                             window.location.reload();
                         }
                     });
+                }else{
+$scope.alerts.push({
+type:'danger',
+msg:'Please enter all details'
+});
                 }
             }
         }
-        $scope.proceedToSummary = function(input, formValidate) {
+        $scope.proceedToSummary = function(input, formValidate,formValidateB,formValidateS) {
             console.log(input);
-            if (formValidate.$valid) {
+            if (formValidate.$valid && formValidateB.$valid && formValidateS.$valid) {
                 if (!$scope.guestshow) {
                     $scope.checkout = $scope.user;
                     $scope.checkout.email = $scope.login.email;
@@ -924,7 +963,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.tabs[2].active = true;
                 $scope.getCart();
             } else {
-
+              $scope.alerts.push({
+                type:'danger',
+                msg:'Please enter all details'
+              })
             }
 
         }
