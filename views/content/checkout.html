@@ -351,103 +351,73 @@
           <form method="post" name="customerData" ng-hide = "cod" action="http://moviewsapp.com/selfcare/paymentgateway/ccavRequestHandler.php">
 							<table width="40%" height="100">
 								<tr style="display:none">
-									<td>TID	:</td><td><input type="text" name="tid" ng-model="order" readonly /></td>
+									<td>TID	:</td><td><input type="text" name="Merchant_Id" value="M_careself_14677" readonly /></td>
 								</tr>
 								<tr style="display:none">
-									<td>Merchant Id	:</td><td><input type="text" name="merchant_id" value="88679"/></td>
+									<td>Order Id	:</td><td><input type="text" name="Order_Id" ng-model="order"/></td>
 								</tr>
 								<tr style="display:none">
-									<td>Order Id	:</td><td><input type="text" name="order_id" ng-model="order"/></td>
-								</tr>
-								<tr style="display:none">
-									<td>Amount	:</td><td><input type="text" name="amount" ng-model="totalcart"/></td>
+									<td>Amount	:</td><td><input type="text" name="Amount" ng-model="totalcart"/></td>
 								</tr>
 								<tr style="display:none">
 									<td>Currency	:</td><td><input type="text" name="currency" value="INR"/></td>
 								</tr>
 								<tr style="display:none">
-									<td>Redirect URL	:</td><td><input type="text" name="redirect_url" value="http://wohlig.co.in/selfcare/#/thankyou"/></td>
+									<td>Redirect URL	:</td><td><input type="text" name="redirect_url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess"/></td>
 								</tr>
-							 	<tr style="display:none">
-							 		<td>Cancel URL	:</td><td><input type="text" name="cancel_url" value="http://wohlig.co.in/selfcare/#/thankyou"/></td>
-							 	</tr>
-							 	<tr style="display:none">
-									<td>Language	:</td><td><input type="text" name="language" value="EN"/></td>
-								</tr>
-						     	<!-- <tr>
+						     	<tr>
 						     		<td colspan="2">Billing information:</td>
-						     	</tr> -->
+						     	</tr>
 						        <tr style="display:none">
-						        	<td>Billing Name	:</td><td><input type="text" name="billing_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/></td>
+						        	<td>Billing Name	:</td><td><input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/></td>
 						        </tr>
 						        <tr style="display:none">
-						        	<td>Billing Address	:</td><td><input type="text" name="billing_address" style="border: none; width: 100%;"  ng-model="checkout.shippingaddress"/></td>
+						        	<td>Billing Address	:</td><td><input type="text" name="billing_cust_address" style="border: none; width: 100%;"  ng-model="checkout.shippingaddress"/></td>
 						        </tr>
 						        <tr style="display:none">
 						        	<td>Billing City	:</td><td><input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity"/></td>
 						        </tr>
 						        <tr style="display:none">
-						        	<td>Billing State	:</td><td><input type="text" name="billing_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"/></td>
+						        	<td>Billing State	:</td><td><input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"/></td>
 						        </tr>
 						        <tr style="display:none">
 						        	<td>Billing Zip	:</td><td><input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode"/></td>
 						        </tr>
 						        <tr style="display:none">
-						        	<td>Billing Country	:</td><td><input type="text" name="billing_country" style="border: none; width: 100%;" value = "India"/></td>
+						        	<td>Billing Country	:</td><td><input type="text" name="billing_cust_country" style="border: none; width: 100%;" value = "India"/></td>
 						        </tr>
 						        <tr style="display:none">
-						        	<td>Billing Tel	:</td><td><input type="text" name="billing_tel" style="border: none; width: 100%;" ng-model="checkout.shippingcontact"/></td>
+						        	<td>Billing Tel	:</td><td><input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.shippingcontact"/></td>
 						        </tr>
 						        <tr style="display:none">
-						        	<td>Billing Email	:</td><td><input type="text" name="billing_email" style="border: none; width: 100%;" ng-model="checkout.email"/></td>
+						        	<td>Billing Email	:</td><td><input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email"/></td>
 						        </tr>
 						        <tr>
 						        	<td colspan="2">Shipping information</td>
 						        </tr>
 						        <tr>
-						        	<td>Shipping Name	:</td><td><input type="text" name="delivery_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/></td>
+						        	<td>Shipping Name	:</td><td><input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/></td>
 						        </tr>
 						        <tr>
-						        	<td>Shipping Address	:</td><td><input type="text" name="delivery_address" style="border: none; width: 100%;" ng-model="checkout.shippingaddress"/></td>
+						        	<td>Shipping Address	:</td><td><input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingaddress"/></td>
 						        </tr>
 						        <tr>
 						        	<td>shipping City	:</td><td><input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity"/></td>
 shippingForm</tr>
 						        <tr>
-						        	<td>shipping State	:</td><td><input type="text" name="delivery_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"/></td>
+						        	<td>shipping State	:</td><td><input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"/></td>
 						        </tr>
 						        <tr>
 						        	<td>shipping Zip	:</td><td><input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode"/></td>
 						        </tr>
 						        <tr>
-						        	<td>shipping Country	:</td><td><input type="text" name="delivery_country" style="border: none; width: 100%;" value = "India" /></td>
+						        	<td>shipping Country	:</td><td><input type="text" name="delivery_cust_country" style="border: none; width: 100%;" value = "India" /></td>
 						        </tr>
 						        <tr>
-						        	<td>Shipping Tel	:</td><td><input type="text" name="delivery_tel" style="border: none; width: 100%;" ng-model="checkout.shippingcontact"/></td>
+						        	<td>Shipping Tel	:</td><td><input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.shippingcontact"/></td>
 						        </tr>
 						        <tr style="display:none">
-						        	<td>Merchant Param1	:</td><td><input type="text" name="merchant_param1" value="additional Info."/></td>
-						        </tr>
-						        <tr style="display:none">
-						        	<td>Merchant Param2	:</td><td><input type="text" name="merchant_param2" value="additional Info."/></td>
-						        </tr>
-								<tr style="display:none">
-									<td>Merchant Param3	:</td><td><input type="text" name="merchant_param3" value="additional Info."/></td>
-								</tr>
-								<tr style="display:none">
-									<td>Merchant Param4	:</td><td><input type="text" name="merchant_param4" value="additional Info."/></td>
-								</tr>
-								<tr style="display:none">
-									<td>Merchant Param5	:</td><td><input type="text" name="merchant_param5" value="additional Info."/></td>
-								</tr>
-								<tr style="display:none">
-									<td>Promo Code	:</td><td><input type="text" name="promo_code" value=""/></td>
-								</tr>
-								<tr style="display:none">
-									<td>Vault Info.	:</td><td><input type="text" name="customer_identifier" value=""/></td>
-								</tr>
-						        <tr style="display:none">
-						        	<td>Integration Type	:</td><td><input type="text" name="integration_type" value="iframe_normal"/></td>
+						        	<td>Merchant Param1	:</td><td><input type="text" name="delivery_cust_notes" value=""/></td>
 						        </tr>
 						        <tr>
 						        	<td></td><td><button class="btn btn-danger m-30 con-btn" type="submit">Place order</button></td>
