@@ -468,7 +468,7 @@
     }
     .location { letter-spacing: 1px; }
     hr { border-top: 2px solid $body-bg; }
-    p { font-size: 16px; }
+    // p { font-size: 16px; }
     &.right {
       hr { @include margin(20px 0 20px 20px); }
       .read-inner-detail {
