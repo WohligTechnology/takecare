@@ -348,73 +348,70 @@
           </uib-tab-heading>
           <p class="brand-primary letter-space" ng-show = "cod">Thank you for Shopping with us</p>
           <p class="brand-primary letter-space" ng-hide = "cod">Payment Details</p>
-          <form method="post" name="customerData" ng-hide = "cod" action="http://moviewsapp.com/selfcare/paymentgateway/ccavRequestHandler.php">
+          <form method="post" name="customerData" ng-hide = "cod" action="http://moviewsapp.com/selfcare/paymentgateway/Checkout.php">
 							<table width="40%" height="100">
-								<tr style="display:none">
+								<tr>
 									<td>TID	:</td><td><input type="text" name="Merchant_Id" value="M_careself_14677" readonly /></td>
 								</tr>
-								<tr style="display:none">
+								<tr>
 									<td>Order Id	:</td><td><input type="text" name="Order_Id" ng-model="order"/></td>
 								</tr>
-								<tr style="display:none">
+								<tr>
 									<td>Amount	:</td><td><input type="text" name="Amount" ng-model="totalcart"/></td>
 								</tr>
-								<tr style="display:none">
-									<td>Currency	:</td><td><input type="text" name="currency" value="INR"/></td>
-								</tr>
-								<tr style="display:none">
-									<td>Redirect URL	:</td><td><input type="text" name="redirect_url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess"/></td>
+								<tr >
+									<td>Redirect URL	:</td><td><input type="text" name="Redirect_Url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess"/></td>
 								</tr>
 						     	<tr>
 						     		<td colspan="2">Billing information:</td>
 						     	</tr>
-						        <tr style="display:none">
-						        	<td>Billing Name	:</td><td><input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/></td>
+						        <tr>
+						        	<td>Billing Name	:</td><td><input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" value="adf"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing Address	:</td><td><input type="text" name="billing_cust_address" style="border: none; width: 100%;"  ng-model="checkout.shippingaddress"/></td>
+						        <tr>
+						        	<td>Billing Address	:</td><td><input type="text" name="billing_cust_address" style="border: none; width: 100%;"  ng-model="checkout.billingline1" value="adf"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing City	:</td><td><input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity"/></td>
+						        <tr>
+						        	<td>Billing City	:</td><td><input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.billingcity" value="asdfa"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing State	:</td><td><input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"/></td>
+						        <tr>
+						        	<td>Billing State	:</td><td><input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.billingstate" value="adfasd"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing Zip	:</td><td><input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode"/></td>
+						        <tr>
+						        	<td>Billing Zip	:</td><td><input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing Country	:</td><td><input type="text" name="billing_cust_country" style="border: none; width: 100%;" value = "India"/></td>
+						        <tr>
+						        	<td>Billing Country	:</td><td><input type="text" name="billing_cust_country" style="border: none; width: 100%;" ng-model="checkout.billingcountry" value="India"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing Tel	:</td><td><input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.shippingcontact"/></td>
+						        <tr>
+						        	<td>Billing Tel	:</td><td><input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9890989098"/></td>
 						        </tr>
-						        <tr style="display:none">
-						        	<td>Billing Email	:</td><td><input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email"/></td>
+						        <tr>
+						        	<td>Billing Email	:</td><td><input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email" value="jagruti@wohlig.com"/></td>
 						        </tr>
 						        <tr>
 						        	<td colspan="2">Shipping information</td>
 						        </tr>
 						        <tr>
-						        	<td>Shipping Name	:</td><td><input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/></td>
+						        	<td>Shipping Name	:</td><td><input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/ value="asdf"></td>
 						        </tr>
 						        <tr>
-						        	<td>Shipping Address	:</td><td><input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingaddress"/></td>
+						        	<td>Shipping Address	:</td><td><input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingline1" value="asdfsd"/></td>
 						        </tr>
 						        <tr>
-						        	<td>shipping City	:</td><td><input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity"/></td>
+						        	<td>shipping City	:</td><td><input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity" value="asdf"/></td>
 shippingForm</tr>
 						        <tr>
-						        	<td>shipping State	:</td><td><input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"/></td>
+						        	<td>shipping State	:</td><td><input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"value="sdfasd"/></td>
 						        </tr>
 						        <tr>
-						        	<td>shipping Zip	:</td><td><input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode"/></td>
+						        	<td>shipping Zip	:</td><td><input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode" value="334566"/></td>
 						        </tr>
 						        <tr>
-						        	<td>shipping Country	:</td><td><input type="text" name="delivery_cust_country" style="border: none; width: 100%;" value = "India" /></td>
+						        	<td>shipping Country	:</td><td><input type="text" name="delivery_cust_country" style="border: none; width: 100%;" ng-model="checkout.shippingcountry" value="India"/></td>
 						        </tr>
 						        <tr>
-						        	<td>Shipping Tel	:</td><td><input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.shippingcontact"/></td>
+						        	<td>Shipping Tel	:</td><td><input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9898989898"/></td>
 						        </tr>
 						        <tr style="display:none">
 						        	<td>Merchant Param1	:</td><td><input type="text" name="delivery_cust_notes" value=""/></td>
