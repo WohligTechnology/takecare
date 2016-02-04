@@ -7,8 +7,8 @@
   </div>
   <div class="container">
     <div class="alert-postion">
-            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
-        </div>
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+    </div>
     <div class="checkout-tab">
       <uib-tabset>
         <uib-tab active="tabs[0].active" disable="tabs[0].disabled">
@@ -37,20 +37,20 @@
                     <input type="password" name="password" ng-model="login.password" required class="form-control" placeholder="Password">
                   </div>
                   <div class="form-group">
-                      <div class="radio">
-                        <input type="radio" name="continue" ng-change="selectGuest(guest)" value="guest" ng-model="guest" id="pswd">
-                                            <label for="pswd" class="text-light">
+                    <div class="radio">
+                      <input type="radio" name="continue" ng-change="selectGuest(guest)" value="guest" ng-model="guest" id="pswd">
+                      <label for="pswd" class="text-light">
                         <span></span> Continue without passsword.
-                                            </label>
-                      </div>
+                      </label>
+                    </div>
                   </div>
                   <div class="form-group">
-                  <div class="radio">
+                    <div class="radio">
                       <input type="radio" name="continue" ng-change="selectGuest(guest)" value="notguest" ng-model="guest" id="sc">
-                    <label for="sc" class="text-light">
-                      <span></span> I have a selfcare account and password.
-                    </label>
-                  </div>
+                      <label for="sc" class="text-light">
+                        <span></span> I have a selfcare account and password.
+                      </label>
+                    </div>
                   </div>
                   <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToShipping(login,guestshow,loginForm)">continue</a>
                 </form>
@@ -74,127 +74,142 @@
             </table>
           </div>
           <div class="checkout-main profile-tab">
-              <h3 class="text-uppercase brand-brown-dark letter-space">your details</h3>
-              <form name="basicForm" class="form-inline details">
-                <div class="form-group">
-                  <input name="firstname" ng-model="checkout.firstname" required type="text" placeholder="First Name *" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input name="lastname" ng-model="checkout.lastname" required type="text" placeholder="Last Name *" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input name="phone" ng-model="checkout.phone" required type="tel" placeholder="Mobile Number *" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input name="email" ng-model="checkout.email" required type="email" placeholder="Email *" class="form-control">
-                </div>
-                <div class="text-center" ng-show="(basicForm.firstname.$invalid || basicForm.lastname.$invalid || basicForm.phone.$invalid || basicForm.email.$invalid) && basicForm.firstname.$touched && basicForm.lastname.$touched && basicForm.email.$touched && basicForm.phone.$touched">
-                  Please enter all fields
-                </div>
-              </form>
-
-              <div class="address">
-                <div class="row">
-                  <div class="col-md-4">
-                    <h3 class="text-uppercase brand-brown-dark letter-space inline-block">billing address</h3>
-                    <form name="billingForm">
-                      <div class="form-group">
-                        <input name="billingline1" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline1" type="text" class="form-control" placeholder="Line 1 *">
-                        <div class="text-center" ng-show="billingForm.billingline1.$invalid && billingForm.billingline1.$touched" role="alert">
-                            Please enter billing line 1.
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <input name="billingline2" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline2" type="text" class="form-control" placeholder="Line 2 *">
-                        <div class="text-center" ng-show="billingForm.billingline2.$invalid && billingForm.billingline2.$touched" role="alert">
-                            Please enter billing line 2.
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <input name="billingline3" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline3" type="text" class="form-control" placeholder="Line 3 *">
-                        <div class="text-center" ng-show="billingForm.billingline3.$invalid && billingForm.billingline3.$touched" role="alert">
-                            Please enter billing line 3.
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <input name="billingcity" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcity" type="text" class="form-control" placeholder="City *">
-                        <div class="text-center" ng-show="billingForm.billingcity.$invalid && billingForm.billingcity.$touched" role="alert">
-                            Please enter billing city.
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <input name="billingstate" ng-change="sameShipping(checkout)" required ng-model="checkout.billingstate" type="text" class="form-control" placeholder="State *">
-                        <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
-                            Please enter billing state.
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="custom-select">
-                          <select name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry"  id="">
-                            <option value="{{country.value}}" ng-repeat="country in countries">{{country.value}}</option>
-                          </select>
-                          <span></span>
-                        </div>
-                        <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
-                            Please enter billing country.
-                        </div>
-                      </div>
-
-                    </form>
-                  </div>
-                  <div class="col-md-offset-2 col-md-4">
-                    <h3 class="text-uppercase brand-brown-dark letter-space inline-block">shipping address</h3>
-                    <div class="checkbox">
-                      <input type="checkbox" class="text-uppercase" ng-model="checkShip" ng-click="shippingCheck(checkShip)" id="same">
-                      <label for="same" class="same-bill"> <span></span> Same as billing address</label>
-                    </div>
-                    <form name="shippingForm">
-                      <div class="form-group">
-                        <input name="shippingline1" ng-model="checkout.shippingline1" required type="text" class="form-control" placeholder="Line 1 *">
-                      </div>
-                      <div class="text-center" ng-show="shippingForm.shippingline1.$invalid && shippingForm.shippingline1.$touched" role="alert">
-                          Please enter shipping line 1.
-                      </div>
-                      <div class="form-group">
-                        <input name="shippingline2" ng-model="checkout.shippingline2" required type="text" class="form-control" placeholder="Line 2 *">
-                      </div>
-                      <div class="text-center" ng-show="shippingForm.shippingline2.$invalid && shippingForm.shippingline2.$touched" role="alert">
-                          Please enter shipping line 2.
-                      </div>
-                      <div class="form-group">
-                        <input name="shippingline3" ng-model="checkout.shippingline3" required type="text" class="form-control" placeholder="Line 3 *">
-                      </div>
-                      <div class="text-center" ng-show="shippingForm.shippingline3.$invalid && shippingForm.shippingline3.$touched" role="alert">
-                          Please enter shipping line 3.
-                      </div>
-                      <div class="form-group">
-                        <input name="shippingcity" ng-model="checkout.shippingcity" required type="text" class="form-control" placeholder="City *">
-                      </div>
-                      <div class="text-center" ng-show="shippingForm.shippingcity.$invalid && shippingForm.shippingcity.$touched" role="alert">
-                          Please enter shipping city.
-                      </div>
-                      <div class="form-group">
-                        <input name="shippingstate" ng-model="checkout.shippingstate" required type="text" class="form-control" placeholder="State *">
-                      </div>
-                      <div class="text-center" ng-show="shippingForm.shippingstate.$invalid && shippingForm.shippingstate.$touched" role="alert">
-                          Please enter shipping state.
-                      </div>
-                      <div class="form-group">
-                        <div class="custom-select">
-                          <select name="shippingcountry" ng-model="checkout.shippingcountry" required id="">
-                            <option value="{{country.value}}" ng-repeat="country in countries">{{country.value}}</option>
-                          </select>
-                        </div>
-                        <div class="text-center" ng-show="shippingForm.shippingcountry.$invalid && shippingForm.shippingcountry.$touched" role="alert">
-                            Please enter shipping country.
-                        </div>
-                      </div>
-
-                    </form>
-                  </div>
-                </div>
-                <a href="" class="text-uppercase btn btn-primary" ng-click="proceedToSummary(user,basicForm,billingForm,shippingForm)">Continue</a>
+            <h3 class="text-uppercase brand-brown-dark letter-space">your details</h3>
+            <form name="basicForm" class="form-inline details">
+              <div class="form-group">
+                <input name="firstname" ng-model="checkout.firstname" required type="text" placeholder="First Name *" class="form-control">
               </div>
+              <div class="form-group">
+                <input name="lastname" ng-model="checkout.lastname" required type="text" placeholder="Last Name *" class="form-control">
+              </div>
+              <div class="form-group">
+                <input name="phone" ng-model="checkout.phone" required type="tel" placeholder="Mobile Number *" class="form-control">
+              </div>
+              <div class="form-group">
+                <input name="email" ng-model="checkout.email" required type="email" placeholder="Email *" class="form-control">
+              </div>
+              <div class="text-center" ng-show="(basicForm.firstname.$invalid || basicForm.lastname.$invalid || basicForm.phone.$invalid || basicForm.email.$invalid) && basicForm.firstname.$touched && basicForm.lastname.$touched && basicForm.email.$touched && basicForm.phone.$touched">
+                Please enter all fields
+              </div>
+            </form>
+
+            <div class="address">
+              <div class="row">
+                <div class="col-md-4">
+                  <h3 class="text-uppercase brand-brown-dark letter-space inline-block">billing address</h3>
+                  <form name="billingForm">
+                    <div class="form-group">
+                      <input name="billingline1" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline1" type="text" class="form-control" placeholder="Line 1 *">
+                      <div class="text-center" ng-show="billingForm.billingline1.$invalid && billingForm.billingline1.$touched" role="alert">
+                        Please enter billing line 1.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input name="billingline2" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline2" type="text" class="form-control" placeholder="Line 2 *">
+                      <div class="text-center" ng-show="billingForm.billingline2.$invalid && billingForm.billingline2.$touched" role="alert">
+                        Please enter billing line 2.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input name="billingline3" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline3" type="text" class="form-control" placeholder="Line 3 *">
+                      <div class="text-center" ng-show="billingForm.billingline3.$invalid && billingForm.billingline3.$touched" role="alert">
+                        Please enter billing line 3.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input name="billingcity" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcity" type="text" class="form-control" placeholder="City *">
+                      <div class="text-center" ng-show="billingForm.billingcity.$invalid && billingForm.billingcity.$touched" role="alert">
+                        Please enter billing city.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="text" class="form-control" placeholder="Pincode *">
+                      <div class="text-center" ng-show="billingForm.billingpincode.$invalid && billingForm.billingpincode.$touched" role="alert">
+                        Please enter billing pincode.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input name="billingstate" ng-change="sameShipping(checkout)" required ng-model="checkout.billingstate" type="text" class="form-control" placeholder="State *">
+                      <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
+                        Please enter billing state.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-select">
+                        <select class="form-control" name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry" id="">
+                          <option value="{{country.value}}" ng-repeat="country in countries">{{country.value}}</option>
+                        </select>
+                        <span></span>
+                      </div>
+                      <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
+                        Please enter billing country.
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                  <h3 class="text-uppercase brand-brown-dark letter-space inline-block">shipping address</h3>
+                  <div class="checkbox">
+                    <input type="checkbox" class="text-uppercase" ng-model="checkShip" ng-click="shippingCheck(checkShip)" id="same">
+                    <label for="same" class="same-bill">
+                      <span></span> Same as billing address</label>
+                  </div>
+                  <form name="shippingForm">
+                    <div class="form-group">
+                      <input name="shippingline1" ng-model="checkout.shippingline1" required type="text" class="form-control" placeholder="Line 1 *">
+                    </div>
+                    <div class="text-center" ng-show="shippingForm.shippingline1.$invalid && shippingForm.shippingline1.$touched" role="alert">
+                      Please enter shipping line 1.
+                    </div>
+                    <div class="form-group">
+                      <input name="shippingline2" ng-model="checkout.shippingline2" required type="text" class="form-control" placeholder="Line 2 *">
+                    </div>
+                    <div class="text-center" ng-show="shippingForm.shippingline2.$invalid && shippingForm.shippingline2.$touched" role="alert">
+                      Please enter shipping line 2.
+                    </div>
+                    <div class="form-group">
+                      <input name="shippingline3" ng-model="checkout.shippingline3" required type="text" class="form-control" placeholder="Line 3 *">
+                    </div>
+                    <div class="text-center" ng-show="shippingForm.shippingline3.$invalid && shippingForm.shippingline3.$touched" role="alert">
+                      Please enter shipping line 3.
+                    </div>
+                    <div class="form-group">
+                      <input name="shippingcity" ng-model="checkout.shippingcity" required type="text" class="form-control" placeholder="City *">
+                    </div>
+                    <div class="text-center" ng-show="shippingForm.shippingcity.$invalid && shippingForm.shippingcity.$touched" role="alert">
+                      Please enter shipping city.
+                    </div>
+
+                    <div class="form-group">
+                      <input name="shippingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.shippingpincode" type="text" class="form-control" placeholder="Pincode *">
+
+                    </div>
+                    <div class="text-center" ng-show="shippingForm.shippingpincode.$invalid && shippingForm.shippingpincode.$touched" role="alert">
+                      Please enter shipping pincode.
+                    </div>
+                    <div class="form-group">
+                      <input name="shippingstate" ng-model="checkout.shippingstate" required type="text" class="form-control" placeholder="State *">
+                    </div>
+                    <div class="text-center" ng-show="shippingForm.shippingstate.$invalid && shippingForm.shippingstate.$touched" role="alert">
+                      Please enter shipping state.
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-select">
+                        <select class="form-control" name="shippingcountry" ng-model="checkout.shippingcountry" required id="">
+                          <option value="{{country.value}}" ng-repeat="country in countries">{{country.value}}</option>
+                        </select>
+                      </div>
+                      <div class="text-center" ng-show="shippingForm.shippingcountry.$invalid && shippingForm.shippingcountry.$touched" role="alert">
+                        Please enter shipping country.
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+              <a href="" class="text-uppercase btn btn-primary" ng-click="proceedToSummary(user,basicForm,billingForm,shippingForm)">Continue</a>
+            </div>
             <!-- <div class="row">
               <div class="col-md-4">
                 <h5 class="brand-primary">Enter a new shipping address</h5>
@@ -316,7 +331,7 @@
                     <button class="btn btn-primary apply">APPLY</button>
                   </form>
                   <label>
-                      <input type="checkbox" ng-model="cod" ng-change="codChange(cod)">  COD (Cash on Delivery)
+                    <input type="checkbox" ng-model="cod" ng-change="codChange(cod)"> COD (Cash on Delivery)
                   </label>
                 </div>
                 <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
@@ -332,8 +347,8 @@
                     </div>
                     <div class="col-md-6">
                       <div class="text-right">
-                        <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-show = "cod">Place Order</a>
-                        <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-hide = "cod">Continue</a>
+                        <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-show="cod">Place Order</a>
+                        <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-hide="cod">Continue</a>
                       </div>
                     </div>
                   </div>
@@ -346,81 +361,144 @@
           <uib-tab-heading>
             payment options
           </uib-tab-heading>
-          <p class="brand-primary letter-space" ng-show = "cod">Thank you for Shopping with us</p>
-          <p class="brand-primary letter-space" ng-hide = "cod">Payment Details</p>
-          <form method="post" name="customerData" ng-hide = "cod" action="http://moviewsapp.com/selfcare/paymentgateway/Checkout.php">
-							<table width="40%" height="100">
-								<tr>
-									<td>TID	:</td><td><input type="text" name="Merchant_Id" value="M_careself_14677" readonly /></td>
-								</tr>
-								<tr>
-									<td>Order Id	:</td><td><input type="text" name="Order_Id" ng-model="order"/></td>
-								</tr>
-								<tr>
-									<td>Amount	:</td><td><input type="text" name="Amount" ng-model="totalcart"/></td>
-								</tr>
-								<tr >
-									<td>Redirect URL	:</td><td><input type="text" name="Redirect_Url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess"/></td>
-								</tr>
-						     	<tr>
-						     		<td colspan="2">Billing information:</td>
-						     	</tr>
-						        <tr>
-						        	<td>Billing Name	:</td><td><input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" value="adf"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing Address	:</td><td><input type="text" name="billing_cust_address" style="border: none; width: 100%;"  ng-model="checkout.billingline1" value="adf"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing City	:</td><td><input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.billingcity" value="asdfa"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing State	:</td><td><input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.billingstate" value="adfasd"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing Zip	:</td><td><input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing Country	:</td><td><input type="text" name="billing_cust_country" style="border: none; width: 100%;" ng-model="checkout.billingcountry" value="India"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing Tel	:</td><td><input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9890989098"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Billing Email	:</td><td><input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email" value="jagruti@wohlig.com"/></td>
-						        </tr>
-						        <tr>
-						        	<td colspan="2">Shipping information</td>
-						        </tr>
-						        <tr>
-						        	<td>Shipping Name	:</td><td><input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/ value="asdf"></td>
-						        </tr>
-						        <tr>
-						        	<td>Shipping Address	:</td><td><input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingline1" value="asdfsd"/></td>
-						        </tr>
-						        <tr>
-						        	<td>shipping City	:</td><td><input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity" value="asdf"/></td>
-shippingForm</tr>
-						        <tr>
-						        	<td>shipping State	:</td><td><input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate"value="sdfasd"/></td>
-						        </tr>
-						        <tr>
-						        	<td>shipping Zip	:</td><td><input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode" value="334566"/></td>
-						        </tr>
-						        <tr>
-						        	<td>shipping Country	:</td><td><input type="text" name="delivery_cust_country" style="border: none; width: 100%;" ng-model="checkout.shippingcountry" value="India"/></td>
-						        </tr>
-						        <tr>
-						        	<td>Shipping Tel	:</td><td><input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9898989898"/></td>
-						        </tr>
-						        <tr style="display:none">
-						        	<td>Merchant Param1	:</td><td><input type="text" name="delivery_cust_notes" value=""/></td>
-						        </tr>
-						        <tr>
-						        	<td></td><td><button class="btn btn-danger m-30 con-btn" type="submit">Place order</button></td>
-						        </tr>
-					      	</table>
-					      </form>
+          <p class="brand-primary letter-space" ng-show="cod">Thank you for Shopping with us</p>
+          <p class="brand-primary letter-space" ng-hide="cod">Payment Details</p>
+          <form method="post" name="customerData" ng-hide="cod" action="http://moviewsapp.com/selfcare/paymentgateway/Checkout.php">
+            <table width="40%" height="100">
+              <tr>
+                <td>TID :</td>
+                <td>
+                  <input type="text" name="Merchant_Id" value="M_careself_14677" readonly />
+                </td>
+              </tr>
+              <tr>
+                <td>Order Id :</td>
+                <td>
+                  <input type="text" name="Order_Id" ng-model="order" />
+                </td>
+              </tr>
+              <tr>
+                <td>Amount :</td>
+                <td>
+                  <input type="text" name="Amount" ng-model="totalcart" />
+                </td>
+              </tr>
+              <tr>
+                <td>Redirect URL :</td>
+                <td>
+                  <input type="text" name="Redirect_Url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">Billing information:</td>
+              </tr>
+              <tr>
+                <td>Billing Name :</td>
+                <td>
+                  <input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" value="adf" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing Address :</td>
+                <td>
+                  <input type="text" name="billing_cust_address" style="border: none; width: 100%;" ng-model="checkout.billingline1" value="adf" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing City :</td>
+                <td>
+                  <input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.billingcity" value="asdfa" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing State :</td>
+                <td>
+                  <input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.billingstate" value="adfasd" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing Zip :</td>
+                <td>
+                  <input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing Country :</td>
+                <td>
+                  <input type="text" name="billing_cust_country" style="border: none; width: 100%;" ng-model="checkout.billingcountry" value="India" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing Tel :</td>
+                <td>
+                  <input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9890989098" />
+                </td>
+              </tr>
+              <tr>
+                <td>Billing Email :</td>
+                <td>
+                  <input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email" value="jagruti@wohlig.com" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">Shipping information</td>
+              </tr>
+              <tr>
+                <td>Shipping Name :</td>
+                <td>
+                  <input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" / value="asdf">
+                </td>
+              </tr>
+              <tr>
+                <td>Shipping Address :</td>
+                <td>
+                  <input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingline1" value="asdfsd" />
+                </td>
+              </tr>
+              <tr>
+                <td>shipping City :</td>
+                <td>
+                  <input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity" value="asdf" />
+                </td>
+                shippingForm</tr>
+              <tr>
+                <td>shipping State :</td>
+                <td>
+                  <input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate" value="sdfasd" />
+                </td>
+              </tr>
+              <tr>
+                <td>shipping Zip :</td>
+                <td>
+                  <input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode" value="334566" />
+                </td>
+              </tr>
+              <tr>
+                <td>shipping Country :</td>
+                <td>
+                  <input type="text" name="delivery_cust_country" style="border: none; width: 100%;" ng-model="checkout.shippingcountry" value="India" />
+                </td>
+              </tr>
+              <tr>
+                <td>Shipping Tel :</td>
+                <td>
+                  <input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9898989898" />
+                </td>
+              </tr>
+              <tr style="display:none">
+                <td>Merchant Param1 :</td>
+                <td>
+                  <input type="text" name="delivery_cust_notes" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <button class="btn btn-danger m-30 con-btn" type="submit">Place order</button>
+                </td>
+              </tr>
+            </table>
+          </form>
         </uib-tab>
       </uib-tabset>
     </div>
