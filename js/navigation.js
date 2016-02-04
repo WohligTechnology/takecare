@@ -515,36 +515,113 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/home",
     subnav: []
   }, {
-    name: "About Us",
+    name: "Overview",
     classis: "active",
-    link: "#/aboutus",
-    subnav: []
+    link: "",
+    subnav: [
+      {
+        name: "About Selfcare",
+        classis: "active",
+        link: "#/aboutus"
+      },
+      {
+        name: "Meet Suman",
+        classis: "active",
+        link: "#/meet"
+      },
+      {
+        name: "Meet Team",
+        classis: "active",
+        link: "#/team"
+      },
+      {
+        name: "Selfcare 'TV'",
+        classis: "active",
+        link: "#/selfcaretv"
+      },
+    ]
   }, {
     name: "Health Packages",
     classis: "active",
     link: "#/healthpackages",
-    subnav: []
+    subnav: [
+      {
+        name: "Weight Loss",
+        classis: "active",
+        link: "#/weightmanagement"
+      },
+      {
+        name: "Health Management",
+        classis: "active",
+        link: "#/healthmanagement"
+      },
+    ]
   }, {
     name: "Health Products",
     classis: "active",
     link: "#/healthproducts/1",
-    subnav: []
+    subnav: [
+      {
+        name: "Snacks & Munchies",
+        classis: "active",
+        link: "#/healthproducts/1"
+      },
+      {
+        name: "Vitamins & Minerals",
+        classis: "active",
+        link: "#/healthproducts/2"
+      },
+      {
+        name: "Protiens Supplements",
+        classis: "active",
+        link: "#/healthproducts/3"
+      },
+      {
+        name: "Books & Gadgets",
+        classis: "active",
+        link: "#/healthproducts/4"
+      },
+    ]
   }, {
     name: "Health Kit",
     classis: "active",
     link: "#/",
-    subnav: []
+    subnav: [
+      {
+        name: "Calorie Meter",
+        classis: "active",
+        link: "#/knowyourstats"
+      },
+      {
+        name: "Recipes",
+        classis: "active",
+        link: "#/recipes"
+      },
+      {
+        name: "Restaurant Menus",
+        classis: "active",
+        link: "#/home"
+      },
+    ]
   }, {
     name: "Cool Sculpting",
     classis: "active",
     link: "#/coolsculpting",
     subnav: []
-  }, {
+  },
+   {
     name: "Nutrigenomics",
     classis: "active",
     link: "#/nutrigenomics",
     subnav: []
-  }, {
+  },
+   {
+    name: "Image Consulting",
+    classis: "active",
+    link: "#/imageconsulting",
+    subnav: []
+  },
+   {
     name: "Success Stories",
     classis: "active",
     link: "#/successstories",
@@ -559,13 +636,21 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     link: "#/news",
     subnav: []
-  }, {
+  },
+   {
     name: "FAQ",
     classis: "active",
     link: "#/faq",
     subnav: []
-  }, {
-    name: "Contact",
+  },
+   {
+    name: "Careers",
+    classis: "active",
+    link: "#/careers",
+    subnav: []
+  },
+   {
+    name: "Contact us",
     classis: "active",
     link: "#/contactus",
     subnav: []

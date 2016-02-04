@@ -855,6 +855,14 @@ $side-menu-width: 390px;
       }
     }
   }
+  .submenu {
+    padding-left: 15px;
+    li {
+      font-size: 18px;
+      text-transform: none;
+      a { padding: 0; }
+    }
+  }
 }
 .that-slides {
   @include transition(all 300ms ease);
