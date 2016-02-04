@@ -1,10 +1,10 @@
 // var mainurl = "http://wohlig.io:81/callApi/takecare/";
-var mainurl = "http://moviewsapp.com/selfcare/index.php/";
+// var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 // var mainurl = "http://localhost/selfback/index.php/";
-// var mainurl = "http://192.168.0.118/selfbackend/index.php/";
-var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+var mainurl = "http://192.168.0.118/selfbackend/index.php/";
+// var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
-// var imgurl = "http://192.168.0.118/selfbackend/uploads/";
+var imgurl = "http://192.168.0.118/selfbackend/uploads/";
 // var imgurl="";
 
 var adminurl = mainurl + "json/";
@@ -608,6 +608,9 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getNewsYear:function(callback){
       $http.get(adminurl+'getNewsYear').success(callback);
+    },
+    getTvVideo:function(callback){
+      $http.get(adminurl+'getTvVideo').success(callback);
     },
     getNews:function(request,callback){
       $http.get(adminurl+'getNews?year='+request).success(callback);

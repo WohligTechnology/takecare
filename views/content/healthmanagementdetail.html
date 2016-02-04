@@ -7,12 +7,8 @@
   </div>
   <div class="container">
     <div class="get-up brand-brown-bg relate">
-      <h2 class="text-center text-bold brand-brown-dark health-heading">WEIGHT LOSS FOR KIDS</h2>
-      <p class="white health-descp">
-        In our present times, with our stressful and hectic routines, health and the foods we eat have come to
-occupy a central place in our lives. It’s no longer like the olden days when children ate whatever their
-mothers gave them, and everything the mothers cooked was healthy and organic. At Selfacare we explore the struggles that parents face to provide the right nutrition to their school- and college-going kids. I have therefore included healthy twist for children so that they are always excited about meal times!
-      </p>
+      <h2 class="text-center text-bold brand-brown-dark health-heading">{{selectedPackage.name}}</h2>
+      <p class="white health-descp">{{selectedPackage.description}}</p>
     </div>
     <div class="health-chart">
       <div class="row">
@@ -912,34 +908,17 @@ mothers gave them, and everything the mothers cooked was healthy and organic. At
       </div>
       <div class="slider-round">
         <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
-          <uib-slide ng-repeat="slide in healthdetail" active="slide.active">
+          <uib-slide ng-repeat="row in subpackages">
             <div class="healthmanagement-slider">
               <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="detail in slide">
-                  <a ui-sref="{{detail.link}}"><figure>
+                <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="package in row">
+                  <a ui-sref="healthmanagementdetail({id:package.id})"><figure>
                     <div class="slide-imghold round m-center">
-                      <img ng-src="{{detail.img}}" alt="" class="img-responsive">
+                      <img ng-src="{{package.image | serverimage}}" alt="" class="img-responsive">
                     </div>
-                    <figcaption class="text-uppercase brand-brown-dark text-bold letter-space">{{detail.caption}}</figcaption>
+                    <figcaption class="text-uppercase brand-brown-dark text-bold letter-space">{{package.name}}</figcaption>
                     </figure></a>
                 </div>
-                <!-- <div class="col-md-4">
-                  <figure>
-                  <div class="slide-imghold round m-center">
-                    <img ng-src="{{slide.img}}" alt="" class="img-responsive">
-                  </div>
-                  <figcaption class="text-uppercase brand-brown-dark text-bold">{{slide.caption}}</figcaption>
-                  </figure>
-                </div>
-                <div class="col-md-4">
-                  <figure>
-                  <div class="slide-imghold round m-center">
-                    <img ng-src="{{slide.img}}" alt="" class="img-responsive">
-                  </div>
-                  <figcaption class="text-uppercase brand-brown-dark text-bold">{{slide.caption}}</figcaption>
-                  </figure>
-                </div>
-              </div> -->
             </div>
           </uib-slide>
         </uib-carousel>

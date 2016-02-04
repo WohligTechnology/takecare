@@ -252,71 +252,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Selfcare Tv");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.selfcaretv = [
-          {
-            title: "Lorem ipsum dummy text",
-            url:"_eU-UdgINos"
-          },
-          {
-            title: "Lorem ipsum dummy text",
-            url:"UT4sN3pqRWo"
-          },
-          {
-            title: "Lorem ipsum dummy text",
-          url:"XyTnOgwZNDY"
-        },{
-          title:"Lorem ipsum dummy text",
-          url:"P2pHiMCKx0w"
-        },
-          {
-            title: "Lorem ipsum dummy text",
-          url:"UC0lLmOWGILtcSuerLEXJ0Kw"
-          },
-            {
-              title: "Lorem ipsum dummy text",
-            url:"VGXF33IIzIY"
-            },
-              {
-                title: "Lorem ipsum dummy text",
-              url:"6HlX-mCG4HA"
-              },
-                {
-                  title: "Lorem ipsum dummy text",
-                url:"J0_7CcYiiUE"
-                },
-                  {
-                    title: "Lorem ipsum dummy text",
-                  url:"2o21aE6uczQ"
-                  },
-                    {
-                      title: "Lorem ipsum dummy text",
-                    url:"QQnRebdLRWs"
-                    },
-                      {
-                        title: "Lorem ipsum dummy text",
-                      url:"IS7fddQf7O0"
-                      },
-                        {
-                          title: "Lorem ipsum dummy text",
-                        url:"iYEptaCDFBk"
-                        },
-                          {
-                            title: "Lorem ipsum dummy text",
-                          url:"2Zrks0ab1ac"
-                          },
-                            {
-                              title: "Lorem ipsum dummy text",
-                            url:"xDfNiK78ltY"
-                            },
-                              {
-                                title: "Lorem ipsum dummy text",
-                              url:"OirKxxWLAHQ"
-                              },
-                                {
-                                  title: "Lorem ipsum dummy text",
-                                url:"HATRbH_UfbY"
-                                }
-        ];
+        NavigationService.getTvVideo(function(data){
+          $scope.selfcaretv=data;
+        });
     })
     .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -346,7 +284,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         NavigationService.getSubPackages(function(data){
-          $scope.subpackages =data;
+        $scope.subpackages =data;
           $scope.subpackages = _.chunk($scope.subpackages,5);
           console.log($scope.subpackages);
         });
@@ -359,6 +297,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.healthid=$stateParams.id;
         console.log($scope.healthid);
+        $scope.selectedPackage={};
+        NavigationService.getSubPackages(function(data){
+          $scope.subpackages =data;
+          $scope.selectedPackage = _.find($scope.subpackages, { 'id': $scope.healthid})
+          console.log($scope.selectedPackage);
+          console.log(_.findIndex($scope.subpackages, {
+              'id': $scope.healthid
+          }));
+          $scope.subpackages.splice(_.findIndex($scope.subpackages, {
+              'id': $scope.healthid
+          }), 1);
+          $scope.subpackages = _.chunk($scope.subpackages,3);
+          console.log($scope.subpackages);
+        });
         $scope.healthdetail = [{
             img: "img/health/ailment.png",
             caption: "ailment control"
@@ -651,30 +603,103 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.reads = [
-        //   {
-        //   title: "My cousins are still shocked that without coming to Mumbai, I have managed to lose weight.",
-        //   name: "Hetal Kothari",
-        //   location: "Bangalore, India",
-        //   desc: "I have completely enjoyed the diet. I could not believe how fast I lost weight with eating all meals and in between too. I feel so good that my old jeans have begun to fit me and when people are noticing that I have lost weight.<br>A big thank you to Dipti for always being there for me! I have literally eaten her head up with all sorts of questions and she has always very patiently answered it all.<br>Dipti has always been prompt in her replies and has encouraged me loads.<br>My cousins are still shocked that without coming to Mumbai, I have managed to lose weight. So the entire credit goes to SelfCare.<br>There is so much to eat that you never feel hungry.<br>The thing I really want to share is that my sons have become such a big part of my losing weight, it’s amazing. They keep telling me that I look thin now and that makes me feel like I’m on top of the world",
-        //   image: "img/stories/1.jpg",
-        //   weight: "11"
-        // },
+        {
+          name: "Chetna Mehra",
+          desc:"I started my plan in November and opted for 5kg Program. Vaishali has been extremely helpful to me in achieving this goal. Anytime of my day she was reachable and she never stopped me from eating anything. I have enjoyed this diet so much that, I wish to continue and lose further 5kgs. SelfCare is awesome! And I have recommended all my friends and family to come here.  Never thought that losing weight will be so much fun.",
+          image: "img/stories/chetna.png",
+          weight: "5.3"
+        },
+        {
+          name: "Kanchan Daswani",
+          desc:"Self Care has changed my life and made me very principled towards my eating habits. I was confused and did not know how or what to do to lose weight. Self Care showed me way to <b>lose naturally</b> by eating everything in limit. I have lost <b>10kgs</b> and I am feeling <b>great, happy, confident, and very healthy.</b> One of the best thing to happen to me recently was to come to SelfCare. Thanks to Vaishali who is extremely helpful and now I consider her a friend. <b>Thanks to SelfCare.</b>",
+          image: "img/stories/kanchan.png",
+          weight: "10"
+        },
+        {
+          name: "Kiran Mandawewala",
+          desc:"The weight loss program was very systematic. After losing 17kgs I feel energetic, confident and I have received so many compliments that it has added to my energy level. Nobody would believe that I have lost so much weight and that too with proper eating. I never starved myself and was always full at all times.",
+          image: "img/stories/kiran.png",
+          weight: "17"
+        },
+        {
+          name: "Neeta Lulla",
+          desc:"<b>Persistence</b> and <b>diligent</b> towards complete health and nutrition of their client. <b>Suman</b> you are fabulous. Thank you for all that you have done for me. God Bless. ",
+          image: "img/stories/neeta.png",
+          weight: ""
+        },
+        {
+          name: "Renu Ruia",
+          desc:"I was under Mona. She was very encouraging, very soft, sweet and flexible. Suman Mam was also very <b>encouraging and appreciative.</b> Even at times when I have not lost my weight. <b>They both never got upset and always said koi baat nahi, you are doing very well. I never starved.</b> ",
+          image: "img/stories/renu.png",
+          weight: "10"
+        },
+        {
+          name: "Sanjay Daswani",
+          desc:"I am pleasantly surprised to lose over <b>10 kilos</b> in less than 3 months. SelfCare has taught me a <b>healthy way to lose weight and keep fit.</b> Never in my wildest dreams did I think that I would be eating so many meals a day and <b>still be losing weight</b> consistently week after week. <b>I thank Vaishali and Suman for helping me get to my target.</b>",
+          image: "img/stories/sanjay.png",
+          weight: "15"
+        },
         {
          title: "Transition",
          name: "Siddhart Banka",
          location: "Mumbai, India",
-         desc: "I started working out (Walking), eating healthy food,started living a healhty life. Great center with all lovely people around. Dieticians are very good. allow full meal and no strict diet like others do it so a better program then others.",
+         desc: "I started working out (Walking), <b>eating healthy food,</b> started living a <b>healhty life.</b> Great center with all lovely people around. Dieticians are very good. <b>Allow full meal and no strict diet</b> like others do it so a better program then others.",
          image: "img/stories/siddhart.png",
          weight: "15"
        },
-         {
-          title: "The diet cookbook is also very helpful and the recipes are delicious.",
-          name: "Ameesha Tibrewaal",
-          location: "Mumbai, India",
-          desc: "The first week was the most difficult but as I progressed into the program the hunger pangs became non-existent and I actually could see my body shrinking. The diet cookbook is also very helpful and the recipes are delicious. Amazing program and I am very pleased with the results.",
-          image: "img/stories/2.png",
+        {
+          name: "Smita Vijay",
+          desc:"I’ve tried and failed many weight loss programmes before, and now losing <b>20kgs</b> seemed an impossible task for me. I didn’t believe I that I will really lose any of pregnancy weight. But with <b>SelfCare</b> it was not only possible, but an easy process. It was a long distance programme, but Vishakha with her personal attention has been a <b>great motivator both to exercise and keep a tab on my plate!</b>",
+          image: "img/stories/smita.png",
+          weight: "20"
+        },
+        {
+         title: "In the journey of diet she has ensured to keep my boost at its peak and never let me feel low or disappointed.",
+         name: "Sonali Parekh",
+         location: "Mumbai, India",
+         desc: "My consulting nutritionist Vaishali is full co-operative, patient and an ever-boosting person. <b>In the journey of diet she has ensured to keep my boost at its peak and never let me feel low or disappointed</b>. When you diet you need to be pepped up always and Suman and Vaishali are excellent. It was a Happy journey with Suman",
+         image: "img/stories/12.png",
+         weight: "5"
+       },
+        {
+          name: "Amit Garg",
+          desc:"“<b>Started looking 10 years younger</b>” is the quote I have heard from couple of colleagues over last week or so, lost around 6kgs in 2 months but physically impact is more significant.<b> Good experience for me.</b> The best part about the program was <b>the diet plan proposed was not less and quiet apt.</b> The key was <b>mix of diet and periodicity of food intake.</b> ",
+          image: "img/stories/amit.png",
+          weight: "6"
+        },
+        {
+         title: "The diet cookbook is also very helpful and the recipes are delicious.",
+         name: "Ameesha Tibrewaal",
+         location: "Mumbai, India",
+         desc: "The first week was the most difficult but as I progressed into the program the hunger pangs became non-existent and I actually could see my body shrinking. <b>The diet cookbook is also very helpful and the recipes are delicious.</b> Amazing program and I am very pleased with the results.",
+         image: "img/stories/2.png",
+         weight: "5"
+       },
+        {
+          name: " Jay Shah",
+          desc:"Thank you Nidhi! You were really patient with my irregular attendance. The program given by you was apt for my hectic lifestyle.",
+          image: "img/stories/jay.png",
           weight: "5"
-        }, {
+        },
+        {
+          name: "L. Vishwanathan",
+          desc:"I had joined better health and immunity program of SelfCare for a two month program. Due to this program I have been able to maintain good and active lifestyle. In the process the diets they have recommended can be maintained throughout life. I would recommend everyone to go through the program of SelfCare. ",
+          image: "img/stories/vishwanathan.png",
+          weight: "5"
+        },
+        {
+          name: "Mansi Sanghavi",
+          desc:"Very good and enriching experience. Patiently dealt with great diet. Didn’t starve myself and was losing weight at every stage. Even when I didn’t lose weight in the stipulated time, SelfCare kept holding my hand till I reached my goal. Overall great experience and worth every penny.",
+          image: "img/stories/mansi.png",
+          weight: "10"
+        },
+        {
+          name: "Unnati Divecha",
+          desc:"I had a great experience here – losing 10kgs in 6 months, the healthy way! Vibha has been very supportive, persuasive, and understanding! <b>The diet and understanding has become a way of life for me now.</b> Feels great!",
+          image: "img/stories/unnati.png",
+          weight: "10"
+        },
+         {
           title: "I never starved myself and I was always full at all times.",
           name: "Kiran Mandawewala",
           location: "Jamnagar, India",
@@ -737,14 +762,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           desc: "Thank you for all your support. Your guidance has given me new confidence. In fact I am thoroughly pleased with your program",
           image: "img/stories/11.png",
           weight: "10"
-        }, {
-          title: "In the journey of diet she has ensured to keep my boost at its peak and never let me feel low or disappointed.",
-          name: "Sonali Parekh",
-          location: "Mumbai, India",
-          desc: "My consulting nutritionist Vaishali is full co-operative, patient and an ever-boosting person. In the journey of diet she has ensured to keep my boost at its peak and never let me feel low or disappointed. When you diet you need to be pepped up always and Suman and Vaishali are excellent. It was a Happy journey with Suman",
-          image: "img/stories/12.png",
-          weight: "5"
-        }, {
+        },
+         {
           title: "Changed my way/ perception towards eating. I find myself balancing my food content/ sweets.",
           name: "Anand Mehta",
           location: "Mumbai, India",
@@ -1044,11 +1063,7 @@ msg:'Please enter all details'
             console.log(input);
             if (formValidate.$valid && formValidateB.$valid && formValidateS.$valid) {
                 if (!$scope.guestshow) {
-                    $scope.checkout = $scope.user;
                     $scope.checkout.email = $scope.login.email;
-                    console.log($scope.guestshow);
-                } else {
-                    $scope.checkout = $scope.user;
                     console.log($scope.guestshow);
                 }
                 console.log($scope.checkout);

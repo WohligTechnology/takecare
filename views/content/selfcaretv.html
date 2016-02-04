@@ -12,10 +12,10 @@
             <div class="row">
               <div class="col-md-6"  ng-repeat="episode in selfcaretv">
                 <div class="episode">
-                  <h4>{{episode.title}}</h4>
+                  <h4>{{episode.name}}</h4>
                   <div class="episode-videoholder relate">
-                    <a href="https://www.youtube.com/v/{{episode.url}}" fancybox class="various fancybox.iframe">
-                      <img ng-src="http://img.youtube.com/vi/{{episode.url}}/hqdefault.jpg" alt="" class="img-responsive">
+                    <a href="https://www.youtube.com/v/{{episode.link}}" fancybox class="various fancybox.iframe">
+                      <img ng-src="http://img.youtube.com/vi/{{episode.link}}/hqdefault.jpg" alt="" class="img-responsive">
                       <span class="get-center youtube-play"><i class="fa fa-youtube-play"></i></span>
                     </a>
                   </div>
