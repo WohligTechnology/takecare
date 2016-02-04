@@ -703,6 +703,9 @@ var navigationservice = angular.module('navigationservice', [])
     logout:function(callback){
       $http.get(adminurl+ 'logout').success(callback);
     },
+    userDetail:function(callback,errRes){
+      $http.get(adminurl+ 'getuserbyid').success(callback).error(errRes);
+    },
     signup:function(request,callback){
       console.log(request);
       $http({
@@ -714,6 +717,14 @@ var navigationservice = angular.module('navigationservice', [])
           "email":request.email,
           "password":request.password
 				}
+			}).success(callback);
+    },
+    updateUser:function(user,callback){
+      console.log(user);
+      $http({
+				url: adminurl + 'updateuser',
+				method: 'POST',
+				data: user
 			}).success(callback);
     },
     subscribe:function(request,callback){

@@ -13,49 +13,48 @@
               <h3 class="text-uppercase brand-brown-dark letter-space">your details</h3>
               <form action="" class="form-inline details">
                 <div class="form-group">
-                  <input type="text" placeholder="First Name *" class="form-control">
+                  <input type="text" placeholder="First Name *" ng-model="user.firstname" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Last Name *" class="form-control">
+                  <input type="text" placeholder="Last Name *" ng-model="user.lastname" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="tel" placeholder="Mobile Number *" class="form-control">
+                  <input type="tel" placeholder="Mobile Number *" ng-model="user.phone" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email *" class="form-control">
+                  <input type="email" placeholder="Email *" ng-model="user.email" class="form-control">
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-primary-inverse edit text-uppercase" type="button">Edit</button>
+                  <button class="btn btn-primary-inverse edit text-uppercase" type="button" ng-click="updateUser()">Edit</button>
                 </div>
               </form>
               <div class="address">
                 <div class="row">
                   <div class="col-md-4">
                     <h3 class="text-uppercase brand-brown-dark letter-space inline-block">billing address</h3>
-                    <button class="btn btn-primary-inverse text-uppercase edit">Edit</button>
+                    <button class="btn btn-primary-inverse text-uppercase edit" ng-click="updateUser()">Edit</button>
                     <form action="">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Line 1 *">
+                        <input type="text" class="form-control" ng-model="user.billingline1" placeholder="Line 1 *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Line 2 *">
+                        <input type="text" class="form-control" ng-model="user.billingline2" placeholder="Line 2 *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Line 3 *">
+                        <input type="text" class="form-control" ng-model="user.billingline3" placeholder="Line 3 *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="City *">
+                        <input type="text" class="form-control" ng-model="user.billingcity" placeholder="City *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Pincode *">
+                        <input type="text" class="form-control" ng-model="user.billingpincode" placeholder="Pincode *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="State *">
+                        <input type="text" class="form-control" ng-model="user.billingstate" placeholder="State *">
                       </div>
                       <div class="form-group">
                         <div class="custom-select">
-                          <select name="" id="">
-                            <option value="">Country *</option>
+                          <select ng-options="country as country.value for country in countries" ng-model="selectedBillingCountry" class="form-control">
                           </select>
                           <span></span>
                         </div>
@@ -64,34 +63,59 @@
                   </div>
                   <div class="col-md-offset-2 col-md-4">
                     <h3 class="text-uppercase brand-brown-dark letter-space inline-block">shipping address</h3>
-                    <button class="btn btn-primary-inverse text-uppercase edit" type="button">edit</button>
+                    <button class="btn btn-primary-inverse text-uppercase edit" type="button" ng-click="updateUser()">edit</button>
                     <div class="checkbox">
-                      <input type="checkbox" class="text-uppercase" id="same">
+                      <input type="checkbox" class="text-uppercase" ng-model='sameshipping' id="same">
                       <label for="same" class="same-bill"> <span></span> Same as billing address</label>
                     </div>
-                    <form action="">
+                    <form action="" ng-show="sameshipping">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Line 1 *">
+                        <input type="text" class="form-control" ng-model="user.billingline1" placeholder="Line 1 *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Line 2 *">
+                        <input type="text" class="form-control" ng-model="user.billingline2" placeholder="Line 2 *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Line 3 *">
+                        <input type="text" class="form-control" ng-model="user.billingline3" placeholder="Line 3 *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="City *">
+                        <input type="text" class="form-control" ng-model="user.billingcity" placeholder="City *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Pincode *">
+                        <input type="text" class="form-control" ng-model="user.billingincode" placeholder="Pincode *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="State *">
+                        <input type="text" class="form-control" ng-model="user.billingstate" placeholder="State *">
                       </div>
                       <div class="form-group">
                         <div class="custom-select">
-                          <select name="" id="" class="form-control">
-                            <option value="">Country *</option>
+                          <select ng-options="country as country.value for country in countries" ng-model="selectedBillingCountry" class="form-control">
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                    <form action="" ng-hide="sameshipping">
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="user.shippingline1" placeholder="Line 1 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="user.shippingline2" placeholder="Line 2 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="user.shippingline3" placeholder="Line 3 *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="user.shippingcity" placeholder="City *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="user.shippingpincode" placeholder="Pincode *">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="user.shippingstate" placeholder="State *">
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-select">
+                          <select ng-options="country as country.value for country in countries" ng-model="selectedShippingCountry" class="form-control">
                           </select>
                         </div>
                       </div>
