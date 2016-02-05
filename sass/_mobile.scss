@@ -1295,6 +1295,11 @@
   @include square(70px);
   margin: 10px auto 0;
  }
+ //meet
+ .vogue-logoholder {
+   width: 150px;
+   margin: 20px auto 0;
+ }
 // image consulting
 .consulting {
   .tag-text h3 {
@@ -1379,6 +1384,10 @@
         font-size: 18px;
       }
     }
+  }
+  .vogue-logoholder {
+    width: 120px;
+    margin: 0 auto;
   }
   .suman-info {
     padding: 0 10px;
@@ -1911,4 +1920,14 @@
   }
   h3 { font-size: 18px; }
   }
+  // selfcare tv
+  .youtube-play { font-size: 35px; }
+  /////careers
+  .careers-main {
+    margin: 30px 0;
+    h2{
+      margin: 20px 0;
+      font-size: 20px;
+    }
+    }
 }
