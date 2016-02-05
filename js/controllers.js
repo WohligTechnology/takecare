@@ -313,7 +313,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.healthid = $stateParams.id;
-    console.log($scope.healthid);
+
     $scope.selectedPackage = {};
     NavigationService.getSubPackages(function(data) {
       $scope.subpackages = data;
@@ -350,6 +350,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       caption: "pregnancy"
     }];
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+
+    //get all plans
+    NavigationService.getPlansById($stateParams.id,function(data){
+      $scope.plans = data.plans;
+    });
+    $scope.cartAdd = function(id) {
+      var input = {
+        product: id,
+        quantity: 1,
+        status: "3"
+      };
+      console.log(input);
+      NavigationService.addToCart(input, function(data) {
+        if (data.value == true) {
+          $scope.alerts.push({
+            type: 'success',
+            msg: 'Added to cart'
+          });
+        } else {
+          $scope.alerts.push({
+            type: 'danger',
+            msg: 'Already in cart'
+          });
+
+        }
+      });
+    }
   })
   .controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

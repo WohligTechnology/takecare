@@ -685,6 +685,9 @@ var navigationservice = angular.module('navigationservice', [])
     getSubCategory: function(subcategoryid, callback) {
       $http.get(adminurl + 'getSubCategory?id=' + subcategoryid).success(callback);
     },
+    getPlansById: function(planId, callback) {
+      $http.get(adminurl + 'getPlans?id=' + planId).success(callback);
+    },
     getProductsByCategory: function(request, callback) {
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + request.categoryid + '&subcategories=' + request.subcategories).success(callback);
     },
