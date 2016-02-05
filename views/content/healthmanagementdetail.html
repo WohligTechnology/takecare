@@ -6,12 +6,15 @@
     </div>
   </div>
   <div class="container">
+    <div class="alert-postion">
+            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+        </div>
     <div class="get-up brand-brown-bg relate">
       <h2 class="text-center text-bold brand-brown-dark health-heading">{{selectedPackage.name}}</h2>
       <p class="white health-descp">{{selectedPackage.description}}</p>
     </div>
-    <div class="" ng-if="plans==''">
-      No Plan For {{selectedPackage.name}}
+    <div class="relate no-plan" ng-if="plans==''">
+      <h3 class="get-center brand-brown-dark">No Plan For {{selectedPackage.name}}</h3>
     </div>
     <div class="health-chart">
       <div class="row">
@@ -58,7 +61,8 @@
                     <div class="tab-foot text-right">
                       <div class="plan">
                         <span class="note font-baubodi letter-space"><sup>*</sup>inclusive of all taxes</span>
-                        <a href="#/checkout" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.plan)">take this plan</a>
+                        <a class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.plan)">take this plan</a>
+                        <p ng-if="$index==0">Silver plan rates are only applicable for online consulation.</p>
                       </div>
                     </div>
                   </div>

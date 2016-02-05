@@ -273,16 +273,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.selectedShippingCountry = countries[0];
     $scope.selectedBillingCountry = countries[0];
     $scope.sameshipping = false;
+    $scope.alerts = [];
 
     NavigationService.userDetail(function(data) {
       $scope.user = data;
+      console.log(_.findIndex($scope.countries,{'value':'Angola'}));
+      if (data.billingcountry=='') {
+        $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
+      }else {
+        $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.billingcountry})]
+      }
+      if (data.shippingcountry=='') {
+        $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
+      }else {
+        $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.shippingcountry})]
+      }
+
     }, function(data) {
       $state.go("error");
     })
 
-    $scope.updateUser = function() {
+    $scope.updateUser = function(selectedBillingCountry,selectedShippingCountry) {
+      console.log($scope.selectedBillingCountry);
+      if (selectedBillingCountry.value=="Please Select") {
+        $scope.user.billingcountry = "";
+      }else {
+        $scope.user.billingcountry = selectedBillingCountry.value;
+      }
+      if (selectedShippingCountry.value=="Please Select") {
+        $scope.user.shippingcountry = "";
+      }else {
+        $scope.user.shippingcountry = selectedShippingCountry.value;
+      }
       NavigationService.updateUser($scope.user, function(data) {
         console.log(data);
+        $scope.alerts.push({
+          type: 'success',
+          msg: 'Saved.'
+        });
       })
     }
 
@@ -313,8 +341,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.healthid = $stateParams.id;
-
+    $scope.alerts = [];
     $scope.selectedPackage = {};
+
     NavigationService.getSubPackages(function(data) {
       $scope.subpackages = data;
       $scope.selectedPackage = _.find($scope.subpackages, {

@@ -725,7 +725,7 @@ var navigationservice = angular.module('navigationservice', [])
     updateUser:function(user,callback){
       console.log(user);
       $http({
-				url: adminurl + 'updateuser',
+				url: adminurl + 'updateprofile',
 				method: 'POST',
 				data: user
 			}).success(callback);

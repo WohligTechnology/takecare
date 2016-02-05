@@ -5,6 +5,9 @@
   </div>
   <div class="account-main">
     <div class="container">
+      <div class="alert-postion">
+              <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+          </div>
       <div class="account-tab">
         <uib-tabset>
           <uib-tab>
@@ -15,8 +18,14 @@
                 <div class="form-group">
                   <input type="text" placeholder="First Name *" ng-model="user.firstname" class="form-control">
                 </div>
+                <div class="" ng-show="user.firstname.$error.required && user.firstname.$touched" role="alert">
+                  Please enter your name.
+                </div>
                 <div class="form-group">
                   <input type="text" placeholder="Last Name *" ng-model="user.lastname" class="form-control">
+                </div>
+                <div class="" ng-show="user.firstname.$error.required && user.firstname.$touched" role="alert">
+                  Please enter your name.
                 </div>
                 <div class="form-group">
                   <input type="tel" placeholder="Mobile Number *" ng-model="user.phone" class="form-control">
@@ -24,15 +33,18 @@
                 <div class="form-group">
                   <input type="email" placeholder="Email *" ng-model="user.email" class="form-control">
                 </div>
+                <div class="" ng-show="user.firstname.$error.required && user.firstname.$touched" role="alert">
+                  Please enter your name.
+                </div>
                 <div class="form-group">
-                  <button class="btn btn-primary-inverse edit text-uppercase" type="button" ng-click="updateUser()">Edit</button>
+                  <button class="btn btn-primary-inverse edit text-uppercase" type="button" ng-click="updateUser(selectedBillingCountry,selectedShippingCountry)">Edit</button>
                 </div>
               </form>
               <div class="address">
                 <div class="row">
                   <div class="col-md-4">
                     <h3 class="text-uppercase brand-brown-dark letter-space inline-block">billing address</h3>
-                    <button class="btn btn-primary-inverse text-uppercase edit" ng-click="updateUser()">Edit</button>
+                    <button class="btn btn-primary-inverse text-uppercase edit" ng-click="updateUser(selectedBillingCountry,selectedShippingCountry)">Edit</button>
                     <form action="">
                       <div class="form-group">
                         <input type="text" class="form-control" ng-model="user.billingline1" placeholder="Line 1 *">
@@ -63,7 +75,7 @@
                   </div>
                   <div class="col-md-offset-2 col-md-4">
                     <h3 class="text-uppercase brand-brown-dark letter-space inline-block">shipping address</h3>
-                    <button class="btn btn-primary-inverse text-uppercase edit" type="button" ng-click="updateUser()">edit</button>
+                    <button class="btn btn-primary-inverse text-uppercase edit" type="button" ng-click="updateUser(selectedBillingCountry,selectedShippingCountry)">edit</button>
                     <div class="checkbox">
                       <input type="checkbox" class="text-uppercase" ng-model='sameshipping' id="same">
                       <label for="same" class="same-bill"> <span></span> Same as billing address</label>
@@ -82,7 +94,7 @@
                         <input type="text" class="form-control" ng-model="user.billingcity" placeholder="City *">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" ng-model="user.billingincode" placeholder="Pincode *">
+                        <input type="text" class="form-control" ng-model="user.billingpincode" placeholder="Pincode *">
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control" ng-model="user.billingstate" placeholder="State *">
