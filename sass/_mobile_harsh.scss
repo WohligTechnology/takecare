@@ -267,11 +267,25 @@
   // .health-foot .health-back {
   //   min-height: 100px;
   // }
-  footer .mail .email { @include size(100%, auto); }
+  .menu,
+  .menu2 { margin-bottom: 30px; }
+  footer .mail .email {
+    @include size(80%, auto);
+    display: inline-block;
+   }
   footer .mail .btn-submit {
-    @include size(100%, auto);
-    @include margin(10px 0 0);
+    @include size(18%, auto);
+    display: inline-block;
+    margin-left: -5px;
   }
+  footer {
+    .foot-about { margin: 0; }
+    .note {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .foot-sociallinks { padding: 0; }
+}
   .social-links li a { @include margin(0 6px 0 0); }
 
   // Health Packages
