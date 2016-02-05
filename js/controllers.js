@@ -275,6 +275,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.sameshipping = false;
     $scope.alerts = [];
 
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
+    };
+
     NavigationService.userDetail(function(data) {
       $scope.user = data;
       console.log(_.findIndex($scope.countries,{'value':'Angola'}));
@@ -343,6 +347,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.healthid = $stateParams.id;
     $scope.alerts = [];
     $scope.selectedPackage = {};
+
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
+    };
 
     NavigationService.getSubPackages(function(data) {
       $scope.subpackages = data;

@@ -16,13 +16,13 @@
               <h3 class="text-uppercase brand-brown-dark letter-space">your details</h3>
               <form action="" class="form-inline details">
                 <div class="form-group">
-                  <input type="text" placeholder="First Name *" ng-model="user.firstname" class="form-control">
+                  <input type="text" placeholder="First Name *" ng-model="user.firstname" required class="form-control">
                 </div>
                 <div class="" ng-show="user.firstname.$error.required && user.firstname.$touched" role="alert">
                   Please enter your name.
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Last Name *" ng-model="user.lastname" class="form-control">
+                  <input type="text" placeholder="Last Name *" ng-model="user.lastname" required class="form-control">
                 </div>
                 <div class="" ng-show="user.firstname.$error.required && user.firstname.$touched" role="alert">
                   Please enter your name.
@@ -31,7 +31,7 @@
                   <input type="tel" placeholder="Mobile Number *" ng-model="user.phone" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email *" ng-model="user.email" class="form-control">
+                  <input type="email" placeholder="Email *" ng-model="user.email" required class="form-control">
                 </div>
                 <div class="" ng-show="user.firstname.$error.required && user.firstname.$touched" role="alert">
                   Please enter your name.
