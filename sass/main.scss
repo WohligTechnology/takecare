@@ -730,6 +730,7 @@ button {
 .health-descp {
   font-size: 16px;
 }
+.no-plan { min-height: 200px; }
 .healthchart-list {
   margin: 60px 0;
 }
@@ -2251,6 +2252,7 @@ footer {
   }
   .age {
     width: 55px;
+    padding: 0px 5px;
     border: 2px solid $brand-primary;
   }
   .weight {
@@ -2379,11 +2381,14 @@ footer {
 .careers-main {
   margin: 80px 0;
   h2 {
+    margin: 20px 0px 50px;
     color: $brand-gray;
-    font-size: 40px;
-    a {
-      color: #373737;
-    }
+    font-size: 35px;
+  }
+  textarea { min-height: 100px; }
+  .send {
+    margin: 20px 0;
+    padding: 8px 36px;
   }
 }
 // end careers///
@@ -2520,16 +2525,16 @@ footer {
     line-height: 28px;
   }
   form.forgot-form { padding: 0px 20px 30px; }
-  input {
-    border: 2px solid $brand-primary;
-    @include placeholder {
-      font-family: $font-baubodi;
-      font-weight: bold;
-      font-style: italic;
-      letter-spacing: 1px;
-    };
-  }
   button { padding: 8px 30px; }
+}
+.input-placeholder {
+  border: 2px solid $brand-primary;
+  @include placeholder {
+    font-family: $font-baubodi;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1px;
+  };
 }
 .forgot-main {
   @extend .enter-mail;
