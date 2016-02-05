@@ -274,10 +274,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.selectedBillingCountry = countries[0];
     $scope.sameshipping = false;
     $scope.alerts = [];
+    $scope.error = false;
+    $scope.orders = [];
 
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
     };
+
+if ($.jStorage.get("user")) {
+  NavigationService.getUserOrder(function(data){
+    // $scope.orders = data.plans;
+    _.each(data.plans, function(n,key){
+      _.each(n.products, function(m, key1){
+          $scope.orders.push(m);
+      });
+    });
+    // $scope.orders
+  });
+}
+
 
     NavigationService.userDetail(function(data) {
       $scope.user = data;
@@ -298,7 +313,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
 
     $scope.updateUser = function(selectedBillingCountry,selectedShippingCountry) {
-      console.log($scope.selectedBillingCountry);
+      if ($scope.user.firstname!='' && $scope.user.lastname!='' && $scope.user.email!='') {
+      $scope.error = false;
       if (selectedBillingCountry.value=="Please Select") {
         $scope.user.billingcountry = "";
       }else {
@@ -310,12 +326,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.user.shippingcountry = selectedShippingCountry.value;
       }
       NavigationService.updateUser($scope.user, function(data) {
-        console.log(data);
         $scope.alerts.push({
           type: 'success',
           msg: 'Saved.'
         });
       })
+    }else {
+      $scope.error = true;
+    }
     }
 
   })
@@ -350,6 +368,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
+    };
+
+    $scope.getCart = function() {
+      NavigationService.showCart(function(data) {
+        cart = data;
+      })
     };
 
     NavigationService.getSubPackages(function(data) {
@@ -395,7 +419,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.cartAdd = function(id) {
       var input = {
         product: id,
-        quantity: 1,
         status: "3"
       };
       console.log(input);
@@ -892,6 +915,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
         $scope.allcart = data;
+        cart = data;
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
           $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
@@ -1019,6 +1043,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
         $scope.allcart = data;
+        cart = data;
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
           $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);

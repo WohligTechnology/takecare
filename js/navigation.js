@@ -6,6 +6,7 @@ var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
 // var imgurl = "http://192.168.0.118/selfbackend/uploads/";
 // var imgurl="";
+var cart = [];
 
 var adminurl = mainurl + "json/";
 var countries = [{
@@ -709,6 +710,9 @@ var navigationservice = angular.module('navigationservice', [])
     userDetail:function(callback,errRes){
       $http.get(adminurl+ 'getuserbyid').success(callback).error(errRes);
     },
+    getUserOrder:function(callback){
+      $http.get(adminurl+ 'getOrders?id='+$.jStorage.get("user").id).success(callback);
+    },
     signup:function(request,callback){
       console.log(request);
       $http({
@@ -751,6 +755,16 @@ var navigationservice = angular.module('navigationservice', [])
 			}).success(callback);
     },
     addToCart: function (cart, callback) {
+      if (cart.status==3) {
+        return $http({
+            url: adminurl + "addToCart",
+            method: "POST",
+            data: {
+                "product": cart.product,
+                "status":2
+            }
+        }).success(callback);
+      }else {
         return $http({
             url: adminurl + "addToCart",
             method: "POST",
@@ -761,6 +775,8 @@ var navigationservice = angular.module('navigationservice', [])
                 "status":cart.status
             }
         }).success(callback);
+      }
+
     },
     removeFromCart: function (cart, callback) {
       console.log(cart);

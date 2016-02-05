@@ -847,6 +847,23 @@ firstapp.directive('slideMenu', function($document) {
     }
   }
 });
+firstapp.filter('showplan', function(NavigationService) {
+    return function(input) {
+        if (input) {
+            if (userProfile.id && userProfile.wishlist) {
+                var ispresent = _.findIndex(userProfile.wishlist, 'artwork', input);
+                if (ispresent != -1) {
+                    return "fa fa-heart font-color3";
+                } else {
+                    return "fa fa-heart";
+                }
+            } else {
+                return "fa fa-heart";
+            }
+        }
+    };
+});
+
 firstapp.directive('fancybox', function($compile, $parse) {
   return {
     restrict: 'EA',
