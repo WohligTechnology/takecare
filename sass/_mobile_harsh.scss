@@ -435,7 +435,14 @@
     float: none;
   }
   .story-prev { margin-bottom: 20px; }
-
+  // menu-hover
+  .signin .account-submenu {
+    width: 110px;
+    padding: 15px 5px 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
 }
 @media (max-width: 480px) {
   .various .circle { width: 10%; }
