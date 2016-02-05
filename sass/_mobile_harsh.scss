@@ -403,7 +403,10 @@
   .bloginfo-imgholder { @include size(100%, 400px); }
   .related-post {
     text-align: center;
-    .relatepost-holder { @include margin(10px auto); }
+    .relatepost-holder {
+      @include margin(10px auto);
+      img { margin: 0 auto; }
+    }
   }
   .selfcare-descp {
     font-size: 14px;
