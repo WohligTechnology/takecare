@@ -641,9 +641,9 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/successstories",
     subnav: []
   }, {
-    name: "Blog",
+    name: "Blog (Coming Soon)",
     classis: "active",
-    link: "#/blog",
+    link: "",
     subnav: []
   }, {
     name: "News",
