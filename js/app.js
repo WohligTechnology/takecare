@@ -849,16 +849,18 @@ firstapp.directive('slideMenu', function($document) {
 });
 firstapp.filter('showplan', function(NavigationService) {
     return function(input) {
+      console.log(input);
+      console.log(cart);
         if (input) {
-            if (userProfile.id && userProfile.wishlist) {
-                var ispresent = _.findIndex(userProfile.wishlist, 'artwork', input);
+            if (cart!='') {
+                var ispresent = _.findIndex(cart, 'id', input);
                 if (ispresent != -1) {
-                    return "fa fa-heart font-color3";
+                    return false;
                 } else {
-                    return "fa fa-heart";
+                    return true;
                 }
             } else {
-                return "fa fa-heart";
+                return true;
             }
         }
     };

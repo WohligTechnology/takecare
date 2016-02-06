@@ -61,9 +61,12 @@
                     <div class="tab-foot text-right">
                       <div class="plan">
                         <span class="note font-baubodi letter-space"><sup>*</sup>inclusive of all taxes</span>
-                        <h4 ng-show="subplan.status">Plan already taken.</h4>
-                        <a ng-hide="subplan.status" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.plan)">take this plan</a>
-                        <p ng-if="$index==0">Silver plan rates are only applicable for online consulation.</p>
+                        <div style="display:none">
+                          {{subplan.plan | showplan}}
+                        </div>
+                        <h4 ng-hide="{{subplan.plan | showplan}}">Plan already taken.</h4>
+                        <a ng-show="{{subplan.plan | showplan}}" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.plan)">take this plan</a>
+                        <!-- <p ng-if="$index==0">Silver plan rates are only applicable for online consulation.</p> -->
                       </div>
                     </div>
                   </div>

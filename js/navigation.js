@@ -514,11 +514,14 @@ var navigationservice = angular.module('navigationservice', [])
     name: "Home",
     classis: "active",
     link: "#/home",
+    lineClass: 'liner',
     subnav: []
   }, {
     name: "Overview",
     classis: "active",
     link: "",
+    lineClass: 'liner',
+    nocursor: "no-pointer",
     subnav: [
       {
         name: "About Selfcare",
@@ -544,7 +547,9 @@ var navigationservice = angular.module('navigationservice', [])
   }, {
     name: "Health Packages",
     classis: "active",
-    link: "#/healthpackages",
+    link: "",
+    lineClass: 'liner',
+    nocursor: "no-pointer",
     subnav: [
       {
         name: "Weight Loss",
@@ -560,7 +565,9 @@ var navigationservice = angular.module('navigationservice', [])
   }, {
     name: "Health Products",
     classis: "active",
-    link: "#/healthproducts/1",
+    link: "",
+    lineClass: 'liner',
+    nocursor: "no-pointer",
     subnav: [
       {
         name: "Snacks & Munchies",
@@ -586,22 +593,27 @@ var navigationservice = angular.module('navigationservice', [])
   }, {
     name: "Health Kit",
     classis: "active",
-    link: "#/",
+    link: "",
+    lineClass: 'liner',
+    nocursor: "no-pointer",
     subnav: [
       {
-        name: "Calorie Meter",
+        name: "Calorie Meter (Coming Soon)",
         classis: "active",
-        link: "#/knowyourstats"
+        link: "",
+        nocursor: "no-pointer"
       },
       {
-        name: "Recipes",
+        name: "Recipes (Coming Soon)",
         classis: "active",
-        link: "#/recipes"
+        link: "",
+        nocursor: "no-pointer"
       },
       {
-        name: "Restaurant Menus",
+        name: "Restaurant Menus (Coming Soon)",
         classis: "active",
-        link: "#/home"
+        link: "",
+        nocursor: "no-pointer"
       },
     ]
   }, {
@@ -620,6 +632,7 @@ var navigationservice = angular.module('navigationservice', [])
     name: "Image Consulting",
     classis: "active",
     link: "#/imageconsulting",
+    lineClass: 'liner',
     subnav: []
   },
    {

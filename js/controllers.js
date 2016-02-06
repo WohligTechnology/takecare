@@ -370,18 +370,16 @@ if ($.jStorage.get("user")) {
       $scope.alerts.splice(index, 1);
     };
 
-    $scope.getCart = function() {
       NavigationService.showCart(function(data) {
         cart = data;
       })
-    };
 
     NavigationService.getSubPackages(function(data) {
       $scope.subpackages = data;
       $scope.selectedPackage = _.find($scope.subpackages, {
         'id': $scope.healthid
       })
-      console.log($scope.selectedPackage);
+      // console.log($scope.selectedPackage);
       console.log(_.findIndex($scope.subpackages, {
         'id': $scope.healthid
       }));
@@ -428,6 +426,9 @@ if ($.jStorage.get("user")) {
             type: 'success',
             msg: 'Added to cart'
           });
+          $timeout(function(){
+            $state.go("cart");
+          },3000)
         } else {
           $scope.alerts.push({
             type: 'danger',
