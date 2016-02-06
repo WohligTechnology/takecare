@@ -10,7 +10,7 @@
             <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
         </div>
     <div class="get-up brand-brown-bg relate">
-      <h2 class="text-center text-bold brand-brown-dark health-heading">{{selectedPackage.name}}</h2>
+      <h2 class="text-center text-bold brand-brown-dark health-heading text-uppercase">{{selectedPackage.name}}</h2>
       <p class="white health-descp">{{selectedPackage.description}}</p>
     </div>
     <div class="relate no-plan" ng-if="plans==''">

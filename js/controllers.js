@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'angular-loading-bar'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
     //Used to name the .html file
@@ -156,7 +156,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "We are experts at solving child obesity and even at helping young children gain height or weight."
     }];
   })
-  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
+  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthproducts");
     $scope.menutitle = NavigationService.makeactive("Health Products");
@@ -167,6 +167,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subCategories = [];
     $scope.products = [];
     $scope.alerts = [];
+    $scope.msg = "Loading";
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
       console.log($scope.productCategory);
@@ -214,10 +215,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         subcategories: subcategoryarr
       }, function(data) {
         if (data.value = false) {
+          $scope.msg = "No products found.";
           $scope.products = [];
         } else {
           console.log(data);
           $scope.products = data.data.queryresult;
+          $scope.msg = ""
           console.log($scope.products);
           // $scope.products = data;
         }
@@ -263,7 +266,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
-  .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+  .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("account");
     $scope.menutitle = NavigationService.makeactive("Account");
@@ -344,7 +347,7 @@ if ($.jStorage.get("user")) {
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
-  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagement");
     $scope.menutitle = NavigationService.makeactive("Health Management");
@@ -356,7 +359,7 @@ if ($.jStorage.get("user")) {
       console.log($scope.subpackages);
     });
   })
-  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
     $scope.menutitle = NavigationService.makeactive("Health Management Detail");
@@ -365,6 +368,7 @@ if ($.jStorage.get("user")) {
     $scope.healthid = $stateParams.id;
     $scope.alerts = [];
     $scope.selectedPackage = {};
+    cfpLoadingBar.start();
 
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
@@ -913,10 +917,16 @@ if ($.jStorage.get("user")) {
     $scope.navigation = NavigationService.getnav();
     $scope.allcart = [];
     $scope.alerts = [];
+    $scope.msg = "Loading";
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
         $scope.allcart = data;
         cart = data;
+        if (data == '') {
+          $scope.msg = "Your cart is empty."
+        }else {
+          $scope.msg = "";
+        }
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
           $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
@@ -1211,18 +1221,63 @@ if ($.jStorage.get("user")) {
       img: "img/sculpting/coolmax.jpg",
       heading: "Large Applicator - Cool Max",
       descp: "We call this applicator the 'Debulker'. We use this applicator to treat belly hangover and large areas on abs to maximize fat reduction."
-    }, {
+    },
+     {
       img: "img/sculpting/coolmax.jpg",
-      heading: "Large Applicator - Cool Max",
-      descp: "We call this applicator the 'Debulker'. We use this applicator to treat belly hangover and large areas on abs to maximize fat reduction."
-    }];
+      heading: "Medium Applicator - Cool Smooth",
+      descp: "We use this applicator to treat dense fat. This non-suction applicator is our Favorite! It can be used for contouring outer thighs."
+    },
+     {
+      img: "img/sculpting/coolmax.jpg",
+      heading: "Small Applicator - Cool Core",
+      descp: "Cool Core applicator we use to sculpt the lower and upper abdomen of the body. Definitely the most commonly used applicator. You can transform your stomach in no time."
+    }
+  ];
     $scope.faqsculp = [{
       qts: "Am I a good candidate?",
       descp: "Good candidates have noticeable bulges in certain areas they’d like to get rid of. The CoolSculpting fat reduction procedure is specifically designed for those who have unwanted fat that resists diet and exercise. Unlike gastric bypass surgery, the CoolSculpting procedure is not a weight loss solution for people who are obese. It is, however a non-surgical alternative to liposuction. Request a one-on-one consultation with us to determine if the CoolSculpting procedure is right for you."
-    }, {
-      qts: "Am I a good candidate?",
-      descp: "Good candidates have noticeable bulges in certain areas they’d like to get rid of. The CoolSculpting fat reduction procedure is specifically designed for those who have unwanted fat that resists diet and exercise. Unlike gastric bypass surgery, the CoolSculpting procedure is not a weight loss solution for people who are obese. It is, however a non-surgical alternative to liposuction. Request a one-on-one consultation with us to determine if the CoolSculpting procedure is right for you."
-    }];
+    },
+     {
+      qts: "How much does the CoolSculpting procedure cost?",
+      descp: "The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals. We will help create a customized treatment plan, in person, that’s tailored to your body, your goals, and your budget."
+    },
+     {
+      qts: "How long is each session? How many sessions will I need?",
+      descp: "We will help you create an individualized treatment plan tailored to your specific goals. The length of your CoolSculpting session will vary depending on the number of areas being treated during one visit. We may schedule additional sessions in order to meet your goals."
+    },
+     {
+      qts: "Where does the fat go? Are the results permanent?",
+      descp: "Once the treated fat cells are crystallized (frozen), your body processes the fat and eliminates these dead cells. Once the treated fat cells are gone, they’re gone for good."
+    },
+     {
+      qts: "What does it feel like?",
+      descp: "As the cooling begins during the first few minutes, you will feel pressure and intense cold. This soon dissipates. Many people read, watch videos, work on their laptop, or even take a nap during their treatment."
+    },
+     {
+      qts: "Is the CoolSculpting procedure safe?",
+      descp: "The CoolSculpting procedure is FDA-cleared for the flank (love handles), abdomen, and thigh. With over one million CoolSculpting treatments performed worldwide, it is proven to be a safe and effective treatment for non-surgical fat reduction."
+    },
+     {
+      qts: "Are there any side effects?",
+      descp: "During the procedure you may experience deep pulling, tugging, pinching, numbness or discomfort. Following the procedure, typical side effects include temporary numbness, redness, swelling, bruising, firmness, tingling, stinging and pain. Rare side effects may also occur. The CoolSculpting procedure is not for everyone. You should not have the CoolSculpting procedure if you suffer from cryoglobulinemia or paroxysmal cold hemoglobinuria. The CoolSculpting procedure is not a treatment for obesity. As with any medical procedure, ask us if the CoolSculpting procedure is right for you."
+    },
+     {
+      qts: "Can I return to normal activities after my treatment?",
+      descp: "Yes, you can. The CoolSculpting procedure is completely non-surgical, so typically you can return to normal activities immediately. Often times, patients return to work after their CoolSculpting session is over."
+    },
+     {
+      qts: "When will I see results?",
+      descp: "You may start to see changes as quickly as three weeks after your treatment, and will experience the most dramatic results after two months. But your body will still flush out fat cells and continues doing so for up to four to six months after treatment."
+    },
+     {
+      qts: "Do I need to take special supplements or follow a strict diet and exercise program?",
+      descp: "No supplements or pills are required and you do not have to adopt new diet and exercise habits. Many patients feel more motivated to take care of themselves after their CoolSculpting treatment. It is as if they get a second lease on their body and want to start anew again by taking even better care of themselves."
+    },
+     {
+      qts: "What happens if I gain weight down the road?",
+      descp: "Many people, after seeing the results from their CoolSculpting procedure, take even better care of themselves. However, if you do gain weight, you may gain it evenly all over your body, not just in the treated areas."
+    }
+  ];
   })
   .controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

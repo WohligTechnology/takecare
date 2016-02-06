@@ -41,7 +41,7 @@
         <div class="col-md-9 col-sm-8">
           <div class="row">
             <div class="col text-center" ng-if="products.length <= 0">
-              No products found.
+              {{msg}}
             </div>
             <div class="col-md-4 col-sm-6" ng-repeat="product in products" ng-if="products.length > 0">
               <div class="single-product text-center">
