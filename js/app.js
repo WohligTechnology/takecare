@@ -732,10 +732,10 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         templateUrl: "views/template.html",
         controller: 'PlansCtrl'
     })
-    .state('profile', {
-        url: "/profile",
+    .state('orderlist', {
+        url: "/orderlist",
         templateUrl: "views/template.html",
-        controller: 'ProfileCtrl'
+        controller: 'OrderlistCtrl'
     })
     .state('account', {
         url: "/account",
