@@ -359,7 +359,7 @@ if ($.jStorage.get("user")) {
       console.log($scope.subpackages);
     });
   })
-  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,cfpLoadingBar) {
+  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
     $scope.menutitle = NavigationService.makeactive("Health Management Detail");
@@ -419,28 +419,35 @@ if ($.jStorage.get("user")) {
       $scope.plans = data.plans;
     });
     $scope.cartAdd = function(id) {
-      var input = {
-        product: id,
-        status: "3"
-      };
-      console.log(input);
-      NavigationService.addToCart(input, function(data) {
-        if (data.value == true) {
-          $scope.alerts.push({
-            type: 'success',
-            msg: 'Added to cart'
-          });
-          $timeout(function(){
-            $state.go("cart");
-          },3000)
-        } else {
-          $scope.alerts.push({
-            type: 'danger',
-            msg: 'Already in cart'
-          });
+      if ($.jStorage.get("user")) {
+        var input = {
+          product: id,
+          status: "3"
+        };
+        console.log(input);
+        NavigationService.addToCart(input, function(data) {
+          if (data.value == true) {
+            $scope.alerts.push({
+              type: 'success',
+              msg: 'Added to cart'
+            });
+            $timeout(function(){
+              $state.go("cart");
+            },3000)
+          } else {
+            $scope.alerts.push({
+              type: 'danger',
+              msg: 'Already in cart'
+            });
 
-        }
-      });
+          }
+        });
+      }else {
+        $scope.alerts.push({
+          type: 'danger',
+          msg: 'Please Login First'
+        });
+      }
     }
   })
   .controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -929,7 +936,7 @@ if ($.jStorage.get("user")) {
         }
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
-          $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
+            $scope.totalcart = $scope.totalcart + parseInt(key.price);
           key.qty = parseInt(key.qty);
           if (!$scope.validateQuantity(key)) {
             key.exceeds = true;
@@ -1051,13 +1058,18 @@ if ($.jStorage.get("user")) {
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
     };
+
+    NavigationService.getUserById(function(data){
+      $scope.checkout = data;
+    })
+
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
         $scope.allcart = data;
         cart = data;
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
-          $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
+          $scope.totalcart = $scope.totalcart + parseInt(key.price);
           key.qty = parseInt(key.qty);
           if (!$scope.validateQuantity(key)) {
             key.exceeds = true;

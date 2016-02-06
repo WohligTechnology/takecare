@@ -27,7 +27,18 @@
           </thead>
           <tbody>
             <tr class="text-center letter-space font-semibold" ng-repeat="product in allcart | orderBy:'id'">
-              <td>
+              <td ng-if="product.status==3">
+                <h4 class="text-capitalize plan-name m-center">{{product.subtype}}</h4>
+                <h5 class="text-capitalize">
+                  <span class="block" ng-if="product.months == '1'">{{product.months}} month</span>
+                  <span class="block" ng-if="product.months != '1'">{{product.months}} months</span>
+                  <span ng-if="product.plan==1">Silver Plan</span>
+                  <span ng-if="product.plan==2">Gold Plan</span>
+                  <span ng-if="product.plan==3">Platinum Plan</span>
+                  <span ng-if="product.plan==4">Diamond Plan</span>
+                </h5>
+              </td>
+              <td ng-if="product.status!=3">
                 <figure  class="pointer" ui-sref="productdetail({id:product.id})">
                   <div class="cart-imgholder m-center">
                   <img ng-src="{{product.image | serverimage}}" class="img-responsive round">
@@ -36,9 +47,10 @@
                 </figure>
               </td>
               <td>
-                <input type="number" class="text-center quantity" name="" ng-change="updateQuantity(product)" min="0" id="" ng-model="product.qty" >
-                <a href="" class="more inline-block brand-primary-bg white" ng-click="addQuantity(product)"><i class="fa fa-plus"></i></a>
-                <a href="" class="less inline-block brand-primary-bg white" ng-click="subtractQuantity(product)"><i class="fa fa-minus"></i></a>
+                <input type="number" class="text-center quantity" ng-change="updateQuantity(product)" ng-if="product.status!=3" min="0" ng-model="product.qty" >
+                <input type="number" class="text-center quantity" ng-if="product.status==3" min="0" disabled value="1">
+                <a href="" class="more inline-block brand-primary-bg white" ng-click="addQuantity(product)" ng-if="product.status!=3"><i class="fa fa-plus"></i></a>
+                <a href="" class="less inline-block brand-primary-bg white" ng-click="subtractQuantity(product)" ng-if="product.status!=3"><i class="fa fa-minus"></i></a>
                 <div class="text-center" ng-show="product.exceeds">Quantity unavailable.</div>
               </td>
               <td>
@@ -48,7 +60,8 @@
               </td>
               <td>
                 <div class="cart-total-amount">
-                <p>RS. {{product.subtotal}}</p>
+                  <p ng-if="product.status!=3">RS. {{product.subtotal}}</p>
+                <p ng-if="product.status==3">RS. {{product.price}}</p>
               </div>
                 <div class="remove text-right">
                   <button class="btn btn-primary text-uppercase no-radius" ng-click="removeCart(product)">Remove</button>

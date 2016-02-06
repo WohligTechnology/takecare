@@ -65,7 +65,7 @@
                           {{subplan.plan | showplan}}
                         </div>
                         <h4 ng-hide="{{subplan.plan | showplan}}">Plan already taken.</h4>
-                        <a ng-show="{{subplan.plan | showplan}}" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.plan)">take this plan</a>
+                        <a ng-show="{{subplan.plan | showplan}}" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.id)">take this plan</a>
                         <!-- <p ng-if="$index==0">Silver plan rates are only applicable for online consulation.</p> -->
                       </div>
                     </div>

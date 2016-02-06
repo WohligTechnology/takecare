@@ -750,6 +750,9 @@ var navigationservice = angular.module('navigationservice', [])
     subscribe:function(request,callback){
       $http.get(adminurl + 'subscribe?email=' + request.email ).success(callback);
     },
+    getUserById:function(callback){
+      $http.get(adminurl + 'getuserbyid' ).success(callback);
+    },
     loginuser:function(request,callback){
       $http({
 				url: adminurl + 'loginuser',
@@ -768,16 +771,6 @@ var navigationservice = angular.module('navigationservice', [])
 			}).success(callback);
     },
     addToCart: function (cart, callback) {
-      if (cart.status==3) {
-        return $http({
-            url: adminurl + "addToCart",
-            method: "POST",
-            data: {
-                "product": cart.product,
-                "status":2
-            }
-        }).success(callback);
-      }else {
         return $http({
             url: adminurl + "addToCart",
             method: "POST",
@@ -788,8 +781,6 @@ var navigationservice = angular.module('navigationservice', [])
                 "status":cart.status
             }
         }).success(callback);
-      }
-
     },
     removeFromCart: function (cart, callback) {
       console.log(cart);
