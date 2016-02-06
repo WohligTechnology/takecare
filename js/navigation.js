@@ -534,7 +534,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/meet"
       },
       {
-        name: "Meet Team",
+        name: "Meet The Team",
         classis: "active",
         link: "#/team"
       },
