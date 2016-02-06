@@ -2512,15 +2512,20 @@ footer {
       }
     }
   }
-  .nav-tabs > li.active > a,
-  .nav-tabs > li.active > a:hover,
-  .nav-tabs > li.active > a:focus {
+  // .nav-tabs > li.active > a,
+  // .nav-tabs > li.active > a:hover,
+  // .nav-tabs > li.active > a:focus {
+  //   border: none;
+  //   color: $brand-brown-dark;
+  //   text-decoration: underline !important;
+  // }
+  .tab-content {
+    margin: 70px 0;
+  }
+  .tab-active {
     border: none;
     color: $brand-brown-dark;
     text-decoration: underline !important;
-  }
-  .tab-content {
-    margin: 70px 0;
   }
 }
 // forgot and  pop-up
