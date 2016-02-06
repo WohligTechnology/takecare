@@ -1,9 +1,9 @@
 <ul>
-    <li ng-repeat="menu in navigation" class="{{menu.classis}}">
-        <a href="{{menu.link}}">{{menu.name}}</a>
+    <li ng-repeat="menu in navigation" class="{{menu.classis}} {{menu.lineClass}}">
+        <a href="{{menu.link}}" class=" {{menu.nocursor}}">{{menu.name}}</a>
         <ul class="submenu" ng-if="menu.subnav!='';">
             <li ng-repeat="submenu in menu.subnav">
-                <a href="{{submenu.link}}">{{submenu.name}}</a>
+                <a href="{{submenu.link}}" class="{{submenu.nocursor}}">{{submenu.name}}</a>
             </li>
         </ul>
     </li>

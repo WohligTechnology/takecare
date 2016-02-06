@@ -837,6 +837,11 @@
 
 
 $side-menu-width: 390px;
+.liner {
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.no-pointer { cursor: text; }
 .slide-menu {
   background-color: $brand-primary;
   text-align: center;
@@ -871,7 +876,6 @@ $side-menu-width: 390px;
     }
   }
   .submenu {
-    padding-left: 15px;
     li {
       font-size: 18px;
       text-transform: none;
