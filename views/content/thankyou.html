@@ -9,7 +9,7 @@
           <div class="col-md-4">
             <div class="put-center">
               <h3 class="text-uppercase ty-detail text-bold letter-space brand-brown-dark">Transaction ID:</h3>
-              <span class="text-uppercase ty1 transaction btn btn-primary letter-space">FU64354655</span>
+              <span class="text-uppercase ty1 transaction btn btn-primary letter-space">{{order.transactionid}}</span>
             </div>
           </div>
           <div class="col-md-4">
@@ -20,7 +20,7 @@
           <div class="col-md-4">
             <div class="put-center">
               <h3 class="text-uppercase ty-detail1 text-bold letter-space brand-brown-dark">Total Amount:</h3>
-              <span class="text-uppercase ty2 transaction btn btn-primary letter-space">Rs. 375.00</span>
+              <span class="text-uppercase ty2 transaction btn btn-primary letter-space">Rs. {{order.amount.amount}}</span>
             </div>
           </div>
         </div>

@@ -748,12 +748,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
        controller: 'ErrorCtrl'
    })
    .state('wentwrong', {
-        url: "/wentwrong",
+        url: "/wentwrong/:orderid",
         templateUrl: "views/template.html",
         controller: 'WentwrongCtrl'
     })
     .state('thankyou', {
-        url: "/thankyou",
+        url: "/thankyou/:orderid",
         templateUrl: "views/template.html",
         controller: 'ThankyouCtrl'
     })

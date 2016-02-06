@@ -623,19 +623,25 @@ if ($.jStorage.get("user")) {
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
-  .controller('WentwrongCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('WentwrongCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("wentwrong");
     $scope.menutitle = NavigationService.makeactive("Went Wrong");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    NavigationService.getOrder($stateParams.orderid, function(data){
+      $scope.order = data;
+    })
   })
-  .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("thankyou");
     $scope.menutitle = NavigationService.makeactive("Thankyou");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    NavigationService.getOrder($stateParams.orderid, function(data){
+      $scope.order = data;
+    })
   })
   .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

@@ -1,10 +1,10 @@
 // var mainurl = "http://wohlig.io:81/callApi/takecare/";
-// var mainurl = "http://moviewsapp.com/selfcare/index.php/";
+var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 // var mainurl = "http://localhost/selfback/index.php/";
-var mainurl = "http://192.168.0.118/selfbackend/index.php/";
-// var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+// var mainurl = "http://192.168.0.118/selfbackend/index.php/";
+var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
-var imgurl = "http://192.168.0.118/selfbackend/uploads/";
+// var imgurl = "http://192.168.0.118/selfbackend/uploads/";
 // var imgurl="";
 var cart = [];
 
@@ -698,6 +698,9 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getSubCategory: function(subcategoryid, callback) {
       $http.get(adminurl + 'getSubCategory?id=' + subcategoryid).success(callback);
+    },
+    getOrder: function(orderid,callback) {
+      $http.get(adminurl + 'getorderbyorderid?id=' + orderid).success(callback);
     },
     getPlansById: function(planId, callback) {
       $http.get(adminurl + 'getPlans?id=' + planId).success(callback);
