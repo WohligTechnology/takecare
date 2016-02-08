@@ -10,6 +10,7 @@
   .contact-tel a {
     font-size: 12px;
   }
+  .links .social-links { margin: 0; }
   .social-links li a i {
     font-size: 20px;
   }
@@ -30,15 +31,16 @@
     letter-spacing: 2px;
   }
   .links {
-    @include margin(20px 0 15px);
+    @include margin(25px 0 15px);
   }
   .social-links li a {
     @include margin(0 10px 0 0);
   }
   .contact-tel {
-    @include margin(2px -40px 0 -30px);
-    @include padding(12px 0 12px 20px);
+    @include margin(0);
+    @include padding(12px);
   }
+  .cart-icon { padding: 0 20px 9px 15px; }
   .signin {
     @include padding(12px 0);
   }
@@ -117,11 +119,25 @@
   .p.brand-primary.font-semibold { font-size: 13px; }
   .btn-primary { font-size: 10px; }
   .links {
-    @include margin(10px auto 20px);
+    @include margin(0 0 10px);
     text-align: center;
-    .social-links, .signin { text-align: center; }
+    .social-links { padding: 0px 20px; }
+    .cart-icon {
+      padding: 0 27px 9px 25px;
+      .bagde { left: 40px; }
+    }
+    .signin { text-align: center; }
+    .cart-icon {
+      padding: 0px 20px;
+      border: none; 
+      .bagde { left: 35px; }
+    }
   }
-  .contact-tel { @include padding(10px 0); }
+  .contact-tel {
+    margin: 0;
+    @include padding(12px 20px);
+  }
+  .user-login { padding: 0 25px; }
 
   // Footer
   footer {
@@ -215,7 +231,11 @@
     h2 { font-size: 17px; }
   }
   .links {
-    .social-links, .contact-tel, .signin { @include margin(0); @include padding(0); }
+    .social-links, .contact-tel, .signin {
+      @include margin(10px 0);
+       @include padding(0);
+       display: block;
+      }
     .signin { @include margin(10px 0 0); }
   }
   .hamburger { @include margin(20px 0 0 10px); }
