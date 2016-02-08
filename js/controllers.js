@@ -2075,6 +2075,7 @@ if ($.jStorage.get("user")) {
   });
   $scope.alreadyReg = false;
   $scope.enablelogout = false;
+  $scope.invalidinput = false;
   if ($.jStorage.get("user")) {
     $scope.enablelogout = true;
   }
@@ -2117,7 +2118,7 @@ if ($.jStorage.get("user")) {
     if (formValidate.$valid) {
       NavigationService.loginuser(input, function(data) {
         if (data.value == false) {
-
+          $scope.invalidinput = true;
         } else {
           console.log(data);
           $.jStorage.set("user", data);
@@ -2126,6 +2127,13 @@ if ($.jStorage.get("user")) {
       });
     }
   };
+
+  $scope.facebookLogin = function(){
+    window.open(mainurl + 'hauth/login/Facebook?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
+  }
+  $scope.googleLogin = function(){
+    window.open(mainurl + 'hauth/login/Google?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
+  }
 
   $scope.health = [{
     name: "Cholesterol",
