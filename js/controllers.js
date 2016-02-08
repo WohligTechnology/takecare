@@ -278,6 +278,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("orderlist");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.orders = [];
+    if ($.jStorage.get("user")) {
+      NavigationService.getUserOrder(function(data){
+        // $scope.orders = data.plans;
+        _.each(data.plans, function(n,key){
+          _.each(n.products, function(m, key1){
+              $scope.orders.push(m);
+          });
+        });
+        // $scope.orders
+      });
+    }
   })
   .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state,cfpLoadingBar) {
     //Used to name the .html file
@@ -288,14 +300,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.countries = countries;
     $scope.selectedShippingCountry = countries[0];
     $scope.selectedBillingCountry = countries[0];
-    $scope.sameshipping = false;
+    $scope.sameasbilling = false;
     $scope.alerts = [];
     $scope.error = false;
     $scope.orders = [];
+    $scope.password = {};
+
+    $scope.profile = {};
+    $scope.profile.nameemailedit = 'edit';
+    $scope.profile.changepasswordedit = 'edit';
+    $scope.profile.billingaddressedit = 'edit';
+    $scope.profile.shippingaddressedit = 'edit';
 
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
     };
+
+    $scope.addAlert = function(type,msg){
+      $scope.alerts.push({
+        type: type,
+        msg: msg
+      });
+    }
+
+    $scope.sameasbillingChange = function(sameas){
+      $scope.sameasbilling = sameas;
+    }
 
 if ($.jStorage.get("user")) {
   NavigationService.getUserOrder(function(data){
@@ -310,46 +340,148 @@ if ($.jStorage.get("user")) {
 }
 
 
+  $scope.editProfile = function(num) {
+    switch (num) {
+      case 1:
+        {
+          console.log("name email");
+          console.log($scope.profile.nameemailedit);
+          if ($scope.profile.nameemailedit == 'edit') {
+            $scope.profile.nameemailedit = 'save';
+          } else {
+            $scope.profile.nameemailedit = 'edit';
+            $scope.updateUser()
+          }
+        }
+        break;
+      case 2:
+        {
+          if ($scope.profile.changepasswordedit == 'edit') {
+            $scope.profile.changepasswordedit = 'save';
+          } else {
+            if ($scope.password.newpassword === $scope.password.confirmpassword) {
+              NavigationService.changePassword($scope.password, function(data) {
+                console.log(data);
+                if (data.value == true) {
+                  $scope.addAlert("success", "Password changed successfully. ");
+                  $scope.profile.changepasswordedit = 'edit';
+                } else {
+                  $scope.addAlert("danger", "Wrong password");
+                }
+              });
+
+            } else {
+              $scope.addAlert("danger", "Re-entered password should be same as new password.");
+            }
+
+          }
+        }
+        break;
+      case 3:
+        {
+          if ($scope.profile.billingaddressedit == 'edit') {
+            $scope.profile.billingaddressedit = 'save';
+          } else {
+            $scope.allvalidation = [];
+            $scope.allvalidation = [{
+              field: $scope.user.billingline1,
+              validation: ""
+            }, {
+              field: $scope.user.billingcity,
+              validation: ""
+            }, {
+              field: $scope.user.billingpincode,
+              validation: ""
+            }, {
+              field: $scope.user.billingstate,
+              validation: ""
+            }, {
+              field: $scope.user.billingcountry,
+              validation: ""
+            }];
+
+            var check = formvalidation($scope.allvalidation);
+            if (check) {
+              $scope.updateUser();
+              $scope.profile.billingaddressedit = 'edit';
+            } else {
+              $scope.addAlert("danger", "Enter Manditory Fields.");
+            }
+          }
+        }
+        break;
+      case 4:
+        {
+          if ($scope.profile.shippingaddressedit == 'edit') {
+            $scope.profile.shippingaddressedit = 'save';
+          } else {
+            if ($scope.sameasbilling) {
+              $scope.user.shippingline1 = $scope.user.billingline1;
+              $scope.user.shippingline2 = $scope.user.billingline2;
+              $scope.user.shippingline3 = $scope.user.billingline3;
+              $scope.user.shippingcity = $scope.user.billingcity;
+              $scope.user.shippingpincode = $scope.user.billingpincode;
+              $scope.user.shippingstate = $scope.user.billingstate;
+              $scope.user.shippingcountry = $scope.user.billingcountry;
+            }
+            $scope.allvalidation = [];
+            $scope.allvalidation = [{
+              field: $scope.user.shippingline1,
+              validation: ""
+            }, {
+              field: $scope.user.shippingcity,
+              validation: ""
+            }, {
+              field: $scope.user.shippingpincode,
+              validation: ""
+            }, {
+              field: $scope.user.shippingstate,
+              validation: ""
+            }, {
+              field: $scope.user.shippingcountry,
+              validation: ""
+            }];
+
+            var check = formvalidation($scope.allvalidation);
+            if (check) {
+              $scope.updateUser();
+              $scope.profile.shippingaddressedit = 'edit';
+            } else {
+              $scope.addAlert("danger", "Enter Manditory Fields.");
+            }
+          }
+        }
+        break;
+      default:
+        {
+
+        }
+    }
+  }
+
     NavigationService.userDetail(function(data) {
       $scope.user = data;
-      console.log(_.findIndex($scope.countries,{'value':'Angola'}));
-      if (data.billingcountry=='') {
-        $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
-      }else {
-        $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.billingcountry})]
-      }
-      if (data.shippingcountry=='') {
-        $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
-      }else {
-        $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.shippingcountry})]
-      }
+
+      // console.log(_.findIndex($scope.countries,{'value':'Angola'}));
+      // if (data.billingcountry=='') {
+      //   $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
+      // }else {
+      //   $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.billingcountry})]
+      // }
+      // if (data.shippingcountry=='') {
+      //   $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
+      // }else {
+      //   $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.shippingcountry})]
+      // }
 
     }, function(data) {
       $state.go("error");
     })
 
-    $scope.updateUser = function(selectedBillingCountry,selectedShippingCountry) {
-      if ($scope.user.firstname!='' && $scope.user.lastname!='' && $scope.user.email!='') {
-      $scope.error = false;
-      if (selectedBillingCountry.value=="Please Select") {
-        $scope.user.billingcountry = "";
-      }else {
-        $scope.user.billingcountry = selectedBillingCountry.value;
-      }
-      if (selectedShippingCountry.value=="Please Select") {
-        $scope.user.shippingcountry = "";
-      }else {
-        $scope.user.shippingcountry = selectedShippingCountry.value;
-      }
+    $scope.updateUser = function() {
       NavigationService.updateUser($scope.user, function(data) {
-        $scope.alerts.push({
-          type: 'success',
-          msg: 'Saved.'
-        });
+        $scope.addAlert("success", "Saved ");
       })
-    }else {
-      $scope.error = true;
-    }
     }
 
   })

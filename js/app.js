@@ -879,6 +879,19 @@ firstapp.filter('showplan', function(NavigationService) {
     };
 });
 
+var formvalidation = function(allvalidation) {
+  var isvalid2 = true;
+  for (var i = 0; i < allvalidation.length; i++) {
+    console.log("checking");
+    if (allvalidation[i].field == "" || !allvalidation[i].field || allvalidation[i].field == "Please select" || allvalidation[i].field == "Please Select") {
+      allvalidation[i].validation = "ng-invalid";
+      isvalid2 = false;
+    }
+  }
+  return isvalid2;
+};
+
+
 firstapp.directive('fancybox', function($compile, $parse) {
   return {
     restrict: 'EA',
