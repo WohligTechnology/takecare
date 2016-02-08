@@ -22,13 +22,13 @@
               <div class="col-md-6" ng-repeat="blog in blogpage">
                 <div class="blog-part">
                   <div class="blog-imghold">
-                    <img ng-src="{{blog.img}}" alt="" class="img-responsive">
+                    <a ui-sref="blogdetail"><img ng-src="{{blog.img}}" alt="" class="img-responsive"></a>
                   </div>
                   <div class="blog-detail">
                     <h4 class="brand-brown-dark text-bold text-uppercase">{{blog.title}}</h4>
                     <p class="blog-descp text-justify">{{blog.descp}}</p>
                     <div class="read-more">
-                      <a href="" class="btn btn-primary text-uppercase">read more</a>
+                      <a ui-sref="blog-detail" class="btn btn-primary text-uppercase">read more</a>
                     </div>
                   </div>
                 </div>
@@ -50,10 +50,10 @@
               <h4 class="text-uppercase brand-brown-dark">popular post</h4>
               <div class="blog-post" ng-repeat="post in popularpost">
                 <div class="post-imghold inline-block">
-                  <img ng-src="{{post.img}}" alt="" class="img-responsive media-object">
+                  <a hhref=""><img ng-src="{{post.img}}" alt="" class="img-responsive media-object"></a>
                 </div>
                 <div class="post-content inline-block v-top">
-                  <h5 class="brand-brown-dark">{{post.title}}</h5>
+                  <a href=""><h5 class="brand-brown-dark">{{post.title}}</h5></a>
                 </div>
               </div>
             </div>

@@ -55,7 +55,7 @@
               </div>
               <div class="share-social">
                 <div class="social-info">
-                  <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
+                  <span class='st_linkedin_vcount' displayText='LinkedIn'></span> 
                   <span class='st_plusone_vcount' displayText='Google +1'></span>
                   <span class='st_twitter_vcount' displayText='Tweet'></span>
                   <span class='st_fblike_vcount' displayText='Facebook Like'></span>
@@ -76,13 +76,19 @@
               <h3 class="brand-brown-dark text-uppercase text-bold">related post</h3>
               <div class="row">
                 <div class="col-sm-4 col-xs-12">
-                  <div class="relatepost-holder"><img src="img/blog/post1.jpg" alt="" class="img-responsive"></div>
+                  <div class="relatepost-holder">
+                    <a href=""><img src="img/blog/post1.jpg" alt="" class="img-responsive"></a>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                  <div class="relatepost-holder"><img src="img/blog/post3.jpg" alt="" class="img-responsive"></div>
+                  <div class="relatepost-holder">
+                    <a href=""><img src="img/blog/post3.jpg" alt="" class="img-responsive"></a>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                  <div class="relatepost-holder"><img src="img/blog/post4.jpg" alt="" class="img-responsive"></div>
+                  <div class="relatepost-holder">
+                    <a href=""><img src="img/blog/post4.jpg" alt="" class="img-responsive"></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,10 +127,10 @@
               <h4 class="text-uppercase brand-brown-dark text-bold post-heading">popular post</h4>
               <div class="blog-post" ng-repeat="post in popularpost">
                 <div class="post-imghold inline-block">
-                  <img ng-src="{{post.img}}" alt="" class="img-responsive media-object">
+                  <a href=""><img ng-src="{{post.img}}" alt="" class="img-responsive media-object"></a>
                 </div>
                 <div class="post-content inline-block v-top">
-                  <h5 class="brand-brown-dark">{{post.title}}</h5>
+                  <a href=""><h5 class="brand-brown-dark">{{post.title}}</h5></a>
                 </div>
               </div>
             </div>
