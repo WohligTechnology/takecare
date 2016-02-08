@@ -167,7 +167,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subCategories = [];
     $scope.products = [];
     $scope.alerts = [];
-    $scope.msg = "Loading";
+    $scope.msg = "Loading...";
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
       console.log($scope.productCategory);
@@ -205,7 +205,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             type: 'danger',
             msg: 'Already in cart'
           });
-
         }
       });
     }
@@ -944,7 +943,7 @@ if ($.jStorage.get("user")) {
     $scope.navigation = NavigationService.getnav();
     $scope.allcart = [];
     $scope.alerts = [];
-    $scope.msg = "Loading";
+    $scope.msg = "Loading...";
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
         $scope.allcart = data;
