@@ -781,7 +781,7 @@ button {
     top: -25px;
     left: 50%;
     background-color: #fff;
-    font-size: 30px;
+    font-size: 22px;
     line-height: 40px;
     text-align: center;
     @include transform(translateX(-50%));
@@ -1338,7 +1338,6 @@ button {
       }
     }
   }
-  .plan-cart { height: 273px !important; }
   .coupon {
     padding: 10px;
     border-top: 1px solid $brand-primary;
@@ -1357,6 +1356,7 @@ button {
     margin: 0 0 0 5px;
   }
 }
+  .plan-cart { height: 273px; }
 ///end checkout//
 ///////////////
 //Footer///////
