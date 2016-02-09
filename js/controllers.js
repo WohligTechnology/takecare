@@ -156,7 +156,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "We are experts at solving child obesity and even at helping young children gain height or weight."
     }];
   })
-  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter,cfpLoadingBar) {
+  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthproducts");
     $scope.menutitle = NavigationService.makeactive("Health Products");
@@ -280,18 +280,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.orders = [];
     if ($.jStorage.get("user")) {
-      NavigationService.getUserOrder(function(data){
+      NavigationService.getUserOrder(function(data) {
         // $scope.orders = data.plans;
-        _.each(data.plans, function(n,key){
-          _.each(n.products, function(m, key1){
-              $scope.orders.push(m);
+        _.each(data.plans, function(n, key) {
+          _.each(n.products, function(m, key1) {
+            $scope.orders.push(m);
           });
         });
         // $scope.orders
       });
     }
   })
-  .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state,cfpLoadingBar) {
+  .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("account");
     $scope.menutitle = NavigationService.makeactive("Account");
@@ -316,148 +316,148 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.alerts.splice(index, 1);
     };
 
-    $scope.addAlert = function(type,msg){
+    $scope.addAlert = function(type, msg) {
       $scope.alerts.push({
         type: type,
         msg: msg
       });
     }
 
-    $scope.sameasbillingChange = function(sameas){
+    $scope.sameasbillingChange = function(sameas) {
       $scope.sameasbilling = sameas;
     }
 
-if ($.jStorage.get("user")) {
-  NavigationService.getUserOrder(function(data){
-    // $scope.orders = data.plans;
-    _.each(data.plans, function(n,key){
-      _.each(n.products, function(m, key1){
-          $scope.orders.push(m);
+    if ($.jStorage.get("user")) {
+      NavigationService.getUserOrder(function(data) {
+        // $scope.orders = data.plans;
+        _.each(data.plans, function(n, key) {
+          _.each(n.products, function(m, key1) {
+            $scope.orders.push(m);
+          });
+        });
+        // $scope.orders
       });
-    });
-    // $scope.orders
-  });
-}
-
-
-  $scope.editProfile = function(num) {
-    switch (num) {
-      case 1:
-        {
-          console.log("name email");
-          console.log($scope.profile.nameemailedit);
-          if ($scope.profile.nameemailedit == 'edit') {
-            $scope.profile.nameemailedit = 'save';
-          } else {
-            $scope.profile.nameemailedit = 'edit';
-            $scope.updateUser()
-          }
-        }
-        break;
-      case 2:
-        {
-          if ($scope.profile.changepasswordedit == 'edit') {
-            $scope.profile.changepasswordedit = 'save';
-          } else {
-            if ($scope.password.newpassword === $scope.password.confirmpassword) {
-              NavigationService.changePassword($scope.password, function(data) {
-                console.log(data);
-                if (data.value == true) {
-                  $scope.addAlert("success", "Password changed successfully. ");
-                  $scope.profile.changepasswordedit = 'edit';
-                } else {
-                  $scope.addAlert("danger", "Wrong password");
-                }
-              });
-
-            } else {
-              $scope.addAlert("danger", "Re-entered password should be same as new password.");
-            }
-
-          }
-        }
-        break;
-      case 3:
-        {
-          if ($scope.profile.billingaddressedit == 'edit') {
-            $scope.profile.billingaddressedit = 'save';
-          } else {
-            $scope.allvalidation = [];
-            $scope.allvalidation = [{
-              field: $scope.user.billingline1,
-              validation: ""
-            }, {
-              field: $scope.user.billingcity,
-              validation: ""
-            }, {
-              field: $scope.user.billingpincode,
-              validation: ""
-            }, {
-              field: $scope.user.billingstate,
-              validation: ""
-            }, {
-              field: $scope.user.billingcountry,
-              validation: ""
-            }];
-
-            var check = formvalidation($scope.allvalidation);
-            if (check) {
-              $scope.updateUser();
-              $scope.profile.billingaddressedit = 'edit';
-            } else {
-              $scope.addAlert("danger", "Enter Manditory Fields.");
-            }
-          }
-        }
-        break;
-      case 4:
-        {
-          if ($scope.profile.shippingaddressedit == 'edit') {
-            $scope.profile.shippingaddressedit = 'save';
-          } else {
-            if ($scope.sameasbilling) {
-              $scope.user.shippingline1 = $scope.user.billingline1;
-              $scope.user.shippingline2 = $scope.user.billingline2;
-              $scope.user.shippingline3 = $scope.user.billingline3;
-              $scope.user.shippingcity = $scope.user.billingcity;
-              $scope.user.shippingpincode = $scope.user.billingpincode;
-              $scope.user.shippingstate = $scope.user.billingstate;
-              $scope.user.shippingcountry = $scope.user.billingcountry;
-            }
-            $scope.allvalidation = [];
-            $scope.allvalidation = [{
-              field: $scope.user.shippingline1,
-              validation: ""
-            }, {
-              field: $scope.user.shippingcity,
-              validation: ""
-            }, {
-              field: $scope.user.shippingpincode,
-              validation: ""
-            }, {
-              field: $scope.user.shippingstate,
-              validation: ""
-            }, {
-              field: $scope.user.shippingcountry,
-              validation: ""
-            }];
-
-            var check = formvalidation($scope.allvalidation);
-            if (check) {
-              $scope.updateUser();
-              $scope.profile.shippingaddressedit = 'edit';
-            } else {
-              $scope.addAlert("danger", "Enter Manditory Fields.");
-            }
-          }
-        }
-        break;
-      default:
-        {
-
-        }
     }
-  }
+
+
+    $scope.editProfile = function(num) {
+      switch (num) {
+        case 1:
+          {
+            console.log("name email");
+            console.log($scope.profile.nameemailedit);
+            if ($scope.profile.nameemailedit == 'edit') {
+              $scope.profile.nameemailedit = 'save';
+            } else {
+              $scope.profile.nameemailedit = 'edit';
+              $scope.updateUser()
+            }
+          }
+          break;
+        case 2:
+          {
+            if ($scope.profile.changepasswordedit == 'edit') {
+              $scope.profile.changepasswordedit = 'save';
+            } else {
+              if ($scope.password.newpassword === $scope.password.confirmpassword) {
+                NavigationService.changePassword($scope.password, function(data) {
+                  console.log(data);
+                  if (data.value == true) {
+                    $scope.addAlert("success", "Password changed successfully. ");
+                    $scope.profile.changepasswordedit = 'edit';
+                  } else {
+                    $scope.addAlert("danger", "Wrong password");
+                  }
+                });
+
+              } else {
+                $scope.addAlert("danger", "Re-entered password should be same as new password.");
+              }
+
+            }
+          }
+          break;
+        case 3:
+          {
+            if ($scope.profile.billingaddressedit == 'edit') {
+              $scope.profile.billingaddressedit = 'save';
+            } else {
+              $scope.allvalidation = [];
+              $scope.allvalidation = [{
+                field: $scope.user.billingline1,
+                validation: ""
+              }, {
+                field: $scope.user.billingcity,
+                validation: ""
+              }, {
+                field: $scope.user.billingpincode,
+                validation: ""
+              }, {
+                field: $scope.user.billingstate,
+                validation: ""
+              }, {
+                field: $scope.user.billingcountry,
+                validation: ""
+              }];
+
+              var check = formvalidation($scope.allvalidation);
+              if (check) {
+                $scope.updateUser();
+                $scope.profile.billingaddressedit = 'edit';
+              } else {
+                $scope.addAlert("danger", "Enter Manditory Fields.");
+              }
+            }
+          }
+          break;
+        case 4:
+          {
+            if ($scope.profile.shippingaddressedit == 'edit') {
+              $scope.profile.shippingaddressedit = 'save';
+            } else {
+              if ($scope.sameasbilling) {
+                $scope.user.shippingline1 = $scope.user.billingline1;
+                $scope.user.shippingline2 = $scope.user.billingline2;
+                $scope.user.shippingline3 = $scope.user.billingline3;
+                $scope.user.shippingcity = $scope.user.billingcity;
+                $scope.user.shippingpincode = $scope.user.billingpincode;
+                $scope.user.shippingstate = $scope.user.billingstate;
+                $scope.user.shippingcountry = $scope.user.billingcountry;
+              }
+              $scope.allvalidation = [];
+              $scope.allvalidation = [{
+                field: $scope.user.shippingline1,
+                validation: ""
+              }, {
+                field: $scope.user.shippingcity,
+                validation: ""
+              }, {
+                field: $scope.user.shippingpincode,
+                validation: ""
+              }, {
+                field: $scope.user.shippingstate,
+                validation: ""
+              }, {
+                field: $scope.user.shippingcountry,
+                validation: ""
+              }];
+
+              var check = formvalidation($scope.allvalidation);
+              if (check) {
+                $scope.updateUser();
+                $scope.profile.shippingaddressedit = 'edit';
+              } else {
+                $scope.addAlert("danger", "Enter Manditory Fields.");
+              }
+            }
+          }
+          break;
+        default:
+          {
+
+          }
+      }
+    }
 
     NavigationService.userDetail(function(data) {
       $scope.user = data;
@@ -492,7 +492,7 @@ if ($.jStorage.get("user")) {
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
-  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
+  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagement");
     $scope.menutitle = NavigationService.makeactive("Health Management");
@@ -504,7 +504,7 @@ if ($.jStorage.get("user")) {
       console.log($scope.subpackages);
     });
   })
-  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams,cfpLoadingBar) {
+  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
     $scope.menutitle = NavigationService.makeactive("Health Management Detail");
@@ -519,16 +519,16 @@ if ($.jStorage.get("user")) {
       $scope.alerts.splice(index, 1);
     };
 
-      NavigationService.showCart(function(data) {
-        cart = data;
-      })
+    NavigationService.showCart(function(data) {
+      cart = data;
+    })
 
     NavigationService.getSubPackages(function(data) {
       $scope.subpackages = data;
       $scope.selectedPackage = _.find($scope.subpackages, {
-        'id': $scope.healthid
-      })
-      // console.log($scope.selectedPackage);
+          'id': $scope.healthid
+        })
+        // console.log($scope.selectedPackage);
       console.log(_.findIndex($scope.subpackages, {
         'id': $scope.healthid
       }));
@@ -560,7 +560,7 @@ if ($.jStorage.get("user")) {
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
 
     //get all plans
-    NavigationService.getPlansById($stateParams.id,function(data){
+    NavigationService.getPlansById($stateParams.id, function(data) {
       $scope.plans = data.plans;
     });
     $scope.cartAdd = function(id) {
@@ -576,9 +576,9 @@ if ($.jStorage.get("user")) {
               type: 'success',
               msg: 'Added to cart'
             });
-            $timeout(function(){
+            $timeout(function() {
               $state.go("cart");
-            },3000)
+            }, 3000)
           } else {
             $scope.alerts.push({
               type: 'danger',
@@ -587,7 +587,7 @@ if ($.jStorage.get("user")) {
 
           }
         });
-      }else {
+      } else {
         $scope.alerts.push({
           type: 'danger',
           msg: 'Please Login First'
@@ -760,7 +760,7 @@ if ($.jStorage.get("user")) {
     $scope.menutitle = NavigationService.makeactive("Went Wrong");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    NavigationService.getOrder($stateParams.orderid, function(data){
+    NavigationService.getOrder($stateParams.orderid, function(data) {
       $scope.order = data;
     })
   })
@@ -770,7 +770,7 @@ if ($.jStorage.get("user")) {
     $scope.menutitle = NavigationService.makeactive("Thankyou");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    NavigationService.getOrder($stateParams.orderid, function(data){
+    NavigationService.getOrder($stateParams.orderid, function(data) {
       $scope.order = data;
     })
   })
@@ -1082,12 +1082,12 @@ if ($.jStorage.get("user")) {
         cart = data;
         if (data == '') {
           $scope.msg = "Your cart is empty."
-        }else {
+        } else {
           $scope.msg = "";
         }
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
-            $scope.totalcart = $scope.totalcart + parseInt(key.price);
+          $scope.totalcart = $scope.totalcart + parseInt(key.price);
           key.qty = parseInt(key.qty);
           if (!$scope.validateQuantity(key)) {
             key.exceeds = true;
@@ -1210,7 +1210,7 @@ if ($.jStorage.get("user")) {
       $scope.alerts.splice(index, 1);
     };
 
-    NavigationService.getUserById(function(data){
+    NavigationService.getUserById(function(data) {
       $scope.checkout = data;
     })
 
@@ -1384,63 +1384,49 @@ if ($.jStorage.get("user")) {
       img: "img/sculpting/coolmax.jpg",
       heading: "Large Applicator - Cool Max",
       descp: "We call this applicator the 'Debulker'. We use this applicator to treat belly hangover and large areas on abs to maximize fat reduction."
-    },
-     {
+    }, {
       img: "img/sculpting/coolmax.jpg",
       heading: "Medium Applicator - Cool Smooth",
       descp: "We use this applicator to treat dense fat. This non-suction applicator is our Favorite! It can be used for contouring outer thighs."
-    },
-     {
+    }, {
       img: "img/sculpting/coolmax.jpg",
       heading: "Small Applicator - Cool Core",
       descp: "Cool Core applicator we use to sculpt the lower and upper abdomen of the body. Definitely the most commonly used applicator. You can transform your stomach in no time."
-    }
-  ];
+    }];
     $scope.faqsculp = [{
       qts: "Am I a good candidate?",
       descp: "Good candidates have noticeable bulges in certain areas they’d like to get rid of. The CoolSculpting fat reduction procedure is specifically designed for those who have unwanted fat that resists diet and exercise. Unlike gastric bypass surgery, the CoolSculpting procedure is not a weight loss solution for people who are obese. It is, however a non-surgical alternative to liposuction. Request a one-on-one consultation with us to determine if the CoolSculpting procedure is right for you."
-    },
-     {
+    }, {
       qts: "How much does the CoolSculpting procedure cost?",
       descp: "The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals. We will help create a customized treatment plan, in person, that’s tailored to your body, your goals, and your budget."
-    },
-     {
+    }, {
       qts: "How long is each session? How many sessions will I need?",
       descp: "We will help you create an individualized treatment plan tailored to your specific goals. The length of your CoolSculpting session will vary depending on the number of areas being treated during one visit. We may schedule additional sessions in order to meet your goals."
-    },
-     {
+    }, {
       qts: "Where does the fat go? Are the results permanent?",
       descp: "Once the treated fat cells are crystallized (frozen), your body processes the fat and eliminates these dead cells. Once the treated fat cells are gone, they’re gone for good."
-    },
-     {
+    }, {
       qts: "What does it feel like?",
       descp: "As the cooling begins during the first few minutes, you will feel pressure and intense cold. This soon dissipates. Many people read, watch videos, work on their laptop, or even take a nap during their treatment."
-    },
-     {
+    }, {
       qts: "Is the CoolSculpting procedure safe?",
       descp: "The CoolSculpting procedure is FDA-cleared for the flank (love handles), abdomen, and thigh. With over one million CoolSculpting treatments performed worldwide, it is proven to be a safe and effective treatment for non-surgical fat reduction."
-    },
-     {
+    }, {
       qts: "Are there any side effects?",
       descp: "During the procedure you may experience deep pulling, tugging, pinching, numbness or discomfort. Following the procedure, typical side effects include temporary numbness, redness, swelling, bruising, firmness, tingling, stinging and pain. Rare side effects may also occur. The CoolSculpting procedure is not for everyone. You should not have the CoolSculpting procedure if you suffer from cryoglobulinemia or paroxysmal cold hemoglobinuria. The CoolSculpting procedure is not a treatment for obesity. As with any medical procedure, ask us if the CoolSculpting procedure is right for you."
-    },
-     {
+    }, {
       qts: "Can I return to normal activities after my treatment?",
       descp: "Yes, you can. The CoolSculpting procedure is completely non-surgical, so typically you can return to normal activities immediately. Often times, patients return to work after their CoolSculpting session is over."
-    },
-     {
+    }, {
       qts: "When will I see results?",
       descp: "You may start to see changes as quickly as three weeks after your treatment, and will experience the most dramatic results after two months. But your body will still flush out fat cells and continues doing so for up to four to six months after treatment."
-    },
-     {
+    }, {
       qts: "Do I need to take special supplements or follow a strict diet and exercise program?",
       descp: "No supplements or pills are required and you do not have to adopt new diet and exercise habits. Many patients feel more motivated to take care of themselves after their CoolSculpting treatment. It is as if they get a second lease on their body and want to start anew again by taking even better care of themselves."
-    },
-     {
+    }, {
       qts: "What happens if I gain weight down the road?",
       descp: "Many people, after seeing the results from their CoolSculpting procedure, take even better care of themselves. However, if you do gain weight, you may gain it evenly all over your body, not just in the treated areas."
-    }
-  ];
+    }];
   })
   .controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -1455,120 +1441,120 @@ if ($.jStorage.get("user")) {
     $scope.blogpage = [];
     $scope.tagmsg = "Loading...";
     var lastpage = 0;
-    $scope.reloadBlog = function(){
-      if (lastpage>=$scope.pageno) {
+    $scope.reloadBlog = function() {
+      if (lastpage >= $scope.pageno) {
         ++$scope.pageno;
-        NavigationService.getBlog($scope.blog.search,$scope.pageno,$scope.tag,function(data){
-          _.each(data.queryresult, function(n){
-$scope.blogpage.push(n);
+        NavigationService.getBlog($scope.blog.search, $scope.pageno, $scope.tag, function(data) {
+          _.each(data.queryresult, function(n) {
+            $scope.blogpage.push(n);
           })
           lastpage = data.lastpage;
         });
       }
 
-  }
-  $scope.reloadBlog();
-  $scope.loadBlog = function(){
+    }
     $scope.reloadBlog();
-  }
-    NavigationService.getPopularBlog(function(data){
-      $scope.popularpost=data;
+    $scope.loadBlog = function() {
+      $scope.reloadBlog();
+    }
+    NavigationService.getPopularBlog(function(data) {
+      $scope.popularpost = data;
     })
-    NavigationService.getTag(function(data){
+    NavigationService.getTag(function(data) {
       $scope.tagger = data;
-      if (data=='') {
+      if (data == '') {
         $scope.tagmsg = "No tags";
-      }else {
+      } else {
         $scope.tagmsg = "";
       }
     })
-    $scope.searchBlog = function(){
+    $scope.searchBlog = function() {
       $scope.pageno = 0;
       $scope.blogpage = [];
       $scope.reloadBlog();
     }
-    $scope.tagClicked = function(tag){
-      if (tag == "") {
-        $scope.tag = "";
-      }else {
-        $scope.tag = tag.name;
+    $scope.tagClicked = function(tag) {
+        if (tag == "") {
+          $scope.tag = "";
+        } else {
+          $scope.tag = tag.name;
+        }
+        $scope.pageno = 0;
+        $scope.blogpage = [];
+        $scope.reloadBlog();
       }
-      $scope.pageno = 0;
-      $scope.blogpage = [];
-      $scope.reloadBlog();
-    }
-    // $scope.blogpage = [{
-    //   img: "img/blog/post1.jpg",
-    //   title: "Your Questions, Answered",
-    //   descp: "Q1. How much does the CoolSculpting procedure cost? Ans. The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals..."
-    // }, {
-    //   img: "img/blog/post2.jpg",
-    //   title: "Sparkle This Season",
-    //   descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
-    // }, {
-    //   img: "img/blog/post3.jpg",
-    //   title: "Cranberry Juice",
-    //   descp: "Cranberry Juice Fights Heart Disease  Berries’ Antioxidants Raise “Good” Cholesterol, Lower “Bad”   – Drink up — cranberry juice, that is. Cranberry juice loads the blood with lots of disease-fighting antioxidants..."
-    // }, {
-    //   img: "img/blog/post4.jpg",
-    //   title: "Lemons",
-    //   descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
-    // }, {
-    //   img: "img/blog/post5.jpg",
-    //   title: "Energy Expenditure In Exercise",
-    //   descp: "Our body needs a constant supply of energy to be able to carry out everyday tasks. When we exercise the rate at which our body uses energy is higher, and the efficiency of the energy supply is one ..."
-    // }, {
-    //   img: "img/blog/post6.jpg",
-    //   title: "Pump Up Your Workout",
-    //   descp: "We believe that choice of music will differ for everyone. Here are some of our personal favorites that will pump up your workout Greyhound- Swedish house mafia (original mix) The workout..."
-    // }];
-    // $scope.popularpost = [{
-    //   img: "img/blog/popular/post1.jpg",
-    //   title: "Dhruv Kaji"
-    // }, {
-    //   img: "img/blog/popular/post2.jpg",
-    //   title: "Juice it up or not"
-    // }, {
-    //   img: "img/blog/popular/post3.jpg",
-    //   title: "White Bread vs Brown Bread"
-    // }, {
-    //   img: "img/blog/popular/post4.jpg",
-    //   title: "The Complete PLate Theory"
-    // }, {
-    //   img: "img/blog/popular/post5.jpg",
-    //   title: "Bearing the Brunt of Heartburn"
-    // }];
-    // $scope.tagger = [{
-    //   name: "acidity",
-    //   link: ""
-    // }, {
-    //   name: "benefits",
-    //   link: ""
-    // }, {
-    //   name: "bhelpuri",
-    //   link: ""
-    // }, {
-    //   name: "body",
-    //   link: ""
-    // }, {
-    //   name: "Bread",
-    //   link: ""
-    // }, {
-    //   name: "burger",
-    //   link: ""
-    // }, {
-    //   name: "buttermilk",
-    //   link: ""
-    // }, {
-    //   name: "calories",
-    //   link: ""
-    // }, {
-    //   name: "carbs",
-    //   link: ""
-    // }, {
-    //   name: "carrot",
-    //   link: ""
-    // }];
+      // $scope.blogpage = [{
+      //   img: "img/blog/post1.jpg",
+      //   title: "Your Questions, Answered",
+      //   descp: "Q1. How much does the CoolSculpting procedure cost? Ans. The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals..."
+      // }, {
+      //   img: "img/blog/post2.jpg",
+      //   title: "Sparkle This Season",
+      //   descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
+      // }, {
+      //   img: "img/blog/post3.jpg",
+      //   title: "Cranberry Juice",
+      //   descp: "Cranberry Juice Fights Heart Disease  Berries’ Antioxidants Raise “Good” Cholesterol, Lower “Bad”   – Drink up — cranberry juice, that is. Cranberry juice loads the blood with lots of disease-fighting antioxidants..."
+      // }, {
+      //   img: "img/blog/post4.jpg",
+      //   title: "Lemons",
+      //   descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
+      // }, {
+      //   img: "img/blog/post5.jpg",
+      //   title: "Energy Expenditure In Exercise",
+      //   descp: "Our body needs a constant supply of energy to be able to carry out everyday tasks. When we exercise the rate at which our body uses energy is higher, and the efficiency of the energy supply is one ..."
+      // }, {
+      //   img: "img/blog/post6.jpg",
+      //   title: "Pump Up Your Workout",
+      //   descp: "We believe that choice of music will differ for everyone. Here are some of our personal favorites that will pump up your workout Greyhound- Swedish house mafia (original mix) The workout..."
+      // }];
+      // $scope.popularpost = [{
+      //   img: "img/blog/popular/post1.jpg",
+      //   title: "Dhruv Kaji"
+      // }, {
+      //   img: "img/blog/popular/post2.jpg",
+      //   title: "Juice it up or not"
+      // }, {
+      //   img: "img/blog/popular/post3.jpg",
+      //   title: "White Bread vs Brown Bread"
+      // }, {
+      //   img: "img/blog/popular/post4.jpg",
+      //   title: "The Complete PLate Theory"
+      // }, {
+      //   img: "img/blog/popular/post5.jpg",
+      //   title: "Bearing the Brunt of Heartburn"
+      // }];
+      // $scope.tagger = [{
+      //   name: "acidity",
+      //   link: ""
+      // }, {
+      //   name: "benefits",
+      //   link: ""
+      // }, {
+      //   name: "bhelpuri",
+      //   link: ""
+      // }, {
+      //   name: "body",
+      //   link: ""
+      // }, {
+      //   name: "Bread",
+      //   link: ""
+      // }, {
+      //   name: "burger",
+      //   link: ""
+      // }, {
+      //   name: "buttermilk",
+      //   link: ""
+      // }, {
+      //   name: "calories",
+      //   link: ""
+      // }, {
+      //   name: "carbs",
+      //   link: ""
+      // }, {
+      //   name: "carrot",
+      //   link: ""
+      // }];
   })
   .controller('PregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -2209,21 +2195,21 @@ $scope.blogpage.push(n);
     $scope.navigation = NavigationService.getnav();
   })
 
-  .controller('TermsAndConditionCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("termsandcondition");
-    $scope.menutitle = NavigationService.makeactive("termsandcondition");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-  })
+.controller('TermsAndConditionCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("termsandcondition");
+  $scope.menutitle = NavigationService.makeactive("termsandcondition");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
 
-  .controller('PrivacyPolicyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("privacypolicy");
-    $scope.menutitle = NavigationService.makeactive("privacypolicy");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-  })
+.controller('PrivacyPolicyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("privacypolicy");
+  $scope.menutitle = NavigationService.makeactive("privacypolicy");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
 
 .controller('footerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
@@ -2309,10 +2295,10 @@ $scope.blogpage.push(n);
     }
   };
 
-  $scope.facebookLogin = function(){
+  $scope.facebookLogin = function() {
     window.open(mainurl + 'hauth/login/Facebook?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
   }
-  $scope.googleLogin = function(){
+  $scope.googleLogin = function() {
     window.open(mainurl + 'hauth/login/Google?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
   }
 
