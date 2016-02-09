@@ -828,7 +828,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/healthproducts/2"
       },
       {
-        name: "Protiens Supplements",
+        name: "Proteins Supplements",
         classis: "active",
         link: "#/healthproducts/3"
       },
