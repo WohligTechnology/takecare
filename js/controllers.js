@@ -226,11 +226,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             _.each(data.data.queryresult, function(n){
               $scope.products.push(n);
-            })
-
-            $scope.msg = "";
+            });
             console.log($scope.products);
-            // $scope.products = data;
+              if ($scope.products == '') {
+                $scope.msg = "No products found.";
+              }else {
+                $scope.msg = "";
+              }
+
           }
         });
       }
@@ -250,6 +253,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     $scope.filterBy = [];
     $scope.filterIt = function(index) {
+      lastpage = 0;
+      $scope.pageno = 0;
       console.log(index);
       if (_.findIndex($scope.filterBy, function(key) {
           return key == index;
@@ -260,6 +265,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           return key == index;
         }), 1);
       }
+      $scope.products = [];
       $scope.refreshProducts($scope.filterBy);
     };
   })
