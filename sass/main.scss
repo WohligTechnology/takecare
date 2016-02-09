@@ -2337,6 +2337,28 @@ footer {
 }
 ///end blog detail///
 ////recipe//
+.recipedetail-slider {
+  width: 1060px;
+  margin: 50px auto;
+  .flex-slider {
+    border: none;
+    margin: 0;
+  }
+}
+.recipedetail-imgholder {
+  width: 300px;
+  height: 500px;
+  @extend .m-center;
+  img { border-radius: 30px; }
+}
+.recipe-name {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 50px;
+  background-color: rgba(255,255,255,0.9);
+  font-size: 22px;
+}
 .recipes-main {
   margin: 60px 0;
 }

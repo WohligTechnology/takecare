@@ -2086,6 +2086,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Recipes");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.recipedetail = [
+      {
+        img: "img/recipes/recipe1.jpg",
+        name: "Mushroom & Tofu Burger"
+      },
+      {
+        img: "img/recipes/recipe2.jpg",
+        name: "Mushroom Omelette"
+      },
+      {
+        img: "img/recipes/recipe3.jpg",
+        name: "Pancakes with red sauce"
+      },
+      {
+        img: "img/recipes/recipe2.jpg",
+        name: "Mushroom Omelette"
+      },
+       {
+          img: "img/recipes/recipe1.jpg",
+          name: "Mushroom & Tofu Burger"
+        },
+        {
+            img: "img/recipes/recipe3.jpg",
+            name: "Pancakes with red sauce"
+          }
+    ];
+  })
+  .controller('RecipedetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("recipedetail");
+    $scope.menutitle = NavigationService.makeactive("Recipedetail");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
     $scope.oneAtATime = true;
     $scope.status = {
       isFirstOpen: true,

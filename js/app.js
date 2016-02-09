@@ -631,11 +631,16 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
     templateUrl: "views/template.html",
     controller: 'BlogDetailCtrl'
   })
-
   .state('recipes', {
     url: "/recipes",
     templateUrl: "views/template.html",
     controller: 'RecipesCtrl'
+  })
+
+  .state('recipedetail', {
+    url: "/recipedetail",
+    templateUrl: "views/template.html",
+    controller: 'RecipedetailCtrl'
   })
 
   .state('nutrigenomics', {
