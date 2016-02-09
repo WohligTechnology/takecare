@@ -801,6 +801,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Forgot Password");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
   })
   .controller('ForgotpopupCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -2338,6 +2339,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     link: "#/weightmanagement"
   }];
 
+  $scope.msg = "Enter your registered email address and we will send you instructions.";
+  
   $scope.openForgot = function() {
     $uibModal.open({
       animation: true,
