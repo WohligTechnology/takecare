@@ -4,7 +4,7 @@
     <h2 class="text-uppercase get-center white font-semibold">Blog</h2>
   </div>
   <div class="blog-page">
-    <div class="container">
+    <div class="container" infinite-scroll='loadBlog()' infinite-scroll-distance="0" infinite-scroll-disabled="fasle">
       <div class="get-inblog hidden-lg hidden-md">
         <form action="">
           <div class="form-group">
@@ -22,13 +22,13 @@
               <div class="col-md-6" ng-repeat="blog in blogpage">
                 <div class="blog-part">
                   <div class="blog-imghold">
-                    <a ui-sref="blogdetail"><img ng-src="{{blog.img}}" alt="" class="img-responsive"></a>
+                    <a ui-sref="blogdetail({id:blog.id})"><img ng-src="{{blog.image | serverimage}}" alt="" class="img-responsive"></a>
                   </div>
                   <div class="blog-detail">
                     <h4 class="brand-brown-dark text-bold text-uppercase">{{blog.title}}</h4>
-                    <p class="blog-descp text-justify">{{blog.descp}}</p>
+                    <p class="blog-descp text-justify" ng-bind-html="blog.content| cut:true:200:'...'"></p>
                     <div class="read-more">
-                      <a ui-sref="blog-detail" class="btn btn-primary text-uppercase">read more</a>
+                      <a ui-sref="blogdetail({id:blog.id})" class="btn btn-primary text-uppercase">read more</a>
                     </div>
                   </div>
                 </div>
@@ -41,8 +41,8 @@
             <form action="">
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <span class="input-group-addon pointer"><i class="fa fa-search brand-brown-dark"></i></span>
+                  <input type="text" class="form-control" ng-model="blog.search" placeholder="Search">
+                  <span class="input-group-addon pointer" ng-click="searchBlog()"><i class="fa fa-search brand-brown-dark"></i></span>
                 </div>
               </div>
             </form>
@@ -50,7 +50,7 @@
               <h4 class="text-uppercase brand-brown-dark">popular post</h4>
               <div class="blog-post" ng-repeat="post in popularpost">
                 <div class="post-imghold inline-block">
-                  <a hhref=""><img ng-src="{{post.img}}" alt="" class="img-responsive media-object"></a>
+                  <a ui-sref="blogdetail({id:post.id})"><img ng-src="{{post.coverimage | serverimage}}" alt="" class="img-responsive media-object"></a>
                 </div>
                 <div class="post-content inline-block v-top">
                   <a href=""><h5 class="brand-brown-dark">{{post.title}}</h5></a>
@@ -59,8 +59,12 @@
             </div>
             <div class="tags">
               <h4 class="text-uppercase brand-brown-dark">tags</h4>
+              <p ng-if="tagmsg!=''">
+                {{tagmsg}}
+              </p>
               <div class="click-tag">
-                <a href="" class="btn btn-primary text-uppercase" ng-repeat="tag in tagger">{{tag.name}}</a>
+                <a class="btn btn-primary text-uppercase" ng-repeat="tag in tagger" ng-click="tagClicked(tag)">{{tag.name}}</a>
+                <a class="btn btn-primary text-uppercase" ng-click="tagClicked('')" ng-if="tagmsg==''">All</a>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'angular-loading-bar'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'angular-loading-bar', 'infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
     //Used to name the .html file
@@ -1448,78 +1448,127 @@ if ($.jStorage.get("user")) {
     $scope.menutitle = NavigationService.makeactive("Blog");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.blogpage = [{
-      img: "img/blog/post1.jpg",
-      title: "Your Questions, Answered",
-      descp: "Q1. How much does the CoolSculpting procedure cost? Ans. The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals..."
-    }, {
-      img: "img/blog/post2.jpg",
-      title: "Sparkle This Season",
-      descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
-    }, {
-      img: "img/blog/post3.jpg",
-      title: "Cranberry Juice",
-      descp: "Cranberry Juice Fights Heart Disease  Berries’ Antioxidants Raise “Good” Cholesterol, Lower “Bad”   – Drink up — cranberry juice, that is. Cranberry juice loads the blood with lots of disease-fighting antioxidants..."
-    }, {
-      img: "img/blog/post4.jpg",
-      title: "Lemons",
-      descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
-    }, {
-      img: "img/blog/post5.jpg",
-      title: "Energy Expenditure In Exercise",
-      descp: "Our body needs a constant supply of energy to be able to carry out everyday tasks. When we exercise the rate at which our body uses energy is higher, and the efficiency of the energy supply is one ..."
-    }, {
-      img: "img/blog/post6.jpg",
-      title: "Pump Up Your Workout",
-      descp: "We believe that choice of music will differ for everyone. Here are some of our personal favorites that will pump up your workout Greyhound- Swedish house mafia (original mix) The workout..."
-    }];
-    $scope.popularpost = [{
-      img: "img/blog/popular/post1.jpg",
-      title: "Dhruv Kaji"
-    }, {
-      img: "img/blog/popular/post2.jpg",
-      title: "Juice it up or not"
-    }, {
-      img: "img/blog/popular/post3.jpg",
-      title: "White Bread vs Brown Bread"
-    }, {
-      img: "img/blog/popular/post4.jpg",
-      title: "The Complete PLate Theory"
-    }, {
-      img: "img/blog/popular/post5.jpg",
-      title: "Bearing the Brunt of Heartburn"
-    }];
-    $scope.tagger = [{
-      name: "acidity",
-      link: ""
-    }, {
-      name: "benefits",
-      link: ""
-    }, {
-      name: "bhelpuri",
-      link: ""
-    }, {
-      name: "body",
-      link: ""
-    }, {
-      name: "Bread",
-      link: ""
-    }, {
-      name: "burger",
-      link: ""
-    }, {
-      name: "buttermilk",
-      link: ""
-    }, {
-      name: "calories",
-      link: ""
-    }, {
-      name: "carbs",
-      link: ""
-    }, {
-      name: "carrot",
-      link: ""
-    }];
+    $scope.blog = {};
+    $scope.blog.search = "";
+    $scope.pageno = 0;
+    $scope.tag = "";
+    $scope.blogpage = [];
+    $scope.tagmsg = "Loading...";
+    var lastpage = 0;
+    $scope.reloadBlog = function(){
+      if (lastpage>=$scope.pageno) {
+        ++$scope.pageno;
+        NavigationService.getBlog($scope.blog.search,$scope.pageno,$scope.tag,function(data){
+          _.each(data.queryresult, function(n){
+$scope.blogpage.push(n);
+          })
+          lastpage = data.lastpage;
+        });
+      }
+
+  }
+  $scope.reloadBlog();
+  $scope.loadBlog = function(){
+    $scope.reloadBlog();
+  }
+    NavigationService.getPopularBlog(function(data){
+      $scope.popularpost=data;
+    })
+    NavigationService.getTag(function(data){
+      $scope.tagger = data;
+      if (data=='') {
+        $scope.tagmsg = "No tags";
+      }else {
+        $scope.tagmsg = "";
+      }
+    })
+    $scope.searchBlog = function(){
+      $scope.pageno = 0;
+      $scope.blogpage = [];
+      $scope.reloadBlog();
+    }
+    $scope.tagClicked = function(tag){
+      if (tag == "") {
+        $scope.tag = "";
+      }else {
+        $scope.tag = tag.name;
+      }
+      $scope.pageno = 0;
+      $scope.blogpage = [];
+      $scope.reloadBlog();
+    }
+    // $scope.blogpage = [{
+    //   img: "img/blog/post1.jpg",
+    //   title: "Your Questions, Answered",
+    //   descp: "Q1. How much does the CoolSculpting procedure cost? Ans. The price for CoolSculpting procedures varies depending on your areas of concern, the number of sessions needed, and your ultimate goals..."
+    // }, {
+    //   img: "img/blog/post2.jpg",
+    //   title: "Sparkle This Season",
+    //   descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
+    // }, {
+    //   img: "img/blog/post3.jpg",
+    //   title: "Cranberry Juice",
+    //   descp: "Cranberry Juice Fights Heart Disease  Berries’ Antioxidants Raise “Good” Cholesterol, Lower “Bad”   – Drink up — cranberry juice, that is. Cranberry juice loads the blood with lots of disease-fighting antioxidants..."
+    // }, {
+    //   img: "img/blog/post4.jpg",
+    //   title: "Lemons",
+    //   descp: "The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem..."
+    // }, {
+    //   img: "img/blog/post5.jpg",
+    //   title: "Energy Expenditure In Exercise",
+    //   descp: "Our body needs a constant supply of energy to be able to carry out everyday tasks. When we exercise the rate at which our body uses energy is higher, and the efficiency of the energy supply is one ..."
+    // }, {
+    //   img: "img/blog/post6.jpg",
+    //   title: "Pump Up Your Workout",
+    //   descp: "We believe that choice of music will differ for everyone. Here are some of our personal favorites that will pump up your workout Greyhound- Swedish house mafia (original mix) The workout..."
+    // }];
+    // $scope.popularpost = [{
+    //   img: "img/blog/popular/post1.jpg",
+    //   title: "Dhruv Kaji"
+    // }, {
+    //   img: "img/blog/popular/post2.jpg",
+    //   title: "Juice it up or not"
+    // }, {
+    //   img: "img/blog/popular/post3.jpg",
+    //   title: "White Bread vs Brown Bread"
+    // }, {
+    //   img: "img/blog/popular/post4.jpg",
+    //   title: "The Complete PLate Theory"
+    // }, {
+    //   img: "img/blog/popular/post5.jpg",
+    //   title: "Bearing the Brunt of Heartburn"
+    // }];
+    // $scope.tagger = [{
+    //   name: "acidity",
+    //   link: ""
+    // }, {
+    //   name: "benefits",
+    //   link: ""
+    // }, {
+    //   name: "bhelpuri",
+    //   link: ""
+    // }, {
+    //   name: "body",
+    //   link: ""
+    // }, {
+    //   name: "Bread",
+    //   link: ""
+    // }, {
+    //   name: "burger",
+    //   link: ""
+    // }, {
+    //   name: "buttermilk",
+    //   link: ""
+    // }, {
+    //   name: "calories",
+    //   link: ""
+    // }, {
+    //   name: "carbs",
+    //   link: ""
+    // }, {
+    //   name: "carrot",
+    //   link: ""
+    // }];
   })
   .controller('PregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

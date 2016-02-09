@@ -1,10 +1,10 @@
 // var mainurl = "http://wohlig.io:81/callApi/takecare/";
-var mainurl = "http://moviewsapp.com/selfcare/index.php/";
+// var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 // var mainurl = "http://localhost/selfback/index.php/";
-// var mainurl = "http://192.168.0.118/selfbackend/index.php/";
-var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+var mainurl = "http://192.168.0.118/selfbackend/index.php/";
+// var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
-// var imgurl = "http://192.168.0.118/selfbackend/uploads/";
+var imgurl = "http://192.168.0.118/selfbackend/uploads/";
 // var imgurl="";
 var cart = [];
 
@@ -944,6 +944,12 @@ var navigationservice = angular.module('navigationservice', [])
     getRelatedProduct: function(productid, callback) {
       $http.get(adminurl + 'getRelatedProduct?id=' + productid).success(callback);
     },
+    getPopularBlog: function(callback) {
+      $http.get(adminurl + 'popularPost').success(callback);
+    },
+    getTag: function(callback) {
+      $http.get(adminurl + 'getAllTags').success(callback);
+    },
     getSubCategory: function(subcategoryid, callback) {
       $http.get(adminurl + 'getSubCategory?id=' + subcategoryid).success(callback);
     },
@@ -1013,6 +1019,9 @@ var navigationservice = angular.module('navigationservice', [])
     },
     subscribe:function(request,callback){
       $http.get(adminurl + 'subscribe?email=' + request.email ).success(callback);
+    },
+    getBlog:function(search,pageno,tag,callback){
+      $http.get(adminurl + 'getAllBlog?search='+ search + '&pageno=' + pageno + '&tag=' + tag + '&maxrow=2' ).success(callback);
     },
     getUserById:function(callback){
       $http.get(adminurl + 'getuserbyid' ).success(callback);

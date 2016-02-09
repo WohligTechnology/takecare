@@ -10,6 +10,7 @@ var jsArray = [
     './bower_components/angular-bootstrap/ui-bootstrap.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     './bower_components/lodash/lodash.min.js',
+    './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
     './bower_components/fancyBox/source/jquery.fancyBox.pack.js',
     './bower_components/jStorage/jstorage.min.js',
     './js/app.js',
