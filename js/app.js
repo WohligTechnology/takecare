@@ -884,14 +884,14 @@ firstapp.directive('slideMenu', function($document) {
       });
 
     }
-  }
+  };
 });
 firstapp.filter('showplan', function(NavigationService) {
     return function(input) {
       console.log(input);
       console.log(cart);
         if (input) {
-            if (cart!='') {
+            if (cart !== '') {
                 var ispresent = _.findIndex(cart, 'id', input);
                 if (ispresent != -1) {
                     return false;
@@ -909,7 +909,7 @@ var formvalidation = function(allvalidation) {
   var isvalid2 = true;
   for (var i = 0; i < allvalidation.length; i++) {
     console.log("checking");
-    if (allvalidation[i].field == "" || !allvalidation[i].field || allvalidation[i].field == "Please select" || allvalidation[i].field == "Please Select") {
+    if (allvalidation[i].field === "" || !allvalidation[i].field || allvalidation[i].field == "Please select" || allvalidation[i].field == "Please Select") {
       allvalidation[i].validation = "ng-invalid";
       isvalid2 = false;
     }

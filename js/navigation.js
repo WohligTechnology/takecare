@@ -1023,6 +1023,9 @@ var navigationservice = angular.module('navigationservice', [])
     getBlog:function(search,pageno,tag,callback){
       $http.get(adminurl + 'getAllBlog?search='+ search + '&pageno=' + pageno + '&tag=' + tag + '&maxrow=2' ).success(callback);
     },
+    getBlogById:function(id,callback){
+      $http.get(adminurl + 'getBlogById?id='+id ).success(callback);
+    },
     getUserById:function(callback){
       $http.get(adminurl + 'getuserbyid' ).success(callback);
     },
@@ -1104,5 +1107,5 @@ var navigationservice = angular.module('navigationservice', [])
       return menuname;
     },
 
-  }
+  };
 });

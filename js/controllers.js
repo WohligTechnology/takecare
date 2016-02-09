@@ -2006,13 +2006,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
   })
-  .controller('BlogDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('BlogDetailCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blogdetail");
     $scope.menutitle = NavigationService.makeactive("Blog Detail");
     TemplateService.title = $scope.menutitle;
     TemplateService.footermenu = "";
     $scope.navigation = NavigationService.getnav();
+
+    function successCallback (data,status) {
+      $scope.blog = data;
+      $scope.blog.tagsArr = data.tags.split(",");
+    }
+    NavigationService.getBlogById($stateParams.id,successCallback);
+
     $scope.blogtags = [{
       tag: "food",
       link: ""
