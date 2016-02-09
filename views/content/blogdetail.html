@@ -26,27 +26,13 @@
               <div class="bloginfo-descp">
                 <h3 class="text-uppercase text-bold heading m-clear">{{blog.title}}</h3>
                 <div class="selfcare-bloginfo">
-                  <h5 class="text-uppercase">Posted by : <span class="brand-primary">selfcare by {{blog.posted_by}}</span> | august 19th 2015 | <span class="brand-primary">leave a comment</span> | {{blog.views}} view<span ng-if="blog.views != '1'">s</span></h5>
+                  <h5 class="text-uppercase">Posted by : <span class="brand-primary">selfcare by {{blog.posted_by}}</span> | {{ blog.date|date:'EEEE, MMMM d, y'}} | <span class="brand-primary">leave a comment</span> | {{blog.views}} view<span ng-if="blog.views != '1'">s</span></h5>
                 </div>
                 <div class="selfcare-descp text-justify" ng-bind-html="blog.content">
-                  <p>The first monsoon showers brought back the sparkling glow of the city by beating the scorching heat and pollution of summer. But, are these droplets going to help our skin glow? They don’t seem to be much skin friendly. During monsoon
-                    the dust particles and dirt settles on our skin and creates multiple skin issues like acne, blackheads, pimples etc. Then why not choose the right foods this wet season to protect our skin?</p>
-                  <p>Let’s take a look at these yummy skin friendly items:</p>
-                  <div class="blog-infocat">
-                    <ul>
-                      <li>1) Yoghurt – Yoghurt is a good source of protein. It helps in maintaining the moisture in skin. Proteins are known for its anti – ageing properties, hence yoghurt in form of fruit yoghurt or yoghurt with muesli can be a perfect snack
-                        for monsoon.</li>
-                      <li>2) Lemon honey Water – Lemon (rich source of Vitamin –C) is an age old remedy for skin problems! Hence, it is rightly said that it helps in formation of collagen (in skin) making it look brighter and healthy. Having lemon honey water
-                        in monsoon can help in maintaining glow on the skin and also helps as body cleanser</li>
-                      <li>3) Tomatoes- Tomatoes are rich in Lycopene. There has been a few evidence that lycopene may help in lowering acne promoting hormone. Being an antioxidant, lycopene helps in protecting skin from free radicals.</li>
-                      <li>4) Green tea – sipping a nice of green tea in monsoon is very comforting to the body. It releases stress from the body and also helps in preventing skin irritation and Psoriasis.</li>
-                      <li>5) Dates- It is difficult to choose palak (good source of iron) in monsoon as green leafy vegetables spoil faster; hence dates are handy options to make sure the skin doesn’t turn pale.</li>
-                      <li>6) Assorted fruits – litchi, cherries, pomegranate, plums etc are readily available in monsoon. They are good source of carotenoids and help in hydration of our skin.</li>
-                    </ul>
-                  </div>
+
                 </div>
                 <div class="blog-tags">
-                  <a href="" class="btn btn-primary text-uppercase" ng-repeat="tags in blog.tagsArr">{{tags}}</a>
+                  <a href="" class="btn btn-primary text-uppercase" ui-sref="blogTag({tagname:tags})" ng-repeat="tags in blog.tagsArr">{{tags}}</a>
                 </div>
               </div>
             </div>
@@ -65,32 +51,24 @@
             </div>
             <div class="story-pagination clearfix">
               <div class="story-prev">
-                <a href="" class="brand-primary">Previous Post</a>
-                <h4 class="brand-brown-dark text-uppercase m-clear">cranberry juice</h4>
+                <a ui-sref="blogdetail({id:blog.prev.id})" class="brand-primary">Previous Post</a>
+                <h4 class="brand-brown-dark text-uppercase m-clear">{{blog.prev.name}}</h4>
               </div>
               <div class="story-next text-right">
-                <a href="" class="brand-primary">Next Post</a>
-                <h4 class="brand-brown-dark text-uppercase m-clear">Your questions, answered</h4>
+                <a  ui-sref="blogdetail({id:blog.next.id})" class="brand-primary">Next Post</a>
+                <h4 class="brand-brown-dark text-uppercase m-clear">{{blog.next.name}}</h4>
               </div>
             </div>
             <div class="related-post">
               <h3 class="brand-brown-dark text-uppercase text-bold">related post</h3>
               <div class="row">
-                <div class="col-sm-4 col-xs-12">
+
+                <div class="col-sm-4 col-xs-12" ng-repeat="related in blog.related">
                   <div class="relatepost-holder">
-                    <a href=""><img src="img/blog/post1.jpg" alt="" class="img-responsive"></a>
+                    <a ui-sref="blogdetail({id:related.id})"><img ng-src="{{related.image|serverimage}}" alt="" class="img-responsive"></a>
                   </div>
                 </div>
-                <div class="col-sm-4 col-xs-12">
-                  <div class="relatepost-holder">
-                    <a href=""><img src="img/blog/post3.jpg" alt="" class="img-responsive"></a>
-                  </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                  <div class="relatepost-holder">
-                    <a href=""><img src="img/blog/post4.jpg" alt="" class="img-responsive"></a>
-                  </div>
-                </div>
+
               </div>
             </div>
             <div class="leave-reply">
@@ -119,16 +97,16 @@
             <form action="">
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <span class="input-group-addon pointer"><i class="fa fa-search brand-brown-dark"></i></span>
+                  <input type="text" class="form-control" ng-model="blog.search" placeholder="Search">
+                  <span class="input-group-addon pointer" ui-sref="searchBlog({search:blog.search})"  ng-click="searchBlog()"><i class="fa fa-search brand-brown-dark"></i></span>
                 </div>
               </div>
             </form>
             <div class="post">
-              <h4 class="text-uppercase brand-brown-dark text-bold post-heading">popular post</h4>
+              <h4 class="text-uppercase brand-brown-dark">popular post</h4>
               <div class="blog-post" ng-repeat="post in popularpost">
                 <div class="post-imghold inline-block">
-                  <a href=""><img ng-src="{{post.img}}" alt="" class="img-responsive media-object"></a>
+                  <a ui-sref="blogdetail({id:post.id})"><img ng-src="{{post.coverimage | serverimage}}" alt="" class="img-responsive media-object"></a>
                 </div>
                 <div class="post-content inline-block v-top">
                   <a href=""><h5 class="brand-brown-dark">{{post.title}}</h5></a>
@@ -136,9 +114,13 @@
               </div>
             </div>
             <div class="tags">
-              <h4 class="text-uppercase brand-brown-dark text-bold post-heading">tags</h4>
+              <h4 class="text-uppercase brand-brown-dark">tags</h4>
+              <p ng-if="tagmsg!=''">
+                {{tagmsg}}
+              </p>
               <div class="click-tag">
-                <a href="" class="btn btn-primary text-uppercase" ng-repeat="tag in tagger">{{tag.name}}</a>
+                <a class="btn btn-primary text-uppercase" ng-repeat="tag in tagger" ui-sref="blogTag({tagname:tag.name})"  >{{tag.name}}</a>
+                <a class="btn btn-primary text-uppercase" ui-sref="blog" >All</a>
               </div>
             </div>
           </div>

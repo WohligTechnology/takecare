@@ -626,6 +626,18 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
     controller: 'BlogCtrl'
   })
 
+  .state('blogTag', {
+    url: "/tag/:tagname",
+    templateUrl: "views/template.html",
+    controller: 'BlogCtrl'
+  })
+  .state('searchBlog', {
+    url: "/searchBlog/:search",
+    templateUrl: "views/template.html",
+    controller: 'BlogCtrl'
+  })
+
+
   .state('blogdetail', {
     url: "/blogdetail/:id",
     templateUrl: "views/template.html",

@@ -1026,6 +1026,14 @@ var navigationservice = angular.module('navigationservice', [])
     getBlogById:function(id,callback){
       $http.get(adminurl + 'getBlogById?id='+id ).success(callback);
     },
+    commentSubmit:function(comment,callback){
+      //comment.blogid
+      //comment.name
+      //comment.email
+      //comment.website
+      //comment.comment
+      $http.post(adminurl + 'commentSubmit', comment ).success(callback);
+    },
     getUserById:function(callback){
       $http.get(adminurl + 'getuserbyid' ).success(callback);
     },

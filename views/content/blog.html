@@ -42,7 +42,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <input type="text" class="form-control" ng-model="blog.search" placeholder="Search">
-                  <span class="input-group-addon pointer" ng-click="searchBlog()"><i class="fa fa-search brand-brown-dark"></i></span>
+                  <span class="input-group-addon pointer"  ui-sref="searchBlog({search:blog.search})" ><i class="fa fa-search brand-brown-dark"></i></span>
                 </div>
               </div>
             </form>
@@ -63,8 +63,8 @@
                 {{tagmsg}}
               </p>
               <div class="click-tag">
-                <a class="btn btn-primary text-uppercase" ng-repeat="tag in tagger" ng-click="tagClicked(tag)">{{tag.name}}</a>
-                <a class="btn btn-primary text-uppercase" ng-click="tagClicked('')" ng-if="tagmsg==''">All</a>
+                <a class="btn btn-primary text-uppercase" ng-repeat="tag in tagger" ui-sref="blogTag({tagname:tag.name})"  >{{tag.name}}</a>
+                <a class="btn btn-primary text-uppercase" ui-sref="blog" >All</a>
               </div>
             </div>
           </div>
