@@ -74,7 +74,9 @@
             <div class="leave-reply">
               <h3 class="text-uppercase brand-brown-dark text-bold">leave a comment</h3>
               <p class="brand-primary">Your email address will not be published. Required fields are marked *</p>
-              <form name="commentForm">
+
+              <form name="commentForm" ng-hide="commenthide">
+
                 <div class="form-group">
                   <input name="name" required type="text" class="form-control" ng-model="comment.name" placeholder="Name*">
                   <div class="" ng-show="commentForm.name.$invalid && commentForm.name.$touched" role="alert">
@@ -91,9 +93,9 @@
                 <div class="form-group">
                   <textarea class="form-control" ng-model="comment.comment" rows="" cols="" placeholder="Comment"></textarea>
                 </div>
-                <button class="btn btn-primary text-uppercase" ng-click="commentSubmit();">submit</button>
+                <button class="btn btn-primary text-uppercase" ng-show="commentForm.$valid" ng-click="commentSubmit();">submit</button>
               </form>
-              <div class="after-formmsg">
+              <div class="after-formmsg" ng-show="commenthide">
                 <p class="brand-brown-dark">Your Comment Has Been Successfully Posted</p>
               </div>
             </div>

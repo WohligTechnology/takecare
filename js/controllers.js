@@ -1987,7 +1987,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     function successCallback(data, status) {
-      $scope.comment.id =
         $scope.blog = data;
       var date = new Date(data.dateofposting);
       $scope.blog.date = date;
