@@ -960,7 +960,7 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(adminurl + 'getPlans?id=' + planId).success(callback);
     },
     getProductsByCategory: function(request, callback) {
-      $http.get(adminurl + 'getProductsByCategory?categoryid=' + request.categoryid + '&subcategories=' + request.subcategories).success(callback);
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + request.categoryid + '&subcategories=' + request.subcategories + '&pageno=' + request.pageno + '&maxrow=20').success(callback);
     },
     checkoutCheck:function(callback){
       $http.get(adminurl+'checkoutCheck').success(callback);

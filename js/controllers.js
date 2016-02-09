@@ -167,6 +167,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subCategories = [];
     $scope.products = [];
     $scope.alerts = [];
+    var lastpage = 0;
+    $scope.pageno = 0;
     $scope.msg = "Loading...";
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
@@ -195,7 +197,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log(input);
       NavigationService.addToCart(input, function(data) {
         console.log(data);
-        if (data.value == true) {
+        if (data.value === true) {
           $scope.alerts.push({
             type: 'success',
             msg: 'Added to cart'
@@ -207,25 +209,38 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           });
         }
       });
-    }
+    };
     $scope.refreshProducts = function(subcategoryarr) {
-      NavigationService.getProductsByCategory({
-        categoryid: $scope.categoryid,
-        subcategories: subcategoryarr
-      }, function(data) {
-        if (data.value = false) {
-          $scope.msg = "No products found.";
-          $scope.products = [];
-        } else {
-          console.log(data);
-          $scope.products = data.data.queryresult;
-          $scope.msg = ""
-          console.log($scope.products);
-          // $scope.products = data;
-        }
-      })
-    }
+      if (lastpage>=$scope.pageno) {
+        ++$scope.pageno;
+        NavigationService.getProductsByCategory({
+          categoryid: $scope.categoryid,
+          subcategories: subcategoryarr,
+          pageno : $scope.pageno
+        }, function(data) {
+          if (data.value === false) {
+            $scope.msg = "No products found.";
+            $scope.products = [];
+          } else {
+            lastpage = data.data.lastpage;
+            console.log(data);
+            _.each(data.data.queryresult, function(n){
+              $scope.products.push(n);
+            })
+
+            $scope.msg = "";
+            console.log($scope.products);
+            // $scope.products = data;
+          }
+        });
+      }
+
+
+    };
     $scope.refreshProducts([]);
+    // $scope.loadBlog = function(){
+    //   $scope.products =
+    // };
     $scope.cardAdd = function(productid) {
       console.log(productid);
     };
@@ -246,7 +261,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }), 1);
       }
       $scope.refreshProducts($scope.filterBy);
-    }
+    };
   })
   .controller('SelfcaretvCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -1955,7 +1970,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.comment = {
       id: $stateParams.id
     };
-    
+
 
 
     $scope.commentSubmit  = NavigationService.commentSubmit($scope.comment,function(data,status) {

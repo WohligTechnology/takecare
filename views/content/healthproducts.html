@@ -4,7 +4,7 @@
     <h2 class="text-uppercase get-center white font-semibold">{{productCategory.name}}</h2>
   </div>
 
-  <div class="container">
+  <div class="container" infinite-scroll='refreshProducts(filterBy)' infinite-scroll-distance="0" infinite-scroll-disabled="fasle">
     <div class="product-desc get-up brand-brown-bg white health-descp rel">
       <p>{{productCategory.description}}</p>
     </div>
