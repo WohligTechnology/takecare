@@ -1429,7 +1429,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
   })
 
-  .controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog");
     $scope.menutitle = NavigationService.makeactive("Blog");
@@ -1444,10 +1444,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.blogpage = [];
     $scope.tagmsg = "Loading...";
 
-    if($stateParams.search) {
+    if ($stateParams.search) {
       $scope.blog.search = $stateParams.search;
     }
-    if($stateParams.tagname) {
+    if ($stateParams.tagname) {
       $scope.tag = $stateParams.tagname;
     }
     var lastpage = 0;
@@ -1484,15 +1484,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.reloadBlog();
     }
     $scope.tagClicked = function(tag) {
-        if (tag == "") {
-          $scope.tag = "";
-        } else {
-          $scope.tag = tag.name;
-        }
-        $scope.pageno = 0;
-        $scope.blogpage = [];
-        $scope.reloadBlog();
+      if (tag == "") {
+        $scope.tag = "";
+      } else {
+        $scope.tag = tag.name;
       }
+      $scope.pageno = 0;
+      $scope.blogpage = [];
+      $scope.reloadBlog();
+    }
 
   })
   .controller('PregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -1945,22 +1945,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
   })
-  .controller('BlogDetailCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams,$filter) {
+  .controller('BlogDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blogdetail");
     $scope.menutitle = NavigationService.makeactive("Blog Detail");
     TemplateService.title = $scope.menutitle;
     TemplateService.footermenu = "";
     $scope.navigation = NavigationService.getnav();
+    $scope.comment = {
+      id: $stateParams.id
+    };
 
-    function successCallback (data,status) {
-
-      $scope.blog = data;
+    function successCallback(data, status) {
+      $scope.comment.id =
+        $scope.blog = data;
       var date = new Date(data.dateofposting);
       $scope.blog.date = date;
       $scope.blog.tagsArr = data.tags.split(",");
     }
-    NavigationService.getBlogById($stateParams.id,successCallback);
+    NavigationService.getBlogById($stateParams.id, successCallback);
     NavigationService.getPopularBlog(function(data) {
       $scope.popularpost = data;
     })
@@ -2046,32 +2049,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Recipes");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.recipedetail = [
-      {
-        img: "img/recipes/recipe1.jpg",
-        name: "Mushroom & Tofu Burger"
-      },
-      {
-        img: "img/recipes/recipe2.jpg",
-        name: "Mushroom Omelette"
-      },
-      {
-        img: "img/recipes/recipe3.jpg",
-        name: "Pancakes with red sauce"
-      },
-      {
-        img: "img/recipes/recipe2.jpg",
-        name: "Mushroom Omelette"
-      },
-       {
-          img: "img/recipes/recipe1.jpg",
-          name: "Mushroom & Tofu Burger"
-        },
-        {
-            img: "img/recipes/recipe3.jpg",
-            name: "Pancakes with red sauce"
-          }
-    ];
+    $scope.recipedetail = [{
+      img: "img/recipes/recipe1.jpg",
+      name: "Mushroom & Tofu Burger"
+    }, {
+      img: "img/recipes/recipe2.jpg",
+      name: "Mushroom Omelette"
+    }, {
+      img: "img/recipes/recipe3.jpg",
+      name: "Pancakes with red sauce"
+    }, {
+      img: "img/recipes/recipe2.jpg",
+      name: "Mushroom Omelette"
+    }, {
+      img: "img/recipes/recipe1.jpg",
+      name: "Mushroom & Tofu Burger"
+    }, {
+      img: "img/recipes/recipe3.jpg",
+      name: "Pancakes with red sauce"
+    }];
   })
   .controller('RecipedetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -2233,6 +2229,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
   });
+
   $scope.alreadyReg = false;
   $scope.enablelogout = false;
   $scope.invalidinput = false;
