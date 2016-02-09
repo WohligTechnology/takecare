@@ -69,7 +69,8 @@
               </tab>
               <tab>
                 <tab-heading>
-                  <span class="text-uppercase font-semibold">Nutritional Value</span>
+                  <span class="text-uppercase font-semibold" ng-if="product.product.category != '4'">Nutritional Value</span>
+                  <span class="text-uppercase font-semibold" ng-if="product.product.category == '4'">Reviews</span>
                 </tab-heading>
                 <div class="inner-product-detail" ng-bind-html="product.product.nutritional || 'Loading..'"></div>
               </tab>

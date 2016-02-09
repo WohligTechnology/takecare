@@ -228,7 +228,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               $scope.products.push(n);
             });
             console.log($scope.products);
-              if ($scope.products == '') {
+              if ($scope.products === '') {
                 $scope.msg = "No products found.";
               }else {
                 $scope.msg = "";
@@ -1979,10 +1979,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    $scope.commentSubmit  = NavigationService.commentSubmit($scope.comment,function(data,status) {
-      console.log(data);
-      $scope.commenthide = true;
-    });
+    $scope.commentSubmit  =  function() {
+      NavigationService.commentSubmit($scope.comment,function(data,status) {
+        $scope.commenthide = true;
+      });
+    }
+
 
     function successCallback(data, status) {
       $scope.comment.id =
