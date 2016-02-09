@@ -1838,6 +1838,7 @@ footer {
   }
   .product-tab-detail {
     margin: 30px 0 0;
+    ul li { list-style-type: inherit; }
   }
   ul.nav-tabs {
     @include margin(0 100px 0 0);
