@@ -1955,6 +1955,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.comment = {
       id: $stateParams.id
     };
+    
+
+
+    $scope.commentSubmit  = NavigationService.commentSubmit($scope.comment,function(data,status) {
+      console.log(data);
+      $scope.commenthide = true;
+    });
 
     function successCallback(data, status) {
       $scope.comment.id =
