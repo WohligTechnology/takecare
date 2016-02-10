@@ -211,12 +211,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     };
     $scope.refreshProducts = function(subcategoryarr) {
-      if (lastpage>=$scope.pageno) {
+      if (lastpage >= $scope.pageno) {
         ++$scope.pageno;
         NavigationService.getProductsByCategory({
           categoryid: $scope.categoryid,
           subcategories: subcategoryarr,
-          pageno : $scope.pageno
+          pageno: $scope.pageno
         }, function(data) {
           if (data.value === false) {
             $scope.msg = "No products found.";
@@ -224,15 +224,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           } else {
             lastpage = data.data.lastpage;
             console.log(data);
-            _.each(data.data.queryresult, function(n){
+            _.each(data.data.queryresult, function(n) {
               $scope.products.push(n);
             });
             console.log($scope.products);
-              if ($scope.products === '') {
-                $scope.msg = "No products found.";
-              }else {
-                $scope.msg = "";
-              }
+            if ($scope.products === '') {
+              $scope.msg = "No products found.";
+            } else {
+              $scope.msg = "";
+            }
 
           }
         });
@@ -1982,15 +1982,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    $scope.commentSubmit  =  function() {
-      NavigationService.commentSubmit($scope.comment,function(data,status) {
+    $scope.commentSubmit = function() {
+      NavigationService.commentSubmit($scope.comment, function(data, status) {
         $scope.commenthide = true;
       });
     }
 
 
     function successCallback(data, status) {
-        $scope.blog = data;
+      $scope.blog = data;
       var date = new Date(data.dateofposting);
       $scope.blog.date = date;
       $scope.blog.tagsArr = data.tags.split(",");
@@ -2342,6 +2342,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   }];
 
   $scope.msg = "Enter your registered email address and we will send you instructions.";
+
+  $scope.submitForgot = function(email) {
+    NavigationService.forgotpassword(email, function(data) {
+      console.log(data);
+      $scope.forgotDone = true;
+    });
+  };
 
   $scope.openForgot = function() {
     $uibModal.open({
