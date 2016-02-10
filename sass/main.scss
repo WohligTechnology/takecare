@@ -2741,6 +2741,11 @@ footer {
 }
 // end error thankyou wentwrong
 // account
+.account-name {
+  form { margin: 0 0 30px; }
+  p,h5,label { font-size: 16px; }
+  label { font-weight: 400; }
+}
 .profile-tab {
   @extend .checkout-main;
   h3 {
@@ -2758,10 +2763,12 @@ footer {
   }
   .edit {
     padding: 9px 24px;
-    border-width: 1px;
-    border-color: $brand-primary;
+    border: 1px solid $brand-primary;
     border-radius: 0;
-    margin: -17px 10px 0;
+    background-color: #fff;
+    text-transform: capitalize;
+    // margin: -17px 10px 0;
+    &:hover { background-color: $brand-primary; }
   }
   .address {
     margin: 40px 0 0;

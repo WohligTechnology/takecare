@@ -1981,17 +1981,19 @@
       font-size: 14px;
     }
     .recipedetail-slider {
+      width: 250px;
       &:hover {
-        .flexslider .flex-direction-nav .flex-prev { left: 30px; }
-        .flexslider .flex-direction-nav .flex-next { right: 30px; }
+        .flexslider .flex-direction-nav .flex-prev { left: 0px; }
+        .flexslider .flex-direction-nav .flex-next { right: 0px; }
       }
       .flexslider {
+        .slides > li { width: 250px !important; }
         .flex-direction-nav .flex-prev {
-          left: 30px;
+          left: 0px;
           &:before { font-size: 40px; }
          }
         .flex-direction-nav .flex-next {
-          right: 30px;
+          right: 0px;
           &:before { font-size: 40px; }
          }
       }
