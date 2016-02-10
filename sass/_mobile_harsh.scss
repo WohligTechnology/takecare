@@ -22,6 +22,7 @@
    h3 { font-size: 30px; }
    span { font-size: 25px; }
 }
+.user-login { width: 100px; }
 }
 @media (max-width: $screen-md-max) {
 
@@ -129,7 +130,7 @@
     .signin { text-align: center; }
     .cart-icon {
       padding: 0px 20px;
-      border: none; 
+      border: none;
       .bagde { left: 35px; }
     }
   }
@@ -137,7 +138,10 @@
     margin: 0;
     @include padding(12px 20px);
   }
-  .user-login { padding: 0 25px; }
+  .user-login {
+    width: auto;
+    padding: 0 25px;
+  }
 
   // Footer
   footer {

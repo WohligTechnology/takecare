@@ -3,29 +3,29 @@
     <img src="img/banners/recepie.jpg" alt="" class="img-responsive">
     <h2 class="font-semibold get-center text-uppercase white">recipes</h2>
   </div>
-  <div class="selfcare-main">
+  <div class="recipes-main">
     <div class="container">
-      <h2 class="brand-brown-dark text-uppercase text-center">Recipes from "The Don’t Diet Book"</h2>
-      <div class="recipedetail-slider">
+      <h2 class="brand-brown-dark text-uppercase text-center recipe-main-title">Recipes from "The Don’t Diet Book"</h2>
+      <div class="recipedetail-slider slider-customize">
         <flex-slider class="carousel" flex-slide="detail in recipedetail track by $index" animation="slide" item-width="350" control-nav="false">
           <li>
             <figure class="relate">
-              <div class="recipedetail-imgholder">
-                <img ng-src="{{detail.img}}" alt="" class="img-responsive"/>
+              <div class="recipedetail-imgholder relate">
+                <img ng-src="{{detail.img}}" alt="" class="img-responsive get-center"/>
               </div>
               <figcaption><span class="text-uppercase brand-brown-dark recipe-name text-center">{{detail.name}}</span></figcaption>
             </figure>
           </li>
         </flex-slider>
       </div>
-      <div class="recipedetail-content text-justify">
+      <div class="recipedetail-content text-justify brand-gray">
         <p>Healthy eating is not something which you should have to make a great effort to do. Rather it is what is right for your body, what is natural. And what is right and natural for the body, should also make you feel and look the best, right? Why is it then that we find it so hard to eat healthy, despite these facts. No other animal in the world has to make an effort to eat properly to stay fit, why then do we?</p>
         <p>Fortunately or unfortunately, in today's society we have access to many foods from so many different cultures. With this we have forgotten the basic fundamentals of eating right. If we are reminded of these fundamentals, we can again begin to feel and look our best, while still enjoying the foods we love. Eating is probably the most important pleasures in life, so why deny ourselves when with just a little thought and effort we can actually eat our way to good health.</p>
         <p>The basic fundamentals of nutrition consists of eating all three major meals – breakfast, lunch, and dinner – with a perfect combination of carbohydates, fats, and proteins -including foods rich in vitamins, minerals, phytonutrients, and fibre.</p>
-        <p class="m-clear">-75% of calories from Carbohydrates</p>
-        <p class="m-clear">-20% of calories from lean Protein sources</p>
-        <p class="m-clear">-20% of calories from healthy Fats (mainly poly/mono unsaturated)</p>
-        <p class="m-clear">Keeping this in mind, start eating your way to good health today!</p>
+        <span class="block">-75% of calories from Carbohydrates</span>
+        <span class="block">-20% of calories from lean Protein sources</span>
+        <span class="block">-20% of calories from healthy Fats (mainly poly/mono unsaturated)</span>
+        <span class="block">Keeping this in mind, start eating your way to good health today!</span>
       </div>
     </div>
   </div>

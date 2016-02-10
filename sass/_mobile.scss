@@ -249,6 +249,10 @@
   .session-descp { font-size: 15px; }
   .pack-men .session-descp { margin: 10px 0 0; }
   }
+  // recipe
+  .recipedetail-slider { width: 725px; }
+  .recipedetail-imgholder { @include size(300px,  470px); }
+  .recipe-name { font-size: 18px; }
 }
 @media (max-width: $screen-sm-max) {
   // faq
@@ -712,6 +716,17 @@
   .testi-detail {
     .profession { margin: 15px 0; }
   }
+  }
+  // recipe
+  .recipedetail-slider {
+    &:hover {
+      .flexslider .flex-direction-nav .flex-prev { left: -20px; }
+      .flexslider .flex-direction-nav .flex-next { right: -20px; }
+    }
+    .flexslider {
+      .flex-direction-nav .flex-prev { left: -20px; }
+      .flex-direction-nav .flex-next { right: -20px; }
+    }
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -1342,6 +1357,10 @@
     }
   }
 }
+// recipe
+.recipedetail-slider { width: 350px; }
+.recipe-main-title { font-size: 22px; }
+.recipedetail-content { margin: 30px 30px 0; }
 }
 @media (max-width: 480px) {
   // login
@@ -1949,5 +1968,32 @@
       margin: 20px 0;
       font-size: 20px;
     }
+    }
+    // recipe
+    .recipe-main-title { font-size: 18px; }
+    .recipedetail-imgholder {
+      @include size(200px ,300px);
+      position: relative;
+    }
+    .recipe-name { font-size: 13px; }
+    .recipedetail-content {
+      margin: 20px 10px 0;
+      font-size: 14px;
+    }
+    .recipedetail-slider {
+      &:hover {
+        .flexslider .flex-direction-nav .flex-prev { left: 30px; }
+        .flexslider .flex-direction-nav .flex-next { right: 30px; }
+      }
+      .flexslider {
+        .flex-direction-nav .flex-prev {
+          left: 30px;
+          &:before { font-size: 40px; }
+         }
+        .flex-direction-nav .flex-next {
+          right: 30px;
+          &:before { font-size: 40px; }
+         }
+      }
     }
 }
