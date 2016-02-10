@@ -535,6 +535,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.alerts = [];
     $scope.selectedPackage = {};
     cfpLoadingBar.start();
+    console.log("state of page");
+    console.log($state);
 
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
@@ -2340,7 +2342,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   }];
 
   $scope.msg = "Enter your registered email address and we will send you instructions.";
-  
+
   $scope.openForgot = function() {
     $uibModal.open({
       animation: true,
