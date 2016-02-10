@@ -11,7 +11,7 @@
         </div>
     <div class="get-up brand-brown-bg relate">
       <h2 class="text-center text-bold brand-brown-dark health-heading text-uppercase">{{selectedPackage.name}}</h2>
-      <p class="white health-descp">{{selectedPackage.description}}</p>
+      <p class="white health-descp" ng-bind-html="selectedPackage.description"></p>
     </div>
     <div class="relate no-plan" ng-if="plans==''">
       <h3 class="get-center brand-brown-dark">No Plan For {{selectedPackage.name}}</h3>
