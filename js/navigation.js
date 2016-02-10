@@ -1096,10 +1096,13 @@ var navigationservice = angular.module('navigationservice', [])
         email: email
       }).success(callback);
     },
-    forgotpasswordsubmit: function(obj, callback) {
+    forgotpasswordsubmit: function(password, hash, callback) {
       // $password = $data['password'];
       //  $hashcode = $data['hashcode'];
-      $http.post(adminurl + 'forgotpasswordsubmit', obj).success(callback);
+      $http.post(adminurl + 'forgotpasswordsubmit', {
+        password: password,
+        hashcode: hash
+      }).success(callback);
     }
   };
 });

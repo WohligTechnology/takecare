@@ -785,7 +785,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     NavigationService.getOrder($stateParams.orderid, function(data) {
       $scope.order = data;
-    })
+    });
   })
   .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
@@ -795,14 +795,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     NavigationService.getOrder($stateParams.orderid, function(data) {
       $scope.order = data;
-    })
+    });
   })
-  .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("forgotpassword");
     $scope.menutitle = NavigationService.makeactive("Forgot Password");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.submitForm = function(password) {
+      NavigationService.forgotpasswordsubmit(password, $stateParams.hash, function(data) {
+        console.log(data);
+        $scope.formSubmitDone = true;
+      });
+    };
 
   })
   .controller('ForgotpopupCtrl', function($scope, TemplateService, NavigationService, $timeout) {
