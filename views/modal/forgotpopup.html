@@ -1,4 +1,4 @@
-<div class="enter-mail">
+<div class="enter-mail" ng-hide="forgotDone">
   <div class="brand-primary-bg">
       <h2 class="text-uppercase text-center white m-clear">forgot password ?</h2>
   </div>
@@ -7,15 +7,18 @@
     <div class="col-md-offset-2 col-md-8">
       <form name="forgotpop" class="text-center forgot-form">
         <div class="form-group">
-          <input name="forgotemail" required type="email" class="form-control input-placeholder" placeholder="Email *">
+          <input name="forgotemail" ng-model="forgot.email" required type="email" class="form-control input-placeholder" placeholder="Email *">
         </div>
         <div class="" ng-show="forgotpop.forgotemail.$invalid && forgotpop.forgotemail.$touched" role="alert">
           Please Enyter Your Email Id.
         </div>
         <div class="form-group">
-          <button type="" class="btn btn-primary">SUBMIT</button>
+          <button type="" class="btn btn-primary" ng-click="submitForgot(forgot.email)" ng-show="forgotpop.$valid">SUBMIT</button>
         </div>
       </form>
     </div>
   </div>
+</div>
+<div class="" ng-show="forgotDone">
+  Email sent successfully
 </div>

@@ -1,98 +1,166 @@
 <footer class="brand-primary-bg font-semibold" ng-controller="footerctrl">
-    <div class="container" >
-        <div class="row">
-            <div class="col-md-2 col-sm-6">
-                <div class="menu text-uppercase letter-space">
-                    <ul>
-                        <li><a href="#/home" title="Home">home</a></li>
-                        <li><a href="#/coolsculpting" title="Cool Sclupting">Cool Sclupting</a></li>
-                        <li><a href="#/nutrigenomics" title="Nutrigenomics">Nutrigenomics</a></li>
-                        <li><a href="#/imageconsulting" title="Image Consulting">Image Consulting</a></li>
-                        <li><a href="#successstories" title="Success Stories">Success Stories</a></li>
-                        <li><a href="#/news" title="News">News</a></li>
-                        <li><a href="" title="Blog">Blog (Coming Soon)</a></li>
-                        <li><a href="#contactus" title="Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="menu2">
-                    <h5 class="text-uppercase brand-primary-lighter letter-space">Health Packages</h5>
-                    <div class="submenu text-uppercase">
-                        <ul>
-                            <li><a href="#/weightmanagement" title="Weight Loss">Weight Loss</a></li>
-                            <li> <a href="#/healthmanagement" title="Health Management">Health Management</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="menu2 foot-about">
-                    <h5 class="text-uppercase brand-primary-lighter letter-space">About</h5>
-                    <div class="submenu text-uppercase">
-                        <ul>
-                            <li><a href="#/aboutus" title="About Selfcare">About Selfcare</a></li>
-                            <li> <a href="#/meet" title="Meet Suman Agarwal">Meet Suman Agarwal</a></li>
-                            <li> <a href="#/team" title="The Self Care Team">The Self Care Team</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="menu2">
-                    <h5 class="brand-primary-lighter">HEALTH SHOP</h5>
-                    <div class="submenu text-uppercase">
-                        <ul>
-                            <li ng-repeat="category in categories"><a ui-sref="healthproducts({
-                              id:category.id
-                            })" title="{{category.name}}">{{category.name}}</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="menu2 foot-healthkit">
-                    <h5 class="brand-primary-lighter">HEALTH KIT</h5>
-                    <div class="submenu text-uppercase">
-                        <ul>
-                            <li><a href="" title="Calorie Meter">CALORIE METER <span class="white" style="font-size:10px">(Coming Soon)</span></a></li>
-                            <li> <a href="" title="Recipes">RECIPES <span class="white" style="font-size:10px">(Coming Soon)</span></a></li>
-                            <li><a href=""title="Restaurant Menus">RESTAURANT MENUS <span class="block white" style="font-size:10px",padding-left="10px">(Coming Soon)</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="">
-                    <div class="note brand-primary-lighter letter-space">
-                        <p>Receive monthly tips on the healthiest foods and excercizes, along with the latest plans and offers.</p>
-                    </div>
-                    <div class="mail">
-                        <form class="form-inline" name="subscribeForm"  ng-submit="subscribe(subscribe,subscribeForm)">
-                            <div class="form-group">
-                                <input type="email" name="email" required ng-model="subscribe.email" class="form-control email" placeholder="EMAIL">
-                                <button type="submit" class="form-control btn-submit"><span><i class="fa fa-chevron-right brand-primary"></i></span></button>
-                            </div>
-                            <div class="" ng-show="subscribeForm.$invalid && subscribeForm.email.$dirty" role="alert">
-                              Please enter an email
-                            </div>
-                            <div class="" ng-show="subsresponse">
-                              {{msg}}
-                            </div>
-                        </form>
-                    </div>
-                    <div class="social-links social-links2 foot-sociallinks brand-primary-light">
-                        <ul>
-                            <li><a href="https://www.facebook.com/selfcarebysuman" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/selfcarebysuman" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/selfcarebysuman" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://www.youtube.com/channel/UCVqKgmC6eaMrgPyXoOcOz2A" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://www.pinterest.com/selfcarebysuman" target="_blank"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="copyright brand-brown-dark letter-space">
-                       <p>Copyright &copy; Selfcare Support Pvt. Ltd.</p>
-                       <p>All Rights Reserved | <a href="#/privacypolicy" class="brand-brown-dark">Privacy Policy</a> | <a href="#/termsandcondition" class="brand-brown-dark">T&amp;C</a></p>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-sm-6">
+        <div class="menu text-uppercase letter-space">
+          <ul>
+            <li>
+              <a href="#/home" title="Home">home</a>
+            </li>
+            <li>
+              <a href="#/coolsculpting" title="Cool Sclupting">Cool Sclupting</a>
+            </li>
+            <li>
+              <a href="#/nutrigenomics" title="Nutrigenomics">Nutrigenomics</a>
+            </li>
+            <li>
+              <a href="#/imageconsulting" title="Image Consulting">Image Consulting</a>
+            </li>
+            <li>
+              <a href="#successstories" title="Success Stories">Success Stories</a>
+            </li>
+            <li>
+              <a href="#/news" title="News">News</a>
+            </li>
+            <li>
+              <a href="#/blog" title="Blog">Blog</a>
+            </li>
+            <li>
+              <a href="#contactus" title="Contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="menu2">
+          <h5 class="text-uppercase brand-primary-lighter letter-space">Health Packages</h5>
+          <div class="submenu text-uppercase">
+            <ul>
+              <li>
+                <a href="#/weightmanagement" title="Weight Loss">Weight Loss</a>
+              </li>
+              <li>
+                <a href="#/healthmanagement" title="Health Management">Health Management</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu2 foot-about">
+          <h5 class="text-uppercase brand-primary-lighter letter-space">About</h5>
+          <div class="submenu text-uppercase">
+            <ul>
+              <li>
+                <a href="#/aboutus" title="About Selfcare">About Selfcare</a>
+              </li>
+              <li>
+                <a href="#/meet" title="Meet Suman Agarwal">Meet Suman Agarwal</a>
+              </li>
+              <li>
+                <a href="#/team" title="The Self Care Team">The Self Care Team</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="menu2">
+          <h5 class="brand-primary-lighter">HEALTH SHOP</h5>
+          <div class="submenu text-uppercase">
+            <ul>
+              <li ng-repeat="category in categories">
+                <a ui-sref="healthproducts({
+                              id:category.id
+                            })" title="{{category.name}}">{{category.name}}</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="menu2 foot-healthkit">
+          <h5 class="brand-primary-lighter">HEALTH KIT</h5>
+          <div class="submenu text-uppercase">
+            <ul>
+              <li>
+                <a href="" title="Calorie Meter">CALORIE METER
+                  <span class="white" style="font-size:10px">(Coming Soon)</span>
+                </a>
+              </li>
+              <li>
+                <a href="" title="Recipes">RECIPES
+                  <span class="white" style="font-size:10px">(Coming Soon)</span>
+                </a>
+              </li>
+              <li>
+                <a href="" title="Restaurant Menus">RESTAURANT MENUS
+                  <span class="block white" style="font-size:10px" ,padding-left="10px">(Coming Soon)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="">
+          <div class="note brand-primary-lighter letter-space">
+            <p>Receive monthly tips on the healthiest foods and excercizes, along with the latest plans and offers.</p>
+          </div>
+          <div class="mail">
+            <form class="form-inline" name="subscribeForm" ng-submit="subscribe(subscribe,subscribeForm)">
+              <div class="form-group">
+                <input type="email" name="email" required ng-model="subscribe.email" class="form-control email" placeholder="EMAIL">
+                <button type="submit" class="form-control btn-submit">
+                  <span>
+                    <i class="fa fa-chevron-right brand-primary"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="" ng-show="subscribeForm.$invalid && subscribeForm.email.$dirty" role="alert">
+                Please enter an email
+              </div>
+              <div class="" ng-show="subsresponse">
+                {{msg}}
+              </div>
+            </form>
+          </div>
+          <div class="social-links social-links2 foot-sociallinks brand-primary-light">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/selfcarebysuman" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/selfcarebysuman" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/selfcarebysuman" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCVqKgmC6eaMrgPyXoOcOz2A" target="_blank">
+                  <i class="fa fa-youtube"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pinterest.com/selfcarebysuman" target="_blank">
+                  <i class="fa fa-pinterest-p"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright brand-brown-dark letter-space">
+            <p>Copyright &copy; Selfcare Support Pvt. Ltd.</p>
+            <p>All Rights Reserved |
+              <a href="#/privacypolicy" class="brand-brown-dark">Privacy Policy</a>
+              |
+              <a href="#/termsandcondition" class="brand-brown-dark">T&amp;C</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>

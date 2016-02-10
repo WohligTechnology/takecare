@@ -211,12 +211,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     };
     $scope.refreshProducts = function(subcategoryarr) {
-      if (lastpage>=$scope.pageno) {
+      if (lastpage >= $scope.pageno) {
         ++$scope.pageno;
         NavigationService.getProductsByCategory({
           categoryid: $scope.categoryid,
           subcategories: subcategoryarr,
-          pageno : $scope.pageno
+          pageno: $scope.pageno
         }, function(data) {
           if (data.value === false) {
             $scope.msg = "No products found.";
@@ -224,15 +224,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           } else {
             lastpage = data.data.lastpage;
             console.log(data);
-            _.each(data.data.queryresult, function(n){
+            _.each(data.data.queryresult, function(n) {
               $scope.products.push(n);
             });
             console.log($scope.products);
-              if ($scope.products === '') {
-                $scope.msg = "No products found.";
-              }else {
-                $scope.msg = "";
-              }
+            if ($scope.products === '') {
+              $scope.msg = "No products found.";
+            } else {
+              $scope.msg = "";
+            }
 
           }
         });
@@ -535,6 +535,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.alerts = [];
     $scope.selectedPackage = {};
     cfpLoadingBar.start();
+    console.log("state of page");
+    console.log($state);
 
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
@@ -783,7 +785,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     NavigationService.getOrder($stateParams.orderid, function(data) {
       $scope.order = data;
-    })
+    });
   })
   .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
@@ -793,14 +795,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     NavigationService.getOrder($stateParams.orderid, function(data) {
       $scope.order = data;
-    })
+    });
   })
-  .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("forgotpassword");
     $scope.menutitle = NavigationService.makeactive("Forgot Password");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.submitForm = function(password) {
+      NavigationService.forgotpasswordsubmit(password, $stateParams.hash, function(data) {
+        console.log(data);
+        $scope.formSubmitDone = true;
+      });
+    };
 
   })
   .controller('ForgotpopupCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -1980,15 +1989,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    $scope.commentSubmit  =  function() {
-      NavigationService.commentSubmit($scope.comment,function(data,status) {
+    $scope.commentSubmit = function() {
+      NavigationService.commentSubmit($scope.comment, function(data, status) {
         $scope.commenthide = true;
       });
     }
 
 
     function successCallback(data, status) {
-        $scope.blog = data;
+      $scope.blog = data;
       var date = new Date(data.dateofposting);
       $scope.blog.date = date;
       $scope.blog.tagsArr = data.tags.split(",");
@@ -2340,7 +2349,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   }];
 
   $scope.msg = "Enter your registered email address and we will send you instructions.";
-  
+
+  $scope.submitForgot = function(email) {
+    NavigationService.forgotpassword(email, function(data) {
+      console.log(data);
+      $scope.forgotDone = true;
+    });
+  };
+
   $scope.openForgot = function() {
     $uibModal.open({
       animation: true,
