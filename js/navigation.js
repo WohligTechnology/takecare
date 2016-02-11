@@ -4,7 +4,7 @@ var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 
 
-if(isproduction)
+if(!isproduction)
 {
   mainurl = "http://192.168.0.118/selfbackend/index.php/";
   imgurl = "http://192.168.0.118/selfbackend/uploads/";
