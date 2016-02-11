@@ -10,7 +10,7 @@
           <input name="forgotemail" ng-model="forgot.email" required type="email" class="form-control input-placeholder" placeholder="Email *">
         </div>
         <div class="" ng-show="forgotpop.forgotemail.$invalid && forgotpop.forgotemail.$touched" role="alert">
-          Please Enyter Your Email Id.
+          Please Enter Your Email Id.
         </div>
         <div class="form-group">
           <button type="" class="btn btn-primary" ng-click="submitForgot(forgot.email)" ng-show="forgotpop.$valid">SUBMIT</button>
@@ -19,6 +19,6 @@
     </div>
   </div>
 </div>
-<div class="" ng-show="forgotDone" style="padding:20%;text-align:center;">
-    Email sent sucessfully.
+<div ng-show="forgotDone" class="email-sent relate">
+    <h3 class="m-clear brand-brown-dark get-center">Email sent sucessfully.</h3>
 </div>

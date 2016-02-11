@@ -1,6 +1,6 @@
 <section class="careers">
   <div class="selfcare-image">
-        <img src="img/banners/careers.jpg" alt="">
+    <img src="img/banners/careers.jpg" alt="">
     <h2 class="text-uppercase get-center white font-semibold">Careers</h2>
   </div>
   <div class="careers-main">
@@ -10,53 +10,59 @@
           <h2 class="text-center">If you wish to join the Selfcare team, please fill in the following details</h2>
         </div>
       </div>
-    <form name="career">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control input-placeholder" placeholder="Name">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <input name="careermail" required ng-model="email" type="email" class="form-control input-placeholder" placeholder="Email *">
-            <div class="" ng-show="career.careermail.$error.required && career.careermail.$touched">
-              Please Enter Your Email Id.
+      <form name="career">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control input-placeholder" placeholder="Name">
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="tel" class="form-control input-placeholder" placeholder="Mobile">
-          </div>
-          <div class="row">
-            <div class="col-md-9 col-sm-10">
-              <div class="form-group">
-                <input type="text" class="form-control input-placeholder" placeholder="Upload your resume">
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-2">
-              <div class="form-group">
-                <button class="btn btn-primary">Browse</button>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input name="careermail" required ng-model="email" type="email" class="form-control input-placeholder" placeholder="Email *">
+              <div class="" ng-show="career.careermail.$error.required && career.careermail.$touched">
+                Please Enter Your Email Id.
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <textarea class="form-control input-placeholder" placeholder="Message"></textarea>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="tel" class="form-control input-placeholder" placeholder="Mobile">
+            </div>
+            <div class="row">
+              <div class="col-md-9 col-sm-10">
+                <div class="form-group">
+                  <input type="text" id="clickfile" class="form-control input-placeholder" placeholder="Upload your resume">
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-2">
+                <div class="form-group relate">
+                  <a class="btn btn-primary pointer">Browse</a>
+                  <input type="file" class="upload" id="clickbtn" class="form-control">
+                </div>
+              </div>
+              <script>
+                document.getElementById("clickbtn").onchange = function() {
+                  document.getElementById("clickfile").value = this.value;
+                };
+              </script>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <textarea class="form-control input-placeholder" placeholder="Message"></textarea>
+            </div>
           </div>
         </div>
+        <div class="text-center">
+          <button class="btn btn-primary send text-uppercase letter-space">send</button>
+        </div>
+      </form>
+      <div class="">
+        <h3 class="block brand-brown-dark">Welcome To The Selfcare Team.</h3>
       </div>
-      <div class="text-center">
-        <button class="btn btn-primary send text-uppercase letter-space">send</button>
-      </div>
-    </form>
-    <div class="">
-      <h3 class="block brand-brown-dark">Welcome To The Selfcare Team.</h3>
     </div>
   </div>
-</div>
 </section>

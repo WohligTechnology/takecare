@@ -2692,6 +2692,15 @@ footer {
     margin: 20px 0;
     padding: 8px 36px;
   }
+  .upload {
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
 }
 // end careers///
 ////selfcare tv///
@@ -2847,6 +2856,7 @@ footer {
     padding: 8px 30px;
   }
 }
+.email-sent { min-height: 200px; }
 .input-placeholder {
   border: 2px solid $brand-primary;
   @include placeholder {
