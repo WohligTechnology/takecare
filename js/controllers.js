@@ -1224,9 +1224,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.alerts.splice(index, 1);
     };
     $scope.removeCart = function(item) {
-      NavigationService.removeFromCart({
-        id: item.id
-      }, function(data) {
+      console.log(item);
+      NavigationService.removeFromCart(item, function(data) {
         Glo.getProductCount();
         if (data.value === true) {
           $scope.alerts.push({

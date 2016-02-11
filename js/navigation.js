@@ -1048,12 +1048,13 @@ var navigationservice = angular.module('navigationservice', [])
       }).success(callback);
     },
     removeFromCart: function(cart, callback) {
-      console.log(cart);
+      // console.log(cart);
       return $http({
         url: adminurl + "removeFromCart",
         method: "POST",
         data: {
-          "cart": cart.id
+          "cart": cart.id,
+          "status" : cart.status
         }
       }).success(callback);
     },
