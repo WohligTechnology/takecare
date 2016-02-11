@@ -3,8 +3,8 @@ var Glo =  {};
 var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 
-var isDevelopment = true;
-if(isDevelopment)
+
+if(isproduction)
 {
   mainurl = "http://192.168.0.118/selfbackend/index.php/";
   imgurl = "http://192.168.0.118/selfbackend/uploads/";
