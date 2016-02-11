@@ -343,9 +343,13 @@
                     </label>
                     <button class="btn btn-primary apply">APPLY</button>
                   </form>
-                  <label>
+                  <div class="checkbox">
+                    <input type="checkbox" ng-model="cod" ng-change="codChange(cod)" id="cod">
+                    <label for="cod" class="cod"> <span></span> COD (Cash on Delivery)</label>
+                  </div>
+                  <!-- <label>
                     <input type="checkbox" ng-model="cod" ng-change="codChange(cod)"> COD (Cash on Delivery)
-                  </label>
+                  </label> -->
                 </div>
                 <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
                   <span class="text-uppercase pull-left">Grand Total</span>

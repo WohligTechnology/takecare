@@ -1551,7 +1551,7 @@ button {
     }
   }
 }
-.plan-cart {  height: 273px; } 
+.plan-cart {  height: 273px; }
 .checkout-main {
   input {
     border-width: 2px;
@@ -1584,6 +1584,10 @@ button {
     border-top: 1px solid $brand-primary;
     margin-bottom: 15px;
     font-size: 16px;
+    .cod {
+      padding-left: 0 ;
+      font-size: 16px;
+    }
   }
   .price-ship {
     margin-right: 70px;
