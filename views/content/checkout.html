@@ -285,7 +285,7 @@
                   </thead>
                   <tbody>
                     <tr class="text-center letter-space font-semibold" ng-repeat="product in allcart | orderBy:'id'">
-                      <td ng-if="product.status==3">
+                      <td ng-if="product.status==3" class="plan-cart">
                         <h4 class="text-capitalize plan-name m-center">{{product.subtype}}</h4>
                         <h5 class="text-capitalize">
                           <span class="block" ng-if="product.months == '1'">{{product.months}} month</span>

@@ -1551,6 +1551,7 @@ button {
     }
   }
 }
+.plan-cart {  height: 273px; } 
 .checkout-main {
   input {
     border-width: 2px;
@@ -1577,9 +1578,6 @@ button {
         vertical-align: middle;
       }
     }
-  }
-  .plan-cart {
-    height: 273px !important;
   }
   .coupon {
     padding: 10px;
