@@ -577,16 +577,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       caption: "pregnancy"
     }];
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
-    $scope.cart =[];
-    NavigationService.showCart(function(data) {
+    $scope.cart = [];
 
+    function changeCartVar(data) {
       console.log("Show Cart");
       console.log(data);
-      $scope.cart = _.pluck(data,"id");
-    });
+      var data2 = _.filter(data, function(n) {
+        return n.status = 3;
+      });
+      $scope.cart = _.pluck(data2, "id");
+    }
+    NavigationService.showCart(changeCartVar);
 
     $scope.planInCart = function(value) {
-      return _.contains($scope.cart,value+"");
+      return _.contains($scope.cart, value + "");
     };
 
     //get all plans
@@ -611,8 +615,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.subpackages = _.chunk($scope.subpackages, 3);
         console.log($scope.subpackages);
       });
-    }
-    else {
+    } else {
       // $scope.selectedPackage.name = "Weight Loss";
       $scope.selectedPackage.description = "At Selfcare, we individually design and monitor weight loss and health care programmes by emphasiszing well-balanced, portion-controlled diets and the importance of exercise. Your health and immunity are as important as your weight loss goals. Along with the diet, blood tests and diet plans, a well-planned exercise schedule is also crafted to address specific health issues. Most importantly, at Selfcare we believe its vital to achieve optimal weight for better long term health and to keep it off thereafter.";
 
@@ -629,7 +632,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         status: "3"
       };
       NavigationService.addToCart(input, function(data) {
-
         Glo.getProductCount();
 
         if (data.value === true) {
@@ -637,9 +639,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             type: 'success',
             msg: 'Added to cart'
           });
-          // $timeout(function() {
-          //   $state.go("cart");
-          // }, 3000);
+          $timeout(function() {
+            $state.reload();
+          }, 1000);
         } else {
           $scope.alerts.push({
             type: 'danger',
