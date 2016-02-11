@@ -728,6 +728,7 @@
       .flex-direction-nav .flex-next { right: -20px; }
     }
   }
+  .upload { width: 85px; }
 }
 @media (max-width: $screen-xs-max) {
   .btn {
@@ -1366,6 +1367,7 @@
 .recipedetail-content { margin: 30px 30px 0; }
 ///account-name
 .account-tab .nav-tabs li { font-size: 20px; }
+.upload { width: 65px; }
 }
 @media (max-width: 480px) {
   // login
