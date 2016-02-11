@@ -577,6 +577,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       caption: "pregnancy"
     }];
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
+    $scope.cart =[];
+    NavigationService.showCart(function(data) {
+
+      console.log("Show Cart");
+      console.log(data);
+      $scope.cart = _.pluck(data,"id");
+    });
+
+    $scope.planInCart = function(value) {
+      return _.contains($scope.cart,value+"");
+    };
 
     //get all plans
     $scope.isweight = true;
@@ -612,7 +623,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.plans = data.plans;
     });
     $scope.cartAdd = function(id) {
-
+      console.log(id);
       var input = {
         product: id,
         status: "3"
@@ -626,9 +637,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             type: 'success',
             msg: 'Added to cart'
           });
-          $timeout(function() {
-            $state.go("cart");
-          }, 3000);
+          // $timeout(function() {
+          //   $state.go("cart");
+          // }, 3000);
         } else {
           $scope.alerts.push({
             type: 'danger',
