@@ -2,6 +2,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
     //Used to name the .html file
+
+
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
@@ -197,6 +199,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log(input);
       NavigationService.addToCart(input, function(data) {
         console.log(data);
+        Glo.getProductCount();
         if (data.value === true) {
           $scope.alerts.push({
             type: 'success',
@@ -594,6 +597,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         console.log(input);
         NavigationService.addToCart(input, function(data) {
+          Glo.getProductCount();
           if (data.value == true) {
             $scope.alerts.push({
               type: 'success',
@@ -704,6 +708,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       };
       console.log(input);
       NavigationService.addToCart(input, function(data) {
+        Glo.getProductCount();
         if (data.value == true) {
           $scope.alerts.push({
             type: 'success',
@@ -1111,22 +1116,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.showCart(function(data) {
         $scope.allcart = data;
         cart = data;
-        if (data == '') {
-          $scope.msg = "Your cart is empty."
+        if (data === '') {
+          $scope.msg = "Your cart is empty.";
         } else {
           $scope.msg = "";
         }
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
-          $scope.totalcart = $scope.totalcart + parseInt(key.price);
+          $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
           key.qty = parseInt(key.qty);
           if (!$scope.validateQuantity(key)) {
             key.exceeds = true;
           } else {
             key.exceeds = false;
           }
-        })
-      })
+        });
+      });
     };
     $scope.proceedToCheckout = function() {
       NavigationService.checkoutCheck(function(data) {
@@ -1139,15 +1144,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             msg: 'Remove out of stock items'
           });
         }
-      })
-    }
+      });
+    };
     $scope.validateQuantity = function(item) {
       if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
         return false;
       } else {
         return true;
       }
-    }
+    };
     $scope.getCart();
     $scope.updateQuantity = function(item) {
       console.log("updating");
@@ -1158,8 +1163,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.addToCart({
           quantity: item.qty,
           product: item.id,
-          status: "2"
+          status: "1"
         }, function(data) {
+          Glo.getProductCount();
           $scope.getCart();
         });
       }
@@ -1187,7 +1193,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.removeFromCart({
         id: item.id
       }, function(data) {
-        if (data.value == true) {
+        Glo.getProductCount();
+        if (data.value === true) {
           $scope.alerts.push({
             type: 'success',
             msg: 'Removed from cart'
@@ -1199,8 +1206,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             msg: 'Not removed from cart'
           });
         }
-      })
-    }
+      });
+    };
   })
   .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("checkout");
@@ -2265,6 +2272,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
+
+  Glo.getProductCount  = function() {
+    NavigationService.totalItemCart(function(data) {
+      $scope.badgeCount = data;
+    });
+  };
+  Glo.getProductCount();
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
   });
@@ -2352,8 +2366,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   $scope.submitForgot = function(email) {
     NavigationService.forgotpassword(email, function(data) {
-      console.log(data);
-      $scope.forgotDone = true;
+
+      if(data.value == "noemail")
+      {
+          console.log("No Such Email Available");
+          $scope.msg = "No such email found.";
+      }
+      else {
+          console.log("Email Sent Sucessfully");
+          $scope.forgotDone = true;
+      }
+
+
     });
   };
 

@@ -1,11 +1,16 @@
-// var mainurl = "http://wohlig.io:81/callApi/takecare/";
-// var mainurl = "http://moviewsapp.com/selfcare/index.php/";
-// var mainurl = "http://localhost/selfback/index.php/";
-var mainurl = "http://192.168.0.118/selfbackend/index.php/";
-// var imgurl = "http://moviewsapp.com/selfcare/uploads/";
-// var imgurl = "http://localhost/selfback/uploads/";
-var imgurl = "http://192.168.0.118/selfbackend/uploads/";
-// var imgurl="";
+var Glo =  {};
+
+var mainurl = "http://moviewsapp.com/selfcare/index.php/";
+var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+
+var isDevelopment = true;
+if(isDevelopment)
+{
+  mainurl = "http://192.168.0.118/selfbackend/index.php/";
+  imgurl = "http://192.168.0.118/selfbackend/uploads/";
+}
+
+
 var cart = [];
 
 var adminurl = mainurl + "json/";
@@ -1096,9 +1101,11 @@ var navigationservice = angular.module('navigationservice', [])
         email: email
       }).success(callback);
     },
+    totalItemCart: function(callback) {
+      $http.get(adminurl + 'totalitemcart').success(callback);
+    },
     forgotpasswordsubmit: function(password, hash, callback) {
-      // $password = $data['password'];
-      //  $hashcode = $data['hashcode'];
+
       $http.post(adminurl + 'forgotpasswordsubmit', {
         password: password,
         hashcode: hash
