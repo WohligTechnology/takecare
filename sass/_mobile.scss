@@ -963,7 +963,10 @@
   .align {
     margin: -12px 2px 0 0;
   }
-  .weight .consult-chart { min-height: 53px; }
+  .weight .consult-chart {
+    min-height: 53px;
+    margin-right: 2px;
+  }
   .weight-round,
   .get-round {
     @include square(70px);
@@ -1634,7 +1637,7 @@
     }
   }
   .consult-chart {
-    margin: 0 0 10px;
+    margin: 0 2px 10px 0;
     .noconsult {
       @include square(25px);
       border: 1px solid $brand-primary;
