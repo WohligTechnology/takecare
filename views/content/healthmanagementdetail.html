@@ -1,10 +1,18 @@
 <div class="health-management">
-  <div class="banner selfcare-image">
+  <div class="banner selfcare-image" ng-if="!isweight">
     <img src="img/banners/healthmanagement.jpg" alt="">
     <div class="get-center">
       <h2 class="text-uppercase letter-space white font-semibold">health management</h2>
     </div>
   </div>
+
+  <div class="banner selfcare-image" ng-if="isweight">
+      <img src="img/banners/weight-management.jpg" alt="">
+    <div class="get-center">
+      <h2 class="text-uppercase letter-space white font-semibold">Weight loss</h2>
+    </div>
+  </div>
+
   <div class="container">
     <div class="alert-postion">
             <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>

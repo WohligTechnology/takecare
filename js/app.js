@@ -542,17 +542,24 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
       templateUrl: "views/template.html",
       controller: 'HealthManagementCtrl'
     })
+
+    .state('weightmanagement', {
+      url: "/weightmanagement",
+      templateUrl: "views/template.html",
+      controller: 'HealthManagementDetailCtrl'
+    })
+
     .state('healthmanagementdetail', {
       url: "/healthmanagementdetail/:id",
       templateUrl: "views/template.html",
       controller: 'HealthManagementDetailCtrl'
     })
 
-  .state('weightmanagement', {
-    url: "/weightmanagement",
-    templateUrl: "views/template.html",
-    controller: 'WeightManagementCtrl'
-  })
+  // .state('weightmanagement', {
+  //   url: "/weightmanagement",
+  //   templateUrl: "views/template.html",
+  //   controller: 'WeightManagementCtrl'
+  // })
 
   .state('imageconsulting', {
     url: "/imageconsulting",

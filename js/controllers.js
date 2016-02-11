@@ -254,6 +254,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.subCategories = data;
       $scope.subCategories = $filter('orderBy')($scope.subCategories, "order");
     });
+
     $scope.filterBy = [];
     $scope.filterIt = function(index) {
       lastpage = 0;
@@ -530,6 +531,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   })
   .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, cfpLoadingBar) {
     //Used to name the .html file
+
+
+
+
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
     $scope.menutitle = NavigationService.makeactive("Health Management Detail");
     TemplateService.title = $scope.menutitle;
@@ -547,23 +552,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     NavigationService.showCart(function(data) {
       cart = data;
-    })
-
-    NavigationService.getSubPackages(function(data) {
-      $scope.subpackages = data;
-      $scope.selectedPackage = _.find($scope.subpackages, {
-          'id': $scope.healthid
-        })
-        // console.log($scope.selectedPackage);
-      console.log(_.findIndex($scope.subpackages, {
-        'id': $scope.healthid
-      }));
-      $scope.subpackages.splice(_.findIndex($scope.subpackages, {
-        'id': $scope.healthid
-      }), 1);
-      $scope.subpackages = _.chunk($scope.subpackages, 3);
-      console.log($scope.subpackages);
     });
+
+
+
+
     $scope.healthdetail = [{
       img: "img/health/ailment.png",
       caption: "ailment control"
@@ -586,41 +579,67 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.healthdetail = _.chunk($scope.healthdetail, 3);
 
     //get all plans
-    NavigationService.getPlansById($stateParams.id, function(data) {
+    $scope.isweight = true;
+    var planid = "";
+    if ($stateParams.id) {
+      planid = $stateParams.id;
+      $scope.isweight = false;
+
+      NavigationService.getSubPackages(function(data) {
+        $scope.subpackages = data;
+        $scope.selectedPackage = _.find($scope.subpackages, {
+          'id': $scope.healthid
+        });
+        // console.log($scope.selectedPackage);
+        console.log(_.findIndex($scope.subpackages, {
+          'id': $scope.healthid
+        }));
+        $scope.subpackages.splice(_.findIndex($scope.subpackages, {
+          'id': $scope.healthid
+        }), 1);
+        $scope.subpackages = _.chunk($scope.subpackages, 3);
+        console.log($scope.subpackages);
+      });
+    }
+    else {
+      // $scope.selectedPackage.name = "Weight Loss";
+      $scope.selectedPackage.description = "At Selfcare, we individually design and monitor weight loss and health care programmes by emphasiszing well-balanced, portion-controlled diets and the importance of exercise. Your health and immunity are as important as your weight loss goals. Along with the diet, blood tests and diet plans, a well-planned exercise schedule is also crafted to address specific health issues. Most importantly, at Selfcare we believe its vital to achieve optimal weight for better long term health and to keep it off thereafter.";
+
+    }
+
+
+    NavigationService.getPlansById(planid, function(data) {
       $scope.plans = data.plans;
     });
     $scope.cartAdd = function(id) {
-      if ($.jStorage.get("user")) {
-        var input = {
-          product: id,
-          status: "3"
-        };
-        console.log(input);
-        NavigationService.addToCart(input, function(data) {
-          Glo.getProductCount();
-          if (data.value == true) {
-            $scope.alerts.push({
-              type: 'success',
-              msg: 'Added to cart'
-            });
-            $timeout(function() {
-              $state.go("cart");
-            }, 3000)
-          } else {
-            $scope.alerts.push({
-              type: 'danger',
-              msg: 'Already in cart'
-            });
 
-          }
-        });
-      } else {
-        $scope.alerts.push({
-          type: 'danger',
-          msg: 'Please Login First'
-        });
-      }
-    }
+      var input = {
+        product: id,
+        status: "3"
+      };
+      NavigationService.addToCart(input, function(data) {
+
+        Glo.getProductCount();
+
+        if (data.value === true) {
+          $scope.alerts.push({
+            type: 'success',
+            msg: 'Added to cart'
+          });
+          $timeout(function() {
+            $state.go("cart");
+          }, 3000);
+        } else {
+          $scope.alerts.push({
+            type: 'danger',
+            msg: 'Already in cart'
+          });
+
+        }
+      });
+
+
+    };
   })
   .controller('WeightManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -2273,7 +2292,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
 
-  Glo.getProductCount  = function() {
+  Glo.getProductCount = function() {
     NavigationService.totalItemCart(function(data) {
       $scope.badgeCount = data;
     });
@@ -2367,14 +2386,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.submitForgot = function(email) {
     NavigationService.forgotpassword(email, function(data) {
 
-      if(data.value == "noemail")
-      {
-          console.log("No Such Email Available");
-          $scope.msg = "No such email found.";
-      }
-      else {
-          console.log("Email Sent Sucessfully");
-          $scope.forgotDone = true;
+      if (data.value == "noemail") {
+        console.log("No Such Email Available");
+        $scope.msg = "No such email found.";
+      } else {
+        console.log("Email Sent Sucessfully");
+        $scope.forgotDone = true;
       }
 
 
