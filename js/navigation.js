@@ -1,12 +1,12 @@
 // var mainurl = "http://wohlig.io:81/callApi/takecare/";
-// var mainurl = "http://moviewsapp.com/selfcare/index.php/";
+var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 // var mainurl = "http://localhost/selfback/index.php/";
 
 var Glo =  {};
-var mainurl = "http://192.168.0.118/selfbackend/index.php/";
-// var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+// var mainurl = "http://192.168.0.118/selfbackend/index.php/";
+var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 // var imgurl = "http://localhost/selfback/uploads/";
-var imgurl = "http://192.168.0.118/selfbackend/uploads/";
+// var imgurl = "http://192.168.0.118/selfbackend/uploads/";
 // var imgurl="";
 var cart = [];
 
