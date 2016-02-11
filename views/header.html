@@ -53,13 +53,14 @@
               <div class="bagde round"><span class="white" ng-bind="badgeCount"></span></div>
               </a>
             </div>
+            <!-- {{user}} -->
             <div class="user-login text-center">
               <div class="signin letter-space" ng-show="!enablelogout">
                 <a class="text-uppercase font-semibold" href="" ng-click="openLogin();">Sign In</a>
               </div>
               <div class="signin letter-space" ng-show="enablelogout">
                 <div class="text-uppercase font-semibold relate pointer show-submenu">
-                  <span class="block name brand-primary ">Jagruti</span>
+                  <span class="block name brand-primary ">{{user.name}}</span>
                   <ul class="account-submenu">
                     <li><a ui-sref="account()" class="text-uppercase font-semibold">My profile</a></li>
                     <li><a class="text-uppercase font-semibold" href="" ng-click="logout()">Logout</a></li>

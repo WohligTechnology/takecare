@@ -1146,6 +1146,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.msg = "Loading...";
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
+
         $scope.allcart = data;
         cart = data;
         if (data === '') {
@@ -1155,6 +1156,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
+          console.log(key.subtotal);
           $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
           key.qty = parseInt(key.qty);
           if (!$scope.validateQuantity(key)) {
@@ -2314,12 +2316,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
   });
-
+  $scope.user = {};
   $scope.alreadyReg = false;
   $scope.enablelogout = false;
   $scope.invalidinput = false;
   if ($.jStorage.get("user")) {
     $scope.enablelogout = true;
+    $scope.user = $.jStorage.get("user");
   }
   $scope.logout = function() {
     NavigationService.logout(function(data) {
@@ -2329,13 +2332,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       window.location.reload();
       // }
     });
-  }
+  };
   $scope.openLogin = function() {
     $uibModal.open({
       animation: true,
       templateUrl: 'views/modal/login.html',
       controller: 'headerctrl'
-    })
+    });
   };
   $scope.doSignup = function(accept, input, formValidate) {
     $scope.acceptValidate = false;
@@ -2345,21 +2348,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     } else {
       if (formValidate.$valid) {
         NavigationService.signup(input, function(data) {
-          if (data.value == false) {
+          if (data.value === false) {
             console.log("herer");
             $scope.alreadyReg = true;
           } else {
             $.jStorage.set("user", data);
             window.location.reload();
           }
-        })
+        });
       }
     }
-  }
+  };
   $scope.doLogin = function(input, formValidate) {
     if (formValidate.$valid) {
       NavigationService.loginuser(input, function(data) {
-        if (data.value == false) {
+        if (data.value === false) {
           $scope.invalidinput = true;
         } else {
           console.log(data);
@@ -2372,10 +2375,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   $scope.facebookLogin = function() {
     window.open(mainurl + 'hauth/login/Facebook?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
-  }
+  };
   $scope.googleLogin = function() {
     window.open(mainurl + 'hauth/login/Google?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
-  }
+  };
 
   $scope.health = [{
     name: "Cholesterol",
@@ -2416,6 +2419,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       animation: true,
       templateUrl: 'views/modal/forgotpopup.html',
       controller: 'headerctrl'
-    })
-  }
+    });
+  };
 });
