@@ -1007,7 +1007,7 @@ button {
 }
 .consult-chart {
   width: 110px;
-  height: auto;
+  height: 76px;
   border-radius: 6px;
   margin-right: 5px;
   background-color: $brand-primary;
@@ -1027,7 +1027,7 @@ button {
     @include transform(translateX(-50%));
   }
   .month {
-    @include margin(35px 0 0);
+    @include margin(30px 0 0);
     display: block;
     font-size: 14px;
   }

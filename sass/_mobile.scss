@@ -73,6 +73,7 @@
     width: 70%;
   }
   .consult-chart {
+    height: 70px;
     .consult {
       margin-top: 47px;
     }
@@ -984,6 +985,7 @@
   }
   .consult-chart {
     width: 70px;
+    height: 53px;
     margin: 0;
     .noconsult {
       @include square(35px);
@@ -1639,6 +1641,7 @@
     }
   }
   .consult-chart {
+    height: 46px;
     margin: 0 2px 10px 0;
     .noconsult {
       @include square(25px);
