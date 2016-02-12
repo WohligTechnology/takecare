@@ -289,6 +289,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Careers");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.$on('$viewContentLoaded', function(event) {
+      $timeout(function() {
+        // your cusotm javascript come
+
+        document.getElementById("clickbtn").onchange = function () {
+          document.getElementById("clickfile").value = this.value;
+        };
+
+      },100);
+    });
+
+
   })
   .controller('PlansCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
