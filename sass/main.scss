@@ -1601,6 +1601,16 @@ button {
     margin: 0 0 0 5px;
   }
 }
+.payment-detail {
+  table > tbody > tr > td:first-child {
+    width: 250px;
+  }
+  table > tbody > tr > td {
+    padding: 5px;
+    color: $brand-brown-dark;
+    font-size: 18px;
+  }
+}
 ///end checkout//
 ///////////////
 //Footer///////
