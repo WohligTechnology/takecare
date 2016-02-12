@@ -7,7 +7,7 @@
   </div>
 
   <div class="banner selfcare-image" ng-if="isweight">
-      <img src="img/banners/weight-management.jpg" alt="">
+    <img src="img/banners/weight-management.jpg" alt="">
     <div class="get-center">
       <h2 class="text-uppercase letter-space white font-semibold">Weight loss</h2>
     </div>
@@ -15,14 +15,15 @@
 
   <div class="container">
     <div class="alert-postion">
-            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
-        </div>
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+    </div>
     <div class="get-up brand-brown-bg relate">
       <h2 class="text-center text-bold brand-brown-dark health-heading text-uppercase">{{selectedPackage.name}}</h2>
       <p class="white health-descp" ng-bind-html="selectedPackage.description"></p>
     </div>
     <div class="relate no-plan" ng-if="plans==''">
-      <h3 class="get-center brand-brown-dark">No Plan For {{selectedPackage.name}}</h3>
+      <h3 class="get-center brand-brown-dark">No Plan For
+        {{selectedPackage.name}}</h3>
     </div>
     <div class="health-chart">
       <div class="row">
@@ -30,10 +31,20 @@
           <div class="health-tab healthchart-list" ng-repeat="plan in plans">
             <div class="inline-block v-top space">
               <div class="consult-chart relate inline-block text-center">
-                <span class="noconsult brand-brown-dark font-semibold">{{plan.months}}</span>
-                <span class="text-uppercase white month font-gotham-bold" ng-show="plan.months==1">Month</span>
-                <span class="text-uppercase white month font-gotham-bold" ng-hide="plan.months==1">Months</span>
-                <span class="text-uppercase white duration font-gotham-bold">Duration</span>
+
+                <span ng-if="!isBottom">
+                  <span class="noconsult brand-brown-dark font-semibold">{{plan.months}}</span>
+                  <span class="text-uppercase white month font-gotham-bold" ng-show="plan.months==1">Month</span>
+                  <span class="text-uppercase white month font-gotham-bold" ng-hide="plan.months==1">Months</span>
+                  <span class="text-uppercase white duration font-gotham-bold">Duration</span>
+                </span>
+
+                <span ng-if="isBottom">
+                  <span class="noconsult brand-brown-dark font-semibold">{{plan.consults}}</span>
+                  <span class="text-uppercase white month font-gotham-bold">consults</span>
+                </span>
+
+
               </div>
             </div>
             <div class="tab-chart">
@@ -41,8 +52,14 @@
                 <uib-tab>
                   <uib-tab-heading class="duration">
                     <div class="chart-head">
-                      <p class="white text-bold text-uppercase">consults</p>
-                      <p class="price text-capitalize">{{plan.consults}}</p>
+                      <span ng-if="!isBottom">
+                        <p class="white text-bold text-uppercase">consults</p>
+                        <p class="price text-capitalize">{{plan.consults}}</p>
+                      </span>
+                      <span ng-if="isBottom">
+                        <p class="white text-bold text-uppercase">Month<span ng-hide="plan.months==1">s</span></p>
+                        <p class="price text-capitalize">{{plan.months}}</p>
+                      </span>
                     </div>
                   </uib-tab-heading>
                 </uib-tab>
@@ -53,22 +70,27 @@
                       <p class="white text-bold text-uppercase" ng-if="$index==1">gold</p>
                       <p class="white text-bold text-uppercase" ng-if="$index==2">platinum</p>
                       <p class="white text-bold text-uppercase" ng-if="$index==3">diamond</p>
-                      <p class="price">Rs {{subplan.price_in_INR}}<sup>*</sup></p>
+                      <p class="price">Rs
+                        {{subplan.price_in_INR}}
+                        <sup>*</sup>
+                      </p>
                     </div>
                   </uib-tab-heading>
                   <div class="chart-info">
                     <div class="tab-body">
                       <h5 class="text-uppercase font-semibold">{{subplan.title}}</h5>
-                      <ul class="chart-list font-semibold" ng-bind-html="subplan.description">
-                      </ul>
+                      <ul class="chart-list font-semibold" ng-bind-html="subplan.description"></ul>
                       <div class="pricing text-center">
-                        <span class="brand-primary font-gotham-bold">$ {{subplan.price_in_dollars}}</span>
-                        <span class="brand-primary font-gotham-bold">Rs. {{subplan.price_in_INR}}</span>
+                        <span class="brand-primary font-gotham-bold">$
+                          {{subplan.price_in_dollars}}</span>
+                        <span class="brand-primary font-gotham-bold">Rs.
+                          {{subplan.price_in_INR}}</span>
                       </div>
                     </div>
                     <div class="tab-foot text-right">
                       <div class="plan">
-                        <span class="note font-baubodi letter-space"><sup>*</sup>inclusive of all taxes</span>
+                        <span class="note font-baubodi letter-space">
+                          <sup>*</sup>inclusive of all taxes</span>
                         <div style="display:none">
                           {{subplan.plan | showplan}}
                         </div>
@@ -83,22 +105,24 @@
               </uib-tabset>
             </div>
           </div>
-          </div>
         </div>
       </div>
-      <div class="slider-round">
-        <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
-          <uib-slide ng-repeat="row in subpackages">
-            <div class="healthmanagement-slider">
-              <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="package in row">
-                  <a ui-sref="healthmanagementdetail({id:package.id})"><figure>
+    </div>
+    <div class="slider-round">
+      <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+        <uib-slide ng-repeat="row in subpackages">
+          <div class="healthmanagement-slider">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="package in row">
+                <a ui-sref="healthmanagementdetail({id:package.id})">
+                  <figure>
                     <div class="slide-imghold round m-center">
                       <img ng-src="{{package.image | serverimage}}" alt="" class="img-responsive">
                     </div>
                     <figcaption class="text-uppercase brand-brown-dark text-bold letter-space">{{package.name}}</figcaption>
-                    </figure></a>
-                </div>
+                  </figure>
+                </a>
+              </div>
             </div>
           </uib-slide>
         </uib-carousel>

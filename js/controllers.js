@@ -546,6 +546,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //Used to name the .html file
 
 
+    $scope.isBottom = false;
+
 
 
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
@@ -610,6 +612,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.isweight = true;
     var planid = "";
     if ($stateParams.id) {
+
+      var bottomID = [6,7,8,9,10];
+
+      if(_.contains(bottomID,parseInt($stateParams.id)))
+      {
+        $scope.isBottom = true;
+      }
+
       planid = $stateParams.id;
       $scope.isweight = false;
 
