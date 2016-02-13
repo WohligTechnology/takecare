@@ -6,8 +6,8 @@ var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 
 if(!isproduction)
 {
-  mainurl = "http://localhost/selfback/index.php/";
-  imgurl = "http://moviewsapp.com/selfcare/uploads/";
+  mainurl = "http://192.168.0.118/selfback/index.php/";
+  imgurl = "http://192.168.0.118/selfback/uploads/";
 }
 
 
