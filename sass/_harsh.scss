@@ -310,6 +310,13 @@
 .carousel-indicators {
   display: none;
 }
+////product detail
+.product-detail-banner {
+  height: 377px;
+  overflow: hidden;
+  img{ @include size(100% , auto); }
+}
+//// end product detail
 // //////////////////////
 // FANCYBOX
 // //////////////////////
