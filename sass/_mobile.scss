@@ -986,7 +986,7 @@
   .consult-chart {
     width: 70px;
     height: 53px;
-    margin: 0;
+    margin: 0 2px 0 0;
     .noconsult {
       @include square(35px);
       border: 2px solid $brand-primary;
