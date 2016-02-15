@@ -2900,9 +2900,15 @@ footer {
   border-radius: 100%;
   position: fixed;
   right: 10px;
-  bottom: 350px;
-  line-height: 50px;
+  bottom: 10px;
+  line-height: 41px;
+    border: 2px solid #ffd8ce;
+  span {
+    font-size: 28px;
+  }
 }
+
+
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";

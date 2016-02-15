@@ -419,7 +419,7 @@ firstapp.directive('slideMenu', function($document) {
     link: function(scope, element, attr) {
       var $element = $(element);
       $element.click(function() {
-
+        console.log("DING CLICK");
         isSlide = !isSlide;
 
         if (isSlide) {
@@ -427,11 +427,16 @@ firstapp.directive('slideMenu', function($document) {
           $(".slide-menu").addClass("slide-in");
           $(".that-slides").addClass("slide-body");
 
-          setTimeout(function(){
+          setTimeout(function() {
+            console.log("PING CLICK");
+
             $(".that-slides.slide-body").click(function() {
-              $element.trigger("click");
+              isSlide = !isSlide;
+              $(".hamburger").removeClass("green-bar");
+              $(".slide-menu").removeClass("slide-in");
+              $(".that-slides").removeClass("slide-body");
             });
-          },100);
+          }, 100);
 
 
 
@@ -483,6 +488,7 @@ var formvalidation = function(allvalidation) {
   }
   return isvalid2;
 };
+
 
 
 firstapp.directive('fancybox', function($compile, $parse) {

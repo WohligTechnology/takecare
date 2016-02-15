@@ -4,11 +4,11 @@ var mainurl = "http://moviewsapp.com/selfcare/index.php/";
 var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 
 
-if(!isproduction)
-{
-  mainurl = "http://192.168.0.123/selfbackend/index.php/";
-  imgurl = "http://192.168.0.123/selfbackend/uploads/";
-}
+// if(!isproduction)
+// {
+//   mainurl = "http://192.168.0.123/selfbackend/index.php/";
+//   imgurl = "http://192.168.0.123/selfbackend/uploads/";
+// }
 
 
 var cart = [];

@@ -311,7 +311,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         };
-        $("form[name=career]").attr("action",adminurl+"careersSubmit");
+        $("form[name=career]").attr("action", adminurl + "careersSubmit");
       }, 100);
     });
 
@@ -2362,7 +2362,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subsresponse = false;
     if (formValidate.$valid) {
       NavigationService.subscribe(input, function(data) {
-        if (data.value == true) {
+        if (data.value === true) {
           $scope.subsresponse = true;
           $scope.msg = "Thank you for subscribing.";
         } else {
@@ -2371,11 +2371,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
       });
     }
-  }
+  };
 })
 
 .controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
+
+  $scope.goToTop = function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1000);
+  };
+
 
   Glo.getProductCount = function() {
     NavigationService.totalItemCart(function(data) {
