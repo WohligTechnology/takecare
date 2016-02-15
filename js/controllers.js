@@ -49,7 +49,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
       weight: "25",
-      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat",
+      descp: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat.",
       image: "http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg",
       link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
     }, {
@@ -141,7 +141,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       title: "Preventive Health",
       text: "clinical food plans",
-      desc: "Our health plan studies you, understands your genetic predisposition to various ailments—which could be anything from diabetes, heart ailment to kidney disorders and cancer—and helps you to prevent or reverse the onset."
+      desc: "Our health plan studies you, understands your genetic predisposition to various ailments which could be anything from diabetes, heart ailment to kidney disorders and cancer, and helps you to prevent or reverse the onset."
     }, {
       title: "Technology",
       text: "contemporary plans",
@@ -157,7 +157,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       title: "Travel Tips",
       text: "diet on the go",
-      desc: "We provide guidance and hints to identify what to eat while traveling . These travel and holiday survival tips will ensure you have an enjoyable yet healthy holiday."
+      desc: "We provide guidance and hints to identify what to eat while traveling. These travel and holiday survival tips will ensure you have an enjoyable yet healthy holiday."
     }, {
       title: "Children",
       text: "super kids",
