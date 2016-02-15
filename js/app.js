@@ -6,17 +6,16 @@ var firstapp = angular.module('firstapp', [
   'navigationservice'
 ]);
 var countries = [{
-        "value": "Please Select"
-    },{
-        "value": "India"
-    }
-];
+  "value": "Please Select"
+}, {
+  "value": "India"
+}];
 
 
 var states = [{
 
 }];
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLoadingBarProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
 
   // for http request with session
   $httpProvider.defaults.withCredentials = true;
@@ -51,22 +50,22 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
   })
 
   .state('healthmanagement', {
-      url: "/healthmanagement",
-      templateUrl: "views/template.html",
-      controller: 'HealthManagementCtrl'
-    })
+    url: "/healthmanagement",
+    templateUrl: "views/template.html",
+    controller: 'HealthManagementCtrl'
+  })
 
-    .state('weightmanagement', {
-      url: "/weightmanagement",
-      templateUrl: "views/template.html",
-      controller: 'HealthManagementDetailCtrl'
-    })
+  .state('weightmanagement', {
+    url: "/weightmanagement",
+    templateUrl: "views/template.html",
+    controller: 'HealthManagementDetailCtrl'
+  })
 
-    .state('healthmanagementdetail', {
-      url: "/healthmanagementdetail/:id",
-      templateUrl: "views/template.html",
-      controller: 'HealthManagementDetailCtrl'
-    })
+  .state('healthmanagementdetail', {
+    url: "/healthmanagementdetail/:id",
+    templateUrl: "views/template.html",
+    controller: 'HealthManagementDetailCtrl'
+  })
 
   // .state('weightmanagement', {
   //   url: "/weightmanagement",
@@ -147,27 +146,27 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
   })
 
   .state('blogTag', {
-    url: "/tag/:tagname",
-    templateUrl: "views/template.html",
-    controller: 'BlogCtrl'
-  })
-  .state('searchBlog', {
-    url: "/searchBlog/:search",
-    templateUrl: "views/template.html",
-    controller: 'BlogCtrl'
-  })
+      url: "/tag/:tagname",
+      templateUrl: "views/template.html",
+      controller: 'BlogCtrl'
+    })
+    .state('searchBlog', {
+      url: "/searchBlog/:search",
+      templateUrl: "views/template.html",
+      controller: 'BlogCtrl'
+    })
 
 
   .state('blogdetail', {
-    url: "/blogdetail/:id",
-    templateUrl: "views/template.html",
-    controller: 'BlogDetailCtrl'
-  })
-  .state('recipes', {
-    url: "/recipes",
-    templateUrl: "views/template.html",
-    controller: 'RecipesCtrl'
-  })
+      url: "/blogdetail/:id",
+      templateUrl: "views/template.html",
+      controller: 'BlogDetailCtrl'
+    })
+    .state('recipes', {
+      url: "/recipes",
+      templateUrl: "views/template.html",
+      controller: 'RecipesCtrl'
+    })
 
   .state('recipedetail', {
     url: "/recipedetail/:id",
@@ -192,52 +191,52 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
       templateUrl: "views/template.html",
       controller: 'ContactUsCtrl'
     })
-  .state('pregnancy', {
+    .state('pregnancy', {
       url: "/pregnancy",
       templateUrl: "views/template.html",
       controller: 'PregnancyCtrl'
     })
-  .state('weightlossforkids', {
+    .state('weightlossforkids', {
       url: "/weightlossforkids",
       templateUrl: "views/template.html",
       controller: 'WeightLossForKidsCtrl'
     })
-  .state('weightlosswithhealthgain', {
+    .state('weightlosswithhealthgain', {
       url: "/weightlosswithhealthgain",
       templateUrl: "views/template.html",
       controller: 'WeightLossWithHealthGainCtrl'
     })
-  .state('postpregnancy', {
+    .state('postpregnancy', {
       url: "/postpregnancy",
       templateUrl: "views/template.html",
       controller: 'PostPregnancyCtrl'
     })
-  .state('weightlosswithpcos', {
+    .state('weightlosswithpcos', {
       url: "/weightlosswithpcos",
       templateUrl: "views/template.html",
       controller: 'WeightLossWithPcosCtrl'
     })
-  .state('healthyaging', {
+    .state('healthyaging', {
       url: "/healthyaging",
       templateUrl: "views/template.html",
       controller: 'HealthyAgingCtrl'
     })
-  .state('weightgain', {
+    .state('weightgain', {
       url: "/weightgain",
       templateUrl: "views/template.html",
       controller: 'WeightGainCtrl'
     })
-  .state('ailmentcontrol', {
+    .state('ailmentcontrol', {
       url: "/ailmentcontrol",
       templateUrl: "views/template.html",
       controller: 'AilmentControlCtrl'
     })
-  .state('cancersupport', {
+    .state('cancersupport', {
       url: "/cancersupport",
       templateUrl: "views/template.html",
       controller: 'CancerSupportCtrl'
     })
-  .state('marathon', {
+    .state('marathon', {
       url: "/marathon",
       templateUrl: "views/template.html",
       controller: 'MarathonCtrl'
@@ -248,69 +247,69 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
       controller: 'LoginCtrl'
     })
     .state('termsandcondition', {
-        url: "/termsandcondition",
-        templateUrl: "views/template.html",
-        controller: 'TermsAndConditionCtrl'
+      url: "/termsandcondition",
+      templateUrl: "views/template.html",
+      controller: 'TermsAndConditionCtrl'
     })
     .state('privacypolicy', {
-        url: "/privacypolicy",
-        templateUrl: "views/template.html",
-        controller: 'PrivacyPolicyCtrl'
+      url: "/privacypolicy",
+      templateUrl: "views/template.html",
+      controller: 'PrivacyPolicyCtrl'
     })
     .state('selfcaretv', {
-        url: "/selfcaretv",
-        templateUrl: "views/template.html",
-        controller: 'SelfcaretvCtrl'
+      url: "/selfcaretv",
+      templateUrl: "views/template.html",
+      controller: 'SelfcaretvCtrl'
     })
     .state('careers', {
-        url: "/careers",
-        templateUrl: "views/template.html",
-        controller: 'CareersCtrl'
+      url: "/careers",
+      templateUrl: "views/template.html",
+      controller: 'CareersCtrl'
     })
     .state('careersSubmit', {
-        url: "/careers/:id",
-        templateUrl: "views/template.html",
-        controller: 'CareersCtrl'
+      url: "/careers/:id",
+      templateUrl: "views/template.html",
+      controller: 'CareersCtrl'
     })
     .state('plans', {
-        url: "/plans",
-        templateUrl: "views/template.html",
-        controller: 'PlansCtrl'
+      url: "/plans",
+      templateUrl: "views/template.html",
+      controller: 'PlansCtrl'
     })
     .state('orderlist', {
-        url: "/orderlist",
-        templateUrl: "views/template.html",
-        controller: 'OrderlistCtrl'
+      url: "/orderlist",
+      templateUrl: "views/template.html",
+      controller: 'OrderlistCtrl'
     })
     .state('account', {
-        url: "/account",
-        templateUrl: "views/template.html",
-        controller: 'AccountCtrl'
+      url: "/account",
+      templateUrl: "views/template.html",
+      controller: 'AccountCtrl'
     })
     .state('error', {
-       url: "/error",
-       templateUrl: "views/template.html",
-       controller: 'ErrorCtrl'
-   })
-   .state('wentwrong', {
-        url: "/wentwrong/:orderid",
-        templateUrl: "views/template.html",
-        controller: 'WentwrongCtrl'
+      url: "/error",
+      templateUrl: "views/template.html",
+      controller: 'ErrorCtrl'
+    })
+    .state('wentwrong', {
+      url: "/wentwrong/:orderid",
+      templateUrl: "views/template.html",
+      controller: 'WentwrongCtrl'
     })
     .state('thankyou', {
-        url: "/thankyou/:orderid",
-        templateUrl: "views/template.html",
-        controller: 'ThankyouCtrl'
+      url: "/thankyou/:orderid",
+      templateUrl: "views/template.html",
+      controller: 'ThankyouCtrl'
     })
     .state('forgotpassword', {
-        url: "/forgotpassword/:hash",
-        templateUrl: "views/template.html",
-        controller: 'ForgotpasswordCtrl'
+      url: "/forgotpassword/:hash",
+      templateUrl: "views/template.html",
+      controller: 'ForgotpasswordCtrl'
     })
     .state('forgotpopup', {
-        url: "/forgotpopup",
-        templateUrl: "views/template.html",
-        controller: 'ForgotpopupCtrl'
+      url: "/forgotpopup",
+      templateUrl: "views/template.html",
+      controller: 'ForgotpopupCtrl'
     })
 
   $urlRouterProvider.otherwise("/home");
@@ -379,24 +378,24 @@ firstapp.filter('nospace', function() {
   };
 });
 
-firstapp.filter('cut', function () {
-    return function (value, wordwise, max, tail) {
-        if (!value) return '';
+firstapp.filter('cut', function() {
+  return function(value, wordwise, max, tail) {
+    if (!value) return '';
 
-        max = parseInt(max, 10);
-        if (!max) return value;
-        if (value.length <= max) return value;
+    max = parseInt(max, 10);
+    if (!max) return value;
+    if (value.length <= max) return value;
 
-        value = value.substr(0, max);
-        if (wordwise) {
-            var lastspace = value.lastIndexOf(' ');
-            if (lastspace != -1) {
-                value = value.substr(0, lastspace);
-            }
-        }
+    value = value.substr(0, max);
+    if (wordwise) {
+      var lastspace = value.lastIndexOf(' ');
+      if (lastspace != -1) {
+        value = value.substr(0, lastspace);
+      }
+    }
 
-        return value + (tail || ' …');
-    };
+    return value + (tail || ' …');
+  };
 });
 
 firstapp.filter('serverimage', function() {
@@ -408,38 +407,69 @@ firstapp.filter('serverimage', function() {
     }
   };
 });
+
+
+var isSlide = false;
+var SlideFunc = {};
+
 firstapp.directive('slideMenu', function($document) {
   return {
     restrict: 'EA',
     replace: false,
     link: function(scope, element, attr) {
       var $element = $(element);
-      $(element).click(function() {
-        $(".hamburger").toggleClass("green-bar");
-        $(".slide-menu").toggleClass("slide-in");
-        $(".that-slides").toggleClass("slide-body");
+      $element.click(function() {
+
+        isSlide = !isSlide;
+
+        if (isSlide) {
+          $(".hamburger").addClass("green-bar");
+          $(".slide-menu").addClass("slide-in");
+          $(".that-slides").addClass("slide-body");
+
+          setTimeout(function(){
+            $(".that-slides.slide-body").click(function() {
+              $element.trigger("click");
+            });
+          },100);
+
+
+
+        } else {
+          $(".hamburger").removeClass("green-bar");
+          $(".slide-menu").removeClass("slide-in");
+          $(".that-slides").removeClass("slide-body");
+        }
+
+
       });
 
+
+
+      // $(".that-slides").click(function() {
+      //   if($(".hamburger").hasClass("green-bar"))
+      //   $(".hamburger").removeClass("green-bar");
+      //   $(".slide-menu").removeClass("slide-in");
+      //   $(".that-slides").removeClass("slide-body");
+      // });
     }
   };
 });
 firstapp.filter('showplan', function(NavigationService) {
-    return function(input) {
-      console.log(input);
-      console.log(cart);
-        if (input) {
-            if (cart !== '') {
-                var ispresent = _.findIndex(cart, 'id', input);
-                if (ispresent != -1) {
-                    return false;
-                } else {
-                    return true;
-                }
-            } else {
-                return true;
-            }
+  return function(input) {
+    if (input) {
+      if (cart !== '') {
+        var ispresent = _.findIndex(cart, 'id', input);
+        if (ispresent != -1) {
+          return false;
+        } else {
+          return true;
         }
-    };
+      } else {
+        return true;
+      }
+    }
+  };
 });
 
 var formvalidation = function(allvalidation) {
