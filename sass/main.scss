@@ -2885,6 +2885,10 @@ footer {
     font-size: 16px;
   }
 }
+
+*[href] {
+    cursor: pointer;
+}
 // end forgot and popup
 @import "harsh";
 @import "mobile";
