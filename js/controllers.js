@@ -39,7 +39,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     NavigationService.getBlog("", 1, "", function(data) {
-      console.log(data);
       $scope.blogs = data.queryresult.slice(0,3);
     });
 
