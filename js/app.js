@@ -418,45 +418,27 @@ firstapp.directive('slideMenu', function($document) {
     replace: false,
     link: function(scope, element, attr) {
       var $element = $(element);
+      function OnBodyClick() {
+        console.log("INSIDE ON BODY");
+            $element.trigger("click");
+      }
       $element.click(function() {
         console.log("DING CLICK");
         isSlide = !isSlide;
-
         if (isSlide) {
           $(".hamburger").addClass("green-bar");
           $(".slide-menu").addClass("slide-in");
           $(".that-slides").addClass("slide-body");
-
           setTimeout(function() {
-            console.log("PING CLICK");
-
-            $(".that-slides.slide-body").click(function() {
-              isSlide = !isSlide;
-              $(".hamburger").removeClass("green-bar");
-              $(".slide-menu").removeClass("slide-in");
-              $(".that-slides").removeClass("slide-body");
-            });
-          }, 100);
-
-
-
+            $(".that-slides.slide-body").bind("click",OnBodyClick);
+          },100);
         } else {
+          $( ".that-slides.slide-body").unbind( "click",OnBodyClick );
           $(".hamburger").removeClass("green-bar");
           $(".slide-menu").removeClass("slide-in");
           $(".that-slides").removeClass("slide-body");
         }
-
-
       });
-
-
-
-      // $(".that-slides").click(function() {
-      //   if($(".hamburger").hasClass("green-bar"))
-      //   $(".hamburger").removeClass("green-bar");
-      //   $(".slide-menu").removeClass("slide-in");
-      //   $(".that-slides").removeClass("slide-body");
-      // });
     }
   };
 });
