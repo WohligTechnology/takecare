@@ -36,6 +36,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getSlide(function(data) {
       $scope.homeslider = data;
     });
+
+
+    NavigationService.getBlog("", 1, "", function(data) {
+      $scope.blogs = data.queryresult;
+    });
+
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
     };
@@ -1551,34 +1557,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getBlog($scope.blog.search, $scope.pageno, $scope.tag, function(data) {
           _.each(data.queryresult, function(n) {
             $scope.blogpage.push(n);
-          })
+          });
           lastpage = data.lastpage;
         });
       }
 
-    }
+    };
     $scope.reloadBlog();
     $scope.loadBlog = function() {
       $scope.reloadBlog();
-    }
+    };
     NavigationService.getPopularBlog(function(data) {
       $scope.popularpost = data;
-    })
+    });
     NavigationService.getTag(function(data) {
       $scope.tagger = data;
-      if (data == '') {
+      if (data === '') {
         $scope.tagmsg = "No tags";
       } else {
         $scope.tagmsg = "";
       }
-    })
+    });
     $scope.searchBlog = function() {
       $scope.pageno = 0;
       $scope.blogpage = [];
       $scope.reloadBlog();
-    }
+    };
     $scope.tagClicked = function(tag) {
-      if (tag == "") {
+      if (tag === "") {
         $scope.tag = "";
       } else {
         $scope.tag = tag.name;
@@ -1586,7 +1592,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.pageno = 0;
       $scope.blogpage = [];
       $scope.reloadBlog();
-    }
+    };
 
   })
   .controller('PregnancyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
