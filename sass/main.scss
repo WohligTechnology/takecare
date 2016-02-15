@@ -7,39 +7,39 @@
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @font-face {
   font-family: 'Baubodi';
-  src: url(../fonts/baubodi.ttf);
+  src: url("../fonts/baubodi.ttf");
 }
 @font-face {
   font-family: 'Vista Slab';
-  src: url(../fonts/vista_slab.otf);
+  src: url("../fonts/vista_slab.otf");
 }
 @font-face {
   font-family: 'Whitney Book';
-  src: url(../fonts/whitney_book.otf);
+  src: url("../fonts/whitney_book.otf");
 }
 @font-face {
   font-family: 'Whitney Light';
-  src: url(../fonts/whitney_light.otf);
+  src: url("../fonts/whitney_light.otf");
 }
 @font-face {
   font-family: 'Whitney Medium';
-  src: url(../fonts/whitney_medium.otf);
+  src: url("../fonts/whitney_medium.otf");
 }
 @font-face {
   font-family: 'Whitney Semibold';
-  src: url(../fonts/whitney_semibold.otf);
+  src: url("../fonts/whitney_semibold.otf");
 }
 @font-face {
   font-family: 'Gotham Rounded Book';
-  src: url(../fonts/gotham-rounded.otf);
+  src: url("../fonts/gotham-rounded.otf");
 }
 @font-face {
   font-family: 'Gotham Rounded Bold';
-  src: url(../fonts/gotham_bold.ttf);
+  src: url("../fonts/gotham_bold.ttf");
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff) format('woff'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf) format('truetype'), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg) format('svg');
+  src: url('../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot'), url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format('woff'), url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format('truetype'), url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg") format('svg');
 }
 /* Bootstrap Variables Goes Here */
 //$brand-primary: #0d9dff !default;
@@ -697,7 +697,7 @@ button {
     border: 6px solid #fff;
     @include square(175px);
     overflow: hidden;
-    background: url(../img/suman.jpg) no-repeat -110px -10px;
+    background: url("../img/suman.jpg") no-repeat -110px -10px;
   }
   .more-abt-suman {
     font-size: 20px;
@@ -851,14 +851,14 @@ button {
         line-height: 20px;
         &:after {
           content: "";
-          background: url(../img/right.png) no-repeat;
+          background: url("../img/right.png") no-repeat;
           width: 59px;
           height: 49px;
           position: absolute;
         }
         &:before {
           content: "";
-          background: url(../img/left.png) no-repeat;
+          background: url("../img/left.png") no-repeat;
           width: 59px;
           height: 49px;
           position: absolute;
@@ -1551,7 +1551,9 @@ button {
     }
   }
 }
-.plan-cart {  height: 273px; }
+.plan-cart {
+  height: 273px;
+}
 .checkout-main {
   input {
     border-width: 2px;
@@ -1585,7 +1587,7 @@ button {
     margin-bottom: 15px;
     font-size: 16px;
     .cod {
-      padding-left: 0 ;
+      padding-left: 0;
       font-size: 16px;
     }
   }
@@ -1610,7 +1612,9 @@ button {
     color: $brand-brown-dark;
     font-size: 18px;
   }
-  .place-order-btn { margin: 40px 0 20px; }
+  .place-order-btn {
+    margin: 40px 0 20px;
+  }
 }
 ///end checkout//
 ///////////////
@@ -1636,7 +1640,9 @@ footer {
     }
   }
   .menu2 {
-    h5 { margin-bottom: 5px; }
+    h5 {
+      margin-bottom: 5px;
+    }
     ul {
       a {
         @extend.brand-brown-dark;
@@ -1708,11 +1714,11 @@ footer {
     min-height: 150px;
   }
   .package {
-    background: url(../img/foot-healthpack.jpg) no-repeat;
+    background: url("../img/foot-healthpack.jpg") no-repeat;
     background-size: cover;
   }
   .shop {
-    background: url(../img/health-shop.jpg) no-repeat;
+    background: url("../img/health-shop.jpg") no-repeat;
     background-size: cover;
   }
   .foot-btn {
@@ -2050,22 +2056,22 @@ footer {
   }
 }
 .nutri-one {
-  background-image: url(../img/nutri/genetic.png);
+  background-image: url("../img/nutri/genetic.png");
 }
 .nutri-two {
-  background-image: url(../img/nutri/blue-dna.jpg);
+  background-image: url("../img/nutri/blue-dna.jpg");
 }
 .nutri-three {
-  background-image: url(../img/nutri/nutri-blue.png);
+  background-image: url("../img/nutri/nutri-blue.png");
 }
 .nutri-four {
-  background-image: url(../img/nutri/benefits.png);
+  background-image: url("../img/nutri/benefits.png");
 }
 .nutri-five {
-  background-image: url(../img/nutri/doctor.jpg);
+  background-image: url("../img/nutri/doctor.jpg");
 }
 .nutri-six {
-  background-image: url(../img/nutri/mobile.jpg);
+  background-image: url("../img/nutri/mobile.jpg");
 }
 .doctor,
 .contact {
@@ -2075,7 +2081,7 @@ footer {
   }
 }
 .genes p {
-   margin: 30px 0 0 25px;
+  margin: 30px 0 0 25px;
   font-size: 25px;
   text-align: center;
   &:before {
@@ -2095,7 +2101,7 @@ footer {
     font-size: 170px;
     position: absolute;
     top: 100px;
-    right: 0px;
+    right: 0;
     opacity: 0.5;
   }
 }
@@ -2133,14 +2139,14 @@ footer {
     }
     .flex-direction-nav .flex-prev {
       left: 50px;
-      background: url(../img/nutri/arrow-left.png) no-repeat;
+      background: url("../img/nutri/arrow-left.png") no-repeat;
       &:before {
         display: none;
       }
     }
     .flex-direction-nav .flex-next {
       right: 50px;
-      background: url(../img/nutri/arrow-right.png) no-repeat;
+      background: url("../img/nutri/arrow-right.png") no-repeat;
       &:before {
         display: none;
       }
@@ -2149,37 +2155,37 @@ footer {
 }
 .sculp-one {
   padding: 50px 80px;
-  background-image: url(../img/sculpting/belly.png);
+  background-image: url("../img/sculpting/belly.png");
 }
 .sculp-two {
   padding: 65px 80px;
-  background-image: url(../img/sculpting/fat.png);
+  background-image: url("../img/sculpting/fat.png");
 }
 .sculp-three {
-  background-image: url(../img/sculpting/video.jpg);
+  background-image: url("../img/sculpting/video.jpg");
 }
 .sculp-four {
   padding: 65px 80px;
-  background-image: url(../img/sculpting/works.png);
+  background-image: url("../img/sculpting/works.png");
 }
 .sculp-five {
   padding: 35px 80px;
-  background-image: url(../img/sculpting/improvement.png);
+  background-image: url("../img/sculpting/improvement.png");
 }
 .sculp-six {
   padding: 60px 80px 10px;
-  background-image: url(../img/sculpting/applicators.png);
+  background-image: url("../img/sculpting/applicators.png");
   .not-avail {
     margin: 40px 0 0;
   }
 }
 .sculp-seven {
   padding: 60px 80px;
-  background-image: url(../img/sculpting/ready.png);
+  background-image: url("../img/sculpting/ready.png");
 }
 .sculp-eight {
   padding: 40px 80px;
-  background-image: url(../img/sculpting/applicators.png);
+  background-image: url("../img/sculpting/applicators.png");
 }
 .faq-sculp {
   .faqslide {
@@ -2377,15 +2383,17 @@ footer {
   width: 1060px;
   margin: 50px auto 0;
   .flexslider {
-    .flex-direction-nav a { height: auto; }
-  .flex-direction-nav .flex-prev{
+    .flex-direction-nav a {
+      height: auto;
+    }
+    .flex-direction-nav .flex-prev {
       &:before {
         content: "\f104";
         font: normal normal normal 14px/1 FontAwesome;
         font-size: 70px;
       }
     }
-  .flex-direction-nav .flex-next{
+    .flex-direction-nav .flex-next {
       &:before {
         content: "\f105";
         font: normal normal normal 14px/1 FontAwesome;
@@ -2397,7 +2405,9 @@ footer {
 .recipedetail-content {
   margin: 30px 70px 0;
   font-size: 16px;
-  p { margin: 15px 0; }
+  p {
+    margin: 15px 0;
+  }
 }
 .recipedetail-imgholder {
   width: 300px;
@@ -2597,14 +2607,14 @@ footer {
     background-size: 100% auto;
   }
   .tina {
-    background-image: url(../img/consulting/tina.jpg);
+    background-image: url("../img/consulting/tina.jpg");
     background-size: cover;
   }
   .left-pattern {
-    background-image: url(../img/consulting/left-pattern.jpg);
+    background-image: url("../img/consulting/left-pattern.jpg");
   }
   .right-pattern {
-    background-image: url(../img/consulting/right-pattern.jpg);
+    background-image: url("../img/consulting/right-pattern.jpg");
   }
   .tagline {
     padding: 120px 0;
@@ -2617,7 +2627,7 @@ footer {
         content: "";
         width: 50px;
         height: 40px;
-        background: url(../img/consulting/tag-left.png) no-repeat;
+        background: url("../img/consulting/tag-left.png") no-repeat;
         position: absolute;
         top: 0;
         left: -20px;
@@ -2626,7 +2636,7 @@ footer {
         content: "";
         width: 50px;
         height: 40px;
-        background: url(../img/consulting/tag-right.png) no-repeat;
+        background: url("../img/consulting/tag-right.png") no-repeat;
         position: absolute;
         top: 0;
         right: -20px;
@@ -2675,11 +2685,13 @@ footer {
   }
   .session-descp {
     width: 136px;
-    margin: 10px 0 0 -10px; /* done in minus as per told */
+    margin: 10px 0 0 -10px;
+    /* done in minus as per told */
   }
   .pack-men {
     .session-descp {
-      margin: 20px 0 0 -10px; /* done in minus as per told */
+      margin: 20px 0 0 -10px;
+      /* done in minus as per told */
     }
   }
   .testimonial-imgholder {
@@ -2768,9 +2780,17 @@ footer {
 // end error thankyou wentwrong
 // account
 .account-name {
-  form { margin: 0 0 30px; }
-  p,h5,label { font-size: 16px; }
-  label { font-weight: 400; }
+  form {
+    margin: 0 0 30px;
+  }
+  p,
+  h5,
+  label {
+    font-size: 16px;
+  }
+  label {
+    font-weight: 400;
+  }
 }
 .profile-tab {
   @extend .checkout-main;
@@ -2794,7 +2814,9 @@ footer {
     background-color: #fff;
     text-transform: capitalize;
     // margin: -17px 10px 0;
-    &:hover { background-color: $brand-primary; }
+    &:hover {
+      background-color: $brand-primary;
+    }
   }
   .address {
     margin: 40px 0 0;
@@ -2871,7 +2893,9 @@ footer {
     padding: 8px 30px;
   }
 }
-.email-sent { min-height: 200px; }
+.email-sent {
+  min-height: 200px;
+}
 .input-placeholder {
   border: 2px solid $brand-primary;
   @include placeholder {
@@ -2888,11 +2912,9 @@ footer {
     font-size: 16px;
   }
 }
-
 *[href] {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 // end forgot and popup
 // scroll-top
 .scroll-top {
@@ -2902,13 +2924,11 @@ footer {
   right: 10px;
   bottom: 10px;
   line-height: 41px;
-    border: 2px solid #ffd8ce;
+  border: 2px solid #ffd8ce;
   span {
     font-size: 28px;
   }
 }
-
-
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";
