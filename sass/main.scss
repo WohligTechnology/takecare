@@ -2664,7 +2664,7 @@ footer {
     border-radius: 6px;
     font-size: 16px;
     .price {
-      padding: 6px 0; 
+      padding: 6px 0;
       border-radius: 6px;
       background-color: #fff;
       text-align: center;
@@ -2892,7 +2892,17 @@ footer {
 *[href] {
     cursor: pointer;
 }
+
 // end forgot and popup
+// scroll-top
+.scroll-top {
+  @include square(50px);
+  border-radius: 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 350px;
+  line-height: 50px;
+}
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";

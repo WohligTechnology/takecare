@@ -111,21 +111,21 @@
                   <h3 class="text-uppercase brand-brown-dark letter-space inline-block">billing address</h3>
                   <form name="billingForm">
                     <div class="form-group">
-                      <input name="billingline1" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline1" type="text" class="form-control" placeholder="Line 1 *">
+                      <input name="billingline1" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline1" type="text" class="form-control" placeholder="Flat Number, Building Number *">
                       <div class="text-center" ng-show="billingForm.billingline1.$invalid && billingForm.billingline1.$touched" role="alert">
-                        Please enter billing line 1.
+                        Please enter your billing Flat Number or Building Number.
                       </div>
                     </div>
                     <div class="form-group">
-                      <input name="billingline2" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline2" type="text" class="form-control" placeholder="Line 2 *">
+                      <input name="billingline2" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline2" type="text" class="form-control" placeholder="Street Address *">
                       <div class="text-center" ng-show="billingForm.billingline2.$invalid && billingForm.billingline2.$touched" role="alert">
-                        Please enter billing line 2.
+                        Please enter your billing street address.
                       </div>
                     </div>
                     <div class="form-group">
-                      <input name="billingline3" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline3" type="text" class="form-control" placeholder="Line 3 *">
+                      <input name="billingline3" ng-change="sameShipping(checkout)" required ng-model="checkout.billingline3" type="text" class="form-control" placeholder="Nearest Address *">
                       <div class="text-center" ng-show="billingForm.billingline3.$invalid && billingForm.billingline3.$touched" role="alert">
-                        Please enter billing line 3.
+                        Please enter your billing nearest landmark.
                       </div>
                     </div>
                     <div class="form-group">
@@ -135,14 +135,14 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="text" class="form-control" placeholder="Pincode *">
+                      <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="text" class="form-control" placeholder="Pincode *" maxlength="6">
                       <div class="text-center" ng-show="billingForm.billingpincode.$invalid && billingForm.billingpincode.$touched" role="alert">
                         Please enter billing pincode.
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="custom-select">
-                      <select name="billingstate" ng-model="checkout.billingstate" required>
+                      <select name="billingstate" ng-model="checkout.billingstate" class="form-control" required>
                         <option value="">Select State</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -211,22 +211,22 @@
                   </div>
                   <form name="shippingForm">
                     <div class="form-group">
-                      <input name="shippingline1" ng-model="checkout.shippingline1" required type="text" class="form-control" placeholder="Line 1 *">
+                      <input name="shippingline1" ng-model="checkout.shippingline1" required type="text" class="form-control" placeholder="Flat Number, Building Number *">
                     </div>
                     <div class="text-center" ng-show="shippingForm.shippingline1.$invalid && shippingForm.shippingline1.$touched" role="alert">
-                      Please enter shipping line 1.
+                      Please enter your flat number or building number.
                     </div>
                     <div class="form-group">
-                      <input name="shippingline2" ng-model="checkout.shippingline2" required type="text" class="form-control" placeholder="Line 2 *">
+                      <input name="shippingline2" ng-model="checkout.shippingline2" required type="text" class="form-control" placeholder="Street Address *">
                     </div>
                     <div class="text-center" ng-show="shippingForm.shippingline2.$invalid && shippingForm.shippingline2.$touched" role="alert">
-                      Please enter shipping line 2.
+                      Please enter your shipping street address.
                     </div>
                     <div class="form-group">
-                      <input name="shippingline3" ng-model="checkout.shippingline3" required type="text" class="form-control" placeholder="Line 3 *">
+                      <input name="shippingline3" ng-model="checkout.shippingline3" required type="text" class="form-control" placeholder="Nearest Landmark *">
                     </div>
                     <div class="text-center" ng-show="shippingForm.shippingline3.$invalid && shippingForm.shippingline3.$touched" role="alert">
-                      Please enter shipping line 3.
+                      Please enter your nearset landmark.
                     </div>
                     <div class="form-group">
                       <input name="shippingcity" ng-model="checkout.shippingcity" required type="text" class="form-control" placeholder="City *">
