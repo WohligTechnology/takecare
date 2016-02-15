@@ -170,7 +170,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
   })
 
   .state('recipedetail', {
-    url: "/recipedetail",
+    url: "/recipedetail/:id",
     templateUrl: "views/template.html",
     controller: 'RecipedetailCtrl'
   })

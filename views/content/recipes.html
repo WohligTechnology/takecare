@@ -8,10 +8,10 @@
       <h2 class="brand-brown-dark text-uppercase text-center recipe-main-title">Recipes from "The Don’t Diet Book"</h2>
       <div class="recipedetail-slider slider-customize">
         <flex-slider class="carousel" flex-slide="detail in recipedetail track by $index" animation="slide" item-width="350" control-nav="false">
-          <li>
+          <li ui-sref="recipedetail({ id : detail.id })">
             <figure class="relate">
               <div class="recipedetail-imgholder relate">
-                <img ng-src="{{detail.img}}" alt="" class="img-responsive get-center"/>
+                <img ng-src="{{detail.image|serverimage}}" alt="" class="img-responsive get-center"/>
               </div>
               <figcaption><span class="text-uppercase brand-brown-dark recipe-name text-center">{{detail.name}}</span></figcaption>
             </figure>

@@ -19,10 +19,10 @@
         <div class="col-md-8 col-sm-12">
           <div class="blog-pagesection">
             <div class="row">
-              <div class="col-md-6" ng-repeat="blog in blogpage">
+              <div class="col-md-6" ng-repeat="blog in blogpage" ui-sref="blogdetail({id:blog.id})">
                 <div class="blog-part">
                   <div class="blog-imghold">
-                    <a ui-sref="blogdetail({id:blog.id})"><img ng-src="{{blog.image | serverimage}}" alt="" class="img-responsive"></a>
+                    <img ng-src="{{blog.image | serverimage}}" alt="" class="img-responsive">
                   </div>
                   <div class="blog-detail">
                     <h4 class="brand-brown-dark text-bold text-uppercase">{{blog.title}}</h4>
@@ -49,12 +49,14 @@
             <div class="post">
               <h4 class="text-uppercase brand-brown-dark">popular post</h4>
               <div class="blog-post" ng-repeat="post in popularpost">
+                <a ui-sref="blogdetail({id:post.id})">
                 <div class="post-imghold inline-block">
-                  <a ui-sref="blogdetail({id:post.id})"><img ng-src="{{post.coverimage | serverimage}}" alt="" class="img-responsive media-object"></a>
+                  <img ng-src="{{post.coverimage | serverimage}}" alt="" class="img-responsive media-object">
                 </div>
                 <div class="post-content inline-block v-top">
-                  <a href=""><h5 class="brand-brown-dark">{{post.title}}</h5></a>
+                  <h5 class="brand-brown-dark">{{post.title}}</h5>
                 </div>
+                </a>
               </div>
             </div>
             <div class="tags">

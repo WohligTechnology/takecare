@@ -7,7 +7,7 @@ var imgurl = "http://moviewsapp.com/selfcare/uploads/";
 if(!isproduction)
 {
   mainurl = "http://192.168.0.123/selfbackend/index.php/";
-  imgurl = "http://moviewsapp.com/selfcare/uploads/";
+  imgurl = "http://192.168.0.123/selfbackend/uploads/";
 }
 
 
@@ -367,6 +367,13 @@ var navigationservice = angular.module('navigationservice', [])
         password: password,
         hashcode: hash
       }).success(callback);
+    },
+    getRecipeDetail : function(id,callback) {
+      if(!id)
+      {
+        id="";
+      }
+      $http.get(adminurl + 'getRecipeDetail?id='+id).success(callback);
     }
   };
 });

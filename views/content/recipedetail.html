@@ -1,4 +1,7 @@
 <section>
+
+{{recipe}}
+
   <div class="selfcare-image">
     <img src="img/banners/recepie.jpg" alt="">
     <h2 class="text-uppercase get-center white font-semibold">Recipes</h2>
@@ -15,13 +18,13 @@
       <div class="row">
         <div class="col-md-6">
           <div class="recipe-imgholder ">
-            <img src="img/recipes/baingan.jpg" alt="" class="round img-responsive">
+            <img ng-src="{{recipedetail.image|serverimage}}" alt="" class="round img-responsive">
           </div>
           <div class="recipe-slider slider-customize">
             <flex-slider class="carousel" flex-slide="slide in recipe track by $index" animation="slide" item-width="90" item-margin="15" Control-Nav="false">
-              <li>
+              <li ng-click="changeImage(slide);">
                 <div class="recipe-category ">
-                  <img ng-src="{{slide}}" alt="" class="img-responsive round">
+                  <img ng-src="{{slide|serverimage}}" alt="" class="img-responsive round">
                 </div>
               </li>
             </flex-slider>
@@ -29,9 +32,9 @@
         </div>
         <div class="col-md-6">
           <div class="recipes-detail">
-            <h2 class="text-uppercase font-semibold brand-brown-dark">Baingan Bharta</h2>
-            <span>Roasted brinjal lightly cooked with spring onion flavour</span>
-            <div class="recipes-menu font-semibold">
+            <h2 class="text-uppercase font-semibold brand-brown-dark" ng-bind="recipedetail.name"></h2>
+            <span ng-bind-html="recipedetail.description">Roasted brinjal lightly cooked with spring onion flavour</span>
+            <!-- <div class="recipes-menu font-semibold">
               <span class="block">Makes 1<sup>1/2</sup> cups</span>
               <span class="block">Serving size: 1/2 cup</span>
               <span class="block">Serves: 3</span>
@@ -39,7 +42,7 @@
             <div class="recipes-time">
               <span class="block">Preparation time: 5 mins</span>
               <span class="block">Cooking time: 15 mins</span>
-            </div>
+            </div> -->
           </div>
           <div class="recipe-accordion">
             <uib-accordion close-others="oneAtATime" is-open="status.open">
@@ -47,29 +50,20 @@
                 <uib-accordion-heading>
                   Ingredients <i class="open-me fa" ng-class="{'fa-minus': status.isFirstOpen, 'fa-plus': !status.isFirstOpen}"></i>
                 </uib-accordion-heading>
-                <div class="recipe-descp">
-                  <span class="block">1 large Brinjal (350 gms)</span>
-                  <span class="block">1 large bulb of spring onion, chopped finely</span>
-                  <span class="block">1/3  cup spring onion greens, chopped finely</span>
-                  <span class="block">1 small tomato, chopped finely</span>
-                  <span class="block">3 cloves garlic (optional), chopped finely</span>
-                  <span class="block">1/4  tsp red chilli powder</span>
-                  <span class="block">1/4  tsp turmeric powder</span>
-                  <span class="block">Salt as per taste</span>
-                  <span class="block">2 tsp oil</span>
+                <div class="recipe-descp" ng-bind-html="recipedetail.ingredients">
                 </div>
               </uib-accordion-group>
               <uib-accordion-group is-open="status.open2">
                 <uib-accordion-heading>
                   Method<i class="open-me fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
                 </uib-accordion-heading>
-                <div class="recipe-descp"></div>
+                <div class="recipe-descp" ng-bind-html="recipedetail.method"></div>
               </uib-accordion-group>
               <uib-accordion-group is-open="status.open3">
                 <uib-accordion-heading>
                   Value Per Serving <i class="open-me fa" ng-class="{'fa-minus': status.open3, 'fa-plus': !status.open3}"></i>
                 </uib-accordion-heading>
-                <div class="recipe-descp"></div>
+                <div class="recipe-descp" ng-bind-html="recipedetail.valueperserve"></div>
               </uib-accordion-group>
             </uib-accordion>
           </div>
@@ -82,12 +76,12 @@
     <div class="container">
       <h3 class="text-uppercase font-semibold brand-brown-dark">Other recipes</h3>
       <uib-carousel interval="my-Interval">
-        <uib-slide ng-repeat="slide in recipees" active="slide.active">
+        <uib-slide ng-repeat="slide in otherrecipe" active="slide.active">
           <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="recipe in slide">
               <div class="inner-like">
                 <div class="like-image round">
-                  <img ng-src="{{recipe.img}}" alt="" class="img-responsive">
+                  <img ng-src="{{recipe.image|serverimage}}" alt="" class="img-responsive">
                 </div>
                 <span class="brand-primary text-uppercase font-semibold">{{recipe.name}}</span>
               </div>

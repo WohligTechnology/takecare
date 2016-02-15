@@ -113,13 +113,15 @@
             </form>
             <div class="post">
               <h4 class="text-uppercase brand-brown-dark">popular post</h4>
-              <div class="blog-post" ng-repeat="post in popularpost">
+              <div class="blog-post" ng-repeat="post in popularpost" >
+                <a ui-sref="blogdetail({id:post.id})">
                 <div class="post-imghold inline-block">
-                  <a ui-sref="blogdetail({id:post.id})"><img ng-src="{{post.coverimage | serverimage}}" alt="" class="img-responsive media-object"></a>
+                  <img ng-src="{{post.coverimage | serverimage}}" alt="" class="img-responsive media-object">
                 </div>
                 <div class="post-content inline-block v-top">
-                  <a href=""><h5 class="brand-brown-dark">{{post.title}}</h5></a>
+                  <h5 class="brand-brown-dark">{{post.title}}</h5>
                 </div>
+                </a>
               </div>
             </div>
             <div class="tags">

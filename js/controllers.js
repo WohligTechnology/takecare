@@ -107,7 +107,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       if (formValidate.$valid) {
         NavigationService.askSumanSubmit(input, function(data) {
           console.log(data);
-          if (data.value == true) {
+          if (data.value === true) {
             $scope.alerts.push({
               type: 'success',
               msg: 'Your query has been sent'
@@ -2075,7 +2075,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.commentSubmit($scope.comment, function(data, status) {
         $scope.commenthide = true;
       });
-    }
+    };
 
 
     function successCallback(data, status) {
@@ -2170,43 +2170,67 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Recipes");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.recipedetail = [{
-      img: "img/recipes/recipe1.jpg",
-      name: "Mushroom & Tofu Burger"
-    }, {
-      img: "img/recipes/recipe2.jpg",
-      name: "Mushroom Omelette"
-    }, {
-      img: "img/recipes/recipe3.jpg",
-      name: "Pancakes with red sauce"
-    }, {
-      img: "img/recipes/recipe2.jpg",
-      name: "Mushroom Omelette"
-    }, {
-      img: "img/recipes/recipe1.jpg",
-      name: "Mushroom & Tofu Burger"
-    }, {
-      img: "img/recipes/recipe3.jpg",
-      name: "Pancakes with red sauce"
-    }];
+
+    var ReceipeSuccess = function(data) {
+      console.log(data);
+      $scope.recipedetail = data;
+    };
+
+    NavigationService.getRecipeDetail("",ReceipeSuccess);
+
+    // $scope.recipedetail = [{
+    //   img: "img/recipes/recipe1.jpg",
+    //   name: "Mushroom & Tofu Burger"
+    // }, {
+    //   img: "img/recipes/recipe2.jpg",
+    //   name: "Mushroom Omelette"
+    // }, {
+    //   img: "img/recipes/recipe3.jpg",
+    //   name: "Pancakes with red sauce"
+    // }, {
+    //   img: "img/recipes/recipe2.jpg",
+    //   name: "Mushroom Omelette"
+    // }, {
+    //   img: "img/recipes/recipe1.jpg",
+    //   name: "Mushroom & Tofu Burger"
+    // }, {
+    //   img: "img/recipes/recipe3.jpg",
+    //   name: "Pancakes with red sauce"
+    // }];
   })
-  .controller('RecipedetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('RecipedetailCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("recipedetail");
     $scope.menutitle = NavigationService.makeactive("Recipedetail");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.oneAtATime = true;
+
+    var ReceipeSuccess = function(data) {
+      console.log(data);
+       $scope.recipe = _.pluck(data.recipeimage,"image");
+       $scope.recipe.unshift( data.recipe.image);
+      $scope.recipedetail = data.recipe;
+      $scope.otherrecipe = _.chunk(data.otherrecipe,4);
+    };
+
+    NavigationService.getRecipeDetail($stateParams.id,ReceipeSuccess);
+
     $scope.status = {
       isFirstOpen: true,
       isFirstDisabled: false
-    }
-    $scope.recipe = [
-      "img/recipes/baingan.jpg",
-      "img/recipes/baingan.jpg",
-      "img/recipes/baingan.jpg",
-      "img/recipes/baingan.jpg"
-    ];
+    };
+
+    $scope.changeImage = function(val) {
+        $scope.recipedetail.image = val;
+    };
+    // $scope.recipe = [
+    //   "img/recipes/baingan.jpg",
+    //   "img/recipes/baingan.jpg",
+    //   "img/recipes/baingan.jpg",
+    //   "img/recipes/baingan.jpg"
+    // ];
+
     $scope.recipees = [{
       img: "img/recipes/nachos.jpg",
       name: "nachos"
@@ -2227,7 +2251,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "nachos"
     }];
     $scope.recipees = _.chunk($scope.recipees, 3);
-    console.log($scope.recipees);
+
   })
   .controller('NutrigenomicsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
