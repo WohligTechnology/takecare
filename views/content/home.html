@@ -199,48 +199,22 @@
           <div class="heading">
             <h4 class="text-bold font-semibold">BLOG</h4>
           </div>
-          <div class="blog-info">
+
+          <div class="blog-info" ng-repeat="blog in blogs">
             <div class="row">
               <div class="col-md-4 col-sm-4 ">
                 <div class="blog-imgholder">
-                  <img src="img/blog1.png" alt="" class="img-responsive">
+                  <img ng-src="{{blog.image|serverimage}}" alt="" class="img-responsive">
                 </div>
               </div>
               <div class="col-md-8 col-sm-8 ">
                 <div class="blog-imginfo">
-                  <p class="letter-space font-semibold">Anti Ageing Tips</p>
+                  <p class="letter-space font-semibold" ng-bind="blog.title"></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="blog-info">
-            <div class="row">
-              <div class="col-md-4 col-sm-4 ">
-                <div class="blog-imgholder ">
-                  <img src="img/blog2.png" alt="" class="img-responsive">
-                </div>
-              </div>
-              <div class="col-md-8 col-sm-8 ">
-                <div class="blog-imginfo">
-                  <p class="letter-space font-semibold">Calcium For All Ages And Genders</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="blog-info">
-            <div class="row">
-              <div class="col-md-4 col-sm-4 ">
-                <div class="blog-imgholder">
-                  <img src="img/blog3.png" alt="" class="img-responsive">
-                </div>
-              </div>
-              <div class="col-md-8 col-sm-8">
-                <div class="blog-imginfo last-blog-info">
-                  <p class="letter-space font-semibold">Calories In Cocktails</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div class="text-right btn-center">
             <button class="text-uppercase btn btn-primary" type="button">Coming Soon</button>
           </div>
