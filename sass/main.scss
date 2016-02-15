@@ -2929,6 +2929,19 @@ footer {
     font-size: 28px;
   }
 }
+.backsidemenu {
+  position: absolute;
+  top: 0;
+  color: white;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  right: 10px;
+  top: 20px;
+  border: none;
+  font-size: 25px;
+}
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";
