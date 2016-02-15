@@ -247,7 +247,11 @@
   .kcal { margin: 6px 0 0 8px; }
   // image consulting
   .consulting {
-  .session-descp { font-size: 15px; }
+  .session-descp {
+    width: auto;
+    margin: 10px 0 0;
+    font-size: 15px;
+  }
   .pack-men .session-descp { margin: 10px 0 0; }
   }
   // recipe
@@ -673,9 +677,10 @@
   .back-img {
     min-height: auto;
     padding: 60px;
-    h2 { font-size: 26px; }
+    h2 { font-size: 24px; }
   }
   .genes p {
+    margin: 0;
     font-size: 26px;
     &:before {
       left: -10px;

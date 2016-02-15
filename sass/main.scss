@@ -2585,7 +2585,7 @@ footer {
   }
   .service-detail {
     .title {
-      margin: 0;
+      margin: 0 0 5px;
     }
     .descp {
       text-align: justify;
@@ -2664,7 +2664,7 @@ footer {
     border-radius: 6px;
     font-size: 16px;
     .price {
-      padding: 6px 0;
+      padding: 6px 0; 
       border-radius: 6px;
       background-color: #fff;
       text-align: center;
@@ -2674,11 +2674,12 @@ footer {
     }
   }
   .session-descp {
-    margin: 10px 0 0;
+    width: 136px;
+    margin: 10px 0 0 -10px; /* done in minus as per told */
   }
   .pack-men {
     .session-descp {
-      margin: 20px 0 0;
+      margin: 20px 0 0 -10px; /* done in minus as per told */
     }
   }
   .testimonial-imgholder {
