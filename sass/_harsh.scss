@@ -802,7 +802,7 @@
   }
   .mumbai,
   .kolkata {
-    @include margin(0 0 20px);
+    @include padding(0 0 20px);
     letter-spacing: 2px;
     .tardeo {
       @include margin(0 0 20px);
@@ -819,6 +819,7 @@
     }
   }
 }
+.mumbai { border-bottom: 1px solid #ccc; }
 .contact-map {
   @include margin(15px 0 0);
 }
@@ -875,7 +876,7 @@
 .product-desc {
   @include padding(50px);
   p {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .products {
@@ -922,7 +923,7 @@
       overflow: hidden;
     }
     .name {
-      min-height: 40px;
+      min-height: 60px;
     }
   }
 }

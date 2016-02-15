@@ -855,7 +855,6 @@ button {
           width: 59px;
           height: 49px;
           position: absolute;
-          right: -20px;
         }
         &:before {
           content: "";
@@ -1325,6 +1324,8 @@ button {
   .descp {
     font-size: 16px;
     line-height: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
   }
 }
 .pro-info {
