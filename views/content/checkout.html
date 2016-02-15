@@ -14,15 +14,20 @@
         <uib-tab active="tabs[0].active" disable="tabs[0].disabled">
           <uib-tab-heading>
             Email login
-            <span class="greater"> &gt; </span>
+            <span class="greater">
+              &gt;
+            </span>
           </uib-tab-heading>
           <div class="order-summary">
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
-                <th>items : {{allcart.length}}</th>
-                <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
-                <th>grandtotal: rs. {{totalcart - shippingcharges}}</th>
+                <th>items :
+                  {{allcart.length}}</th>
+                <th>subtotal: rs.
+                  {{totalcart - shippingcharges}}</th>
+                <th>grandtotal: rs.
+                  {{totalcart - shippingcharges}}</th>
               </thead>
             </table>
           </div>
@@ -40,7 +45,8 @@
                     <div class="radio">
                       <input type="radio" name="continue" ng-change="selectGuest(guest)" value="guest" ng-model="guest" id="pswd">
                       <label for="pswd" class="text-light">
-                        <span></span> Continue without passsword.
+                        <span></span>
+                        Continue without passsword.
                       </label>
                     </div>
                   </div>
@@ -48,7 +54,8 @@
                     <div class="radio">
                       <input type="radio" name="continue" ng-change="selectGuest(guest)" value="notguest" ng-model="guest" id="sc">
                       <label for="sc" class="text-light">
-                        <span></span> I have a selfcare account and password.
+                        <span></span>
+                        I have a selfcare account and password.
                       </label>
                     </div>
                   </div>
@@ -61,15 +68,20 @@
         <uib-tab active="tabs[1].active" disable="tabs[1].disabled">
           <uib-tab-heading>
             shipping address
-            <span class="greater"> &gt; </span>
+            <span class="greater">
+              &gt;
+            </span>
           </uib-tab-heading>
           <div class="order-summary">
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
-                <th>items : {{allcart.length}}</th>
-                <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
-                <th>grandtotal: rs. {{totalcart - shippingcharges}}</th>
+                <th>items :
+                  {{allcart.length}}</th>
+                <th>subtotal: rs.
+                  {{totalcart - shippingcharges}}</th>
+                <th>grandtotal: rs.
+                  {{totalcart - shippingcharges}}</th>
               </thead>
             </table>
           </div>
@@ -129,7 +141,47 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <input name="billingstate" ng-change="sameShipping(checkout)" required ng-model="checkout.billingstate" type="text" class="form-control" placeholder="State *">
+                      <div class="custom-select">
+                      <select name="billingstate" ng-model="checkout.billingstate" required>
+                        <option value="">Select State</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                      </select>
+                    </div>
+                      <!-- <input name="billingstate" ng-change="sameShipping(checkout)" required type="text" class="form-control" placeholder="State *"> -->
                       <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
                         Please enter billing state.
                       </div>
@@ -137,7 +189,8 @@
                     <div class="form-group">
                       <div class="custom-select">
                         <select class="form-control" name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry" id="">
-                          <option value="{{country.value}}" ng-repeat="country in countries">{{country.value}}</option>
+                          <option value="Please Select"  class="ng-binding ng-scope">Please Select</option>
+                          <option value="India"  class="ng-binding ng-scope">India</option>
                         </select>
                         <span></span>
                       </div>
@@ -153,7 +206,8 @@
                   <div class="checkbox">
                     <input type="checkbox" class="text-uppercase" ng-model="checkShip" ng-click="shippingCheck(checkShip)" id="same">
                     <label for="same" class="same-bill">
-                      <span></span> Same as billing address</label>
+                      <span></span>
+                      Same as billing address</label>
                   </div>
                   <form name="shippingForm">
                     <div class="form-group">
@@ -189,7 +243,48 @@
                       Please enter shipping pincode.
                     </div>
                     <div class="form-group">
-                      <input name="shippingstate" ng-model="checkout.shippingstate" required type="text" class="form-control" placeholder="State *">
+<div class="custom-select">
+                      <select name="shippingstate" ng-model="checkout.shippingstate" required>
+                        <option value="">Select State</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                      </select>
+                    </div>
+                      <!-- <input  type="text" class="form-control" placeholder="State *"> -->
+
                     </div>
                     <div class="text-center" ng-show="shippingForm.shippingstate.$invalid && shippingForm.shippingstate.$touched" role="alert">
                       Please enter shipping state.
@@ -197,7 +292,8 @@
                     <div class="form-group">
                       <div class="custom-select">
                         <select class="form-control" name="shippingcountry" ng-model="checkout.shippingcountry" required id="">
-                          <option value="{{country.value}}" ng-repeat="country in countries">{{country.value}}</option>
+                          <option value="Please Select"  class="ng-binding ng-scope">Please Select</option>
+                          <option value="India" class="ng-binding ng-scope">India</option>
                         </select>
                       </div>
                       <div class="text-center" ng-show="shippingForm.shippingcountry.$invalid && shippingForm.shippingcountry.$touched" role="alert">
@@ -259,15 +355,20 @@
         <uib-tab active="tabs[2].active" disable="tabs[2].disabled">
           <uib-tab-heading>
             order-summary
-            <span class="greater"> &gt; </span>
+            <span class="greater">
+              &gt;
+            </span>
           </uib-tab-heading>
           <div class="order-summary">
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
-                <th>items : {{allcart.length}}</th>
-                <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
-                <th>grandtotal: rs. {{totalcart}}</th>
+                <th>items :
+                  {{allcart.length}}</th>
+                <th>subtotal: rs.
+                  {{totalcart - shippingcharges}}</th>
+                <th>grandtotal: rs.
+                  {{totalcart}}</th>
               </thead>
             </table>
           </div>
@@ -288,8 +389,10 @@
                       <td ng-if="product.status==3" class="plan-cart">
                         <h4 class="text-capitalize plan-name m-center">{{product.subtype}}</h4>
                         <h5 class="text-capitalize">
-                          <span class="block" ng-if="product.months == '1'">{{product.months}} month</span>
-                          <span class="block" ng-if="product.months != '1'">{{product.months}} months</span>
+                          <span class="block" ng-if="product.months == '1'">{{product.months}}
+                            month</span>
+                          <span class="block" ng-if="product.months != '1'">{{product.months}}
+                            months</span>
                           <span ng-if="product.plan==1">Silver Plan</span>
                           <span ng-if="product.plan==2">Gold Plan</span>
                           <span ng-if="product.plan==3">Platinum Plan</span>
@@ -297,9 +400,9 @@
                         </h5>
                       </td>
                       <td ng-if="product.status!=3">
-                        <figure  class="pointer" ui-sref="productdetail({id:product.id})">
+                        <figure class="pointer" ui-sref="productdetail({id:product.id})">
                           <div class="cart-imgholder m-center">
-                          <img ng-src="{{product.image | serverimage}}" class="img-responsive round">
+                            <img ng-src="{{product.image | serverimage}}" class="img-responsive round">
                           </div>
                           <figcaption class="text-center text-uppercase">{{product.options.realname}}</figcaption>
                         </figure>
@@ -313,14 +416,17 @@
                       </td>
                       <td>
                         <div class="cart-amount">
-                          <p>RS. {{product.price}}</p>
+                          <p>RS.
+                            {{product.price}}</p>
                         </div>
                       </td>
                       <td>
                         <div class="cart-total-amount">
-                          <p ng-if="product.status!=3">RS. {{product.subtotal}}</p>
-                        <p ng-if="product.status==3">RS. {{product.price}}</p>
-                      </div>
+                          <p ng-if="product.status!=3">RS.
+                            {{product.subtotal}}</p>
+                          <p ng-if="product.status==3">RS.
+                            {{product.price}}</p>
+                        </div>
                         <!-- <div class="remove text-right">
                           <button class="btn btn-primary text-uppercase no-radius">Remove</button>
                         </div> -->
@@ -334,11 +440,13 @@
                       <span>Shipping Charges</span>
                     </div>
                     <div class="text-right text-uppercase pull-right price-ship">
-                      <span>Rs {{shippingcharges}}</span>
+                      <span>Rs
+                        {{shippingcharges}}</span>
                     </div>
                   </div>
                   <form action="" class="form-inline">
-                    <label for="" class="text-light"> COUPON CODE
+                    <label for="" class="text-light">
+                      COUPON CODE
                       <input type="text" class="form-control">
                     </label>
                     <button class="btn btn-primary apply">APPLY</button>
@@ -353,7 +461,8 @@
                 </div>
                 <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
                   <span class="text-uppercase pull-left">Grand Total</span>
-                  <span class="pull-right text-uppercase">Rs. {{totalcart - shippingcharges}}</span>
+                  <span class="pull-right text-uppercase">Rs.
+                    {{totalcart - shippingcharges}}</span>
                 </div>
 
                 <div class="shipping">
@@ -383,148 +492,148 @@
               <p class="brand-primary letter-space" ng-show="cod">Thank you for Shopping with us</p>
               <h3 class="brand-primary letter-space" ng-hide="cod">Payment Details</h3>
               <div class="payment-detail">
-              <form method="post" name="customerData" ng-hide="cod" action="http://moviewsapp.com/selfcare/paymentgateway/Checkout.php">
-                <div class="row">
-                  <div class="col-md-6">
-                    <table>
-                      <tr style="display:none">
-                        <td>TID :</td>
-                        <td>
-                          <input type="text" name="Merchant_Id" value="M_careself_14677" readonly />
-                        </td>
-                      </tr>
-                      <tr style="display:none">
-                        <td>Order Id :</td>
-                        <td>
-                          <input type="text" name="Order_Id" ng-model="order" />
-                        </td>
-                      </tr>
-                      <tr style="display:none">
-                        <td>Amount :</td>
-                        <td>
-                          <input type="text" name="Amount" ng-model="totalcart" />
-                        </td>
-                      </tr>
-                      <tr style="display:none">
-                        <td>Redirect URL :</td>
-                        <td>
-                          <input type="text" name="Redirect_Url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td colspan="2">Billing information:</td>
-                      </tr>
-                      <tr>
-                        <td>Billing Name :</td>
-                        <td>
-                          <input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" value="adf" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing Address :</td>
-                        <td>
-                          <input type="text" name="billing_cust_address" style="border: none; width: 100%;" ng-model="checkout.billingline1" value="adf" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing City :</td>
-                        <td>
-                          <input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.billingcity" value="asdfa" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing State :</td>
-                        <td>
-                          <input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.billingstate" value="adfasd" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing Zip :</td>
-                        <td>
-                          <input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing Country :</td>
-                        <td>
-                          <input type="text" name="billing_cust_country" style="border: none; width: 100%;" ng-model="checkout.billingcountry" value="India" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing Tel :</td>
-                        <td>
-                          <input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9890989098" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Billing Email :</td>
-                        <td>
-                          <input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email" value="jagruti@wohlig.com" />
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="col-md-6">
-                    <table>
-                      <tr>
-                        <td colspan="2">Shipping information</td>
-                      </tr>
-                      <tr>
-                        <td>Shipping Name :</td>
-                        <td>
-                          <input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" / value="asdf">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Shipping Address :</td>
-                        <td>
-                          <input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingline1" value="asdfsd" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Shipping City :</td>
-                        <td>
-                          <input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity" value="asdf" />
-                        </td>
+                <form method="post" name="customerData" ng-hide="cod" action="http://moviewsapp.com/selfcare/paymentgateway/Checkout.php">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <table>
+                        <tr style="display:none">
+                          <td>TID :</td>
+                          <td>
+                            <input type="text" name="Merchant_Id" value="M_careself_14677" readonly/>
+                          </td>
                         </tr>
-                      <tr>
-                        <td>Shipping State :</td>
-                        <td>
-                          <input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate" value="sdfasd" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Shipping Zip :</td>
-                        <td>
-                          <input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode" value="334566" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Shipping Country :</td>
-                        <td>
-                          <input type="text" name="delivery_cust_country" style="border: none; width: 100%;" ng-model="checkout.shippingcountry" value="India" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Shipping Tel :</td>
-                        <td>
-                          <input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9898989898" />
-                        </td>
-                      </tr>
-                      <tr style="display:none">
-                        <td>Merchant Param1 :</td>
-                        <td>
-                          <input type="text" name="delivery_cust_notes" value="" />
-                        </td>
-                      </tr>
-                    </table>
+                        <tr style="display:none">
+                          <td>Order Id :</td>
+                          <td>
+                            <input type="text" name="Order_Id" ng-model="order"/>
+                          </td>
+                        </tr>
+                        <tr style="display:none">
+                          <td>Amount :</td>
+                          <td>
+                            <input type="text" name="Amount" ng-model="totalcart"/>
+                          </td>
+                        </tr>
+                        <tr style="display:none">
+                          <td>Redirect URL :</td>
+                          <td>
+                            <input type="text" name="Redirect_Url" value="http://moviewsapp.com/selfcare/index.php/json/payumoneysuccess"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">Billing information:</td>
+                        </tr>
+                        <tr>
+                          <td>Billing Name :</td>
+                          <td>
+                            <input type="text" name="billing_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" value="adf"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing Address :</td>
+                          <td>
+                            <input type="text" name="billing_cust_address" style="border: none; width: 100%;" ng-model="checkout.billingline1" value="adf"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing City :</td>
+                          <td>
+                            <input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.billingcity" value="asdfa"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing State :</td>
+                          <td>
+                            <input type="text" name="billing_cust_state" style="border: none; width: 100%;" ng-model="checkout.billingstate" value="adfasd"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing Zip :</td>
+                          <td>
+                            <input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing Country :</td>
+                          <td>
+                            <input type="text" name="billing_cust_country" style="border: none; width: 100%;" ng-model="checkout.billingcountry" value="India"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing Tel :</td>
+                          <td>
+                            <input type="text" name="billing_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9890989098"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Billing Email :</td>
+                          <td>
+                            <input type="text" name="billing_cust_email" style="border: none; width: 100%;" ng-model="checkout.email" value="jagruti@wohlig.com"/>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col-md-6">
+                      <table>
+                        <tr>
+                          <td colspan="2">Shipping information</td>
+                        </tr>
+                        <tr>
+                          <td>Shipping Name :</td>
+                          <td>
+                            <input type="text" name="delivery_cust_name" style="border: none; width: 100%;" ng-model="checkout.firstname" / value="asdf">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Shipping Address :</td>
+                          <td>
+                            <input type="text" name="delivery_cust_address" style="border: none; width: 100%;" ng-model="checkout.shippingline1" value="asdfsd"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Shipping City :</td>
+                          <td>
+                            <input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity" value="asdf"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Shipping State :</td>
+                          <td>
+                            <input type="text" name="delivery_cust_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate" value="sdfasd"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Shipping Zip :</td>
+                          <td>
+                            <input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode" value="334566"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Shipping Country :</td>
+                          <td>
+                            <input type="text" name="delivery_cust_country" style="border: none; width: 100%;" ng-model="checkout.shippingcountry" value="India"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Shipping Tel :</td>
+                          <td>
+                            <input type="text" name="delivery_cust_tel" style="border: none; width: 100%;" ng-model="checkout.phone" value="9898989898"/>
+                          </td>
+                        </tr>
+                        <tr style="display:none">
+                          <td>Merchant Param1 :</td>
+                          <td>
+                            <input type="text" name="delivery_cust_notes" value=""/>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="place-order-btn text-center">
+                    <button class="btn btn-primary text-uppercase " type="submit">Place order</button>
                   </div>
                 </div>
-                <div class="place-order-btn text-center">
-                  <button class="btn btn-primary text-uppercase " type="submit">Place order</button>
-                </div>
-              </div>
-            </form>
+              </form>
             </div>
           </div>
         </uib-tab>
