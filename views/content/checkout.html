@@ -22,7 +22,7 @@
                 <th>order summary</th>
                 <th>items : {{allcart.length}}</th>
                 <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
-                <th>grandtotal: rs. {{totalcart}}</th>
+                <th>grandtotal: rs. {{totalcart - shippingcharges}}</th>
               </thead>
             </table>
           </div>
@@ -69,7 +69,7 @@
                 <th>order summary</th>
                 <th>items : {{allcart.length}}</th>
                 <th>subtotal: rs. {{totalcart - shippingcharges}}</th>
-                <th>grandtotal: rs. {{totalcart}}</th>
+                <th>grandtotal: rs. {{totalcart - shippingcharges}}</th>
               </thead>
             </table>
           </div>
@@ -353,7 +353,7 @@
                 </div>
                 <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
                   <span class="text-uppercase pull-left">Grand Total</span>
-                  <span class="pull-right text-uppercase">Rs. {{totalcart}}</span>
+                  <span class="pull-right text-uppercase">Rs. {{totalcart - shippingcharges}}</span>
                 </div>
 
                 <div class="shipping">
