@@ -267,6 +267,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider,cfpLo
         templateUrl: "views/template.html",
         controller: 'CareersCtrl'
     })
+    .state('careersSubmit', {
+        url: "/careers/:id",
+        templateUrl: "views/template.html",
+        controller: 'CareersCtrl'
+    })
     .state('plans', {
         url: "/plans",
         templateUrl: "views/template.html",

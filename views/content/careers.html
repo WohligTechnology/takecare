@@ -10,16 +10,16 @@
           <h2 class="text-center">If you wish to join the Selfcare team, please fill in the following details</h2>
         </div>
       </div>
-      <form name="career">
+      <form name="career" method="post" enctype="multipart/form-data" ng-hide="form.submit" action="thankyou">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control input-placeholder" placeholder="Name">
+              <input type="text" class="form-control input-placeholder" name="name" placeholder="Name">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input name="careermail" required ng-model="email" type="email" class="form-control input-placeholder" placeholder="Email *">
+              <input name="email"  required ng-model="email" type="email" class="form-control input-placeholder" placeholder="Email *">
               <div class="" ng-show="career.careermail.$error.required && career.careermail.$touched">
                 Please Enter Your Email Id.
               </div>
@@ -29,34 +29,35 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="tel" class="form-control input-placeholder" placeholder="Mobile">
+              <input type="text" name="mobile" class="form-control input-placeholder" placeholder="Mobile">
             </div>
             <div class="row">
               <div class="col-md-9 col-sm-10">
                 <div class="form-group">
-                  <input type="text" id="clickfile" class="form-control input-placeholder" placeholder="Upload your resume">
+                  <input type="text" disabled="disabled" id="clickfile" class="form-control input-placeholder" placeholder="Upload your resume">
                 </div>
               </div>
               <div class="col-md-3 col-sm-2">
                 <div class="form-group relate">
                   <a class="btn btn-primary pointer">Browse</a>
-                  <input type="file" class="upload" id="clickbtn" class="form-control">
+                  <input type="file" name="resume" class="upload" id="clickbtn" class="form-control">
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <textarea class="form-control input-placeholder" placeholder="Message"></textarea>
+              <textarea class="form-control input-placeholder" placeholder="Message" name="message"></textarea>
             </div>
           </div>
         </div>
+        <input type="hidden" name="url" value="{{hiddenVal}}">
         <div class="text-center">
-          <button class="btn btn-primary send text-uppercase letter-space">send</button>
+          <input type="submit" class="btn btn-primary send text-uppercase letter-space" value="Send">
         </div>
       </form>
-      <div class="" style="display: none;">
-        <h3 class="m-clear brand-brown-dark text-center">Welcome To The Selfcare Team.</h3>
+      <div ng-show="form.submit">
+        <h3 class="m-clear brand-brown-dark text-center">Your details has been submitted successfully.</h3>
       </div>
     </div>
   </div>
