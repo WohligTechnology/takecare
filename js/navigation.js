@@ -97,10 +97,9 @@ var navigationservice = angular.module('navigationservice', [])
       link: "",
       nocursor: "no-pointer"
     }, {
-      name: "Recipes (Coming Soon)",
+      name: "Recipes",
       classis: "active",
-      link: "",
-      nocursor: "no-pointer"
+      link: "#/recipes"
     }, {
       name: "Restaurant Menus (Coming Soon)",
       classis: "active",

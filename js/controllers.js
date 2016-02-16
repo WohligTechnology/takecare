@@ -2468,7 +2468,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     link: "#/"
   }, {
     name: "Ailment Control",
-    link: "#/ailmentcontrol"
+    link: "#/healthmanagementdetail/8"
   }, {
     name: "Weight Management",
     link: "#/weightmanagement"
