@@ -2402,6 +2402,10 @@ footer {
     }
   }
 }
+.recipe-category {
+  @include square(90px);
+  overflow: hidden;
+ }
 .recipedetail-content {
   margin: 30px 70px 0;
   font-size: 16px;

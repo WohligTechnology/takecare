@@ -1893,7 +1893,7 @@
   .recipe-imgholder { @include square(150px); }
   .recipes-detail h2 { font-size: 20px; }
   .recipe-category {
-    width: 60px;
+    @include square(60px);   
     margin: 0 auto;
   }
   // nutri-cool
