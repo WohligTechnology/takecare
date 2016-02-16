@@ -32,7 +32,7 @@
               <br>
               <span>f: <a href="tel:02261312200">022 61312200</a></span>
               <br>
-              <a href="https://goo.gl/maps/PpeZsiFg5po" target="_blank" class="text-uppercase brand-teal">View On Map</a>
+              <a target="_blank" class="text-uppercase brand-teal" ng-click="map=1">View On Map</a>
             </div>
 
             <div class="santacruz">
@@ -47,7 +47,7 @@
               <br>
               <span>t: <a href="tel:+919819725206">+91 9819725206</a>, <a href="tel:+912226142435">+91 22-26142435</a>,<br><a href="tel:+912226109432" class="san-num">+91 22-26109432</a></span>
               <br>
-              <a href="https://goo.gl/maps/bDhwG4GYpcB2" target="_blank" class="text-uppercase brand-teal">View On Map</a>
+              <a  target="_blank" class="text-uppercase brand-teal" ng-click="map=2">View On Map</a>
             </div>
           </div>
 
@@ -63,15 +63,20 @@
             <br>
             <span>t: <a href="tel:03340708154">033-40708154</a> , <a href="tel: 03364571113"> 033-64571113</a></span>
             <br>
-            <a href="https://goo.gl/maps/9qVRT1q4XyG2" target="_blank" class="text-uppercase brand-teal">View On Map</a>
+            <a  target="_blank" class="text-uppercase brand-teal" ng-click="map=3">View On Map</a>
           </div>
         </div>
 
         <div class="col-md-8 col-sm-7">
           <!-- Map -->
-          <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.0566089680547!2d72.81150841509329!3d18.973107187147065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce7051b84445%3A0x1474fecba24a5185!2sArun+Chambers%2C+Tardeo+Rd%2C+Janata+Nagar%2C+Tardeo%2C+Mumbai%2C+Maharashtra+400034!5e0!3m2!1sen!2sin!4v1451038314725"
-            width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <div class="contact-map" ng-show="map==1">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3773.0566132050985!2d72.813697!3d18.973107!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce7051b84445%3A0x1474fecba24a5185!2sArun+Chambers%2C+Tardeo+Rd%2C+Janata+Nagar%2C+Tardeo%2C+Mumbai%2C+Maharashtra+400034%2C+India!5e0!3m2!1sen!2s!4v1455617613300" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+          <div class="contact-map" ng-show="map==2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.073893345421!2d72.82559671490158!3d19.104413987071688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9eaa0ce7ab7%3A0x4798f71406486521!2sSanghvi+Udyan!5e0!3m2!1sen!2s!4v1455617730411" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+          <div class="contact-map" ng-show="map==3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.4168827862363!2d88.35025351495872!3d22.52605118520679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277303ae170ad%3A0x1de2277f47ceb5fd!2sPulse+Diagnostics!5e0!3m2!1sen!2sin!4v1455617852109" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
       </div>

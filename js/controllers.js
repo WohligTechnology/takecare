@@ -2295,6 +2295,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.alerts = [];
     $scope.contact = {};
 
+    $scope.map = 1;
+
+
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
     };
