@@ -2211,12 +2211,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.oneAtATime = true;
 
+    $scope.myInterval = 1000;
+
     var ReceipeSuccess = function(data) {
       console.log(data);
       $scope.recipe = _.pluck(data.recipeimage, "image");
       $scope.recipe.unshift(data.recipe.image);
       $scope.recipedetail = data.recipe;
-      $scope.otherrecipe = _.chunk(data.otherrecipe, 4);
+      $scope.otherrecipe = _.chunk(data.otherrecipe, 3);
+      console.log($scope.recipe);
     };
 
     NavigationService.getRecipeDetail($stateParams.id, ReceipeSuccess);
