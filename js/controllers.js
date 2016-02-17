@@ -2216,7 +2216,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var ReceipeSuccess = function(data) {
       console.log(data);
       $scope.recipe = _.pluck(data.recipeimage, "image");
-      $scope.recipe.unshift(data.recipe.image);
+      // $scope.recipe.unshift(data.recipe.image);
       $scope.recipedetail = data.recipe;
       $scope.otherrecipe = _.chunk(data.otherrecipe, 3);
       console.log($scope.recipe);
