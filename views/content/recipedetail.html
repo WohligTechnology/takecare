@@ -75,7 +75,7 @@
       <uib-carousel interval="my-Interval">
         <uib-slide ng-repeat="slide in otherrecipe" active="slide.active">
           <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="recipe in slide">
+            <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="recipe in slide" ui-sref="recipedetail({id:recipe.id})">
               <div class="inner-like">
                 <div class="like-image round">
                   <img ng-src="{{recipe.image|serverimage}}" alt="" class="img-responsive">
