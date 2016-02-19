@@ -21,7 +21,7 @@
             <flex-slider class="carousel" flex-slide="slide in recipe track by $index" animation="slide" item-width="90" item-margin="15" Control-Nav="false">
               <li ng-click="changeImage(slide);">
                 <div class="recipe-category round">
-                  <img ng-src="{{slide|serverimage}}" alt="" class="img-responsive ">
+                  <img ng-src="{{slide|serverimage}}" alt="" class="round img-responsive ">
                 </div>
               </li>
             </flex-slider>
@@ -77,8 +77,8 @@
           <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="recipe in slide" ui-sref="recipedetail({id:recipe.id})">
               <div class="inner-like">
-                <div class="like-image ">
-                  <img ng-src="{{recipe.image|serverimage}}" alt="" class="round img-responsive">
+                <div class="like-image round">
+                  <img ng-src="{{recipe.image|serverimage}}" alt="" class=" img-responsive">
                 </div>
                 <span class="brand-primary text-uppercase font-semibold">{{recipe.name}}</span>
               </div>
