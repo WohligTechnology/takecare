@@ -558,12 +558,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   })
   .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, cfpLoadingBar) {
     //Used to name the .html file
-
-
     $scope.isBottom = false;
-
-
-
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
     $scope.menutitle = NavigationService.makeactive("Health Management Detail");
     TemplateService.title = $scope.menutitle;
@@ -582,9 +577,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.showCart(function(data) {
       cart = data;
     });
-
-
-
 
     $scope.healthdetail = [{
       img: "img/health/ailment.png",
@@ -661,6 +653,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getPlansById(planid, function(data) {
       $scope.plans = data.plans;
     });
+
+    $scope.select2  = function(val) {
+      console.log($scope.plans[0].subplans);
+        console.log("SELECT 2 PRESSED"+ val);
+        _.each($scope.plans,function(n) {
+          _.each(n.subplans,function(m) {
+            m.active = false;
+          });
+        });
+        val.active = true;
+    };
+
     $scope.cartAdd = function(id) {
       console.log(id);
       var input = {
@@ -745,7 +749,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.categories = data;
       $scope.categories = $filter('orderBy')($scope.categories, "order"); //order by order field done
       $scope.categories = _.chunk($scope.categories, 2);
-    })
+    });
   })
   .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
