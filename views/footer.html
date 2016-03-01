@@ -110,7 +110,7 @@
             <p>Receive monthly tips on the healthiest foods and excercizes, along with the latest plans and offers.</p>
           </div>
           <div class="mail">
-            <form class="form-inline" name="subscribeForm" ng-submit="subscribe(subscribe,subscribeForm)">
+            <form class="form-inline" name="subscribeForm" ng-submit="subscribe(subscribe,subscribeForm)" ng-hide="subsribeHide">
               <div class="form-group">
                 <input type="email" name="email" required ng-model="subscribe.email" class="form-control email" placeholder="EMAIL">
                 <button type="submit" class="form-control btn-submit">
@@ -122,10 +122,11 @@
               <div class="" ng-show="subscribeForm.$invalid && subscribeForm.email.$dirty" role="alert">
                 Please enter an email
               </div>
-              <div class="" ng-show="subsresponse">
-                {{msg}}
-              </div>
+
             </form>
+            <div class="text-center" ng-show="subsresponse">
+              {{msg}}
+            </div>
           </div>
           <div class="social-links social-links2 foot-sociallinks brand-primary-light">
             <ul>

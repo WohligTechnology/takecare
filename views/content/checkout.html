@@ -27,7 +27,7 @@
                 <th>subtotal: rs.
                   {{totalcart - shippingcharges}}</th>
                 <th>grandtotal: rs.
-                  {{totalcart - shippingcharges}}</th>
+                  {{totalcart }}</th>
               </thead>
             </table>
           </div>
@@ -81,7 +81,7 @@
                 <th>subtotal: rs.
                   {{totalcart - shippingcharges}}</th>
                 <th>grandtotal: rs.
-                  {{totalcart - shippingcharges}}</th>
+                  {{totalcart}}</th>
               </thead>
             </table>
           </div>
@@ -95,7 +95,7 @@
                 <input name="lastname" ng-model="checkout.lastname" required type="text" placeholder="Last Name *" class="form-control">
               </div>
               <div class="form-group">
-                <input name="phone" ng-model="checkout.phone" required type="tel" placeholder="Mobile Number *" class="form-control">
+                <input name="phone" ng-model="checkout.phone" required type="number" placeholder="Mobile Number *" class="form-control">
               </div>
               <div class="form-group">
                 <input name="email" ng-model="checkout.email" required type="email" placeholder="Email *" class="form-control">
@@ -135,7 +135,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="text" class="form-control" placeholder="Pincode *" maxlength="6">
+                      <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="number" class="form-control" placeholder="Pincode *" maxlength="6">
                       <div class="text-center" ng-show="billingForm.billingpincode.$invalid && billingForm.billingpincode.$touched" role="alert">
                         Please enter billing pincode.
                       </div>
@@ -236,7 +236,7 @@
                     </div>
 
                     <div class="form-group">
-                      <input name="shippingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.shippingpincode" type="text" class="form-control" placeholder="Pincode *">
+                      <input name="shippingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.shippingpincode" type="number" class="form-control" placeholder="Pincode *">
 
                     </div>
                     <div class="text-center" ng-show="shippingForm.shippingpincode.$invalid && shippingForm.shippingpincode.$touched" role="alert">
@@ -444,7 +444,7 @@
                         {{shippingcharges}}</span>
                     </div>
                   </div>
-                  <form action="" class="form-inline">
+                  <form action="" class="form-inline" ng-show="">
                     <label for="" class="text-light">
                       COUPON CODE
                       <input type="text" class="form-control">
@@ -462,7 +462,7 @@
                 <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
                   <span class="text-uppercase pull-left">Grand Total</span>
                   <span class="pull-right text-uppercase">Rs.
-                    {{totalcart - shippingcharges}}</span>
+                    {{totalcart }}</span>
                 </div>
 
                 <div class="shipping">
@@ -550,7 +550,7 @@
                         <tr>
                           <td>Billing Zip :</td>
                           <td>
-                            <input type="text" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567"/>
+                            <input type="number" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode" value="234567"/>
                           </td>
                         </tr>
                         <tr>

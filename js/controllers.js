@@ -211,6 +211,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             type: 'success',
             msg: 'Added to cart'
           });
+          Glo.getProductCount();
         } else {
           $scope.alerts.push({
             type: 'danger',
@@ -679,6 +680,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             type: 'success',
             msg: 'Added to cart'
           });
+          Glo.getProductCount();
           $timeout(function() {
             $state.reload();
           }, 1000);
@@ -786,6 +788,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             type: 'success',
             msg: 'Added to cart'
           });
+          Glo.getProductCount();
         } else {
           $scope.alerts.push({
             type: 'danger',
@@ -1331,7 +1334,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         cart = data;
         $scope.totalcart = 0;
         _.each($scope.allcart, function(key) {
-          $scope.totalcart = $scope.totalcart + parseInt(key.price);
+          $scope.totalcart = $scope.totalcart + parseInt(key.subtotal);
           key.qty = parseInt(key.qty);
           if (!$scope.validateQuantity(key)) {
             key.exceeds = true;
@@ -2363,11 +2366,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 })
 
-.controller('footerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
+.controller('footerctrl', function($scope, NavigationService, TemplateService, $uibModal,$timeout) {
   $scope.template = TemplateService;
   $scope.subsresponse = false;
   $scope.msg = "";
   $scope.categories = [];
+  $scope.subscribe={};
+  $scope.subsribeHide=false;
   NavigationService.getCategory(function(data) {
     $scope.categories = data;
   })
@@ -2378,9 +2383,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value === true) {
           $scope.subsresponse = true;
           $scope.msg = "Thank you for subscribing.";
+          $scope.subsribeHide=true;
+          $timeout(function(){
+            $scope.subsribeHide=false;
+            $scope.subsresponse = false;
+            $scope.subscribe.email="";
+          },2000);
         } else {
           $scope.subsresponse = true;
           $scope.msg = "Already subscribed.";
+          $scope.subsribeHide=true;
+          $timeout(function(){
+            $scope.subsribeHide=false;
+            $scope.subsresponse = false;
+            $scope.subscribe.email="";
+          },2000);
         }
       });
     }
@@ -2396,7 +2413,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, 1000);
   };
 
+  NavigationService.authenticate(function(data){
+    console.log(data);
+    if (data) {
+      $.jStorage.set("user",data);
+    }
+  })
 
+  $scope.acceptIt=function(flag){
+    if(flag == true){
+      $scope.acceptValidate = false;
+
+    }else{
+      $scope.acceptValidate = true;
+
+    }
+  };
   Glo.getProductCount = function() {
     NavigationService.totalItemCart(function(data) {
       $scope.badgeCount = data;

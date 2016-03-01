@@ -171,6 +171,9 @@ var navigationservice = angular.module('navigationservice', [])
     getCategory: function(callback) {
       $http.get(adminurl + 'getCategory').success(callback);
     },
+    authenticate: function(callback) {
+      $http.get(adminurl + 'authenticate').success(callback);
+    },
     getCategoryById: function(categoryid, callback) {
       $http.get(adminurl + 'getCategoryById?id=' + categoryid).success(callback);
     },
