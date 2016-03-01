@@ -606,7 +606,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log("Show Cart");
       console.log(data);
       var data2 = _.filter(data, function(n) {
-        return n.status = 3;
+        return n.status == 3;
       });
       $scope.cart = _.pluck(data2, "id");
     }
@@ -2419,6 +2419,16 @@ _.each($scope.allcart,function(key){
   };
 })
 
+.controller('countChange', function($scope, NavigationService, TemplateService, $uibModal) {
+  $scope.badge = {};
+  Glo.getProductCount = function() {
+    NavigationService.totalItemCart(function(data) {
+      $scope.badge.Count = data;
+    });
+  };
+  Glo.getProductCount();
+})
+
 .controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
   $scope.template = TemplateService;
 
@@ -2431,7 +2441,7 @@ _.each($scope.allcart,function(key){
 
 
   $scope.acceptIt=function(flag){
-    if(flag == true){
+    if(flag === true){
       $scope.acceptValidate = false;
 
     }else{
@@ -2440,13 +2450,7 @@ _.each($scope.allcart,function(key){
     }
   };
   $scope.badge = {};
-  Glo.getProductCount = function() {
-    NavigationService.totalItemCart(function(data) {
-      console.log("count "+data);
-      $scope.badge.Count = data;
-    });
-  };
-  Glo.getProductCount();
+
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
   });
@@ -2464,7 +2468,7 @@ _.each($scope.allcart,function(key){
         $.jStorage.set("user",data);
         window.location.reload();
       }
-    })
+    });
   }
   $scope.logout = function() {
     NavigationService.logout(function(data) {
