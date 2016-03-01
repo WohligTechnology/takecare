@@ -332,14 +332,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.orders = [];
+    $scope.msg="Loading..";
+    console.log("here in orderlist");
     if ($.jStorage.get("user")) {
       NavigationService.getUserOrder(function(data) {
         // $scope.orders = data.plans;
+        console.log(data);
         _.each(data.plans, function(n, key) {
           _.each(n.products, function(m, key1) {
             $scope.orders.push(m);
           });
         });
+        if(data.plans.length == 0){
+          $scope.msg="No orders";
+        }
         // $scope.orders
       });
     }
