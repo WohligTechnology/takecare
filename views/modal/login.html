@@ -26,21 +26,14 @@
               <div class="form-group">
                 <input type="email" name="email" class="form-control" ng-model="signup.email" required placeholder="Email">
               </div>
-              <div class="" ng-show="signupForm.email.$invalid && signupForm.email.$touched" role="alert">
-                Please enter your email properly.
-              </div>
+              
 
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <input type="password" name="password" class="form-control" ng-model="signup.password" ng-minlength="6" required placeholder="Password">
               </div>
-              <div class="" ng-show="signupForm.password.$error.required && signupForm.password.$touched" role="alert">
-                Please enter your password.
-              </div>
-              <div class="" ng-show="signupForm.password.$error.minlength " role="alert">
-                Password too short.
-              </div>
+
             </div>
           </div>
           <div class="accept">
