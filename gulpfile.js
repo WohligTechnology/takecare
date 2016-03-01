@@ -3,7 +3,7 @@ var jsArray = [
     './bower_components/flexslider/jquery.flexslider-min.js',
     './bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
     './bower_components/angular/angular.min.js',
-    './bower_components/angular-animate/angular-animate.min.js', 
+    './bower_components/angular-animate/angular-animate.min.js',
     './bower_components/angular-flexslider/angular-flexslider.js',
     './bower_components/angular-loading-bar/src/loading-bar.js',
     './bower_components/angular-sanitize/angular-sanitize.min.js',
@@ -26,9 +26,9 @@ var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
 
 
-var ftpString = "U2FsdGVkX1+jcFED/CJbcYNiOJ42eBsjlxqmrcKWSIPH9Sao/4535zPQX5Fa7VYGAHSfkKCXbDpiUfJhkRRijaerS1lJ/k+dSfqsfl45ICkzMTJ7fBNVDj/242ur9ZG4HZDhSe1O/J4vEUboWDRBhg==";
+var ftpString = "U2FsdGVkX18mvtc2FFqIfFWqGzZ2+tZo9YlS+sUAIeRZUkm0vmgYs7vRwe988svcuPXxwl/c6A5tNFu18vdr7CucKpHVg1ZAW+F/ZhMg63Lh7Tk5dXLjG5P0XdbPP1iw/nETSobMhQ1qe0DUtIMGHA==";
 
-var uploadingFolder = "selfcare";
+var uploadingFolder = "";
 var password = "";
 
 //Do not change anything below

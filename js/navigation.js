@@ -1,7 +1,7 @@
 var Glo =  {};
 
-var mainurl = "http://moviewsapp.com/selfcare/index.php/";
-var imgurl = "http://moviewsapp.com/selfcare/uploads/";
+var mainurl = "http://admin.selfcareindia.com/index.php/";
+var imgurl = "http://admin.selfcareindia.com/uploads/";
 
 
 // if(!isproduction)
