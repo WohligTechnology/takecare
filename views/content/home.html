@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
-        <div class="health-info"> 
+        <div class="health-info">
           <h3 class="brand-yellow title text-uppercase font-gotham-bold">Health <span class="block">Products</span></h3>
           <p class="text-justify health-descp">Healthy snacks &amp; munchies, an extensive range of vital vitamins, protein supplements, Suman Agarwal’s highly acclaimed cookbooks and workout aids like pedometers and weighing scales, we have everything you need to reach your health goals.</p>
           <a href="#/healthproducts/1" class="btn btn-yellow text-uppercase font-gotham-bold letter-space know-more">know more</a>
@@ -115,8 +115,8 @@
 <div class="brand-brown-bg section-story">
   <div class="container">
     <div class="slider brand-brown-light-bg">
-   <uib-carousel interval="myInterval" no-wrap="noWrapSlides" ng-animate="{'slide':true}">
-        <uib-slide ng-repeat="slide in homestory" active="slide.active">
+   <uib-carousel interval="myInterval" no-wrap="noWrapSlides" ng-animate="{'slide':true}" active="active">
+        <uib-slide ng-repeat="slide in homestory " index="slide.id">
           <div class="row">
             <div class="col-md-6">
               <div class="story-video">
