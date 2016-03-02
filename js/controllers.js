@@ -332,8 +332,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.orders = [];
+    $scope.msg= "Loading.."
     if ($.jStorage.get("user")) {
       NavigationService.getUserOrder(function(data) {
+        $scope.msg= "";
         // $scope.orders = data.plans;
         _.each(data.plans, function(n, key) {
           _.each(n.products, function(m, key1) {
@@ -341,6 +343,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           });
         });
         // $scope.orders
+        if(data.plans.length == 0){
+          $scope.msg= "No orders";
+        }
       });
     }
   })
@@ -359,7 +364,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.orders = [];
     $scope.password = {};
     $scope.updateuser={};
+    $scope.user={};
     $scope.updateuser.user = $.jStorage.get("user");
+    $scope.user = $.jStorage.get("user");
+    console.log($scope.user);
     $scope.profile = {};
     $scope.profile.nameemailedit = 'edit';
     $scope.profile.changepasswordedit = 'edit';
@@ -438,19 +446,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
               $scope.allvalidation = [];
               $scope.allvalidation = [{
-                field: $scope.user.billingline1,
+                field: $scope.updateuser.user.billingline1,
                 validation: ""
               }, {
-                field: $scope.user.billingcity,
+                field: $scope.updateuser.user.billingcity,
                 validation: ""
               }, {
-                field: $scope.user.billingpincode,
+                field: $scope.updateuser.user.billingpincode,
                 validation: ""
               }, {
-                field: $scope.user.billingstate,
+                field: $scope.updateuser.user.billingstate,
                 validation: ""
               }, {
-                field: $scope.user.billingcountry,
+                field: $scope.updateuser.user.billingcountry,
                 validation: ""
               }];
 
@@ -459,6 +467,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.updateUser();
                 $scope.profile.billingaddressedit = 'edit';
               } else {
+
                 $scope.addAlert("danger", "Enter Manditory Fields.");
               }
             }
@@ -470,29 +479,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               $scope.profile.shippingaddressedit = 'save';
             } else {
               if ($scope.sameasbilling) {
-                $scope.user.shippingline1 = $scope.user.billingline1;
-                $scope.user.shippingline2 = $scope.user.billingline2;
-                $scope.user.shippingline3 = $scope.user.billingline3;
-                $scope.user.shippingcity = $scope.user.billingcity;
-                $scope.user.shippingpincode = $scope.user.billingpincode;
-                $scope.user.shippingstate = $scope.user.billingstate;
-                $scope.user.shippingcountry = $scope.user.billingcountry;
+                $scope.updateuser.user.shippingline1 = $scope.updateuser.user.billingline1;
+                $scope.updateuser.user.shippingline2 = $scope.updateuser.user.billingline2;
+                $scope.updateuser.user.shippingline3 = $scope.updateuser.user.billingline3;
+                $scope.updateuser.user.shippingcity = $scope.updateuser.user.billingcity;
+                $scope.updateuser.user.shippingpincode = $scope.updateuser.user.billingpincode;
+                $scope.updateuser.user.shippingstate = $scope.updateuser.user.billingstate;
+                $scope.updateuser.user.shippingcountry = $scope.updateuser.user.billingcountry;
               }
               $scope.allvalidation = [];
               $scope.allvalidation = [{
-                field: $scope.user.shippingline1,
+                field: $scope.updateuser.user.shippingline1,
                 validation: ""
               }, {
-                field: $scope.user.shippingcity,
+                field: $scope.updateuser.user.shippingcity,
                 validation: ""
               }, {
-                field: $scope.user.shippingpincode,
+                field: $scope.updateuser.user.shippingpincode,
                 validation: ""
               }, {
-                field: $scope.user.shippingstate,
+                field: $scope.updateuser.user.shippingstate,
                 validation: ""
               }, {
-                field: $scope.user.shippingcountry,
+                field: $scope.updateuser.user.shippingcountry,
                 validation: ""
               }];
 
@@ -535,8 +544,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.updateUser = function() {
       NavigationService.updateUser($scope.updateuser.user, function(data) {
         $scope.addAlert("success", "Saved ");
-        $.jStorage.set("user",data);
-        $scope.user=$.jStorage.get("user");
+        NavigationService.userDetail(function(data) {
+          $scope.user = data;
+          $.jStorage.set("user",data);
+        }, function(data) {
+          $state.go("error");
+        })
       })
     }
 
@@ -2293,9 +2306,6 @@ _.each($scope.allcart,function(key){
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.nutrigenomics = [{
-      qts: "What Will This Analysis Do For Me?",
-      ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
-    }, {
       qts: "What Will This Analysis Do For Me?",
       ans: "You will know where your potential genetic weaknesses are, so you can put preventative strategies into place"
     }];
