@@ -2919,6 +2919,24 @@ footer {
 *[href] {
   cursor: pointer;
 }
+.profile-title {
+  .active-profile {
+    color: $brand-brown-dark !important;
+    text-decoration: underline !important;
+  }
+}
+.orderlist-title {
+  .active-order {
+    color: $brand-brown-dark !important;
+    text-decoration: underline !important;
+  }
+}
+.plan-title {
+  .active-plan {
+    color: $brand-brown-dark !important;
+    text-decoration: underline !important;
+  }
+}
 // end forgot and popup
 // scroll-top
 .scroll-top {
