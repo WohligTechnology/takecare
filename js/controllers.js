@@ -2533,10 +2533,10 @@ _.each($scope.allcart,function(key){
   };
 
   $scope.facebookLogin = function() {
-    window.open(mainurl + 'hauth/login/Facebook?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
+    window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_self', 'location=no');
   };
   $scope.googleLogin = function() {
-    window.open(mainurl + 'hauth/login/Google?returnurl=http://wohlig.co.in/selfcare', '_self', 'location=no');
+    window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_self', 'location=no');
   };
 
   $scope.health = [{
