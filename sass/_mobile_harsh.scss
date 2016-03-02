@@ -231,6 +231,7 @@
   // product-detail
   .product-detail-banner { height: 200px; }
 
+.section-story .view-detail { min-height: 334px; }
 }
 @media (max-width: $screen-xs-max) {
 
@@ -476,6 +477,9 @@
 
   // product-detail
   .product-detail-banner { height: 140px; }
+
+  // section story
+  .section-story .view-detail { min-height: 310px; }
 }
 @media (max-width: 480px) {
   .various .circle { width: 10%; }
@@ -601,4 +605,6 @@
   // product-detail
   .product-detail-banner { height: 100px; }
 
+  // section story
+  .section-story .view-detail { min-height: 260px; }
 }
