@@ -389,6 +389,32 @@
     .slider {
       padding: 20px;
       margin: 20px;
+      // flexslider
+      .flexslider {
+        &:hover {
+          .flex-direction-nav .flex-next {
+            right: -45px;
+          }
+          .flex-direction-nav .flex-prev {
+            left: -45px;
+          }
+        }
+      .flex-direction-nav .flex-next {
+        right: -45px;
+        &:before{
+          color: $brand-brown-light;
+          font-size: 45px;
+        }
+      }
+      .flex-direction-nav .flex-prev {
+        left: -45px;
+        &:before{
+          color: $brand-brown-light;
+          font-size: 45px;
+        }
+      }
+    }
+      // carousel
       .glyphicon-chevron-left:before {
         color: $brand-brown-light;
         font-size: 45px;
@@ -1094,7 +1120,42 @@
   }
   .section-story {
     padding: 30px 0;
-    .slider { margin: 0; }
+    .slider {
+      margin: 0;
+      // flexslider
+      .flexslider {
+        &:hover {
+          .flex-direction-nav .flex-next {
+            right: 25px;
+            top: 65%;
+            @include transform(translateY(-65%));
+          }
+          .flex-direction-nav .flex-prev {
+            left: 25px;
+            top: 65%;
+            @include transform(translateY(-65%));
+          }
+        }
+      .flex-direction-nav .flex-next {
+        right: 25px;
+        top: 65%;
+        @include transform(translateY(-65%));
+        &:before{
+          color: $brand-brown-dark;
+          font-size: 50px;
+        }
+      }
+      .flex-direction-nav .flex-prev {
+        left: 25px;
+        top: 65%;
+        @include transform(translateY(-65%));
+        &:before{
+          color: $brand-brown-dark;
+          font-size: 50px;
+        }
+      }
+    }
+    }
     .carousel-control {
       .glyphicon-chevron-left,
       .glyphicon-chevron-right {
@@ -1893,7 +1954,7 @@
   .recipe-imgholder { @include square(150px); }
   .recipes-detail h2 { font-size: 20px; }
   .recipe-category {
-    @include square(60px);   
+    @include square(60px);
     margin: 0 auto;
   }
   // nutri-cool

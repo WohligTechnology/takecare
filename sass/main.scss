@@ -803,6 +803,58 @@ button {
   padding: 60px 0;
   .slider {
     padding: 40px 120px;
+    // for flexslider
+  .flexslider {
+  border: 4px solid transparent;
+  margin: 0;
+  background-color: transparent;
+  &:hover {
+    .flex-direction-nav .flex-prev {
+      left: -70px;
+      top: 50%;
+      @include transform(translateY(-50%));
+      opacity: 1;
+    }
+    .flex-direction-nav .flex-next {
+      right: -70px;
+      top: 50%;
+      @include transform(translateY(-50%));
+      opacity: 1;
+    }
+  }
+.flex-direction-nav .flex-prev {
+  left: -70px;
+  top: 50%;
+  @include transform(translateY(-50%));
+  opacity: 1;
+  &:before {
+    content: "\f104";
+    color: #c2a388;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 70px;
+    display: block;
+  }
+}
+  .flex-direction-nav .flex-next {
+    right: -70px;
+    top: 50%;
+    @include transform(translateY(-50%));
+    opacity: 1;
+    &:before {
+      content: "\f105";
+      color: #c2a388;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 70px;
+      display: block;
+    }
+  }
+  .flex-direction-nav a {
+    height: auto;
+    color: transparent;
+    text-shadow: none;
+  }
+}
+    // for  carousel
     .carousel-control.left {
       top: -50px;
       left: -90px;

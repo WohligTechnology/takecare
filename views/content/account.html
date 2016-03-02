@@ -79,17 +79,17 @@
                     </p>
                     <div ng-if="profile.billingaddressedit=='save'">
                       <div class="form-group">
-                        <label>Line1*</label>
+                        <label>Flat Number, Building Number *</label>
                         <input class="form-control" ng-model="updateuser.user.billingline1" ng-change="assign(sameasbilling,updateuser.user.billingline1,updateuser.user.billingline2,updateuser.user.billingline3,updateuser.user.billingcity,updateuser.user.billingpincode,updateuser.user.billingstate,updateuser.user.billingcountry)"
                           type="text">
                       </div>
                       <div class="form-group">
-                        <label>Line2</label>
+                        <label>Street Address *</label>
                         <input class="form-control" ng-model="updateuser.user.billingline2" ng-change="assign(sameasbilling,updateuser.user.billingline1,updateuser.user.billingline2,updateuser.user.billingline3,updateuser.user.billingcity,updateuser.user.billingpincode,updateuser.user.billingstate,updateuser.user.billingcountry)"
                           type="text">
                       </div>
                       <div class="form-group">
-                        <label>Line3</label>
+                        <label>Nearest Landmark *</label>
                         <input class="form-control" ng-model="updateuser.user.billingline3" ng-change="assign(sameasbilling,updateuser.user.billingline1,updateuser.user.billingline2,updateuser.user.billingline3,updateuser.user.billingcity,updateuser.user.billingpincode,updateuser.user.billingstate,updateuser.user.billingcountry)"
                           type="text">
                       </div>
@@ -150,15 +150,15 @@
                         <label for="same" class="same-bill"><span></span>Same as billing address</label>
                       </div>
                       <div class="form-group">
-                        <label>Line1*</label>
+                        <label>Flat Number, Building Number *</label>
                         <input class="form-control" ng-model="updateuser.user.shippingline1" type="text">
                       </div>
                       <div class="form-group">
-                        <label>Line2</label>
+                        <label>Street Address *</label>
                         <input class="form-control" ng-model="updateuser.user.shippingline2" type="text">
                       </div>
                       <div class="form-group">
-                        <label>Line3</label>
+                        <label>Nearest Landmark *</label>
                         <input class="form-control" ng-model="updateuser.user.shippingline3" type="text">
                       </div>
 

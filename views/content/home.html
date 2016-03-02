@@ -115,12 +115,11 @@
 <div class="brand-brown-bg section-story">
   <div class="container">
     <div class="slider brand-brown-light-bg">
-   <uib-carousel interval="myInterval" no-wrap="noWrapSlides" ng-animate="{'slide':true}">
-        <uib-slide ng-repeat="slide in homestory" index="slide.id"> 
+      <flex-slider flex-slide="slide in homestory track by $index" class="carousel" animation="slide" control-nav="false">
+        <li>
           <div class="row">
             <div class="col-md-6">
               <div class="story-video">
-                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dnmzOqhu62k" frameborder="0" allowfullscreen></iframe> -->
                 <a class="various fancybox.iframe" fancybox href="{{slide.link}}">
                   <img ng-src="{{slide.image}}" alt="" />
                   <div class="circle">
@@ -145,15 +144,39 @@
               </div>
             </div>
           </div>
-          <!--
-          <img ng-src="{{slide.image}}" style="margin:auto;">
-          <div class="carousel-caption">
-            <h4>Slide {{$index}}</h4>
-            <p>{{slide.text}}</p>
+        </li>
+      </flex-slider>
+   <!-- <uib-carousel interval="myInterval" no-wrap="noWrapSlides" ng-animate="{'slide':true}">
+        <uib-slide ng-repeat="slide in homestory" index="slide.id">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="story-video">
+                <a class="various fancybox.iframe" fancybox href="{{slide.link}}">
+                  <img ng-src="{{slide.image}}" alt="" />
+                  <div class="circle">
+                    <img src="img/play.png" alt="" class="img-responsive" />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="view-detail relate">
+                <div class="get-round weight-info text-center">
+                <span class="text-uppercase brand-brown-dark-bg lost">Lost</span>
+                <p>
+                  <span class="weight-number font-vista">{{slide.weight}}</span>kgs
+                </p>
+              </div>
+                <h4 class="text-left brand-brown-dark name font-semibold letter-space">{{slide.name}}</h4>
+                <span class="text-left block brand-primary letter-space">{{slide.location}}</span>
+                <div class="descp brand-primary">
+                  <p class="text-justify">{{slide.descp}}</p>
+                </div>
+              </div>
+            </div>
           </div>
--->
         </uib-slide>
-      </uib-carousel>
+      </uib-carousel> -->
     </div>
   </div>
 </div>
