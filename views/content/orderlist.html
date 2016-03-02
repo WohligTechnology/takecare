@@ -3,70 +3,62 @@
     <img src="img/banners/account.jpg" alt="">
     <h2 class="text-uppercase get-center white font-semibold">my account</h2>
   </div>
+  <div class="orderlist-title">
+    <div class="" ng-include="template.profile"></div>
+  </div>
   <div class="account-main">
     <div class="container">
       <div class="alert-postion">
-              <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
-          </div>
+        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+      </div>
       <div class="account-tab">
-        <uib-tabset>
-          <uib-tab>
-            <uib-tab-heading><span class="text-uppercase pointer" ui-sref="account">my profile</span></uib-tab-heading>
-          </uib-tab>
-          <uib-tab>
-            <uib-tab-heading><span class="text-uppercase tab-active pointer" ui-sref="orderlist" active="true">order list </span></uib-tab-heading>
-            <div class="relate no-plan">
-              <h3 class="get-center brand-brown-dark">{{msg}}</h3>
-            </div>
-            <div class="order-tab" ng-if="!orders.plans == ''">
-              <div class="cart-table">
-                <table class="table">
-                  <thead class="brand-brown-dark brand-brown-bg text-uppercase letter-space">
-                    <tr>
-                      <th class="text-center">Order Id</th>
-                      <th class="text-center">Items</th>
-                      <th class="text-center">Quantity</th>
-                      <th class="text-center">Total Amount</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="text-center letter-space font-semibold" ng-repeat="order in orders">
-                      <td>
-                        <span>{{order.order}}</span>
-                      </td>
-                      <td>
-                        <figure  class="pointer">
-                          <div class="cart-imgholder m-center round">
-                          <img ng-src="{{order.image | serverimage}}" alt="" class="img-responsive">
-                          </div>
-                          <figcaption class="text-center text-uppercase">{{order.name}}</figcaption>
-                        </figure>
-                      </td>
-                      <td>
-                        <span>{{order.quantity}}</span>
-                      </td>
-                      <td>
-                        <div class="cart-total-amount">
-                        <p>RS. {{order.price}}</p>
+        <div class="relate no-plan" ng-if="msg! == ''">
+          <h3 class="get-center brand-brown-dark">{{msg}}</h3>
+        </div>
+        <div class="order-tab">
+          <div class="cart-table">
+            <table class="table">
+              <thead class="brand-brown-dark brand-brown-bg text-uppercase letter-space">
+                <tr>
+                  <th class="text-center">Order Id</th>
+                  <th class="text-center">Items</th>
+                  <th class="text-center">Quantity</th>
+                  <th class="text-center">Total Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center letter-space font-semibold" ng-repeat="order in orders">
+                  <td>
+                    <span>{{order.order}}</span>
+                  </td>
+                  <td>
+                    <figure class="pointer">
+                      <div class="cart-imgholder m-center round">
+                        <img ng-src="{{order.image | serverimage}}" alt="" class="img-responsive">
                       </div>
-                        <div class="remove text-right">
-                          <button class="btn btn-primary text-uppercase no-radius">print invoice</button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
+                      <figcaption class="text-center text-uppercase">{{order.name}}</figcaption>
+                    </figure>
+                  </td>
+                  <td>
+                    <span>{{order.quantity}}</span>
+                  </td>
+                  <td>
+                    <div class="cart-total-amount">
+                      <p>RS. {{order.price}}</p>
+                    </div>
+                    <div class="remove text-right">
+                      <button class="btn btn-primary text-uppercase no-radius">print invoice</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
                   <span class="text-uppercase pull-left">Grand Total</span>
                   <span class="pull-right text-uppercase">Rs. 375.00</span>
                 </div> -->
-              </div>
-            </div>
-          </uib-tab>
-          <uib-tab>
-            <uib-tab-heading><span class="text-uppercase pointer" ui-sref="plans">My Plans</span></uib-tab-heading>
-          </uib-tab>
-        </uib-tabset>
+          </div>
+        </div>
       </div>
     </div>
   </div>

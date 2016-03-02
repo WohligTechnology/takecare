@@ -533,8 +533,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
 
     $scope.updateUser = function() {
-      NavigationService.updateUser($scope.user, function(data) {
+      NavigationService.updateUser($scope.updateuser.user, function(data) {
         $scope.addAlert("success", "Saved ");
+        $.jStorage.set("user",data);
+        $scope.user=$.jStorage.get("user");
       })
     }
 

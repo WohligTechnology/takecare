@@ -15,6 +15,7 @@ templateservicemod.service('TemplateService', function() {
         this.content = "views/content/content.html";
         this.footermenu = "views/footermenu.html";
         this.footer = "views/footer.html";
+        this.profile = "views/profile.html";
     };
 
     this.changecontent = function(page) {
