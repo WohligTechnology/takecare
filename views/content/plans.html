@@ -12,48 +12,56 @@
         <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
       </div>
       <div class="account-tab">
-        <div class="relate no-plan" ng-if="orders==''">
-          <h3 class="get-center brand-brown-dark">No Orders</h3>
+        <div class="relate no-plan" ng-if="msg !== ''">
+          <h3 class="get-center brand-brown-dark">{{msg}}</h3>
         </div>
-        <div class="order-tab" ng-if="orders!=''">
+        <div class="order-tab" ng-if="plan.length != 0">
           <div class="cart-table">
-            <table class="table">
+            <table class="table" ng-if="plan.length > 0">
               <thead class="brand-brown-dark brand-brown-bg text-uppercase letter-space">
                 <tr>
-                  <th class="text-center">Order Id</th>
+                  <th class="text-center">Order id</th>
                   <th class="text-center">Items</th>
-                  <th class="text-center">Quantity</th>
                   <th class="text-center">Total Amount</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="text-center letter-space font-semibold" ng-repeat="order in orders">
+                <tr class="text-center letter-space font-semibold" ng-repeat="product in plan">
                   <td>
-                    <span>{{order.order}}</span>
+                    <span>{{product.order}}</span>
+                  </td>
+                  <td class="plan-cart">
+                    <div class="">
+                      <h4 class="text-capitalize plan-name m-center">{{product.subtype}}</h4>
+                      <h5 class="text-capitalize">
+                        <span class="block" ng-if="product.months == '1'">{{product.months}} month</span>
+                        <span class="block" ng-if="product.months != '1'">{{product.months}} months</span>
+                        <span ng-if="product.plan==1">Silver Plan</span>
+                        <span ng-if="product.plan==2">Gold Plan</span>
+                        <span ng-if="product.plan==3">Platinum Plan</span>
+                        <span ng-if="product.plan==4">Diamond Plan</span>
+                      </h5>
+                    </div>
                   </td>
                   <td>
-                    <figure class="pointer">
-                      <div class="cart-imgholder m-center round">
-                        <img ng-src="{{order.image | serverimage}}" alt="" class="img-responsive">
-                      </div>
-                      <figcaption class="text-center text-uppercase">{{order.name}}</figcaption>
-                    </figure>
-                  </td>
-                  <td>
-                    <span>{{order.quantity}}</span>
+                    <div class="cart-amount">
+                    <p>RS. {{product.price}}</p>
+                  </div>
                   </td>
                   <td>
                     <div class="cart-total-amount">
-                      <p>RS. {{order.price}}</p>
-                    </div>
-                    <div class="remove text-right">
-                      <button class="btn btn-primary text-uppercase no-radius">print invoice</button>
-                    </div>
+                    <p ng-if="product.status==3">RS. {{product.price}}</p>
+                  </div>
+
                   </td>
                 </tr>
               </tbody>
             </table>
+
+
           </div>
+
+
         </div>
 
       </div>

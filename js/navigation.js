@@ -1,8 +1,11 @@
 var Glo =  {};
 
-var mainurl = "http://admin.selfcareindia.com/index.php/";
-var imgurl = "http://admin.selfcareindia.com/uploads/";
+// var mainurl = "http://admin.selfcareindia.com/index.php/";
+// var imgurl = "http://admin.selfcareindia.com/uploads/";
 
+  mainurl = "http://192.168.0.123/selfbackend/index.php/";
+
+  imgurl = "http://192.168.0.123/selfbackend/uploads/";
 
 // if(!isproduction)
 // {
@@ -287,6 +290,7 @@ var navigationservice = angular.module('navigationservice', [])
       }).success(callback);
     },
     placeOrder: function(request, callback) {
+      console.log(request);
       $http({
         url: adminurl + 'placeOrder',
         method: 'POST',

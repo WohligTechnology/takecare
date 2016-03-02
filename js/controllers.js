@@ -324,6 +324,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("plans");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.plan = [];
+    $scope.msg= "Loading.."
+    if ($.jStorage.get("user")) {
+      NavigationService.getUserOrder(function(data) {
+        $scope.msg ="";
+        _.each(data.plans,function(key){
+          $scope.plan.push(key);
+        });
+        if(data.plans.length == 0){
+          $scope.msg = "No plans";
+        }
+      });
+    }
   })
   .controller('OrderlistCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -335,16 +348,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.msg= "Loading.."
     if ($.jStorage.get("user")) {
       NavigationService.getUserOrder(function(data) {
-        $scope.msg= "";
-        // $scope.orders = data.plans;
-        _.each(data.plans, function(n, key) {
-          _.each(n.products, function(m, key1) {
-            $scope.orders.push(m);
-          });
+        $scope.msg ="";
+        _.each(data.products,function(key){
+          $scope.orders.push(key);
         });
-        // $scope.orders
-        if(data.plans.length == 0){
-          $scope.msg= "No orders";
+        if(data.product.length == 0){
+          $scope.msg = "No orders";
         }
       });
     }
@@ -1342,7 +1351,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 
     NavigationService.getUserById(function(data) {
-      $scope.checkout = data;
+      if(data.value ==  false){
+        $scope.checkout = {};
+      }else{
+
+        $scope.checkout= data;
+      }
     });
 
     $scope.getCart = function() {
@@ -1495,19 +1509,6 @@ _.each($scope.allcart,function(key){
       }
 
     };
-    $scope.Checkoutcart = [{
-      img: "img/cart/1.jpg",
-      name: "Baked Potato Chips",
-      quantity: "1",
-      amount: "225.00",
-      totalamount: "225.00"
-    }, {
-      img: "img/cart/1.jpg",
-      name: "Chana Jor",
-      quantity: "1",
-      amount: "150.00",
-      totalamount: "150.00"
-    }];
 
   })
   .controller('TeamCtrl', function($scope, TemplateService, NavigationService, $timeout) {
