@@ -888,9 +888,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Went Wrong");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    NavigationService.getOrder($stateParams.orderid, function(data) {
-      $scope.order = data;
-    });
+    $scope.order={};
+    $scope.order.transactionid=$stateParams.orderid;
   })
   .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
@@ -898,9 +897,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Thankyou");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    NavigationService.getOrder($stateParams.orderid, function(data) {
-      $scope.order = data;
-    });
+    $scope.order={};
+      $scope.order.transactionid=$stateParams.orderid;
+      $scope.order.amount = $stateParams.amount;
   })
   .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file

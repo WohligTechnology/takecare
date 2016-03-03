@@ -297,7 +297,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpL
       controller: 'WentwrongCtrl'
     })
     .state('thankyou', {
-      url: "/thankyou/:orderid",
+      url: "/thankyou/:orderid/:amount",
       templateUrl: "views/template.html",
       controller: 'ThankyouCtrl'
     })
