@@ -324,16 +324,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("plans");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.plan = [];
+    $scope.plans = [];
     $scope.msg= "Loading.."
     if ($.jStorage.get("user")) {
       NavigationService.getUserOrder(function(data) {
         $scope.msg ="";
-        _.each(data.plans,function(key){
-          $scope.plan.push(key);
-        });
-        if(data.plans.length == 0){
-          $scope.msg = "No plans";
+        // _.each(data.products,function(key){
+        //   $scope.orders.push(key);
+        // });
+        // $scope.plans.push(_.map(data.orders,function(key){
+        //   return _.map(key.plans,function(key2){
+        //     return key2;
+        //   });
+        // }));
+        $scope.orders = data.orders;
+        _.each($scope.orders,function(order) {
+          $scope.plans = _.union(order.plans,$scope.plans);
+        })
+        console.log($scope.plans);
+
+        if($scope.plans.length == 0){
+          $scope.msg = "No Plans";
         }
       });
     }
@@ -349,10 +360,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     if ($.jStorage.get("user")) {
       NavigationService.getUserOrder(function(data) {
         $scope.msg ="";
-        _.each(data.products,function(key){
-          $scope.orders.push(key);
-        });
-        if(data.product.length == 0){
+        // _.each(data.products,function(key){
+        //   $scope.orders.push(key);
+        // });
+        $scope.orders=data.orders;
+        if(data.orders.length == 0){
           $scope.msg = "No orders";
         }
       });
@@ -533,19 +545,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     NavigationService.userDetail(function(data) {
       $scope.user = data;
-
-      // console.log(_.findIndex($scope.countries,{'value':'Angola'}));
-      // if (data.billingcountry=='') {
-      //   $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
-      // }else {
-      //   $scope.selectedBillingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.billingcountry})]
-      // }
-      // if (data.shippingcountry=='') {
-      //   $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':'Please Select'})]
-      // }else {
-      //   $scope.selectedShippingCountry = $scope.countries[_.findIndex($scope.countries,{'value':data.shippingcountry})]
-      // }
-
     }, function(data) {
       $state.go("error");
     })

@@ -26,8 +26,8 @@
                   <th class="text-center">Total Amount</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="text-center letter-space font-semibold" ng-repeat="order in orders">
+              <tbody ng-repeat="one in orders">
+                <tr class="text-center letter-space font-semibold" ng-repeat="order in one.product">
                   <td>
                     <span>{{order.order}}</span>
                   </td>
@@ -46,11 +46,42 @@
                     <div class="cart-total-amount">
                       <p>RS. {{order.price}}</p>
                     </div>
-                    <div class="remove text-right">
-                      <button class="btn btn-primary text-uppercase no-radius">print invoice</button>
-                    </div>
+
                   </td>
                 </tr>
+                <tr class="text-center letter-space font-semibold" ng-repeat="product in one.plans">
+                  <td>
+                    <span>{{product.order}}</span>
+                  </td>
+                  <td class="plan-cart">
+                    <div class="">
+                      <h4 class="text-capitalize plan-name m-center">{{product.subtype}}</h4>
+                      <h5 class="text-capitalize">
+                        <span class="block" ng-if="product.months == '1'">{{product.months}} month</span>
+                        <span class="block" ng-if="product.months != '1'">{{product.months}} months</span>
+                        <span ng-if="product.plan==1">Silver Plan</span>
+                        <span ng-if="product.plan==2">Gold Plan</span>
+                        <span ng-if="product.plan==3">Platinum Plan</span>
+                        <span ng-if="product.plan==4">Diamond Plan</span>
+                      </h5>
+                    </div>
+                  </td>
+                  <td>-</td>
+                  <td>
+                    <div class="cart-amount">
+                    <p>RS. {{product.price}}</p>
+                  </div>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><div class="remove text-right">
+                  <button class="btn btn-primary text-uppercase no-radius">print invoice</button>
+                </div></td>
+              </tr>
               </tbody>
             </table>
             <!-- <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
