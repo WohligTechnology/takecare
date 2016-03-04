@@ -1591,7 +1591,7 @@ _.each($scope.allcart,function(key){
 
 
     $scope.blog.search = "";
-    $scope.pageno = 0;
+    $scope.pageno = 1;
     $scope.tag = "";
     $scope.blogpage = [];
     $scope.tagmsg = "Loading...";
@@ -1602,16 +1602,17 @@ _.each($scope.allcart,function(key){
     if ($stateParams.tagname) {
       $scope.tag = $stateParams.tagname;
     }
-    var lastpage = 0;
+    var lastpage = 1;
     $scope.reloadBlog = function() {
       if (lastpage >= $scope.pageno) {
-        ++$scope.pageno;
         NavigationService.getBlog($scope.blog.search, $scope.pageno, $scope.tag, function(data) {
           _.each(data.queryresult, function(n) {
             $scope.blogpage.push(n);
           });
           lastpage = data.lastpage;
+          ++$scope.pageno;
         });
+
       }
 
     };
