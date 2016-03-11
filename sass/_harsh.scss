@@ -796,6 +796,7 @@
     @include margin(0 0 50px 0);
     span {
       @include padding(10px 20px);
+      display: inline-block;
       font-size: 32px;
       border: 1px solid $brand-brown-dark;
     }

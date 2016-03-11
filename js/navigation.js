@@ -72,7 +72,7 @@ var navigationservice = angular.module('navigationservice', [])
     lineClass: 'liner',
     nocursor: "no-pointer",
     subnav: [{
-      name: "Snacks & Munchies",
+      name: "Munchies & Beverages",
       classis: "active",
       link: "#/healthproducts/1"
     }, {
