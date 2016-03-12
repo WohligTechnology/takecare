@@ -1604,7 +1604,9 @@ _.each($scope.allcart,function(key){
     }
     var lastpage = 1;
     $scope.reloadBlog = function() {
+      console.log(lastpage + " last and pageno " + $scope.pageno);
       if (lastpage >= $scope.pageno) {
+        console.log("correct condition");
         NavigationService.getBlog($scope.blog.search, $scope.pageno, $scope.tag, function(data) {
           _.each(data.queryresult, function(n) {
             $scope.blogpage.push(n);
