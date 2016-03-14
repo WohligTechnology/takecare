@@ -2541,19 +2541,22 @@ _.each($scope.allcart,function(key){
 
   $scope.health = [{
     name: "Cholesterol",
-    link: "#/"
+    link: "#/healthmanagementdetail/8"
   }, {
     name: "High Blood Pressure",
-    link: "#/"
+    link: "#/healthmanagementdetail/8"
   }, {
     name: "Diabetes",
-    link: "#/"
+    link: "#/healthmanagementdetail/8"
   }, {
     name: "Ailment Control",
     link: "#/healthmanagementdetail/8"
   }, {
     name: "Weight Management",
     link: "#/weightmanagement"
+  },{
+    name:"Weight Loss",
+    link:"#/weightmanagement"
   }];
 
   $scope.msg = "Enter your registered email address and we will send you instructions.";
