@@ -1326,6 +1326,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.hasShipping=false;
     $scope.placeorder = true;
     $scope.shipAtSame = false;
+    $scope.todaysDate = Date.now();
     $scope.tabs = [{
       active: true,
       disabled: true
