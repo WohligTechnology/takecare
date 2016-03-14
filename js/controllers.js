@@ -1612,9 +1612,8 @@ _.each($scope.allcart,function(key){
             $scope.blogpage.push(n);
           });
           lastpage = data.lastpage;
-          ++$scope.pageno;
         });
-
+        ++$scope.pageno;
       }
 
     };
