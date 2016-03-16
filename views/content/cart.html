@@ -57,13 +57,16 @@
               </td>
               <td>
                 <div class="cart-amount">
-                <p>RS. {{product.price}}</p>
+                  <!-- <pre>Country : {{myCountry}}</pre> -->
+                <p ng-if="myCountry=='IN'">RS. {{product.price}}</p>
+                <p ng-if="myCountry!='IN'">$ {{product.dollarprice}}</p>
               </div>
               </td>
               <td>
                 <div class="cart-total-amount">
                   <p ng-if="product.status!=3">RS. {{product.subtotal}}</p>
-                <p ng-if="product.status==3">RS. {{product.price}}</p>
+                <p ng-if="product.status==3 && myCountry=='IN'">RS. {{product.price}}</p>
+                <p ng-if="product.status==3 && myCountry!='IN'">$ {{product.dollarsubtotal}}</p>
               </div>
                 <div class="remove text-right">
                   <button class="btn btn-primary text-uppercase no-radius" ng-click="removeCart(product)">Remove</button>
@@ -75,7 +78,8 @@
 
         <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold" ng-if="allcart.length>0">
           <span class="text-uppercase pull-left">Grand Total</span>
-          <span class="pull-right text-uppercase">Rs. {{totalcart}}</span>
+          <span class="pull-right text-uppercase" ng-if="myCountry=='IN'">Rs. {{totalcart}}</span>
+          <span class="pull-right text-uppercase" ng-if="myCountry!='IN'">$ {{totalcartdollar}}</span>
         </div>
 
         <div class="shipping">
