@@ -17,6 +17,7 @@ var imgurl = "http://admin.selfcareindia.com/uploads/";
 var cart = [];
 
 var adminurl = mainurl + "json/";
+var country = "";
 
 var navigationservice = angular.module('navigationservice', [])
 
@@ -163,6 +164,9 @@ var navigationservice = angular.module('navigationservice', [])
     },
     showCart: function(callback) {
       $http.get(adminurl + 'showCart').success(callback);
+    },
+    localCountry: function(callback) {
+      $.getJSON("http://www.geoplugin.net/json.gp?jsoncallback=?", callback)
     },
     getSlide: function(callback) {
       console.log(adminurl);

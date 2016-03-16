@@ -197,28 +197,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.alerts.splice(index, 1);
     };
     $scope.cartAdd = function(item) {
-      var input = {
-        product: item,
-        quantity: 1,
-        status: "1"
-      };
-      console.log(input);
-      NavigationService.addToCart(input, function(data) {
-        console.log(data);
-        Glo.getProductCount();
-        if (data.value === true) {
-          $scope.alerts.push({
-            type: 'success',
-            msg: 'Added to cart'
-          });
+      if (country!='' && country=="IN") {
+        var input = {
+          product: item,
+          quantity: 1,
+          status: "1"
+        };
+        console.log(input);
+        NavigationService.addToCart(input, function(data) {
+          console.log(data);
           Glo.getProductCount();
-        } else {
-          $scope.alerts.push({
-            type: 'danger',
-            msg: 'Already in cart'
-          });
-        }
-      });
+          if (data.value === true) {
+            $scope.alerts.push({
+              type: 'success',
+              msg: 'Added to cart'
+            });
+            Glo.getProductCount();
+          } else {
+            $scope.alerts.push({
+              type: 'danger',
+              msg: 'Already in cart'
+            });
+          }
+        });
+      }else {
+        $scope.alerts.push({
+          type: 'danger',
+          msg: 'No Shipping for Out Of Country.'
+        });
+      }
     };
     $scope.refreshProducts = function(subcategoryarr) {
       if (lastpage >= $scope.pageno) {
@@ -799,6 +806,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.product.relatedproduct = _.chunk($scope.product.relatedproduct, 3);
     });
     $scope.cartAdd = function(id) {
+      if (country!='' && country=="IN") {
       var input = {
         product: id,
         quantity: parseInt($scope.filter.quantity),
@@ -821,6 +829,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }
       });
+    } else {
+      $scope.alerts.push({
+        type: 'danger',
+        msg: 'No Shipping for Out Of Country.'
+      });
+    }
     }
     $scope.like = [{
       image: "img/cart/1.jpg",
@@ -2451,7 +2465,12 @@ _.each($scope.allcart,function(key){
       scrollTop: 0
     }, 1000);
   };
-
+  if (country=='') {
+    NavigationService.localCountry(function(data){
+      console.log(data.geoplugin_countryCode);
+      country = data.geoplugin_countryCode;
+    });
+  }
 
 
   $scope.acceptIt=function(flag){
