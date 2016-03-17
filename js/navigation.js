@@ -9,8 +9,8 @@ var imgurl = "http://admin.selfcareindia.com/uploads/";
 
 // if(!isproduction)
 // {
-//   mainurl = "http://192.168.0.123/selfbackend/index.php/";
-//   imgurl = "http://192.168.0.123/selfbackend/uploads/";
+  // mainurl = "http://192.168.0.123/selfbackend/index.php/";
+  // imgurl = "http://192.168.0.123/selfbackend/uploads/";
 // }
 
 
@@ -385,7 +385,7 @@ var navigationservice = angular.module('navigationservice', [])
             $http.get(adminurl + 'getRecipeDetail?id=' + id).success(callback);
         },
         fedexTrack: function(tracking_number, callback) {
-            tracking_number = 123456789012;
+            // tracking_number = 123456789012;
             $http({
                 url: 'https://www.fedex.com/trackingCal/track?data={"TrackPackagesRequest":{"appType":"WTRK","uniqueKey":"","processingParameters":{},"trackingInfoList":[{"trackNumberInfo":{"trackingNumber":' + tracking_number + ',"trackingQualifier":"","trackingCarrier":""}}]}}&action=trackpackages&locale=en_CA&version=1&formate=json',
                 method: 'GET',

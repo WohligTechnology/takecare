@@ -371,6 +371,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 //   $scope.orders.push(key);
                 // });
                 $scope.orders = data.orders;
+                _.each($scope.orders, function(n) {
+                    if (n.trackingcode && n.trackingcode != '') {
+                        NavigationService.fedexTrack(n.trackingcode, function(track) {
+                            if (track.TrackPackagesResponse.successful) {
+                                n.trackUrl = "http://fedex.com/Tracking?action=track&language=english&cntry_code=us&tracknumbers=" + n.trackingcode;
+                                if (track && track.TrackPackagesResponse && track.TrackPackagesResponse.packageList && track.TrackPackagesResponse.packageList[0]) {
+                                    n.trackingStatus = track.TrackPackagesResponse.packageList[0].keyStatus;
+                                }
+                            }
+                        })
+                    }
+                    console.log(n);
+                })
                 if (data.orders.length == 0) {
                     $scope.msg = "No orders";
                 }
