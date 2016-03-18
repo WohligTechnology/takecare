@@ -709,7 +709,7 @@ button {
   }
 }
 .health-cat {
-  margin: 100px 60px;
+  margin: 55px 60px;
   .health-info {
     padding: 0 25px;
     .title {
@@ -772,9 +772,7 @@ button {
     border: none;
   }
 }
-.health-diet {
-  padding: 80px 0;
-}
+.health-diet { padding: 40px 0; }
 .diet-info {
   padding: 0 40px;
   h4 {
@@ -2438,7 +2436,7 @@ footer {
 ////recipe//
 .recipedetail-slider {
   width: 1060px;
-  margin: 50px auto 0;
+  margin: 0 auto;
   .flexslider {
     .flex-direction-nav a {
       height: auto;
@@ -2486,9 +2484,7 @@ footer {
   background-color: rgba(255,255,255,0.9);
   font-size: 20px;
 }
-.recipes-main {
-  margin: 60px 0;
-}
+.recipes-main { margin: 25px 0 60px; }
 .recipe-imgholder {
   @include square(400px);
   overflow: hidden;
@@ -3029,7 +3025,7 @@ footer {
   margin: 0;
   text-transform: uppercase;
   a {
-    text-decoration: underline !important; 
+    text-decoration: underline !important;
   }
 }
 @import "harsh";
