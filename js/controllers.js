@@ -2603,7 +2603,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }
     };
 
-    $scope.facebooklogin = function() {
+    $scope.facebookLogin = function() {
       ref = window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
       stopinterval = $interval(callAtIntervaltwitter, 2000);
       ref.addEventListener('exit', function(event) {
@@ -2611,7 +2611,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $interval.cancel(stopinterval);
       });
     }
-    $scope.googlelogin = function() {
+    $scope.googleLogin = function() {
       ref = window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
       stopinterval = $interval(callAtIntervaltwitter, 2000);
       ref.addEventListener('exit', function(event) {
@@ -2630,12 +2630,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
     //END SOCIAL LOGINS
-    $scope.facebookLogin = function() {
-        window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_self', 'location=no');
-    };
-    $scope.googleLogin = function() {
-        window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_self', 'location=no');
-    };
+    // $scope.facebookLogin = function() {
+    //     window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_self', 'location=no');
+    // };
+    // $scope.googleLogin = function() {
+    //     window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_self', 'location=no');
+    // };
 
     $scope.health = [{
         name: "Cholesterol",
