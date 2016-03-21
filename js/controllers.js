@@ -565,6 +565,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
         NavigationService.userDetail(function(data) {
+          console.log(data);
             $scope.user = data;
         }, function(data) {
             $state.go("error");
@@ -574,8 +575,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.updateUser($scope.updateuser.user, function(data) {
                 $scope.addAlert("success", "Saved ");
                 NavigationService.userDetail(function(data) {
+                  console.log("userDetail : ");
+                  if (data.value == false) {
+
+                  } else {
                     $scope.user = data;
                     $.jStorage.set("user", data);
+                  }
+
                 }, function(data) {
                     $state.go("error");
                 })
@@ -1385,10 +1392,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         NavigationService.getUserById(function(data) {
+          console.log("getUserById response : ");
+          console.log(data);
             if (data.value == false) {
                 $scope.checkout = {};
             } else {
-
                 $scope.checkout = data;
             }
         });
@@ -2482,7 +2490,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     Glo.getProductCount();
 })
 
-.controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal) {
+.controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal,$interval) {
     $scope.template = TemplateService;
 
     $scope.goToTop = function() {
@@ -2521,13 +2529,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.enablelogout = true;
         $scope.user = $.jStorage.get("user");
     } else {
-        NavigationService.authenticate(function(data) {
-            console.log(data);
-            if (data !== "false") {
-                $.jStorage.set("user", data);
-                window.location.reload();
-            }
-        });
+      $scope.enablelogout=false;
     }
     $scope.logout = function() {
         NavigationService.logout(function(data) {
@@ -2576,7 +2578,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
     };
+    //SOCIAL LOGINS
+    var checktwitter = function(data, status) {
+      if (data != "false") {
+        $interval.cancel(stopinterval);
+        ref.close();
+        NavigationService.authenticate(authenticatesuccess);
+      } else {
 
+      }
+
+    };
+
+    var callAtIntervaltwitter = function() {
+      NavigationService.authenticate(checktwitter);
+    };
+    var authenticatesuccess = function(data, status) {
+      if (data != "false") {
+        console.log(data);
+        $.jStorage.set("user", data);
+        user = data;
+        $state.go('home');
+        window.location.reload();
+      }
+    };
+
+    $scope.facebooklogin = function() {
+      ref = window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
+      stopinterval = $interval(callAtIntervaltwitter, 2000);
+      ref.addEventListener('exit', function(event) {
+        NavigationService.authenticate(authenticatesuccess);
+        $interval.cancel(stopinterval);
+      });
+    }
+    $scope.googlelogin = function() {
+      ref = window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
+      stopinterval = $interval(callAtIntervaltwitter, 2000);
+      ref.addEventListener('exit', function(event) {
+        NavigationService.authenticate(authenticatesuccess);
+        $interval.cancel(stopinterval);
+      });
+    }
+
+    $scope.twitterlogin = function() {
+      ref = window.open(mainurl + 'hauth/login/Twitter?returnurl=' + websiteurl, '_blank', 'location=yes');
+      stopinterval = $interval(callAtIntervaltwitter, 2000);
+      ref.addEventListener('exit', function(event) {
+        NavigationService.authenticate(authenticatesuccess);
+        $interval.cancel(stopinterval);
+      });
+    }
+
+    //END SOCIAL LOGINS
     $scope.facebookLogin = function() {
         window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_self', 'location=no');
     };
