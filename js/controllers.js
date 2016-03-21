@@ -113,6 +113,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                             msg: 'Your query has been sent'
                         });
                         $scope.asksuman = {};
+                        $scope.asksuman.category = "";
                         formValidate.email.$touched = false;
                     }
                 });
@@ -2553,7 +2554,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (formValidate.$valid) {
                 NavigationService.signup(input, function(data) {
                     if (data.value === false) {
-                        console.log("herer");
                         $scope.alreadyReg = true;
                     } else {
                         $.jStorage.set("user", data);
