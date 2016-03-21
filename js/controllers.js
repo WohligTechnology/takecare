@@ -2490,7 +2490,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     Glo.getProductCount();
 })
 
-.controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal,$interval) {
+.controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal,$interval, $state) {
     $scope.template = TemplateService;
 
     $scope.goToTop = function() {
