@@ -1444,10 +1444,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.checkout);
             if ($scope.allcart.length > 0) {
                 $scope.checkout.cart = $scope.allcart;
-                $scope.checkout.shippingcharges = $scope.shippingcharges;
-                $scope.totalcart.totalAmount = $scope.totalcart + $scope.shippingcharges;
-                $scope.totalCartDollar = $scope.totalcartdollar + $scope.shippingcharges;
-                $scope.checkout.shippingCharged = $scope.shippingcharges;
+                $scope.checkout.totalamount = $scope.totalcart;
+                $scope.checkout.finalamount = $scope.totalcart + $scope.shippingcharges;
+                $scope.checkout.shippingamount = $scope.shippingcharges;
                 NavigationService.checkoutCheck(function(data) {
                     if (data.value) {
                         NavigationService.placeOrder($scope.checkout, function(data) {
