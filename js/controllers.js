@@ -1412,6 +1412,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }
 
                 });
+                $scope.pretotalcart = $scope.totalcart;
+                $scope.pretotalcartdollar = $scope.totalcartdollar;
                 $scope.totalcart = $scope.totalcart + $scope.shippingcharges;
                 $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges;
             });
@@ -1444,8 +1446,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.checkout);
             if ($scope.allcart.length > 0) {
                 $scope.checkout.cart = $scope.allcart;
-                $scope.checkout.totalamount = $scope.totalcart;
-                $scope.checkout.finalamount = $scope.totalcart + $scope.shippingcharges;
+                if ($.jStorage.get("myCountry")!="IN") {
+                  $scope.checkout.totalamount = $scope.pretotalcartdollar;
+                  $scope.checkout.finalamount = $scope.totalcartdollar;
+                }else{
+                $scope.checkout.totalamount = $scope.pretotalcart;
+                $scope.checkout.finalamount = $scope.totalcart;
+              }
                 $scope.checkout.shippingamount = $scope.shippingcharges;
                 NavigationService.checkoutCheck(function(data) {
                     if (data.value) {
