@@ -1451,6 +1451,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.checkout);
             if ($scope.allcart.length > 0) {
                 $scope.checkout.cart = $scope.allcart;
+                $scope.checkout.shippingcharges= $scope.shippingcharges;
                 NavigationService.checkoutCheck(function(data) {
                     if (data.value) {
                         NavigationService.placeOrder($scope.checkout, function(data) {
