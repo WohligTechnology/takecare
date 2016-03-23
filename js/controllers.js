@@ -1387,7 +1387,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getUserById(function(data) {
           console.log("getUserById response : ");
           console.log(data);
-            if (data.value == false) {
+            if (data.value === false) {
                 $scope.checkout = {};
             } else {
                 $scope.checkout = data;
@@ -1444,7 +1444,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.checkout);
             if ($scope.allcart.length > 0) {
                 $scope.checkout.cart = $scope.allcart;
-                $scope.checkout.shippingcharges= $scope.shippingcharges;
+                $scope.checkout.shippingcharges = $scope.shippingcharges;
+                $scope.totalcart.totalAmount = $scope.totalcart + $scope.shippingcharges;
+                $scope.totalCartDollar = $scope.totalcartdollar + $scope.shippingcharges;
+                $scope.checkout.shippingCharged = $scope.shippingcharges;
                 NavigationService.checkoutCheck(function(data) {
                     if (data.value) {
                         NavigationService.placeOrder($scope.checkout, function(data) {
