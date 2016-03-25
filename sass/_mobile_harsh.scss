@@ -16,6 +16,7 @@
   }
   .signin {
     font-size: 12px;
+    padding:12px 5px;
   }
   // about
   .about-health .about-health-content .inner-about-carousel{
@@ -46,7 +47,7 @@
   }
   .cart-icon { padding: 0 20px 9px 15px; }
   .signin {
-    @include padding(12px 0);
+    // @include padding(12px 0);
   }
 
   // Footer

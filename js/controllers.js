@@ -158,7 +158,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "We are experts at child nutrition. We have specialized plans to help childrenwith height gain, weight gain, childhood obesity and sports nutrition."
         }];
     })
-    .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, cfpLoadingBar) {
+    .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("healthproducts");
         $scope.menutitle = NavigationService.makeactive("Health Products");
@@ -384,7 +384,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
     })
-    .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, cfpLoadingBar) {
+    .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("account");
         $scope.menutitle = NavigationService.makeactive("Account");
@@ -590,7 +590,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-    .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar) {
+    .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("healthmanagement");
         $scope.menutitle = NavigationService.makeactive("Health Management");
@@ -602,7 +602,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.subpackages);
         });
     })
-    .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, cfpLoadingBar) {
+    .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
         //Used to name the .html file
         $scope.isBottom = false;
         $scope.template = TemplateService.changecontent("healthmanagementdetail");
@@ -612,7 +612,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.healthid = $stateParams.id;
         $scope.alerts = [];
         $scope.selectedPackage = {};
-        cfpLoadingBar.start();
         console.log("state of page");
         console.log($state);
 
