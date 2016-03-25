@@ -402,6 +402,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.user = {};
         $scope.updateuser.user = $.jStorage.get("user");
         $scope.user = $.jStorage.get("user");
+        if(!$.jStorage.get("user")){
+
+          $state.go("home")
+        }
         console.log($scope.user);
         $scope.profile = {};
         $scope.profile.nameemailedit = 'edit';

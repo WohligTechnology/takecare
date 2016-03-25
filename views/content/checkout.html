@@ -135,7 +135,7 @@
                                  </div>
                               </div>
                               <div class="form-group">
-                                 <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="number" class="form-control" placeholder="Pincode *" maxlength="6">
+                                 <input name="billingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.billingpincode" type="tel" class="form-control" placeholder="Pincode *" maxlength="6">
                                  <div class="text-center" ng-show="billingForm.billingpincode.$invalid && billingForm.billingpincode.$touched" role="alert">
                                     Please enter billing pincode.
                                  </div>
@@ -235,7 +235,7 @@
                               </div>
 
                               <div class="form-group">
-                                 <input name="shippingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.shippingpincode" type="number" class="form-control" placeholder="Pincode *">
+                                 <input name="shippingpincode" ng-change="sameShipping(checkout)" required ng-model="checkout.shippingpincode" type="tel" class="form-control" placeholder="Pincode *">
 
                               </div>
                               <div class="text-center" ng-show="shippingForm.shippingpincode.$invalid && shippingForm.shippingpincode.$touched" role="alert">
