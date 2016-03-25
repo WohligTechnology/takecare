@@ -709,7 +709,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
             val.active = true;
         };
-
+        $scope.closeTabs= function(){
+          _.each($scope.plans, function(n) {
+              _.each(n.subplans, function(m) {
+                  m.active = false;
+              });
+          });
+        };
         $scope.cartAdd = function(id) {
             console.log(id);
             var input = {
