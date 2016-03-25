@@ -191,6 +191,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.alerts.splice(index, 1);
         };
         $scope.cartAdd = function(item) {
+          console.log(country);
             if (country != '' && country == "IN") {
                 var input = {
                     product: item,
