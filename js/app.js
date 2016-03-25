@@ -377,6 +377,15 @@ firstapp.filter('nospace', function() {
     return (!value) ? '' : value.replace(/ /g, '');
   };
 });
+firstapp.filter('loginame', function() {
+  return function(value) {
+    if(value){
+      return value.split(' ')[0];
+    }else{
+      return null;
+    }
+  };
+});
 
 firstapp.filter('cut', function() {
   return function(value, wordwise, max, tail) {
