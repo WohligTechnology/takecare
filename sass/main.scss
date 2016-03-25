@@ -3035,17 +3035,6 @@ footer {
 .close {
   padding: 10px;
 }
-.alert-postion {
-  .alert {
-    .alert-success {
-      background-color: $brand-primary !important;
-      color: #000 !important;
-      font-size: 21px !important;
-      box-shadow: none !important;
-      letter-spacing: 1px !important;
-    }
-  }
-}
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";
