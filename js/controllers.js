@@ -775,10 +775,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                   $('#successcart').modal('show');
 
                     Glo.getProductCount();
-                    $timeout(function() {
-                      $('#successcart').modal('hide');
-                        $state.reload();
-                    }, 1000);
                 } else {
                     $scope.alerts.push({
                         type: 'danger',
@@ -1428,6 +1424,8 @@ $('#successcart').modal('hide');
         $timeout(function(){
           $('.loadingcfp').hide();
         },5000);
+        $('#successcart').modal('hide');
+        
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.guest = "notguest";
