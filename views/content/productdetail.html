@@ -53,7 +53,7 @@
                 </form>
               </div>
               <div class="product-buttons">
-                <a class="btn btn-primary text-uppercase" ng-click="cartAdd(product.product.id)" data-target="#successcart" data-toggle="modal">
+                <a class="btn btn-primary text-uppercase" ng-click="cartAdd(product.product.id)"  data-toggle="modal">
                   Add to cart</a>
                 <!-- <a ui-sref="home" class="btn btn-primary text-uppercase">Continue Shopping</a> -->
               </div>
@@ -115,7 +115,7 @@
           <h3>Your product has been added to the cart, successfully!</h3>
           <div class="success-btn">
             <a href="#/healthproducts/1" class="btn btn-primary text-uppercase continue" data-dismiss="modal">Continue Shopping</a>
-            <a class="btn btn-primary text-uppercase">Proceed to checkout</a>
+            <a class="btn btn-primary text-uppercase" ui-sref="checkout">Proceed to checkout</a>
           </div>
         </div>
       </div>

@@ -97,7 +97,7 @@
                         <div style="display:none">
                           {{subplan.plan | showplan}}
                         </div>
-                        <a ng-hide="planInCart(subplan.id)" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.id)">take this plan</a>
+                        <a ng-hide="planInCart(subplan.id)" class="white btn btn-primary text-uppercase" ng-click="cartAdd(subplan.id)" data-toggle="modal">take this plan</a>
                         <a ng-show="planInCart(subplan.id)" disabled class="white btn btn-primary text-uppercase">Plan in your cart</a>
                         <!-- <p ng-if="$index==0">Silver plan rates are only applicable for online consulation.</p> -->
                       </div>
@@ -128,6 +128,22 @@
             </div>
         </uib-slide>
       </uib-carousel>
+      </div>
+    </div>
+  </div>
+  <div class="successcart">
+    <div class="modal fade" id="successcart" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content text-center">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+            <h3>Your product has been added to the cart, successfully!</h3>
+            <div class="success-btn">
+              <a href="#/healthproducts/1" class="btn btn-primary text-uppercase continue" data-dismiss="modal">Continue Shopping</a>
+              <a class="btn btn-primary text-uppercase" ui-sref="checkout">Proceed to checkout</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
