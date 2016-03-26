@@ -3035,6 +3035,21 @@ footer {
 .close {
   padding: 10px;
 }
+.successcart {
+  .modal-dialog {
+    position: relative;
+    height: 100%;
+  }
+  .modal-content {
+    width: 100%;
+    @extend .get-center;
+  }
+  .close { padding: 10px; }
+  .success-btn {
+    margin: 20px 0 25px;
+    a { margin: 0px 15px; }
+  }
+}
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";
