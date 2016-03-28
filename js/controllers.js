@@ -1424,7 +1424,8 @@ $('#successcart').modal('hide');
         $timeout(function(){
           $('.loadingcfp').hide();
         },5000);
-        $('#successcart').modal('hide');
+        $('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
 
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
@@ -1625,20 +1626,38 @@ $('#successcart').modal('hide');
                         $scope.hasShipping = true;
                     }else{
                       $scope.pricetemp=$scope.pricetemp+key.price;
+                      console.log($scope.pricetemp);
                     }
                 })
-                if($scope.totalcart < 500){
-                  if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
-                      console.log("Shipping chanrges in pincode" + $scope.shippingcharges + " " + $scope.checkout.shippingpincode);
-                      $scope.shippingcharges = 0;
-                  } else {
-                      $scope.shippingcharges = 200;
+                // if($scope.totalcart < 500){
+                //   if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
+                //       console.log("Shipping chanrges in pincode" + $scope.shippingcharges + " " + $scope.checkout.shippingpincode);
+                //       $scope.shippingcharges = 0;
+                //   } else {
+                //       $scope.shippingcharges = 200;
+                //   }
+                //
+                // }else if(($scope.totalcart - $scope.pricetemp)>500 && $scope.hasShipping){
+                //   $scope.shippingcharges=200;
+                // }else{
+                //   $scope.shippingcharges = 0;
+                // }
+                console.log($scope.hasShipping);
+                if($scope.hasShipping) {
+                  if($scope.totalcart<500){
+                    $scope.shippingcharges = 200;
+                  }else if(($scope.totalcart - parseInt($scope.pricetemp))>500){
+                    console.log(($scope.totalcart - parseInt($scope.pricetemp)));
+                    if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
+                          $scope.shippingcharges = 0;
+                      } else {
+                          $scope.shippingcharges = 200;
+                      }
+                  }else{
+                    $scope.shippingcharges = 200;
                   }
-
-                }else if(($scope.totalcart - $scope.pricetemp)>500 && $scope.hasShipping){
-                  $scope.shippingcharges=200;
-                }else{
-                  $scope.shippingcharges = 0;
+                }else {
+                  $scope.shippingcharges=0;
                 }
                 console.log($scope.checkout);
                 $scope.tabs[2].active = true;
