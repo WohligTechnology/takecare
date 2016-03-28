@@ -1425,7 +1425,7 @@ $('#successcart').modal('hide');
           $('.loadingcfp').hide();
         },5000);
         $('#successcart').modal('hide');
-        
+
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.guest = "notguest";
@@ -1497,6 +1497,8 @@ $('#successcart').modal('hide');
                     }
 
                 });
+                $scope.pretotalcart = $scope.totalcart;
+                $scope.pretotalcartdollar = $scope.totalcartdollar;
                 $scope.totalcart = $scope.totalcart + $scope.shippingcharges;
                 $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges;
             });
@@ -1529,9 +1531,16 @@ $('#successcart').modal('hide');
             console.log($scope.checkout);
             if ($scope.allcart.length > 0) {
                 $scope.checkout.cart = $scope.allcart;
-                $scope.checkout.totalamount = $scope.totalcart;
-                $scope.checkout.finalamount = $scope.totalcart + $scope.shippingcharges;
+                if ($scope.myCountry == 'IN') {
+                  $scope.checkout.totalamount = $scope.pretotalcart;
+                  $scope.checkout.finalamount = $scope.totalcart;
+                }else {
+                  $scope.checkout.totalamount = $scope.pretotalcartdollar;
+                  $scope.checkout.finalamount = $scope.totalcartdollar;
+                }
+
                 $scope.checkout.shippingamount = $scope.shippingcharges;
+                $scope.checkout.currency = $scope.myCountry;
                 NavigationService.checkoutCheck(function(data) {
                     if (data.value) {
                         NavigationService.placeOrder($scope.checkout, function(data) {

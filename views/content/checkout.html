@@ -422,8 +422,8 @@
                                  </td>
                                  <td>
                                     <div class="cart-total-amount">
-                                      <p ng-if="product.status==3 && myCountry=='IN'">RS. {{product.options.price}}</p>
-                                      <p ng-if="product.status==3 && myCountry!='IN'">$ {{product.dollarsubtotal}}</p>
+                                      <p ng-if="myCountry=='IN'">RS. {{product.subtotal}}</p>
+                                      <p ng-if="myCountry!='IN'">$ {{product.dollarsubtotal}}</p>
                                     </div>
                                     <!-- <div class="remove text-right">
                           <button class="btn btn-primary text-uppercase no-radius">Remove</button>
