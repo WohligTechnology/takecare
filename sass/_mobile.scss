@@ -693,6 +693,11 @@
   // stats
   .result { text-align: center; }
   .calorie { margin: 20px 0 15px; }
+  .package-name { margin: 0 auto; }
+  .package-descp {
+    margin: 20px 0;
+    text-align: center;
+   }
   //recipes
   .recipe-imgholder { @include square(250px); }
   .recipes-detail {
