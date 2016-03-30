@@ -1435,6 +1435,9 @@ $('.modal-backdrop').remove();
         $scope.allcart = [];
         $scope.checkout = {};
         $scope.checkout.billingstate="";
+        $scope.checkout.billingcountry="India";
+        $scope.checkout.shippingstate="";
+        $scope.checkout.shippingcountry="India";
         $scope.alerts = [];
         $scope.user = {};
         $scope.shippingcharges = 0;
@@ -2653,6 +2656,7 @@ $('.modal-backdrop').remove();
             console.log(data);
             // if(data.value==true){
             $.jStorage.flush();
+            $state.go("home");
             window.location.reload();
             // }
         });
