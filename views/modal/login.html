@@ -4,7 +4,7 @@
       <div class="login-form">
         <form name="signupForm">
             <div class="row">
-              <div class="col-md-offset-2 col-md-8">
+              <div class="col-md-offset-1 col-md-10">
                 <div class="form-group">
                   <input type="text" name="firstname" class="form-control" ng-model="signup.firstname" required placeholder="First Name">
                 </div>
@@ -26,22 +26,23 @@
                 <div class="form-group">
                   <input type="password" name="password" class="form-control" ng-model="signup.password" ng-minlength="6" required placeholder="Confirm Password">
                 </div>
+                <div class="accept">
+                  <div class="checkbox">
+                    <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
+                    <label for="accept" class="text-light text-uppercase">
+                      <span></span> I Accept The Terms And Conditions And Privacy Policy Of The Website
+                    </label>
+                  </div>
+                  <div class="" ng-show="acceptValidate">
+                    Please accept the terms and conditions to proceed.
+                  </div>
+                  <div class="text-center" ng-show="alreadyReg">
+                    Email ID is already registered
+                  </div>
+                </div>
               </div>
             </div>
-          <div class="accept">
-            <div class="checkbox">
-              <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
-              <label for="accept" class="text-light text-uppercase">
-                <span></span> I Accept The Terms And Conditions And Privacy Policy Of The Website
-              </label>
-            </div>
-            <div class="" ng-show="acceptValidate">
-              Please accept the terms and conditions to proceed.
-            </div>
-            <div class="text-center" ng-show="alreadyReg">
-              Email ID is already registered
-            </div>
-          </div>
+
           <div class="text-center submit">
             <button class="btn btn-primary text-uppercase" ng-click="doSignup(accept,signup,signupForm)">Signup</button>
           </div>
@@ -68,7 +69,7 @@
       <div class="login-form">
         <form name="loginForm">
           <div class="row">
-            <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-offset-1 col-md-10">
               <div class="form-group">
                 <input type="email" name="email" ng-model="login.email" class="form-control" required placeholder="Email">
               </div>

@@ -1504,6 +1504,7 @@ button {
   }
   .login-form {
     padding: 20px;
+    input[type="checkbox"] + label {   font-size: 12px;   }
   }
   .nav-tabs {
     @include display(flex);
