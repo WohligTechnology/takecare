@@ -598,18 +598,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.updateUser = function() {
             NavigationService.updateUser($scope.updateuser.user, function(data) {
                 $scope.addAlert("success", "Saved ");
-                NavigationService.userDetail(function(data) {
-                  console.log("userDetail : ");
-                  if (data.value == false) {
-
-                  } else {
-                    $scope.user = data;
-                    $.jStorage.set("user", data);
-                  }
-
-                }, function(data) {
-                    $state.go("error");
-                })
+                $scope.user = data;
+                $.jStorage.set("user", data);
             })
         }
 
@@ -994,8 +984,11 @@ $('#successcart').modal('hide');
         $scope.order.transactionid = $stateParams.orderid;
         $scope.order.amount = $stateParams.amount;
     })
-    .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    .controller('ForgotpasswordCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,$state) {
         //Used to name the .html file
+        if($.jStorage.get("user")){
+          $state.go('home');
+        }
         $scope.template = TemplateService.changecontent("forgotpassword");
         $scope.menutitle = NavigationService.makeactive("Forgot Password");
         TemplateService.title = $scope.menutitle;
@@ -2675,6 +2668,9 @@ $('.modal-backdrop').remove();
             $scope.acceptValidate = true;
         } else {
             if (formValidate.$valid) {
+              if (input.password != input.cfpassword) {
+                $scope.noMatch = true;
+              } else {
                 NavigationService.signup(input, function(data) {
                     if (data.value === false) {
                         $scope.alreadyReg = true;
@@ -2683,6 +2679,7 @@ $('.modal-backdrop').remove();
                         window.location.reload();
                     }
                 });
+              }
             }
         }
     };

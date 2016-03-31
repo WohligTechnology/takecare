@@ -19,12 +19,30 @@
                 </div>
                 <div class="form-group">
                   <input type="email" name="email" class="form-control" ng-model="signup.email" required placeholder="Email">
+                  <div class="ab" ng-show="signupForm.email.$invalid && signupForm.email.$touched" role="alert">
+                    Please enter your email properly.
+                  </div>
                 </div>
                 <div class="form-group">
                   <input type="password" name="password" class="form-control" ng-model="signup.password" ng-minlength="6" required placeholder="Password">
+                  <div class="ab" ng-show="signupForm.password.$error.required && signupForm.password.$touched" role="alert">
+                    Please enter your password.
+                  </div>
+                  <div class="ab" ng-show="signupForm.password.$error.minlength " role="alert">
+                    Password too short.
+                  </div>
                 </div>
                 <div class="form-group">
-                  <input type="password" name="password" class="form-control" ng-model="signup.password" ng-minlength="6" required placeholder="Confirm Password">
+                  <input type="password" name="cfpassword" class="form-control" ng-model="signup.cfpassword" ng-minlength="6" required placeholder="Confirm Password">
+                  <div class="ab" ng-show="signupForm.cfpassword.$error.required && signupForm.cfpassword.$touched" role="alert">
+                    Please enter correct password.
+                  </div>
+                  <div class="ab" ng-show="noMatch">
+                        Passwords do not match.
+                  </div>
+                  <div class="ab" ng-show="signupForm.cfpassword.$error.minlength " role="alert">
+                    Password too short.
+                  </div>
                 </div>
                 <div class="accept">
                   <div class="checkbox">
