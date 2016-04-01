@@ -369,7 +369,10 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
         totalItemCart: function(callback) {
-            $http.get(adminurl + 'totalitemcart').success(callback);
+            $http.get(adminurl + 'totalitemcart').success(function(data,status) {
+        $.jStorage.set("cartCount",data);
+        callback(data,status);
+      });
         },
         forgotpasswordsubmit: function(password, hash, callback) {
 

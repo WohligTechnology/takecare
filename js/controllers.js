@@ -2595,12 +2595,12 @@ $('.modal-backdrop').remove();
 })
 
 .controller('countChange', function($scope, NavigationService, TemplateService, $uibModal) {
-    $scope.badge = {};
-    Glo.getProductCount = function() {
-        NavigationService.totalItemCart(function(data) {
-            $scope.badge.Count = data;
-        });
-    };
+  $scope.Count = $.jStorage.get("cartCount");
+  Glo.getProductCount = function() {
+      NavigationService.totalItemCart(function(data) {
+          $scope.Count = data;
+      });
+  };
     Glo.getProductCount();
 })
 
@@ -2617,6 +2617,12 @@ $('.modal-backdrop').remove();
             console.log(data.geoplugin_countryCode);
             country = data.geoplugin_countryCode;
             $.jStorage.set("myCountry", country);
+        });
+    }
+    if (country == '') {
+        NavigationService.localCountry(function(data) {
+            console.log(data.geoplugin_countryCode);
+            country = data.geoplugin_countryCode;
         });
     }
 
