@@ -1457,6 +1457,7 @@ $('.modal-backdrop').remove();
         }, ];
         if ($.jStorage.get("user")) {
             $scope.user = $.jStorage.get("user");
+            $scope.checkout = $.jStorage.get("user");
             $scope.tabs[1].active = true;
             console.log($scope.tabs);
         }
@@ -2611,7 +2612,7 @@ $('.modal-backdrop').remove();
             scrollTop: 0
         }, 1000);
     };
-    if (country == '') {
+    if (!$.jStorage.get("myCountry")) {
         NavigationService.localCountry(function(data) {
             console.log(data.geoplugin_countryCode);
             country = data.geoplugin_countryCode;
