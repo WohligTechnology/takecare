@@ -1643,7 +1643,7 @@ $('.modal-backdrop').remove();
                 if($scope.hasShipping) {
                   if($scope.totalcart<500){
                     $scope.shippingcharges = 200;
-                  }else if(($scope.totalcart - parseInt($scope.pricetemp))>500){
+                  }else if(($scope.totalcart - parseInt($scope.pricetemp))>=500){
                     console.log(($scope.totalcart - parseInt($scope.pricetemp)));
                     if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
                           $scope.shippingcharges = 0;
