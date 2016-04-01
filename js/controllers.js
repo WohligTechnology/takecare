@@ -722,7 +722,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         } else {
             // $scope.selectedPackage.name = "Weight Loss";
-            $scope.selectedPackage.description = "At Selfcare, we individually design and monitor weight loss and health care programmes by emphasiszing well-balanced, portion-controlled diets and the importance of exercise. Your health and immunity are as important as your weight loss goals. Along with the diet, blood tests and diet plans, a well-planned exercise schedule is also crafted to address specific health issues. Most importantly, at Selfcare we believe its vital to achieve optimal weight for better long term health and to keep it off thereafter.";
+            $scope.selectedPackage.description = "At Selfcare, we individually design and monitor weight loss and health care programmes by emphasising well-balanced, portion-controlled diets and the importance of exercise. Your health and immunity are as important as your weight loss goals. Along with the diet, blood tests and diet plans, a well-planned exercise schedule is also crafted to address specific health issues. Most importantly, at Selfcare we believe its vital to achieve optimal weight for better long term health and to keep it off thereafter.";
 
         }
 
