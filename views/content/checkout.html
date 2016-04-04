@@ -143,7 +143,7 @@
                               <div class="form-group">
                                  <div class="custom-select">
                                     <select name="billingstate" ng-model="checkout.billingstate" class="form-control" required>
-                                       <option value="">Select State</option>
+                                       <option value="" selected>Select State</option>
                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -189,8 +189,8 @@
                               <div class="form-group">
                                  <div class="custom-select">
                                     <select class="form-control" name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry" id="">
-                                       <option value="Please Select" class="ng-binding ng-scope">Please Select</option>
-                                       <option value="India" class="ng-binding ng-scope">India</option>
+                                       <option value="" class="ng-binding ng-scope">Please Select</option>
+                                       <option value="India" class="ng-binding ng-scope" selected>India</option>
                                     </select>
                                     <span></span>
                                  </div>
@@ -244,7 +244,7 @@
                               <div class="form-group">
                                  <div class="custom-select">
                                     <select name="shippingstate" ng-model="checkout.shippingstate" required class="form-control">
-                                       <option value="">Select State</option>
+                                       <option value="" selected>Select State</option>
                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -291,8 +291,8 @@
                               <div class="form-group">
                                  <div class="custom-select">
                                     <select class="form-control" name="shippingcountry" ng-model="checkout.shippingcountry" required id="">
-                                       <option value="Please Select" class="ng-binding ng-scope">Please Select</option>
-                                       <option value="India" class="ng-binding ng-scope">India</option>
+                                       <option value="" class="ng-binding ng-scope">Please Select</option>
+                                       <option value="India" class="ng-binding ng-scope" selected>India</option>
                                     </select>
                                  </div>
                                  <div class="text-center" ng-show="shippingForm.shippingcountry.$invalid && shippingForm.shippingcountry.$touched" role="alert">

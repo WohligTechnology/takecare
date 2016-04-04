@@ -883,7 +883,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.addToCart(input, function(data) {
           Glo.getProductCount();
           if (data.value == true) {
-            console.log("here already");
             $('#successcart').modal('show');
             $scope.alerts = [];
             // $scope.alerts.push({
