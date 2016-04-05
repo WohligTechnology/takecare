@@ -84,10 +84,11 @@
                       <h5 class="text-uppercase font-semibold">{{subplan.title}}</h5>
                       <ul class="chart-list font-semibold" ng-bind-html="subplan.description"></ul>
                       <div class="pricing text-center">
-                        <span class="brand-primary font-gotham-bold">$
-                          {{subplan.price_in_dollars}}</span>
                         <span class="brand-primary font-gotham-bold">Rs.
-                          {{subplan.price_in_INR}}</span>
+                          {{subplan.price_in_INR}} /</span>
+                          <span class="brand-primary font-gotham-bold">$
+                            {{subplan.price_in_dollars}}</span>
+
                       </div>
                     </div>
                     <div class="tab-foot text-right">
