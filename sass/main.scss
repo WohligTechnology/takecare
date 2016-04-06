@@ -1491,6 +1491,27 @@ button {
     }
   }
 }
+.cart-fixed {
+  @include square(50px);
+  border: 1px solid #fff;
+  border-radius: 100%;
+  @include position(fixed, 40% 20px null null);
+  line-height: 60px;
+  text-align: center;
+  z-index: 10;
+  &:after {
+    content: "";
+    @include size(70px,2px);
+    @include position(absolute, 10px null null null);
+    background-color: $brand-primary;
+  }
+  .bagde {
+    @include square(25px);
+    border: 1px solid #fff;
+    @include position(absolute, -5px null null -10px);
+    line-height: 22px;
+  }
+}
 //end cart///
 ////Login//////
 .login-tab {
