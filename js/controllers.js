@@ -892,7 +892,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           Glo.getProductCount();
           if (data.value == true) {
             $('#successcart').modal('show');
-            $scope.alerts = [];
             // $scope.alerts.push({
             //     type: 'success',
             //     msg: 'Added to cart'
@@ -1480,16 +1479,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.alerts.splice(index, 1);
     };
 
-    NavigationService.getUserById(function(data) {
-      console.log("getUserById response : ");
-      console.log(data);
-      if (data.value === false) {
-        $scope.checkout = {};
-        $scope.checkout.billingstate = "";
-      } else {
-        $scope.checkout = data;
-      }
-    });
 
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
@@ -2620,8 +2609,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.totalItemCart(function(data) {
       console.log(data);
       $scope.Count = data;
-      $.jStorage.set("cartCount",$scope.Count);
-      $scope.$apply();
+      $.jStorage.set("cartCount",data);
     });
   };
   Glo.getProductCount();
