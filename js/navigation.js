@@ -1,11 +1,11 @@
 var Glo = {};
 
-var mainurl = "http://admin.selfcareindia.com/index.php/";
-var imgurl = "http://admin.selfcareindia.com/uploads/";
+// var mainurl = "http://admin.selfcareindia.com/index.php/";
+// var imgurl = "http://admin.selfcareindia.com/uploads/";
 
-// mainurl = "http://192.168.0.111/selfback/index.php/";
+var mainurl = "http://192.168.1.133/selfbackend/index.php/";
 
-// imgurl = "http://192.168.0.111/selfback/uploads/";
+var imgurl = "http://192.168.1.133/selfbackend/uploads/";
 
 // if(!isproduction)
 // {

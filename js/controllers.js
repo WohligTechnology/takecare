@@ -483,6 +483,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               $scope.profile.nameemailedit = 'save';
             } else {
               $scope.profile.nameemailedit = 'edit';
+              var tempsplit = $scope.updateuser.user.name.split(' ');
+              if(tempsplit.length == 2){
+                $scope.updateuser.user.firstname = tempsplit[0];
+                $scope.updateuser.user.lastname = tempsplit[1];
+              }
+              else {
+                $scope.updateuser.user.firstname = $scope.updateuser.user.name;
+              }
               $scope.updateUser()
             }
           }
@@ -2610,7 +2618,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.Count = $.jStorage.get("cartCount");
   Glo.getProductCount = function() {
     NavigationService.totalItemCart(function(data) {
+      console.log(data);
       $scope.Count = data;
+      $.jStorage.set("cartCount",$scope.Count);
+      $scope.$apply();
     });
   };
   Glo.getProductCount();
