@@ -1,10 +1,8 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'ngAnimate', 'angular-loading-bar', 'infinite-scroll'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'ngAnimate', 'cfp.loadingBar', 'infinite-scroll'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal,cfpLoadingBar) {
     //Used to name the .html file
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
 
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
@@ -35,7 +33,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "General"
     }];
     $scope.navigation = NavigationService.getnav();
+    cfpLoadingBar.start();
+
     NavigationService.getSlide(function(data) {
+      cfpLoadingBar.complete();
+
       $scope.homeslider = data;
     });
 
@@ -135,9 +137,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("About Us");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     // Corousel
     $scope.sliderInterval = 5000;
     $scope.noWrapSlides = false;
@@ -164,7 +164,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "We are experts at child nutrition. We have specialized plans to help childrenwith height gain, weight gain, childhood obesity and sports nutrition."
     }];
   })
-  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $state) {
+  .controller('HealthProductsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $state, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthproducts");
     $scope.menutitle = NavigationService.makeactive("Health Products");
@@ -212,7 +212,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           status: "1"
         };
         console.log(input);
+        cfpLoadingBar.start();
         NavigationService.addToCart(input, function(data) {
+          cfpLoadingBar.complete();
           console.log(data);
           Glo.getProductCount();
           if (data.value === true) {
@@ -237,11 +239,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.refreshProducts = function(subcategoryarr) {
       if (lastpage >= $scope.pageno) {
         ++$scope.pageno;
+        cfpLoadingBar.start();
+
         NavigationService.getProductsByCategory({
+
           categoryid: $scope.categoryid,
           subcategories: subcategoryarr,
           pageno: $scope.pageno
         }, function(data) {
+
+            cfpLoadingBar.complete();
           if (data.value === false) {
             $scope.msg = "No products found.";
             $scope.products = [];
@@ -265,9 +272,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
     $scope.refreshProducts([]);
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     // $scope.loadBlog = function(){
     //   $scope.products =
     // };
@@ -297,16 +302,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.refreshProducts($scope.filterBy);
     };
   })
-  .controller('SelfcaretvCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('SelfcaretvCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("selfcaretv");
     $scope.menutitle = NavigationService.makeactive("Selfcare Tv");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
+    cfpLoadingBar.start();
+
     NavigationService.getTvVideo(function(data) {
+      cfpLoadingBar.complete();
+
       $scope.selfcaretv = data;
     });
   })
@@ -316,9 +323,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Careers");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $scope.adminurl = adminurl;
     $scope.hiddenVal = window.location.href + "/thankyou";
 
@@ -340,7 +345,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
   })
-  .controller('PlansCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('PlansCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("plans");
     $scope.menutitle = NavigationService.makeactive("plans");
@@ -348,11 +353,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.plans = [];
     $scope.msg = "Loading..";
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     if ($.jStorage.get("user")) {
+      cfpLoadingBar.start();
+
       NavigationService.getUserOrder(function(data) {
+        cfpLoadingBar.complete();
+
         $scope.msg = "";
         // _.each(data.products,function(key){
         //   $scope.orders.push(key);
@@ -372,9 +379,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.msg = "No Plans";
         }
       });
+    }else{
+      $scope.msg="Please Sign In To View Your Plans"
     }
   })
-  .controller('OrderlistCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('OrderlistCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("orderlist");
     $scope.menutitle = NavigationService.makeactive("orderlist");
@@ -382,11 +391,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.orders = [];
     $scope.msg = "Loading..";
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     if ($.jStorage.get("user")) {
+      cfpLoadingBar.start();
+
       NavigationService.getUserOrder(function(data) {
+        cfpLoadingBar.complete();
+
         $scope.msg = "";
         // _.each(data.products,function(key){
         //   $scope.orders.push(key);
@@ -409,6 +420,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.msg = "No orders";
         }
       });
+    }else{
+      $scope.msg="Please Sign In To View Your Orders"
     }
   })
   .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -421,9 +434,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.selectedShippingCountry = countries[0];
     $scope.selectedBillingCountry = countries[0];
     $scope.sameasbilling = false;
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
 
     $scope.alerts = [];
     $scope.error = false;
@@ -619,26 +630,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
   })
-  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagement");
     $scope.menutitle = NavigationService.makeactive("Health Management");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
+    cfpLoadingBar.start();
+
     NavigationService.getSubPackages(function(data) {
+      cfpLoadingBar.complete();
+
       $scope.subpackages = data;
       $scope.subpackages = _.chunk($scope.subpackages, 5);
       console.log($scope.subpackages);
     });
   })
-  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
+  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams,cfpLoadingBar) {
     //Used to name the .html file
     $scope.isBottom = false;
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
@@ -650,9 +661,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.selectedPackage = {};
     console.log("state of page");
     console.log($state);
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $('#successcart').modal('hide');
 
     $scope.closeAlert = function(index) {
@@ -735,7 +744,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
 
+    cfpLoadingBar.start();
+
     NavigationService.getPlansById(planid, function(data) {
+      cfpLoadingBar.complete();
+
       $scope.plans = data.plans;
     });
 
@@ -766,7 +779,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         product: id,
         status: "3"
       };
+      cfpLoadingBar.start();
+
       NavigationService.addToCart(input, function(data) {
+
+        cfpLoadingBar.complete();
+
         Glo.getProductCount();
 
         if (data.value === true) {
@@ -792,9 +810,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Weight Management");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $scope.weightinfo = [{
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
@@ -830,9 +846,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template = TemplateService.changecontent("imageconsulting");
     $scope.menutitle = NavigationService.makeactive("Image Consulting");
     TemplateService.title = $scope.menutitle;
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $scope.navigation = NavigationService.getnav();
   })
   .controller('ProductCategoryCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter) {
@@ -842,16 +856,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.categories = [];
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     NavigationService.getCategory(function(data) {
       $scope.categories = data;
       $scope.categories = $filter('orderBy')($scope.categories, "order"); //order by order field done
       $scope.categories = _.chunk($scope.categories, 2);
     });
   })
-  .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+  .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state,cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("productdetail");
     $scope.menutitle = NavigationService.makeactive("Product Detail");
@@ -863,14 +875,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.outofstock = false;
     $scope.filter = {};
     $scope.filter.quantity = "01";
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $('#successcart').modal('hide');
     $scope.closeAlert = function(index) {
       $scope.alerts.splice(index, 1);
     };
+
+    cfpLoadingBar.start();
+
     NavigationService.getProductDetail($scope.productid, function(data) {
+      cfpLoadingBar.complete();
+
       console.log(data);
       $scope.product = data;
       // $scope.product = data[0];
@@ -952,9 +967,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("FAQ");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $scope.oneAtATime = true;
     $scope.status = {
       isFirstOpen: true,
@@ -1008,9 +1021,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.forgotpasswordsubmit(password, $stateParams.hash, function(data) {
         console.log(data);
         $scope.formSubmitDone = true;
-        $timeout(function() {
-          $('.loadingcfp').hide();
-        }, 5000);
+        
       });
     };
 
@@ -1030,9 +1041,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.newsyears = [];
     $scope.news = [];
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     NavigationService.getNewsYear(function(data) {
         $scope.newsyears = data;
         $scope.activeTab($scope.newsyears[0].year)
@@ -1108,9 +1117,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Success Stories");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $scope.reads = [{
       name: "Chetna Mehra",
       desc: "I started my plan in November and opted for 5kg Program. Vaishali has been extremely helpful to me in achieving this goal. Anytime of my day she was reachable and she never stopped me from eating anything. I have enjoyed this diet so much that, I wish to continue and lose further 5kgs. SelfCare is awesome! And I have recommended all my friends and family to come here.  Never thought that losing weight will be so much fun.",
@@ -1316,9 +1323,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.allcart = [];
     $scope.alerts = [];
     $scope.msg = "Loading...";
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $scope.myCountry = $.jStorage.get("myCountry");
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
@@ -1424,12 +1429,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     };
   })
-  .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
     $scope.template = TemplateService.changecontent("checkout");
     $scope.menutitle = NavigationService.makeactive("Checkout");
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
 
@@ -1481,7 +1484,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.getCart = function() {
+      cfpLoadingBar.start();
+
       NavigationService.showCart(function(data) {
+        cfpLoadingBar.complete();
+
         $scope.allcart = data;
         cart = data;
         $scope.totalcart = 0;
@@ -1747,7 +1754,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
   })
 
-.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog");
     $scope.menutitle = NavigationService.makeactive("Blog");
@@ -1761,9 +1768,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.tag = "";
     $scope.blogpage = [];
     $scope.tagmsg = "Loading...";
-    $timeout(function() {
-      $('.loadingcfp').hide();
-    }, 5000);
+
     if ($stateParams.search) {
       $scope.blog.search = $stateParams.search;
     }
@@ -1774,8 +1779,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.reloadBlog = function() {
       console.log(lastpage + " last and pageno " + $scope.pageno);
       if (lastpage >= $scope.pageno) {
+        cfpLoadingBar.start();
+
         console.log("correct condition");
         NavigationService.getBlog($scope.blog.search, $scope.pageno, $scope.tag, function(data) {
+          cfpLoadingBar.complete();
+
           _.each(data.queryresult, function(n) {
             $scope.blogpage.push(n);
           });
