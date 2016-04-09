@@ -2493,6 +2493,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Stats");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    // CALORIE METER
+    // $scope.foodgroup = [];
+    // $scope.products = [];
+    // NavigationService.getFoodGroup(function(data){
+    //   if(data){
+    //     $scope.foodgroup = data;
+    //   }
+    // });
+    // $scope.selectedGroup = function (item) {
+    //   $scope.getProducts(item.id);
+    // }
+    // $scope.getProducts = function(item){
+    //   NavigationService.getProducts(item,function(data){
+    //     $scope.products = data;
+    //   });
+    // }
+    // $scope.go = function(item){
+    //   NavigationService.getProductByID(item,function(data){
+    //     $scope.selectedproduct = data;
+    //   })
+    // }
 
     $scope.oneAtATime = true;
     $scope.status = {
