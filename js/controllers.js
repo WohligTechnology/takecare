@@ -1021,7 +1021,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.forgotpasswordsubmit(password, $stateParams.hash, function(data) {
         console.log(data);
         $scope.formSubmitDone = true;
-        
+
       });
     };
 
@@ -2676,8 +2676,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log(data);
       // if(data.value==true){
       $.jStorage.flush();
-      $state.go("home");
-      window.location.reload();
+    window.location.href=window.location.origin + window.location.pathname;
       // }
     });
   };
@@ -2743,7 +2742,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log(data);
       $.jStorage.set("user", data);
       user = data;
-      $state.go('home');
       window.location.reload();
     }
   };
