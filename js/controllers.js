@@ -180,7 +180,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.pageno = 0;
     $scope.msg = "Loading...";
 
-
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
       console.log($scope.productCategory);
