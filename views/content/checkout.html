@@ -508,6 +508,174 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- payment detail -->
+                                <div class="payment-detail">
+                                  <h3 class="brand-primary">Payment Details</h3>
+                                    <form method="post" name="customerData" ng-hide="cod" action="http://admin.selfcareindia.com/paymentgateway/ccavRequestHandler.php">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <table>
+                                                    <tr style="display:none">
+                                                        <td>TID :</td>
+                                                        <td>
+                                                            <input type="text" name="tid" ng-model="todaysDate" readonly/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>merchant_id :</td>
+                                                        <td>
+                                                            <input type="text" name="merchant_id" `value`="14857" readonly/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>Order Id :</td>
+                                                        <td>
+                                                            <input type="text" name="order_id" ng-model="order"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>Amount :</td>
+                                                        <td>
+                                                            <input type="text" name="amount" ng-model="totalcart" ng-if="myCountry == 'IN'"/>
+                                                            <input type="text" name="amount" ng-model="totalcartdollar" ng-if="myCountry != 'IN'"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>Currency :</td>
+                                                        <td>
+                                                            <input type="text" name="currency" value="INR" ng-if="myCountry == 'IN'"/>
+                                                            <input type="text" name="currency" value="USD" ng-if="myCountry != 'IN'"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>Redirect URL :</td>
+                                                        <td>
+                                                            <input type="text" name="redirect_url" value="http://selfcareindia.com/selfcare/index.php/json/payumoneysuccess"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>Cancel URL :</td>
+                                                        <td>
+                                                            <input type="text" name="cancel_url" value="http://selfcareindia.com"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">Billing information:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing Name :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_name" style="border: none; width: 100%;" ng-model="checkout.firstname" value="adf"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing Address :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_address" style="border: none; width: 100%;" ng-model="checkout.billingline1"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing City :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_city" style="border: none; width: 100%;" ng-model="checkout.billingcity"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing State :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_state" style="border: none; width: 100%;" ng-model="checkout.billingstate"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing Zip :</td>
+                                                        <td>
+                                                            <input type="tel" name="billing_zip" style="border: none; width: 100%;" ng-model="checkout.billingpincode"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing Country :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_country" style="border: none; width: 100%;" ng-model="checkout.billingcountry" value="India"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing Tel :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_tel" style="border: none; width: 100%;" ng-model="checkout.phone"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Billing Email :</td>
+                                                        <td>
+                                                            <input type="text" name="billing_email" style="border: none; width: 100%;" ng-model="checkout.email"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <table>
+                                                    <tr>
+                                                        <td colspan="2">Shipping information</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping Name :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_name" style="border: none; width: 100%;" ng-model="checkout.firstname"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping Address :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_address" style="border: none; width: 100%;" ng-model="checkout.shippingline1">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping City :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_city" style="border: none; width: 100%;" ng-model="checkout.shippingcity">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping State :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_state" style="border: none; width: 100%;" ng-model="checkout.shippingstate">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping Zip :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_zip" style="border: none; width: 100%;" ng-model="checkout.shippingpincode"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping Country :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_country" style="border: none; width: 100%;" ng-model="checkout.shippingcountry"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping Tel :</td>
+                                                        <td>
+                                                            <input type="text" name="delivery_tel" style="border: none; width: 100%;" ng-model="checkout.phone"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="display:none">
+                                                        <td>Integration Type :</td>
+                                                        <td>
+                                                            <input type="text" name="integration_type" value="iframe_normal"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="place-order-btn ">
+                                            <!-- <button class="btn btn-primary text-uppercase " type="submit">Place order</button> -->
+                                            <button class="btn btn-primary text-uppercase " type="submit" style="margin-right:50px;">Pay by cod</button>
+                                            <button class="btn btn-primary text-uppercase " type="submit">pay online</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- end payment detail -->
                             </uib-tab>
                             <uib-tab active="tabs[3].active" disable="tabs[3].disabled">
                                 <uib-tab-heading>
