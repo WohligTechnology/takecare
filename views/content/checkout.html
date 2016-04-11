@@ -155,52 +155,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="custom-select">
-                                                        <select name="billingstate" ng-model="checkout.billingstate" class="form-control" required>
-                                                            <option value="" selected>Select State</option>
-                                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                                            <option value="Assam">Assam</option>
-                                                            <option value="Bihar">Bihar</option>
-                                                            <option value="Chandigarh">Chandigarh</option>
-                                                            <option value="Chhattisgarh">Chhattisgarh</option>
-                                                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                                                            <option value="Daman and Diu">Daman and Diu</option>
-                                                            <option value="Delhi">Delhi</option>
-                                                            <option value="Goa">Goa</option>
-                                                            <option value="Gujarat">Gujarat</option>
-                                                            <option value="Haryana">Haryana</option>
-                                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                                            <option value="Jharkhand">Jharkhand</option>
-                                                            <option value="Karnataka">Karnataka</option>
-                                                            <option value="Kerala">Kerala</option>
-                                                            <option value="Lakshadweep">Lakshadweep</option>
-                                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                                            <option value="Maharashtra">Maharashtra</option>
-                                                            <option value="Manipur">Manipur</option>
-                                                            <option value="Meghalaya">Meghalaya</option>
-                                                            <option value="Mizoram">Mizoram</option>
-                                                            <option value="Nagaland">Nagaland</option>
-                                                            <option value="Orissa">Orissa</option>
-                                                            <option value="Pondicherry">Pondicherry</option>
-                                                            <option value="Punjab">Punjab</option>
-                                                            <option value="Rajasthan">Rajasthan</option>
-                                                            <option value="Sikkim">Sikkim</option>
-                                                            <option value="Tamil Nadu">Tamil Nadu</option>
-                                                            <option value="Tripura">Tripura</option>
-                                                            <option value="Uttaranchal">Uttaranchal</option>
-                                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                                            <option value="West Bengal">West Bengal</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- <input name="billingstate" ng-change="sameShipping(checkout)" required type="text" class="form-control" placeholder="State *"> -->
+                                                    <input name="billingstate" required ng-model="checkout.billingstate" type="text" class="form-control" placeholder="State *" >
                                                     <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
                                                         Please enter billing state.
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                  <div class="form-group">
                                                     <div class="custom-select">
                                                       <select class="form-control" name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry" id="">
                                                         <option value="" class="ng-binding ng-scope">Please Select</option>
@@ -457,7 +417,7 @@
 </select>
 <span></span>
                                                     </div>
-                                                    <div class="text-center" ng-show="billingForm.billingstate.$invalid && billingForm.billingstate.$touched" role="alert">
+                                                    <div class="text-center" ng-show="billingForm.billingcountry.$invalid && billingForm.billingcountry.$touched" role="alert">
                                                         Please enter billing country.
                                                     </div>
                                                 </div>
@@ -506,51 +466,10 @@
                                                     Please enter shipping pincode.
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="custom-select">
-                                                        <select name="shippingstate" ng-model="checkout.shippingstate" required class="form-control">
-                                                            <option value="" selected>Select State</option>
-                                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                                            <option value="Assam">Assam</option>
-                                                            <option value="Bihar">Bihar</option>
-                                                            <option value="Chandigarh">Chandigarh</option>
-                                                            <option value="Chhattisgarh">Chhattisgarh</option>
-                                                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                                                            <option value="Daman and Diu">Daman and Diu</option>
-                                                            <option value="Delhi">Delhi</option>
-                                                            <option value="Goa">Goa</option>
-                                                            <option value="Gujarat">Gujarat</option>
-                                                            <option value="Haryana">Haryana</option>
-                                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                                            <option value="Jharkhand">Jharkhand</option>
-                                                            <option value="Karnataka">Karnataka</option>
-                                                            <option value="Kerala">Kerala</option>
-                                                            <option value="Lakshadweep">Lakshadweep</option>
-                                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                                            <option value="Maharashtra">Maharashtra</option>
-                                                            <option value="Manipur">Manipur</option>
-                                                            <option value="Meghalaya">Meghalaya</option>
-                                                            <option value="Mizoram">Mizoram</option>
-                                                            <option value="Nagaland">Nagaland</option>
-                                                            <option value="Orissa">Orissa</option>
-                                                            <option value="Pondicherry">Pondicherry</option>
-                                                            <option value="Punjab">Punjab</option>
-                                                            <option value="Rajasthan">Rajasthan</option>
-                                                            <option value="Sikkim">Sikkim</option>
-                                                            <option value="Tamil Nadu">Tamil Nadu</option>
-                                                            <option value="Tripura">Tripura</option>
-                                                            <option value="Uttaranchal">Uttaranchal</option>
-                                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                                            <option value="West Bengal">West Bengal</option>
-                                                        </select>
+                                                    <input name="shippingstate" required ng-model="checkout.shippingstate" type="text" class="form-control" placeholder="State *" >
+                                                    <div class="text-center" ng-show="shippingForm.shippingstate.$invalid && shippingForm.shippingstate.$touched" role="alert">
+                                                        Please enter shipping state.
                                                     </div>
-                                                    <!-- <input  type="text" class="form-control" placeholder="State *"> -->
-
-                                                </div>
-                                                <div class="text-center" ng-show="shippingForm.shippingstate.$invalid && shippingForm.shippingstate.$touched" role="alert">
-                                                    Please enter shipping state.
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="custom-select">
@@ -996,8 +915,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="text-right">
-                                                            <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-show="cod">Place Order</a>
-                                                            <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-hide="cod">Continue</a>
+
+                                                            <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()"  ng-hide="goToNext">Continue</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1006,7 +925,7 @@
                                     </div>
                                 </div>
                                 <!-- payment detail -->
-                                <div class="payment-detail">
+                                <div class="payment-detail" ng-show="goToNext">
                                   <h3 class="brand-primary">Payment Details</h3>
                                     <form method="post" name="customerData" ng-hide="cod" action="http://admin.selfcareindia.com/paymentgateway/ccavRequestHandler.php">
                                         <div class="row">
@@ -1167,7 +1086,7 @@
                                         </div>
                                         <div class="place-order-btn ">
                                             <!-- <button class="btn btn-primary text-uppercase " type="submit">Place order</button> -->
-                                            <button class="btn btn-primary text-uppercase " type="submit" style="margin-right:50px;">Pay by cod</button>
+                                            <button class="btn btn-primary text-uppercase " type="submit" style="margin-right:50px;" disabled>Pay by cod</button>
                                             <button class="btn btn-primary text-uppercase " type="submit">pay online</button>
                                         </div>
                                     </div>

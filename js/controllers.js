@@ -1454,6 +1454,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.hasShipping = false;
     $scope.placeorder = true;
     $scope.shipAtSame = false;
+    $scope.goToNext=false;
     $scope.todaysDate = Date.now();
     $scope.myCountry = $.jStorage.get("myCountry");
     console.log($scope.myCountry)
@@ -1510,6 +1511,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges;
       });
     };
+
     $scope.validateQuantity = function(item) {
       if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
         return false;
@@ -1536,6 +1538,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
     $scope.proceedToPayment = function() {
       console.log($scope.checkout);
+      $scope.goToNext=false;
       if ($scope.allcart.length > 0) {
         $scope.checkout.cart = $scope.allcart;
         if ($scope.myCountry == 'IN') {
@@ -1552,7 +1555,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           if (data.value) {
             NavigationService.placeOrder($scope.checkout, function(data) {
               $scope.order = data;
-              $scope.tabs[3].active = true;
+              $scope.goToNext=true;
             });
           }
         });
@@ -2494,27 +2497,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     // CALORIE METER
-    // $scope.foodgroup = [];
-    // $scope.products = [];
-    // NavigationService.getFoodGroup(function(data){
-    //   if(data){
-    //     $scope.foodgroup = data;
-    //   }
-    // });
-    // $scope.selectedGroup = function (item) {
-    //   $scope.getProducts(item.id);
-    // }
-    // $scope.getProducts = function(item){
-    //   NavigationService.getProducts(item,function(data){
-    //     $scope.products = data;
-    //   });
-    // }
-    // $scope.go = function(item){
-    //   NavigationService.getProductByID(item,function(data){
-    //     $scope.selectedproduct = data;
-    //   })
-    // }
+    $scope.foodgroup = [];
+    $scope.products = [];
+    $scope.productrequest = {};
+    $scope.filter = {};
+    $scope.filter.quantity = 1;
 
+    NavigationService.getFoodGroup(function(data){
+      if(data){
+        console.log(data);
+        $scope.foodgroup = data;
+      }
+    });
+    $scope.selectedGroup = function (item) {
+      $scope.getProducts(item.name);
+    }
+    $scope.getProducts = function(item){
+      $scope.products=[];
+      NavigationService.getFoodProducts(item,function(data){
+        $scope.products = data;
+      });
+    }
+    $scope.go = function(item){
+      NavigationService.getFoodProductDetail(item,function(data){
+        $scope.selectedproduct = data;
+        $scope.calcproduct = _.cloneDeep(data);
+        $scope.filter.walking = 0;
+        $scope.filter.running = 0;
+        $scope.filter.cycling = 0;
+        $scope.filter.swimming = 0;
+      })
+    };
+    $scope.checkCalculate = function(item){
+      if(parseInt(item) < 1){
+        $scope.filter.quantity = 1;
+
+      }else{
+        $scope.filter.quantity = item;
+      }
+      $scope.calculate(item);
+
+    };
+    $scope.calculate = function(item){
+      $scope.calcproduct.calorie = parseInt(item)*parseFloat($scope.selectedproduct.calorie);
+      $scope.calcproduct.protein = parseInt(item)*parseFloat($scope.selectedproduct.protein);
+      $scope.calcproduct.fat = parseInt(item)*parseFloat($scope.selectedproduct.fat);
+      $scope.calcproduct.carbs = parseInt(item)*parseFloat($scope.selectedproduct.calorie);
+      $scope.filter.walking = Math.round ($scope.calcproduct.calorie/ 4.18);
+      $scope.filter.running = Math.round ($scope.calcproduct.calorie/ 11.09);
+      $scope.filter.cycling = Math.round ($scope.calcproduct.calorie/ 7);
+      $scope.filter.swimming = Math.round ($scope.calcproduct.calorie/ 8.33);
+      console.log($scope.selectedproduct);
+    };
     $scope.oneAtATime = true;
     $scope.status = {
       isFirstOpen: true,

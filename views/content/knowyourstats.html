@@ -20,22 +20,23 @@
                     <div class="col-md-5 col-sm-5">
                       <div class="text-center">
                         <span class="text-uppercase inline-block">Choose a food group :</span>
-                        <select class="">
-                          <option></option>
+                        <select class="" ng-change="getProducts(productrequest.category)" ng-model="productrequest.category">
+                          <option ng-repeat="category in foodgroup" value="{{category.name}}">{{category.name}}</option>
+
                         </select>
                       </div>
                     </div>
                     <div class="col-md-5 col-sm-5">
                       <div class="text-center">
                         <span class="text-uppercase inline-block">Pick a product :</span>
-                        <select class="">
-                          <option></option>
+                        <select class="" ng-model="productrequest.product">
+                          <option ng-repeat="item in products" value="{{item.name}}">{{item.name}}</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-md-2 col-sm-2">
                       <div class="text-center">
-                        <a href="" class="text-uppercase white brand-primary-bg calorie-btn">Go</a>
+                        <a href="" class="text-uppercase white brand-primary-bg calorie-btn" ng-click="go(productrequest)">Go</a>
                       </div>
                     </div>
                   </div>
@@ -45,19 +46,19 @@
                     <div class="col-md-5">
                         <p class="burn">
                           <span class="text-uppercase">Results</span>
-                          <i class="brand-primary">(for Lorem Ipsum product)</i>
+                          <i class="brand-primary">(for {{calcproduct.product || 'Product'}})</i>
                         </p>
-                        <input class="result-number" type="text" placeholder="1">
+                        <input class="result-number" type="number" ng-model= "filter.quantity">
                         <span class="multiply"> x </span>
-                        <span>1 biscuit = 9 gm</span>
-                        <a href="" class="text-uppercase white brand-primary-bg calorie-btn">Go</a>
+                        <span>{{calcproduct.measurements || 'x quantity = x gms'}}</span>
+                        <a href="" class="text-uppercase white brand-primary-bg calorie-btn" ng-click="checkCalculate(filter.quantity)">Go</a>
                     </div>
 
                     <div class="col-md-7">
                       <div class="row">
                         <div class="col-md-4">
                           <div class="calorie">
-                            <div class="calorie-number white brand-primary-bg inline-block">44</div>
+                            <div class="calorie-number white brand-primary-bg inline-block">{{calcproduct.calorie || '0'}}</div>
                             <div class="inline-block kcal v-top">
                               <span class="block brand-primary">Calorie</span>
                               <span class="block brand-primary">kcal</span>
@@ -73,9 +74,9 @@
                         </div>
                         <div class="col-md-offset-1 col-md-3 col-sm-6 col-xs-6">
                           <div class="nutrients-numbers inline-block text-right">
-                            <span class="block">0.7</span>
-                            <span class="block">2.1</span>
-                            <span class="block">6</span>
+                            <span class="block">{{calcproduct.protein || '0'}}</span>
+                            <span class="block">{{calcproduct.fat || '0'}}</span>
+                            <span class="block">{{calcproduct.carbs || '0'}}</span>
                           </div>
                         </div>
                       </div>
@@ -86,26 +87,26 @@
                 <div class="">
                   <div class="calorie-count">
                     <p class="burn">
-                      <span class="text-uppercase">How to burn 44 calories</span>
-                      <i class="brand-primary">(to burn 44 calories, you could do any of the following)</i>
+                      <span class="text-uppercase">How to burn {{calcproduct.calorie || '0'}} calories</span>
+                      <i class="brand-primary">(to burn {{calcproduct.calorie || '0'}} calories, you could do any of the following)</i>
                     </p>
                     <div class="walking count-cat">
-                      <span class="white brand-primary-bg calorie-btn">8 mins</span>
+                      <span class="white brand-primary-bg calorie-btn">{{filter.walking || '0'}} mins</span>
                       <img src="img/stats/walking.png" alt="" class="img-responsive inline-block">
                       <span class="brand-brown-dark2">Walking</span>
                     </div>
                     <div class="running count-cat">
-                      <span class="white brand-primary-bg calorie-btn">3 mins</span>
+                      <span class="white brand-primary-bg calorie-btn">{{filter.running || '0'}} mins</span>
                       <img src="img/stats/running.png" alt="" class="img-responsive inline-block">
                       <span class="brand-brown-dark2">Running</span>
                     </div>
                     <div class="swimming count-cat">
-                      <span class="white brand-primary-bg calorie-btn">6 mins</span>
+                      <span class="white brand-primary-bg calorie-btn">{{filter.swimming || '0'}} mins</span>
                       <img src="img/stats/swimming.png" alt="" class="img-responsive inline-block">
                       <span class="brand-brown-dark2">Swimming</span>
                     </div>
                     <div class="cycling count-cat">
-                      <span class="white brand-primary-bg calorie-btn">4 mins</span>
+                      <span class="white brand-primary-bg calorie-btn">{{filter.cycling || '0'}} mins</span>
                       <img src="img/stats/cycling.png" alt="" class="img-responsive inline-block">
                       <span class="brand-brown-dark2">Cycling</span>
                     </div>

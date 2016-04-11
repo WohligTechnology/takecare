@@ -1,11 +1,11 @@
 var Glo = {};
 
-var mainurl = "http://admin.selfcareindia.com/index.php/";
-var imgurl = "http://admin.selfcareindia.com/uploads/";
+// var mainurl = "http://admin.selfcareindia.com/index.php/";
+// var imgurl = "http://admin.selfcareindia.com/uploads/";
 
-// var mainurl = "http://192.168.1.133/selfbackend/index.php/";
+var mainurl = "http://192.168.1.133/selfbackend/index.php/";
 
-// var imgurl = "http://192.168.1.133/selfbackend/uploads/";
+var imgurl = "http://192.168.1.133/selfbackend/uploads/";
 
 // if(!isproduction)
 // {
@@ -177,6 +177,15 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getCategory: function(callback) {
             $http.get(adminurl + 'getCategory').success(callback);
+        },
+        getFoodGroup: function(callback) {
+            $http.get(adminurl + 'getFoodGroup').success(callback);
+        },
+        getFoodProducts: function(request,callback) {
+            $http.get(adminurl + 'getFoodProducts?name='+request).success(callback);
+        },
+        getFoodProductDetail: function(request,callback) {
+            $http.get(adminurl + 'getFoodProductDetail?category='+request.category+'&product='+request.product).success(callback);
         },
         authenticate: function(callback) {
             $http.get(adminurl + 'authenticate').success(callback);
