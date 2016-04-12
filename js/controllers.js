@@ -1322,7 +1322,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.allcart = [];
     $scope.alerts = [];
     $scope.msg = "Loading...";
-
+    $scope.goToTop = function() {
+      $('html, body').animate({
+        scrollTop: 250
+      }, 1000);
+    };
     $scope.myCountry = $.jStorage.get("myCountry");
     $scope.getCart = function() {
       NavigationService.showCart(function(data) {
@@ -1418,6 +1422,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             msg: 'Removed from cart'
           });
           $scope.getCart();
+          $scope.goToTop();
         } else {
           $scope.alerts = [];
           $scope.alerts.push({
