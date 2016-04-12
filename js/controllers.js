@@ -219,6 +219,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           if (data.value === true) {
             $('#successcart').modal('show');
             Glo.getProductCount();
+            Glo.getProductCount2();
           } else {
             $scope.alerts = [];
             $scope.alerts.push({
@@ -790,6 +791,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $('#successcart').modal('show');
 
           Glo.getProductCount();
+          Glo.getProductCount2();
         } else {
           $scope.alerts = [];
           $scope.alerts.push({
@@ -911,6 +913,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             //     msg: 'Added to cart'
             // });
             Glo.getProductCount();
+            Glo.getProductCount2();
           } else {
             $scope.alerts = [];
             $scope.alerts.push({
@@ -1662,7 +1665,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           //   $scope.shippingcharges = 0;
           // }
         console.log($scope.hasShipping);
-        if($.jStorage.get("myCountry") != 'IN'){
+        if($.jStorage.get("myCountry") !== 'IN'){
           $scope.shippingcharges = 0;
         }else{
           if ($scope.hasShipping) {
@@ -2690,6 +2693,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   Glo.getProductCount();
 })
 
+.controller('countChangeInternal', function($scope, NavigationService, TemplateService, $uibModal) {
+  $scope.Count = $.jStorage.get("cartCount");
+  Glo.getProductCount2 = function() {
+    NavigationService.totalItemCart(function(data) {
+      console.log(data);
+      $scope.Count = data;
+      $.jStorage.set("cartCount",data);
+    });
+  };
+  Glo.getProductCount();
+})
+
 .controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal, $interval, $state, $timeout) {
   $scope.template = TemplateService;
 
@@ -2760,7 +2775,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.acceptValidate = true;
     } else {
       if (formValidate.$valid) {
-        if (input.password != input.cfpassword) {
+        if (input.password !== input.cfpassword) {
           $scope.noMatch = true;
         } else {
           NavigationService.signup(input, function(data) {
