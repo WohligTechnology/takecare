@@ -1,11 +1,11 @@
 var Glo = {};
 
-// var mainurl = "http://admin.selfcareindia.com/index.php/";
-// var imgurl = "http://admin.selfcareindia.com/uploads/";
+var mainurl = "http://admin.selfcareindia.com/index.php/";
+var imgurl = "http://admin.selfcareindia.com/uploads/";
 
-var mainurl = "http://192.168.1.133/selfbackend/index.php/";
+// var mainurl = "http://192.168.1.133/selfbackend/index.php/";
 
-var imgurl = "http://192.168.1.133/selfbackend/uploads/";
+// var imgurl = "http://192.168.1.133/selfbackend/uploads/";
 
 // if(!isproduction)
 // {
@@ -182,9 +182,19 @@ var navigationservice = angular.module('navigationservice', [])
             $http.get(adminurl + 'getFoodGroup').success(callback);
         },
         getFoodProducts: function(request,callback) {
+          if(request.indexOf("&") != -1){
+            request=request.replace('&','%26');
+          }
             $http.get(adminurl + 'getFoodProducts?name='+request).success(callback);
         },
-        getFoodProductDetail: function(request,callback) {
+        getFoodProductDetail: function(req,callback) {
+          var request = _.cloneDeep(req);
+          if(request.category.indexOf("&") != -1){
+            request.category=request.category.replace('&','%26');
+          }
+          if(request.product.indexOf("&") != -1){
+            request.product=request.product.replace('&','%26');
+          }
             $http.get(adminurl + 'getFoodProductDetail?category='+request.category+'&product='+request.product).success(callback);
         },
         authenticate: function(callback) {
@@ -303,7 +313,7 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
         placeOrder: function(request, callback) {
-            console.log(request);
+            console.log(JSON.stringify(request));
             $http({
                 url: adminurl + 'placeOrder',
                 method: 'POST',
