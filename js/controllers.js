@@ -1433,7 +1433,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     };
   })
-  .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
+  .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar,$state) {
     $scope.template = TemplateService.changecontent("checkout");
     $scope.menutitle = NavigationService.makeactive("Checkout");
 
@@ -1476,6 +1476,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       active: false,
       disabled: true
     }, ];
+    if(parseInt($.jStorage.get("cartCount"))<1){
+      $state.go('home');
+    }
     if ($.jStorage.get("user")) {
       $scope.user = $.jStorage.get("user");
       $scope.checkout = $.jStorage.get("user");
@@ -1659,21 +1662,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           //   $scope.shippingcharges = 0;
           // }
         console.log($scope.hasShipping);
-        if ($scope.hasShipping) {
-          if ($scope.totalcart < 500) {
-            $scope.shippingcharges = 200;
-          } else if (($scope.totalcart - parseInt($scope.pricetemp)) >= 500) {
-            console.log(($scope.totalcart - parseInt($scope.pricetemp)));
-            if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
-              $scope.shippingcharges = 0;
+        if($.jStorage.get("myCountry") != 'IN'){
+          $scope.shippingcharges = 0;
+        }else{
+          if ($scope.hasShipping) {
+            if ($scope.totalcart < 500) {
+              $scope.shippingcharges = 200;
+            } else if (($scope.totalcart - parseInt($scope.pricetemp)) >= 500) {
+              console.log(($scope.totalcart - parseInt($scope.pricetemp)));
+              if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
+                $scope.shippingcharges = 0;
+              } else {
+                $scope.shippingcharges = 200;
+              }
             } else {
               $scope.shippingcharges = 200;
             }
           } else {
-            $scope.shippingcharges = 200;
+            $scope.shippingcharges = 0;
           }
-        } else {
-          $scope.shippingcharges = 0;
         }
         console.log($scope.checkout);
         $scope.tabs[2].active = true;
