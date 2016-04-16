@@ -1547,6 +1547,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.placeorder = false;
       }
     };
+    $scope.payByCOD = function(){
+      NavigationService.COD({
+        id:$scope.order
+      },function(data){
+        if(data.value !== false){
+          $state.go('thankyou',{orderid:data.OrderId,amount:data.totalamount});
+        }
+      });
+    };
     $scope.proceedToPayment = function() {
       console.log($scope.checkout);
       $scope.goToNext=false;
@@ -2554,10 +2563,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
     $scope.calculate = function(item){
-      $scope.calcproduct.calorie = parseInt(item)*parseFloat($scope.selectedproduct.calorie);
-      $scope.calcproduct.protein = parseInt(item)*parseFloat($scope.selectedproduct.protein);
-      $scope.calcproduct.fat = parseInt(item)*parseFloat($scope.selectedproduct.fat);
-      $scope.calcproduct.carbs = parseInt(item)*parseFloat($scope.selectedproduct.calorie);
+      $scope.calcproduct.calorie = (parseInt(item)*parseFloat($scope.selectedproduct.calorie)).toFixed(2);
+      $scope.calcproduct.protein = (parseInt(item)*parseFloat($scope.selectedproduct.protein)).toFixed(2);
+      $scope.calcproduct.fat = (parseInt(item)*parseFloat($scope.selectedproduct.fat)).toFixed(2);
+      $scope.calcproduct.carbs = (parseInt(item)*parseFloat($scope.selectedproduct.calorie)).toFixed(2);
       $scope.filter.walking = Math.round ($scope.calcproduct.calorie/ 4.18);
       $scope.filter.running = Math.round ($scope.calcproduct.calorie/ 11.09);
       $scope.filter.cycling = Math.round ($scope.calcproduct.calorie/ 7);
