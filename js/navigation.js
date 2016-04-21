@@ -1,18 +1,15 @@
 var Glo = {};
+var siteURL = 'admin.selfcareindia.com';
+// var siteURL = '192.168.1.133/selfbackend';
 
-// var mainurl = "http://admin.selfcareindia.com/index.php/";
-// var imgurl = "http://admin.selfcareindia.com/uploads/";
-
-var mainurl = "http://192.168.1.133/selfbackend/index.php/";
-
-var imgurl = "http://192.168.1.133/selfbackend/uploads/";
+var mainurl = "http://"+siteURL+"/index.php/";
+var imgurl = "http://"+siteURL+"/uploads/";
 
 // if(!isproduction)
 // {
   // mainurl = "http://192.168.0.123/selfbackend/index.php/";
   // imgurl = "http://192.168.0.123/selfbackend/uploads/";
 // }
-
 
 var cart = [];
 
