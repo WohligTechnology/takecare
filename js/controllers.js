@@ -1274,7 +1274,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.views = [{
       title: "I am very satisfied with the diet given. Sumanji herself is a great motivation. I am very happy with the program and the weight loss achieved. Thank you.",
-      name: "Pramila Seth",
+      name: "Pimmy Seth",
       location: "Punjab, India",
       weight: "5",
       image: "http://img.youtube.com/vi/aMyOpVqyjYQ/sddefault.jpg",
@@ -1283,14 +1283,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       title: "There was so much to eat and there were so many options, that most of the time it was difficult to pick and choose what to eat.",
       name: "Rishabh Maniktala",
       location: "Mumbai, India",
-      weight: "14",
+      weight: "25",
       image: "http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg",
       link: "https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1"
     }, {
       title: "Everyone was teasing me.",
       name: "Nikesh Shah",
       location: "Mumbai, India",
-      weight: "17",
+      weight: "48",
       image: "http://img.youtube.com/vi/RCfJBUulDBg/sddefault.jpg",
       link: "https://www.youtube.com/embed/RCfJBUulDBg?autoplay=1"
     }, {
@@ -1309,7 +1309,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       link: "https://www.youtube.com/embed/nxs9qT6m8N4?autoplay=1"
     }, {
       title: "I looked forward to my weekly visits, because the team is very motivational.",
-      name: "Khushcheher Dallas",
+      name: "Khuscheher Dallas",
       location: "Mumbai, India",
       weight: "9",
       image: "http://img.youtube.com/vi/Cn2z-n0t51o/sddefault.jpg",
