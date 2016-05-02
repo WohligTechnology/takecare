@@ -121,7 +121,7 @@
               <div class="bmi-detail">
                 <div class="bmi-cal">
                   <span class="text-uppercase bmi-heading inline-block">Sex:</span>
-                  <a class="male gender text-uppercase inline-block">Male <img src="img/stats/male.png" alt="" class="img-responsive inline-block"></a>
+                  <a class="male gender text-uppercase inline-block" ng-click="maleactive = true;" ng-class="{'brand-primary-bg':maleactive}">Male <img src="img/stats/male.png" alt="" class="img-responsive inline-block"></a>
                   <a class="female gender text-uppercase inline-block">Female <img src="img/stats/female.png" alt="" class="img-responsive inline-block"></a>
                 </div>
 
@@ -132,26 +132,46 @@
 
                 <div class="bmi-cal">
                   <span class="text-uppercase bmi-heading inline-block">Height:</span>
-                  <select class="feet text-uppercase">
-                    <option>feet</option>
+                  <select ng-change="heightChange(bmi.height)" ng-model="bmi.height" class="feet text-uppercase">
+                    <option value="feet">feet</option>
+                    <option value="meter">meter</option>
                   </select>
-                  <select class="ft text-uppercase">
-                    <option>ft</option>
+                  <select ng-show="footfield" ng-model="bmi.feet.ft" class="ft text-uppercase">
+                    <option value="">ft</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                   </select>
-                  <select class="inc text-uppercase">
-                    <option>inc</option>
-                  </select>
+                  <select ng-show="footfield" ng-model="bmi.feet.inc" class="inc text-uppercase">
+                    <option value="">inc</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    </select>
+                    <input ng-show="meterfield" type="number" ng-model="bmi.meter" class="weight" placeholder="0"/>
                 </div>
 
                 <div class="bmi-cal">
                   <span class="text-uppercase bmi-heading inline-block">Weight:</span>
-                  <input type="number" class="weight" />
+                  <input type="number" ng-model="bmi.weight" class="weight" />
                   <select class="kgs text-uppercase">
                     <option>kgs</option>
                   </select>
                 </div>
                 <div class="bmi-cal">
-                  <a href="" class="btn btn-primary text-uppercase no-radius calorie-btn">calculate bmi</a>
+                  <a href="" class="btn btn-primary text-uppercase no-radius calorie-btn" ng-click="calculateBMI(bmi)">calculate bmi</a>
                 </div>
               </div>
               <div class="bmi-result">
@@ -175,10 +195,10 @@
                           <span>OBESE</span>
                         </div>
                       </div>
-                      <div class="progress-calcu brand-primary-bg">
+                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-3.5)+'%'}">
                         <div class="bmi-ans">
                           <span class="inline-block text-uppercase urbmi">your bmi</span>
-                          <span class="resultcal">24.2</span>
+                          <span class="resultcal">{{result}}</span>
                         </div>
                       </div>
                     </div>

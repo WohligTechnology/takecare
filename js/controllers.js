@@ -1,8 +1,6 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'ngAnimate', 'cfp.loadingBar', 'infinite-scroll'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal,cfpLoadingBar) {
-    //Used to name the .html file
-
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, cfpLoadingBar) {
 
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
@@ -248,7 +246,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           pageno: $scope.pageno
         }, function(data) {
 
-            cfpLoadingBar.complete();
+          cfpLoadingBar.complete();
           if (data.value === false) {
             $scope.msg = "No products found.";
             $scope.products = [];
@@ -302,7 +300,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.refreshProducts($scope.filterBy);
     };
   })
-  .controller('SelfcaretvCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
+  .controller('SelfcaretvCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("selfcaretv");
     $scope.menutitle = NavigationService.makeactive("Selfcare Tv");
@@ -345,7 +343,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
   })
-  .controller('PlansCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
+  .controller('PlansCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("plans");
     $scope.menutitle = NavigationService.makeactive("plans");
@@ -379,11 +377,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.msg = "No Plans";
         }
       });
-    }else{
-      $scope.msg="Please Sign In To View Your Plans"
+    } else {
+      $scope.msg = "Please Sign In To View Your Plans"
     }
   })
-  .controller('OrderlistCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
+  .controller('OrderlistCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("orderlist");
     $scope.menutitle = NavigationService.makeactive("orderlist");
@@ -420,8 +418,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.msg = "No orders";
         }
       });
-    }else{
-      $scope.msg="Please Sign In To View Your Orders"
+    } else {
+      $scope.msg = "Please Sign In To View Your Orders"
     }
   })
   .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -495,11 +493,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
               $scope.profile.nameemailedit = 'edit';
               var tempsplit = $scope.updateuser.user.name.split(' ');
-              if(tempsplit.length == 2){
+              if (tempsplit.length == 2) {
                 $scope.updateuser.user.firstname = tempsplit[0];
                 $scope.updateuser.user.lastname = tempsplit[1];
-              }
-              else {
+              } else {
                 $scope.updateuser.user.firstname = $scope.updateuser.user.name;
               }
               $scope.updateUser()
@@ -632,7 +629,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
   })
-  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar) {
+  .controller('HealthManagementCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("healthmanagement");
     $scope.menutitle = NavigationService.makeactive("Health Management");
@@ -649,7 +646,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log($scope.subpackages);
     });
   })
-  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams,cfpLoadingBar) {
+  .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, cfpLoadingBar) {
     //Used to name the .html file
     $scope.isBottom = false;
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
@@ -864,7 +861,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.categories = _.chunk($scope.categories, 2);
     });
   })
-  .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state,cfpLoadingBar) {
+  .controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, cfpLoadingBar) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("productdetail");
     $scope.menutitle = NavigationService.makeactive("Product Detail");
@@ -1436,7 +1433,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     };
   })
-  .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout,cfpLoadingBar,$state) {
+  .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state) {
     $scope.template = TemplateService.changecontent("checkout");
     $scope.menutitle = NavigationService.makeactive("Checkout");
 
@@ -1462,7 +1459,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.hasShipping = false;
     $scope.placeorder = true;
     $scope.shipAtSame = false;
-    $scope.goToNext=false;
+    $scope.goToNext = false;
     $scope.todaysDate = Date.now();
     $scope.myCountry = $.jStorage.get("myCountry");
     console.log($scope.myCountry)
@@ -1479,7 +1476,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       active: false,
       disabled: true
     }, ];
-    if(parseInt($.jStorage.get("cartCount"))<1){
+    if (parseInt($.jStorage.get("cartCount")) < 1) {
       $state.go('home');
     }
     if ($.jStorage.get("user")) {
@@ -1547,18 +1544,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.placeorder = false;
       }
     };
-    $scope.payByCOD = function(){
+    $scope.payByCOD = function() {
       NavigationService.COD({
-        id:$scope.order
-      },function(data){
-        if(data.value !== false){
-          $state.go('thankyou',{orderid:data.OrderId,amount:data.totalamount});
+        id: $scope.order
+      }, function(data) {
+        if (data.value !== false) {
+          $state.go('thankyou', {
+            order: data.OrderId,
+            amount: data.totalamount
+          });
         }
       });
     };
     $scope.proceedToPayment = function() {
       console.log($scope.checkout);
-      $scope.goToNext=false;
+      $scope.goToNext = false;
       if ($scope.allcart.length > 0) {
         $scope.checkout.cart = $scope.allcart;
         if ($scope.myCountry == 'IN') {
@@ -1575,7 +1575,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           if (data.value) {
             NavigationService.placeOrder($scope.checkout, function(data) {
               $scope.order = data;
-              $scope.goToNext=true;
+              $scope.goToNext = true;
             });
           }
         });
@@ -1653,59 +1653,57 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getCart();
         $scope.pricetemp = 0;
         _.each($scope.allcart, function(key) {
-            if (key.status !== "3" && $scope.totalcart) {
-              $scope.hasShipping = true;
-            } else {
-              $scope.pricetemp = $scope.pricetemp + key.price;
-              console.log($scope.pricetemp);
-            }
-          })
-          // if($scope.totalcart < 500){
-          //   if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
-          //       console.log("Shipping chanrges in pincode" + $scope.shippingcharges + " " + $scope.checkout.shippingpincode);
-          //       $scope.shippingcharges = 0;
-          //   } else {
-          //       $scope.shippingcharges = 200;
-          //   }
-          //
-          // }else if(($scope.totalcart - $scope.pricetemp)>500 && $scope.hasShipping){
-          //   $scope.shippingcharges=200;
-          // }else{
-          //   $scope.shippingcharges = 0;
-          // }
+          if (key.status !== "3" && $scope.totalcart) {
+            $scope.hasShipping = true;
+          } else {
+            $scope.pricetemp = $scope.pricetemp + key.price;
+            console.log($scope.pricetemp);
+          }
+        })
+
         console.log($scope.hasShipping);
-        if($.jStorage.get("myCountry") !== 'IN'){
+        ////COD
+        // if($.jStorage.get("myCountry") !== 'IN'){
+        //   $scope.shippingcharges = 0;
+        // }else{
+        //   if ($scope.hasShipping) {
+        //     if(_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))){
+        //       if(($scope.totalcart - parseInt($scope.pricetemp)) < 500){
+        //         $scope.shippingcharges = 50;
+        //       }else{
+        //           $scope.shippingcharges = 0;
+        //       }
+        //     }else{
+        //       if(($scope.totalcart - parseInt($scope.pricetemp)) >= 3000){
+        //         $scope.shippingcharges = 0;
+        //       }else{
+        //         if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){ //if COD
+        //           $scope.shippingcharges = 250;
+        //         }else if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){
+        //           $scope.shippingcharges = 200;
+        //         }
+        //       }
+        //     }
+        //   } else {
+        //     $scope.shippingcharges = 0;
+        //   }
+        // }
+        ////COD end
+        if ($.jStorage.get("myCountry") !== 'IN') {
           $scope.shippingcharges = 0;
-        }else{
+        } else {
           if ($scope.hasShipping) {
-            // if ($scope.totalcart < 500) {
-            //   $scope.shippingcharges = 200;
-            // } else if (($scope.totalcart - parseInt($scope.pricetemp)) >= 500) {
-            //   console.log(($scope.totalcart - parseInt($scope.pricetemp)));
-            //   if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
-            //     $scope.shippingcharges = 0;
-            //   } else {
-            //     $scope.shippingcharges = 200;
-            //   }
-            // } else {
-            //   $scope.shippingcharges = 200;
-            // }
-            if(_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))){
-              if(($scope.totalcart - parseInt($scope.pricetemp)) < 500){
-                $scope.shippingcharges = 50;
-              }else{
-                  $scope.shippingcharges = 0;
-              }
-            }else{
-              if(($scope.totalcart - parseInt($scope.pricetemp)) >= 3000){
+            if ($scope.totalcart < 500) {
+              $scope.shippingcharges = 200;
+            } else if (($scope.totalcart - parseInt($scope.pricetemp)) >= 500) {
+              console.log(($scope.totalcart - parseInt($scope.pricetemp)));
+              if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
                 $scope.shippingcharges = 0;
-              }else{
-                if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){ //if COD
-                  $scope.shippingcharges = 250;
-                }else if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){
-                  $scope.shippingcharges = 200;
-                }
+              } else {
+                $scope.shippingcharges = 200;
               }
+            } else {
+              $scope.shippingcharges = 200;
             }
           } else {
             $scope.shippingcharges = 0;
@@ -2543,24 +2541,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.productrequest = {};
     $scope.filter = {};
     $scope.filter.quantity = 1;
-
-    NavigationService.getFoodGroup(function(data){
-      if(data){
+    $scope.meterfield = false;
+    $scope.footfield = false;
+    $scope.compute={};
+    $scope.result=0.0;
+    NavigationService.getFoodGroup(function(data) {
+      if (data) {
         console.log(data);
         $scope.foodgroup = data;
       }
     });
-    $scope.selectedGroup = function (item) {
+    $scope.selectedGroup = function(item) {
       $scope.getProducts(item.name);
     }
-    $scope.getProducts = function(item){
-      $scope.products=[];
-      NavigationService.getFoodProducts(item,function(data){
+    $scope.getProducts = function(item) {
+      $scope.products = [];
+      NavigationService.getFoodProducts(item, function(data) {
         $scope.products = data;
       });
     }
-    $scope.go = function(item){
-      NavigationService.getFoodProductDetail(item,function(data){
+    $scope.go = function(item) {
+      NavigationService.getFoodProductDetail(item, function(data) {
         $scope.selectedproduct = data;
         $scope.calcproduct = _.cloneDeep(data);
         $scope.filter.walking = 0;
@@ -2569,28 +2570,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filter.swimming = 0;
       })
     };
-    $scope.checkCalculate = function(item){
-      if(parseInt(item) < 1){
+    $scope.checkCalculate = function(item) {
+      if (parseInt(item) < 1) {
         $scope.filter.quantity = 1;
 
-      }else{
+      } else {
         $scope.filter.quantity = item;
       }
       $scope.calculate(item);
 
     };
-    $scope.calculate = function(item){
-      $scope.calcproduct.calorie = (parseInt(item)*parseFloat($scope.selectedproduct.calorie)).toFixed(2);
-      $scope.calcproduct.protein = (parseInt(item)*parseFloat($scope.selectedproduct.protein)).toFixed(2);
-      $scope.calcproduct.fat = (parseInt(item)*parseFloat($scope.selectedproduct.fat)).toFixed(2);
-      $scope.calcproduct.carbs = (parseInt(item)*parseFloat($scope.selectedproduct.calorie)).toFixed(2);
-      $scope.filter.walking = Math.round ($scope.calcproduct.calorie/ 4.18);
-      $scope.filter.running = Math.round ($scope.calcproduct.calorie/ 11.09);
-      $scope.filter.cycling = Math.round ($scope.calcproduct.calorie/ 7);
-      $scope.filter.swimming = Math.round ($scope.calcproduct.calorie/ 8.33);
+    $scope.calculate = function(item) {
+      $scope.calcproduct.calorie = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(2);
+      $scope.calcproduct.protein = (parseInt(item) * parseFloat($scope.selectedproduct.protein)).toFixed(2);
+      $scope.calcproduct.fat = (parseInt(item) * parseFloat($scope.selectedproduct.fat)).toFixed(2);
+      $scope.calcproduct.carbs = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(2);
+      $scope.filter.walking = Math.round($scope.calcproduct.calorie / 4.18);
+      $scope.filter.running = Math.round($scope.calcproduct.calorie / 11.09);
+      $scope.filter.cycling = Math.round($scope.calcproduct.calorie / 7);
+      $scope.filter.swimming = Math.round($scope.calcproduct.calorie / 8.33);
       console.log($scope.selectedproduct);
     };
+    $scope.calculateBMI = function(input) {
+      console.log(input);
+      if(input.height == "feet"){
+        $scope.compute.height = parseFloat(parseInt(input.feet.ft)*0.3048 + (input.feet.inc)*0.0254);
+      }else if(input.height == "meter"){
+        $scope.compute.height = parseFloat(input.meter);
+      }
+      $scope.compute.weight=parseInt(input.weight);
+      $scope.result = parseFloat($scope.compute.weight/$scope.compute.height);
+      console.log($scope.compute);
+      console.log("BMI : "+$scope.result);
+      $scope.resultpercent=parseInt(($scope.result/45)*100);
+      $scope.result=$scope.result.toFixed(1);
+    };
+    $scope.heightChange = function(height) {
+      if (height == "feet") {
+        $scope.footfield = true;
+        $scope.meterfield = false;
+      } else if (height == "meter") {
+        $scope.footfield = false;
+        $scope.meterfield = true;
+      }
+    };
     $scope.oneAtATime = true;
+
     $scope.status = {
       isFirstOpen: true,
       isFirstDisabled: false
@@ -2713,7 +2738,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.totalItemCart(function(data) {
       console.log(data);
       $scope.Count = data;
-      $.jStorage.set("cartCount",data);
+      $.jStorage.set("cartCount", data);
     });
   };
   Glo.getProductCount();
@@ -2725,7 +2750,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.totalItemCart(function(data) {
       console.log(data);
       $scope.Count = data;
-      $.jStorage.set("cartCount",data);
+      $.jStorage.set("cartCount", data);
     });
   };
   Glo.getProductCount();
@@ -2783,7 +2808,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log(data);
       // if(data.value==true){
       $.jStorage.flush();
-    window.location.href=window.location.origin + window.location.pathname;
+      window.location.href = window.location.origin + window.location.pathname;
       // }
     });
   };
