@@ -2697,7 +2697,12 @@ footer {
   }
 }
 .severly {
-  width: 25%;
+  width: 35.556%;
+  padding: 20px;
+  background-color: $brand-brown;
+}
+.severly-obese {
+  width: 33.3333%;
   padding: 20px;
   background-color: $brand-brown;
 }
@@ -2722,7 +2727,7 @@ footer {
   }
 }
 .under {
-  width: 13%;
+  width: 4.4444%;
   padding: 10px 16px;
   background-color: $brand-primary;
   &:after {
@@ -2731,7 +2736,7 @@ footer {
   }
 }
 .normal {
-  width: 20%;
+  width: 15.556%;
   padding: 20px;
   background-color: #3cb390;
   &:after {
@@ -2740,7 +2745,7 @@ footer {
   }
 }
 .over {
-  width: 17%;
+  width: 11.11%;
   padding: 20px;
   background-color: $brand-primary;
   &:after {

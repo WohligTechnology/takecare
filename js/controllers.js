@@ -2599,7 +2599,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.compute.height = parseFloat(input.meter);
       }
       $scope.compute.weight=parseInt(input.weight);
-      $scope.result = parseFloat($scope.compute.weight/$scope.compute.height);
+      $scope.result = parseFloat($scope.compute.weight/($scope.compute.height * $scope.compute.height));
       console.log($scope.compute);
       console.log("BMI : "+$scope.result);
       $scope.resultpercent=parseInt(($scope.result/45)*100);
