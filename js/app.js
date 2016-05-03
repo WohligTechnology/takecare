@@ -311,7 +311,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpL
       templateUrl: "views/template.html",
       controller: 'ForgotpopupCtrl'
     })
-
+    .state('how-works', {
+      url: "/how-works",
+      templateUrl: "views/template.html",
+      controller: 'HowWorksCtrl'
+    })
   $urlRouterProvider.otherwise("/home");
 
 });

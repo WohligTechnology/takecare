@@ -2771,7 +2771,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
   Glo.getProductCount();
 })
-
+.controller('HowWorksCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("how-works");
+  $scope.menutitle = NavigationService.makeactive("How it works");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
 .controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal, $interval, $state, $timeout) {
   $scope.template = TemplateService;
 
