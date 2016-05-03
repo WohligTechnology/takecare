@@ -119,10 +119,11 @@
                 BMI Calculator<i class="open-me fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
               </uib-accordion-heading>
               <div class="bmi-detail">
+                <form  name="bmiForm">
                 <div class="bmi-cal">
                   <span class="text-uppercase bmi-heading inline-block">Sex:</span>
-                  <a class="male gender text-uppercase inline-block" ng-click="maleactive = true;" ng-class="{'brand-primary-bg':maleactive}">Male <img src="img/stats/male.png" alt="" class="img-responsive inline-block"></a>
-                  <a class="female gender text-uppercase inline-block">Female <img src="img/stats/female.png" alt="" class="img-responsive inline-block"></a>
+                  <a class="male gender text-uppercase inline-block" ng-click="maleactive = true;femaleactive=false;" ng-class="{'brand-primary-bg-gender':maleactive}">Male <img src="img/stats/male.png" alt="" class="img-responsive inline-block"></a>
+                  <a class="female gender text-uppercase inline-block" ng-click="maleactive = false;femaleactive=true;" ng-class="{'brand-primary-bg-gender':femaleactive}">Female <img src="img/stats/female.png" alt="" class="img-responsive inline-block"></a>
                 </div>
 
                 <div class="bmi-cal">
@@ -171,8 +172,9 @@
                   </select>
                 </div>
                 <div class="bmi-cal">
-                  <a href="" class="btn btn-primary text-uppercase no-radius calorie-btn" ng-click="calculateBMI(bmi)">calculate bmi</a>
+                  <a href="" type= "submit" class="btn btn-primary text-uppercase no-radius calorie-btn" ng-click="calculateBMI(bmi,bmiForm)">calculate bmi</a>
                 </div>
+              </form>
               </div>
               <div class="bmi-result">
                 <div class="custom-scroll">
@@ -195,7 +197,7 @@
                           <span>OBESE</span>
                         </div>
                       </div>
-                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-3.5)+'%'}">
+                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-3.5)+'%'}" ng-if="resultpercent > 4 && resultpercent <106">
                         <div class="bmi-ans">
                           <span class="inline-block text-uppercase urbmi">your bmi</span>
                           <span class="resultcal">{{result}}</span>
@@ -205,8 +207,8 @@
                   </div>
                 </div>
                 <div class="resultbar-detail">
-                  <h4 class="text-uppercase">We recommended you to join our following program :</h4>
-                  <div class="bmi-package">
+                  <h4 class="text-uppercase" ng-if="healthavail || coolsculptingavail || weightlossavail">We recommended you to join our following program :</h4>
+                  <div class="bmi-package" ng-if="healthavail">
                     <div class="row">
                       <div class="col-md-2">
                         <div class="package-name bmi-health text-center">
@@ -225,7 +227,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="bmi-package">
+                  <div class="bmi-package" ng-if="weightlossavail">
                     <div class="row">
                       <div class="col-md-2">
                         <div class="package-name bmi-weight text-center">
@@ -244,7 +246,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="bmi-package">
+                  <div class="bmi-package" ng-if="coolsculptingavail">
                     <div class="row">
                       <div class="col-md-2">
                         <div class="package-name bmi-cool text-center">
@@ -265,9 +267,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="text-center">
+                <!-- <div class="text-center">
                   <button type="button" class="btn btn-primary no-radius">RE-CALCULATE</button>
-                </div>
+                </div> -->
               </div>
             </uib-accordion-group>
           </uib-accordion>

@@ -2545,6 +2545,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.footfield = false;
     $scope.compute={};
     $scope.result=0.0;
+    $scope.resultpercent=0;
+    $scope.healthavail=false;
+    $scope.weightlossavail=false;
+    $scope.coolsculptingavail=false;
     NavigationService.getFoodGroup(function(data) {
       if (data) {
         console.log(data);
@@ -2592,7 +2596,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log($scope.selectedproduct);
     };
     $scope.calculateBMI = function(input) {
-      console.log(input);
+      $scope.healthavail=false;
+      $scope.weightlossavail=false;
+      $scope.coolsculptingavail=false;
       if(input.height == "feet"){
         $scope.compute.height = parseFloat(parseInt(input.feet.ft)*0.3048 + (input.feet.inc)*0.0254);
       }else if(input.height == "meter"){
@@ -2604,6 +2610,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log("BMI : "+$scope.result);
       $scope.resultpercent=parseInt(($scope.result/45)*100);
       $scope.result=$scope.result.toFixed(1);
+      if($scope.result<=18){
+        $scope.healthavail=true;
+      }else if($scope.result>18 && $scope.result <=30){
+        $scope.healthavail=true;
+        $scope.weightlossavail=true;
+        $scope.coolsculptingavail=true;
+      }else if($scope.result > 30 && $scope.result < 46){
+        $scope.healthavail=true;
+        $scope.weightlossavail=true;
+      }
     };
     $scope.heightChange = function(height) {
       if (height == "feet") {
