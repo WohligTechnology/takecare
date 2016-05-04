@@ -3220,27 +3220,148 @@ footer {
   }
 }
 //how it works//
-.invest,.feelfit{
+.invest,.feelfit,.hand-holding,.Design,.profile{
   h2{
     color: $brand-primary;
   }
 }
-.invest{
-  border-bottom: 1px solid  #ccc;
-  .invest-info{
-    margin: 0 34px;
-    padding: 0 20px;
-    display: inline-block;
-    width: 25%;
-    vertical-align: top;
+.invest,.hand-holding,.Design,.profile{border-bottom: 1px solid  #ccc;}
+
+.invest-info1,.invest-info2,.invest-info3,.invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4,.investing-info1,.investing-info2{
+  h3{
+    font-size: 27px;
+    width: 71%;
+    color: $brand-primary;
   }
 }
-.invest-info:before{
-  content:"" ;
+.invest-info1,.invest-info2,.invest-info3{
+  margin: 0 34px;
+  padding: 0 20px;
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+.invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4{
+  margin: 0 34px;
+  padding: 0 20px;
+  display: inline-block;
+  width: 18%;
+  vertical-align: top;
+}
+.investing-info1{
+  margin: 0 0 0 20%;
+    padding: 0 20px 0;
+  display: inline-block;
+  vertical-align: top;
+p{
+  width: 46%;
+}
+h3{
+  font-size: 27px;
+    width: 55%;
+}
+}
+
+.investing-info2{
+  display: inline-block;
+  vertical-align: top;
+  p{
+    width: 54%;
+  }
+  h3{
+    font-size: 27px;
+      width: 47%;
+  }
+}
+.investing-info1:after{
+  content:url("../img/works/plus.png");
   display: inline-block;
   width: 3%;
+  width: 0;
+  height: 0;
+  position: absolute;
+    top: 13%;
+    left: 49%;
 }
-.feelfit,.invest{
+.invest-info1:after{
+  content:url("../img/works/arrow.png");
+  display: inline-block;
+  width: 3%;
+  width: 0;
+  height: 0;
+  position: absolute;
+    top: 13%;
+    left: 25%;
+}
+.invest-info2:after{
+  content:url("../img/works/arrow.png");
+  display: inline-block;
+  width: 3%;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 13%;
+  left: 55%;
+}
+.hand-holding{
+  .invest-info1:after{
+    content:url("../img/works/plus.png");
+    display: inline-block;
+    width: 3%;
+    width: 0;
+    height: 0;
+    position: absolute;
+      top: 13%;
+      left: 25%;
+  }
+  .invest-info2:after{
+    content:url("../img/works/plus.png");
+    display: inline-block;
+    width: 3%;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 13%;
+    left: 55%;
+  }
+  .invest-info1{
+    h3{
+      width: 74%;
+    }
+  }
+}
+.invest-infos1:after{
+  content:url("../img/works/plus.png");
+  display: inline-block;
+  width: 3%;
+  width: 0;
+  height: 0;
+  position: absolute;
+    top: 13%;
+    left: 21%;
+}
+.invest-infos2:after{
+  content:url("../img/works/plus.png");
+  display: inline-block;
+  width: 3%;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 13%;
+  left: 45%;
+}
+.invest-infos3:after{
+  content:url("../img/works/plus.png");
+  display: inline-block;
+  width: 3%;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 13%;
+  left: 69%;
+}
+
+.feelfit,.invest,.hand-holding,.profile,.Design{
   span{
     margin-right: 10px;
   }
@@ -3259,7 +3380,6 @@ figcaption{
 color: $brand-primary;
 }
 
-
 .feelfabulous{
 padding: 40px 0;
 }
@@ -3273,29 +3393,33 @@ padding: 40px 0;
 h2{
   font-size: 27px;
 }
-
 }
-
 
 .packages{
 margin: 0;
 padding: 20px;
 border: 1px solid #000;
-  .about{
-      font-size: 22px;
+
+      h2{
+        font-size: 22px;
     color:#000;
   }
+}
   .btn{
     margin: 5px 0;
   }
-}
 .breadcrumb{
-  background-color:#fff;
+  position: relative;
+  background-color:transparent;
    li + li:before {
   display: none;
 }
 }
-
+// .invest,.Design,.hand-holding{
+//   .breadcrumb{
+//     margin-left: 35px;
+//   }
+// }
 //how it works ends//
 @import "harsh";
 @import "mobile";
