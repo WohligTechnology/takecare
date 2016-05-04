@@ -3226,7 +3226,19 @@ footer {
   }
 }
 .invest{
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid  #ccc;
+  .invest-info{
+    margin: 0 34px;
+    padding: 0 20px;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+  }
+}
+.invest-info:before{
+  content:"" ;
+  display: inline-block;
+  width: 3%;
 }
 .feelfit,.invest{
   span{
