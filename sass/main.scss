@@ -3219,6 +3219,53 @@ footer {
     a { margin: 0px 15px; }
   }
 }
+//how it works//
+.feelfabulous{
+padding: 40px 0;
+}
+
+.feelfit{
+  p{
+    text-align: justify;
+    width: 299px;
+    margin: 10px 0 0 25%;
+  }
+h2{
+  font-size: 27px;
+  text-transform: uppercase;
+  color: $brand-primary;
+}
+span{
+  margin-right: 10px;
+}
+}
+.stairs{
+  figure{
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    line-height: 8;
+    border: 3px solid #ccc;
+    border-radius: 100%;
+  }
+}
+.packages{
+margin: 0;
+padding: 20px;
+border: 1px solid #000;
+  .about{
+      font-size: 22px;
+    text-transform: uppercase;
+    color:#000;
+  }
+  .btn{
+    margin: 5px 0;
+  }
+}
+
+
+//how it works ends//
 @import "harsh";
 @import "mobile";
 @import "mobile_harsh";
