@@ -3220,6 +3220,34 @@ footer {
   }
 }
 //how it works//
+.invest,.feelfit{
+  h2{
+    color: $brand-primary;
+  }
+}
+.invest{
+  border-bottom: 1px solid #ccc;
+}
+.feelfit,.invest{
+  span{
+    margin-right: 10px;
+  }
+}
+figure{
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  line-height: 8;
+  border: 3px solid #ccc;
+  border-radius: 100%;
+}
+
+figcaption{
+color: $brand-primary;
+}
+
+
 .feelfabulous{
 padding: 40px 0;
 }
@@ -3232,38 +3260,29 @@ padding: 40px 0;
   }
 h2{
   font-size: 27px;
-  text-transform: uppercase;
-  color: $brand-primary;
 }
-span{
-  margin-right: 10px;
+
 }
-}
-.stairs{
-  figure{
-    display: inline-block;
-    height: 120px;
-    width: 120px;
-    text-align: center;
-    line-height: 8;
-    border: 3px solid #ccc;
-    border-radius: 100%;
-  }
-}
+
+
 .packages{
 margin: 0;
 padding: 20px;
 border: 1px solid #000;
   .about{
       font-size: 22px;
-    text-transform: uppercase;
     color:#000;
   }
   .btn{
     margin: 5px 0;
   }
 }
-
+.breadcrumb{
+  background-color:#fff;
+   li + li:before {
+  display: none;
+}
+}
 
 //how it works ends//
 @import "harsh";
