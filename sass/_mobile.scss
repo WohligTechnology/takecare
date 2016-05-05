@@ -259,7 +259,36 @@
   .recipedetail-imgholder { @include size(300px,  470px); }
   .recipe-name { font-size: 18px; }
 }
+
 @media (max-width: $screen-sm-max) {
+  //how works started//
+  .invest-info1,.invest-info2,.invest-info3{ margin: 0 19px 0 20px; }
+  .investing-info1,.investing-info2,.invest-info1,.invest-info2,.invest-info3,.invest-infos1 , .invest-infos2 ,.invest-infos3 , .invest-infos4  {
+    h3{ font-size: 20px; }
+  }
+.invest-infos1, .invest-infos2, .invest-infos3, .invest-infos4{ margin: 0 19px 0 20px; }
+
+.Design .breadcrumb {margin-left: 0;}
+
+.hand-holding .invest-info3 p {width: 92%;}
+
+.hand-holding .invest-info2 p{width: 87%;}
+
+.hand-holding .invest-info1 p{width: 90%;}
+
+.hand-holding .invest-info2:after{left: 59%;}
+
+.packages h2{font-size: 20px;}
+
+.invest-infos3:after{left: 69%;}
+
+.invest-infos1:after{left: 22%;}
+
+.invest-infos2:after{left: 46%;}
+
+.invest-infos3:after{left: 70%;}
+
+  //how works ended//
   // faq
   .faq {
     .banner h2 {
@@ -768,6 +797,81 @@
   .upload { width: 85px; }
 }
 @media (max-width: $screen-xs-max) {
+  .invest,.Design,.profile,.hand-holding,.feelfit {
+    padding: 0;
+    h2{
+          font-size: 16px;
+    }
+  }
+
+.investing-info1:after,.invest-infos2:after,.invest-infos3:after{
+  display: none;
+}
+.feelfit p {
+    text-align: justify;
+    width: 299px;
+    margin: 10px 0 15px 14%;
+}
+
+.investing-info1{
+  width:60%;
+}
+.investing-info2{
+  width:135%;
+}
+ .invest-info1 , .invest-info2 , .invest-info3 , .invest-infos1 , .invest-infos2 , .invest-infos3 , .invest-infos4 {
+h3{
+  display: inline;
+    font-size: 16px;
+}
+}
+.investing-info1 , .investing-info2 {
+  h3{
+    font-size: 16px;
+  }
+}
+.invest .breadcrumb {
+   margin-left: 0px;
+  }
+
+.invest-info1, .invest-info2, .invest-info3, .invest-info1 , .invest-info2 , .invest-info3 , .invest-infos1 , .invest-infos2 , .invest-infos3 , .invest-infos4{
+  width: 100%;
+  margin-top: 20px;
+}
+.invest-info1, .invest-info2, .invest-info3,.investing-info1 , .investing-info2,.invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4{
+  p{
+    display: none;
+  }
+}
+.invest-info1:after{
+  display: none;
+}
+
+.invest-info2:after{
+  display: none;
+}
+
+.hand-holding{
+  .invest-info1, .invest-info2, .invest-info3{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .invest-info1:after{
+    display: none;
+  }
+
+  .invest-info2:after{
+    display: none;
+  }
+}
+
+.hand-holding{
+  .breadcrumb{
+      margin-left: 0;
+  }
+}
+
+
   .btn {
     padding: 10px 16px;
   }

@@ -3227,7 +3227,7 @@ footer {
 }
 .invest,.hand-holding,.Design,.profile{
   border-bottom: 1px solid  #ccc;
- padding: 40px 0;
+  padding: 40px 0;
  }
 
 .invest-info1,.invest-info2,.invest-info3{
@@ -3244,7 +3244,7 @@ footer {
   vertical-align: top;
 }
 .invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4{
-  margin: 0 23px 0;
+    margin: 0 23px 0;
     display: inline-block;
     width: 19%;
     vertical-align: top;
@@ -3259,9 +3259,7 @@ footer {
   vertical-align: top;
   width: 27%;
   margin-left: 15%;
-p{
-  width:81%;
-}
+p{ width:81%;}
 h3{
   font-size: 27px;
   color: $brand-primary;
@@ -3269,17 +3267,15 @@ h3{
 }
 
 .investing-info2{
-  display: inline-block;
-  vertical-align: top;
+    display: inline-block;
+    vertical-align: top;
     width: 43%;
     margin-left: 14%;
-  p{
-    width: 54%;
-  }
+  p{width: 54%;}
   h3{
     font-size: 27px;
-      width: 47%;
-      color: $brand-primary;
+    width: 47%;
+    color: $brand-primary;
   }
 }
 .investing-info1:after{
@@ -3289,8 +3285,8 @@ h3{
   width: 0;
   height: 0;
   position: absolute;
-    top: 13%;
-    left: 44%;
+  top: 13%;
+  left: 44%;
 }
 .invest-info1:after{
   content:url("../img/works/arrow.png");
@@ -3299,8 +3295,8 @@ h3{
   width: 0;
   height: 0;
   position: absolute;
-    top: 13%;
-    left: 25%;
+  top: 13%;
+  left: 25%;
 }
 .invest-info2:after{
   content:url("../img/works/arrow.png");
@@ -3310,7 +3306,7 @@ h3{
   height: 0;
   position: absolute;
   top: 13%;
-  left: 55%;
+  left: 60%;
 }
 .hand-holding{
   .invest-info1:after{
@@ -3320,8 +3316,8 @@ h3{
     width: 0;
     height: 0;
     position: absolute;
-      top: 13%;
-      left: 25%;
+    top: 13%;
+    left: 25%;
   }
   .invest-info2:after{
     content:url("../img/works/plus.png");
@@ -3334,9 +3330,7 @@ h3{
     left: 55%;
   }
   .invest-info1{
-    h3{
-      width: 74%;
-    }
+    h3{width: 74%;}
   }
 }
 .invest-infos1:after{
@@ -3346,8 +3340,8 @@ h3{
   width: 0;
   height: 0;
   position: absolute;
-    top: 13%;
-    left: 21%;
+  top: 13%;
+  left: 21%;
 }
 .invest-infos2:after{
   content:url("../img/works/plus.png");
@@ -3371,9 +3365,7 @@ h3{
 }
 
 .feelfit,.invest,.hand-holding,.profile,.Design{
-  span{
-    margin-right: 10px;
-  }
+  span{margin-right: 10px;}
 }
 figure{
   display: inline-block;
@@ -3385,13 +3377,9 @@ figure{
   border-radius: 100%;
 }
 
-figcaption{
-color: $brand-primary;
-}
+figcaption{color: $brand-primary;}
 
-.feelfabulous{
-padding: 40px 0;
-}
+.feelfabulous{padding: 40px 0;}
 
 .feelfit{
   p{
@@ -3399,26 +3387,22 @@ padding: 40px 0;
     width: 299px;
     margin: 10px 0 0 25%;
   }
-h2{
-  font-size: 27px;
-}
+h2{font-size: 27px;}
 }
 
 .packages{
-margin: 0;
-padding: 20px;
-border: 1px solid #000;
-
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #000;
       h2{
         font-size: 22px;
-    color:#000;
+        color:#000;
   }
 }
-  .btn{
-    margin: 5px 0;
-  }
+  .btn{margin: 5px 0;}
+
 .breadcrumb{
-    margin-top: 20px;
+  margin-top: 20px;
   position: relative;
   background-color:transparent;
    li + li:before {
@@ -3426,55 +3410,40 @@ border: 1px solid #000;
 }
 }
 .invest{
-  .breadcrumb{
-    margin-left: 30px;
-  }
+  .breadcrumb{margin-left: 30px;}
 }
+
 .Design{
-  .breadcrumb{
-    margin-left: 10%;
-  }
+  .breadcrumb{margin-left: 10%;}
 }
+
 .hand-holding{
-  .breadcrumb{
-    margin-left: 38px;
-  }
+  .breadcrumb{margin-left: 38px;}
 }
+
 .hand-holding{
   .invest-info1{
-    p{
-      width: 65%;
-    }
+    p{width: 65%;}
   }
     .invest-info2{
-      p{
-        width: 70%;
-      }
+      p{width: 70%;}
   }
   .invest-info3{
-    p{
-      width: 81%;
-    }
+    p{width: 81%;}
   }
 }
+
 .invest-info1,.invest-info2,.invest-info3{
-  figure{
-    margin-left: 5%;
-  }
+  figure{margin-left: 5%;}
 }
+
 .investing-info1{
-  figure{
-    margin-left: 15%;
-  }
+  figure{margin-left: 15%;}
 }
 
 .investing-info2{
-  figure{
-    margin-left: 7%;
-  }
+  figure{margin-left: 7%;}
 }
-
-
 
 //how it works ends//
 @import "harsh";
