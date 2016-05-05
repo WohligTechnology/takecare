@@ -871,7 +871,6 @@ h3{
   }
 }
 
-
   .btn {
     padding: 10px 16px;
   }
@@ -1547,6 +1546,31 @@ h3{
 .upload { width: 65px; }
 }
 @media (max-width: 480px) {
+//how works//
+  .invest-info1, .invest-info2 , .invest-info3 , .invest-infos1 , .invest-infos2 , .invest-infos3 , .invest-infos4 {
+    h3{
+      display: inline;
+      font-size: 12px;
+    }
+  }
+.profile,.Design,.invest,.hand-holding{
+  h2{
+    font-size: 12px;
+  }
+}
+.investing-info1 h3, .investing-info2 h3 {
+    font-size: 12px;
+  }
+.feelfit h2 {
+    font-size: 12px;
+}
+.feelfit p {
+    text-align: justify;
+    width: 299px;
+    margin: 10px 0 15px 4%;
+}
+
+  //how works ends//
   // login
   .login-tab .nav-tabs li a {
     font-size: 15px;
