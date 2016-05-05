@@ -2549,6 +2549,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.healthavail=false;
     $scope.weightlossavail=false;
     $scope.coolsculptingavail=false;
+    $scope.resultactive =false;
+
     NavigationService.getFoodGroup(function(data) {
       if (data) {
         console.log(data);
@@ -2565,7 +2567,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     }
     $scope.go = function(item) {
+      $scope.resultactive =false;
       NavigationService.getFoodProductDetail(item, function(data) {
+        $scope.resultactive =true;
         $scope.selectedproduct = data;
         $scope.calcproduct = _.cloneDeep(data);
         $scope.filter.walking = 0;
@@ -2574,7 +2578,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filter.swimming = 0;
       })
     };
+    $scope.burnactive=false;
     $scope.checkCalculate = function(item) {
+      $scope.burnactive=false;
+
       if (parseInt(item) < 1) {
         $scope.filter.quantity = 1;
 
@@ -2585,6 +2592,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
     $scope.calculate = function(item) {
+      $scope.burnactive=true;
+
       $scope.calcproduct.calorie = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(2);
       $scope.calcproduct.protein = (parseInt(item) * parseFloat($scope.selectedproduct.protein)).toFixed(2);
       $scope.calcproduct.fat = (parseInt(item) * parseFloat($scope.selectedproduct.fat)).toFixed(2);
@@ -2595,7 +2604,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.filter.swimming = Math.round($scope.calcproduct.calorie / 8.33);
       console.log($scope.selectedproduct);
     };
+    $scope.progressactive=false;
     $scope.calculateBMI = function(input) {
+
       $scope.healthavail=false;
       $scope.weightlossavail=false;
       $scope.coolsculptingavail=false;
@@ -2620,6 +2631,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.healthavail=true;
         $scope.weightlossavail=true;
       }
+      $scope.progressactive=true;
     };
     $scope.heightChange = function(height) {
       if (height == "feet") {

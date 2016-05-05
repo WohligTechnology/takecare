@@ -41,7 +41,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="result">
+                <div class="result" ng-show="resultactive">
                   <div class="row">
                     <div class="col-md-5">
                         <p class="burn">
@@ -84,7 +84,7 @@
                   </div>
                 </div>
 
-                <div class="">
+                <div class="" ng-show="burnactive">
                   <div class="calorie-count">
                     <p class="burn">
                       <span class="text-uppercase">How to burn {{calcproduct.calorie || '0'}} calories</span>
@@ -176,7 +176,7 @@
                 </div>
               </form>
               </div>
-              <div class="bmi-result">
+              <div class="bmi-result" ng-show="progressactive">
                 <div class="custom-scroll">
                   <div class="scroll-stats">
                     <div class="result-bar relate">
