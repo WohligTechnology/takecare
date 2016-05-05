@@ -3225,52 +3225,61 @@ footer {
     color: $brand-primary;
   }
 }
-.invest,.hand-holding,.Design,.profile{border-bottom: 1px solid  #ccc;}
+.invest,.hand-holding,.Design,.profile{
+  border-bottom: 1px solid  #ccc;
+ padding: 40px 0;
+ }
 
-.invest-info1,.invest-info2,.invest-info3,.invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4,.investing-info1,.investing-info2{
+.invest-info1,.invest-info2,.invest-info3{
+  margin: 0 30px 0;
   h3{
     font-size: 27px;
-    width: 71%;
+    width: 74%;
     color: $brand-primary;
   }
 }
 .invest-info1,.invest-info2,.invest-info3{
-  margin: 0 34px;
-  padding: 0 20px;
   display: inline-block;
-  width: 25%;
+  width: 26%;
   vertical-align: top;
 }
 .invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4{
-  margin: 0 34px;
-  padding: 0 20px;
-  display: inline-block;
-  width: 18%;
-  vertical-align: top;
+  margin: 0 23px 0;
+    display: inline-block;
+    width: 19%;
+    vertical-align: top;
+  h3{
+    font-size: 27px;
+    width: 74%;
+    color: $brand-primary;
+  }
 }
 .investing-info1{
-  margin: 0 0 0 20%;
-    padding: 0 20px 0;
   display: inline-block;
   vertical-align: top;
+  width: 27%;
+  margin-left: 15%;
 p{
-  width: 46%;
+  width:81%;
 }
 h3{
   font-size: 27px;
-    width: 55%;
+  color: $brand-primary;
 }
 }
 
 .investing-info2{
   display: inline-block;
   vertical-align: top;
+    width: 43%;
+    margin-left: 14%;
   p{
     width: 54%;
   }
   h3{
     font-size: 27px;
       width: 47%;
+      color: $brand-primary;
   }
 }
 .investing-info1:after{
@@ -3281,7 +3290,7 @@ h3{
   height: 0;
   position: absolute;
     top: 13%;
-    left: 49%;
+    left: 44%;
 }
 .invest-info1:after{
   content:url("../img/works/arrow.png");
@@ -3409,17 +3418,64 @@ border: 1px solid #000;
     margin: 5px 0;
   }
 .breadcrumb{
+    margin-top: 20px;
   position: relative;
   background-color:transparent;
    li + li:before {
   display: none;
 }
 }
-// .invest,.Design,.hand-holding{
-//   .breadcrumb{
-//     margin-left: 35px;
-//   }
-// }
+.invest{
+  .breadcrumb{
+    margin-left: 30px;
+  }
+}
+.Design{
+  .breadcrumb{
+    margin-left: 10%;
+  }
+}
+.hand-holding{
+  .breadcrumb{
+    margin-left: 38px;
+  }
+}
+.hand-holding{
+  .invest-info1{
+    p{
+      width: 65%;
+    }
+  }
+    .invest-info2{
+      p{
+        width: 70%;
+      }
+  }
+  .invest-info3{
+    p{
+      width: 81%;
+    }
+  }
+}
+.invest-info1,.invest-info2,.invest-info3{
+  figure{
+    margin-left: 5%;
+  }
+}
+.investing-info1{
+  figure{
+    margin-left: 15%;
+  }
+}
+
+.investing-info2{
+  figure{
+    margin-left: 7%;
+  }
+}
+
+
+
 //how it works ends//
 @import "harsh";
 @import "mobile";
