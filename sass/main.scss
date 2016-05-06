@@ -962,7 +962,7 @@ button {
     border-bottom: 2px solid $brand-brown;
     p {
       font-size: 22px;
-      @extend.text-lighter;
+      // @extend .text-lighter;
     }
   }
 }
