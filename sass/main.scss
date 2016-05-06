@@ -3225,6 +3225,9 @@ footer {
     color: $brand-primary;
   }
 }
+.min-height{
+  min-height: 200px;
+}
 .invest,.hand-holding,.Design,.profile{
   border-bottom: 1px solid  #ccc;
   padding: 40px 0;
@@ -3319,7 +3322,7 @@ h3{
     height: 0;
     position: absolute;
     top: 13%;
-    left: 25%;
+    left: 28%;
   }
   .invest-info2:after{
     content:url("../img/works/plus.png");
@@ -3329,7 +3332,7 @@ h3{
     height: 0;
     position: absolute;
     top: 13%;
-    left: 55%;
+    left: 61%;
   }
   .invest-info1{
     h3{width: 74%;}
