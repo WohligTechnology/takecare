@@ -264,7 +264,9 @@
   //how works started//
   .invest-info1,.invest-info2,.invest-info3{ margin: 0 19px 0 20px; }
   .investing-info1,.investing-info2,.invest-info1,.invest-info2,.invest-info3,.invest-infos1 , .invest-infos2 ,.invest-infos3 , .invest-infos4  {
-    h3{ font-size: 20px; }
+    h3{
+      font-size: 20px;
+     }
   }
 .invest-infos1, .invest-infos2, .invest-infos3, .invest-infos4{ margin: 0 19px 0 20px; }
 
@@ -276,7 +278,9 @@
 
 .hand-holding .invest-info1 p{width: 90%;}
 
-.hand-holding .invest-info2:after{left: 59%;}
+.hand-holding .invest-info1:after{left: 30%;}
+
+.hand-holding .invest-info2:after{left: 61%;}
 
 .packages h2{font-size: 20px;}
 
@@ -287,6 +291,14 @@
 .invest-infos2:after{left: 46%;}
 
 .invest-infos3:after{left: 70%;}
+
+.invest-info1, .invest-info2, .invest-info3 {
+figure{
+  margin-left: 25%;
+}
+}
+
+
 
   //how works ended//
   // faq
@@ -837,6 +849,11 @@ h3{
 .invest-info1, .invest-info2, .invest-info3, .invest-info1 , .invest-info2 , .invest-info3 , .invest-infos1 , .invest-infos2 , .invest-infos3 , .invest-infos4{
   width: 100%;
   margin-top: 20px;
+}
+.invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4{
+  figure{
+    margin-left: 19%;
+  }
 }
 .invest-info1, .invest-info2, .invest-info3,.investing-info1 , .investing-info2,.invest-infos1,.invest-infos2,.invest-infos3,.invest-infos4{
   p{
@@ -1549,10 +1566,11 @@ h3{
 //how works//
   .invest-info1, .invest-info2 , .invest-info3 , .invest-infos1 , .invest-infos2 , .invest-infos3 , .invest-infos4 {
     h3{
-      display: inline;
+      display: block;
       font-size: 12px;
     }
   }
+
 .profile,.Design,.invest,.hand-holding{
   h2{
     font-size: 12px;
@@ -1569,7 +1587,9 @@ h3{
     width: 299px;
     margin: 10px 0 15px 4%;
 }
-
+.invest-infos1:after{
+display: none;
+}
   //how works ends//
   // login
   .login-tab .nav-tabs li a {

@@ -3231,8 +3231,10 @@ footer {
  }
 
 .invest-info1,.invest-info2,.invest-info3{
+
   margin: 0 30px 0;
   h3{
+      margin-left: 8%;
     font-size: 27px;
     width: 74%;
     color: $brand-primary;
@@ -3296,7 +3298,7 @@ h3{
   height: 0;
   position: absolute;
   top: 13%;
-  left: 25%;
+  left: 30%;
 }
 .invest-info2:after{
   content:url("../img/works/arrow.png");
@@ -3306,7 +3308,7 @@ h3{
   height: 0;
   position: absolute;
   top: 13%;
-  left: 60%;
+  left: 63%;
 }
 .hand-holding{
   .invest-info1:after{
@@ -3423,18 +3425,24 @@ h2{font-size: 27px;}
 
 .hand-holding{
   .invest-info1{
-    p{width: 65%;}
+    p{width: 65%;
+    margin-left: 15%;
+  }
   }
     .invest-info2{
-      p{width: 70%;}
+      p{width: 70%;
+      margin-left: 15%;
+    }
   }
   .invest-info3{
-    p{width: 81%;}
+    p{width: 81%;
+    margin-left: 15%;
+  }
   }
 }
 
 .invest-info1,.invest-info2,.invest-info3{
-  figure{margin-left: 5%;}
+  figure{margin-left: 17%;}
 }
 
 .investing-info1{
