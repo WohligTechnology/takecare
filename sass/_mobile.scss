@@ -826,7 +826,7 @@ figure{
 }
 
 .investing-info1{
-  width:60%;
+  width:auto;
 }
 .investing-info2{
   width:135%;
@@ -1585,11 +1585,21 @@ h3{
 .feelfit p {
     text-align: justify;
     width: 299px;
-    margin: 10px 0 15px 4%;
+    margin: 0 auto;
 }
 .invest-infos1:after{
 display: none;
 }
+.Design .breadcrumb{
+  margin-left: 10%;
+}
+.profile{
+  .breadcrumb{
+    margin-left: 10%;
+  }
+}
+
+
   //how works ends//
   // login
   .login-tab .nav-tabs li a {
