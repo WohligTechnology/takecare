@@ -2644,6 +2644,41 @@ footer {
 .walking img {
   margin-left: 15px;
 }
+  .legend {
+    padding-top: 67px;
+    li+li {
+    margin-left: 25px;
+}
+    li {
+          font-size: 15px;
+      display: inline-block;
+      span {
+        @include square(20px);
+        display: inline-block;
+        vertical-align: top;
+      }
+      .severly-bg{
+        margin-right: 8px;
+
+        background-color: #e7cbb2; }
+      .under-bg{
+        margin-right: 8px;
+
+        background-color: #c2a488; }
+      .normal-bg{
+        margin-right: 8px;
+
+        background-color: #3cb390; }
+      .over-bg{
+        margin-right: 8px;
+
+        background-color: #ff9a7f; }
+      .obese-bg{
+        margin-right: 8px;
+
+        background-color: #e96542; }
+    }
+  }
 .bmi-cal {
   margin: 30px 0;
   @extend .brand-brown-dark2;
@@ -2702,12 +2737,12 @@ footer {
 .severly {
   width: 35.556%;
   padding: 20px;
-  background-color: $brand-brown;
+  background-color: #e7cbb2;
 }
 .severly-obese {
   width: 33.3333%;
   padding: 20px;
-  background-color: $brand-brown;
+  background-color: #e96542;
 }
 .same-progressdata {
   position: relative;
@@ -2732,7 +2767,7 @@ footer {
 .under {
   width: 4.4444%;
   padding: 10px 16px;
-  background-color: $brand-primary;
+  background-color: #c2a488;
   &:after {
     content: "18";
     left: 95%;
@@ -2750,7 +2785,7 @@ footer {
 .over {
   width: 11.11%;
   padding: 20px;
-  background-color: $brand-primary;
+  background-color: #ff9a7f;
   &:after {
     content: "30";
     left: 96%;
@@ -2794,6 +2829,7 @@ footer {
   top: -90px;
   left: 52%;
   border-radius: 100%;
+  @include transition(all 1s linear);
 .bmi-ans {
     @include square(80px);
     display: inline-block;
@@ -2812,7 +2848,11 @@ footer {
     border-bottom: 1px solid #fff;
     font-size: 11px;
   }
-  .resultcal { font-size: 25px; }
+  .resultcal {
+    min-width: 40px;
+    display: inline-block;
+    font-size: 25px;
+  }
  }
 }
 ///end stats//
@@ -3372,7 +3412,7 @@ h3{
 .feelfit,.invest,.hand-holding,.profile,.Design{
   span{margin-right: 10px;}
 }
-figure{
+.howworks figure{
   display: inline-block;
   height: 120px;
   width: 120px;

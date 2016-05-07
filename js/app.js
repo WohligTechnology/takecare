@@ -312,7 +312,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpL
       controller: 'ForgotpopupCtrl'
     })
     .state('how-works', {
-      url: "/how-works",
+      url: "/howitworks",
       templateUrl: "views/template.html",
       controller: 'HowWorksCtrl'
     })

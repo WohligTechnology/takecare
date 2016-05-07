@@ -176,32 +176,38 @@
                 </div>
               </form>
               </div>
-              <div class="bmi-result" ng-show="progressactive">
+              <!-- <div class="bmi-result" ng-show="progressactive"> -->
+              <div class="bmi-result" >
                 <div class="custom-scroll">
                   <div class="scroll-stats">
                     <div class="result-bar relate">
                       <div class="progress">
                         <div class="progress-bar severly severly-under same-progressdata">
-                          <span>SEVERLY UNDERWEIGHT</span>
                         </div>
                         <div class="progress-bar under same-progressdata">
-                          <span>UNDER WEIGHT</span>
                         </div>
                         <div class="progress-bar normal same-progressdata">
-                          <span>NORMAL</span>
                         </div>
                         <div class="progress-bar over same-progressdata">
-                          <span>OVERWEIGHT</span>
                         </div>
                         <div class="progress-bar severly-obese obese same-progressdata">
-                          <span>OBESE</span>
                         </div>
                       </div>
-                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-3.5)+'%'}" ng-if="resultpercent > 4 && resultpercent <106">
+                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-4.2)+'%'}" >
+                        <!-- ng-show="resultpercent > 4 && resultpercent <106" -->
                         <div class="bmi-ans">
                           <span class="inline-block text-uppercase urbmi">your bmi</span>
                           <span class="resultcal">{{result}}</span>
                         </div>
+                      </div>
+                      <div>
+                        <ul class="legend">
+                          <li><span class="severly-bg"></span>SEVERLY UNDERWEIGHT</li>
+                          <li><span class="under-bg"></span>UNDER WEIGHT</li>
+                          <li><span class="normal-bg"></span>NORMAL</li>
+                          <li><span class="over-bg"></span>OVERWEIGHT</li>
+                          <li><span class="obese-bg"></span>OBESE</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
