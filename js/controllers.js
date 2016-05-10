@@ -2568,6 +2568,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     $scope.go = function(item) {
       $scope.resultactive =false;
+      $scope.burnactive=false;
+
       NavigationService.getFoodProductDetail(item, function(data) {
         $scope.resultactive =true;
         $scope.selectedproduct = data;
@@ -2583,10 +2585,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.burnactive=false;
 
       if (parseInt(item) < 1) {
+        item = 1;
         $scope.filter.quantity = 1;
-
-      } else {
-        $scope.filter.quantity = item;
       }
       $scope.calculate(item);
 
