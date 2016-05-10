@@ -2569,7 +2569,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.go = function(item) {
       $scope.resultactive =false;
       $scope.burnactive=false;
-
+      $scope.filter.quantity=1;
       NavigationService.getFoodProductDetail(item, function(data) {
         $scope.resultactive =true;
         $scope.selectedproduct = data;
@@ -2578,7 +2578,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filter.running = 0;
         $scope.filter.cycling = 0;
         $scope.filter.swimming = 0;
-      })
+      });
     };
     $scope.burnactive=false;
     $scope.checkCalculate = function(item) {
