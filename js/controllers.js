@@ -2597,7 +2597,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.calcproduct.calorie = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(0);
       $scope.calcproduct.protein = (parseInt(item) * parseFloat($scope.selectedproduct.protein)).toFixed(1);
       $scope.calcproduct.fat = (parseInt(item) * parseFloat($scope.selectedproduct.fat)).toFixed(1);
-      $scope.calcproduct.carbs = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(1);
+      $scope.calcproduct.carbs = (parseInt(item) * parseFloat($scope.selectedproduct.carbs)).toFixed(1);
       $scope.filter.walking = Math.round($scope.calcproduct.calorie / 4.18);
       $scope.filter.running = Math.round($scope.calcproduct.calorie / 11.09);
       $scope.filter.cycling = Math.round($scope.calcproduct.calorie / 7);
