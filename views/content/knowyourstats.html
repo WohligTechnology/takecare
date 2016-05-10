@@ -60,8 +60,7 @@
                           <div class="calorie">
                             <div class="calorie-number white brand-primary-bg inline-block">{{calcproduct.calorie || '0'}}</div>
                             <div class="inline-block kcal v-top">
-                              <span class="block brand-primary">Calorie</span>
-                              <span class="block brand-primary">kcal</span>
+                              <span class="block brand-primary">Calories</span>
                             </div>
                           </div>
                         </div>
@@ -87,8 +86,8 @@
                 <div class="" ng-show="burnactive">
                   <div class="calorie-count">
                     <p class="burn">
-                      <span class="text-uppercase">How to burn {{calcproduct.calorie || '0'}} calories</span>
-                      <i class="brand-primary">(to burn {{calcproduct.calorie || '0'}} calories, you could do any of the following)</i>
+                      <span class="text-uppercase">To burn {{calcproduct.calorie || '0'}} calories</span>
+                      <i class="brand-primary">(do any of the following)</i>
                     </p>
                     <div class="walking count-cat">
                       <span class="white brand-primary-bg calorie-btn">{{filter.walking || '0'}} mins</span>
@@ -193,7 +192,7 @@
                         <div class="progress-bar severly-obese obese same-progressdata">
                         </div>
                       </div>
-                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-4.2)+'%'}" >
+                      <div class="progress-calcu brand-primary-bg" ng-style="{'left':(resultpercent-4.4)+'%'}" >
                         <!-- ng-show="resultpercent > 4 && resultpercent <106" -->
                         <div class="bmi-ans">
                           <span class="inline-block text-uppercase urbmi">your bmi</span>

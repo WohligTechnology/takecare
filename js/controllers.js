@@ -2594,15 +2594,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.calculate = function(item) {
       $scope.burnactive=true;
 
-      $scope.calcproduct.calorie = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(1);
+      $scope.calcproduct.calorie = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(0);
       $scope.calcproduct.protein = (parseInt(item) * parseFloat($scope.selectedproduct.protein)).toFixed(1);
       $scope.calcproduct.fat = (parseInt(item) * parseFloat($scope.selectedproduct.fat)).toFixed(1);
       $scope.calcproduct.carbs = (parseInt(item) * parseFloat($scope.selectedproduct.calorie)).toFixed(1);
       $scope.filter.walking = Math.round($scope.calcproduct.calorie / 4.18);
       $scope.filter.running = Math.round($scope.calcproduct.calorie / 11.09);
       $scope.filter.cycling = Math.round($scope.calcproduct.calorie / 7);
+      if(isNaN($scope.calcproduct.protein)){
+        $scope.calcproduct.protein =0;
+      }
+      if(isNaN($scope.calcproduct.fat)){
+        $scope.calcproduct.fat =0;
+      }
+      if(isNaN($scope.calcproduct.carbs)){
+        $scope.calcproduct.carbs =0;
+      }
       $scope.filter.swimming = Math.round($scope.calcproduct.calorie / 8.33);
-      console.log($scope.selectedproduct);
+
     };
     $scope.progressactive=false;
     $scope.calculateBMI = function(input) {
