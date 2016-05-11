@@ -48,6 +48,7 @@
 // Social Links
 .links {
   margin: 25px 0 20px 0px;
+  .social-links li a { margin-right: 10px; }
 }
 .social-links {
   // padding: 10px 0 0;
@@ -69,14 +70,14 @@
   border-left: 1px solid $brand-primary;
   border-right: 1px solid $brand-primary;
   // @include margin(2px -50px 0 -14px);
-  @include padding(12px 18px);
+  @include padding(12px 10px);
   display: inline-block;
   a {
     color: #d2664e;
   }
 }
 .cart-icon {
-  padding: 0 20px 9px 15px;
+  padding: 0 20px 9px 10px;
   border-right: 1px solid $brand-primary;
   display: inline-block;
   a {
@@ -87,7 +88,7 @@
     border: 1px solid #FFF;
     position: absolute;
     top: -6px;
-    left: 27px;
+    left: 22px;
     font-size: 12px;
     line-height: 22px;
     background: $brand-primary;
@@ -105,6 +106,18 @@
     text-align: center;
   }
 }
+// location
+  .location {
+    padding: 0 7px 0 4px;
+    border-right: 1px solid $brand-primary;
+    vertical-align: top;
+    .list-inline > li { padding: 0px 2px; }
+    img {
+      margin: 6px 0;
+      opacity: 0.5;
+    }
+  }
+// location end
 // Signin
 .signin {
   // @include margin(2px 0 0 -10px);

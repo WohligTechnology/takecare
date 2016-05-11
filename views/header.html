@@ -35,7 +35,7 @@
         </div>
 
       </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="col-md-6 col-sm-12 col-xs-12 pad-zero">
         <div class="links">
           <div class="social-links">
             <ul>
@@ -70,32 +70,40 @@
           <div class="contact-tel letter-space">
             <a class="font-semibold" href="tel:+912261312222">+91 22 6131 2222</a>
           </div>
-          <div class="cart-icon relate" ng-controller="countChange">
-            <a href="#/cart" >
-
-              <i class="fa fa-shopping-cart brand-primary"></i>
-              <div class="bagde round">
-
-                <span class="white">{{Count}}</span>
-              </div>
-            </a>
-          </div>
-          <!-- {{user}} -->
-          <div class="user-login text-center">
-            <div class="signin letter-space" ng-show="!enablelogout">
-              <a class="text-uppercase font-semibold" href="" ng-click="openLogin();">Sign In</a>
+          <div class="user-block inline-block">
+            <div class="location inline-block">
+              <ul class="list-inline m-clear">
+                <li><a href=""><img src="img/map1.png" alt="" class="img-responsive"></a></li>
+                <li><a href=""><img src="img/map2.png" alt="" class="img-responsive"></a></li>
+              </ul>
             </div>
-            <div class="signin letter-space" ng-show="enablelogout">
-              <div class="text-uppercase font-semibold relate pointer show-submenu">
-                <span class="block name brand-primary ">Hi, {{ ::user.name | loginame | limitTo:12}}</span>
-                <ul class="account-submenu">
-                  <li>
-                    <a ui-sref="account()" class="text-uppercase font-semibold">My profile</a>
-                  </li>
-                  <li>
-                    <a class="text-uppercase font-semibold" href="" ng-click="logout()">Logout</a>
-                  </li>
-                </ul>
+            <div class="cart-icon relate" ng-controller="countChange">
+              <a href="#/cart" >
+
+                <i class="fa fa-shopping-cart brand-primary"></i>
+                <div class="bagde round">
+
+                  <span class="white">{{Count}}</span>
+                </div>
+              </a>
+            </div>
+            <!-- {{user}} -->
+            <div class="user-login text-center">
+              <div class="signin letter-space" ng-show="!enablelogout">
+                <a class="text-uppercase font-semibold" href="" ng-click="openLogin();">Sign In</a>
+              </div>
+              <div class="signin letter-space" ng-show="enablelogout">
+                <div class="text-uppercase font-semibold relate pointer show-submenu">
+                  <span class="block name brand-primary ">Hi, {{ ::user.name | loginame | limitTo:12}}</span>
+                  <ul class="account-submenu">
+                    <li>
+                      <a ui-sref="account()" class="text-uppercase font-semibold">My profile</a>
+                    </li>
+                    <li>
+                      <a class="text-uppercase font-semibold" href="" ng-click="logout()">Logout</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

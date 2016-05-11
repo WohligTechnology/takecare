@@ -37,13 +37,23 @@
   }
   .links {
     @include margin(25px 0 15px);
+    .social-links li a {
+      @include margin(0 6px 0 0);
+    }
   }
   .social-links li a {
     @include margin(0 10px 0 0);
   }
   .contact-tel {
     @include margin(0);
-    @include padding(12px);
+    @include padding(12px 6px);
+  }
+  .location {
+    padding: 0 5px 0 2px;
+    img {
+      width: 20px;
+      margin: 9px 0;
+    }
   }
   .cart-icon { padding: 0 20px 9px 15px; }
   .signin {
@@ -133,9 +143,9 @@
     }
     .signin { text-align: center; }
     .cart-icon {
-      padding: 0px 20px;
-      border: none;
-      .bagde { left: 35px; }
+      padding: 0px 18px 9px 8px;
+      border-right: 1px solid $brand-primary;
+      .bagde { left: 20px; }
     }
   }
   .contact-tel {
@@ -278,6 +288,11 @@
     @include padding(10px 50px);
     text-align: center;
   }
+  .location { border: none; }
+  .links .cart-icon { border-right: none; }
+  .user-login { padding: 0px 10px; }
+  .links .social-links { display: inline-block; }
+  .links .contact-tel { display: inline-block; }
   .slide-menu {
     width: 280px;
     ul li a {
@@ -287,6 +302,7 @@
       font-size: 16px;
     }
   }
+  .user-block { display: block; }
   .that-slides.slide-body { @include transform(translateX(280px)); }
 
   // Footer
