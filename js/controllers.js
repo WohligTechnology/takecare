@@ -2799,7 +2799,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
-.controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal, $interval, $state, $timeout) {
+.controller('headerctrl', function($scope,$state, NavigationService, TemplateService, $uibModal, $interval, $state, $timeout) {
   $scope.template = TemplateService;
 
   $scope.goToTop = function() {
@@ -2807,19 +2807,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       scrollTop: 0
     }, 1000);
   };
-  if (!$.jStorage.get("myCountry")) {
-    NavigationService.localCountry(function(data) {
-      console.log(data.geoplugin_countryCode);
-      country = data.geoplugin_countryCode;
-      $.jStorage.set("myCountry", country);
-    });
+  $scope.changeToIndia=function(flag){
+    $scope.activateindia=false;
+    $scope.activateworld=false;
+    if (flag) {
+      $.jStorage.set("myCountry", "IN");
+      country = "IN";
+      $scope.activateindia=true;
+      console.log($scope.activateindia);
+
+    }else{
+      $.jStorage.set("myCountry", "US");
+      country = "US";
+      $scope.activateworld=true;
+
+    }
+    if(modal1){
+      modal1.dismiss();
+    }
+    if(modal2){
+      modal2.dismiss();
+    }
+    console.log($state);
+  };
+
+  if(!$.jStorage.get("myCountry")){
+    $scope.changeToIndia(true);
+    console.log("has no country");
+
+  }else if(country === "" && $.jStorage.get("myCountry")){
+    country = $.jStorage.get("myCountry");
+    console.log("has country but empty");
+
   }
-  if (country == '') {
-    NavigationService.localCountry(function(data) {
-      console.log(data.geoplugin_countryCode);
-      country = data.geoplugin_countryCode;
-    });
+  if($.jStorage.get("myCountry")){
+    console.log("has country");
+    $scope.activateindia=false;
+    $scope.activateworld=false;
+    if($.jStorage.get("myCountry") == "IN"){
+      console.log("has country In");
+
+      $scope.activateindia=true;
+    }else{
+      $scope.activateworld=true;
+    }
   }
+  // if (!$.jStorage.get("myCountry")) {
+  //   NavigationService.localCountry(function(data) {
+  //     console.log(data.geoplugin_countryCode);
+  //     country = data.geoplugin_countryCode;
+  //     $.jStorage.set("myCountry", country);
+  //   });
+  // }
+  // if (country == '') {
+  //   NavigationService.localCountry(function(data) {
+  //     console.log(data.geoplugin_countryCode);
+  //     country = data.geoplugin_countryCode;
+  //   });
+  // }
 
 
   $scope.acceptIt = function(flag) {
@@ -2996,18 +3041,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       controller: 'headerctrl'
     });
   };
+
+  var modal1='';
+  var modal2='';
   $scope.openindia = function() {
-    $uibModal.open({
+    modal1=$uibModal.open({
       animation: true,
       templateUrl: 'views/modal/countryindia.html',
-      controller: 'headerctrl'
+      scope:$scope
     });
+    console.log(modal1);
   };
   $scope.openworld = function() {
-    $uibModal.open({
+    modal2=$uibModal.open({
       animation: true,
       templateUrl: 'views/modal/countryworld.html',
-      controller: 'headerctrl'
+      scope:$scope
     });
   };
 });
