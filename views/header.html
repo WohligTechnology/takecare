@@ -73,8 +73,8 @@
           <div class="user-block inline-block">
             <div class="location inline-block">
               <ul class="list-inline m-clear">
-                <li><a href="" ng-click="openindia();"><img src="img/map1.png"  ng-class="{'location-active':activateindia}" alt="" class="img-responsive"></a></li>
-                <li><a href="" ng-click="openworld();"><img src="img/map2.png"  ng-class="{'location-active':activateworld}" alt="" class="img-responsive"></a></li>
+                <li><a href="" uib-tooltip="India" tooltip-placement="bottom" tooltip-trigger="mouseenter" ng-click="openindia();"><img  src="img/map1.png"  ng-class="{'location-active':activateindia}" alt="" class="img-responsive"></a></li>
+                <li><a href="" uib-tooltip="World" tooltip-placement="bottom" tooltip-trigger="mouseenter" ng-click="openworld();"><img  src="img/map2.png"  ng-class="{'location-active':activateworld}" alt="" class="img-responsive"></a></li>
               </ul>
             </div>
             <div class="cart-icon relate" ng-controller="countChange">

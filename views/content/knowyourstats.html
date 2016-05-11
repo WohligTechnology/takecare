@@ -48,7 +48,7 @@
                           <span class="text-uppercase">Results</span>
                           <i class="brand-primary">(for {{calcproduct.product || 'Product'}})</i>
                         </p>
-                        <input class="result-number" type="number" ng-model= "filter.quantity">
+                        <input class="result-number" ng-change="neverNegative(filter.quantity)" type="number" ng-model= "filter.quantity">
                         <span class="multiply"> x </span>
                         <span>{{calcproduct.measurements || 'x quantity = x gms'}}</span>
                         <a href="" class="text-uppercase white brand-primary-bg calorie-btn" ng-click="checkCalculate(filter.quantity)">Go</a>
@@ -127,7 +127,7 @@
 
                 <div class="bmi-cal">
                   <span class="text-uppercase bmi-heading inline-block">Age:</span>
-                  <input type="number" class="age" />
+                  <input type="number" ng-model="bmi.age" ng-change="neverNegative2(bmi.age)" class="age" />
                 </div>
 
                 <div class="bmi-cal">

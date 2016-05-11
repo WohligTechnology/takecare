@@ -2540,6 +2540,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.products = [];
     $scope.productrequest = {};
     $scope.filter = {};
+    $scope.bmi={};
     $scope.filter.quantity = 1;
     $scope.meterfield = false;
     $scope.footfield = false;
@@ -2550,7 +2551,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.weightlossavail=false;
     $scope.coolsculptingavail=false;
     $scope.resultactive =false;
-
+    $scope.neverNegative = function(val){
+      if(val<1)
+      $scope.filter.quantity=1;
+    };
+    $scope.neverNegative2 = function(val){
+      console.log(val);
+      if(val<1)
+      $scope.bmi.age=1;
+    };
     NavigationService.getFoodGroup(function(data) {
       if (data) {
         console.log(data);
@@ -2799,7 +2808,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
-.controller('headerctrl', function($scope,$state, NavigationService, TemplateService, $uibModal, $interval, $state, $timeout) {
+.controller('headerctrl', function($scope, NavigationService, TemplateService, $uibModal, $interval, $state, $timeout) {
   $scope.template = TemplateService;
 
   $scope.goToTop = function() {
@@ -2834,8 +2843,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
 
   if(!$.jStorage.get("myCountry")){
-    $scope.changeToIndia(true);
-
+    NavigationService.localCountry(function(data) {
+      country = data.geoplugin_countryCode;
+      $.jStorage.set("myCountry", country);
+      if(country == "IN"){
+        $scope.activateindia=true;
+      }else{
+        $scope.activateworld=true;
+      }
+    });
   }else if(country === "" && $.jStorage.get("myCountry")){
     country = $.jStorage.get("myCountry");
 
