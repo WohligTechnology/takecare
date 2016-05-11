@@ -2814,7 +2814,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $.jStorage.set("myCountry", "IN");
       country = "IN";
       $scope.activateindia=true;
-      console.log($scope.activateindia);
 
     }else{
       $.jStorage.set("myCountry", "US");
@@ -2828,16 +2827,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     if(modal2){
       modal2.dismiss();
     }
-    console.log($state);
+    if($state.current.name == "checkout" || $state.current.name== "cart"){
+      console.log($state.current.name);
+      $state.reload();
+    }
   };
 
   if(!$.jStorage.get("myCountry")){
     $scope.changeToIndia(true);
-    console.log("has no country");
 
   }else if(country === "" && $.jStorage.get("myCountry")){
     country = $.jStorage.get("myCountry");
-    console.log("has country but empty");
 
   }
   if($.jStorage.get("myCountry")){
@@ -2845,7 +2845,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.activateindia=false;
     $scope.activateworld=false;
     if($.jStorage.get("myCountry") == "IN"){
-      console.log("has country In");
 
       $scope.activateindia=true;
     }else{
