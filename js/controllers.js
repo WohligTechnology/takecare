@@ -2996,4 +2996,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       controller: 'headerctrl'
     });
   };
+  $scope.openindia = function() {
+    $uibModal.open({
+      animation: true,
+      templateUrl: 'views/modal/countryindia.html',
+      controller: 'headerctrl'
+    });
+  };
+  $scope.openworld = function() {
+    $uibModal.open({
+      animation: true,
+      templateUrl: 'views/modal/countryworld.html',
+      controller: 'headerctrl'
+    });
+  };
 });
