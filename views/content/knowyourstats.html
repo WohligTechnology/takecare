@@ -20,8 +20,8 @@
                     <div class="col-md-5 col-sm-5">
                       <div class="text-center">
                         <span class="text-uppercase inline-block">Choose a food group :</span>
-                        <select class="text-uppercase" ng-change="getProducts(productrequest.category)" ng-model="productrequest.category">
-                          <option ng-repeat="category in foodgroup" class="" value="{{category.name}}">{{category.name}}</option>
+                        <select class="" ng-change="getProducts(productrequest.category)" ng-model="productrequest.category">
+                          <option ng-repeat="category in foodgroup" class="" value="{{category.name}}">{{category.name | capitalize:true}}</option>
 
                         </select>
                       </div>
@@ -30,7 +30,7 @@
                       <div class="text-center">
                         <span class="text-uppercase inline-block">Pick a product :</span>
                         <select class="" ng-model="productrequest.product">
-                          <option ng-repeat="item in products" value="{{item.name}}">{{item.name}}</option>
+                          <option ng-repeat="item in products" value="{{item.name}}">{{item.name | capitalize:true}}</option>
                         </select>
                       </div>
                     </div>
