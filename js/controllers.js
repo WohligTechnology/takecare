@@ -649,6 +649,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   .controller('HealthManagementDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, cfpLoadingBar) {
     //Used to name the .html file
     $scope.isBottom = false;
+    $scope.country=undefined;
+    Glo.changeCountry=function(){
+      $scope.country = $.jStorage.get('myCountry');
+    };
+    Glo.changeCountry();
+    console.log($stateParams.id);
     $scope.template = TemplateService.changecontent("healthmanagementdetail");
     $scope.menutitle = NavigationService.makeactive("Health Management Detail");
     TemplateService.title = $scope.menutitle;
@@ -2823,7 +2829,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $.jStorage.set("myCountry", "IN");
       country = "IN";
       $scope.activateindia=true;
-
     }else{
       $.jStorage.set("myCountry", "US");
       country = "US";
@@ -2840,6 +2845,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log($state.current.name);
       $state.reload();
     }
+    Glo.changeCountry();
   };
 
   if(!$.jStorage.get("myCountry")){
@@ -3060,18 +3066,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   var modal1='';
   var modal2='';
   $scope.openindia = function() {
-    modal1=$uibModal.open({
-      animation: true,
-      templateUrl: 'views/modal/countryindia.html',
-      scope:$scope
-    });
+    if(!$scope.activateindia){
+      modal1=$uibModal.open({
+        animation: true,
+        templateUrl: 'views/modal/countryindia.html',
+        scope:$scope
+      });
+    }
     console.log(modal1);
   };
   $scope.openworld = function() {
-    modal2=$uibModal.open({
-      animation: true,
-      templateUrl: 'views/modal/countryworld.html',
-      scope:$scope
-    });
+    if(!$scope.activateworld){
+      modal2=$uibModal.open({
+        animation: true,
+        templateUrl: 'views/modal/countryworld.html',
+        scope:$scope
+      });
+    }
   };
 });

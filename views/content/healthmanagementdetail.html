@@ -73,7 +73,10 @@
                       <p class="white text-bold text-uppercase" ng-if="$index==1">gold</p>
                       <p class="white text-bold text-uppercase" ng-if="$index==2">platinum</p>
                       <p class="white text-bold text-uppercase" ng-if="$index==3">diamond</p>
-                      <p class="price">Rs {{subplan.price_in_INR}}
+                      <p class="price" ng-if="country == 'IN'">Rs {{subplan.price_in_INR}}
+                        <!-- <sup>*</sup> -->
+                      </p>
+                      <p class="price" ng-if="country !== 'IN'">$ {{subplan.price_in_dollars}}
                         <!-- <sup>*</sup> -->
                       </p>
                     </div>
@@ -84,9 +87,9 @@
                       <h5 class="text-uppercase font-semibold">{{subplan.title}}</h5>
                       <ul class="chart-list font-semibold" ng-bind-html="subplan.description"></ul>
                       <div class="pricing text-center">
-                        <span class="brand-primary font-gotham-bold">Rs.
-                          {{subplan.price_in_INR}} /</span>
-                          <span class="brand-primary font-gotham-bold">$
+                        <span class="brand-primary font-gotham-bold" ng-if="country == 'IN'">Rs.
+                          {{subplan.price_in_INR}} </span>
+                          <span class="brand-primary font-gotham-bold" ng-if="country !== 'IN'">$
                             {{subplan.price_in_dollars}}</span>
 
                       </div>
