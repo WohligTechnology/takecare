@@ -3508,7 +3508,13 @@ h2{font-size: 27px;}
 .investing-info2{
   figure{margin-left: 7%;}
 }
-
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 //how it works ends//
 @import "harsh";
 @import "mobile";
