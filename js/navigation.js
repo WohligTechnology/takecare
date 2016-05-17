@@ -413,6 +413,10 @@ var navigationservice = angular.module('navigationservice', [])
             }
             $http.get(adminurl + 'getRecipeDetail?id=' + id).success(callback);
         },
+        emptyCart: function( callback) {
+
+            $http.get(adminurl + 'emptyCart').success(callback);
+        },
         fedexTrack: function(tracking_number, callback) {
             // tracking_number = 123456789012;
             $http({

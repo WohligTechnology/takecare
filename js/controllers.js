@@ -2843,9 +2843,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     if($state.current.name == "checkout" || $state.current.name== "cart"){
       console.log($state.current.name);
-      $state.reload();
+
+        $state.reload();
+
     }
+
+    NavigationService.emptyCart(function(data){
+      Glo.getProductCount();
+      Glo.getProductCount2();
+    });
     Glo.changeCountry();
+
   };
 
   if(!$.jStorage.get("myCountry")){
