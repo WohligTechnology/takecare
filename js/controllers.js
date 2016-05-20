@@ -230,7 +230,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.alerts = [];
         $scope.alerts.push({
           type: 'danger',
-          msg: 'No Shipping for Out Of Country.'
+          msg: 'Not available in your country'
         });
       }
     };
@@ -930,7 +930,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.alerts = [];
         $scope.alerts.push({
           type: 'danger',
-          msg: 'No Shipping for Out Of Country.'
+          msg: 'Not available in your country'
         });
       }
     }
@@ -1335,29 +1335,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
     $scope.myCountry = $.jStorage.get("myCountry");
     $scope.getCart = function() {
+      $scope.msg="";
       NavigationService.showCart(function(data) {
-
-        $scope.allcart = data;
-        cart = data;
-        if (data === '') {
-          $scope.msg = "Your cart is empty.";
-        } else {
-          $scope.msg = "";
-        }
-        $scope.totalcart = 0;
-        $scope.totalcartdollar = 0;
-        _.each($scope.allcart, function(key) {
-          console.log(key.subtotal);
-          $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
-          if (key.dollarsubtotal)
-            $scope.totalcartdollar = $scope.totalcartdollar + parseFloat(key.dollarsubtotal);
-          key.qty = parseInt(key.qty);
-          if (!$scope.validateQuantity(key)) {
-            key.exceeds = true;
+        if(data.length === 0){
+          $scope.allcart = data;
+          $scope.msg = "No items in cart";
+        }else {
+          $scope.allcart = data;
+          cart = data;
+          if (data === '') {
+            $scope.msg = "Your cart is empty.";
           } else {
-            key.exceeds = false;
+            $scope.msg = "";
           }
+          $scope.totalcart = 0;
+          $scope.totalcartdollar = 0;
+          _.each($scope.allcart, function(key) {
+            console.log(key.subtotal);
+            $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
+            if (key.dollarsubtotal)
+              $scope.totalcartdollar = $scope.totalcartdollar + parseFloat(key.dollarsubtotal);
+            key.qty = parseInt(key.qty);
+            if (!$scope.validateQuantity(key)) {
+              key.exceeds = true;
+            } else {
+              key.exceeds = false;
+            }
+
         });
+      }
       });
     };
     $scope.proceedToCheckout = function() {
