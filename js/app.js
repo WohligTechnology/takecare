@@ -126,6 +126,36 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpL
     templateUrl: "views/template.html",
     controller: 'CheckoutCtrl'
   })
+  .state('checkout1', {
+    url: "/checkout1",
+    templateUrl: "views/template.html",
+    controller: 'Checkout1Ctrl'
+  })
+  .state('checkout2', {
+    url: "/checkout2",
+    templateUrl: "views/template.html",
+    controller: 'Checkout2Ctrl'
+  })
+  .state('checkout3', {
+    url: "/checkout3",
+    templateUrl: "views/template.html",
+    controller: 'Checkout3Ctrl'
+  })
+  .state('checkout4', {
+    url: "/checkout4",
+    templateUrl: "views/template.html",
+    controller: 'Checkout4Ctrl'
+  })
+  .state('checkout5', {
+    url: "/checkout5",
+    templateUrl: "views/template.html",
+    controller: 'Checkout5Ctrl'
+  })
+  .state('checkout6', {
+    url: "/checkout6",
+    templateUrl: "views/template.html",
+    controller: 'Checkout6Ctrl'
+  })
 
   .state('team', {
     url: "/team",

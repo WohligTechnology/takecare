@@ -2749,6 +2749,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
+.controller('Checkout1Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("checkout1");
+  $scope.menutitle = NavigationService.makeactive("Checkout");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('Checkout2Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("checkout2");
+  $scope.menutitle = NavigationService.makeactive("Checkout");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('Checkout3Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("checkout3");
+  $scope.menutitle = NavigationService.makeactive("Checkout");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('Checkout4Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("checkout4");
+  $scope.menutitle = NavigationService.makeactive("Checkout");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('Checkout5Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("checkout5");
+  $scope.menutitle = NavigationService.makeactive("Checkout");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
+.controller('Checkout6Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("checkout6");
+  $scope.menutitle = NavigationService.makeactive("Checkout");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
 
 .controller('footerctrl', function($scope, NavigationService, TemplateService, $uibModal, $timeout) {
   $scope.template = TemplateService;
