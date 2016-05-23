@@ -2564,12 +2564,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.coolsculptingavail=false;
     $scope.resultactive =false;
     $scope.neverNegative = function(val){
-      if(val<1)
+      if(val<0)
       $scope.filter.quantity=1;
     };
     $scope.neverNegative2 = function(val){
       console.log(val);
-      if(val<1)
+      if(val<0)
       $scope.bmi.age=1;
     };
     NavigationService.getFoodGroup(function(data) {
