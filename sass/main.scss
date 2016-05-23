@@ -3205,7 +3205,16 @@ footer {
   }
 }
 .country-pop {
-  h3 { margin: 30px 70px; }
+  h3 {
+    margin: 30px 70px;
+    font-size: 20px;
+  }
+  .cart-reset {
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-style: italic;
+    text-align: center;
+  }
   .success-btn {
     margin-bottom: 30px;
      a {
