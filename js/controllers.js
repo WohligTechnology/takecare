@@ -2580,13 +2580,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     $scope.selectedGroup = function(item) {
       $scope.getProducts(item.name);
-    }
+    };
     $scope.getProducts = function(item) {
       $scope.products = [];
       NavigationService.getFoodProducts(item, function(data) {
         $scope.products = data;
       });
-    }
+    };
     $scope.go = function(item) {
       $scope.resultactive =false;
       $scope.burnactive=false;

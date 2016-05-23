@@ -3210,11 +3210,13 @@ footer {
     font-size: 20px;
   }
   .cart-reset {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 17px;
     font-style: italic;
     text-align: center;
-  }
+    color: $brand-primary;
+    margin-top: -15px;
+    }
   .success-btn {
     margin-bottom: 30px;
      a {
