@@ -177,7 +177,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var lastpage = 0;
     $scope.pageno = 0;
     $scope.msg = "Loading...";
-
+    Glo.changeCountry2=function(){
+      $scope.country = $.jStorage.get('myCountry');
+      if($scope.country == 'IN'){
+        $state.reload();
+      }
+    };
+    Glo.changeCountry2();
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
       console.log($scope.productCategory);
@@ -2858,7 +2864,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       Glo.getProductCount();
       Glo.getProductCount2();
     });
-    Glo.changeCountry();
+    if($state.current.name == 'healthmanagementdetail'){
+      Glo.changeCountry();
+
+    }
+    if($state.current.name == 'healthproducts'){
+      Glo.changeCountry2();
+
+    }
 
   };
 

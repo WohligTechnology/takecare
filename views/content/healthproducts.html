@@ -1,5 +1,5 @@
 <section>
-    <div class="text-center shipping">
+    <div class="text-center shipping" ng-if="country != 'IN'">
         <div class="container">
             <div class="imgtitle">
                 <img src="img/sorryhealth.png" alt="Sorry" />
@@ -296,7 +296,7 @@
             </div>
         </div>
     </div>
-    <div style="display:none;">
+    <div  ng-if="country == 'IN'">
         <div class="selfcare-image">
             <img ng-src="{{productCategory.bannerimg | serverimage}}" alt="">
             <h2 class="text-uppercase get-center white font-semibold">{{productCategory.name}}</h2>
