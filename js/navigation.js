@@ -47,7 +47,11 @@ var navigationservice = angular.module('navigationservice', [])
             name: "Selfcare 'TV'",
             classis: "active",
             link: "#/selfcaretv"
-        }, ]
+        },{
+          name: "How It Works",
+          classis: "active",
+          link: "#/howitworks"
+        } ]
     }, {
         name: "Health Packages",
         classis: "active",
