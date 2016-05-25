@@ -47,7 +47,11 @@ var navigationservice = angular.module('navigationservice', [])
             name: "Selfcare 'TV'",
             classis: "active",
             link: "#/selfcaretv"
-        }, ]
+        },{
+          name: "How It Works",
+          classis: "active",
+          link: "#/howitworks"
+        } ]
     }, {
         name: "Health Packages",
         classis: "active",
@@ -337,6 +341,20 @@ var navigationservice = angular.module('navigationservice', [])
                     "json": "",
                     "status": cart.status
                 }
+            }).success(callback);
+        },
+        healthproductenquirySubmit: function(request, callback) {
+          console.log(request);
+            return $http({
+                url: adminurl + "healthproductenquirySubmit",
+                method: "POST",
+                data: {
+"firstname": request.firstname,
+"lastname": request.lastname,
+"email": request.email,
+"country": request.country
+}
+
             }).success(callback);
         },
         removeFromCart: function(cart, callback) {

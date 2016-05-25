@@ -171,13 +171,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.categoryid = $stateParams.id;
     $scope.categories = [];
     $scope.subCategories = [];
+    $scope.healthpro={};
     $scope.products = [];
     $scope.alerts = [];
     $('#successcart').modal('hide');
     var lastpage = 0;
     $scope.pageno = 0;
     $scope.msg = "Loading...";
+    Glo.changeCountry2=function(){
+      $scope.country = $.jStorage.get('myCountry');
 
+    };
+    Glo.changeCountry2();
+    $scope.submitHealthEnquiry = function (input) {
+      NavigationService.healthproductenquirySubmit(input,function (data) {
+        if(data){
+          $scope.alerts = [];
+          $scope.alerts.push({
+            type:'success',
+            msg:'Thank you! your enquiry has been sent'
+          });
+          $scope.healthpro = {};
+        }
+      });
+    };
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
       console.log($scope.productCategory);
@@ -199,10 +216,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.closeToCheckout = function() {
       $('#successcart').modal('hide');
       $state.go("checkout");
-    }
+    };
     $scope.cartAdd = function(item) {
       console.log(country);
-      if (country != '' && country == "IN") {
+      if (country !== '' && country == "IN") {
         var input = {
           product: item,
           quantity: 1,
@@ -2564,12 +2581,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.coolsculptingavail=false;
     $scope.resultactive =false;
     $scope.neverNegative = function(val){
-      if(val<1)
+      if(val<0)
       $scope.filter.quantity=1;
     };
     $scope.neverNegative2 = function(val){
       console.log(val);
-      if(val<1)
+      if(val<0)
       $scope.bmi.age=1;
     };
     NavigationService.getFoodGroup(function(data) {
@@ -2580,13 +2597,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     $scope.selectedGroup = function(item) {
       $scope.getProducts(item.name);
-    }
+    };
     $scope.getProducts = function(item) {
       $scope.products = [];
       NavigationService.getFoodProducts(item, function(data) {
         $scope.products = data;
       });
-    }
+    };
     $scope.go = function(item) {
       $scope.resultactive =false;
       $scope.burnactive=false;
@@ -2900,7 +2917,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       Glo.getProductCount();
       Glo.getProductCount2();
     });
-    Glo.changeCountry();
+    if($state.current.name == 'healthmanagementdetail'){
+      Glo.changeCountry();
+
+    }
+    if($state.current.name == 'healthproducts'){
+      Glo.changeCountry2();
+
+    }
 
   };
 

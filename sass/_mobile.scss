@@ -807,6 +807,24 @@ figure{
     }
   }
   .upload { width: 85px; }
+  .imgtitle{
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .para{
+    p{
+      font-size: 24px;
+      padding: 0 40px;
+    }
+  }
+  .info{
+    .btn-primary{
+      font-size: 14px;
+    }
+  }
 }
 @media (max-width: $screen-xs-max) {
   .invest,.Design,.profile,.hand-holding,.feelfit {
@@ -1561,6 +1579,12 @@ h3{
 ///account-name
 .account-tab .nav-tabs li { font-size: 20px; }
 .upload { width: 65px; }
+//sorryhealth
+.para p {
+    font-size: 20px;
+    padding: 0;
+    line-height: 1;
+}
 }
 @media (max-width: 480px) {
 //how works//
@@ -2240,4 +2264,6 @@ display: none;
     }
     ///account-name
     .account-tab .nav-tabs li { font-size: 18px; }
+    //sorryhealth
+    
 }
