@@ -3605,9 +3605,10 @@ input[type=number]::-webkit-outer-spin-button {
     input {
         border-width: 2px;
         border-color: #e96542;
-        font-family: $font-baubodi;
         color: #53435c;
-        font-style: italic;
+        @include placeholder {
+          font-style: italic;
+        };
     }
     .btn{
       margin: 20px 0 40px;
@@ -3625,15 +3626,6 @@ input[type=number]::-webkit-outer-spin-button {
         width: 45px;
         font-size: 35px;
         background-color: #e96542;
-        // background-color: #e96542;
-        // font: normal normal normal 14px/1 FontAwesome;
-        // height: 40px;
-        // color: #fff;
-        // position: absolute;
-        // top: 0;
-        // right: 0;
-        // text-align: center;
-        // line-height: 40px;
     }
 
 }
