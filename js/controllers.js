@@ -171,6 +171,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.categoryid = $stateParams.id;
     $scope.categories = [];
     $scope.subCategories = [];
+    $scope.healthpro={};
     $scope.products = [];
     $scope.alerts = [];
     $('#successcart').modal('hide');
@@ -182,6 +183,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
     Glo.changeCountry2();
+    $scope.submitHealthEnquiry = function (input) {
+      NavigationService.healthproductenquirySubmit(input,function (data) {
+        if(data){
+          $scope.alerts = [];
+          $scope.alerts.push({
+            type:'success',
+            msg:'Thank you! your enquiry has been sent'
+          });
+          $scope.healthpro = {};
+        }
+      });
+    };
     NavigationService.getCategoryById($scope.categoryid, function(data) {
       $scope.productCategory = data;
       console.log($scope.productCategory);

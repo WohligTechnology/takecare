@@ -339,6 +339,20 @@ var navigationservice = angular.module('navigationservice', [])
                 }
             }).success(callback);
         },
+        healthproductenquirySubmit: function(request, callback) {
+          console.log(request);
+            return $http({
+                url: adminurl + "healthproductenquirySubmit",
+                method: "POST",
+                data: {
+"firstname": request.firstname,
+"lastname": request.lastname,
+"email": request.email,
+"country": request.country
+}
+
+            }).success(callback);
+        },
         removeFromCart: function(cart, callback) {
             // console.log(cart);
             return $http({

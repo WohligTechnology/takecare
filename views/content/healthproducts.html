@@ -1,6 +1,9 @@
 <section>
     <div class="text-center shipping" ng-if="country != 'IN'">
         <div class="container">
+          <div class="alert-postion">
+              <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
+          </div>
             <div class="imgtitle">
                 <img src="img/sorryhealth.png" alt="Sorry" />
             </div>
@@ -11,29 +14,29 @@
             </div>
             <div class="row">
                 <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10">
-                    <form  class="info" name="health">
+                    <form  class="info" ng-submit="submitHealthEnquiry(healthpro)" name="health">
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
-                                    <input name="firstname" ng-model="checkout.firstname" required type="text" placeholder="First Name *" class="form-control">
+                                    <input name="firstname" ng-model="healthpro.firstname" required type="text" placeholder="First Name *" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
-                                    <input name="lastname" ng-model="checkout.lastname" required type="text" placeholder="Last Name *" class="form-control">
+                                    <input name="lastname" ng-model="healthpro.lastname" required type="text" placeholder="Last Name *" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
-                                    <input name="email" ng-model="checkout.email" required type="email" placeholder="Email *" class="form-control">
+                                    <input name="email" ng-model="healthpro.email" required type="email" placeholder="Email *" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <div class="custom-select">
-                                        <select class="form-control" name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry" id="">
+                                        <select class="form-control" name="country" required ng-model="healthpro.country" id="">
                                           <option value="" class="ng-binding ng-scope">Please Select</option>
                                               <option value="AFG">Afghanistan</option>
                                               <option value="ALA">Åland Islands</option>
