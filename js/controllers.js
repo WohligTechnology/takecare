@@ -179,9 +179,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.msg = "Loading...";
     Glo.changeCountry2=function(){
       $scope.country = $.jStorage.get('myCountry');
-      if($scope.country == 'IN'){
-        $state.reload();
-      }
+
     };
     Glo.changeCountry2();
     NavigationService.getCategoryById($scope.categoryid, function(data) {
@@ -205,10 +203,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.closeToCheckout = function() {
       $('#successcart').modal('hide');
       $state.go("checkout");
-    }
+    };
     $scope.cartAdd = function(item) {
       console.log(country);
-      if (country != '' && country == "IN") {
+      if (country !== '' && country == "IN") {
         var input = {
           product: item,
           quantity: 1,
