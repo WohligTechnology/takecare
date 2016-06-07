@@ -1,11 +1,11 @@
 {
   "name": "selfcare",
   "version": "0.0.1",
-  "description": "SelfCare",
+  "description": "selfcare",
   "main": "gulpfile.js",
   "dependencies": {
     "crypto-js": "^3.1.6",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
@@ -20,17 +20,16 @@
     "gulp-prompt": "^0.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-sass": "^2.0.4",
-    "gulp-sequence": "^0.4.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-sequence": "^0.4.5",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-strip-debug": "^1.1.0",
     "gulp-tar": "^1.4.0",
-    "gulp-uglify": "^1.4.1",
+    "gulp-uglify": "^1.5.2",
     "gulp-util": "^3.0.6",
     "gulp-wait": "0.0.2",
     "gulp-watch": "^4.3.5",
-    "gulp-zip": "^3.0.2",
-    "node-sass": "^3.4.2",
-    "orchestrator": "^0.3.7",
+    "gulp-zip": "^3.2.0",
     "vinyl-ftp": "^0.4.5"
   },
   "devDependencies": {},
@@ -39,12 +38,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WohligTechnology/AngularFrameworkFrontend.git"
+    "url": "git+https://github.com/WohligTechnology/tesseract.git"
   },
   "author": "chintan@wohlig.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WohligTechnology/AngularFrameworkFrontend/issues"
+    "url": "https://github.com/WohligTechnology/tesseract/issues"
   },
-  "homepage": "https://github.com/WohligTechnology/AngularFrameworkFrontend#readme"
+  "homepage": "https://github.com/WohligTechnology/tesseract#readme"
 }
