@@ -3,7 +3,9 @@ var firstapp = angular.module('firstapp', [
   'ui.router',
   'phonecatControllers',
   'templateservicemod',
-  'navigationservice'
+  'navigationservice',
+  'angulartics',
+  'angulartics.google.analytics'
 ]);
 var countries = [{
   "value": "Please Select"

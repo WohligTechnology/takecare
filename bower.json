@@ -32,7 +32,8 @@
     "fancyBox": "fancybox#~2.1.5",
     "jStorage": "~0.4.12",
     "angular-loading-bar": "~0.8.0",
-    "ngInfiniteScroll": "~1.2.2"
+    "ngInfiniteScroll": "~1.2.2",
+    "angulartics-google-analytics": "^0.1.4"
   },
   "resolutions": {
     "angular": "1.4.8"

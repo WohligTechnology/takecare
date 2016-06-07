@@ -14,6 +14,8 @@ var jsArray = [
     './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
     './bower_components/fancyBox/source/jquery.fancyBox.pack.js',
     './bower_components/jStorage/jstorage.min.js',
+    './bower_components/angulartics/dist/angulartics.min.js',
+    './bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
     './js/app.js',
     './js/controllers.js',
     './js/templateservice.js',
