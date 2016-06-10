@@ -1609,12 +1609,8 @@ button {
 }
 ////end login//
 ///checkout/////
-.checkout-tab {
+.checkout-tab  {
     margin: 70px 0;
-    .greater {
-        position: absolute;
-        right: 0;
-    }
     .nav-tabs {
         border: none;
         @include display(flex);
@@ -1626,7 +1622,7 @@ button {
             text-transform: uppercase;
             a {
                 border: none;
-                color: $brand-primary;
+                color: $brand-brown-dark;
                 @extend.letter-space;
                 &:focus,
                 &:hover {
@@ -1635,15 +1631,37 @@ button {
                 }
             }
         }
+        .step {
+          @include square(40px);
+          border-radius: 100%;
+          margin-bottom: 10px;
+          display: inline-block;
+          background-color: $brand-brown-dark;
+          position: relative;
+          color: #fff;
+          line-height: 40px;
+          &:after {
+            content: "";
+            width: 245px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            background-color: $brand-brown-dark;
+            z-index: 2;
+          }
+        }
+        .no-after:after { display: none; }
         li.active {
             margin: 0;
             a {
-                color: $brand-brown-dark;
+                color: $brand-primary;
                 &:focus,
                 &:hover {
                     border: none;
                 }
             }
+            .step { background-color: $brand-primary; }
         }
     }
     .order-summary {
@@ -1661,6 +1679,10 @@ button {
                 text-align: center;
             }
         }
+    }
+    .tab-content {
+      padding-top: 30px;
+      border-top: 2px solid $brand-brown-dark;
     }
 }
 .plan-cart {

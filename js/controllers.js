@@ -2892,47 +2892,298 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
-.controller('Checkout1Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("checkout1");
-  $scope.menutitle = NavigationService.makeactive("Checkout");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-})
-.controller('Checkout2Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('Checkout2Ctrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state) {
   //Used to name the .html file
   $scope.template = TemplateService.changecontent("checkout2");
   $scope.menutitle = NavigationService.makeactive("Checkout");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-})
-.controller('Checkout3Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("checkout3");
-  $scope.menutitle = NavigationService.makeactive("Checkout");
+
+  $('body').removeClass('modal-open');
+  $('.modal-backdrop').remove();
+
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-})
-.controller('Checkout4Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("checkout4");
-  $scope.menutitle = NavigationService.makeactive("Checkout");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-})
-.controller('Checkout5Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("checkout5");
-  $scope.menutitle = NavigationService.makeactive("Checkout");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-})
-.controller('Checkout6Ctrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("checkout6");
-  $scope.menutitle = NavigationService.makeactive("Checkout");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
+  $scope.guest = "notguest";
+  $scope.guestshow = true;
+  $scope.countries = countries;
+  $scope.allcart = [];
+  $scope.checkout = {};
+  $scope.checkout.billingstate = "";
+  $scope.checkout.billingcountry = "India";
+  $scope.checkout.shippingstate = "";
+  $scope.checkout.shippingcountry = "India";
+  $scope.alerts = [];
+  $scope.user = {};
+  $scope.shippingcharges = 0;
+  $scope.login = {};
+  $scope.cod = false;
+  $scope.hasShipping = false;
+  $scope.placeorder = true;
+  $scope.shipAtSame = false;
+  $scope.goToNext = false;
+  $scope.todaysDate = Date.now();
+  $scope.myCountry = $.jStorage.get("myCountry");
+  console.log($scope.myCountry)
+  $scope.tabs = [{
+    active: true,
+    disabled: true
+  }, {
+    active: false,
+    disabled: true
+  }, {
+    active: false,
+    disabled: true
+  }, {
+    active: false,
+    disabled: true
+  }, ];
+  if (parseInt($.jStorage.get("cartCount")) < 1) {
+    $state.go('home');
+  }
+  if ($.jStorage.get("user")) {
+    $scope.user = $.jStorage.get("user");
+    $scope.checkout = $.jStorage.get("user");
+    $scope.tabs[1].active = true;
+    console.log($scope.tabs);
+  }
+  // $scope.tabs[2].active = true;
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
+  };
+
+
+  $scope.getCart = function() {
+    cfpLoadingBar.start();
+
+    NavigationService.showCart(function(data) {
+      cfpLoadingBar.complete();
+
+      $scope.allcart = data;
+      cart = data;
+      $scope.totalcart = 0;
+      $scope.totalcartdollar = 0;
+      _.each($scope.allcart, function(key) {
+        $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
+        if (key.dollarsubtotal)
+          $scope.totalcartdollar = $scope.totalcartdollar + parseFloat(key.dollarsubtotal);
+        key.qty = parseInt(key.qty);
+        if (!$scope.validateQuantity(key)) {
+          key.exceeds = true;
+        } else {
+          key.exceeds = false;
+        }
+
+      });
+      $scope.pretotalcart = $scope.totalcart;
+      $scope.pretotalcartdollar = $scope.totalcartdollar;
+      $scope.totalcart = $scope.totalcart + $scope.shippingcharges;
+      $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges;
+    });
+  };
+
+  $scope.validateQuantity = function(item) {
+    if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+  $scope.getCart();
+  $scope.selectGuest = function(input) {
+    console.log(input);
+    $scope.guestshow = true;
+    if (input == "notguest") {
+      $scope.guestshow = true;
+    } else {
+      $scope.guestshow = false;
+    }
+  };
+  $scope.codChange = function(cod) {
+    if (cod) {
+      $scope.placeorder = true;
+    } else {
+      $scope.placeorder = false;
+    }
+  };
+  $scope.payByCOD = function() {
+    NavigationService.COD({
+      id: $scope.order
+    }, function(data) {
+      if (data.value !== false) {
+        $state.go('thankyou', {
+          order: data.OrderId,
+          amount: data.totalamount
+        });
+      }
+    });
+  };
+  $scope.proceedToPayment = function() {
+    console.log($scope.checkout);
+    $scope.goToNext = false;
+    if ($scope.allcart.length > 0) {
+      $scope.checkout.cart = $scope.allcart;
+      if ($scope.myCountry == 'IN') {
+        $scope.checkout.totalamount = $scope.pretotalcart;
+        $scope.checkout.finalamount = $scope.totalcart;
+      } else {
+        $scope.checkout.totalamount = $scope.pretotalcartdollar;
+        $scope.checkout.finalamount = $scope.totalcartdollar;
+      }
+
+      $scope.checkout.shippingamount = $scope.shippingcharges;
+      $scope.checkout.currency = $scope.myCountry;
+      NavigationService.checkoutCheck(function(data) {
+        if (data.value) {
+          NavigationService.placeOrder($scope.checkout, function(data) {
+            $scope.order = data;
+            $scope.goToNext = true;
+          });
+        }
+      });
+    }
+  };
+  $scope.sameShipping = function(data) {
+    if ($scope.shipAtSame) {
+      $scope.checkout.shippingline1 = data.billingline1;
+      $scope.checkout.shippingline2 = data.billingline2;
+      $scope.checkout.shippingline3 = data.billingline3;
+      $scope.checkout.shippingcity = data.billingcity;
+      $scope.checkout.shippingpincode = data.billingpincode;
+      $scope.checkout.shippingstate = data.billingstate;
+      $scope.checkout.shippingcountry = data.billingcountry;
+    }
+  };
+  $scope.shippingCheck = function(check) {
+    if (check) {
+      $scope.shipAtSame = true;
+      $scope.sameShipping($scope.checkout);
+    } else {
+      $scope.shipAtSame = false;
+      $scope.checkout.shippingline1 = "";
+      $scope.checkout.shippingline2 = "";
+      $scope.checkout.shippingline3 = "";
+      $scope.checkout.shippingcity = "";
+      $scope.checkout.shippingpincode = "";
+      $scope.checkout.shippingstate = "";
+      $scope.checkout.shippingcountry = "";
+    }
+  };
+  $scope.proceedToShipping = function(input, status, formValidate) {
+    if (!status) {
+      if (formValidate.email.$valid) {
+        $scope.checkout.email = input.email;
+        console.log($scope.checkout);
+        $scope.tabs[1].active = true;
+      } else {
+        $scope.alerts = [];
+        $scope.alerts.push({
+          type: 'danger',
+          msg: 'Please enter all details'
+        });
+      }
+    } else {
+      if (formValidate.email.$valid && formValidate.password.$valid) {
+        NavigationService.loginuser(input, function(data) {
+          if (data.value === false) {
+
+          } else {
+            $.jStorage.set("user", data);
+            $scope.checkout = $.jStorage.get("user");
+            window.location.reload();
+          }
+        });
+      } else {
+        $scope.alerts = [];
+        $scope.alerts.push({
+          type: 'danger',
+          msg: 'Please enter all details'
+        });
+      }
+    }
+  };
+  $scope.proceedToSummary = function(input, formValidate, formValidateB, formValidateS) {
+    console.log(input);
+    $scope.hasShipping = false;
+    if (formValidate.$valid && formValidateB.$valid && formValidateS.$valid) {
+      if (!$scope.guestshow) {
+        $scope.checkout.email = $scope.login.email;
+        console.log($scope.guestshow);
+      }
+      var freeShipping = [400037, 400037, 400037, 400014, 400012, 400031, 400014, 400012, 400031, 400031, 400037, 400022, 400070, 400070, 400019, 400024, 400070, 400022, 400072, 400022, 400022, 400072, 400002, 400005, 400001, 400020, 400020, 400005, 400005, 400001, 400032, 400005, 400001, 400032, 400021, 400021, 400032, 400001, 400001, 400001, 400005, 421501, 400004, 400004, 400004, 400004, 400004, 400020, 400004, 400002, 400002, 400002, 400053, 400071, 400091, 400022, 400070, 400070, 400019, 400024, 400070, 400022, 400072, 400022, 400022, 400072, 400094, 400085, 400084, 400075, 400082, 400042, 400078, 400078, 400074, 400089, 400043, 400074, 400086, 400074, 400075, 400075, 400077, 400086, 400086, 400071, 400089, 400065, 400104, 400066, 400092, 400067, 400066, 400063, 400104, 400104, 400095, 400060, 400102, 400101, 400067, 400067, 400095, 400064, 400066, 400097, 400064, 400064, 400103, 400104, 400065, 400064, 400102, 400066, 400097, 400065, 400066, 400063, 400029, 400099, 400069, 400058, 400051, 400053, 400051, 400050, 400051, 400093, 400091, 400016, 400008, 400011, 400007, 400011, 400011, 400026, 400026, 400026, 400008, 400026, 400007, 400011, 400034, 400008, 400011, 400008, 400008, 400006, 400007, 400035, 400007, 400007, 400034, 400028, 400028, 400030, 400013, 400017, 400017, 400028, 400016, 400016, 400016, 400016, 400025, 400025, 400028, 400028, 400028, 400030, 400018, 400030, 400018, 400030, 400086, 400065, 400104, 400066, 400092, 400067, 400066, 400063, 400104, 400104, 400095, 400060, 400102, 400101, 400067, 400067, 400095, 400064, 400066, 400097, 400064, 400064, 400103, 400104, 400065, 400064, 400102, 400066, 400097, 400065, 400066, 400063, 400050, 400054, 400056, 400052, 400051, 400058, 400057, 400099, 400056, 400059, 400049, 400052, 400052, 400051, 400061, 400059, 400059, 400069, 400099, 400099, 400054, 400029, 400055, 400054, 400096, 400052, 400055, 400061, 400098, 400057, 400057, 400056, 400009, 400014, 400071, 400016, 400037, 400037, 400037, 400014, 400012, 400031, 400014, 400012, 400031, 400031, 400037, 400022, 400070, 400070, 400019, 400024, 400070, 400022, 400072, 400022, 400022, 400003, 400012, 400012, 400033, 400010, 400033, 400033, 400012, 400003, 400003, 400010, 400010, 400010, 400009, 400003, 400012, 400012, 400009, 400033, 400015, 400033, 400027, 400010, 400074, 400089, 400074, 400086, 400074, 400086, 400086, 400071, 400089, 400066, 400063, 400060, 400101, 400097, 400069, 400051, 400055, 400057];
+
+      $scope.getCart();
+      $scope.pricetemp = 0;
+      _.each($scope.allcart, function(key) {
+        if (key.status !== "3" && $scope.totalcart) {
+          $scope.hasShipping = true;
+        } else {
+          $scope.pricetemp = $scope.pricetemp + key.price;
+          console.log($scope.pricetemp);
+        }
+      })
+
+      console.log($scope.hasShipping);
+      ////COD
+      // if($.jStorage.get("myCountry") !== 'IN'){
+      //   $scope.shippingcharges = 0;
+      // }else{
+      //   if ($scope.hasShipping) {
+      //     if(_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))){
+      //       if(($scope.totalcart - parseInt($scope.pricetemp)) < 500){
+      //         $scope.shippingcharges = 50;
+      //       }else{
+      //           $scope.shippingcharges = 0;
+      //       }
+      //     }else{
+      //       if(($scope.totalcart - parseInt($scope.pricetemp)) >= 3000){
+      //         $scope.shippingcharges = 0;
+      //       }else{
+      //         if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){ //if COD
+      //           $scope.shippingcharges = 250;
+      //         }else if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){
+      //           $scope.shippingcharges = 200;
+      //         }
+      //       }
+      //     }
+      //   } else {
+      //     $scope.shippingcharges = 0;
+      //   }
+      // }
+      ////COD end
+      if ($.jStorage.get("myCountry") !== 'IN') {
+        $scope.shippingcharges = 0;
+      } else {
+        if ($scope.hasShipping) {
+          if ($scope.totalcart < 500) {
+            $scope.shippingcharges = 200;
+          } else if (($scope.totalcart - parseInt($scope.pricetemp)) >= 500) {
+            console.log(($scope.totalcart - parseInt($scope.pricetemp)));
+            if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
+              $scope.shippingcharges = 0;
+            } else {
+              $scope.shippingcharges = 200;
+            }
+          } else {
+            $scope.shippingcharges = 200;
+          }
+        } else {
+          $scope.shippingcharges = 0;
+        }
+      }
+      console.log($scope.checkout);
+      $scope.tabs[2].active = true;
+
+    } else {
+      $scope.alerts = [];
+      $scope.alerts.push({
+        type: 'danger',
+        msg: 'Please enter all details'
+      });
+    }
+
+  };
+
 })
 
 .controller('footerctrl', function($scope, NavigationService, TemplateService, $uibModal, $timeout) {
