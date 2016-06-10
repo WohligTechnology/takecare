@@ -1462,6 +1462,132 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       });
     };
   })
+  .controller('Cart2Ctrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("cart2");
+    $scope.menutitle = NavigationService.makeactive("My Cart");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.allcart = [];
+    $scope.alerts = [];
+    $scope.msg = "Loading...";
+    $scope.goToTop = function() {
+      $('html, body').animate({
+        scrollTop: 250
+      }, 1000);
+    };
+    $scope.myCountry = $.jStorage.get("myCountry");
+    $scope.getCart = function() {
+      $scope.msg="";
+      NavigationService.showCart(function(data) {
+        if(data.length === 0){
+          $scope.allcart = data;
+          $scope.msg = "No items in cart";
+        }else {
+          $scope.allcart = data;
+          cart = data;
+          if (data === '') {
+            $scope.msg = "Your cart is empty.";
+          } else {
+            $scope.msg = "";
+          }
+          $scope.totalcart = 0;
+          $scope.totalcartdollar = 0;
+          _.each($scope.allcart, function(key) {
+            console.log(key.subtotal);
+            $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
+            if (key.dollarsubtotal)
+              $scope.totalcartdollar = $scope.totalcartdollar + parseFloat(key.dollarsubtotal);
+            key.qty = parseInt(key.qty);
+            if (!$scope.validateQuantity(key)) {
+              key.exceeds = true;
+            } else {
+              key.exceeds = false;
+            }
+
+        });
+      }
+      });
+    };
+    $scope.proceedToCheckout = function() {
+      NavigationService.checkoutCheck(function(data) {
+        if (data.value) {
+          $state.go("checkout");
+        } else {
+          $scope.getCart();
+          $scope.alerts = [];
+          $scope.alerts.push({
+            type: 'danger',
+            msg: 'Remove out of stock items'
+          });
+        }
+      });
+    };
+    $scope.validateQuantity = function(item) {
+      if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+    $scope.getCart();
+    $scope.updateQuantity = function(item) {
+      console.log("updating");
+      if (parseInt(item.qty) <= 0) {
+        console.log("here");
+        item.qty = 1;
+      } else {
+        NavigationService.addToCart({
+          quantity: item.qty,
+          product: item.id,
+          status: "1"
+        }, function(data) {
+          Glo.getProductCount();
+          $scope.getCart();
+        });
+      }
+    };
+    $scope.addQuantity = function(item) {
+      item.qty = parseInt(item.qty);
+      item.qty++;
+      $scope.updateQuantity(item);
+    };
+    $scope.subtractQuantity = function(item) {
+      if (parseInt(item.qty) <= 0) {
+        console.log("in sub");
+        item.qty = 1;
+      } else {
+        item.qty = parseInt(item.qty);
+        item.qty--;
+        $scope.updateQuantity(item);
+      }
+
+    };
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
+    };
+    $scope.removeCart = function(item) {
+      console.log(item);
+      NavigationService.removeFromCart(item, function(data) {
+        Glo.getProductCount();
+        if (data.value === true) {
+          $scope.alerts = [];
+          $scope.alerts.push({
+            type: 'success',
+            msg: 'Removed from cart'
+          });
+          $scope.getCart();
+          $scope.goToTop();
+        } else {
+          $scope.alerts = [];
+          $scope.alerts.push({
+            type: 'danger',
+            msg: 'Not removed from cart'
+          });
+        }
+      });
+    };
+  })
   .controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state) {
     $scope.template = TemplateService.changecontent("checkout");
     $scope.menutitle = NavigationService.makeactive("Checkout");

@@ -122,6 +122,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpL
     templateUrl: "views/template.html",
     controller: 'CartCtrl'
   })
+  .state('cart2', {
+    url: "/cart2",
+    templateUrl: "views/template.html",
+    controller: 'Cart2Ctrl'
+  })
 
   .state('checkout', {
     url: "/checkout",

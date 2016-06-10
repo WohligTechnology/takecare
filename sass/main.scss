@@ -1487,6 +1487,36 @@ button {
         @include padding(20px 30px);
         font-size: 22px;
     }
+    .bordered-amount {
+      border-top: 2px solid $brand-primary;
+      border-bottom: 2px solid $brand-primary;
+    }
+    .cart-extra-info {
+      padding: 20px;
+      border: 2px solid #d9d9d9;
+      margin: 30px 0;
+      h4:first-child {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+      p {
+        color: #373737;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+      .estimate {
+        margin: 20px 0px 0px;
+        h3 { margin: 0; }
+        input {
+          padding: 8px 12px;
+          border: 1px solid #898989;
+          border-radius: 4px;
+          margin: 0px 24px;
+          @include placeholder { font-style: italic; };
+        }
+        span { letter-spacing: 1px; }
+      }
+    }
     .shipping {
         @include margin(20px 0);
         p {
