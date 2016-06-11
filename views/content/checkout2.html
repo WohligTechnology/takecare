@@ -32,15 +32,16 @@
           </div> -->
           <div class="checkout-main">
             <form action="" name="loginForm">
-            <div class="row">
-              <div class="col-md-5">
+              <div class="row">
+                <div class="col-md-5">
+                  <h3 class="brand-brown-dark text-uppercase login-title">Sign in</h3>
                   <div class="form-group">
                     <input type="email" name="email" ng-model="login.email" required class="form-control" placeholder="Email">
                   </div>
                   <div class="form-group" ng-show="guestshow">
                     <input type="password" name="password" ng-model="login.password" required class="form-control" placeholder="Password">
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <div class="radio">
                       <input type="radio" name="continue" ng-change="selectGuest(guest)" value="guest" ng-model="guest" id="pswd">
                       <label for="pswd" class="text-light">
@@ -55,44 +56,88 @@
                         <span></span> I have a selfcare account and password.
                       </label>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="text-center">
                     <a href="" class="btn btn-primary btn-more text-uppercase" ng-click="proceedToShipping(login,guestshow,loginForm)">sign in</a>
                   </div>
-              </div>
-              <div class="col-md-offset-1 col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="First Name*">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Last Name*">
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email*">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Password*">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Confirm Password*">
-                </div>
-                <div class="form-group">
-                  <input type="number" class="form-control" placeholder="Mobile Number">
-                </div>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
-                    <label for="accept" class="text-light">
-                      <span></span> I agree with the <a href="" targe="_blank" class="brand-brown-dark2">terms &amp; conditions</a> and privacy policy of the website.
-                    </label>
+                  <div class="text-center text-uppercase  mt10">
+                    <span class="pointer">Forgot Password ?</span>
+                    <span class="block or">or</span>
+                    <p>sign in via</p>
+                  </div>
+                  <div class="social-btn text-center">
+                    <div class="btn-round inline-block">
+                      <button type="button" class="btn fb-btn no-border round" ng-click="facebookLogin()">
+                        <i class="fa fa-facebook"></i>
+                      </button>
+                    </div>
+                    <div class="btn-round inline-block">
+                      <button type="button" class="btn google-btn no-border round" ng-click="googleLogin()">
+                        <i class="fa fa-google-plus"></i>
+                      </button>
+                    </div>
+                    <span class="block mt10">OR</span>
+                  </div>
+                  <div class="guest-checkout text-center">
+                    <div class="checkbox">
+                      <input type="checkbox" class="text-uppercase" id="accept-guest">
+                      <label for="accept-guest">
+                        <span></span> Checkout as guest
+                      </label>
+                    </div>
                   </div>
                 </div>
-                <div class="text-center">
-                  <button type="button" class="btn btn-primary btn-more text-uppercase">Register</button>
+                <div class="col-md-offset-1 col-md-6">
+                  <h3 class="brand-brown-dark text-uppercase login-title">Sign up</h3>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="First Name*">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Last Name*">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email*">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password*">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Confirm Password*">
+                  </div>
+                  <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Mobile Number">
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
+                      <label for="accept" class="text-light">
+                        <span></span> I agree with the <a href="" targe="_blank" class="brand-brown-dark2 terms-accept">terms &amp; conditions</a> and privacy policy of the website.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="btn btn-primary btn-more text-uppercase">Register</button>
+                  </div>
+                  <div class="text-center text-uppercase">
+                    <span class="block or">or</span>
+                    <p>sign in via</p>
+                  </div>
+                  <div class="social-btn text-center">
+                    <div class="btn-round inline-block">
+                      <button type="button" class="btn fb-btn no-border round" ng-click="facebookLogin()">
+                        <i class="fa fa-facebook"></i>
+                      </button>
+                    </div>
+                    <div class="btn-round inline-block">
+                      <button type="button" class="btn google-btn no-border round" ng-click="googleLogin()">
+                        <i class="fa fa-google-plus"></i>
+                      </button>
+                    </div>
+                    <span class="block text-center">Already Registered ? <a href="">Sign In</a></span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
           </div>
         </uib-tab>
         <uib-tab active="tabs[1].active" disable="tabs[1].disabled">
@@ -100,7 +145,7 @@
             <span class="step">2</span>
             <span class="block">Shipping details</span>
           </uib-tab-heading>
-          <div class="order-summary">
+          <!-- <div class="order-summary">
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
@@ -113,6 +158,51 @@
                   </th>
               </thead>
             </table>
+          </div> -->
+          <div class="checkout-main profile-tab step2">
+            <h3 class="text-uppercase brand-brown-dark">Your Details:</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="checkout-address">
+                  <address>
+                    <h4 class="name brand-brown-dark text-uppercase text-bold">rakesh pujari</h4>
+                    <span>Strings Advertising 1st Floor, Noorani Building, Behind Vija mumbai, MAHARASHTRA 400016 India</span>
+                  </address>
+                  <div class="">
+                    <button class="btn btn-primary text-uppercase btn-more fz12 letter-space">ship to this address</button>
+                  </div>
+                  <button class="btn btn-primary text-uppercase btn-more fz12 letter-space">Edit</button>
+                  <button class="btn btn-primary text-uppercase btn-more fz12 letter-space delete">Delete</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="checkout-address">
+                  <address>
+                    <h4 class="name brand-brown-dark text-uppercase text-bold">rakesh pujari</h4>
+                    <span>Strings Advertising 1st Floor, Noorani Building, Behind Vija mumbai, MAHARASHTRA 400016 India</span>
+                  </address>
+                  <div class="">
+                    <button class="btn btn-primary text-uppercase fz12 btn-more letter-space">ship to this address</button>
+                  </div>
+                  <button class="btn btn-primary text-uppercase fz12 btn-more letter-space">Edit</button>
+                  <button class="btn btn-primary text-uppercase fz12 btn-more letter-space delete">Delete</button>
+                </div>
+              </div>
+            </div>
+            <div class="new-address text-center">
+              <button class="btn btn-primary btn-more text-uppercase fz12 letter-space">Add new address</button>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary text-uppercase letter-space btn-more">Continue</button>
+            </div>
+            <div class="text-center cards">
+              <span class="block text-uppercase">we accept :</span>
+              <ul class="list-inline ">
+                <li><a href=""><img src="img/visa.png" alt="" class="img-responsive"></a></li>
+                <li><a href=""><img src="img/master-card.png" alt="" class="img-responsive"></a></li>
+                <li><a href=""><img src="img/mastero.png" alt="" class="img-responsive"></a></li>
+              </ul>
+            </div>
           </div>
           <div class="checkout-main profile-tab">
             <h3 class="text-uppercase brand-brown-dark letter-space">your details</h3>
@@ -748,7 +838,9 @@
                   </form>
                 </div>
               </div>
-              <a href="" class="text-uppercase btn btn-primary" ng-click="proceedToSummary(user,basicForm,billingForm,shippingForm)">Continue</a>
+              <div class="text-center mt10">
+                <a href="" class="text-uppercase btn btn-primary btn-more letter-space" ng-click="proceedToSummary(user,basicForm,billingForm,shippingForm)">Continue</a>
+              </div>
             </div>
             <!-- <div class="row">
               <div class="col-md-4">
@@ -801,7 +893,7 @@
             <span class="step">3</span>
             <span class="block">Order summary</span>
           </uib-tab-heading>
-          <div class="order-summary">
+          <!-- <div class="order-summary">
             <table class="table">
               <thead class="text-uppercase">
                 <th>order summary</th>
@@ -814,7 +906,7 @@
                   </th>
               </thead>
             </table>
-          </div>
+          </div> -->
           <div class="checkout-main">
             <div class="checkout-table">
               <div class="cart-table">
@@ -879,15 +971,25 @@
                     </tr>
                   </tbody>
                 </table>
+                <div class="coupon letter-space sub-total">
+                  <div class="clearfix coupon-ship">
+                    <div class="text-uppercase pull-left">
+                      <span class="brand-brown-dark ">Sub Total</span>
+                    </div>
+                    <div class="text-right text-uppercase pull-right price-ship">
+                      <span class="brand-brown-dark">RS .510.00</span>
+                    </div>
+                  </div>
+                </div>
                 <div class="coupon letter-space">
                   <div class="clearfix coupon-ship">
                     <div class="text-uppercase pull-left">
-                      <span>Shipping Charges</span>
+                      <span class="brand-brown-dark">Shipping Charges</span>
                     </div>
                     <div class="text-right text-uppercase pull-right price-ship">
-                      <span ng-if="myCountry == 'IN'">Rs.
+                      <span class="brand-brown-dark" ng-if="myCountry == 'IN'">Rs.
                                                             {{shippingcharges}}</span>
-                      <span ng-if="myCountry != 'IN'">$
+                      <span class="brand-brown-dark" ng-if="myCountry != 'IN'">$
                                                             {{shippingcharges}}</span>
                     </div>
                   </div>
@@ -906,8 +1008,22 @@
                     <input type="checkbox" ng-model="cod" ng-change="codChange(cod)"> COD (Cash on Delivery)
                   </label> -->
                 </div>
+                <div class="promo-code">
+                  <label for="code" class="text-uppercase letter-space">Promo code</label>
+                  <input type="text">
+                  <button class="btn btn-primary no-radius">Apply</button>
+                  <span class="text-uppercase"><i class="fa fa-check"></i>Promo code Applied</span>
+                </div>
+                <div class="discount-on-product text-uppercase clearfix">
+                  <div class="pull-left">
+                    <span>Discount</span>
+                  </div>
+                  <div class="pull-right">
+                    <span>(-) Rs. 100.00</span>
+                  </div>
+                </div>
                 <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold">
-                  <span class="text-uppercase pull-left">Grand Total</span>
+                  <span class="text-uppercase pull-left">Total</span>
                   <span class="pull-right text-uppercase" ng-if="myCountry == 'IN'">Rs.
                                                     {{totalcart}}</span>
                   <span class="pull-right text-uppercase" ng-if="myCountry != 'IN'">$
@@ -917,12 +1033,11 @@
                 <div class="shipping">
                   <div class="row">
                     <div class="col-md-6">
-                      <p class="brand-primary letter-space">Free shipping in Mumbai on orders above Rs. 500,</p>
-                      <p class="brand-primary letter-space">Standard shipping rates apply across other cities in India.</p>
+                      <!-- <p class="brand-primary letter-space">Free shipping in Mumbai on orders above Rs. 500,</p>
+                      <p class="brand-primary letter-space">Standard shipping rates apply across other cities in India.</p> -->
                     </div>
                     <div class="col-md-6">
                       <div class="text-right">
-
                         <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-hide="goToNext">Continue</a>
                       </div>
                     </div>
@@ -1100,12 +1215,12 @@
           </form>
           <!-- end payment detail -->
         </uib-tab>
-        <uib-tab active="tabs[3].active" disable="tabs[3].disabled">
+        <uib-tab active="tabs[3].active">
           <uib-tab-heading>
             <span class="step no-after">4</span>
             <span class="block">payment method</span>
           </uib-tab-heading>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-offset-1 col-md-10">
               <p class="brand-primary letter-space" ng-show="cod">Thank you for Shopping with us</p>
               <h3 class="brand-primary letter-space" ng-hide="cod">Payment Details</h3>
@@ -1272,6 +1387,129 @@
                   </div>
               </div>
               </form>
+            </div>
+          </div> -->
+          <div class="payment-method">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="payment-billing">
+                  <div class="text-center title-payment">
+                    <h3 class="inline-block brand-primary text-uppercase m-clear text-center">Billing Details</h3>
+                  </div>
+                  <div class="payment-table">
+                    <table class="table text-uppercase">
+                      <tbody>
+                        <tr>
+                          <td>Baked Potato Chips</td>
+                          <td>Rs.255.00</td>
+                        </tr>
+                        <tr>
+                          <td>Chana Jor</td>
+                          <td>Rs.255.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="payment-table2 text-uppercase">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Sub Total</td>
+                          <td>Rs.510.00</td>
+                        </tr>
+                        <tr>
+                          <td>Shipping Charges</td>
+                          <td>Rs.200.00</td>
+                        </tr>
+                        <tr>
+                          <td>Discount</td>
+                          <td>(-) Rs.100.00</td>
+                        </tr>
+                        <tr>
+                          <td>Cod Charges</td>
+                          <td>Rs.50.00</td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="brand-brown-bg">
+                        <tr>
+                          <td>Amount Payable</td>
+                          <td>Rs .660.00</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="payment-method-sec">
+                  <div class="text-center title-payment">
+                    <h3 class="inline-block brand-primary text-uppercase text-center m-clear">Payment method</h3>
+                  </div>
+                  <form action="">
+                    <div class="form-group">
+                      <div class="radio">
+                        <input type="radio" name="payment" id="debit">
+                        <label for="debit" class="text-light">
+                          <span></span> DEBIT CARD
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="radio">
+                        <input type="radio" name="payment" id="credit">
+                        <label for="credit" class="text-light">
+                          <span></span> CREDIT CARD
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="radio">
+                        <input type="radio" name="payment" id="net-banking">
+                        <label for="net-banking" class="text-light">
+                          <span></span> NET-BANKING
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="radio">
+                        <input type="radio" name="payment" id="cod">
+                        <label for="cod" class="text-light">
+                          <span></span> CASH ON DELIVERY (RS.50)
+                        </label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="payment-address">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="payment-bill-add">
+                    <div class="text-center title-payment">
+                      <h3 class="inline-block brand-primary text-uppercase m-clear">Billing address</h3>
+                    </div>
+                    <address>
+                      <h4 class="brand-brown-dark text-uppercase">Rakesh pujari</h4>
+                      <span>Strings Advertising 1st Floor, Noorani Building, Behind Vija mumbai, MAHARASHTRA 400016 India</span>
+                    </address>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="payment-ship-add">
+                    <div class="text-center title-payment">
+                      <h3 class="brand-primary inline-block text-uppercase m-clear">Shipping address</h3>
+                    </div>
+                    <address>
+                      <h4 class="brand-brown-dark text-uppercase">Rakesh pujari</h4>
+                      <span>Strings Advertising 1st Floor, Noorani Building, Behind Vija mumbai, MAHARASHTRA 400016 India</span>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary btn-more letter-space text-uppercase">Confirm order</button>
             </div>
           </div>
         </uib-tab>

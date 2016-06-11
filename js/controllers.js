@@ -3020,7 +3020,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
   $scope.proceedToPayment = function() {
     console.log($scope.checkout);
-    $scope.goToNext = false;
+    $scope.goToNext = true;
     if ($scope.allcart.length > 0) {
       $scope.checkout.cart = $scope.allcart;
       if ($scope.myCountry == 'IN') {

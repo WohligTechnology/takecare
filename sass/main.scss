@@ -539,6 +539,15 @@ textarea {
 .m-clear {
     margin: 0;
 }
+.mt10 { margin-top: 10px; }
+.mr10 { margin-right: 10px; }
+.mb10 { margin-bottom: 10px; }
+.ml10 { margin-left: 10px; }
+.mt5 { margin-top: 5px; }
+.mr5 { margin-right: 5px; }
+.mb5 { margin-bottom: 5px; }
+.ml5 { margin-left: 5px; }
+.fz12 { font-size: 12px; }
 // Class
 .relate {
     position: relative;
@@ -1684,6 +1693,41 @@ button {
       padding-top: 30px;
       border-top: 2px solid $brand-brown-dark;
     }
+    .login-title { margin: 0 0 10px; }
+    .terms-accept {
+    text-decoration: underline !important;
+  }
+  .guest-checkout {
+    .checkbox input[type="checkbox"] + label { font-size: 20px; }
+    .checkbox input[type="checkbox"] + label span {
+      @include square(20px);
+      border-radius: 3px;
+    }
+  }
+  .checkout-address {
+    address {
+      width: 65%;
+      padding: 10px;
+      border: 1px dashed #000;
+      border-radius: 4px;
+      span {
+        font-weight: 100;
+        font-size: 16px;
+      }
+    }
+    .delete {
+      margin-left: 5px;
+    }
+  }
+  .cards {
+    margin: 30px 0px 0;
+  }
+  .new-address {
+    padding: 20px 0;
+    border-top: 2px solid $brand-brown-dark;
+    border-bottom: 2px solid $brand-brown-dark;
+    margin: 40px 0 20px;
+  }
 }
 .plan-cart {
     height: 273px;
@@ -1716,20 +1760,49 @@ button {
         }
     }
     .coupon {
-        padding: 10px;
+        padding: 15px 30px;
         border-top: 1px solid $brand-primary;
-        margin-bottom: 15px;
+        border-bottom: 1px solid $brand-primary;
         font-size: 16px;
         .cod {
             padding-left: 0;
             font-size: 16px;
         }
     }
-    .price-ship {
-        margin-right: 70px;
+    .sub-total { border-bottom: none; }
+    .promo-code {
+      padding: 15px 30px;
+      margin-top: 15px;
+      input {
+        padding: 8px 6px;
+        border: 2px solid $brand-primary;
+        border-radius: 6px;
+        margin: 0px 15px;
+        font-style: italic;
+      }
+      button {
+        padding: 6px 20px;
+      }
+      span {
+        margin-left: 10px;
+        i {
+          font-size: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+    .discount-on-product {
+      padding: 15px 30px;
+      span {
+        font-size: 20px;
+        font-weight: 700;
+      }
     }
     .coupon-ship {
-        margin: 0 0 20px;
+        span {
+          font-size: 20px;
+          font-weight: 700;
+        }
     }
     .apply {
         padding: 6px 12px;
@@ -1749,6 +1822,56 @@ button {
     .place-order-btn {
         margin: 40px 0 20px;
     }
+}
+.payment-billing,
+.payment-method-sec,
+.payment-address {
+  border: 1px dashed #000;
+}
+.payment-bill-add,
+.payment-billing,
+.payment-method-sec,
+.payment-ship-add {
+  h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $brand-brown-dark;
+}
+}
+.title-payment { padding: 20px 20px 0 20px; }
+.payment-billing {
+  .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    padding: 10px;
+    border-top: none;
+    color: $brand-brown-dark;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .table { margin: 0; }
+  .table tr td:last-child { text-align: right !important; }
+}
+.payment-address {
+  margin: 20px 0;
+  address {
+    padding: 20px 30px;
+    width: 60%;
+    span {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }
+}
+.payment-table {
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid $brand-brown-dark;
+}
+.payment-table2 {
+  .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    padding: 10px 30px;
+  }
+}
+.payment-method-sec {
+  min-height: 372px;
+  form { padding: 20px 60px; }
 }
 ///end checkout//
 ///////////////
