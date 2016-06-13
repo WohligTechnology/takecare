@@ -1344,6 +1344,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.allcart = [];
     $scope.alerts = [];
+    $scope.cart = {};
     $scope.msg = "Loading...";
     $scope.goToTop = function() {
       $('html, body').animate({
@@ -1368,7 +1369,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.totalcart = 0;
           $scope.totalcartdollar = 0;
           _.each($scope.allcart, function(key) {
-            console.log(key.subtotal);
             $scope.totalcart = $scope.totalcart + parseFloat(key.subtotal);
             if (key.dollarsubtotal)
               $scope.totalcartdollar = $scope.totalcartdollar + parseFloat(key.dollarsubtotal);
@@ -1380,9 +1380,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
 
         });
+
       }
       });
     };
+
     $scope.proceedToCheckout = function() {
       NavigationService.checkoutCheck(function(data) {
         if (data.value) {
@@ -1469,7 +1471,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.allcart = [];
+    $scope.cart= {};
+    $scope.shippingcharges =0;
     $scope.alerts = [];
+    $scope.freeflag = false;
     $scope.msg = "Loading...";
     $scope.goToTop = function() {
       $('html, body').animate({
@@ -1506,8 +1511,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
 
         });
+
+        if($scope.totalcart < 3000){
+            $scope.shippingcharges = 200;
+        }
       }
       });
+
+    };
+    $scope.addShippingCharges = function(){
+      $scope.freeflag= false;
+      console.log($scope.cart.shippingpincode);
+      var freeShipping = [400037, 400037, 400037, 400014, 400012, 400031, 400014, 400012, 400031, 400031, 400037, 400022, 400070, 400070, 400019, 400024, 400070, 400022, 400072, 400022, 400022, 400072, 400002, 400005, 400001, 400020, 400020, 400005, 400005, 400001, 400032, 400005, 400001, 400032, 400021, 400021, 400032, 400001, 400001, 400001, 400005, 421501, 400004, 400004, 400004, 400004, 400004, 400020, 400004, 400002, 400002, 400002, 400053, 400071, 400091, 400022, 400070, 400070, 400019, 400024, 400070, 400022, 400072, 400022, 400022, 400072, 400094, 400085, 400084, 400075, 400082, 400042, 400078, 400078, 400074, 400089, 400043, 400074, 400086, 400074, 400075, 400075, 400077, 400086, 400086, 400071, 400089, 400065, 400104, 400066, 400092, 400067, 400066, 400063, 400104, 400104, 400095, 400060, 400102, 400101, 400067, 400067, 400095, 400064, 400066, 400097, 400064, 400064, 400103, 400104, 400065, 400064, 400102, 400066, 400097, 400065, 400066, 400063, 400029, 400099, 400069, 400058, 400051, 400053, 400051, 400050, 400051, 400093, 400091, 400016, 400008, 400011, 400007, 400011, 400011, 400026, 400026, 400026, 400008, 400026, 400007, 400011, 400034, 400008, 400011, 400008, 400008, 400006, 400007, 400035, 400007, 400007, 400034, 400028, 400028, 400030, 400013, 400017, 400017, 400028, 400016, 400016, 400016, 400016, 400025, 400025, 400028, 400028, 400028, 400030, 400018, 400030, 400018, 400030, 400086, 400065, 400104, 400066, 400092, 400067, 400066, 400063, 400104, 400104, 400095, 400060, 400102, 400101, 400067, 400067, 400095, 400064, 400066, 400097, 400064, 400064, 400103, 400104, 400065, 400064, 400102, 400066, 400097, 400065, 400066, 400063, 400050, 400054, 400056, 400052, 400051, 400058, 400057, 400099, 400056, 400059, 400049, 400052, 400052, 400051, 400061, 400059, 400059, 400069, 400099, 400099, 400054, 400029, 400055, 400054, 400096, 400052, 400055, 400061, 400098, 400057, 400057, 400056, 400009, 400014, 400071, 400016, 400037, 400037, 400037, 400014, 400012, 400031, 400014, 400012, 400031, 400031, 400037, 400022, 400070, 400070, 400019, 400024, 400070, 400022, 400072, 400022, 400022, 400003, 400012, 400012, 400033, 400010, 400033, 400033, 400012, 400003, 400003, 400010, 400010, 400010, 400009, 400003, 400012, 400012, 400009, 400033, 400015, 400033, 400027, 400010, 400074, 400089, 400074, 400086, 400074, 400086, 400086, 400071, 400089, 400066, 400063, 400060, 400101, 400097, 400069, 400051, 400055, 400057];
+      if(_.contains(freeShipping, parseInt($scope.cart.shippingpincode))){
+        $scope.freeflag= true;
+
+        $scope.shippingcharges=0;
+      }else{
+        $scope.shippingcharges = 200;
+      }
+      console.log($scope.shippingcharges);
     };
     $scope.proceedToCheckout = function() {
       NavigationService.checkoutCheck(function(data) {
