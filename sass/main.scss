@@ -1629,6 +1629,7 @@ button {
             font-size: 20px;
             text-align: center;
             text-transform: uppercase;
+            position: relative;
             a {
                 border: none;
                 color: $brand-brown-dark;
@@ -1639,6 +1640,17 @@ button {
                     background-color: transparent;
                 }
             }
+            &:after {
+              content: "";
+              width: 86%;
+              height: 2px;
+              position: absolute;
+              top: 33%;
+              left: 57%;
+              background-color: $brand-brown-dark;
+              z-index: 2;
+            }
+            &:last-child:after { display: none; }
         }
         .step {
           @include square(40px);
@@ -1649,18 +1661,8 @@ button {
           position: relative;
           color: #fff;
           line-height: 40px;
-          &:after {
-            content: "";
-            width: 245px;
-            height: 2px;
-            position: absolute;
-            top: 50%;
-            left: 40px;
-            background-color: $brand-brown-dark;
-            z-index: 2;
-          }
+          z-index: 3;
         }
-        .no-after:after { display: none; }
         li.active {
             margin: 0;
             a {

@@ -401,6 +401,13 @@ figure{
       text-align: center;
     }
   }
+  .cart-table .cart-extra-info .estimate {
+    h3 {
+    display: block;
+    margin-bottom: 10px;
+    }
+    input { margin-left: 0; }
+  }
     .plan-cart { height: 170px; }
   .tab-chart {
     .nav-tabs li a {
@@ -686,8 +693,31 @@ figure{
           min-height: 70px;
         }
       }
+      li:after {
+        width: 84%;
+        top: 25%;
+        left: 60%;
+      }
     }
   }
+  .checkout-tab {
+    .checkout-address {
+      text-align: center;
+      address {
+        margin: 20px auto;
+      }
+    }
+  }
+  .payment-billing {
+    margin-bottom: 30px;
+  }
+  .payment-method-sec {
+    margin-bottom: 10px;
+    min-height: auto;
+  }
+  .checkout-main .coupon-ship span { font-size: 18px; }
+  .checkout-main .discount-on-product span { font-size: 18px; }
+  .guest-checkout { margin-bottom: 30px; }
   // product-detail
   .product-detail {
     text-align: center;
@@ -1051,6 +1081,12 @@ h3{
     }
     .shipping p {
       font-size: 12px;
+    }
+    .cart-extra-info .estimate {
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
     }
   }
     .plan-cart {
@@ -1422,7 +1458,7 @@ h3{
       li:first-child {
         a {
           min-height: auto;
-          padding: 0 41px;
+          padding: 0 25px;
         }
       }
       li {
@@ -1430,6 +1466,11 @@ h3{
         a {
           padding: 0 25px;
           letter-spacing: 0;
+        }
+        &:after {
+          width: 100%;
+          top: 22%;
+          left: 60%;
         }
       }
     }
@@ -1444,12 +1485,28 @@ h3{
       }
     }
     .coupon {
+      padding: 10px 15px;
       font-size: 14px;
       letter-spacing: 1px;
     }
     .price-ship {
       margin-right: 0;
     }
+    .promo-code {
+      padding: 10px 15px;
+      span {
+        margin-left: 0;
+        display: block;
+      }
+    }
+  }
+  .payment-address address {
+    width: 100%;
+  }
+  .checkout-main .coupon-ship span { font-size: 16px; }
+  .checkout-main .discount-on-product {
+    padding: 10px 15px;
+    span { font-size: 16px; }
   }
   // product-detail
   .product-also-like {
@@ -1778,6 +1835,17 @@ display: none;
         margin: 5px 0;
       }
     }
+    .cart-extra-info {
+      p {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+      .estimate {
+      span {
+        letter-spacing: 0;
+      }
+    }
+    }
   }
   .plan-cart {
     height: 112px;
@@ -2051,13 +2119,13 @@ display: none;
       li {
         font-size: 12px;
         a {
-          padding: 0 15px;
+          padding: 0 10px;
         }
       }
       li:first-child {
         a {
           min-height: auto;
-          padding: 0 15px;
+          padding: 0 10px 0 0;
         }
       }
     }
@@ -2077,10 +2145,32 @@ display: none;
     }
     .coupon-ship {
       margin: 0 0 10px;
+      span { font-size: 14px; }
     }
     .coupon {
       font-size: 12px;
       letter-spacing: 0;
+    }
+    .discount-on-product span { font-size: 14px; }
+    .promo-code {
+      label {
+        margin-bottom: 5px;
+        display: block;
+        font-size: 14px;
+      }
+      input { margin-left: 0; }
+    }
+  }
+  .checkout-tab .checkout-address address { width: 100%; }
+  .payment-bill-add,
+  .payment-billing,
+  .payment-method-sec,
+  .payment-ship-add {
+    h3 { font-size: 19px; }
+  }
+  .payment-billing {
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+      font-size: 14px;
     }
   }
   .product-detail {
@@ -2265,5 +2355,5 @@ display: none;
     ///account-name
     .account-tab .nav-tabs li { font-size: 18px; }
     //sorryhealth
-    
+
 }
