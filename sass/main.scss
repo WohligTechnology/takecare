@@ -1731,6 +1731,13 @@ button {
     margin: 40px 0 20px;
   }
 }
+.checkout-first {
+  .tab-content {
+    padding-top: 0;
+    border-top: none;
+  }
+ .nav-tabs li:after { display: none; }
+}
 .plan-cart {
     height: 273px;
 }

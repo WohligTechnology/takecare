@@ -9,7 +9,7 @@
         <div class="alert-postion">
             <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
         </div>
-        <div class="checkout-tab">
+        <div class="checkout-tab checkout-first">
             <uib-tabset>
                 <uib-tab active="tabs[0].active" disable="tabs[0].disabled">
                     <uib-tab-heading>
