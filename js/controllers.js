@@ -2915,7 +2915,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
-.controller('Checkout2Ctrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state) {
+.controller('Checkout2Ctrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state,$uibModal) {
   //Used to name the .html file
   $scope.template = TemplateService.changecontent("checkout2");
   $scope.menutitle = NavigationService.makeactive("Checkout");
@@ -2946,8 +2946,125 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.shipAtSame = false;
   $scope.goToNext = false;
   $scope.todaysDate = Date.now();
+  $scope.guest = {};
+  $scope.guest.status=false;
   $scope.myCountry = $.jStorage.get("myCountry");
-  console.log($scope.myCountry)
+  //STEP1
+  $scope.openForgot = function() {
+    $uibModal.open({
+      animation: true,
+      templateUrl: 'views/modal/forgotpopup.html',
+      controller: 'headerctrl'
+    });
+  };
+  $scope.chekoutAsGuest=function(status){
+    if(status){
+$timeout(function () {
+  $scope.tabs[1].active=true;
+},1000)
+    }else{
+      $scope.tabs[1].active=false;
+
+    }
+  };
+  $scope.doLogin = function(input, formValidate) {
+    if (formValidate.$valid) {
+      NavigationService.loginuser(input, function(data) {
+        if (data.value === false) {
+          // $scope.invalidinput = true;
+          $scope.alerts = [];
+          $scope.alerts.push({
+            type:'danger',
+            msg:'Invalid email or password.'
+          });
+        } else {
+          console.log(data);
+          $.jStorage.set("user", data);
+          window.location.reload();
+        }
+      });
+    }
+  };
+  $scope.acceptIt = function(flag) {
+    if (flag === true) {
+      $scope.acceptValidate = false;
+
+    } else {
+      $scope.acceptValidate = true;
+
+    }
+  };
+  $scope.doSignup = function(accept, input, formValidate) {
+    $scope.acceptValidate = false;
+    $scope.alreadyReg = false;
+    if (!accept) {
+      $scope.acceptValidate = true;
+    } else {
+      if (formValidate.$valid) {
+        if (input.password !== input.cfpassword) {
+          $scope.noMatch = true;
+        } else {
+          NavigationService.signup(input, function(data) {
+            if (data.value === false) {
+              $scope.alreadyReg = true;
+            } else {
+              $.jStorage.set("user", data);
+              window.location.reload();
+            }
+          });
+        }
+      }
+    }
+  };
+  var checktwitter = function(data, status) {
+    if (data != "false") {
+      $interval.cancel(stopinterval);
+      ref.close();
+      NavigationService.authenticate(authenticatesuccess);
+    } else {
+
+    }
+
+  };
+
+  var callAtIntervaltwitter = function() {
+    NavigationService.authenticate(checktwitter);
+  };
+  var authenticatesuccess = function(data, status) {
+    if (data != "false") {
+      $.jStorage.set("user", data);
+      user = data;
+      window.location.reload();
+    }
+  };
+
+  $scope.facebookLogin = function() {
+    ref = window.open(mainurl + 'hauth/login/Facebook?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
+    stopinterval = $interval(callAtIntervaltwitter, 2000);
+    ref.addEventListener('exit', function(event) {
+      NavigationService.authenticate(authenticatesuccess);
+      $interval.cancel(stopinterval);
+    });
+  }
+  $scope.googleLogin = function() {
+    ref = window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
+    stopinterval = $interval(callAtIntervaltwitter, 2000);
+    ref.addEventListener('exit', function(event) {
+      NavigationService.authenticate(authenticatesuccess);
+      $interval.cancel(stopinterval);
+    });
+  }
+
+  $scope.twitterlogin = function() {
+    ref = window.open(mainurl + 'hauth/login/Twitter?returnurl=' + websiteurl, '_blank', 'location=yes');
+    stopinterval = $interval(callAtIntervaltwitter, 2000);
+    ref.addEventListener('exit', function(event) {
+      NavigationService.authenticate(authenticatesuccess);
+      $interval.cancel(stopinterval);
+    });
+  }
+
+  //END STEP1
   $scope.tabs = [{
     active: true,
     disabled: true

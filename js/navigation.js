@@ -268,7 +268,8 @@ var navigationservice = angular.module('navigationservice', [])
                     "firstname": request.firstname,
                     "lastname": request.lastname,
                     "email": request.email,
-                    "password": request.password
+                    "password": request.password,
+                    "mobile":request.mobile
                 }
             }).success(callback);
         },

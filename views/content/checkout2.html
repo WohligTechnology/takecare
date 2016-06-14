@@ -31,14 +31,14 @@
             </table>
           </div> -->
           <div class="checkout-main">
-            <form action="" name="loginForm">
+            <form  name="loginForm">
               <div class="row">
                 <div class="col-md-5">
                   <h3 class="brand-brown-dark text-uppercase login-title">Sign in</h3>
                   <div class="form-group">
                     <input type="email" name="email" ng-model="login.email" required class="form-control" placeholder="Email">
                   </div>
-                  <div class="form-group" ng-show="guestshow">
+                  <div class="form-group" >
                     <input type="password" name="password" ng-model="login.password" required class="form-control" placeholder="Password">
                   </div>
                   <!-- <div class="form-group">
@@ -58,10 +58,11 @@
                     </div>
                   </div> -->
                   <div class="text-center">
-                    <a href="" class="btn btn-primary btn-more text-uppercase" ng-click="proceedToShipping(login,guestshow,loginForm)">sign in</a>
+                    <button href="" class="btn btn-primary btn-more text-uppercase" ng-click="doLogin(login,loginForm)">sign in</button>
                   </div>
+                </form>
                   <div class="text-center text-uppercase  mt10">
-                    <span class="pointer">Forgot Password ?</span>
+                    <span class="pointer" ng-click="openForgot()">Forgot Password ?</span>
                     <span class="block or">or</span>
                     <p>sign in via</p>
                   </div>
@@ -80,7 +81,7 @@
                   </div>
                   <div class="guest-checkout text-center">
                     <div class="checkbox">
-                      <input type="checkbox" class="text-uppercase" id="accept-guest">
+                      <input type="checkbox" ng-model="guest.status" ng-change="chekoutAsGuest(guest.status)" class="text-uppercase" id="accept-guest">
                       <label for="accept-guest">
                         <span></span> Checkout as guest
                       </label>
@@ -88,24 +89,35 @@
                   </div>
                 </div>
                 <div class="col-md-offset-1 col-md-6">
+                  <form name="signupForm" ng-submit="doSignup(accept,signup,signupForm)">
+
                   <h3 class="brand-brown-dark text-uppercase login-title">Sign up</h3>
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="First Name*">
+                    <input type="text" required name="firstname" ng-model="signup.firstname" class="form-control" placeholder="First Name*">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Last Name*">
+                    <input type="text" required name="lastname" ng-model="signup.lastname" class="form-control" placeholder="Last Name*">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email*">
+                    <input type="email" required name="email" ng-model="signup.email" class="form-control" placeholder="Email*">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password*">
+                    <input type="password" required name="password" ng-model="signup.password" class="form-control" placeholder="Password*">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Confirm Password*">
+                    <input type="password" required name="cfpassword" ng-model="signup.cfpassword" class="form-control" placeholder="Confirm Password*">
+                    <div class="ab" ng-show="signupForm.cfpassword.$error.required && signupForm.cfpassword.$touched" role="alert">
+                      Please enter correct password.
+                    </div>
+                    <div class="ab" ng-show="noMatch">
+                      Passwords do not match.
+                    </div>
+                    <div class="ab" ng-show="signupForm.cfpassword.$error.minlength " role="alert">
+                      Password too short.
+                    </div>
                   </div>
                   <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Mobile Number">
+                    <input type="number" name ="mobile" ng-model="signup.mobile" class="form-control" placeholder="Mobile Number">
                   </div>
                   <div class="form-group">
                     <div class="checkbox">
@@ -114,10 +126,17 @@
                         <span></span> I agree with the <a href="" targe="_blank" class="brand-brown-dark2 terms-accept">terms &amp; conditions</a> and privacy policy of the website.
                       </label>
                     </div>
+                    <div class="" ng-show="acceptValidate">
+                      Please accept the terms and conditions to proceed.
+                    </div>
+                    <div class="text-center" ng-show="alreadyReg">
+                      Email ID is already registered
+                    </div>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn btn-primary btn-more text-uppercase">Register</button>
+                    <button type="submit" class="btn btn-primary btn-more text-uppercase">Register</button>
                   </div>
+                </form>
                   <div class="text-center text-uppercase">
                     <span class="block or">or</span>
                     <p>sign in via</p>
