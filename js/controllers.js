@@ -1527,8 +1527,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.freeflag= true;
 
         $scope.shippingcharges=0;
-      }else{
-        $scope.shippingcharges = 200;
+      }else if($scope.totalcart <3000){
+        $scope.shippingcharges=200;
       }
       console.log($scope.shippingcharges);
     };
@@ -2961,7 +2961,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     if(status){
 $timeout(function () {
   $scope.tabs[1].active=true;
-},1000)
+},1000);
     }else{
       $scope.tabs[1].active=false;
 
@@ -3045,7 +3045,7 @@ $timeout(function () {
       NavigationService.authenticate(authenticatesuccess);
       $interval.cancel(stopinterval);
     });
-  }
+  };
   $scope.googleLogin = function() {
     ref = window.open(mainurl + 'hauth/login/Google?returnurl=http://selfcareindia.com', '_blank', 'location=yes');
     stopinterval = $interval(callAtIntervaltwitter, 2000);
@@ -3053,7 +3053,7 @@ $timeout(function () {
       NavigationService.authenticate(authenticatesuccess);
       $interval.cancel(stopinterval);
     });
-  }
+  };
 
   $scope.twitterlogin = function() {
     ref = window.open(mainurl + 'hauth/login/Twitter?returnurl=' + websiteurl, '_blank', 'location=yes');
@@ -3062,7 +3062,7 @@ $timeout(function () {
       NavigationService.authenticate(authenticatesuccess);
       $interval.cancel(stopinterval);
     });
-  }
+  };
 
   //END STEP1
   $scope.tabs = [{
