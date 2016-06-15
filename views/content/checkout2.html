@@ -1373,13 +1373,30 @@
                   <div class="payment-table">
                     <table class="table text-uppercase">
                       <tbody>
-                        <tr>
-                          <td>Baked Potato Chips</td>
-                          <td>Rs.255.00</td>
-                        </tr>
-                        <tr>
-                          <td>Chana Jor</td>
-                          <td>Rs.255.00</td>
+                        <tr ng-repeat="product in allcart | orderBy:'id'">
+                          <td ng-if="product.status==3">
+                            <span class="block" ng-if="product.months == '1'">{{product.months}}
+                                month
+                                <span ng-if="product.plan==1">Silver Plan</span>
+                                <span ng-if="product.plan==2">Gold Plan</span>
+                                <span ng-if="product.plan==3">Platinum Plan</span>
+                                <span ng-if="product.plan==4">Diamond Plan</span></span>
+                            <span class="block" ng-if="product.months != '1'">{{product.months}}
+                                months
+                                <span ng-if="product.plan==1">Silver Plan</span>
+                                <span ng-if="product.plan==2">Gold Plan</span>
+                                <span ng-if="product.plan==3">Platinum Plan</span>
+                                <span ng-if="product.plan==4">Diamond Plan</span></span>
+
+                          </td>
+                            <td ng-if="product.status!=3">{{product.options.realname}}
+                            </td>
+                          <td>
+                            <span ng-if="myCountry=='IN'">RS.{{product.subtotal}}
+                            </span>
+                            <span ng-if="myCountry!='IN'">${{product.dollarsubtotal}}
+                            </span>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -1389,11 +1406,11 @@
                       <tbody>
                         <tr>
                           <td>Sub Total</td>
-                          <td>Rs.510.00</td>
+                          <td>Rs.{{checkout.totalamount}}</td>
                         </tr>
                         <tr>
                           <td>Shipping Charges</td>
-                          <td>Rs.200.00</td>
+                          <td>Rs.{{shippingcharges}}</td>
                         </tr>
                         <tr>
                           <td>Discount</td>
@@ -1407,7 +1424,7 @@
                       <tfoot class="brand-brown-bg">
                         <tr>
                           <td>Amount Payable</td>
-                          <td>Rs .660.00</td>
+                          <td>Rs .{{checkout.finalamount}}</td>
                         </tr>
                       </tfoot>
                     </table>
