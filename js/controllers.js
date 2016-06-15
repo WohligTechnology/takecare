@@ -1472,6 +1472,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.allcart = [];
     $scope.cart= {};
+    $scope.pricetemp =0;
     $scope.shippingcharges =0;
     $scope.alerts = [];
     $scope.freeflag = false;
@@ -1484,6 +1485,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.myCountry = $.jStorage.get("myCountry");
     $scope.getCart = function() {
       $scope.msg="";
+      $scope.pricetemp =0;
+
       NavigationService.showCart(function(data) {
         if(data.length === 0){
           $scope.allcart = data;
@@ -1510,10 +1513,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               key.exceeds = false;
             }
 
-        });
+              if (key.status !== "3" && $scope.totalcart) {
+                $scope.hasShipping = true;
+              } else {
+                $scope.pricetemp = $scope.pricetemp + parseInt(key.price);
+                console.log($scope.pricetemp);
+              }
 
-        if($scope.totalcart < 3000){
-            $scope.shippingcharges = 200;
+        });
+        console.log($scope.pricetemp);
+
+        if(($scope.totalcart - parseInt($scope.pricetemp)) >= 3000){
+            $scope.shippingcharges = 0;
+        }else
+        {
+          $scope.shippingcharges = 200;
         }
       }
       });
@@ -1527,7 +1541,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.freeflag= true;
 
         $scope.shippingcharges=0;
-      }else if($scope.totalcart <3000){
+      }else if(($scope.totalcart - parseInt($scope.pricetemp)) <3000){
         $scope.shippingcharges=200;
       }
       console.log($scope.shippingcharges);
@@ -3261,51 +3275,21 @@ $timeout(function () {
           $scope.pricetemp = $scope.pricetemp + key.price;
           console.log($scope.pricetemp);
         }
-      })
+      });
 
       console.log($scope.hasShipping);
-      ////COD
-      // if($.jStorage.get("myCountry") !== 'IN'){
-      //   $scope.shippingcharges = 0;
-      // }else{
-      //   if ($scope.hasShipping) {
-      //     if(_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))){
-      //       if(($scope.totalcart - parseInt($scope.pricetemp)) < 500){
-      //         $scope.shippingcharges = 50;
-      //       }else{
-      //           $scope.shippingcharges = 0;
-      //       }
-      //     }else{
-      //       if(($scope.totalcart - parseInt($scope.pricetemp)) >= 3000){
-      //         $scope.shippingcharges = 0;
-      //       }else{
-      //         if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){ //if COD
-      //           $scope.shippingcharges = 250;
-      //         }else if(($scope.totalcart - parseInt($scope.pricetemp)) <= 3000){
-      //           $scope.shippingcharges = 200;
-      //         }
-      //       }
-      //     }
-      //   } else {
-      //     $scope.shippingcharges = 0;
-      //   }
-      // }
-      ////COD end
+
       if ($.jStorage.get("myCountry") !== 'IN') {
         $scope.shippingcharges = 0;
       } else {
         if ($scope.hasShipping) {
-          if ($scope.totalcart < 500) {
-            $scope.shippingcharges = 200;
-          } else if (($scope.totalcart - parseInt($scope.pricetemp)) >= 500) {
-            console.log(($scope.totalcart - parseInt($scope.pricetemp)));
-            if (_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))) {
-              $scope.shippingcharges = 0;
-            } else {
-              $scope.shippingcharges = 200;
-            }
-          } else {
-            $scope.shippingcharges = 200;
+
+          if(($scope.totalcart - parseInt($scope.pricetemp)) >= 3000){
+            $scope.shippingcharges= 0;
+          }else if(_.contains(freeShipping, parseInt($scope.checkout.shippingpincode))){
+            $scope.shippingcharges = 0;
+          }else{
+            $scope.shippingcharges=200;
           }
         } else {
           $scope.shippingcharges = 0;
