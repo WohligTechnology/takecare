@@ -1,3 +1,4 @@
+
 <section class="cart">
   <div class="banner selfcare-image">
     <img src="img/banners/cart.jpg" alt="">
@@ -75,18 +76,33 @@
             </tr>
           </tbody>
         </table>
-
-        <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold" ng-if="allcart.length>0">
-          <span class="text-uppercase pull-left">Grand Total</span>
+        <div class="cart-grand-total clearfix bordered-amount font-semibold" ng-if="allcart.length>0">
+          <span class="text-uppercase pull-left">Amount</span>
           <span class="pull-right text-uppercase" ng-if="myCountry=='IN'">Rs. {{totalcart}}</span>
+          <span class="pull-right text-uppercase" ng-if="myCountry!='IN'">$ {{totalcartdollar}}</span>
+        </div>
+        <div class="cart-extra-info">
+          <h4 class="text-uppercase brand-brown-dark m-clear mb10">Shipping Charges:</h4>
+          <h4 class="brand-primary m-clear">Mumbai:</h4>
+          <p>Free shipping on select pincodes only.</p>
+          <h4 class="brand-primary m-clear">Rest of India:</h4>
+          <p>Free shipping on orders above Rs. 3000 and chargeable at Rs. 200 on orders below Rs. 3000.</p>
+          <div class="text-uppercase estimate">
+            <h3 class="inline-block m-clear brand-brown-dark">Estimate your Shipping charges</h3>
+            <input type="number" ng-change="addShippingCharges();" ng-model="cart.shippingpincode" class="" placeholder="400 002">
+            <img ng-show="freeflag" src="img/eligible.png" alt="check">
+            <span ng-show="freeflag">you are eligible for free shipping</span>
+          </div>
+        </div>
+        <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold" ng-if="allcart.length>0">
+          <span class="text-uppercase pull-left">Amount</span>
+          <span class="pull-right text-uppercase" ng-if="myCountry=='IN'">Rs. {{totalcart + shippingcharges}}</span>
           <span class="pull-right text-uppercase" ng-if="myCountry!='IN'">$ {{totalcartdollar}}</span>
         </div>
 
         <div class="shipping">
           <div class="row">
             <div class="col-md-6">
-              <p class="brand-primary letter-space">Free shipping in Mumbai on orders above Rs. 500,</p>
-              <p class="brand-primary letter-space">Standard shipping rates apply across other cities in India.</p>
             </div>
             <div class="col-md-6">
               <div class="text-right cart-btn">
