@@ -1,6 +1,6 @@
 var Glo = {};
-// var siteURL = 'admin.selfcareindia.com';
-var siteURL = '192.168.1.137/selfbackend';
+var siteURL = 'admin.selfcareindia.com';
+// var siteURL = '192.168.1.137/selfbackend';
 
 var mainurl = "http://"+siteURL+"/index.php/";
 var imgurl = "http://"+siteURL+"/uploads/";
