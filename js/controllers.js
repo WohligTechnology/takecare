@@ -1739,9 +1739,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.COD({
         id: $scope.order
       }, function(data) {
+        console.log(data);
         if (data.value !== false) {
           $state.go('thankyou', {
-            order: data.OrderId,
+            orderid: data.OrderId,
             amount: data.totalamount
           });
         }
@@ -2950,6 +2951,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.checkout.shippingstate = "";
   $scope.checkout.shippingcountry = "India";
   $scope.couponamount = 0;
+  $scope.codamount=0;
 
   $scope.alerts = [];
   $scope.user = {};
@@ -2963,6 +2965,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.todaysDate = Date.now();
   $scope.guest = {};
   $scope.guest.status=false;
+  $scope.showPayment = false;
   $scope.myCountry = $.jStorage.get("myCountry");
   //STEP1
   $scope.payCOD = false;
@@ -3140,7 +3143,20 @@ $timeout(function () {
     });
   };
   $scope.changePaymentMode = function(paymentmode){
-    console.log(paymentmode);
+    if($scope.paymentmode !== ""){
+      $scope.showPayment=true;
+    }else{
+      $scope.showPayment=false;
+    }
+    if(paymentmode == "cod"){
+      $scope.codamount=50;
+      $scope.payCOD=true;
+    }else{
+      $scope.codamount=0;
+      $scope.payCOD=false;
+    }
+    console.log($scope.showPayment);
+    console.log($scope.payCOD);
   };
   $scope.validateQuantity = function(item) {
     if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
@@ -3242,9 +3258,9 @@ $timeout(function () {
               } else {
                 // $scope.totalcart = $scope.totalcart;
               }
-              $scope.totalcart = $scope.totalcart + $scope.shippingcharges - $scope.couponamount;
+              $scope.totalcart = $scope.totalcart - $scope.couponamount;
 
-              $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges - $scope.couponamount;
+              $scope.totalcartdollar = $scope.totalcartdollar  - $scope.couponamount;
 
             }
           });
@@ -3474,24 +3490,27 @@ $timeout(function () {
     if(modal2){
       modal2.dismiss();
     }
-    if($state.current.name == "checkout" || $state.current.name== "cart"){
-      console.log($state.current.name);
-
-        $state.reload();
-
-    }
 
     NavigationService.emptyCart(function(data){
       Glo.getProductCount();
       Glo.getProductCount2();
     });
-    if($state.current.name == 'healthmanagementdetail'){
+
+    if($state.current.name == 'healthmanagementdetail' || $state.current.name == 'weightmanagement'){
       Glo.changeCountry();
 
     }
     if($state.current.name == 'healthproducts'){
       Glo.changeCountry2();
 
+    }
+    if($state.current.name == "checkout2" ){
+
+
+        $state.go("home");
+
+    }else if($state.current.name == "cart2"){
+      $state.reload();
     }
 
   };

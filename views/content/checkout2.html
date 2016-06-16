@@ -1236,7 +1236,7 @@
                             <td ng-if="product.status!=3">{{product.options.realname}}
                             </td>
                           <td>
-                            <span ng-if="myCountry=='IN'">RS.{{product.subtotal}}
+                            <span ng-if="myCountry=='IN'">Rs.{{product.subtotal}}
                             </span>
                             <span ng-if="myCountry!='IN'">${{product.dollarsubtotal}}
                             </span>
@@ -1250,25 +1250,40 @@
                       <tbody>
                         <tr>
                           <td>Sub Total</td>
-                          <td>Rs.{{checkout.totalamount}}</td>
+                          <td>
+                            <span ng-if="myCountry=='IN'">Rs.{{checkout.totalamount}}
+                            </span>
+                            <span ng-if="myCountry!='IN'">${{checkout.totalamount}}
+                            </span>
+                          </td>
                         </tr>
                         <tr>
                           <td>Shipping Charges</td>
-                          <td>Rs.{{shippingcharges}}</td>
+                          <td>
+                            <span ng-if="myCountry=='IN'">Rs.{{checkout.shippingamount}}
+                          </span>
+                          <span ng-if="myCountry!='IN'">${{checkout.shippingamount}}
+                          </span>
+                        </td>
                         </tr>
                         <tr>
                           <td>Discount</td>
-                          <td>(-) Rs.100.00</td>
+                          <td>
+                            (-) <span ng-if="myCountry=='IN'">Rs.{{checkout.discountamount}}
+                        </span>
+                        <span ng-if="myCountry!='IN'">${{checkout.discountamount}}
+                        </span>
+                      </td>
                         </tr>
-                        <tr>
+                        <tr ng-if="myCountry=='IN'">
                           <td>Cod Charges</td>
-                          <td>Rs.50.00</td>
+                          <td>Rs.{{codamount}}</td>
                         </tr>
                       </tbody>
                       <tfoot class="brand-brown-bg">
                         <tr>
                           <td>Amount Payable</td>
-                          <td>Rs .{{checkout.finalamount}}</td>
+                          <td>Rs .{{checkout.finalamount + codamount}}</td>
                         </tr>
                       </tfoot>
                     </table>
@@ -1305,7 +1320,7 @@
                         </label>
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-if="myCountry=='IN'">
                       <div class="radio">
                         <input type="radio" value="cod" ng-model="payment.paymentmode" ng-change="changePaymentMode(payment.paymentmode)" name="payment" id="cod">
                         <label for="cod" class="text-light">
@@ -1502,14 +1517,14 @@
                     </table>
                   </div>
                 </div>
-                <div class="place-order-btn ">
+                <div class="place-order-btn " ng-show="showPayment">
                   <!-- <button class="btn btn-primary text-uppercase " type="submit">Place order</button> -->
                   <!-- <button class="btn btn-primary text-uppercase " type="button" ng-click="payByCOD()" style="margin-right:50px;" disabled>Pay by cod</button>
                   <button class="btn btn-primary text-uppercase " type="submit">pay online</button> -->
 
-                  <div class="text-center" ng-if="payCOD">
+                  <!-- <div class="text-center" ng-if="payCOD">
                     <button class="btn btn-primary btn-more letter-space text-uppercase" ng-click="payByCOD()">Confirm order</button>
-                  </div>
+                  </div> -->
                   <div class="text-center" ng-if="!payCOD">
                     <button type ="submit" class="btn btn-primary btn-more letter-space text-uppercase">Confirm order</button>
                   </div>
@@ -1518,8 +1533,8 @@
             </div>
 
 
-            <div class="text-center">
-              <button class="btn btn-primary btn-more letter-space text-uppercase">Confirm order</button>
+            <div class="text-center" ng-if="payCOD">
+              <button class="btn btn-primary btn-more letter-space text-uppercase" ng-click="payByCOD()">Confirm order</button>
             </div>
           </div>
         </uib-tab>

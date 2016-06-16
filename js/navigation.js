@@ -167,7 +167,7 @@ var navigationservice = angular.module('navigationservice', [])
             $http.get(adminurl + 'showCart').success(callback);
         },
         localCountry: function(callback) {
-            $.getJSON("http://www.geoplugin.net/json.gp?jsoncallback=?", callback)
+            $.getJSON("http://www.geoplugin.net/json.gp?jsoncallback=?", callback);
         },
         getSlide: function(callback) {
             console.log(adminurl);
@@ -219,7 +219,8 @@ var navigationservice = angular.module('navigationservice', [])
               url: adminurl + 'COD',
               method: 'POST',
               data: {
-                  "id": request.id
+                  "id": request.id,
+                  "currency":$.jStorage.get("myCountry")
               }
           }).success(callback);
         },
