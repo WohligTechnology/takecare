@@ -324,6 +324,16 @@ var navigationservice = angular.module('navigationservice', [])
                 }
             }).success(callback);
         },
+        checkCoupon: function(coupon, callback) {
+          return $http({
+            url: adminurl + "checkCoupon",
+            method: "POST",
+            data: {
+              "couponname": coupon,
+              "currency": $.jStorage.get("myCountry")
+            }
+          }).success(callback);
+        },
         placeOrder: function(request, callback) {
             console.log(JSON.stringify(request));
             $http({

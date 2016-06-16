@@ -1548,7 +1548,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.proceedToCheckout = function() {
       NavigationService.checkoutCheck(function(data) {
         if (data.value) {
-          $state.go("checkout");
+          $state.go("checkout2");
         } else {
           $scope.getCart();
           $scope.alerts = [];
@@ -1759,7 +1759,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.checkout.totalamount = $scope.pretotalcartdollar;
           $scope.checkout.finalamount = $scope.totalcartdollar;
         }
-
         $scope.checkout.shippingamount = $scope.shippingcharges;
         $scope.checkout.currency = $scope.myCountry;
         NavigationService.checkoutCheck(function(data) {
@@ -2945,10 +2944,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.countries = countries;
   $scope.allcart = [];
   $scope.checkout = {};
+  $scope.coupon={};
   $scope.checkout.billingstate = "";
   $scope.checkout.billingcountry = "India";
   $scope.checkout.shippingstate = "";
   $scope.checkout.shippingcountry = "India";
+  $scope.couponamount = 0;
+
   $scope.alerts = [];
   $scope.user = {};
   $scope.shippingcharges = 0;
@@ -2963,6 +2965,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.guest.status=false;
   $scope.myCountry = $.jStorage.get("myCountry");
   //STEP1
+  $scope.payCOD = false;
+  $scope.payment ={};
+  $scope.payment.paymentmode ="";
   $scope.openForgot = function() {
     $uibModal.open({
       animation: true,
@@ -3130,11 +3135,13 @@ $timeout(function () {
       });
       $scope.pretotalcart = $scope.totalcart;
       $scope.pretotalcartdollar = $scope.totalcartdollar;
-      $scope.totalcart = $scope.totalcart + $scope.shippingcharges;
-      $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges;
+      $scope.totalcart = $scope.totalcart + $scope.shippingcharges - $scope.couponamount;
+      $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges - $scope.couponamount;
     });
   };
-
+  $scope.changePaymentMode = function(paymentmode){
+    console.log(paymentmode);
+  };
   $scope.validateQuantity = function(item) {
     if (parseInt(item.qty) > parseInt(item.maxQuantity)) {
       return false;
@@ -3183,6 +3190,7 @@ $timeout(function () {
         $scope.checkout.totalamount = $scope.pretotalcartdollar;
         $scope.checkout.finalamount = $scope.totalcartdollar;
       }
+      $scope.checkout.discountamount=$scope.couponamount;
 
       $scope.checkout.shippingamount = $scope.shippingcharges;
       $scope.checkout.currency = $scope.myCountry;
@@ -3190,12 +3198,72 @@ $timeout(function () {
         if (data.value) {
           NavigationService.placeOrder($scope.checkout, function(data) {
             $scope.order = data;
-            $scope.goToNext = true;
+
+            $scope.tabs[3].active=true;
           });
         }
       });
     }
   };
+  $scope.checkCoupon = function(coupon) {
+    $scope.successcoupon = false;
+
+      $scope.couponamount = 0;
+      $scope.checkout.coupon = 0;
+      if ($.jStorage.get("user")) {
+        if (coupon && coupon !== "") {
+          NavigationService.checkCoupon(coupon, function(data) {
+            if (data.value === false) {
+              // $scope.amount  cart amount
+              $scope.alerts.push({
+                type: "danger",
+                msg: data.comment
+              });
+              // $scope.totalcart = $scope.totalcart;
+            } else {
+              if (parseInt($scope.totalcart) >= parseInt(data.min)) {
+                if($.jStorage.get("myCountry") == "IN"){
+                  $scope.couponamount = (data.discount / 100) * $scope.pretotalcart;
+                }else{
+                  $scope.couponamount = (data.discount / 100) * $scope.pretotalcartdollar;
+                }
+
+                if ($scope.couponamount <= data.max) {
+                  $scope.checkout.coupon = data.id;
+                  // $scope.totalamount = $scope.amount - $scope.couponamount;
+
+                } else {
+                  $scope.checkout.coupon = data.id;
+                  // $scope.totalamount = $scope.amount - data.max;
+                  $scope.couponamount = data.max;
+                }
+                $scope.successcoupon = true;
+
+              } else {
+                // $scope.totalcart = $scope.totalcart;
+              }
+              $scope.totalcart = $scope.totalcart + $scope.shippingcharges - $scope.couponamount;
+
+              $scope.totalcartdollar = $scope.totalcartdollar + $scope.shippingcharges - $scope.couponamount;
+
+            }
+          });
+        } else {
+          $scope.alerts.push({
+            type: "danger",
+            msg: "Please enter Coupon Code."
+          });
+          $scope.totalamount = $scope.amount;
+        }
+      } else {
+        $scope.alerts.push({
+          type: "danger",
+          msg: "To Apply coupon login first."
+        });
+        $scope.totalamount = $scope.amount;
+      }
+
+    };
   $scope.sameShipping = function(data) {
     if ($scope.shipAtSame) {
       $scope.checkout.shippingline1 = data.billingline1;
