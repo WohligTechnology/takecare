@@ -1283,8 +1283,7 @@
                       <tfoot class="brand-brown-bg">
                         <tr>
                           <td>Amount Payable</td>
-                          <td>Rs .
-                            <span ng-if="myCountry=='IN'">Rs.{{checkout.finalamount + codamount}}
+                          <td><span ng-if="myCountry=='IN'">Rs.{{checkout.finalamount + codamount}}
                         </span>
                         <span ng-if="myCountry!='IN'">${{checkout.finalamount + codamount}}
                         </span>
