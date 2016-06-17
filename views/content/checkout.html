@@ -10,7 +10,7 @@
             <!-- <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert> -->
         </div>
         <div class="checkout-tab">
-            <uib-tabset >
+            <uib-tabset>
                 <uib-tab active="tabs[0].active" disable="tabs[0].disabled">
                     <uib-tab-heading>
                         <span class="step">1</span>
@@ -93,7 +93,7 @@
                                     <div class="checkbox">
                                         <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
                                         <label for="accept" class="text-light">
-                                            <span></span> I agree with the <a href="" targe="_blank" class="brand-brown-dark2 terms-accept">terms &amp; conditions</a> and privacy policy of the website.
+                                            <span></span> I agree with the <a ui-sref="termsandcondition" class="brand-brown-dark2 terms-accept">terms &amp; conditions</a> and privacy policy of the website.
                                         </label>
                                     </div>
                                     <div class="" ng-show="acceptValidate">
@@ -122,7 +122,7 @@
                                         <i class="fa fa-google-plus"></i>
                                     </button>
                                 </div>
-                                <span class="block text-center">Already Registered ? <a href="">Sign In</a></span>
+                                <!-- <span class="block text-center">Already Registered ? <a href="">Sign In</a></span> -->
                             </div>
                         </div>
                         </div>
