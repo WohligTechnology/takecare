@@ -17,7 +17,7 @@ var countries = [{
 var states = [{
 
 }];
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider,$locationProvider) {
 
   // for http request with session
   $httpProvider.defaults.withCredentials = true;
@@ -319,8 +319,9 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpL
       url: "/howitworks",
       templateUrl: "views/template.html",
       controller: 'HowWorksCtrl'
-    })
+    });
   $urlRouterProvider.otherwise("/home");
+  $locationProvider.html5Mode(isproduction);
 
 });
 
