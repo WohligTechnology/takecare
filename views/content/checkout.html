@@ -7,7 +7,7 @@
     </div>
     <div class="container">
         <div class="alert-postion">
-            <!-- <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert> -->
+            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="text-center" dismiss-on-timeout="5000">{{alert.msg}}</uib-alert>
         </div>
         <div class="checkout-tab">
             <uib-tabset>
@@ -907,7 +907,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="text-right">
-                                                <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" ng-hide="goToNext">Continue</a>
+                                                <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" >Continue</a>
                                             </div>
                                         </div>
                                     </div>

@@ -2521,7 +2521,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Checkout");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-
+  $scope.submitShipping=false;
   $('body').removeClass('modal-open');
   $('.modal-backdrop').remove();
 
@@ -2569,10 +2569,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     if(status){
 $timeout(function () {
   $scope.tabs[1].active=true;
+  $scope.tabs[1].disabled=false;
+  $scope.tabs[2].disabled=false;
 },1000);
     }else{
       $scope.tabs[1].active=false;
-
     }
   };
   $scope.doLogin = function(input, formValidate) {
@@ -2693,6 +2694,8 @@ $timeout(function () {
     $scope.user = $.jStorage.get("user");
     $scope.checkout = $.jStorage.get("user");
     $scope.tabs[1].active = true;
+    $scope.tabs[1].disabled = false;
+    $scope.tabs[2].disabled = false;
     console.log($scope.tabs);
   }
   // $scope.tabs[2].active = true;
@@ -2775,7 +2778,7 @@ $timeout(function () {
     }, function(data) {
       if (data.value !== false) {
         $state.go('thankyou', {
-          order: data.OrderId,
+          orderid: data.OrderId,
           amount: data.totalamount
         });
       }
@@ -2785,26 +2788,44 @@ $timeout(function () {
     console.log($scope.checkout);
     $scope.goToNext = true;
     if ($scope.allcart.length > 0) {
-      $scope.checkout.cart = $scope.allcart;
-      if ($scope.myCountry == 'IN') {
-        $scope.checkout.totalamount = $scope.pretotalcart;
-        $scope.checkout.finalamount = $scope.totalcart;
-      } else {
-        $scope.checkout.totalamount = $scope.pretotalcartdollar;
-        $scope.checkout.finalamount = $scope.totalcartdollar;
-      }
-      $scope.checkout.discountamount=$scope.couponamount;
+      console.log($scope.submitShipping);
+      if($scope.submitShipping){
 
-      $scope.checkout.shippingamount = $scope.shippingcharges;
-      $scope.checkout.currency = $scope.myCountry;
-      NavigationService.checkoutCheck(function(data) {
-        if (data.value) {
-          NavigationService.placeOrder($scope.checkout, function(data) {
-            $scope.order = data;
-
-            $scope.tabs[3].active=true;
-          });
+        $scope.checkout.cart = $scope.allcart;
+        if ($scope.myCountry == 'IN') {
+          $scope.checkout.totalamount = $scope.pretotalcart;
+          $scope.checkout.finalamount = $scope.totalcart;
+        } else {
+          $scope.checkout.totalamount = $scope.pretotalcartdollar;
+          $scope.checkout.finalamount = $scope.totalcartdollar;
         }
+        $scope.checkout.discountamount=$scope.couponamount;
+
+        $scope.checkout.shippingamount = $scope.shippingcharges;
+        $scope.checkout.currency = $scope.myCountry;
+        NavigationService.checkoutCheck(function(data) {
+          if (data.value) {
+            NavigationService.placeOrder($scope.checkout, function(data) {
+              $scope.order = data;
+              $scope.tabs[3].active=true;
+              $scope.tabs[1].disabled=true;
+              $scope.tabs[2].disabled=true;
+            });
+          }
+        });
+      }else{
+        console.log("no submitShipping");
+        $scope.alerts = [];
+        $scope.alerts.push({
+          type:'danger',
+          msg:'Submit shipping details before proceeding'
+        });
+      }
+    }else{
+      $scope.alerts = [];
+      $scope.alerts.push({
+        type:'danger',
+        msg:'No items in cart'
       });
     }
   };
@@ -2868,6 +2889,7 @@ $timeout(function () {
 
     };
   $scope.sameShipping = function(data) {
+    $scope.submitShipping = false;
     if ($scope.shipAtSame) {
       $scope.checkout.shippingline1 = data.billingline1;
       $scope.checkout.shippingline2 = data.billingline2;
@@ -2927,9 +2949,11 @@ $timeout(function () {
     }
   };
   $scope.proceedToSummary = function(input, formValidate, formValidateB, formValidateS) {
+    $scope.submitShipping=false;
     console.log(input);
     $scope.hasShipping = false;
     if (formValidate.$valid && formValidateB.$valid && formValidateS.$valid) {
+      $scope.submitShipping=true;
       if (!$scope.guestshow) {
         $scope.checkout.email = $scope.login.email;
         console.log($scope.guestshow);
