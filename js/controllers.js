@@ -1399,7 +1399,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.shippingcharges = 0;
         }else
         {
-          $scope.shippingcharges = 200;
+          if($scope.hasShipping){
+            $scope.shippingcharges = 200;
+          }
         }
       }
       });
@@ -1413,7 +1415,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.shippingcharges=0;
       }else if(($scope.totalcart - parseInt($scope.pricetemp)) <3000){
-        $scope.shippingcharges=200;
+        if($scope.hasShipping){
+          $scope.shippingcharges = 200;
+        }
+        $scope.freeflag = false;
       }
       console.log($scope.shippingcharges);
     };

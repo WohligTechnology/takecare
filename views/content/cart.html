@@ -81,7 +81,7 @@
           <span class="pull-right text-uppercase" ng-if="myCountry=='IN'">Rs. {{totalcart}}</span>
           <span class="pull-right text-uppercase" ng-if="myCountry!='IN'">$ {{totalcartdollar}}</span>
         </div>
-        <div class="cart-extra-info">
+        <div class="cart-extra-info" ng-if="myCountry=='IN'">
           <h4 class="text-uppercase brand-brown-dark m-clear mb10">Shipping Charges:</h4>
           <h4 class="brand-primary m-clear">Mumbai:</h4>
           <p>Free shipping on select pincodes only.</p>
@@ -92,7 +92,15 @@
             <input type="number" ng-change="addShippingCharges();" ng-model="cart.shippingpincode" class="" placeholder="400 002">
             <img ng-show="freeflag" src="img/eligible.png" alt="check">
             <span ng-show="freeflag">you are eligible for free shipping</span>
+            <img ng-if="freeflag == false && (cart.shippingpincode !== undefined && cart.shippingpincode !==null)" src="img/cross.png" alt="check">
+            <span ng-if="freeflag == false && (cart.shippingpincode !== undefined && cart.shippingpincode !==null)">you are not eligible for free shipping</span>
           </div>
+        </div>
+        <div class="cart-grand-total clearfix brand-brown-dark font-semibold" ng-if="allcart.length>0">
+          <span class="text-uppercase pull-left">Shipping Charges</span>
+          <span class="pull-right text-uppercase" ng-if="myCountry=='IN'">Rs. {{shippingcharges}}</span>
+          <span class="pull-right text-uppercase" ng-if="myCountry!=='IN'">$ {{shippingcharges}}</span>
+
         </div>
         <div class="cart-grand-total clearfix brand-brown-bg brand-brown-dark font-semibold" ng-if="allcart.length>0">
           <span class="text-uppercase pull-left">Amount</span>
