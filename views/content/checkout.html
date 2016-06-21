@@ -20,7 +20,7 @@
 
                             <div class="row">
                               <form name="loginForm" ng-submit="doLogin(login,loginForm)">
-                              
+
                                 <div class="col-md-5">
                                     <h3 class="brand-brown-dark text-uppercase login-title">Sign in</h3>
                                     <div class="form-group">
@@ -984,6 +984,7 @@
                                     <div class="text-center title-payment">
                                         <h3 class="inline-block brand-primary text-uppercase text-center m-clear">Payment method</h3>
                                     </div>
+                                    <form>
                                         <div class="form-group">
                                             <div class="radio">
                                                 <input type="radio" value="online" ng-model="payment.paymentmode" ng-change="changePaymentMode(payment.paymentmode)" name="payment" id="debit">
@@ -1016,7 +1017,7 @@
                                                 </label>
                                             </div>
                                         </div>
-
+  </form>
                                 </div>
                             </div>
                         </div>
