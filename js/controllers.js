@@ -215,7 +215,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
     $scope.closeToCheckout = function() {
       $('#successcart').modal('hide');
-      $state.go("checkout");
+      $state.go("cart");
     };
     $scope.cartAdd = function(item) {
       console.log(country);
@@ -791,7 +791,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
     $scope.closeToCheckout = function() {
       $('#successcart').modal('hide');
-      $state.go("checkout");
+      $state.go("cart");
     }
     $scope.cartAdd = function(id) {
       console.log(id);
@@ -914,7 +914,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     $scope.closeToCheckout = function() {
       $('#successcart').modal('hide');
-      $state.go("checkout");
+      $state.go("cart");
     }
     $scope.cartAdd = function(id) {
       if (country != '' && country == "IN") {
@@ -1349,6 +1349,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.alerts = [];
     $scope.freeflag = false;
     $scope.msg = "Loading...";
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
     $scope.goToTop = function() {
       $('html, body').animate({
         scrollTop: 250
