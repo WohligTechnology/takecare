@@ -17,8 +17,10 @@
                         <span class="block">Login</span>
                     </uib-tab-heading>
                     <div class="checkout-main">
-                        <form name="loginForm">
+
                             <div class="row">
+                              <form name="loginForm" ng-submit="doLogin(login,loginForm)">
+                              
                                 <div class="col-md-5">
                                     <h3 class="brand-brown-dark text-uppercase login-title">Sign in</h3>
                                     <div class="form-group">
@@ -28,7 +30,7 @@
                                         <input type="password" name="password" ng-model="login.password" required class="form-control" placeholder="Password">
                                     </div>
                                     <div class="text-center">
-                                        <button href="" class="btn btn-primary btn-more text-uppercase" ng-click="doLogin(login,loginForm)">sign in</button>
+                                        <button type="submit" class="btn btn-primary btn-more text-uppercase" >sign in</button>
                                     </div>
                         </form>
                         <div class="text-center text-uppercase  mt10">
@@ -126,7 +128,6 @@
                             </div>
                         </div>
                         </div>
-                        </form>
                     </div>
                 </uib-tab>
                 <uib-tab active="tabs[1].active" disable="tabs[1].disabled">
@@ -983,7 +984,6 @@
                                     <div class="text-center title-payment">
                                         <h3 class="inline-block brand-primary text-uppercase text-center m-clear">Payment method</h3>
                                     </div>
-                                    <form>
                                         <div class="form-group">
                                             <div class="radio">
                                                 <input type="radio" value="online" ng-model="payment.paymentmode" ng-change="changePaymentMode(payment.paymentmode)" name="payment" id="debit">
@@ -1016,7 +1016,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </form>
+
                                 </div>
                             </div>
                         </div>

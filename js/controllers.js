@@ -2579,7 +2579,12 @@ $timeout(function () {
     }
   };
   $scope.doLogin = function(input, formValidate) {
+
+    console.log("here");
+    console.log(input);
+    console.log(formValidate);
     if (formValidate.$valid) {
+      console.log("here");
       NavigationService.loginuser(input, function(data) {
         if (data.value === false) {
           // $scope.invalidinput = true;
