@@ -2779,6 +2779,19 @@ $timeout(function () {
       $scope.placeorder = false;
     }
   };
+  $scope.validateRecaptcha = function(){
+    NavigationService.checkcaptcha(function(data){
+      if(data.value){
+        $scope.payByCOD();
+      }else{
+        $scope.alerts = [];
+        $scope.alerts.push({
+          type:'success',
+          msg:'The captcha is missing or wrong'
+        });
+      }
+    });
+  };
   $scope.payByCOD = function() {
     NavigationService.COD({
       id: $scope.order

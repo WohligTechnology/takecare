@@ -1,6 +1,6 @@
 var Glo = {};
 var siteURL = 'admin.selfcareindia.com';
-// var siteURL = '192.168.1.137/selfbackend';
+// var siteURL = '192.168.1.107/selfback';
 
 var mainurl = "http://"+siteURL+"/index.php/";
 var imgurl = "http://"+siteURL+"/uploads/";
@@ -446,6 +446,10 @@ var navigationservice = angular.module('navigationservice', [])
         emptyCart: function( callback) {
 
             $http.get(adminurl + 'emptyCart').success(callback);
+        },
+        checkcaptcha:function(callback){
+          var recaptcha=$("#g-recaptcha-response").val();
+          $http.get(adminurl + 'checkcaptcha?g-recaptcha-response=' + recaptcha).success(callback);
         },
         fedexTrack: function(tracking_number, callback) {
             // tracking_number = 123456789012;

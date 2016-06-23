@@ -18,8 +18,8 @@
                     </uib-tab-heading>
                     <div class="checkout-main">
 
-                            <div class="row">
-                              <form name="loginForm" ng-submit="doLogin(login,loginForm)">
+                        <div class="row">
+                            <form name="loginForm" ng-submit="doLogin(login,loginForm)">
 
                                 <div class="col-md-5">
                                     <h3 class="brand-brown-dark text-uppercase login-title">Sign in</h3>
@@ -30,86 +30,11 @@
                                         <input type="password" name="password" ng-model="login.password" required class="form-control" placeholder="Password">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-more text-uppercase" >sign in</button>
+                                        <button type="submit" class="btn btn-primary btn-more text-uppercase">sign in</button>
                                     </div>
-                        </form>
-                        <div class="text-center text-uppercase  mt10">
-                            <span class="pointer" ng-click="openForgot()">Forgot Password ?</span>
-                            <span class="block or">or</span>
-                            <p>sign in via</p>
-                        </div>
-                        <div class="social-btn text-center">
-                            <div class="btn-round inline-block">
-                                <button type="button" class="btn fb-btn no-border round" ng-click="facebookLogin()">
-                                    <i class="fa fa-facebook"></i>
-                                </button>
-                            </div>
-                            <div class="btn-round inline-block">
-                                <button type="button" class="btn google-btn no-border round" ng-click="googleLogin()">
-                                    <i class="fa fa-google-plus"></i>
-                                </button>
-                            </div>
-                            <span class="block mt10">OR</span>
-                        </div>
-                        <div class="guest-checkout text-center">
-                            <div class="checkbox">
-                                <input type="checkbox" ng-model="guest.status" ng-change="chekoutAsGuest(guest.status)" class="text-uppercase" id="accept-guest">
-                                <label for="accept-guest">
-                                    <span></span> Checkout as guest
-                                </label>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-6">
-                            <form name="signupForm" ng-submit="doSignup(accept,signup,signupForm)">
-
-                                <h3 class="brand-brown-dark text-uppercase login-title">Sign up</h3>
-                                <div class="form-group">
-                                    <input type="text" required name="firstname" ng-model="signup.firstname" class="form-control" placeholder="First Name*">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" required name="lastname" ng-model="signup.lastname" class="form-control" placeholder="Last Name*">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" required name="email" ng-model="signup.email" class="form-control" placeholder="Email*">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" required name="password" ng-model="signup.password" class="form-control" placeholder="Password*">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" required name="cfpassword" ng-model="signup.cfpassword" class="form-control" placeholder="Confirm Password*">
-                                    <div class="ab" ng-show="signupForm.cfpassword.$error.required && signupForm.cfpassword.$touched" role="alert">
-                                        Please enter correct password.
-                                    </div>
-                                    <div class="ab" ng-show="noMatch">
-                                        Passwords do not match.
-                                    </div>
-                                    <div class="ab" ng-show="signupForm.cfpassword.$error.minlength " role="alert">
-                                        Password too short.
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" name="mobile" ng-model="signup.mobile" class="form-control" placeholder="Mobile Number">
-                                </div>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
-                                        <label for="accept" class="text-light">
-                                            <span></span> I agree with the <a ui-sref="termsandcondition" class="brand-brown-dark2 terms-accept">terms &amp; conditions</a> and privacy policy of the website.
-                                        </label>
-                                    </div>
-                                    <div class="" ng-show="acceptValidate">
-                                        Please accept the terms and conditions to proceed.
-                                    </div>
-                                    <div class="text-center" ng-show="alreadyReg">
-                                        Email ID is already registered
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-more text-uppercase">Register</button>
-                                </div>
                             </form>
-                            <div class="text-center text-uppercase">
+                            <div class="text-center text-uppercase  mt10">
+                                <span class="pointer" ng-click="openForgot()">Forgot Password ?</span>
                                 <span class="block or">or</span>
                                 <p>sign in via</p>
                             </div>
@@ -124,9 +49,84 @@
                                         <i class="fa fa-google-plus"></i>
                                     </button>
                                 </div>
-                                <!-- <span class="block text-center">Already Registered ? <a href="">Sign In</a></span> -->
+                                <span class="block mt10">OR</span>
                             </div>
-                        </div>
+                            <div class="guest-checkout text-center">
+                                <div class="checkbox">
+                                    <input type="checkbox" ng-model="guest.status" ng-change="chekoutAsGuest(guest.status)" class="text-uppercase" id="accept-guest">
+                                    <label for="accept-guest">
+                                        <span></span> Checkout as guest
+                                    </label>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-offset-1 col-md-6">
+                                <form name="signupForm" ng-submit="doSignup(accept,signup,signupForm)">
+
+                                    <h3 class="brand-brown-dark text-uppercase login-title">Sign up</h3>
+                                    <div class="form-group">
+                                        <input type="text" required name="firstname" ng-model="signup.firstname" class="form-control" placeholder="First Name*">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" required name="lastname" ng-model="signup.lastname" class="form-control" placeholder="Last Name*">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" required name="email" ng-model="signup.email" class="form-control" placeholder="Email*">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" required name="password" ng-model="signup.password" class="form-control" placeholder="Password*">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" required name="cfpassword" ng-model="signup.cfpassword" class="form-control" placeholder="Confirm Password*">
+                                        <div class="ab" ng-show="signupForm.cfpassword.$error.required && signupForm.cfpassword.$touched" role="alert">
+                                            Please enter correct password.
+                                        </div>
+                                        <div class="ab" ng-show="noMatch">
+                                            Passwords do not match.
+                                        </div>
+                                        <div class="ab" ng-show="signupForm.cfpassword.$error.minlength " role="alert">
+                                            Password too short.
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" name="mobile" ng-model="signup.mobile" class="form-control" placeholder="Mobile Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <input type="checkbox" ng-model="accept" ng-change="acceptIt(accept)" class="text-uppercase" id="accept">
+                                            <label for="accept" class="text-light">
+                                                <span></span> I agree with the <a ui-sref="termsandcondition" class="brand-brown-dark2 terms-accept">terms &amp; conditions</a> and privacy policy of the website.
+                                            </label>
+                                        </div>
+                                        <div class="" ng-show="acceptValidate">
+                                            Please accept the terms and conditions to proceed.
+                                        </div>
+                                        <div class="text-center" ng-show="alreadyReg">
+                                            Email ID is already registered
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary btn-more text-uppercase">Register</button>
+                                    </div>
+                                </form>
+                                <div class="text-center text-uppercase">
+                                    <span class="block or">or</span>
+                                    <p>sign in via</p>
+                                </div>
+                                <div class="social-btn text-center">
+                                    <div class="btn-round inline-block">
+                                        <button type="button" class="btn fb-btn no-border round" ng-click="facebookLogin()">
+                                            <i class="fa fa-facebook"></i>
+                                        </button>
+                                    </div>
+                                    <div class="btn-round inline-block">
+                                        <button type="button" class="btn google-btn no-border round" ng-click="googleLogin()">
+                                            <i class="fa fa-google-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- <span class="block text-center">Already Registered ? <a href="">Sign In</a></span> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </uib-tab>
@@ -200,255 +200,255 @@
                                             <div class="custom-select">
                                                 <select class="form-control" name="billingcountry" ng-change="sameShipping(checkout)" required ng-model="checkout.billingcountry" id="">
                                                     <option value="" class="ng-binding ng-scope">Please Select</option>
-                                                    <option value="AFG"  ng-if="myCountry !=='IN'">Afghanistan</option>
-                                                    <option value="ALA"  ng-if="myCountry !=='IN'">Åland Islands</option>
-                                                    <option value="ALB"  ng-if="myCountry !=='IN'">Albania</option>
-                                                    <option value="DZA"  ng-if="myCountry !=='IN'">Algeria</option>
-                                                    <option value="ASM"  ng-if="myCountry !=='IN'">American Samoa</option>
-                                                    <option value="AND"  ng-if="myCountry !=='IN'">Andorra</option>
-                                                    <option value="AGO"  ng-if="myCountry !=='IN'">Angola</option>
-                                                    <option value="AIA"  ng-if="myCountry !=='IN'">Anguilla</option>
-                                                    <option value="ATA"  ng-if="myCountry !=='IN'">Antarctica</option>
-                                                    <option value="ATG"  ng-if="myCountry !=='IN'">Antigua and Barbuda</option>
-                                                    <option value="ARG"  ng-if="myCountry !=='IN'">Argentina</option>
-                                                    <option value="ARM"  ng-if="myCountry !=='IN'">Armenia</option>
-                                                    <option value="ABW"  ng-if="myCountry !=='IN'">Aruba</option>
-                                                    <option value="AUS"  ng-if="myCountry !=='IN'">Australia</option>
-                                                    <option value="AUT"  ng-if="myCountry !=='IN'">Austria</option>
-                                                    <option value="AZE"  ng-if="myCountry !=='IN'">Azerbaijan</option>
-                                                    <option value="BHS"  ng-if="myCountry !=='IN'">Bahamas</option>
-                                                    <option value="BHR"  ng-if="myCountry !=='IN'">Bahrain</option>
-                                                    <option value="BGD"  ng-if="myCountry !=='IN'">Bangladesh</option>
-                                                    <option value="BRB"  ng-if="myCountry !=='IN'">Barbados</option>
-                                                    <option value="BLR"  ng-if="myCountry !=='IN'">Belarus</option>
-                                                    <option value="BEL"  ng-if="myCountry !=='IN'">Belgium</option>
-                                                    <option value="BLZ"  ng-if="myCountry !=='IN'">Belize</option>
-                                                    <option value="BEN"  ng-if="myCountry !=='IN'">Benin</option>
-                                                    <option value="BMU"  ng-if="myCountry !=='IN'">Bermuda</option>
-                                                    <option value="BTN"  ng-if="myCountry !=='IN'">Bhutan</option>
-                                                    <option value="BOL"  ng-if="myCountry !=='IN'">Bolivia, Plurinational State of</option>
-                                                    <option value="BES"  ng-if="myCountry !=='IN'">Bonaire, Sint Eustatius and Saba</option>
-                                                    <option value="BIH"  ng-if="myCountry !=='IN'">Bosnia and Herzegovina</option>
-                                                    <option value="BWA"  ng-if="myCountry !=='IN'">Botswana</option>
-                                                    <option value="BVT"  ng-if="myCountry !=='IN'">Bouvet Island</option>
-                                                    <option value="BRA"  ng-if="myCountry !=='IN'">Brazil</option>
-                                                    <option value="IOT"  ng-if="myCountry !=='IN'">British Indian Ocean Territory</option>
-                                                    <option value="BRN"  ng-if="myCountry !=='IN'">Brunei Darussalam</option>
-                                                    <option value="BGR"  ng-if="myCountry !=='IN'">Bulgaria</option>
-                                                    <option value="BFA"  ng-if="myCountry !=='IN'">Burkina Faso</option>
-                                                    <option value="BDI"  ng-if="myCountry !=='IN'">Burundi</option>
-                                                    <option value="KHM"  ng-if="myCountry !=='IN'">Cambodia</option>
-                                                    <option value="CMR"  ng-if="myCountry !=='IN'">Cameroon</option>
-                                                    <option value="CAN"  ng-if="myCountry !=='IN'">Canada</option>
-                                                    <option value="CPV"  ng-if="myCountry !=='IN'">Cape Verde</option>
-                                                    <option value="CYM"  ng-if="myCountry !=='IN'">Cayman Islands</option>
-                                                    <option value="CAF"  ng-if="myCountry !=='IN'">Central African Republic</option>
-                                                    <option value="TCD"  ng-if="myCountry !=='IN'">Chad</option>
-                                                    <option value="CHL"  ng-if="myCountry !=='IN'">Chile</option>
-                                                    <option value="CHN"  ng-if="myCountry !=='IN'">China</option>
-                                                    <option value="CXR"  ng-if="myCountry !=='IN'">Christmas Island</option>
-                                                    <option value="CCK"  ng-if="myCountry !=='IN'">Cocos (Keeling) Islands</option>
-                                                    <option value="COL"  ng-if="myCountry !=='IN'">Colombia</option>
-                                                    <option value="COM"  ng-if="myCountry !=='IN'">Comoros</option>
-                                                    <option value="COG"  ng-if="myCountry !=='IN'">Congo</option>
-                                                    <option value="COD"  ng-if="myCountry !=='IN'">Congo, the Democratic Republic of the</option>
-                                                    <option value="COK"  ng-if="myCountry !=='IN'">Cook Islands</option>
-                                                    <option value="CRI"  ng-if="myCountry !=='IN'">Costa Rica</option>
-                                                    <option value="CIV"  ng-if="myCountry !=='IN'">Côte d'Ivoire</option>
-                                                    <option value="HRV"  ng-if="myCountry !=='IN'">Croatia</option>
-                                                    <option value="CUB"  ng-if="myCountry !=='IN'">Cuba</option>
-                                                    <option value="CUW"  ng-if="myCountry !=='IN'">Curaçao</option>
-                                                    <option value="CYP"  ng-if="myCountry !=='IN'">Cyprus</option>
-                                                    <option value="CZE"  ng-if="myCountry !=='IN'">Czech Republic</option>
-                                                    <option value="DNK"  ng-if="myCountry !=='IN'">Denmark</option>
-                                                    <option value="DJI"  ng-if="myCountry !=='IN'">Djibouti</option>
-                                                    <option value="DMA"  ng-if="myCountry !=='IN'">Dominica</option>
-                                                    <option value="DOM"  ng-if="myCountry !=='IN'">Dominican Republic</option>
-                                                    <option value="ECU"  ng-if="myCountry !=='IN'">Ecuador</option>
-                                                    <option value="EGY"  ng-if="myCountry !=='IN'">Egypt</option>
-                                                    <option value="SLV"  ng-if="myCountry !=='IN'">El Salvador</option>
-                                                    <option value="GNQ"  ng-if="myCountry !=='IN'">Equatorial Guinea</option>
-                                                    <option value="ERI"  ng-if="myCountry !=='IN'">Eritrea</option>
-                                                    <option value="EST"  ng-if="myCountry !=='IN'">Estonia</option>
-                                                    <option value="ETH"  ng-if="myCountry !=='IN'">Ethiopia</option>
-                                                    <option value="FLK"  ng-if="myCountry !=='IN'">Falkland Islands (Malvinas)</option>
-                                                    <option value="FRO"  ng-if="myCountry !=='IN'">Faroe Islands</option>
-                                                    <option value="FJI"  ng-if="myCountry !=='IN'">Fiji</option>
-                                                    <option value="FIN"  ng-if="myCountry !=='IN'">Finland</option>
-                                                    <option value="FRA"  ng-if="myCountry !=='IN'">France</option>
-                                                    <option value="GUF"  ng-if="myCountry !=='IN'">French Guiana</option>
-                                                    <option value="PYF"  ng-if="myCountry !=='IN'">French Polynesia</option>
-                                                    <option value="ATF"  ng-if="myCountry !=='IN'">French Southern Territories</option>
-                                                    <option value="GAB"  ng-if="myCountry !=='IN'">Gabon</option>
-                                                    <option value="GMB"  ng-if="myCountry !=='IN'">Gambia</option>
-                                                    <option value="GEO"  ng-if="myCountry !=='IN'">Georgia</option>
-                                                    <option value="DEU"  ng-if="myCountry !=='IN'">Germany</option>
-                                                    <option value="GHA"  ng-if="myCountry !=='IN'">Ghana</option>
-                                                    <option value="GIB"  ng-if="myCountry !=='IN'">Gibraltar</option>
-                                                    <option value="GRC"  ng-if="myCountry !=='IN'">Greece</option>
-                                                    <option value="GRL"  ng-if="myCountry !=='IN'">Greenland</option>
-                                                    <option value="GRD"  ng-if="myCountry !=='IN'">Grenada</option>
-                                                    <option value="GLP"  ng-if="myCountry !=='IN'">Guadeloupe</option>
-                                                    <option value="GUM"  ng-if="myCountry !=='IN'">Guam</option>
-                                                    <option value="GTM"  ng-if="myCountry !=='IN'">Guatemala</option>
-                                                    <option value="GGY"  ng-if="myCountry !=='IN'">Guernsey</option>
-                                                    <option value="GIN"  ng-if="myCountry !=='IN'">Guinea</option>
-                                                    <option value="GNB"  ng-if="myCountry !=='IN'">Guinea-Bissau</option>
-                                                    <option value="GUY"  ng-if="myCountry !=='IN'">Guyana</option>
-                                                    <option value="HTI"  ng-if="myCountry !=='IN'">Haiti</option>
-                                                    <option value="HMD"  ng-if="myCountry !=='IN'">Heard Island and McDonald Islands</option>
-                                                    <option value="VAT"  ng-if="myCountry !=='IN'">Holy See (Vatican City State)</option>
-                                                    <option value="HND"  ng-if="myCountry !=='IN'">Honduras</option>
-                                                    <option value="HKG"  ng-if="myCountry !=='IN'">Hong Kong</option>
-                                                    <option value="HUN"  ng-if="myCountry !=='IN'">Hungary</option>
-                                                    <option value="ISL"  ng-if="myCountry !=='IN'">Iceland</option>
+                                                    <option value="AFG" ng-if="myCountry !=='IN'">Afghanistan</option>
+                                                    <option value="ALA" ng-if="myCountry !=='IN'">Åland Islands</option>
+                                                    <option value="ALB" ng-if="myCountry !=='IN'">Albania</option>
+                                                    <option value="DZA" ng-if="myCountry !=='IN'">Algeria</option>
+                                                    <option value="ASM" ng-if="myCountry !=='IN'">American Samoa</option>
+                                                    <option value="AND" ng-if="myCountry !=='IN'">Andorra</option>
+                                                    <option value="AGO" ng-if="myCountry !=='IN'">Angola</option>
+                                                    <option value="AIA" ng-if="myCountry !=='IN'">Anguilla</option>
+                                                    <option value="ATA" ng-if="myCountry !=='IN'">Antarctica</option>
+                                                    <option value="ATG" ng-if="myCountry !=='IN'">Antigua and Barbuda</option>
+                                                    <option value="ARG" ng-if="myCountry !=='IN'">Argentina</option>
+                                                    <option value="ARM" ng-if="myCountry !=='IN'">Armenia</option>
+                                                    <option value="ABW" ng-if="myCountry !=='IN'">Aruba</option>
+                                                    <option value="AUS" ng-if="myCountry !=='IN'">Australia</option>
+                                                    <option value="AUT" ng-if="myCountry !=='IN'">Austria</option>
+                                                    <option value="AZE" ng-if="myCountry !=='IN'">Azerbaijan</option>
+                                                    <option value="BHS" ng-if="myCountry !=='IN'">Bahamas</option>
+                                                    <option value="BHR" ng-if="myCountry !=='IN'">Bahrain</option>
+                                                    <option value="BGD" ng-if="myCountry !=='IN'">Bangladesh</option>
+                                                    <option value="BRB" ng-if="myCountry !=='IN'">Barbados</option>
+                                                    <option value="BLR" ng-if="myCountry !=='IN'">Belarus</option>
+                                                    <option value="BEL" ng-if="myCountry !=='IN'">Belgium</option>
+                                                    <option value="BLZ" ng-if="myCountry !=='IN'">Belize</option>
+                                                    <option value="BEN" ng-if="myCountry !=='IN'">Benin</option>
+                                                    <option value="BMU" ng-if="myCountry !=='IN'">Bermuda</option>
+                                                    <option value="BTN" ng-if="myCountry !=='IN'">Bhutan</option>
+                                                    <option value="BOL" ng-if="myCountry !=='IN'">Bolivia, Plurinational State of</option>
+                                                    <option value="BES" ng-if="myCountry !=='IN'">Bonaire, Sint Eustatius and Saba</option>
+                                                    <option value="BIH" ng-if="myCountry !=='IN'">Bosnia and Herzegovina</option>
+                                                    <option value="BWA" ng-if="myCountry !=='IN'">Botswana</option>
+                                                    <option value="BVT" ng-if="myCountry !=='IN'">Bouvet Island</option>
+                                                    <option value="BRA" ng-if="myCountry !=='IN'">Brazil</option>
+                                                    <option value="IOT" ng-if="myCountry !=='IN'">British Indian Ocean Territory</option>
+                                                    <option value="BRN" ng-if="myCountry !=='IN'">Brunei Darussalam</option>
+                                                    <option value="BGR" ng-if="myCountry !=='IN'">Bulgaria</option>
+                                                    <option value="BFA" ng-if="myCountry !=='IN'">Burkina Faso</option>
+                                                    <option value="BDI" ng-if="myCountry !=='IN'">Burundi</option>
+                                                    <option value="KHM" ng-if="myCountry !=='IN'">Cambodia</option>
+                                                    <option value="CMR" ng-if="myCountry !=='IN'">Cameroon</option>
+                                                    <option value="CAN" ng-if="myCountry !=='IN'">Canada</option>
+                                                    <option value="CPV" ng-if="myCountry !=='IN'">Cape Verde</option>
+                                                    <option value="CYM" ng-if="myCountry !=='IN'">Cayman Islands</option>
+                                                    <option value="CAF" ng-if="myCountry !=='IN'">Central African Republic</option>
+                                                    <option value="TCD" ng-if="myCountry !=='IN'">Chad</option>
+                                                    <option value="CHL" ng-if="myCountry !=='IN'">Chile</option>
+                                                    <option value="CHN" ng-if="myCountry !=='IN'">China</option>
+                                                    <option value="CXR" ng-if="myCountry !=='IN'">Christmas Island</option>
+                                                    <option value="CCK" ng-if="myCountry !=='IN'">Cocos (Keeling) Islands</option>
+                                                    <option value="COL" ng-if="myCountry !=='IN'">Colombia</option>
+                                                    <option value="COM" ng-if="myCountry !=='IN'">Comoros</option>
+                                                    <option value="COG" ng-if="myCountry !=='IN'">Congo</option>
+                                                    <option value="COD" ng-if="myCountry !=='IN'">Congo, the Democratic Republic of the</option>
+                                                    <option value="COK" ng-if="myCountry !=='IN'">Cook Islands</option>
+                                                    <option value="CRI" ng-if="myCountry !=='IN'">Costa Rica</option>
+                                                    <option value="CIV" ng-if="myCountry !=='IN'">Côte d'Ivoire</option>
+                                                    <option value="HRV" ng-if="myCountry !=='IN'">Croatia</option>
+                                                    <option value="CUB" ng-if="myCountry !=='IN'">Cuba</option>
+                                                    <option value="CUW" ng-if="myCountry !=='IN'">Curaçao</option>
+                                                    <option value="CYP" ng-if="myCountry !=='IN'">Cyprus</option>
+                                                    <option value="CZE" ng-if="myCountry !=='IN'">Czech Republic</option>
+                                                    <option value="DNK" ng-if="myCountry !=='IN'">Denmark</option>
+                                                    <option value="DJI" ng-if="myCountry !=='IN'">Djibouti</option>
+                                                    <option value="DMA" ng-if="myCountry !=='IN'">Dominica</option>
+                                                    <option value="DOM" ng-if="myCountry !=='IN'">Dominican Republic</option>
+                                                    <option value="ECU" ng-if="myCountry !=='IN'">Ecuador</option>
+                                                    <option value="EGY" ng-if="myCountry !=='IN'">Egypt</option>
+                                                    <option value="SLV" ng-if="myCountry !=='IN'">El Salvador</option>
+                                                    <option value="GNQ" ng-if="myCountry !=='IN'">Equatorial Guinea</option>
+                                                    <option value="ERI" ng-if="myCountry !=='IN'">Eritrea</option>
+                                                    <option value="EST" ng-if="myCountry !=='IN'">Estonia</option>
+                                                    <option value="ETH" ng-if="myCountry !=='IN'">Ethiopia</option>
+                                                    <option value="FLK" ng-if="myCountry !=='IN'">Falkland Islands (Malvinas)</option>
+                                                    <option value="FRO" ng-if="myCountry !=='IN'">Faroe Islands</option>
+                                                    <option value="FJI" ng-if="myCountry !=='IN'">Fiji</option>
+                                                    <option value="FIN" ng-if="myCountry !=='IN'">Finland</option>
+                                                    <option value="FRA" ng-if="myCountry !=='IN'">France</option>
+                                                    <option value="GUF" ng-if="myCountry !=='IN'">French Guiana</option>
+                                                    <option value="PYF" ng-if="myCountry !=='IN'">French Polynesia</option>
+                                                    <option value="ATF" ng-if="myCountry !=='IN'">French Southern Territories</option>
+                                                    <option value="GAB" ng-if="myCountry !=='IN'">Gabon</option>
+                                                    <option value="GMB" ng-if="myCountry !=='IN'">Gambia</option>
+                                                    <option value="GEO" ng-if="myCountry !=='IN'">Georgia</option>
+                                                    <option value="DEU" ng-if="myCountry !=='IN'">Germany</option>
+                                                    <option value="GHA" ng-if="myCountry !=='IN'">Ghana</option>
+                                                    <option value="GIB" ng-if="myCountry !=='IN'">Gibraltar</option>
+                                                    <option value="GRC" ng-if="myCountry !=='IN'">Greece</option>
+                                                    <option value="GRL" ng-if="myCountry !=='IN'">Greenland</option>
+                                                    <option value="GRD" ng-if="myCountry !=='IN'">Grenada</option>
+                                                    <option value="GLP" ng-if="myCountry !=='IN'">Guadeloupe</option>
+                                                    <option value="GUM" ng-if="myCountry !=='IN'">Guam</option>
+                                                    <option value="GTM" ng-if="myCountry !=='IN'">Guatemala</option>
+                                                    <option value="GGY" ng-if="myCountry !=='IN'">Guernsey</option>
+                                                    <option value="GIN" ng-if="myCountry !=='IN'">Guinea</option>
+                                                    <option value="GNB" ng-if="myCountry !=='IN'">Guinea-Bissau</option>
+                                                    <option value="GUY" ng-if="myCountry !=='IN'">Guyana</option>
+                                                    <option value="HTI" ng-if="myCountry !=='IN'">Haiti</option>
+                                                    <option value="HMD" ng-if="myCountry !=='IN'">Heard Island and McDonald Islands</option>
+                                                    <option value="VAT" ng-if="myCountry !=='IN'">Holy See (Vatican City State)</option>
+                                                    <option value="HND" ng-if="myCountry !=='IN'">Honduras</option>
+                                                    <option value="HKG" ng-if="myCountry !=='IN'">Hong Kong</option>
+                                                    <option value="HUN" ng-if="myCountry !=='IN'">Hungary</option>
+                                                    <option value="ISL" ng-if="myCountry !=='IN'">Iceland</option>
                                                     <option value="India" selected>India</option>
-                                                    <option value="IDN"  ng-if="myCountry !=='IN'">Indonesia</option>
-                                                    <option value="IRN"  ng-if="myCountry !=='IN'">Iran, Islamic Republic of</option>
-                                                    <option value="IRQ"  ng-if="myCountry !=='IN'">Iraq</option>
-                                                    <option value="IRL"  ng-if="myCountry !=='IN'">Ireland</option>
-                                                    <option value="IMN"  ng-if="myCountry !=='IN'">Isle of Man</option>
-                                                    <option value="ISR"  ng-if="myCountry !=='IN'">Israel</option>
-                                                    <option value="ITA"  ng-if="myCountry !=='IN'">Italy</option>
-                                                    <option value="JAM"  ng-if="myCountry !=='IN'">Jamaica</option>
-                                                    <option value="JPN"  ng-if="myCountry !=='IN'">Japan</option>
-                                                    <option value="JEY"  ng-if="myCountry !=='IN'">Jersey</option>
-                                                    <option value="JOR"  ng-if="myCountry !=='IN'">Jordan</option>
-                                                    <option value="KAZ"  ng-if="myCountry !=='IN'">Kazakhstan</option>
-                                                    <option value="KEN"  ng-if="myCountry !=='IN'">Kenya</option>
-                                                    <option value="KIR"  ng-if="myCountry !=='IN'">Kiribati</option>
-                                                    <option value="PRK"  ng-if="myCountry !=='IN'">Korea, Democratic People's Republic of</option>
-                                                    <option value="KOR"  ng-if="myCountry !=='IN'">Korea, Republic of</option>
-                                                    <option value="KWT"  ng-if="myCountry !=='IN'">Kuwait</option>
-                                                    <option value="KGZ"  ng-if="myCountry !=='IN'">Kyrgyzstan</option>
-                                                    <option value="LAO"  ng-if="myCountry !=='IN'">Lao People's Democratic Republic</option>
-                                                    <option value="LVA"  ng-if="myCountry !=='IN'">Latvia</option>
-                                                    <option value="LBN"  ng-if="myCountry !=='IN'">Lebanon</option>
-                                                    <option value="LSO"  ng-if="myCountry !=='IN'">Lesotho</option>
-                                                    <option value="LBR"  ng-if="myCountry !=='IN'">Liberia</option>
-                                                    <option value="LBY"  ng-if="myCountry !=='IN'">Libya</option>
-                                                    <option value="LIE"  ng-if="myCountry !=='IN'">Liechtenstein</option>
-                                                    <option value="LTU"  ng-if="myCountry !=='IN'">Lithuania</option>
-                                                    <option value="LUX"  ng-if="myCountry !=='IN'">Luxembourg</option>
-                                                    <option value="MAC"  ng-if="myCountry !=='IN'">Macao</option>
-                                                    <option value="MKD"  ng-if="myCountry !=='IN'">Macedonia, the former Yugoslav Republic of</option>
-                                                    <option value="MDG"  ng-if="myCountry !=='IN'">Madagascar</option>
-                                                    <option value="MWI"  ng-if="myCountry !=='IN'">Malawi</option>
-                                                    <option value="MYS"  ng-if="myCountry !=='IN'">Malaysia</option>
-                                                    <option value="MDV"  ng-if="myCountry !=='IN'">Maldives</option>
-                                                    <option value="MLI"  ng-if="myCountry !=='IN'">Mali</option>
-                                                    <option value="MLT"  ng-if="myCountry !=='IN'">Malta</option>
-                                                    <option value="MHL"  ng-if="myCountry !=='IN'">Marshall Islands</option>
-                                                    <option value="MTQ"  ng-if="myCountry !=='IN'">Martinique</option>
-                                                    <option value="MRT"  ng-if="myCountry !=='IN'">Mauritania</option>
-                                                    <option value="MUS"  ng-if="myCountry !=='IN'">Mauritius</option>
-                                                    <option value="MYT"  ng-if="myCountry !=='IN'">Mayotte</option>
-                                                    <option value="MEX"  ng-if="myCountry !=='IN'">Mexico</option>
-                                                    <option value="FSM"  ng-if="myCountry !=='IN'">Micronesia, Federated States of</option>
-                                                    <option value="MDA"  ng-if="myCountry !=='IN'">Moldova, Republic of</option>
-                                                    <option value="MCO"  ng-if="myCountry !=='IN'">Monaco</option>
-                                                    <option value="MNG"  ng-if="myCountry !=='IN'">Mongolia</option>
-                                                    <option value="MNE"  ng-if="myCountry !=='IN'">Montenegro</option>
-                                                    <option value="MSR"  ng-if="myCountry !=='IN'">Montserrat</option>
-                                                    <option value="MAR"  ng-if="myCountry !=='IN'">Morocco</option>
-                                                    <option value="MOZ"  ng-if="myCountry !=='IN'">Mozambique</option>
-                                                    <option value="MMR"  ng-if="myCountry !=='IN'">Myanmar</option>
-                                                    <option value="NAM"  ng-if="myCountry !=='IN'">Namibia</option>
-                                                    <option value="NRU"  ng-if="myCountry !=='IN'">Nauru</option>
-                                                    <option value="NPL"  ng-if="myCountry !=='IN'">Nepal</option>
-                                                    <option value="NLD"  ng-if="myCountry !=='IN'">Netherlands</option>
-                                                    <option value="NCL"  ng-if="myCountry !=='IN'">New Caledonia</option>
-                                                    <option value="NZL"  ng-if="myCountry !=='IN'">New Zealand</option>
-                                                    <option value="NIC"  ng-if="myCountry !=='IN'">Nicaragua</option>
-                                                    <option value="NER"  ng-if="myCountry !=='IN'">Niger</option>
-                                                    <option value="NGA"  ng-if="myCountry !=='IN'">Nigeria</option>
-                                                    <option value="NIU"  ng-if="myCountry !=='IN'">Niue</option>
-                                                    <option value="NFK"  ng-if="myCountry !=='IN'">Norfolk Island</option>
-                                                    <option value="MNP"  ng-if="myCountry !=='IN'">Northern Mariana Islands</option>
-                                                    <option value="NOR"  ng-if="myCountry !=='IN'">Norway</option>
-                                                    <option value="OMN"  ng-if="myCountry !=='IN'">Oman</option>
-                                                    <option value="PAK"  ng-if="myCountry !=='IN'">Pakistan</option>
-                                                    <option value="PLW"  ng-if="myCountry !=='IN'">Palau</option>
-                                                    <option value="PSE"  ng-if="myCountry !=='IN'">Palestinian Territory, Occupied</option>
-                                                    <option value="PAN"  ng-if="myCountry !=='IN'">Panama</option>
-                                                    <option value="PNG"  ng-if="myCountry !=='IN'">Papua New Guinea</option>
-                                                    <option value="PRY"  ng-if="myCountry !=='IN'">Paraguay</option>
-                                                    <option value="PER"  ng-if="myCountry !=='IN'">Peru</option>
-                                                    <option value="PHL"  ng-if="myCountry !=='IN'">Philippines</option>
-                                                    <option value="PCN"  ng-if="myCountry !=='IN'">Pitcairn</option>
-                                                    <option value="POL"  ng-if="myCountry !=='IN'">Poland</option>
-                                                    <option value="PRT"  ng-if="myCountry !=='IN'">Portugal</option>
-                                                    <option value="PRI"  ng-if="myCountry !=='IN'">Puerto Rico</option>
-                                                    <option value="QAT"  ng-if="myCountry !=='IN'">Qatar</option>
-                                                    <option value="REU"  ng-if="myCountry !=='IN'">Réunion</option>
-                                                    <option value="ROU"  ng-if="myCountry !=='IN'">Romania</option>
-                                                    <option value="RUS"  ng-if="myCountry !=='IN'">Russian Federation</option>
-                                                    <option value="RWA"  ng-if="myCountry !=='IN'">Rwanda</option>
-                                                    <option value="BLM"  ng-if="myCountry !=='IN'">Saint Barthélemy</option>
-                                                    <option value="SHN"  ng-if="myCountry !=='IN'">Saint Helena, Ascension and Tristan da Cunha</option>
-                                                    <option value="KNA"  ng-if="myCountry !=='IN'">Saint Kitts and Nevis</option>
-                                                    <option value="LCA"  ng-if="myCountry !=='IN'">Saint Lucia</option>
-                                                    <option value="MAF"  ng-if="myCountry !=='IN'">Saint Martin (French part)</option>
-                                                    <option value="SPM"  ng-if="myCountry !=='IN'">Saint Pierre and Miquelon</option>
-                                                    <option value="VCT"  ng-if="myCountry !=='IN'">Saint Vincent and the Grenadines</option>
-                                                    <option value="WSM"  ng-if="myCountry !=='IN'">Samoa</option>
-                                                    <option value="SMR"  ng-if="myCountry !=='IN'">San Marino</option>
-                                                    <option value="STP"  ng-if="myCountry !=='IN'">Sao Tome and Principe</option>
-                                                    <option value="SAU"  ng-if="myCountry !=='IN'">Saudi Arabia</option>
-                                                    <option value="SEN"  ng-if="myCountry !=='IN'">Senegal</option>
-                                                    <option value="SRB"  ng-if="myCountry !=='IN'">Serbia</option>
-                                                    <option value="SYC"  ng-if="myCountry !=='IN'">Seychelles</option>
-                                                    <option value="SLE"  ng-if="myCountry !=='IN'">Sierra Leone</option>
-                                                    <option value="SGP"  ng-if="myCountry !=='IN'">Singapore</option>
-                                                    <option value="SXM"  ng-if="myCountry !=='IN'">Sint Maarten (Dutch part)</option>
-                                                    <option value="SVK"  ng-if="myCountry !=='IN'">Slovakia</option>
-                                                    <option value="SVN"  ng-if="myCountry !=='IN'">Slovenia</option>
-                                                    <option value="SLB"  ng-if="myCountry !=='IN'">Solomon Islands</option>
-                                                    <option value="SOM"  ng-if="myCountry !=='IN'">Somalia</option>
-                                                    <option value="ZAF"  ng-if="myCountry !=='IN'">South Africa</option>
-                                                    <option value="SGS"  ng-if="myCountry !=='IN'">South Georgia and the South Sandwich Islands</option>
-                                                    <option value="SSD"  ng-if="myCountry !=='IN'">South Sudan</option>
-                                                    <option value="ESP"  ng-if="myCountry !=='IN'">Spain</option>
-                                                    <option value="LKA"  ng-if="myCountry !=='IN'">Sri Lanka</option>
-                                                    <option value="SDN"  ng-if="myCountry !=='IN'">Sudan</option>
-                                                    <option value="SUR"  ng-if="myCountry !=='IN'">Suriname</option>
-                                                    <option value="SJM"  ng-if="myCountry !=='IN'">Svalbard and Jan Mayen</option>
-                                                    <option value="SWZ"  ng-if="myCountry !=='IN'">Swaziland</option>
-                                                    <option value="SWE"  ng-if="myCountry !=='IN'">Sweden</option>
-                                                    <option value="CHE"  ng-if="myCountry !=='IN'">Switzerland</option>
-                                                    <option value="SYR"  ng-if="myCountry !=='IN'">Syrian Arab Republic</option>
-                                                    <option value="TWN"  ng-if="myCountry !=='IN'">Taiwan, Province of China</option>
-                                                    <option value="TJK"  ng-if="myCountry !=='IN'">Tajikistan</option>
-                                                    <option value="TZA"  ng-if="myCountry !=='IN'">Tanzania, United Republic of</option>
-                                                    <option value="THA"  ng-if="myCountry !=='IN'">Thailand</option>
-                                                    <option value="TLS"  ng-if="myCountry !=='IN'">Timor-Leste</option>
-                                                    <option value="TGO"  ng-if="myCountry !=='IN'">Togo</option>
-                                                    <option value="TKL"  ng-if="myCountry !=='IN'">Tokelau</option>
-                                                    <option value="TON"  ng-if="myCountry !=='IN'">Tonga</option>
-                                                    <option value="TTO"  ng-if="myCountry !=='IN'">Trinidad and Tobago</option>
-                                                    <option value="TUN"  ng-if="myCountry !=='IN'">Tunisia</option>
-                                                    <option value="TUR"  ng-if="myCountry !=='IN'">Turkey</option>
-                                                    <option value="TKM"  ng-if="myCountry !=='IN'">Turkmenistan</option>
-                                                    <option value="TCA"  ng-if="myCountry !=='IN'">Turks and Caicos Islands</option>
-                                                    <option value="TUV"  ng-if="myCountry !=='IN'">Tuvalu</option>
-                                                    <option value="UGA"  ng-if="myCountry !=='IN'">Uganda</option>
-                                                    <option value="UKR"  ng-if="myCountry !=='IN'">Ukraine</option>
-                                                    <option value="ARE"  ng-if="myCountry !=='IN'">United Arab Emirates</option>
-                                                    <option value="GBR"  ng-if="myCountry !=='IN'">United Kingdom</option>
-                                                    <option value="USA"  ng-if="myCountry !=='IN'">United States</option>
-                                                    <option value="UMI"  ng-if="myCountry !=='IN'">United States Minor Outlying Islands</option>
-                                                    <option value="URY"  ng-if="myCountry !=='IN'">Uruguay</option>
-                                                    <option value="UZB"  ng-if="myCountry !=='IN'">Uzbekistan</option>
-                                                    <option value="VUT"  ng-if="myCountry !=='IN'">Vanuatu</option>
-                                                    <option value="VEN"  ng-if="myCountry !=='IN'">Venezuela, Bolivarian Republic of</option>
-                                                    <option value="VNM"  ng-if="myCountry !=='IN'">Viet Nam</option>
-                                                    <option value="VGB"  ng-if="myCountry !=='IN'">Virgin Islands, British</option>
-                                                    <option value="VIR"  ng-if="myCountry !=='IN'">Virgin Islands, U.S.</option>
-                                                    <option value="WLF"  ng-if="myCountry !=='IN'">Wallis and Futuna</option>
-                                                    <option value="ESH"  ng-if="myCountry !=='IN'">Western Sahara</option>
-                                                    <option value="YEM"  ng-if="myCountry !=='IN'">Yemen</option>
-                                                    <option value="ZMB"  ng-if="myCountry !=='IN'">Zambia</option>
-                                                    <option value="ZWE"  ng-if="myCountry !=='IN'">Zimbabwe</option>
+                                                    <option value="IDN" ng-if="myCountry !=='IN'">Indonesia</option>
+                                                    <option value="IRN" ng-if="myCountry !=='IN'">Iran, Islamic Republic of</option>
+                                                    <option value="IRQ" ng-if="myCountry !=='IN'">Iraq</option>
+                                                    <option value="IRL" ng-if="myCountry !=='IN'">Ireland</option>
+                                                    <option value="IMN" ng-if="myCountry !=='IN'">Isle of Man</option>
+                                                    <option value="ISR" ng-if="myCountry !=='IN'">Israel</option>
+                                                    <option value="ITA" ng-if="myCountry !=='IN'">Italy</option>
+                                                    <option value="JAM" ng-if="myCountry !=='IN'">Jamaica</option>
+                                                    <option value="JPN" ng-if="myCountry !=='IN'">Japan</option>
+                                                    <option value="JEY" ng-if="myCountry !=='IN'">Jersey</option>
+                                                    <option value="JOR" ng-if="myCountry !=='IN'">Jordan</option>
+                                                    <option value="KAZ" ng-if="myCountry !=='IN'">Kazakhstan</option>
+                                                    <option value="KEN" ng-if="myCountry !=='IN'">Kenya</option>
+                                                    <option value="KIR" ng-if="myCountry !=='IN'">Kiribati</option>
+                                                    <option value="PRK" ng-if="myCountry !=='IN'">Korea, Democratic People's Republic of</option>
+                                                    <option value="KOR" ng-if="myCountry !=='IN'">Korea, Republic of</option>
+                                                    <option value="KWT" ng-if="myCountry !=='IN'">Kuwait</option>
+                                                    <option value="KGZ" ng-if="myCountry !=='IN'">Kyrgyzstan</option>
+                                                    <option value="LAO" ng-if="myCountry !=='IN'">Lao People's Democratic Republic</option>
+                                                    <option value="LVA" ng-if="myCountry !=='IN'">Latvia</option>
+                                                    <option value="LBN" ng-if="myCountry !=='IN'">Lebanon</option>
+                                                    <option value="LSO" ng-if="myCountry !=='IN'">Lesotho</option>
+                                                    <option value="LBR" ng-if="myCountry !=='IN'">Liberia</option>
+                                                    <option value="LBY" ng-if="myCountry !=='IN'">Libya</option>
+                                                    <option value="LIE" ng-if="myCountry !=='IN'">Liechtenstein</option>
+                                                    <option value="LTU" ng-if="myCountry !=='IN'">Lithuania</option>
+                                                    <option value="LUX" ng-if="myCountry !=='IN'">Luxembourg</option>
+                                                    <option value="MAC" ng-if="myCountry !=='IN'">Macao</option>
+                                                    <option value="MKD" ng-if="myCountry !=='IN'">Macedonia, the former Yugoslav Republic of</option>
+                                                    <option value="MDG" ng-if="myCountry !=='IN'">Madagascar</option>
+                                                    <option value="MWI" ng-if="myCountry !=='IN'">Malawi</option>
+                                                    <option value="MYS" ng-if="myCountry !=='IN'">Malaysia</option>
+                                                    <option value="MDV" ng-if="myCountry !=='IN'">Maldives</option>
+                                                    <option value="MLI" ng-if="myCountry !=='IN'">Mali</option>
+                                                    <option value="MLT" ng-if="myCountry !=='IN'">Malta</option>
+                                                    <option value="MHL" ng-if="myCountry !=='IN'">Marshall Islands</option>
+                                                    <option value="MTQ" ng-if="myCountry !=='IN'">Martinique</option>
+                                                    <option value="MRT" ng-if="myCountry !=='IN'">Mauritania</option>
+                                                    <option value="MUS" ng-if="myCountry !=='IN'">Mauritius</option>
+                                                    <option value="MYT" ng-if="myCountry !=='IN'">Mayotte</option>
+                                                    <option value="MEX" ng-if="myCountry !=='IN'">Mexico</option>
+                                                    <option value="FSM" ng-if="myCountry !=='IN'">Micronesia, Federated States of</option>
+                                                    <option value="MDA" ng-if="myCountry !=='IN'">Moldova, Republic of</option>
+                                                    <option value="MCO" ng-if="myCountry !=='IN'">Monaco</option>
+                                                    <option value="MNG" ng-if="myCountry !=='IN'">Mongolia</option>
+                                                    <option value="MNE" ng-if="myCountry !=='IN'">Montenegro</option>
+                                                    <option value="MSR" ng-if="myCountry !=='IN'">Montserrat</option>
+                                                    <option value="MAR" ng-if="myCountry !=='IN'">Morocco</option>
+                                                    <option value="MOZ" ng-if="myCountry !=='IN'">Mozambique</option>
+                                                    <option value="MMR" ng-if="myCountry !=='IN'">Myanmar</option>
+                                                    <option value="NAM" ng-if="myCountry !=='IN'">Namibia</option>
+                                                    <option value="NRU" ng-if="myCountry !=='IN'">Nauru</option>
+                                                    <option value="NPL" ng-if="myCountry !=='IN'">Nepal</option>
+                                                    <option value="NLD" ng-if="myCountry !=='IN'">Netherlands</option>
+                                                    <option value="NCL" ng-if="myCountry !=='IN'">New Caledonia</option>
+                                                    <option value="NZL" ng-if="myCountry !=='IN'">New Zealand</option>
+                                                    <option value="NIC" ng-if="myCountry !=='IN'">Nicaragua</option>
+                                                    <option value="NER" ng-if="myCountry !=='IN'">Niger</option>
+                                                    <option value="NGA" ng-if="myCountry !=='IN'">Nigeria</option>
+                                                    <option value="NIU" ng-if="myCountry !=='IN'">Niue</option>
+                                                    <option value="NFK" ng-if="myCountry !=='IN'">Norfolk Island</option>
+                                                    <option value="MNP" ng-if="myCountry !=='IN'">Northern Mariana Islands</option>
+                                                    <option value="NOR" ng-if="myCountry !=='IN'">Norway</option>
+                                                    <option value="OMN" ng-if="myCountry !=='IN'">Oman</option>
+                                                    <option value="PAK" ng-if="myCountry !=='IN'">Pakistan</option>
+                                                    <option value="PLW" ng-if="myCountry !=='IN'">Palau</option>
+                                                    <option value="PSE" ng-if="myCountry !=='IN'">Palestinian Territory, Occupied</option>
+                                                    <option value="PAN" ng-if="myCountry !=='IN'">Panama</option>
+                                                    <option value="PNG" ng-if="myCountry !=='IN'">Papua New Guinea</option>
+                                                    <option value="PRY" ng-if="myCountry !=='IN'">Paraguay</option>
+                                                    <option value="PER" ng-if="myCountry !=='IN'">Peru</option>
+                                                    <option value="PHL" ng-if="myCountry !=='IN'">Philippines</option>
+                                                    <option value="PCN" ng-if="myCountry !=='IN'">Pitcairn</option>
+                                                    <option value="POL" ng-if="myCountry !=='IN'">Poland</option>
+                                                    <option value="PRT" ng-if="myCountry !=='IN'">Portugal</option>
+                                                    <option value="PRI" ng-if="myCountry !=='IN'">Puerto Rico</option>
+                                                    <option value="QAT" ng-if="myCountry !=='IN'">Qatar</option>
+                                                    <option value="REU" ng-if="myCountry !=='IN'">Réunion</option>
+                                                    <option value="ROU" ng-if="myCountry !=='IN'">Romania</option>
+                                                    <option value="RUS" ng-if="myCountry !=='IN'">Russian Federation</option>
+                                                    <option value="RWA" ng-if="myCountry !=='IN'">Rwanda</option>
+                                                    <option value="BLM" ng-if="myCountry !=='IN'">Saint Barthélemy</option>
+                                                    <option value="SHN" ng-if="myCountry !=='IN'">Saint Helena, Ascension and Tristan da Cunha</option>
+                                                    <option value="KNA" ng-if="myCountry !=='IN'">Saint Kitts and Nevis</option>
+                                                    <option value="LCA" ng-if="myCountry !=='IN'">Saint Lucia</option>
+                                                    <option value="MAF" ng-if="myCountry !=='IN'">Saint Martin (French part)</option>
+                                                    <option value="SPM" ng-if="myCountry !=='IN'">Saint Pierre and Miquelon</option>
+                                                    <option value="VCT" ng-if="myCountry !=='IN'">Saint Vincent and the Grenadines</option>
+                                                    <option value="WSM" ng-if="myCountry !=='IN'">Samoa</option>
+                                                    <option value="SMR" ng-if="myCountry !=='IN'">San Marino</option>
+                                                    <option value="STP" ng-if="myCountry !=='IN'">Sao Tome and Principe</option>
+                                                    <option value="SAU" ng-if="myCountry !=='IN'">Saudi Arabia</option>
+                                                    <option value="SEN" ng-if="myCountry !=='IN'">Senegal</option>
+                                                    <option value="SRB" ng-if="myCountry !=='IN'">Serbia</option>
+                                                    <option value="SYC" ng-if="myCountry !=='IN'">Seychelles</option>
+                                                    <option value="SLE" ng-if="myCountry !=='IN'">Sierra Leone</option>
+                                                    <option value="SGP" ng-if="myCountry !=='IN'">Singapore</option>
+                                                    <option value="SXM" ng-if="myCountry !=='IN'">Sint Maarten (Dutch part)</option>
+                                                    <option value="SVK" ng-if="myCountry !=='IN'">Slovakia</option>
+                                                    <option value="SVN" ng-if="myCountry !=='IN'">Slovenia</option>
+                                                    <option value="SLB" ng-if="myCountry !=='IN'">Solomon Islands</option>
+                                                    <option value="SOM" ng-if="myCountry !=='IN'">Somalia</option>
+                                                    <option value="ZAF" ng-if="myCountry !=='IN'">South Africa</option>
+                                                    <option value="SGS" ng-if="myCountry !=='IN'">South Georgia and the South Sandwich Islands</option>
+                                                    <option value="SSD" ng-if="myCountry !=='IN'">South Sudan</option>
+                                                    <option value="ESP" ng-if="myCountry !=='IN'">Spain</option>
+                                                    <option value="LKA" ng-if="myCountry !=='IN'">Sri Lanka</option>
+                                                    <option value="SDN" ng-if="myCountry !=='IN'">Sudan</option>
+                                                    <option value="SUR" ng-if="myCountry !=='IN'">Suriname</option>
+                                                    <option value="SJM" ng-if="myCountry !=='IN'">Svalbard and Jan Mayen</option>
+                                                    <option value="SWZ" ng-if="myCountry !=='IN'">Swaziland</option>
+                                                    <option value="SWE" ng-if="myCountry !=='IN'">Sweden</option>
+                                                    <option value="CHE" ng-if="myCountry !=='IN'">Switzerland</option>
+                                                    <option value="SYR" ng-if="myCountry !=='IN'">Syrian Arab Republic</option>
+                                                    <option value="TWN" ng-if="myCountry !=='IN'">Taiwan, Province of China</option>
+                                                    <option value="TJK" ng-if="myCountry !=='IN'">Tajikistan</option>
+                                                    <option value="TZA" ng-if="myCountry !=='IN'">Tanzania, United Republic of</option>
+                                                    <option value="THA" ng-if="myCountry !=='IN'">Thailand</option>
+                                                    <option value="TLS" ng-if="myCountry !=='IN'">Timor-Leste</option>
+                                                    <option value="TGO" ng-if="myCountry !=='IN'">Togo</option>
+                                                    <option value="TKL" ng-if="myCountry !=='IN'">Tokelau</option>
+                                                    <option value="TON" ng-if="myCountry !=='IN'">Tonga</option>
+                                                    <option value="TTO" ng-if="myCountry !=='IN'">Trinidad and Tobago</option>
+                                                    <option value="TUN" ng-if="myCountry !=='IN'">Tunisia</option>
+                                                    <option value="TUR" ng-if="myCountry !=='IN'">Turkey</option>
+                                                    <option value="TKM" ng-if="myCountry !=='IN'">Turkmenistan</option>
+                                                    <option value="TCA" ng-if="myCountry !=='IN'">Turks and Caicos Islands</option>
+                                                    <option value="TUV" ng-if="myCountry !=='IN'">Tuvalu</option>
+                                                    <option value="UGA" ng-if="myCountry !=='IN'">Uganda</option>
+                                                    <option value="UKR" ng-if="myCountry !=='IN'">Ukraine</option>
+                                                    <option value="ARE" ng-if="myCountry !=='IN'">United Arab Emirates</option>
+                                                    <option value="GBR" ng-if="myCountry !=='IN'">United Kingdom</option>
+                                                    <option value="USA" ng-if="myCountry !=='IN'">United States</option>
+                                                    <option value="UMI" ng-if="myCountry !=='IN'">United States Minor Outlying Islands</option>
+                                                    <option value="URY" ng-if="myCountry !=='IN'">Uruguay</option>
+                                                    <option value="UZB" ng-if="myCountry !=='IN'">Uzbekistan</option>
+                                                    <option value="VUT" ng-if="myCountry !=='IN'">Vanuatu</option>
+                                                    <option value="VEN" ng-if="myCountry !=='IN'">Venezuela, Bolivarian Republic of</option>
+                                                    <option value="VNM" ng-if="myCountry !=='IN'">Viet Nam</option>
+                                                    <option value="VGB" ng-if="myCountry !=='IN'">Virgin Islands, British</option>
+                                                    <option value="VIR" ng-if="myCountry !=='IN'">Virgin Islands, U.S.</option>
+                                                    <option value="WLF" ng-if="myCountry !=='IN'">Wallis and Futuna</option>
+                                                    <option value="ESH" ng-if="myCountry !=='IN'">Western Sahara</option>
+                                                    <option value="YEM" ng-if="myCountry !=='IN'">Yemen</option>
+                                                    <option value="ZMB" ng-if="myCountry !=='IN'">Zambia</option>
+                                                    <option value="ZWE" ng-if="myCountry !=='IN'">Zimbabwe</option>
                                                 </select>
                                                 <span></span>
                                             </div>
@@ -508,255 +508,255 @@
                                             <div class="custom-select">
                                                 <select class="form-control" name="shippingcountry" ng-model="checkout.shippingcountry" required id="">
                                                     <option value="" class="ng-binding ng-scope">Please Select</option>
-                                                    <option value="AFG"  ng-if="myCountry !=='IN'">Afghanistan</option>
-                                                    <option value="ALA"  ng-if="myCountry !=='IN'">Åland Islands</option>
-                                                    <option value="ALB"  ng-if="myCountry !=='IN'">Albania</option>
-                                                    <option value="DZA"  ng-if="myCountry !=='IN'">Algeria</option>
-                                                    <option value="ASM"  ng-if="myCountry !=='IN'">American Samoa</option>
-                                                    <option value="AND"  ng-if="myCountry !=='IN'">Andorra</option>
-                                                    <option value="AGO"  ng-if="myCountry !=='IN'">Angola</option>
-                                                    <option value="AIA"  ng-if="myCountry !=='IN'">Anguilla</option>
-                                                    <option value="ATA"  ng-if="myCountry !=='IN'">Antarctica</option>
-                                                    <option value="ATG"  ng-if="myCountry !=='IN'">Antigua and Barbuda</option>
-                                                    <option value="ARG"  ng-if="myCountry !=='IN'">Argentina</option>
-                                                    <option value="ARM"  ng-if="myCountry !=='IN'">Armenia</option>
-                                                    <option value="ABW"  ng-if="myCountry !=='IN'">Aruba</option>
-                                                    <option value="AUS"  ng-if="myCountry !=='IN'">Australia</option>
-                                                    <option value="AUT"  ng-if="myCountry !=='IN'">Austria</option>
-                                                    <option value="AZE"  ng-if="myCountry !=='IN'">Azerbaijan</option>
-                                                    <option value="BHS"  ng-if="myCountry !=='IN'">Bahamas</option>
-                                                    <option value="BHR"  ng-if="myCountry !=='IN'">Bahrain</option>
-                                                    <option value="BGD"  ng-if="myCountry !=='IN'">Bangladesh</option>
-                                                    <option value="BRB"  ng-if="myCountry !=='IN'">Barbados</option>
-                                                    <option value="BLR"  ng-if="myCountry !=='IN'">Belarus</option>
-                                                    <option value="BEL"  ng-if="myCountry !=='IN'">Belgium</option>
-                                                    <option value="BLZ"  ng-if="myCountry !=='IN'">Belize</option>
-                                                    <option value="BEN"  ng-if="myCountry !=='IN'">Benin</option>
-                                                    <option value="BMU"  ng-if="myCountry !=='IN'">Bermuda</option>
-                                                    <option value="BTN"  ng-if="myCountry !=='IN'">Bhutan</option>
-                                                    <option value="BOL"  ng-if="myCountry !=='IN'">Bolivia, Plurinational State of</option>
-                                                    <option value="BES"  ng-if="myCountry !=='IN'">Bonaire, Sint Eustatius and Saba</option>
-                                                    <option value="BIH"  ng-if="myCountry !=='IN'">Bosnia and Herzegovina</option>
-                                                    <option value="BWA"  ng-if="myCountry !=='IN'">Botswana</option>
-                                                    <option value="BVT"  ng-if="myCountry !=='IN'">Bouvet Island</option>
-                                                    <option value="BRA"  ng-if="myCountry !=='IN'">Brazil</option>
-                                                    <option value="IOT"  ng-if="myCountry !=='IN'">British Indian Ocean Territory</option>
-                                                    <option value="BRN"  ng-if="myCountry !=='IN'">Brunei Darussalam</option>
-                                                    <option value="BGR"  ng-if="myCountry !=='IN'">Bulgaria</option>
-                                                    <option value="BFA"  ng-if="myCountry !=='IN'">Burkina Faso</option>
-                                                    <option value="BDI"  ng-if="myCountry !=='IN'">Burundi</option>
-                                                    <option value="KHM"  ng-if="myCountry !=='IN'">Cambodia</option>
-                                                    <option value="CMR"  ng-if="myCountry !=='IN'">Cameroon</option>
-                                                    <option value="CAN"  ng-if="myCountry !=='IN'">Canada</option>
-                                                    <option value="CPV"  ng-if="myCountry !=='IN'">Cape Verde</option>
-                                                    <option value="CYM"  ng-if="myCountry !=='IN'">Cayman Islands</option>
-                                                    <option value="CAF"  ng-if="myCountry !=='IN'">Central African Republic</option>
-                                                    <option value="TCD"  ng-if="myCountry !=='IN'">Chad</option>
-                                                    <option value="CHL"  ng-if="myCountry !=='IN'">Chile</option>
-                                                    <option value="CHN"  ng-if="myCountry !=='IN'">China</option>
-                                                    <option value="CXR"  ng-if="myCountry !=='IN'">Christmas Island</option>
-                                                    <option value="CCK"  ng-if="myCountry !=='IN'">Cocos (Keeling) Islands</option>
-                                                    <option value="COL"  ng-if="myCountry !=='IN'">Colombia</option>
-                                                    <option value="COM"  ng-if="myCountry !=='IN'">Comoros</option>
-                                                    <option value="COG"  ng-if="myCountry !=='IN'">Congo</option>
-                                                    <option value="COD"  ng-if="myCountry !=='IN'">Congo, the Democratic Republic of the</option>
-                                                    <option value="COK"  ng-if="myCountry !=='IN'">Cook Islands</option>
-                                                    <option value="CRI"  ng-if="myCountry !=='IN'">Costa Rica</option>
-                                                    <option value="CIV"  ng-if="myCountry !=='IN'">Côte d'Ivoire</option>
-                                                    <option value="HRV"  ng-if="myCountry !=='IN'">Croatia</option>
-                                                    <option value="CUB"  ng-if="myCountry !=='IN'">Cuba</option>
-                                                    <option value="CUW"  ng-if="myCountry !=='IN'">Curaçao</option>
-                                                    <option value="CYP"  ng-if="myCountry !=='IN'">Cyprus</option>
-                                                    <option value="CZE"  ng-if="myCountry !=='IN'">Czech Republic</option>
-                                                    <option value="DNK"  ng-if="myCountry !=='IN'">Denmark</option>
-                                                    <option value="DJI"  ng-if="myCountry !=='IN'">Djibouti</option>
-                                                    <option value="DMA"  ng-if="myCountry !=='IN'">Dominica</option>
-                                                    <option value="DOM"  ng-if="myCountry !=='IN'">Dominican Republic</option>
-                                                    <option value="ECU"  ng-if="myCountry !=='IN'">Ecuador</option>
-                                                    <option value="EGY"  ng-if="myCountry !=='IN'">Egypt</option>
-                                                    <option value="SLV"  ng-if="myCountry !=='IN'">El Salvador</option>
-                                                    <option value="GNQ"  ng-if="myCountry !=='IN'">Equatorial Guinea</option>
-                                                    <option value="ERI"  ng-if="myCountry !=='IN'">Eritrea</option>
-                                                    <option value="EST"  ng-if="myCountry !=='IN'">Estonia</option>
-                                                    <option value="ETH"  ng-if="myCountry !=='IN'">Ethiopia</option>
-                                                    <option value="FLK"  ng-if="myCountry !=='IN'">Falkland Islands (Malvinas)</option>
-                                                    <option value="FRO"  ng-if="myCountry !=='IN'">Faroe Islands</option>
-                                                    <option value="FJI"  ng-if="myCountry !=='IN'">Fiji</option>
-                                                    <option value="FIN"  ng-if="myCountry !=='IN'">Finland</option>
-                                                    <option value="FRA"  ng-if="myCountry !=='IN'">France</option>
-                                                    <option value="GUF"  ng-if="myCountry !=='IN'">French Guiana</option>
-                                                    <option value="PYF"  ng-if="myCountry !=='IN'">French Polynesia</option>
-                                                    <option value="ATF"  ng-if="myCountry !=='IN'">French Southern Territories</option>
-                                                    <option value="GAB"  ng-if="myCountry !=='IN'">Gabon</option>
-                                                    <option value="GMB"  ng-if="myCountry !=='IN'">Gambia</option>
-                                                    <option value="GEO"  ng-if="myCountry !=='IN'">Georgia</option>
-                                                    <option value="DEU"  ng-if="myCountry !=='IN'">Germany</option>
-                                                    <option value="GHA"  ng-if="myCountry !=='IN'">Ghana</option>
-                                                    <option value="GIB"  ng-if="myCountry !=='IN'">Gibraltar</option>
-                                                    <option value="GRC"  ng-if="myCountry !=='IN'">Greece</option>
-                                                    <option value="GRL"  ng-if="myCountry !=='IN'">Greenland</option>
-                                                    <option value="GRD"  ng-if="myCountry !=='IN'">Grenada</option>
-                                                    <option value="GLP"  ng-if="myCountry !=='IN'">Guadeloupe</option>
-                                                    <option value="GUM"  ng-if="myCountry !=='IN'">Guam</option>
-                                                    <option value="GTM"  ng-if="myCountry !=='IN'">Guatemala</option>
-                                                    <option value="GGY"  ng-if="myCountry !=='IN'">Guernsey</option>
-                                                    <option value="GIN"  ng-if="myCountry !=='IN'">Guinea</option>
-                                                    <option value="GNB"  ng-if="myCountry !=='IN'">Guinea-Bissau</option>
-                                                    <option value="GUY"  ng-if="myCountry !=='IN'">Guyana</option>
-                                                    <option value="HTI"  ng-if="myCountry !=='IN'">Haiti</option>
-                                                    <option value="HMD"  ng-if="myCountry !=='IN'">Heard Island and McDonald Islands</option>
-                                                    <option value="VAT"  ng-if="myCountry !=='IN'">Holy See (Vatican City State)</option>
-                                                    <option value="HND"  ng-if="myCountry !=='IN'">Honduras</option>
-                                                    <option value="HKG"  ng-if="myCountry !=='IN'">Hong Kong</option>
-                                                    <option value="HUN"  ng-if="myCountry !=='IN'">Hungary</option>
-                                                    <option value="ISL"  ng-if="myCountry !=='IN'">Iceland</option>
+                                                    <option value="AFG" ng-if="myCountry !=='IN'">Afghanistan</option>
+                                                    <option value="ALA" ng-if="myCountry !=='IN'">Åland Islands</option>
+                                                    <option value="ALB" ng-if="myCountry !=='IN'">Albania</option>
+                                                    <option value="DZA" ng-if="myCountry !=='IN'">Algeria</option>
+                                                    <option value="ASM" ng-if="myCountry !=='IN'">American Samoa</option>
+                                                    <option value="AND" ng-if="myCountry !=='IN'">Andorra</option>
+                                                    <option value="AGO" ng-if="myCountry !=='IN'">Angola</option>
+                                                    <option value="AIA" ng-if="myCountry !=='IN'">Anguilla</option>
+                                                    <option value="ATA" ng-if="myCountry !=='IN'">Antarctica</option>
+                                                    <option value="ATG" ng-if="myCountry !=='IN'">Antigua and Barbuda</option>
+                                                    <option value="ARG" ng-if="myCountry !=='IN'">Argentina</option>
+                                                    <option value="ARM" ng-if="myCountry !=='IN'">Armenia</option>
+                                                    <option value="ABW" ng-if="myCountry !=='IN'">Aruba</option>
+                                                    <option value="AUS" ng-if="myCountry !=='IN'">Australia</option>
+                                                    <option value="AUT" ng-if="myCountry !=='IN'">Austria</option>
+                                                    <option value="AZE" ng-if="myCountry !=='IN'">Azerbaijan</option>
+                                                    <option value="BHS" ng-if="myCountry !=='IN'">Bahamas</option>
+                                                    <option value="BHR" ng-if="myCountry !=='IN'">Bahrain</option>
+                                                    <option value="BGD" ng-if="myCountry !=='IN'">Bangladesh</option>
+                                                    <option value="BRB" ng-if="myCountry !=='IN'">Barbados</option>
+                                                    <option value="BLR" ng-if="myCountry !=='IN'">Belarus</option>
+                                                    <option value="BEL" ng-if="myCountry !=='IN'">Belgium</option>
+                                                    <option value="BLZ" ng-if="myCountry !=='IN'">Belize</option>
+                                                    <option value="BEN" ng-if="myCountry !=='IN'">Benin</option>
+                                                    <option value="BMU" ng-if="myCountry !=='IN'">Bermuda</option>
+                                                    <option value="BTN" ng-if="myCountry !=='IN'">Bhutan</option>
+                                                    <option value="BOL" ng-if="myCountry !=='IN'">Bolivia, Plurinational State of</option>
+                                                    <option value="BES" ng-if="myCountry !=='IN'">Bonaire, Sint Eustatius and Saba</option>
+                                                    <option value="BIH" ng-if="myCountry !=='IN'">Bosnia and Herzegovina</option>
+                                                    <option value="BWA" ng-if="myCountry !=='IN'">Botswana</option>
+                                                    <option value="BVT" ng-if="myCountry !=='IN'">Bouvet Island</option>
+                                                    <option value="BRA" ng-if="myCountry !=='IN'">Brazil</option>
+                                                    <option value="IOT" ng-if="myCountry !=='IN'">British Indian Ocean Territory</option>
+                                                    <option value="BRN" ng-if="myCountry !=='IN'">Brunei Darussalam</option>
+                                                    <option value="BGR" ng-if="myCountry !=='IN'">Bulgaria</option>
+                                                    <option value="BFA" ng-if="myCountry !=='IN'">Burkina Faso</option>
+                                                    <option value="BDI" ng-if="myCountry !=='IN'">Burundi</option>
+                                                    <option value="KHM" ng-if="myCountry !=='IN'">Cambodia</option>
+                                                    <option value="CMR" ng-if="myCountry !=='IN'">Cameroon</option>
+                                                    <option value="CAN" ng-if="myCountry !=='IN'">Canada</option>
+                                                    <option value="CPV" ng-if="myCountry !=='IN'">Cape Verde</option>
+                                                    <option value="CYM" ng-if="myCountry !=='IN'">Cayman Islands</option>
+                                                    <option value="CAF" ng-if="myCountry !=='IN'">Central African Republic</option>
+                                                    <option value="TCD" ng-if="myCountry !=='IN'">Chad</option>
+                                                    <option value="CHL" ng-if="myCountry !=='IN'">Chile</option>
+                                                    <option value="CHN" ng-if="myCountry !=='IN'">China</option>
+                                                    <option value="CXR" ng-if="myCountry !=='IN'">Christmas Island</option>
+                                                    <option value="CCK" ng-if="myCountry !=='IN'">Cocos (Keeling) Islands</option>
+                                                    <option value="COL" ng-if="myCountry !=='IN'">Colombia</option>
+                                                    <option value="COM" ng-if="myCountry !=='IN'">Comoros</option>
+                                                    <option value="COG" ng-if="myCountry !=='IN'">Congo</option>
+                                                    <option value="COD" ng-if="myCountry !=='IN'">Congo, the Democratic Republic of the</option>
+                                                    <option value="COK" ng-if="myCountry !=='IN'">Cook Islands</option>
+                                                    <option value="CRI" ng-if="myCountry !=='IN'">Costa Rica</option>
+                                                    <option value="CIV" ng-if="myCountry !=='IN'">Côte d'Ivoire</option>
+                                                    <option value="HRV" ng-if="myCountry !=='IN'">Croatia</option>
+                                                    <option value="CUB" ng-if="myCountry !=='IN'">Cuba</option>
+                                                    <option value="CUW" ng-if="myCountry !=='IN'">Curaçao</option>
+                                                    <option value="CYP" ng-if="myCountry !=='IN'">Cyprus</option>
+                                                    <option value="CZE" ng-if="myCountry !=='IN'">Czech Republic</option>
+                                                    <option value="DNK" ng-if="myCountry !=='IN'">Denmark</option>
+                                                    <option value="DJI" ng-if="myCountry !=='IN'">Djibouti</option>
+                                                    <option value="DMA" ng-if="myCountry !=='IN'">Dominica</option>
+                                                    <option value="DOM" ng-if="myCountry !=='IN'">Dominican Republic</option>
+                                                    <option value="ECU" ng-if="myCountry !=='IN'">Ecuador</option>
+                                                    <option value="EGY" ng-if="myCountry !=='IN'">Egypt</option>
+                                                    <option value="SLV" ng-if="myCountry !=='IN'">El Salvador</option>
+                                                    <option value="GNQ" ng-if="myCountry !=='IN'">Equatorial Guinea</option>
+                                                    <option value="ERI" ng-if="myCountry !=='IN'">Eritrea</option>
+                                                    <option value="EST" ng-if="myCountry !=='IN'">Estonia</option>
+                                                    <option value="ETH" ng-if="myCountry !=='IN'">Ethiopia</option>
+                                                    <option value="FLK" ng-if="myCountry !=='IN'">Falkland Islands (Malvinas)</option>
+                                                    <option value="FRO" ng-if="myCountry !=='IN'">Faroe Islands</option>
+                                                    <option value="FJI" ng-if="myCountry !=='IN'">Fiji</option>
+                                                    <option value="FIN" ng-if="myCountry !=='IN'">Finland</option>
+                                                    <option value="FRA" ng-if="myCountry !=='IN'">France</option>
+                                                    <option value="GUF" ng-if="myCountry !=='IN'">French Guiana</option>
+                                                    <option value="PYF" ng-if="myCountry !=='IN'">French Polynesia</option>
+                                                    <option value="ATF" ng-if="myCountry !=='IN'">French Southern Territories</option>
+                                                    <option value="GAB" ng-if="myCountry !=='IN'">Gabon</option>
+                                                    <option value="GMB" ng-if="myCountry !=='IN'">Gambia</option>
+                                                    <option value="GEO" ng-if="myCountry !=='IN'">Georgia</option>
+                                                    <option value="DEU" ng-if="myCountry !=='IN'">Germany</option>
+                                                    <option value="GHA" ng-if="myCountry !=='IN'">Ghana</option>
+                                                    <option value="GIB" ng-if="myCountry !=='IN'">Gibraltar</option>
+                                                    <option value="GRC" ng-if="myCountry !=='IN'">Greece</option>
+                                                    <option value="GRL" ng-if="myCountry !=='IN'">Greenland</option>
+                                                    <option value="GRD" ng-if="myCountry !=='IN'">Grenada</option>
+                                                    <option value="GLP" ng-if="myCountry !=='IN'">Guadeloupe</option>
+                                                    <option value="GUM" ng-if="myCountry !=='IN'">Guam</option>
+                                                    <option value="GTM" ng-if="myCountry !=='IN'">Guatemala</option>
+                                                    <option value="GGY" ng-if="myCountry !=='IN'">Guernsey</option>
+                                                    <option value="GIN" ng-if="myCountry !=='IN'">Guinea</option>
+                                                    <option value="GNB" ng-if="myCountry !=='IN'">Guinea-Bissau</option>
+                                                    <option value="GUY" ng-if="myCountry !=='IN'">Guyana</option>
+                                                    <option value="HTI" ng-if="myCountry !=='IN'">Haiti</option>
+                                                    <option value="HMD" ng-if="myCountry !=='IN'">Heard Island and McDonald Islands</option>
+                                                    <option value="VAT" ng-if="myCountry !=='IN'">Holy See (Vatican City State)</option>
+                                                    <option value="HND" ng-if="myCountry !=='IN'">Honduras</option>
+                                                    <option value="HKG" ng-if="myCountry !=='IN'">Hong Kong</option>
+                                                    <option value="HUN" ng-if="myCountry !=='IN'">Hungary</option>
+                                                    <option value="ISL" ng-if="myCountry !=='IN'">Iceland</option>
                                                     <option value="India" selected>India</option>
-                                                    <option value="IDN"  ng-if="myCountry !=='IN'">Indonesia</option>
-                                                    <option value="IRN"  ng-if="myCountry !=='IN'">Iran, Islamic Republic of</option>
-                                                    <option value="IRQ"  ng-if="myCountry !=='IN'">Iraq</option>
-                                                    <option value="IRL"  ng-if="myCountry !=='IN'">Ireland</option>
-                                                    <option value="IMN"  ng-if="myCountry !=='IN'">Isle of Man</option>
-                                                    <option value="ISR"  ng-if="myCountry !=='IN'">Israel</option>
-                                                    <option value="ITA"  ng-if="myCountry !=='IN'">Italy</option>
-                                                    <option value="JAM"  ng-if="myCountry !=='IN'">Jamaica</option>
-                                                    <option value="JPN"  ng-if="myCountry !=='IN'">Japan</option>
-                                                    <option value="JEY"  ng-if="myCountry !=='IN'">Jersey</option>
-                                                    <option value="JOR"  ng-if="myCountry !=='IN'">Jordan</option>
-                                                    <option value="KAZ"  ng-if="myCountry !=='IN'">Kazakhstan</option>
-                                                    <option value="KEN"  ng-if="myCountry !=='IN'">Kenya</option>
-                                                    <option value="KIR"  ng-if="myCountry !=='IN'">Kiribati</option>
-                                                    <option value="PRK"  ng-if="myCountry !=='IN'">Korea, Democratic People's Republic of</option>
-                                                    <option value="KOR"  ng-if="myCountry !=='IN'">Korea, Republic of</option>
-                                                    <option value="KWT"  ng-if="myCountry !=='IN'">Kuwait</option>
-                                                    <option value="KGZ"  ng-if="myCountry !=='IN'">Kyrgyzstan</option>
-                                                    <option value="LAO"  ng-if="myCountry !=='IN'">Lao People's Democratic Republic</option>
-                                                    <option value="LVA"  ng-if="myCountry !=='IN'">Latvia</option>
-                                                    <option value="LBN"  ng-if="myCountry !=='IN'">Lebanon</option>
-                                                    <option value="LSO"  ng-if="myCountry !=='IN'">Lesotho</option>
-                                                    <option value="LBR"  ng-if="myCountry !=='IN'">Liberia</option>
-                                                    <option value="LBY"  ng-if="myCountry !=='IN'">Libya</option>
-                                                    <option value="LIE"  ng-if="myCountry !=='IN'">Liechtenstein</option>
-                                                    <option value="LTU"  ng-if="myCountry !=='IN'">Lithuania</option>
-                                                    <option value="LUX"  ng-if="myCountry !=='IN'">Luxembourg</option>
-                                                    <option value="MAC"  ng-if="myCountry !=='IN'">Macao</option>
-                                                    <option value="MKD"  ng-if="myCountry !=='IN'">Macedonia, the former Yugoslav Republic of</option>
-                                                    <option value="MDG"  ng-if="myCountry !=='IN'">Madagascar</option>
-                                                    <option value="MWI"  ng-if="myCountry !=='IN'">Malawi</option>
-                                                    <option value="MYS"  ng-if="myCountry !=='IN'">Malaysia</option>
-                                                    <option value="MDV"  ng-if="myCountry !=='IN'">Maldives</option>
-                                                    <option value="MLI"  ng-if="myCountry !=='IN'">Mali</option>
-                                                    <option value="MLT"  ng-if="myCountry !=='IN'">Malta</option>
-                                                    <option value="MHL"  ng-if="myCountry !=='IN'">Marshall Islands</option>
-                                                    <option value="MTQ"  ng-if="myCountry !=='IN'">Martinique</option>
-                                                    <option value="MRT"  ng-if="myCountry !=='IN'">Mauritania</option>
-                                                    <option value="MUS"  ng-if="myCountry !=='IN'">Mauritius</option>
-                                                    <option value="MYT"  ng-if="myCountry !=='IN'">Mayotte</option>
-                                                    <option value="MEX"  ng-if="myCountry !=='IN'">Mexico</option>
-                                                    <option value="FSM"  ng-if="myCountry !=='IN'">Micronesia, Federated States of</option>
-                                                    <option value="MDA"  ng-if="myCountry !=='IN'">Moldova, Republic of</option>
-                                                    <option value="MCO"  ng-if="myCountry !=='IN'">Monaco</option>
-                                                    <option value="MNG"  ng-if="myCountry !=='IN'">Mongolia</option>
-                                                    <option value="MNE"  ng-if="myCountry !=='IN'">Montenegro</option>
-                                                    <option value="MSR"  ng-if="myCountry !=='IN'">Montserrat</option>
-                                                    <option value="MAR"  ng-if="myCountry !=='IN'">Morocco</option>
-                                                    <option value="MOZ"  ng-if="myCountry !=='IN'">Mozambique</option>
-                                                    <option value="MMR"  ng-if="myCountry !=='IN'">Myanmar</option>
-                                                    <option value="NAM"  ng-if="myCountry !=='IN'">Namibia</option>
-                                                    <option value="NRU"  ng-if="myCountry !=='IN'">Nauru</option>
-                                                    <option value="NPL"  ng-if="myCountry !=='IN'">Nepal</option>
-                                                    <option value="NLD"  ng-if="myCountry !=='IN'">Netherlands</option>
-                                                    <option value="NCL"  ng-if="myCountry !=='IN'">New Caledonia</option>
-                                                    <option value="NZL"  ng-if="myCountry !=='IN'">New Zealand</option>
-                                                    <option value="NIC"  ng-if="myCountry !=='IN'">Nicaragua</option>
-                                                    <option value="NER"  ng-if="myCountry !=='IN'">Niger</option>
-                                                    <option value="NGA"  ng-if="myCountry !=='IN'">Nigeria</option>
-                                                    <option value="NIU"  ng-if="myCountry !=='IN'">Niue</option>
-                                                    <option value="NFK"  ng-if="myCountry !=='IN'">Norfolk Island</option>
-                                                    <option value="MNP"  ng-if="myCountry !=='IN'">Northern Mariana Islands</option>
-                                                    <option value="NOR"  ng-if="myCountry !=='IN'">Norway</option>
-                                                    <option value="OMN"  ng-if="myCountry !=='IN'">Oman</option>
-                                                    <option value="PAK"  ng-if="myCountry !=='IN'">Pakistan</option>
-                                                    <option value="PLW"  ng-if="myCountry !=='IN'">Palau</option>
-                                                    <option value="PSE"  ng-if="myCountry !=='IN'">Palestinian Territory, Occupied</option>
-                                                    <option value="PAN"  ng-if="myCountry !=='IN'">Panama</option>
-                                                    <option value="PNG"  ng-if="myCountry !=='IN'">Papua New Guinea</option>
-                                                    <option value="PRY"  ng-if="myCountry !=='IN'">Paraguay</option>
-                                                    <option value="PER"  ng-if="myCountry !=='IN'">Peru</option>
-                                                    <option value="PHL"  ng-if="myCountry !=='IN'">Philippines</option>
-                                                    <option value="PCN"  ng-if="myCountry !=='IN'">Pitcairn</option>
-                                                    <option value="POL"  ng-if="myCountry !=='IN'">Poland</option>
-                                                    <option value="PRT"  ng-if="myCountry !=='IN'">Portugal</option>
-                                                    <option value="PRI"  ng-if="myCountry !=='IN'">Puerto Rico</option>
-                                                    <option value="QAT"  ng-if="myCountry !=='IN'">Qatar</option>
-                                                    <option value="REU"  ng-if="myCountry !=='IN'">Réunion</option>
-                                                    <option value="ROU"  ng-if="myCountry !=='IN'">Romania</option>
-                                                    <option value="RUS"  ng-if="myCountry !=='IN'">Russian Federation</option>
-                                                    <option value="RWA"  ng-if="myCountry !=='IN'">Rwanda</option>
-                                                    <option value="BLM"  ng-if="myCountry !=='IN'">Saint Barthélemy</option>
-                                                    <option value="SHN"  ng-if="myCountry !=='IN'">Saint Helena, Ascension and Tristan da Cunha</option>
-                                                    <option value="KNA"  ng-if="myCountry !=='IN'">Saint Kitts and Nevis</option>
-                                                    <option value="LCA"  ng-if="myCountry !=='IN'">Saint Lucia</option>
-                                                    <option value="MAF"  ng-if="myCountry !=='IN'">Saint Martin (French part)</option>
-                                                    <option value="SPM"  ng-if="myCountry !=='IN'">Saint Pierre and Miquelon</option>
-                                                    <option value="VCT"  ng-if="myCountry !=='IN'">Saint Vincent and the Grenadines</option>
-                                                    <option value="WSM"  ng-if="myCountry !=='IN'">Samoa</option>
-                                                    <option value="SMR"  ng-if="myCountry !=='IN'">San Marino</option>
-                                                    <option value="STP"  ng-if="myCountry !=='IN'">Sao Tome and Principe</option>
-                                                    <option value="SAU"  ng-if="myCountry !=='IN'">Saudi Arabia</option>
-                                                    <option value="SEN"  ng-if="myCountry !=='IN'">Senegal</option>
-                                                    <option value="SRB"  ng-if="myCountry !=='IN'">Serbia</option>
-                                                    <option value="SYC"  ng-if="myCountry !=='IN'">Seychelles</option>
-                                                    <option value="SLE"  ng-if="myCountry !=='IN'">Sierra Leone</option>
-                                                    <option value="SGP"  ng-if="myCountry !=='IN'">Singapore</option>
-                                                    <option value="SXM"  ng-if="myCountry !=='IN'">Sint Maarten (Dutch part)</option>
-                                                    <option value="SVK"  ng-if="myCountry !=='IN'">Slovakia</option>
-                                                    <option value="SVN"  ng-if="myCountry !=='IN'">Slovenia</option>
-                                                    <option value="SLB"  ng-if="myCountry !=='IN'">Solomon Islands</option>
-                                                    <option value="SOM"  ng-if="myCountry !=='IN'">Somalia</option>
-                                                    <option value="ZAF"  ng-if="myCountry !=='IN'">South Africa</option>
-                                                    <option value="SGS"  ng-if="myCountry !=='IN'">South Georgia and the South Sandwich Islands</option>
-                                                    <option value="SSD"  ng-if="myCountry !=='IN'">South Sudan</option>
-                                                    <option value="ESP"  ng-if="myCountry !=='IN'">Spain</option>
-                                                    <option value="LKA"  ng-if="myCountry !=='IN'">Sri Lanka</option>
-                                                    <option value="SDN"  ng-if="myCountry !=='IN'">Sudan</option>
-                                                    <option value="SUR"  ng-if="myCountry !=='IN'">Suriname</option>
-                                                    <option value="SJM"  ng-if="myCountry !=='IN'">Svalbard and Jan Mayen</option>
-                                                    <option value="SWZ"  ng-if="myCountry !=='IN'">Swaziland</option>
-                                                    <option value="SWE"  ng-if="myCountry !=='IN'">Sweden</option>
-                                                    <option value="CHE"  ng-if="myCountry !=='IN'">Switzerland</option>
-                                                    <option value="SYR"  ng-if="myCountry !=='IN'">Syrian Arab Republic</option>
-                                                    <option value="TWN"  ng-if="myCountry !=='IN'">Taiwan, Province of China</option>
-                                                    <option value="TJK"  ng-if="myCountry !=='IN'">Tajikistan</option>
-                                                    <option value="TZA"  ng-if="myCountry !=='IN'">Tanzania, United Republic of</option>
-                                                    <option value="THA"  ng-if="myCountry !=='IN'">Thailand</option>
-                                                    <option value="TLS"  ng-if="myCountry !=='IN'">Timor-Leste</option>
-                                                    <option value="TGO"  ng-if="myCountry !=='IN'">Togo</option>
-                                                    <option value="TKL"  ng-if="myCountry !=='IN'">Tokelau</option>
-                                                    <option value="TON"  ng-if="myCountry !=='IN'">Tonga</option>
-                                                    <option value="TTO"  ng-if="myCountry !=='IN'">Trinidad and Tobago</option>
-                                                    <option value="TUN"  ng-if="myCountry !=='IN'">Tunisia</option>
-                                                    <option value="TUR"  ng-if="myCountry !=='IN'">Turkey</option>
-                                                    <option value="TKM"  ng-if="myCountry !=='IN'">Turkmenistan</option>
-                                                    <option value="TCA"  ng-if="myCountry !=='IN'">Turks and Caicos Islands</option>
-                                                    <option value="TUV"  ng-if="myCountry !=='IN'">Tuvalu</option>
-                                                    <option value="UGA"  ng-if="myCountry !=='IN'">Uganda</option>
-                                                    <option value="UKR"  ng-if="myCountry !=='IN'">Ukraine</option>
-                                                    <option value="ARE"  ng-if="myCountry !=='IN'">United Arab Emirates</option>
-                                                    <option value="GBR"  ng-if="myCountry !=='IN'">United Kingdom</option>
-                                                    <option value="USA"  ng-if="myCountry !=='IN'">United States</option>
-                                                    <option value="UMI"  ng-if="myCountry !=='IN'">United States Minor Outlying Islands</option>
-                                                    <option value="URY"  ng-if="myCountry !=='IN'">Uruguay</option>
-                                                    <option value="UZB"  ng-if="myCountry !=='IN'">Uzbekistan</option>
-                                                    <option value="VUT"  ng-if="myCountry !=='IN'">Vanuatu</option>
-                                                    <option value="VEN"  ng-if="myCountry !=='IN'">Venezuela, Bolivarian Republic of</option>
-                                                    <option value="VNM"  ng-if="myCountry !=='IN'">Viet Nam</option>
-                                                    <option value="VGB"  ng-if="myCountry !=='IN'">Virgin Islands, British</option>
-                                                    <option value="VIR"  ng-if="myCountry !=='IN'">Virgin Islands, U.S.</option>
-                                                    <option value="WLF"  ng-if="myCountry !=='IN'">Wallis and Futuna</option>
-                                                    <option value="ESH"  ng-if="myCountry !=='IN'">Western Sahara</option>
-                                                    <option value="YEM"  ng-if="myCountry !=='IN'">Yemen</option>
-                                                    <option value="ZMB"  ng-if="myCountry !=='IN'">Zambia</option>
-                                                    <option value="ZWE"  ng-if="myCountry !=='IN'">Zimbabwe</option>
+                                                    <option value="IDN" ng-if="myCountry !=='IN'">Indonesia</option>
+                                                    <option value="IRN" ng-if="myCountry !=='IN'">Iran, Islamic Republic of</option>
+                                                    <option value="IRQ" ng-if="myCountry !=='IN'">Iraq</option>
+                                                    <option value="IRL" ng-if="myCountry !=='IN'">Ireland</option>
+                                                    <option value="IMN" ng-if="myCountry !=='IN'">Isle of Man</option>
+                                                    <option value="ISR" ng-if="myCountry !=='IN'">Israel</option>
+                                                    <option value="ITA" ng-if="myCountry !=='IN'">Italy</option>
+                                                    <option value="JAM" ng-if="myCountry !=='IN'">Jamaica</option>
+                                                    <option value="JPN" ng-if="myCountry !=='IN'">Japan</option>
+                                                    <option value="JEY" ng-if="myCountry !=='IN'">Jersey</option>
+                                                    <option value="JOR" ng-if="myCountry !=='IN'">Jordan</option>
+                                                    <option value="KAZ" ng-if="myCountry !=='IN'">Kazakhstan</option>
+                                                    <option value="KEN" ng-if="myCountry !=='IN'">Kenya</option>
+                                                    <option value="KIR" ng-if="myCountry !=='IN'">Kiribati</option>
+                                                    <option value="PRK" ng-if="myCountry !=='IN'">Korea, Democratic People's Republic of</option>
+                                                    <option value="KOR" ng-if="myCountry !=='IN'">Korea, Republic of</option>
+                                                    <option value="KWT" ng-if="myCountry !=='IN'">Kuwait</option>
+                                                    <option value="KGZ" ng-if="myCountry !=='IN'">Kyrgyzstan</option>
+                                                    <option value="LAO" ng-if="myCountry !=='IN'">Lao People's Democratic Republic</option>
+                                                    <option value="LVA" ng-if="myCountry !=='IN'">Latvia</option>
+                                                    <option value="LBN" ng-if="myCountry !=='IN'">Lebanon</option>
+                                                    <option value="LSO" ng-if="myCountry !=='IN'">Lesotho</option>
+                                                    <option value="LBR" ng-if="myCountry !=='IN'">Liberia</option>
+                                                    <option value="LBY" ng-if="myCountry !=='IN'">Libya</option>
+                                                    <option value="LIE" ng-if="myCountry !=='IN'">Liechtenstein</option>
+                                                    <option value="LTU" ng-if="myCountry !=='IN'">Lithuania</option>
+                                                    <option value="LUX" ng-if="myCountry !=='IN'">Luxembourg</option>
+                                                    <option value="MAC" ng-if="myCountry !=='IN'">Macao</option>
+                                                    <option value="MKD" ng-if="myCountry !=='IN'">Macedonia, the former Yugoslav Republic of</option>
+                                                    <option value="MDG" ng-if="myCountry !=='IN'">Madagascar</option>
+                                                    <option value="MWI" ng-if="myCountry !=='IN'">Malawi</option>
+                                                    <option value="MYS" ng-if="myCountry !=='IN'">Malaysia</option>
+                                                    <option value="MDV" ng-if="myCountry !=='IN'">Maldives</option>
+                                                    <option value="MLI" ng-if="myCountry !=='IN'">Mali</option>
+                                                    <option value="MLT" ng-if="myCountry !=='IN'">Malta</option>
+                                                    <option value="MHL" ng-if="myCountry !=='IN'">Marshall Islands</option>
+                                                    <option value="MTQ" ng-if="myCountry !=='IN'">Martinique</option>
+                                                    <option value="MRT" ng-if="myCountry !=='IN'">Mauritania</option>
+                                                    <option value="MUS" ng-if="myCountry !=='IN'">Mauritius</option>
+                                                    <option value="MYT" ng-if="myCountry !=='IN'">Mayotte</option>
+                                                    <option value="MEX" ng-if="myCountry !=='IN'">Mexico</option>
+                                                    <option value="FSM" ng-if="myCountry !=='IN'">Micronesia, Federated States of</option>
+                                                    <option value="MDA" ng-if="myCountry !=='IN'">Moldova, Republic of</option>
+                                                    <option value="MCO" ng-if="myCountry !=='IN'">Monaco</option>
+                                                    <option value="MNG" ng-if="myCountry !=='IN'">Mongolia</option>
+                                                    <option value="MNE" ng-if="myCountry !=='IN'">Montenegro</option>
+                                                    <option value="MSR" ng-if="myCountry !=='IN'">Montserrat</option>
+                                                    <option value="MAR" ng-if="myCountry !=='IN'">Morocco</option>
+                                                    <option value="MOZ" ng-if="myCountry !=='IN'">Mozambique</option>
+                                                    <option value="MMR" ng-if="myCountry !=='IN'">Myanmar</option>
+                                                    <option value="NAM" ng-if="myCountry !=='IN'">Namibia</option>
+                                                    <option value="NRU" ng-if="myCountry !=='IN'">Nauru</option>
+                                                    <option value="NPL" ng-if="myCountry !=='IN'">Nepal</option>
+                                                    <option value="NLD" ng-if="myCountry !=='IN'">Netherlands</option>
+                                                    <option value="NCL" ng-if="myCountry !=='IN'">New Caledonia</option>
+                                                    <option value="NZL" ng-if="myCountry !=='IN'">New Zealand</option>
+                                                    <option value="NIC" ng-if="myCountry !=='IN'">Nicaragua</option>
+                                                    <option value="NER" ng-if="myCountry !=='IN'">Niger</option>
+                                                    <option value="NGA" ng-if="myCountry !=='IN'">Nigeria</option>
+                                                    <option value="NIU" ng-if="myCountry !=='IN'">Niue</option>
+                                                    <option value="NFK" ng-if="myCountry !=='IN'">Norfolk Island</option>
+                                                    <option value="MNP" ng-if="myCountry !=='IN'">Northern Mariana Islands</option>
+                                                    <option value="NOR" ng-if="myCountry !=='IN'">Norway</option>
+                                                    <option value="OMN" ng-if="myCountry !=='IN'">Oman</option>
+                                                    <option value="PAK" ng-if="myCountry !=='IN'">Pakistan</option>
+                                                    <option value="PLW" ng-if="myCountry !=='IN'">Palau</option>
+                                                    <option value="PSE" ng-if="myCountry !=='IN'">Palestinian Territory, Occupied</option>
+                                                    <option value="PAN" ng-if="myCountry !=='IN'">Panama</option>
+                                                    <option value="PNG" ng-if="myCountry !=='IN'">Papua New Guinea</option>
+                                                    <option value="PRY" ng-if="myCountry !=='IN'">Paraguay</option>
+                                                    <option value="PER" ng-if="myCountry !=='IN'">Peru</option>
+                                                    <option value="PHL" ng-if="myCountry !=='IN'">Philippines</option>
+                                                    <option value="PCN" ng-if="myCountry !=='IN'">Pitcairn</option>
+                                                    <option value="POL" ng-if="myCountry !=='IN'">Poland</option>
+                                                    <option value="PRT" ng-if="myCountry !=='IN'">Portugal</option>
+                                                    <option value="PRI" ng-if="myCountry !=='IN'">Puerto Rico</option>
+                                                    <option value="QAT" ng-if="myCountry !=='IN'">Qatar</option>
+                                                    <option value="REU" ng-if="myCountry !=='IN'">Réunion</option>
+                                                    <option value="ROU" ng-if="myCountry !=='IN'">Romania</option>
+                                                    <option value="RUS" ng-if="myCountry !=='IN'">Russian Federation</option>
+                                                    <option value="RWA" ng-if="myCountry !=='IN'">Rwanda</option>
+                                                    <option value="BLM" ng-if="myCountry !=='IN'">Saint Barthélemy</option>
+                                                    <option value="SHN" ng-if="myCountry !=='IN'">Saint Helena, Ascension and Tristan da Cunha</option>
+                                                    <option value="KNA" ng-if="myCountry !=='IN'">Saint Kitts and Nevis</option>
+                                                    <option value="LCA" ng-if="myCountry !=='IN'">Saint Lucia</option>
+                                                    <option value="MAF" ng-if="myCountry !=='IN'">Saint Martin (French part)</option>
+                                                    <option value="SPM" ng-if="myCountry !=='IN'">Saint Pierre and Miquelon</option>
+                                                    <option value="VCT" ng-if="myCountry !=='IN'">Saint Vincent and the Grenadines</option>
+                                                    <option value="WSM" ng-if="myCountry !=='IN'">Samoa</option>
+                                                    <option value="SMR" ng-if="myCountry !=='IN'">San Marino</option>
+                                                    <option value="STP" ng-if="myCountry !=='IN'">Sao Tome and Principe</option>
+                                                    <option value="SAU" ng-if="myCountry !=='IN'">Saudi Arabia</option>
+                                                    <option value="SEN" ng-if="myCountry !=='IN'">Senegal</option>
+                                                    <option value="SRB" ng-if="myCountry !=='IN'">Serbia</option>
+                                                    <option value="SYC" ng-if="myCountry !=='IN'">Seychelles</option>
+                                                    <option value="SLE" ng-if="myCountry !=='IN'">Sierra Leone</option>
+                                                    <option value="SGP" ng-if="myCountry !=='IN'">Singapore</option>
+                                                    <option value="SXM" ng-if="myCountry !=='IN'">Sint Maarten (Dutch part)</option>
+                                                    <option value="SVK" ng-if="myCountry !=='IN'">Slovakia</option>
+                                                    <option value="SVN" ng-if="myCountry !=='IN'">Slovenia</option>
+                                                    <option value="SLB" ng-if="myCountry !=='IN'">Solomon Islands</option>
+                                                    <option value="SOM" ng-if="myCountry !=='IN'">Somalia</option>
+                                                    <option value="ZAF" ng-if="myCountry !=='IN'">South Africa</option>
+                                                    <option value="SGS" ng-if="myCountry !=='IN'">South Georgia and the South Sandwich Islands</option>
+                                                    <option value="SSD" ng-if="myCountry !=='IN'">South Sudan</option>
+                                                    <option value="ESP" ng-if="myCountry !=='IN'">Spain</option>
+                                                    <option value="LKA" ng-if="myCountry !=='IN'">Sri Lanka</option>
+                                                    <option value="SDN" ng-if="myCountry !=='IN'">Sudan</option>
+                                                    <option value="SUR" ng-if="myCountry !=='IN'">Suriname</option>
+                                                    <option value="SJM" ng-if="myCountry !=='IN'">Svalbard and Jan Mayen</option>
+                                                    <option value="SWZ" ng-if="myCountry !=='IN'">Swaziland</option>
+                                                    <option value="SWE" ng-if="myCountry !=='IN'">Sweden</option>
+                                                    <option value="CHE" ng-if="myCountry !=='IN'">Switzerland</option>
+                                                    <option value="SYR" ng-if="myCountry !=='IN'">Syrian Arab Republic</option>
+                                                    <option value="TWN" ng-if="myCountry !=='IN'">Taiwan, Province of China</option>
+                                                    <option value="TJK" ng-if="myCountry !=='IN'">Tajikistan</option>
+                                                    <option value="TZA" ng-if="myCountry !=='IN'">Tanzania, United Republic of</option>
+                                                    <option value="THA" ng-if="myCountry !=='IN'">Thailand</option>
+                                                    <option value="TLS" ng-if="myCountry !=='IN'">Timor-Leste</option>
+                                                    <option value="TGO" ng-if="myCountry !=='IN'">Togo</option>
+                                                    <option value="TKL" ng-if="myCountry !=='IN'">Tokelau</option>
+                                                    <option value="TON" ng-if="myCountry !=='IN'">Tonga</option>
+                                                    <option value="TTO" ng-if="myCountry !=='IN'">Trinidad and Tobago</option>
+                                                    <option value="TUN" ng-if="myCountry !=='IN'">Tunisia</option>
+                                                    <option value="TUR" ng-if="myCountry !=='IN'">Turkey</option>
+                                                    <option value="TKM" ng-if="myCountry !=='IN'">Turkmenistan</option>
+                                                    <option value="TCA" ng-if="myCountry !=='IN'">Turks and Caicos Islands</option>
+                                                    <option value="TUV" ng-if="myCountry !=='IN'">Tuvalu</option>
+                                                    <option value="UGA" ng-if="myCountry !=='IN'">Uganda</option>
+                                                    <option value="UKR" ng-if="myCountry !=='IN'">Ukraine</option>
+                                                    <option value="ARE" ng-if="myCountry !=='IN'">United Arab Emirates</option>
+                                                    <option value="GBR" ng-if="myCountry !=='IN'">United Kingdom</option>
+                                                    <option value="USA" ng-if="myCountry !=='IN'">United States</option>
+                                                    <option value="UMI" ng-if="myCountry !=='IN'">United States Minor Outlying Islands</option>
+                                                    <option value="URY" ng-if="myCountry !=='IN'">Uruguay</option>
+                                                    <option value="UZB" ng-if="myCountry !=='IN'">Uzbekistan</option>
+                                                    <option value="VUT" ng-if="myCountry !=='IN'">Vanuatu</option>
+                                                    <option value="VEN" ng-if="myCountry !=='IN'">Venezuela, Bolivarian Republic of</option>
+                                                    <option value="VNM" ng-if="myCountry !=='IN'">Viet Nam</option>
+                                                    <option value="VGB" ng-if="myCountry !=='IN'">Virgin Islands, British</option>
+                                                    <option value="VIR" ng-if="myCountry !=='IN'">Virgin Islands, U.S.</option>
+                                                    <option value="WLF" ng-if="myCountry !=='IN'">Wallis and Futuna</option>
+                                                    <option value="ESH" ng-if="myCountry !=='IN'">Western Sahara</option>
+                                                    <option value="YEM" ng-if="myCountry !=='IN'">Yemen</option>
+                                                    <option value="ZMB" ng-if="myCountry !=='IN'">Zambia</option>
+                                                    <option value="ZWE" ng-if="myCountry !=='IN'">Zimbabwe</option>
                                                 </select>
                                             </div>
                                             <div class="text-center" ng-show="shippingForm.shippingcountry.$invalid && shippingForm.shippingcountry.$touched" role="alert">
@@ -908,7 +908,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="text-right">
-                                                <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()" >Continue</a>
+                                                <a href="" class="btn btn-primary text-uppercase" ng-click="proceedToPayment()">Continue</a>
                                             </div>
                                         </div>
                                     </div>
@@ -936,7 +936,14 @@
                                             <tbody>
                                                 <tr ng-repeat="product in allcart | orderBy:'id'">
                                                     <td ng-if="product.status==3">
-                                                        <span class="block" ng-if="product.months == '1'">{{product.months}} month <span ng-if="product.plan==1">Silver Plan</span><span ng-if="product.plan==2">Gold Plan</span><span ng-if="product.plan==3">Platinum Plan</span><span ng-if="product.plan==4">Diamond Plan</span></span><span class="block" ng-if="product.months !='1'">{{product.months}} months<span ng-if="product.plan==1">Silver Plan</span><span ng-if="product.plan==2">Gold Plan</span><span ng-if="product.plan==3">Platinum Plan</span><span ng-if="product.plan==4">Diamond Plan</span></span></td>
+                                                        <span class="block" ng-if="product.months == '1'">{{product.months}} month <span ng-if="product.plan==1">Silver Plan</span><span ng-if="product.plan==2">Gold Plan</span><span ng-if="product.plan==3">Platinum Plan</span>
+                                                        <span
+                                                            ng-if="product.plan==4">Diamond Plan</span>
+                                                            </span><span class="block" ng-if="product.months !='1'">{{product.months}} months<span ng-if="product.plan==1">Silver Plan</span><span ng-if="product.plan==2">Gold Plan</span><span ng-if="product.plan==3">Platinum Plan</span>
+                                                            <span
+                                                                ng-if="product.plan==4">Diamond Plan</span>
+                                                                </span>
+                                                    </td>
                                                     <td ng-if="product.status!=3">{{product.options.realname}}
                                                     </td>
                                                     <td>
@@ -951,7 +958,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td>Sub Total</td>
-                                                    <td><span ng-if="myCountry=='IN'">Rs.{{checkout.totalamount}}  </span><span ng-if="myCountry!='IN'">${{checkout.totalamount}}</span>  </td>
+                                                    <td><span ng-if="myCountry=='IN'">Rs.{{checkout.totalamount}}  </span><span ng-if="myCountry!='IN'">${{checkout.totalamount}}</span> </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Shipping Charges</td>
@@ -1017,7 +1024,7 @@
                                                 </label>
                                             </div>
                                         </div>
-  </form>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -1043,7 +1050,7 @@
                         </div>
                         <div class="payment-detail">
                             <h3 class="brand-primary" style="display:none;">Payment Details</h3>
-                            <form method="post" name="customerData" ng-hide="cod" action="http://admin.selfcareindia.com/paymentgateway/ccavRequestHandler.php">
+                            <form method="post" name="customerData" ng-if="!payCOD" action="http://admin.selfcareindia.com/paymentgateway/ccavRequestHandler.php">
                                 <div class="row" style="display:none;">
                                     <div class="col-md-5">
                                         <table>
@@ -1200,6 +1207,7 @@
                                         </table>
                                     </div>
                                 </div>
+
                                 <div class="place-order-btn" ng-show="showPayment">
                                     <div class="text-center" ng-if="!payCOD">
                                         <button type="submit" class="btn btn-primary btn-more letter-space text-uppercase">Confirm order</button>
@@ -1207,7 +1215,13 @@
                                 </div>
                             </form>
                             <div class="text-center" ng-if="payCOD">
-                                <button class="btn btn-primary btn-more letter-space text-uppercase" ng-click="payByCOD()">Confirm order</button>
+                                <div class="form-group " style="margin-left: 37%;overflow: hidden;">
+                                    <div class="text-center ">
+                                        <script src="//www.google.com/recaptcha/api.js"></script>
+                                        <div class="g-recaptcha" data-sitekey="6Le_USMTAAAAAMtHs6fiUFWqD848RSYr1QitKe0o"> </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-more letter-space text-uppercase" ng-click="validateRecaptcha()">Confirm order </button>
                             </div>
                         </div>
 
