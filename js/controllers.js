@@ -1582,14 +1582,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.blog = {};
-
+    $scope.t = {};
+    $scope.t.showTag =false;
 
     $scope.blog.search = "";
     $scope.pageno = 1;
     $scope.tag = "";
     $scope.blogpage = [];
     $scope.tagmsg = "Loading...";
-
+    $scope.showTag = function(flag){
+      $scope.t.showTag = flag;
+    };
     if ($stateParams.search) {
       $scope.blog.search = $stateParams.search;
     }
@@ -2107,7 +2110,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.comment = {
       id: $stateParams.id
     };
-
+    $scope.t = {};
+    $scope.t.showTag =false;
+$scope.showTag = function(flag){
+      $scope.t.showTag = flag;
+    };
 
 
     $scope.commentSubmit = function() {
