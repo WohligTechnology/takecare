@@ -239,7 +239,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.alerts = [];
             $scope.alerts.push({
               type: 'danger',
-              msg: 'Already in cart'
+              msg: 'Quantity not available'
             });
           }
         });
@@ -938,7 +938,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.alerts = [];
             $scope.alerts.push({
               type: 'danger',
-              msg: 'Already in cart'
+              msg: 'Quantity not available'
             });
 
           }
