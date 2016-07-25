@@ -2524,7 +2524,7 @@ $scope.showTag = function(flag){
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
-.controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state,$uibModal) {
+.controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $timeout, cfpLoadingBar, $state,$uibModal,$interval) {
   //Used to name the .html file
   $scope.template = TemplateService.changecontent("checkout");
   $scope.menutitle = NavigationService.makeactive("Checkout");
