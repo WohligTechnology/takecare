@@ -97,10 +97,9 @@ var navigationservice = angular.module('navigationservice', [])
         lineClass: 'liner',
         nocursor: "no-pointer",
         subnav: [{
-            name: "Calorie Meter (Coming Soon)",
+            name: "Calorie Meter",
             classis: "active",
-            link: "",
-            nocursor: "no-pointer"
+            link: "#/knowyourstats"
         }, {
             name: "Recipes",
             classis: "active",
