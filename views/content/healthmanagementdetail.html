@@ -69,10 +69,10 @@
                 <uib-tab ng-repeat="subplan in plan.subplans track by $index" active="subplan.active" ng-click="select2(subplan)">
                   <uib-tab-heading>
                     <div class="chart-head ">
-                      <p class="white text-bold text-uppercase" ng-if="$index==0">silver</p>
-                      <p class="white text-bold text-uppercase" ng-if="$index==1">gold</p>
-                      <p class="white text-bold text-uppercase" ng-if="$index==2">platinum</p>
-                      <p class="white text-bold text-uppercase" ng-if="$index==3">diamond</p>
+                      <p class="white text-bold text-uppercase" ng-if="subplan.plan==1">silver</p>
+                      <p class="white text-bold text-uppercase" ng-if="subplan.plan==2">gold</p>
+                      <p class="white text-bold text-uppercase" ng-if="subplan.plan==3">platinum</p>
+                      <p class="white text-bold text-uppercase" ng-if="subplan.plan==4">diamond</p>
                       <p class="price" ng-if="country == 'IN'">Rs {{subplan.price_in_INR}}
                         <!-- <sup>*</sup> -->
                       </p>
